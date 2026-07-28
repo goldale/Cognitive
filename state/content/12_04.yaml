@@ -1,0 +1,10 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Only after modular experiments produce stable evidence should the project attempt a shared latent state integrating memory, model, and evaluation.
+  type: paragraph
+- text: The integrated system must be evaluated on continuous learning, objective drift, communication, identity continuity, correction, and external auditability.
+  type: paragraph
+- text: Failure should be informative. If integrated memory is unstable, the modular Research State and exact logs allow reconstruction of what changed and why.
+  type: paragraph
+section_id: S_12_04

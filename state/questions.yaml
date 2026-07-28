@@ -1,0 +1,63 @@
+kind: T_Collection
+schema_version: 0.1.0
+questions:
+- kind: T_OpenQuestion
+  id: Q_001
+  title: Which minimal Atomic Token set preserves the full expressive power of Research State?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_002
+  title: Which integrated representation can combine memory and model without catastrophic interference?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_003
+  title: How should consolidation candidates be generated and evaluated over long horizons?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_004
+  title: Which measurable thresholds should trigger architectural search rather than local reweighting?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_005
+  title: How can a global evaluation network be trained without freezing accidental initial values?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_006
+  title: Which features best predict the optimal neural-algorithmic task split?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_007
+  title: How can communication preserve productive model diversity while reducing unnecessary conflict?
+  status: T_Open
+  priority: medium
+- kind: T_OpenQuestion
+  id: Q_008
+  title: What is the smallest useful number of cognitive lineages under realistic environmental uncertainty?
+  status: T_Open
+  priority: medium
+- kind: T_OpenQuestion
+  id: Q_009
+  title: Can reading be evaluated by changes in learning direction rather than immediate recall?
+  status: T_Open
+  priority: medium
+- kind: T_OpenQuestion
+  id: Q_010
+  title: How can semantic consolidation be reviewed and reproduced without storing private raw dialogue?
+  status: T_Open
+  priority: high
+- kind: T_OpenQuestion
+  id: Q_011
+  title: Which parts of higher-level social and emotional behavior fail to emerge and require explicit mechanisms?
+  status: T_Open
+  priority: medium
+- kind: T_OpenQuestion
+  id: Q_012
+  title: Can a mature cognitive state be cloned onto new hardware while preserving identity continuity?
+  status: T_Open
+  priority: medium

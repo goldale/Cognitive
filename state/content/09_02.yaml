@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- title: T_MetaArchitect
+  text: A trainable system that designs a computational graph by allocating operations among neural, algorithmic, and hybrid executors.
+  type: definition
+- text: The output of the meta-architect is not the task answer. It is an architecture for producing the answer.
+  type: paragraph
+- text: Inputs can include objective completeness, data availability, noise, state discreteness, safety criticality, interpretability requirements, latency, energy cost, and distribution shift.
+  type: paragraph
+- text: Observed deployment utility supplies the lifelong training signal.
+  type: paragraph
+section_id: S_09_02

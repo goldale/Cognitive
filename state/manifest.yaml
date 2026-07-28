@@ -1,0 +1,16 @@
+kind: T_ResearchState
+schema_version: 0.1.0
+version: 0.1.0
+title: Architectural Evolution of Long-Lived Cognitive Systems
+files:
+  chapters: chapters.yaml
+  architecture: architecture.yaml
+  consolidation: consolidation.yaml
+  content_directory: content
+  documentation_output: generated
+  hypotheses: hypotheses.yaml
+  principles: principles.yaml
+  questions: questions.yaml
+  roadmap: roadmap.yaml
+  tokens: tokens.yaml
+canonical_language: en

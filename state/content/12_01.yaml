@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The best next step is not necessarily the change with the largest immediate benchmark gain. It is the change that creates a fully working system, produces the highest utility for foreseeable cost, and expands the space of later improvements.
+  type: paragraph
+- text: Priority = PracticalUtility × FutureOptionValue / (Cost × Risk × Irreversibility)
+  type: formula
+- text: This criterion favors persistent Research State, consolidation infrastructure, and hybrid orchestration because each improves current work while generating data for later architecture.
+  type: paragraph
+- text: A speculative integrated memory may have larger theoretical value but lower current priority when it cannot yet be evaluated or repaired.
+  type: paragraph
+section_id: S_12_01

@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- title: T_CognitiveLineage
+  text: A bounded class of cognitive systems sharing architecture, objective structure, and inherited state while remaining distinct from other lineages.
+  type: definition
+- text: A population maintains a small number of strongly differentiated lineages. Inside a lineage, the best current system can be cloned for operational deployment. Across lineages, no single champion replaces all alternatives.
+  type: paragraph
+- text: Lineages may specialize in scientific reasoning, social modeling, physical control, creative exploration, adversarial robustness, or other objective classes.
+  type: paragraph
+- text: The number of lineages should be small enough for commercial maintenance and large enough to preserve meaningful diversity.
+  type: paragraph
+section_id: S_10_02

@@ -1,0 +1,20 @@
+kind: T_ChangeProposal
+id: CP_001
+summary: Refine the confidence assigned to the internal-language hypothesis.
+semantic_change: true
+inputs:
+  - Review of H_015
+rationale: The claim remains plausible but is insufficiently constrained by experiments.
+alternatives:
+  - Keep confidence unchanged.
+  - Deprecate the hypothesis.
+open_questions:
+  - Q_002
+operations:
+  - op: update
+    role: hypotheses
+    collection: hypotheses
+    selector:
+      id: H_015
+    changes:
+      confidence: 0.62

@@ -1,0 +1,21 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The word Self combines several functions that should be separated before asking whether a system possesses one.
+  type: paragraph
+- headers:
+  - Layer
+  - Function
+  rows:
+  - - Integrated evaluation
+    - Combines heterogeneous information in one decision process
+  - - Continuity
+    - Attributes states at different times to one continuing system
+  - - Goals and plans
+    - Selects future states and organizes actions toward them
+  type: table
+- text: 'A fourth function is causal self-attribution: distinguishing changes caused by the environment, another agent, or the system''s own prior output.'
+  type: paragraph
+- text: A long-lived intellectual partner needs at least this functional Self even if subjective consciousness remains unresolved.
+  type: paragraph
+section_id: S_07_03

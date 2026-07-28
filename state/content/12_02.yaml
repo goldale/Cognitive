@@ -1,0 +1,21 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- items:
+  - Restricted YAML Research State
+  - Atomic and derived Token validation
+  - Canonical formatting
+  - Semantic change proposals
+  - Structural three-way merge with conflict report
+  - Generated semantic HTML
+  - Working and long-term memory prototype
+  - Lossy consolidation and architecture selection
+  - Communication and clarification pipeline
+  - Trainable multichannel evaluator
+  - Hybrid meta-architect
+  - Cognitive lineage manager
+  ordered: false
+  type: list
+- text: These components are deliberately modular. Their purpose is to create an operational baseline and instrumentation for later integration.
+  type: paragraph
+section_id: S_12_02

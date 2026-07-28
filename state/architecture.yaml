@@ -1,0 +1,62 @@
+kind: T_Collection
+schema_version: 0.1.0
+architectures:
+- kind: T_ArchitectureDecision
+  id: A_001
+  title: Research State development loop
+  status: T_Implemented
+  summary: Discussion produces reviewed semantic changes to canonical T_ResearchState, from which documentation is generated.
+  relations:
+  - Discussion -> T_ChangeProposal
+  - T_ChangeProposal -> T_ConsolidationRecord
+  - T_ConsolidationRecord -> T_ResearchState
+  - T_ResearchState -> T_Document
+- kind: T_ArchitectureDecision
+  id: A_002
+  title: Memory and consolidation pipeline
+  status: T_Implemented
+  summary: T_WorkingMemory receives experience; T_LongTermMemory retains functionally useful state; T_Consolidation performs lossy compression and iterative architectural search.
+  relations:
+  - T_Experience -> T_WorkingMemory
+  - T_WorkingMemory -> T_Consolidation
+  - T_Consolidation -> T_LongTermMemory
+  - T_LongTermMemory -> T_WorldModel
+- kind: T_ArchitectureDecision
+  id: A_003
+  title: Communication pipeline
+  status: T_Implemented
+  summary: Communication is decomposed into T_PartialSerialization, T_Deserialization, T_ModelIntegration, clarification, and T_ModelConflictResolution.
+  relations:
+  - T_WorldModel -> T_PartialSerialization
+  - T_PartialSerialization -> T_Channel
+  - T_Channel -> T_Deserialization
+  - T_Deserialization -> T_ModelIntegration
+- kind: T_ArchitectureDecision
+  id: A_004
+  title: Integrated evaluation and functional Self
+  status: T_Implemented
+  summary: A trainable T_GlobalEvaluation compares heterogeneous channels and supports continuity, goals, and causal attribution in T_FunctionalSelf.
+  relations:
+  - T_Observation -> T_GlobalEvaluation
+  - T_GlobalEvaluation -> T_ObjectiveFunction
+  - T_ObjectiveFunction -> T_Action
+  - T_Action -> T_FunctionalSelf
+- kind: T_ArchitectureDecision
+  id: A_005
+  title: Hybrid computation meta-architecture
+  status: T_Implemented
+  summary: T_MetaArchitect allocates task operations among T_Algorithm, T_NeuralNetwork, and hybrid pipelines and learns from observed utility.
+  relations:
+  - T_Question -> T_MetaArchitect
+  - T_MetaArchitect -> T_ArchitectureDecision
+  - T_ArchitectureDecision -> T_Algorithm
+  - T_ArchitectureDecision -> T_NeuralNetwork
+- kind: T_ArchitectureDecision
+  id: A_006
+  title: Cognitive lineage population
+  status: T_Implemented
+  summary: Maintain multiple diverse T_CognitiveLineage classes while cloning high-performing systems within each lineage.
+  relations:
+  - T_CognitiveLineage -> T_CognitiveSystem
+  - T_Evaluation -> T_CognitiveLineage
+  - T_Communication -> T_CognitiveLineage

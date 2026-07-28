@@ -1,0 +1,15 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- title: T_ModelIntegration
+  text: An iterative modification of the receiver's existing cognitive model using deserialized information and the receiver's current objectives, knowledge, and experience.
+  type: definition
+- text: Integration is objective-dependent and path-dependent. Identical serialized information can produce different changes in systems with different experience, objective functions, confidence distributions, or category structures.
+  type: paragraph
+- text: 'Most integrations should begin with inexpensive local changes: altered importance, utility, confidence, or activation; new relations; removed relations; or reclassification. Structural architectural changes are not a deterministic consequence of a single important message.'
+  type: paragraph
+- text: "Current Model + Deserialized Structure\n                 ↓\n          T_ModelIntegration\n                 ↓\nWeights, Relations, Categories, or Architecture"
+  type: formula
+- text: Integration is complete only when the receiver has a usable interpretation. Reading or hearing the message is not sufficient.
+  type: paragraph
+section_id: S_02_03

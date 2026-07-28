@@ -1,0 +1,53 @@
+kind: T_Collection
+schema_version: 0.1.0
+roadmap:
+- kind: T_RoadmapItem
+  id: R_001
+  title: Formal Research State and restricted YAML toolchain
+  status: T_Implemented
+  order: 1
+- kind: T_RoadmapItem
+  id: R_002
+  title: Generated semantic HTML documentation
+  status: T_Implemented
+  order: 2
+- kind: T_RoadmapItem
+  id: R_003
+  title: Working and long-term memory prototype with lossy consolidation
+  status: T_Implemented
+  order: 3
+- kind: T_RoadmapItem
+  id: R_004
+  title: Communication, clarification, and conflict prototype
+  status: T_Implemented
+  order: 4
+- kind: T_RoadmapItem
+  id: R_005
+  title: Trainable integrated multichannel evaluator
+  status: T_Implemented
+  order: 5
+- kind: T_RoadmapItem
+  id: R_006
+  title: Trainable neural-algorithmic meta-architect
+  status: T_Implemented
+  order: 6
+- kind: T_RoadmapItem
+  id: R_007
+  title: Cognitive lineage diversity manager
+  status: T_Implemented
+  order: 7
+- kind: T_RoadmapItem
+  id: R_008
+  title: Longitudinal experiments with persistent agents
+  status: T_Planned
+  order: 8
+- kind: T_RoadmapItem
+  id: R_009
+  title: Integrated memory-model representation experiments
+  status: T_Planned
+  order: 9
+- kind: T_RoadmapItem
+  id: R_010
+  title: Self-hosting Research State rules and generator descriptions
+  status: T_Planned
+  order: 10

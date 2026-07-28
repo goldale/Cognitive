@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
+  type: paragraph
+- text: "Sensors -> Neural Perception -> Probabilistic State\n        -> Algorithmic Constraint Solver -> Planned Trajectory\n        -> Learned Correction -> Deterministic Controller"
+  type: diagram
+- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants, accounting, and discrete protocol behavior remain explicit.
+  type: paragraph
+- text: This division provides interpretability and guarantees where they matter without forcing perception or language into brittle hand-written rules.
+  type: paragraph
+section_id: S_09_03

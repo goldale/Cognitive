@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Git is the sole history mechanism. Research State stores current state, not a cumulative internal history.
+  type: paragraph
+- text: Each version contains a latest T_ConsolidationRecord describing only the semantic transition that produced that version. Earlier records remain available in earlier Git commits.
+  type: paragraph
+- text: When a commit contains no semantic change, the consolidation record may remain unchanged. File diffs then record formatting or generated-artifact changes without inventing a false knowledge transition.
+  type: paragraph
+- text: Three-way file merge is structural. True semantic consolidation can produce a result belonging to neither branch. The tool therefore emits conflict reports for review rather than pretending every textual merge is a cognitive merge.
+  type: paragraph
+section_id: S_11_04

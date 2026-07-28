@@ -1,0 +1,5 @@
+kind: T_Collection
+hypotheses:
+  - id: H_001
+    confidence: 0.80
+    statement: Memory organization matters.

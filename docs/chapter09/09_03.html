@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 9 · Section 9.3 · Operation-Level Splitting</title>
+<link rel="stylesheet" href="../cognitive.css">
+</head>
+<body>
+<div class="container">
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="09_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="09_04.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 9</p><h1>Hybrid Neural and Algorithmic Computation</h1><p class="section-label">Section 9.3</p><h2>Operation-Level Splitting</h2></header>
+<main><p>The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.</p><pre class="diagram">Sensors -&gt; Neural Perception -&gt; Probabilistic State
+        -&gt; Algorithmic Constraint Solver -&gt; Planned Trajectory
+        -&gt; Learned Correction -&gt; Deterministic Controller</pre><p>A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants, accounting, and discrete protocol behavior remain explicit.</p><p>This division provides interpretability and guarantees where they matter without forcing perception or language into brittle hand-written rules.</p></main>
+<footer><p>Section 9.3 · Operation-Level Splitting</p><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="09_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="09_04.html">Next →</a></nav></footer>
+</div>
+</body>
+</html>

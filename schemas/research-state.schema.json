@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/research-state.schema.json",
+  "title": "Research State document envelope",
+  "type": "object",
+  "required": ["role", "document"],
+  "properties": {
+    "role": {"type": "string", "minLength": 1},
+    "document": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"type": "string", "pattern": "^T_[A-Z][A-Za-z0-9]*$"},
+        "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

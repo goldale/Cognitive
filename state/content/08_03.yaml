@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The same text produces different integrations as the reader changes. A book read at twenty, forty, and sixty can be three different cognitive events because the background model and objectives differ.
+  type: paragraph
+- text: An artificial cognitive system should revisit important books after substantial model change. Repetition should continue while rereading materially changes the model or the direction of future learning.
+  type: paragraph
+- text: A stronger stopping rule is not merely no further factual change. Reading can remain valuable while changing which questions receive attention. Iteration stops when additional exposure no longer changes either the model or the learning trajectory within the relevant objective class.
+  type: paragraph
+- text: Read -> Integrate -> Act and Learn -> Changed Model -> Re-read
+  type: formula
+section_id: S_08_03

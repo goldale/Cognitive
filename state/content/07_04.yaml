@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: 'T_FunctionalSelf may not correspond to one module. It may be a stable attractor or invariant pattern of the entire cognitive system: the recurring organization through which memory, evaluation, goals, action, and continuity are jointly interpreted.'
+  type: paragraph
+- text: The integrated evaluator is a likely prerequisite because it supplies the common space in which otherwise unrelated consequences become comparable.
+  type: paragraph
+- text: The Self then emerges when the evaluator, memory, causal model, and planner repeatedly close a loop around one persistent identity.
+  type: paragraph
+- text: Self Model -> Action -> Environment -> Observation -> Evaluation -> Memory -> Self Model
+  type: diagram
+section_id: S_07_04

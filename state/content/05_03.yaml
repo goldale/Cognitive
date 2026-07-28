@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
+  type: paragraph
+- text: "Current Architecture\n        ↓\nGenerate Candidate\n        ↓\nReplay and Evaluate\n        ↓\nAccept / Reject / Partially Apply\n        ↓\nRepeat"
+  type: diagram
+- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories, different retention thresholds, or different executor assignments.'
+  type: paragraph
+- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not automatically superior.
+  type: paragraph
+section_id: S_05_03

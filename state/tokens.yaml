@@ -1,0 +1,462 @@
+kind: T_Collection
+schema_version: 0.1.0
+version: 0.1.0
+optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive power.
+tokens:
+- token: T_Token
+  atomic: true
+  definition: A case-sensitive symbol with stable semantic identity.
+  status: T_Active
+- token: T_Entity
+  atomic: true
+  definition: A separately addressable object in a formal state.
+  status: T_Active
+- token: T_System
+  atomic: true
+  definition: A bounded set of interacting elements.
+  status: T_Active
+- token: T_State
+  atomic: true
+  definition: A configuration of a system at a specified time.
+  status: T_Active
+- token: T_Information
+  atomic: true
+  definition: A constraint that reduces uncertainty among possible states.
+  status: T_Active
+- token: T_Knowledge
+  atomic: true
+  definition: Information integrated into a model and usable for evaluation or action.
+  status: T_Active
+- token: T_Model
+  atomic: true
+  definition: An internal structure used to predict, explain, evaluate, or act.
+  status: T_Active
+- token: T_Objective
+  atomic: true
+  definition: A condition toward which optimization is directed.
+  status: T_Active
+- token: T_Function
+  atomic: true
+  definition: A mapping from inputs to outputs.
+  status: T_Active
+- token: T_Process
+  atomic: true
+  definition: A sequence of state transformations.
+  status: T_Active
+- token: T_Transformation
+  atomic: true
+  definition: A change from one state or representation to another.
+  status: T_Active
+- token: T_Relation
+  atomic: true
+  definition: A formally represented dependency between entities.
+  status: T_Active
+- token: T_Time
+  atomic: true
+  definition: An ordering dimension for state transitions.
+  status: T_Active
+- token: T_Memory
+  atomic: true
+  definition: A mechanism by which prior state influences future computation.
+  status: T_Active
+- token: T_Observation
+  atomic: true
+  definition: Information acquired from an environment or another system.
+  status: T_Active
+- token: T_Evaluation
+  atomic: true
+  definition: Assignment of relative preference, relevance, or utility.
+  status: T_Active
+- token: T_Optimization
+  atomic: true
+  definition: Search for a state with improved evaluation.
+  status: T_Active
+- token: T_Structure
+  atomic: true
+  definition: An organization of entities and relations.
+  status: T_Active
+- token: T_Channel
+  atomic: true
+  definition: A medium through which a serialized state is transmitted.
+  status: T_Active
+- token: T_Serialization
+  atomic: true
+  definition: Transformation of internal structure into a transmissible sequence.
+  status: T_Active
+- token: T_Communication
+  atomic: true
+  definition: Interaction through transmitted information.
+  status: T_Active
+- token: T_Conflict
+  atomic: true
+  definition: An incompatibility that prevents simultaneous integration under current constraints.
+  status: T_Active
+- token: T_Collection
+  atomic: true
+  definition: A bounded group of entities.
+  status: T_Active
+- token: T_Constraint
+  atomic: true
+  definition: A rule restricting valid states or transformations.
+  status: T_Active
+- token: T_Algorithm
+  atomic: true
+  definition: An explicit finite procedure for a class of computations.
+  status: T_Active
+- token: T_NeuralNetwork
+  atomic: true
+  definition: A trainable distributed function approximator.
+  status: T_Active
+- token: T_Cognition
+  atomic: true
+  definition: Acquisition, integration, evaluation, and use of knowledge.
+  status: T_Active
+- token: T_Identity
+  atomic: true
+  definition: A persistent criterion by which states are attributed to one continuing system.
+  status: T_Active
+- token: T_Agent
+  atomic: true
+  definition: A system capable of selecting actions.
+  status: T_Active
+- token: T_Environment
+  atomic: true
+  definition: The external state with which a system interacts.
+  status: T_Active
+- token: T_Experience
+  atomic: true
+  definition: An observation together with its effects on a system.
+  status: T_Active
+- token: T_Evidence
+  atomic: true
+  definition: Information used to update confidence in a claim.
+  status: T_Active
+- token: T_Uncertainty
+  atomic: true
+  definition: A distribution over unresolved alternatives.
+  status: T_Active
+- token: T_Language
+  atomic: true
+  definition: A formal or natural system of serializable symbols and composition rules.
+  status: T_Active
+- token: T_Document
+  atomic: true
+  definition: A persistent serialized artifact intended for interpretation.
+  status: T_Active
+- token: T_History
+  atomic: true
+  definition: An ordered record of prior states or transformations.
+  status: T_Active
+- token: T_Architecture
+  atomic: true
+  definition: The organization and interaction rules of system components.
+  status: T_Active
+- token: T_Question
+  atomic: true
+  definition: A specification of information or resolution that is missing.
+  status: T_Active
+- token: T_Action
+  atomic: true
+  definition: A state transformation initiated by an agent.
+  status: T_Active
+- token: T_Lineage
+  atomic: true
+  definition: A class of systems connected by controlled replication and evolution.
+  status: T_Active
+- token: T_Active
+  atomic: true
+  definition: A status indicating current use.
+  status: T_Active
+- token: T_Deprecated
+  atomic: true
+  definition: A status indicating retained compatibility without preferred new use.
+  status: T_Active
+- token: T_Working
+  atomic: true
+  definition: A status indicating an unresolved or provisional state.
+  status: T_Active
+- token: T_Accepted
+  atomic: true
+  definition: A status indicating inclusion in the current consolidated model.
+  status: T_Active
+- token: T_Open
+  atomic: true
+  definition: A status indicating unresolved work.
+  status: T_Active
+- token: T_Planned
+  atomic: true
+  definition: A status indicating intended future implementation.
+  status: T_Active
+- token: T_Implemented
+  atomic: true
+  definition: A status indicating an existing executable implementation.
+  status: T_Active
+- token: T_Intersection
+  atomic: true
+  definition: A composition operator requiring all argument properties.
+  status: T_Active
+- token: T_Composition
+  atomic: true
+  definition: A composition operator forming a concept from argument concepts.
+  status: T_Active
+- token: T_Sequence
+  atomic: true
+  definition: A composition operator imposing ordered execution.
+  status: T_Active
+- token: T_CognitiveSystem
+  atomic: false
+  expression:
+    arguments:
+    - T_System
+    - T_Cognition
+    - T_Agent
+    operator: T_Intersection
+  status: T_Active
+- token: T_WorldModel
+  atomic: false
+  expression:
+    arguments:
+    - T_Model
+    - T_Knowledge
+    - T_Environment
+    - T_Objective
+    operator: T_Composition
+  status: T_Active
+- token: T_ObjectiveFunction
+  atomic: false
+  expression:
+    arguments:
+    - T_Objective
+    - T_Function
+    - T_Evaluation
+    operator: T_Composition
+  status: T_Active
+- token: T_WorkingMemory
+  atomic: false
+  expression:
+    arguments:
+    - T_Memory
+    - T_State
+    - T_Time
+    operator: T_Composition
+  status: T_Active
+- token: T_LongTermMemory
+  atomic: false
+  expression:
+    arguments:
+    - T_Memory
+    - T_Experience
+    - T_Structure
+    operator: T_Composition
+  status: T_Active
+- token: T_PartialSerialization
+  atomic: false
+  expression:
+    arguments:
+    - T_Serialization
+    - T_Model
+    - T_Constraint
+    - T_Communication
+    operator: T_Composition
+  status: T_Active
+- token: T_Deserialization
+  atomic: false
+  expression:
+    arguments:
+    - T_Transformation
+    - T_Communication
+    - T_Information
+    - T_Structure
+    operator: T_Composition
+  status: T_Active
+- token: T_ModelIntegration
+  atomic: false
+  expression:
+    arguments:
+    - T_Process
+    - T_Information
+    - T_Model
+    - T_Optimization
+    operator: T_Composition
+  status: T_Active
+- token: T_ClarificationRequest
+  atomic: false
+  expression:
+    arguments:
+    - T_Communication
+    - T_Conflict
+    - T_Information
+    - T_Question
+    operator: T_Composition
+  status: T_Active
+- token: T_ModelConflictResolution
+  atomic: false
+  expression:
+    arguments:
+    - T_Process
+    - T_Conflict
+    - T_Optimization
+    - T_Model
+    operator: T_Composition
+  status: T_Active
+- token: T_Consolidation
+  atomic: false
+  expression:
+    arguments:
+    - T_Process
+    - T_Memory
+    - T_Transformation
+    - T_Optimization
+    operator: T_Composition
+  status: T_Active
+- token: T_GlobalEvaluation
+  atomic: false
+  expression:
+    arguments:
+    - T_Evaluation
+    - T_Information
+    - T_Objective
+    - T_Function
+    operator: T_Composition
+  status: T_Active
+- token: T_FunctionalSelf
+  atomic: false
+  expression:
+    arguments:
+    - T_Model
+    - T_Identity
+    - T_Agent
+    - T_Time
+    - T_Objective
+    operator: T_Composition
+  status: T_Active
+- token: T_MetaArchitect
+  atomic: false
+  expression:
+    arguments:
+    - T_System
+    - T_Optimization
+    - T_Architecture
+    - T_Algorithm
+    - T_NeuralNetwork
+    operator: T_Composition
+  status: T_Active
+- token: T_CognitiveLineage
+  atomic: false
+  expression:
+    arguments:
+    - T_Collection
+    - T_Cognition
+    - T_Lineage
+    - T_Identity
+    operator: T_Composition
+  status: T_Active
+- token: T_ResearchState
+  atomic: false
+  expression:
+    arguments:
+    - T_State
+    - T_Knowledge
+    - T_Architecture
+    - T_History
+    operator: T_Composition
+  status: T_Active
+- token: T_ConsolidationRecord
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_Transformation
+    - T_State
+    - T_History
+    operator: T_Composition
+  status: T_Active
+- token: T_Principle
+  atomic: false
+  expression:
+    arguments:
+    - T_Knowledge
+    - T_Constraint
+    - T_Architecture
+    operator: T_Composition
+  status: T_Active
+- token: T_Hypothesis
+  atomic: false
+  expression:
+    arguments:
+    - T_Model
+    - T_Uncertainty
+    - T_Evidence
+    operator: T_Composition
+  status: T_Active
+- token: T_ArchitectureDecision
+  atomic: false
+  expression:
+    arguments:
+    - T_Architecture
+    - T_Evaluation
+    - T_Action
+    operator: T_Composition
+  status: T_Active
+- token: T_OpenQuestion
+  atomic: false
+  expression:
+    arguments:
+    - T_Question
+    - T_Uncertainty
+    - T_Knowledge
+    operator: T_Composition
+  status: T_Active
+- token: T_RoadmapItem
+  atomic: false
+  expression:
+    arguments:
+    - T_Action
+    - T_Time
+    - T_Objective
+    operator: T_Composition
+  status: T_Active
+- token: T_Chapter
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_Structure
+    - T_Knowledge
+    operator: T_Composition
+  status: T_Active
+- token: T_Section
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_Structure
+    operator: T_Composition
+  status: T_Active
+- token: T_ContentBlock
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_Information
+    - T_Structure
+    operator: T_Composition
+  status: T_Active
+- token: T_ChangeProposal
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_Action
+    - T_Transformation
+    operator: T_Composition
+  status: T_Active
+- token: T_SemanticMergeReport
+  atomic: false
+  expression:
+    arguments:
+    - T_Document
+    - T_History
+    - T_Conflict
+    operator: T_Composition
+  status: T_Active

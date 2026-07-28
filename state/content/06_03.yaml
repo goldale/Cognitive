@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The engineering problem can be stated as a search for an internal language or latent space that represents multimodal experience, objectives, relations, uncertainty, and causal history while remaining continuously learnable.
+  type: paragraph
+- text: Natural English is an unlikely optimum because it evolved for communication among humans with partially shared backgrounds. Internal storage and computation have different constraints.
+  type: paragraph
+- text: A dense context-dependent symbol system may be more efficient. The analogy to Egyptian hieroglyphs concerns symbols whose meaning depends on a large shared context and can simultaneously carry several representational roles.
+  type: paragraph
+- title: Historical uncertainty
+  text: This analogy does not establish that modern interpretations of Egyptian writing are fundamentally wrong. It identifies a possible class of dense context-dependent representation.
+  type: warning
+section_id: S_06_03

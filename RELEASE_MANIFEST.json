@@ -1,0 +1,31 @@
+{
+  "project": "Architectural Evolution of Long-Lived Cognitive Systems",
+  "release": "0.1.0",
+  "release_date": "2026-07-28",
+  "canonical_language": "English",
+  "research_state": {
+    "tokens": 77,
+    "atomic_tokens": 50,
+    "derived_tokens": 27,
+    "chapters": 12,
+    "sections": 71
+  },
+  "generated_documentation_files": 85,
+  "automated_tests": 15,
+  "test_status": "passed",
+  "implemented_layers": [
+    "Restricted YAML Research State",
+    "Token language and semantic validation",
+    "Canonical formatting",
+    "Transactional change proposals",
+    "Structural three-way merge with semantic conflict report",
+    "Generated semantic HTML documentation",
+    "Objective-driven world model",
+    "Working and lossy long-term memory",
+    "Iterative consolidation and architecture selection",
+    "Communication, clarification, integration, and conflict handling",
+    "Trainable multichannel evaluator",
+    "Trainable neural-algorithmic meta-architect",
+    "Cognitive lineage diversity manager"
+  ]
+}

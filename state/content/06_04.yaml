@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The inverse of generation is not a literal caption. A useful encoder must map rich experience into a state from which the system can reconstruct different task-relevant aspects later.
+  type: paragraph
+- text: The target is not pixel-perfect or word-perfect reconstruction. It is reconstruction sufficient for changed objectives and future reasoning.
+  type: paragraph
+- text: Experience -> Integrated Latent State -> Task-Conditioned Reconstruction
+  type: formula
+- text: The encoder should therefore be trained on future functional performance, not only reconstruction error. Different decoders may recover text, imagery, causal relations, emotion-like evaluation, or action policies from one latent state.
+  type: paragraph
+section_id: S_06_04

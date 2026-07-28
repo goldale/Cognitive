@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The architecture arose through a long research dialogue between a human systems engineer with a background in applied mathematics, physics, and software engineering and a language model. Many ideas existed in partial form before the dialogue; others emerged only after repeated criticism, reformulation, and integration.
+  type: paragraph
+- text: The resulting document is not a transcript and not a sequence in which one party wrote and the other edited. It is a consolidated model produced by repeated transformation of a shared conceptual state.
+  type: paragraph
+- title: Dialogue as method
+  text: 'The production process is itself an example of the proposed communication model: partial serialization, deserialization, integration, clarification, conflict detection, and consolidation.'
+  type: observation
+- text: Project artifacts are canonical in English. Design discussion may occur in any language. English is an implementation choice for broad technical interoperability, not a claim that natural English is an optimal internal cognitive language.
+  type: paragraph
+section_id: S_01_04

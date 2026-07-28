@@ -1,0 +1,14 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Every formal Token uses the case-sensitive form T_PascalCaseIdentifier.
+  type: paragraph
+- text: Only Atomic Tokens may have natural-language definitions. Every non-atomic Token is defined through previously declared Atomic Tokens and formal composition operators.
+  type: paragraph
+- text: Atomic Tokens act as axioms. A mature language should reduce their number while preserving or increasing expressive power.
+  type: paragraph
+- text: Token semantic identity is immutable. A definition may be refined or expressed more formally, but semantic replacement requires a new Token. Deprecated Tokens remain available for compatibility.
+  type: paragraph
+- text: Language Maturity ∝ Expressive Power / Atomic Token Count
+  type: formula
+section_id: S_11_02

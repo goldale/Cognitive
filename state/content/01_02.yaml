@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Many improvements in current systems are obtained by increasing model scale or adding specialized components. This project instead examines whether a different organization of existing components can create a larger gain than making any one component more complex.
+  type: paragraph
+- text: The strategy is evolutionary. Each stage must be fully operational, independently useful, measurable, and capable of supplying evidence for the next stage. Tighter integration is deferred until the modular implementation has generated enough operational data to justify it.
+  type: paragraph
+- text: "Existing Components\n        ↓\nImproved Organization\n        ↓\nOperational Evidence\n        ↓\nDeeper Integration"
+  type: diagram
+- title: No speculative dependency
+  text: A proposed mechanism belongs in the engineering roadmap only when it can be implemented with current technology, requires an identifiable extension of current technology, or can be experimentally tested in the foreseeable future.
+  type: principle
+section_id: S_01_02

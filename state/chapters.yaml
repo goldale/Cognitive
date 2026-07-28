@@ -1,0 +1,442 @@
+kind: T_Collection
+schema_version: 0.1.0
+chapters:
+- kind: T_Chapter
+  id: C_01
+  title: Purpose, Scope, and Engineering Method
+  order: 1
+  summary: Defines the objective, practical constraints, method, and epistemic status of the project.
+  sections:
+  - kind: T_Section
+    id: S_01_01
+    title: Purpose
+    order: 1
+    content_file: content/01_01.yaml
+  - kind: T_Section
+    id: S_01_02
+    title: Architecture Before Component Complexity
+    order: 2
+    content_file: content/01_02.yaml
+  - kind: T_Section
+    id: S_01_03
+    title: Scope
+    order: 3
+    content_file: content/01_03.yaml
+  - kind: T_Section
+    id: S_01_04
+    title: Origin and Co-authorship
+    order: 4
+    content_file: content/01_04.yaml
+  - kind: T_Section
+    id: S_01_05
+    title: Epistemic Status
+    order: 5
+    content_file: content/01_05.yaml
+  layout: single
+- kind: T_Chapter
+  id: C_02
+  title: Communication Between Cognitive Systems
+  order: 2
+  summary: Models communication as partial serialization followed by deserialization, iterative integration, clarification, and conflict resolution.
+  sections:
+  - kind: T_Section
+    id: S_02_01
+    title: Communication as Partial Serialization
+    order: 1
+    content_file: content/02_01.yaml
+  - kind: T_Section
+    id: S_02_02
+    title: Deserialization
+    order: 2
+    content_file: content/02_02.yaml
+  - kind: T_Section
+    id: S_02_03
+    title: Model Integration
+    order: 3
+    content_file: content/02_03.yaml
+  - kind: T_Section
+    id: S_02_04
+    title: Clarification and Model Conflict
+    order: 4
+    content_file: content/02_04.yaml
+  - kind: T_Section
+    id: S_02_05
+    title: Shared Background and Communication Compression
+    order: 5
+    content_file: content/02_05.yaml
+  - kind: T_Section
+    id: S_02_06
+    title: Higher-Level Communication Phenomena
+    order: 6
+    content_file: content/02_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_03
+  title: Objective-Driven Cognitive Models
+  order: 3
+  summary: Rejects a finite universal world model and defines world models as objective-dependent organizations of knowledge.
+  sections:
+  - kind: T_Section
+    id: S_03_01
+    title: The Impossibility of a Universal World Model
+    order: 1
+    content_file: content/03_01.yaml
+  - kind: T_Section
+    id: S_03_02
+    title: Objective Functions
+    order: 2
+    content_file: content/03_02.yaml
+  - kind: T_Section
+    id: S_03_03
+    title: Model Classes Rather Than One Model
+    order: 3
+    content_file: content/03_03.yaml
+  - kind: T_Section
+    id: S_03_04
+    title: Scientific Cognition as a Special Case
+    order: 4
+    content_file: content/03_04.yaml
+  - kind: T_Section
+    id: S_03_05
+    title: Objective Drift and Model Evolution
+    order: 5
+    content_file: content/03_05.yaml
+  - kind: T_Section
+    id: S_03_06
+    title: Engineering Consequences
+    order: 6
+    content_file: content/03_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_04
+  title: Biological Memory and Functional Lossiness
+  order: 4
+  summary: Treats reconstructive, lossy memory as a candidate functional architecture rather than merely a storage defect.
+  sections:
+  - kind: T_Section
+    id: S_04_01
+    title: The Biological Memory Hypothesis
+    order: 1
+    content_file: content/04_01.yaml
+  - kind: T_Section
+    id: S_04_02
+    title: Working Memory and Long-Term Memory
+    order: 2
+    content_file: content/04_02.yaml
+  - kind: T_Section
+    id: S_04_03
+    title: Weights Before Structure
+    order: 3
+    content_file: content/04_03.yaml
+  - kind: T_Section
+    id: S_04_04
+    title: Loss as Functional Compression
+    order: 4
+    content_file: content/04_04.yaml
+  - kind: T_Section
+    id: S_04_05
+    title: Reconstruction and Reconsolidation
+    order: 5
+    content_file: content/04_05.yaml
+  - kind: T_Section
+    id: S_04_06
+    title: Evidence Limits and Tests
+    order: 6
+    content_file: content/04_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_05
+  title: Consolidation as Iterative Architectural Search
+  order: 5
+  summary: Defines asynchronous consolidation as optimization over candidate memory organizations rather than deterministic rewriting.
+  sections:
+  - kind: T_Section
+    id: S_05_01
+    title: Asynchronous Consolidation
+    order: 1
+    content_file: content/05_01.yaml
+  - kind: T_Section
+    id: S_05_02
+    title: Triggers
+    order: 2
+    content_file: content/05_02.yaml
+  - kind: T_Section
+    id: S_05_03
+    title: Iterative Search, Not Deterministic Rewrite
+    order: 3
+    content_file: content/05_03.yaml
+  - kind: T_Section
+    id: S_05_04
+    title: Local and Global Reorganization
+    order: 4
+    content_file: content/05_04.yaml
+  - kind: T_Section
+    id: S_05_05
+    title: Persistence and Rollback
+    order: 5
+    content_file: content/05_05.yaml
+  - kind: T_Section
+    id: S_05_06
+    title: Implementation Available Today
+    order: 6
+    content_file: content/05_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_06
+  title: Holographic Knowledge Representation
+  order: 6
+  summary: Explores a representation transformation in which memory, model, and higher-level behavior become projections of one integrated state.
+  sections:
+  - kind: T_Section
+    id: S_06_01
+    title: Meaning of Holographic
+    order: 1
+    content_file: content/06_01.yaml
+  - kind: T_Section
+    id: S_06_02
+    title: Data and Model Integration
+    order: 2
+    content_file: content/06_02.yaml
+  - kind: T_Section
+    id: S_06_03
+    title: The Internal Language Problem
+    order: 3
+    content_file: content/06_03.yaml
+  - kind: T_Section
+    id: S_06_04
+    title: Lossy Encoding for Functional Reconstruction
+    order: 4
+    content_file: content/06_04.yaml
+  - kind: T_Section
+    id: S_06_05
+    title: Locality Versus Integration
+    order: 5
+    content_file: content/06_05.yaml
+  - kind: T_Section
+    id: S_06_06
+    title: Experimental Program
+    order: 6
+    content_file: content/06_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_07
+  title: Integrated Evaluation and Functional Self
+  order: 7
+  summary: Defines a trainable multichannel evaluator and examines how continuity, goals, and self-attribution may form a functional Self.
+  sections:
+  - kind: T_Section
+    id: S_07_01
+    title: Integrated Multichannel Evaluation
+    order: 1
+    content_file: content/07_01.yaml
+  - kind: T_Section
+    id: S_07_02
+    title: Training the Evaluator
+    order: 2
+    content_file: content/07_02.yaml
+  - kind: T_Section
+    id: S_07_03
+    title: Three Functional Layers of Self
+    order: 3
+    content_file: content/07_03.yaml
+  - kind: T_Section
+    id: S_07_04
+    title: Self as a System Regime
+    order: 4
+    content_file: content/07_04.yaml
+  - kind: T_Section
+    id: S_07_05
+    title: Communication Is Action
+    order: 5
+    content_file: content/07_05.yaml
+  - kind: T_Section
+    id: S_07_06
+    title: Safety and Corrigibility
+    order: 6
+    content_file: content/07_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_08
+  title: Books, Lectures, and Dialogue as Cognitive Transformation
+  order: 8
+  summary: Treats linguistic material as an iterative program that changes evaluation and learning direction rather than merely transferring propositions.
+  sections:
+  - kind: T_Section
+    id: S_08_01
+    title: Linguistic Modalities
+    order: 1
+    content_file: content/08_01.yaml
+  - kind: T_Section
+    id: S_08_02
+    title: The Book as a Transformation Program
+    order: 2
+    content_file: content/08_02.yaml
+  - kind: T_Section
+    id: S_08_03
+    title: Iterative Reading
+    order: 3
+    content_file: content/08_03.yaml
+  - kind: T_Section
+    id: S_08_04
+    title: Dialogue Instead of Merge
+    order: 4
+    content_file: content/08_04.yaml
+  - kind: T_Section
+    id: S_08_05
+    title: Education as Trajectory Design
+    order: 5
+    content_file: content/08_05.yaml
+  - kind: T_Section
+    id: S_08_06
+    title: Experiments
+    order: 6
+    content_file: content/08_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_09
+  title: Hybrid Neural and Algorithmic Computation
+  order: 9
+  summary: Introduces a trainable meta-architect that learns where to use neural, algorithmic, and hybrid execution.
+  sections:
+  - kind: T_Section
+    id: S_09_01
+    title: Three Classes of Tasks
+    order: 1
+    content_file: content/09_01.yaml
+  - kind: T_Section
+    id: S_09_02
+    title: The Meta-Architect
+    order: 2
+    content_file: content/09_02.yaml
+  - kind: T_Section
+    id: S_09_03
+    title: Operation-Level Splitting
+    order: 3
+    content_file: content/09_03.yaml
+  - kind: T_Section
+    id: S_09_04
+    title: Compilation of Experience
+    order: 4
+    content_file: content/09_04.yaml
+  - kind: T_Section
+    id: S_09_05
+    title: Learning the Cut
+    order: 5
+    content_file: content/09_05.yaml
+  - kind: T_Section
+    id: S_09_06
+    title: Practical Research Program
+    order: 6
+    content_file: content/09_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_10
+  title: Cognitive Lineages, Cloning, and Population Resilience
+  order: 10
+  summary: Combines efficient cloning within model classes with diversity across a small population of independently evolving cognitive lineages.
+  sections:
+  - kind: T_Section
+    id: S_10_01
+    title: The Cloning Tradeoff
+    order: 1
+    content_file: content/10_01.yaml
+  - kind: T_Section
+    id: S_10_02
+    title: Cognitive Lineages
+    order: 2
+    content_file: content/10_02.yaml
+  - kind: T_Section
+    id: S_10_03
+    title: Biological Colony Analogy
+    order: 3
+    content_file: content/10_03.yaml
+  - kind: T_Section
+    id: S_10_04
+    title: Experience Exchange Between Lineages
+    order: 4
+    content_file: content/10_04.yaml
+  - kind: T_Section
+    id: S_10_05
+    title: Commercial Deployment
+    order: 5
+    content_file: content/10_05.yaml
+  - kind: T_Section
+    id: S_10_06
+    title: Risks and Governance
+    order: 6
+    content_file: content/10_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_11
+  title: Research State Language and Workspace
+  order: 11
+  summary: Implements a formal persistent project state, restricted YAML, semantic consolidation, and generated documentation.
+  sections:
+  - kind: T_Section
+    id: S_11_01
+    title: Research State
+    order: 1
+    content_file: content/11_01.yaml
+  - kind: T_Section
+    id: S_11_02
+    title: Atomic Tokens and Axioms
+    order: 2
+    content_file: content/11_02.yaml
+  - kind: T_Section
+    id: S_11_03
+    title: Restricted YAML Profile
+    order: 3
+    content_file: content/11_03.yaml
+  - kind: T_Section
+    id: S_11_04
+    title: Git and Consolidation
+    order: 4
+    content_file: content/11_04.yaml
+  - kind: T_Section
+    id: S_11_05
+    title: Generated Documentation
+    order: 5
+    content_file: content/11_05.yaml
+  - kind: T_Section
+    id: S_11_06
+    title: Bootstrapping and Self-Hosting
+    order: 6
+    content_file: content/11_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_12
+  title: Engineering Roadmap and Open Research Questions
+  order: 12
+  summary: Prioritizes implementable next steps and defines experiments required before deeper integration.
+  sections:
+  - kind: T_Section
+    id: S_12_01
+    title: The Next-Step Criterion
+    order: 1
+    content_file: content/12_01.yaml
+  - kind: T_Section
+    id: S_12_02
+    title: Implemented Stage
+    order: 2
+    content_file: content/12_02.yaml
+  - kind: T_Section
+    id: S_12_03
+    title: Near-Term Experiments
+    order: 3
+    content_file: content/12_03.yaml
+  - kind: T_Section
+    id: S_12_04
+    title: Deeper Integration
+    order: 4
+    content_file: content/12_04.yaml
+  - kind: T_Section
+    id: S_12_05
+    title: Open Questions
+    order: 5
+    content_file: content/12_05.yaml
+  - kind: T_Section
+    id: S_12_06
+    title: Completion Criterion
+    order: 6
+    content_file: content/12_06.yaml
+  layout: directory

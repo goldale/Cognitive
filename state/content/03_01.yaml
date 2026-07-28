@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A finite cognitive system cannot represent every property of external reality. It must select distinctions, relations, and temporal scales. The selection is governed by what the system must predict, evaluate, or do.
+  type: paragraph
+- text: No world model is produced directly from reality. Observations are first transformed into an internal knowledge model. That knowledge model is then weighted and organized relative to an objective function.
+  type: paragraph
+- text: WorldModel = Optimize(KnowledgeModel(ObservedReality), ObjectiveFunction)
+  type: formula
+- text: The phrase universal world model is therefore misleading when applied to a finite system. A model can be broad and transferable, but it remains an optimization for a class of objectives and resource constraints.
+  type: paragraph
+section_id: S_03_01

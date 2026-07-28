@@ -1,0 +1,5 @@
+kind: T_Collection
+hypotheses:
+  - id: H_001
+    confidence: 0.75
+    statement: Memory organization dominates long-term capability.

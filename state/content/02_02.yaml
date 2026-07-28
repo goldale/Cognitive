@@ -1,0 +1,14 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- title: T_Deserialization
+  text: Transformation of a received communication sequence into a structured temporary representation that can participate in cognitive processing.
+  type: definition
+- text: Deserialization is not understanding. It may recover lexical, syntactic, spatial, graphical, prosodic, or symbolic structure while leaving the resulting structure incompatible with the receiver's current knowledge.
+  type: paragraph
+- text: Written text and speech differ as channels. Speech carries timing, prosody, and emotional coloration. Text permits the receiver to control processing speed, revisit earlier material, and perform repeated deserialization. Both channels feed the same later integration process.
+  type: paragraph
+- title: Correct parsing without integration
+  text: A listener may recognize every word and grammatical relation in a sentence while remaining unable to connect the sentence to any coherent interpretation. Deserialization succeeded; model integration did not.
+  type: example
+section_id: S_02_02

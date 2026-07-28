@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: People often describe the scientific worldview as a universal model of reality. Within this architecture, it is a highly successful objective-driven model optimized for explanation, prediction, consistency, reproducibility, and compression through general law.
+  type: paragraph
+- text: Its success does not make it the optimal architecture for every task. A scientific model may deliberately discard artistic significance, social context, immediate survival relevance, or embodied skill that other systems preserve.
+  type: paragraph
+- text: The observation that scientists and artists appear to speak different languages is therefore not merely metaphorical. Their languages serialize different category structures produced by different long-term objective functions.
+  type: paragraph
+- text: Scientific cognition remains indispensable. The correction is only that its universality is methodological and aspirational, not evidence that one finite representation is optimal for all cognition.
+  type: paragraph
+section_id: S_03_04

@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Communication does not transfer a cognitive model. A sender selects a limited fragment of its internal state and transforms that fragment into a sequence suitable for an external channel. This operation is T_PartialSerialization.
+  type: paragraph
+- text: The receiver does not reconstruct the sender's model. It uses the received sequence to extend or reorganize its own model until the message appears interpretable within the receiver's current world model.
+  type: paragraph
+- text: "Sender Model\n      ↓\nT_PartialSerialization\n      ↓\nCommunication Channel\n      ↓\nT_Deserialization\n      ↓\nT_ModelIntegration\n      ↓\nModified Receiver Model"
+  type: formula
+- text: The adjective partial is essential. A mature cognitive state is too integrated and too large to serialize completely through ordinary communication. The message is meaningful only against a background already present in the receiver.
+  type: paragraph
+section_id: S_02_01

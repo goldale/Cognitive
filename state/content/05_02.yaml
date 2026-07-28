@@ -1,0 +1,17 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Consolidation is continuous at the level of local reweighting and episodic at the level of architecture. Expensive search should begin only when measurable symptoms justify it.
+  type: paragraph
+- items:
+  - Persistent integration conflicts
+  - Large objective drift
+  - Retrieval cost growth
+  - High interference among related memories
+  - Repeated failure of current categories
+  - Accumulation of local exceptions and compensating patches
+  ordered: false
+  type: list
+- text: These symptoms resemble technical debt in software. The point of no return is reached earlier than the point at which failure becomes visible because repair has a braking distance.
+  type: paragraph
+section_id: S_05_02

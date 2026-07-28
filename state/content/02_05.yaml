@@ -1,0 +1,17 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: 'Every communication contains two informational components: the shared cultural and informational background, and the new serialization transmitted against that background.'
+  type: paragraph
+- text: The shared background contains the larger information volume by definition. A short message can activate a large internal structure only because most of that structure already exists in the receiver.
+  type: paragraph
+- title: Background compression hypothesis
+  confidence: 0.9
+  text: Communication efficiency is determined primarily by similarity between the participating cognitive models rather than by raw channel bandwidth.
+  type: hypothesis
+- title: Recently cloned systems
+  text: Two recently cloned cognitive systems may exchange highly context-dependent symbols that are opaque to outsiders but trigger large, precise updates in each other because their background states are nearly identical.
+  type: example
+- text: As independently evolving systems diverge, the same compact language becomes less effective. More explicit serialization, definitions, examples, and clarification cycles are required.
+  type: paragraph
+section_id: S_02_05

@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore also an interpretation event.
+  type: paragraph
+- text: 'After recall, the reconstructed state may be stored again under current weights. This creates reconsolidation: the act of using memory can alter future memory.'
+  type: paragraph
+- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate internal functional memory from immutable external evidence when exact provenance matters.
+  type: paragraph
+- text: "Distributed Traces + Current World Model\n                    ↓\n               Reconstruction\n                    ↓\n             Use and Evaluation\n                    ↓\n              Reconsolidation"
+  type: diagram
+section_id: S_04_05

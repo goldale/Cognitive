@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The term holographic is used by analogy with holographic transformations in theoretical physics, particularly the idea that a system can admit a radically different representation in which an apparently fundamental interaction is replaced by properties of the representation.
+  type: paragraph
+- text: The project does not claim that cognitive systems obey the AdS/CFT correspondence or require quantum gravity. The analogy concerns a change of representation that preserves functional information while eliminating the need for some explicit mechanisms.
+  type: paragraph
+- title: Representation-transform hypothesis
+  confidence: 0.55
+  text: A sufficiently strong internal representation may make memory, model, evaluation, and some higher-level forces different projections of one state rather than separately engineered subsystems.
+  type: hypothesis
+section_id: S_06_01

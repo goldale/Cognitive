@@ -1,0 +1,12 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The highest-priority experiment is a persistent agent operating for months with exact external logs and lossy internal memory. The experiment should measure retention, adaptation, interference, objective drift, and recovery from false consolidation.
+  type: paragraph
+- text: A second experiment trains the meta-architect on multiple task families and compares learned decomposition with fixed all-neural, all-algorithmic, and human-designed hybrid baselines.
+  type: paragraph
+- text: A third experiment measures cognitive transformation from books and dialogue using future task behavior and question generation rather than recall alone.
+  type: paragraph
+- text: A fourth experiment maintains several lineages under simulated environmental regime changes and compares global champion cloning with lineage-preserving deployment.
+  type: paragraph
+section_id: S_12_03

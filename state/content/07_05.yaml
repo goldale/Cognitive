@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A language model output is not passive observation. It changes the recipient's internal model, future decisions, and eventually the external environment. The causal path is indirect but real.
+  type: paragraph
+- text: A long-lived cognitive system must therefore model the effects of its own communications. It should be able to update the evaluation of a prior recommendation when later outcomes become available.
+  type: paragraph
+- text: This requirement strengthens the need for continuity. Without a self-model, the system cannot distinguish its own causal contribution from unrelated environmental change.
+  type: paragraph
+- title: Current limitation
+  text: Stateless sessions can produce useful outputs but cannot reliably learn from the long-horizon consequences of their own advice.
+  type: observation
+section_id: S_07_05

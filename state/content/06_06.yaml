@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A near-term experiment can train an autoencoder whose latent state is optimized jointly for reconstruction, downstream prediction, objective-conditioned retrieval, and resistance to catastrophic interference.
+  type: paragraph
+- text: A stronger experiment compares modular memory plus model against an integrated latent state under objective drift, repeated rereading, conflicting evidence, and long-horizon transfer.
+  type: paragraph
+- text: Success requires more than compression. The integrated representation must support controlled forgetting, provenance recovery where required, correction of false beliefs, and stable identity across updates.
+  type: paragraph
+- title: Stage the experiment
+  text: Begin with an explicit modular system, collect operational data, then use that data to train and evaluate more integrated representations.
+  type: principle
+section_id: S_06_06

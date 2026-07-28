@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: 'Current systems commonly separate model weights, context, external memory, and training. Biological cognition appears less sharply partitioned: acquiring knowledge changes the mechanism that interprets later knowledge.'
+  type: paragraph
+- text: A holographic-style architecture would integrate stored experience and model structure. New experience would not merely append a record; it would alter a distributed state from which many future reconstructions become possible.
+  type: paragraph
+- text: The price is loss of local editability, simple versioning, direct Merge, and exact experience transfer. These are not implementation accidents but possible consequences of strong integration.
+  type: paragraph
+- title: Do not serialize the final architecture prematurely
+  text: The current Research State is a symbolic external approximation. It should not be mistaken for the internal integrated representation proposed here.
+  type: warning
+section_id: S_06_02

@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A practical meta-architect can be trained today as a contextual bandit or supervised ranker. Each candidate architecture receives measured accuracy, latency, energy, maintenance cost, interpretability, and failure severity.
+  type: paragraph
+- text: The repository implements a lightweight online learner with engineering priors for algorithmic, neural, and hybrid modes. The priors are replaced gradually by outcome data.
+  type: paragraph
+- text: The learner should record failures of decomposition separately from failures of the selected executor. Otherwise it cannot distinguish a poor cut from a poor component.
+  type: paragraph
+- title: Architecture is itself an optimization target
+  text: Do not optimize only the answer. Optimize the computational organization that repeatedly produces answers.
+  type: principle
+section_id: S_09_05
