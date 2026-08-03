@@ -1,6 +1,6 @@
 {
   "project": "Cognitive Architecture Specification",
-  "release": "0.3.13",
+  "release": "0.3.14",
   "release_date": "2026-08-03",
   "canonical_language": "English",
   "source_of_truth": "YAML in state/",
@@ -10,22 +10,23 @@
     "main_table_of_contents_chapters": 19,
     "alphabetical_index": "docs/chapter19/index.html",
     "compatibility_index": "docs/alphabetical-index.html",
-    "architecture_diagrams": 27
+    "architecture_diagrams": 22
   },
   "validation": {
     "canonical_state": "passed",
-    "automated_tests": "21 passed",
+    "automated_tests": "32 passed",
     "html_internal_links": "passed (0 broken)",
     "python_syntax": "passed",
     "unified_index_navigation": "passed on every HTML page"
   },
   "changes": [
-    "Added Associative Memory implementation candidates and implementation gap analysis",
-    "Documented Hopfield/Dense AM, Sparse Distributed Memory, vector search, graph storage, and key-value storage roles",
-    "Specified the recommended hybrid implementation and remaining required mechanisms",
-    "Added Alphabetical Index to the unified top and bottom navigation bar on every HTML page",
-    "Regenerated the complete visual-first HTML specification and index"
+    "Restored communication examples for repeated reading, shared-context compression, and emergent group emotion-like dynamics",
+    "Added survival-critical planning and chess planning examples",
+    "Corrected the Chapter 9 memory architecture feedback path: Transformer output changes Memory State without generating a Memory Vector",
+    "Removed exact duplicate explanatory blocks and replaced them with concise cross-chapter references",
+    "Regenerated the complete YAML-derived visual-first HTML specification",
+    "Added regression coverage for restored content, READ-only Memory Vector feedback, and exact-duplicate prevention"
   ],
-  "version": "0.3.13",
-  "release_notes": "RELEASE_NOTES_0.3.13.md"
+  "version": "0.3.14",
+  "release_notes": "RELEASE_NOTES_0.3.14.md"
 }

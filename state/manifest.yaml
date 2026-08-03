@@ -1,6 +1,6 @@
 kind: T_ResearchState
-schema_version: 0.3.13
-version: 0.3.13
+schema_version: 0.3.14
+version: 0.3.14
 title: Cognitive Architecture Research State
 files:
   chapters: chapters.yaml

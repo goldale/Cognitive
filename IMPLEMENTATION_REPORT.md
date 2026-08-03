@@ -22,3 +22,7 @@ The Canonical Memory Interface diagram was changed from a narrow top-to-bottom c
 ## 0.3.13 Balanced diagram layouts
 
 Sections 7.3, 11.4, and 11.6 now use explicit two-row rank groups in the canonical Diagram DSL. This prevents both over-wide, shallow SVGs and narrow, excessively tall SVGs while preserving the Section 10.1 reference scale. The documentation generator now supports `rank_groups`, and regression tests protect the three layouts.
+
+## 0.3.14 Restored examples, feedback correction, and deduplication
+
+Restored six previously discussed architectural examples, corrected the Section 9.1 feedback path, added release-specific regression tests, and removed all exact duplicate long-form content blocks from canonical section YAML.

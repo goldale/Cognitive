@@ -189,6 +189,7 @@ add_chapter(
             [
                 definition("T_ModelIntegration", "An iterative modification of the receiver's existing cognitive model using deserialized information and the receiver's current objectives, knowledge, and experience."),
                 p("Integration is objective-dependent and path-dependent. Identical serialized information can produce different changes in systems with different experience, objective functions, confidence distributions, or category structures."),
+                example("Repeated reading changes the integration path", "Reading the same book several times does not repeat one identical cognitive operation. Each reading starts from a model already changed by the previous reading, so different relations, implications, and details can become salient. Reading the same book again many years later can produce an even more different integration because objectives, experience, categories, and emotional significance have changed."),
                 p("Most integrations should begin with inexpensive local changes: altered importance, utility, confidence, or activation; new relations; removed relations; or reclassification. Structural architectural changes are not a deterministic consequence of a single important message."),
                 formula("Current Model + Deserialized Structure\n                 ↓\n          T_ModelIntegration\n                 ↓\nWeights, Relations, Categories, or Architecture"),
                 p("Integration is complete only when the receiver has a usable interpretation. Reading or hearing the message is not sufficient."),
@@ -202,6 +203,7 @@ add_chapter(
                 definition("T_Conflict", "A computational state in which received information cannot be integrated under the receiver's current model and constraints without unresolved inconsistency."),
                 p("T_Conflict is distinct from the social dynamics of argument. The project intentionally excludes dominance, persuasion, status, anger, and coalition behavior from this definition."),
                 p("T_ModelConflictResolution is an iterative search over additional evidence, revised definitions, confidence changes, local reorganization, or explicit retention of incompatible alternatives."),
+                hypothesis("Emergent emotional dynamics", "The current architecture does not require emotions to be designed as an isolated module. A working hypothesis is that emotion-like states may emerge from persistent agents interacting in groups, evaluating one another, competing or cooperating, remembering consequences, and adapting their behavior over time.", 0.62),
             ],
         ),
         section(
@@ -211,6 +213,7 @@ add_chapter(
                 p("The shared background contains the larger information volume by definition. A short message can activate a large internal structure only because most of that structure already exists in the receiver."),
                 hypothesis("Background compression hypothesis", "Communication efficiency is determined primarily by similarity between the participating cognitive models rather than by raw channel bandwidth.", 0.90),
                 example("Recently cloned systems", "Two recently cloned cognitive systems may exchange highly context-dependent symbols that are opaque to outsiders but trigger large, precise updates in each other because their background states are nearly identical."),
+                example("We will meet as usual", "The phrase 'We will meet as usual' contains little explicit data, yet it can identify a precise time, place, participants, and expected procedure when the participants share the relevant history. To an outsider, the same phrase is almost unusable. The example shows that most of the operational meaning is supplied by shared background rather than by the serialized message itself."),
                 p("As independently evolving systems diverge, the same compact language becomes less effective. More explicit serialization, definitions, examples, and clarification cycles are required."),
             ],
         ),

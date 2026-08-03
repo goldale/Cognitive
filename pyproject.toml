@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cognitive-systems-lab"
-version = "0.3.13"
+version = "0.3.14"
 description = "Research State tooling and executable prototypes for a human-readable cognitive architecture specification"
 readme = "README.md"
 requires-python = ">=3.11"

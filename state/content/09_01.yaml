@@ -8,8 +8,9 @@ blocks:
   type: paragraph
 - type: diagram
   title: Memory Architecture
-  description: Memory State combines persistent associative structure with dynamic short-term activation and exposes
-    knowledge through a stable vector interface.
+  description: Memory State combines persistent associative structure with dynamic short-term activation. An explicit
+    READ produces the canonical Memory Vector for the Transformer; Transformer output returns to Memory State as
+    feedback without generating another Memory Vector.
   direction: TB
   nodes:
   - id: long
@@ -36,6 +37,10 @@ blocks:
     label: Transformer
     kind: subsystem
     status: current
+  - id: answer
+    label: Transformer Output / Internal Observation
+    kind: data
+    status: current
   edges:
   - from: long
     to: state
@@ -53,9 +58,30 @@ blocks:
     to: transformer
     flow: interface
     label: stable public interface
+  - from: transformer
+    to: answer
+    flow: feedback
+    label: output
+  - from: answer
+    to: state
+    flow: feedback
+    label: changes memory state only; no Memory Vector
   size: standard
   readability_priority: true
   proportionality_priority: true
+  rank_groups:
+  - - long
+    - short
+  - - state
+  - - projection
+    - vector
+    - transformer
+  - - answer
+- title: Feedback invariant
+  text: Transformer output returns to Memory State as an internal observation. This feedback may change short-term
+    activation or other internal memory state, but it does not invoke Projection and does not generate a new Memory
+    Vector. A Memory Vector is produced only by a later explicit READ operation.
+  type: principle
 - title: Functional lossiness
   confidence: 0.78
   text: Memory loss and reconstruction are partly selected because they improve integration and future action, not

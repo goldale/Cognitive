@@ -1,12 +1,9 @@
 kind: T_ContentBlock
 schema_version: 0.2.0
 blocks:
-- text: Sleep-like structural reorganization and the final global evaluation mechanism are intentionally
-    deferred from the first implementation of the Transformer-memory interface.
-  type: paragraph
-- text: Deferral is an architectural boundary, not rejection. Initial versions should establish a working
-    memory contract before adding offline topology optimization, forgetting, global reweighting, and more
-    general evaluation.
+- text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update contract.
+    Offline topology optimization, controlled forgetting, and broader global evaluation are deferred to the learning
+    and Sleep architecture described in Chapter 13.
   type: paragraph
 section_id: S_16_05
 id: S_10_05
