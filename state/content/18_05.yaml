@@ -1,0 +1,16 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: The project does not have a fixed final architecture. A release is successful when it improves
+    the current working system, preserves state recovery, documents semantic change, and makes the next
+    experiment easier to perform.
+  type: paragraph
+- text: A mature long-lived cognitive system would preserve continuity while changing almost every internal
+    component over time. The research program should exhibit the same property.
+  type: paragraph
+- title: Evolutionary completion
+  text: Do not optimize for a final immutable design. Optimize for an architecture that can keep improving
+    without losing accumulated knowledge or the ability to explain its own development.
+  type: principle
+section_id: S_12_06
+id: S_18_05

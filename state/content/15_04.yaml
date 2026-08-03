@@ -1,0 +1,19 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A mature distributed cognitive state cannot generally be copied into another independently evolved
+    state. The same experience derives meaning from system-wide relations absent in the receiver.
+  type: paragraph
+- text: Dialogue is therefore not an inferior substitute for Merge. It may be the maximum viable transfer
+    operation for integrated cognitive systems.
+  type: paragraph
+- text: The sender serializes selected structures; the receiver integrates them; clarification reveals
+    missing background; conflict reveals incompatible organization; both systems update through the process.
+  type: paragraph
+- title: Dialogue maximum
+  confidence: 0.86
+  text: For mature non-identical integrated models, no general operation transfers experience more completely
+    than iterative dialogue without replacing the recipient's identity.
+  type: hypothesis
+section_id: S_08_04
+id: S_15_04

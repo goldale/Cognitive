@@ -1,0 +1,69 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization
+    changes cross-domain evaluation, fundamental categories, objective priorities, or the relationship between memory
+    and model.
+  type: paragraph
+- type: diagram
+  title: Offline Sleep and Structural Optimization
+  description: A future sleep process replays experience, estimates importance, and proposes safe structural changes
+    to memory.
+  direction: TB
+  nodes:
+  - id: state
+    label: Memory State
+    kind: state
+    status: current
+  - id: replay
+    label: Replay and Consolidation
+    kind: future
+    status: future
+  - id: importance
+    label: Importance and Usage Analysis
+    kind: future
+    status: future
+  - id: proposal
+    label: Topology Change Proposals
+    kind: future
+    status: future
+  - id: validate
+    label: Evaluation and Validation
+    kind: future
+    status: future
+  - id: updated
+    label: Optimized Memory State
+    kind: state
+    status: future
+  edges:
+  - from: state
+    to: replay
+    flow: information
+  - from: replay
+    to: importance
+    flow: information
+  - from: importance
+    to: proposal
+    flow: information
+  - from: proposal
+    to: validate
+    flow: information
+  - from: validate
+    to: updated
+    flow: optimization
+    label: accepted changes
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: Local changes should be common. Global changes should require stronger evidence because their errors propagate
+    widely and can alter identity continuity.
+  type: paragraph
+- text: Only one major model should normally undergo cardinal restructuring at a time. Rate limits and staged evaluation
+    reduce cascading adaptation to noise. Emergency exceptions remain possible when evidence indicates a global
+    regime change.
+  type: paragraph
+- title: Conservative structural change
+  text: Adapt quickly through weights and slowly through architecture.
+  type: principle
+section_id: S_05_04
+id: S_13_01

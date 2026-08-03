@@ -1,0 +1,73 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- type: diagram
+  title: Implementation Sequence
+  description: The roadmap introduces the smallest useful architecture first and defers topology optimization and
+    global maintenance until evidence justifies them.
+  direction: TB
+  nodes:
+  - id: spec
+    label: Validated Specification
+    kind: data
+    status: current
+  - id: memory
+    label: Associative Memory Prototype
+    kind: subsystem
+    status: current
+  - id: interface
+    label: Canonical Memory Interface
+    kind: subsystem
+    status: current
+  - id: integration
+    label: Transformer Integration
+    kind: subsystem
+    status: current
+  - id: evaluation
+    label: Operational Evaluation
+    kind: subsystem
+    status: current
+  - id: later
+    label: Sleep and Structural Optimization
+    kind: future
+    status: future
+  edges:
+  - from: spec
+    to: memory
+    flow: information
+  - from: memory
+    to: interface
+    flow: information
+  - from: interface
+    to: integration
+    flow: information
+  - from: integration
+    to: evaluation
+    flow: information
+  - from: evaluation
+    to: later
+    flow: control
+    label: only after evidence
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- items:
+  - Restricted YAML Research State
+  - Atomic and derived Token validation
+  - Canonical formatting
+  - Semantic change proposals
+  - Structural three-way merge with conflict report
+  - Generated semantic HTML
+  - Working and long-term memory prototype
+  - Lossy consolidation and architecture selection
+  - Communication and clarification pipeline
+  - Trainable multichannel evaluator
+  - Hybrid meta-architect
+  - Cognitive lineage manager
+  ordered: false
+  type: list
+- text: These components are deliberately modular. Their purpose is to create an operational baseline and instrumentation
+    for later integration.
+  type: paragraph
+section_id: S_12_02
+id: S_18_01

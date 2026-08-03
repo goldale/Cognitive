@@ -1,0 +1,106 @@
+kind: T_ContentBlock
+schema_version: 0.3.8
+blocks:
+- type: paragraph
+  text: Associative Memory should not be considered ready for Transformer integration merely because its training
+    loss is low. Its representation must become stable with respect to meaning rather than surface form.
+- type: diagram
+  title: Semantic Equivalence Maturity Test
+  description: Different formulations and languages expressing the same meaning should converge to nearby canonical
+    Memory Vectors, while different meanings remain separated.
+  direction: TB
+  nodes:
+  - id: equiv
+    label: 'Equivalent Messages
+
+      Paraphrases + Languages'
+    kind: data
+    status: current
+  - id: memory
+    label: Associative Memory
+    kind: subsystem
+    status: current
+  - id: vectors
+    label: Canonical Memory Vectors
+    kind: interface
+    status: current
+  - id: intra
+    label: Small Intra-class Distance
+    kind: state
+    status: current
+  - id: inter
+    label: Large Inter-class Distance
+    kind: state
+    status: current
+  - id: mature
+    label: 'Representation Mature
+
+      for Integration'
+    kind: control
+    status: current
+  edges:
+  - from: equiv
+    to: memory
+    flow: information
+  - from: memory
+    to: vectors
+    flow: interface
+    label: explicit READ
+  - from: vectors
+    to: intra
+    flow: evaluation
+  - from: vectors
+    to: inter
+    flow: evaluation
+  - from: intra
+    to: mature
+    flow: control
+  - from: inter
+    to: mature
+    flow: control
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- type: heading
+  level: 3
+  text: Semantic invariance
+- type: paragraph
+  text: Inputs that are differently worded but equal in meaning should generate nearly identical canonical Memory
+    Vectors. This requirement includes paraphrases, different word order, active and passive forms, short and expanded
+    formulations, and equivalent statements in different languages.
+- type: formula
+  text: "For Q_i, Q_j in the same semantic equivalence class E:\n    d(M(Q_i), M(Q_j)) < epsilon"
+- type: example
+  title: Multilingual equivalence
+  text: “The sky is blue.”, “Blue is the color of the sky.”, “Der Himmel ist blau.”, “Небо синее.”, and “Le ciel
+    est bleu.” should produce nearby canonical Memory Vectors after sufficient training.
+- type: heading
+  level: 3
+  text: Semantic discrimination
+- type: paragraph
+  text: Semantic invariance must be paired with semantic discrimination. Messages with different meanings must remain
+    separated; otherwise the memory could satisfy invariance by collapsing all inputs to the same vector.
+- type: formula
+  text: "For Q_i and Q_k with different meanings:\n    d(M(Q_i), M(Q_k)) > delta"
+- type: heading
+  level: 3
+  text: Operational maturity criterion
+- type: paragraph
+  text: Associative Memory is sufficiently mature for integration when intra-class distances remain below an accepted
+    threshold, inter-class separation remains above an accepted threshold, multilingual consistency is stable across
+    checkpoints, and nearest-neighbour retrieval preserves semantic classes.
+- type: list
+  items:
+  - mean and maximum intra-class distance
+  - mean and minimum inter-class distance
+  - multilingual semantic consistency
+  - nearest-neighbour semantic retrieval accuracy
+  - stability of the metrics across training checkpoints
+  ordered: false
+- type: note
+  title: Not permanent completion
+  text: This criterion marks stabilization of the representation and readiness for Transformer integration. It does
+    not imply that Associative Memory stops learning; Memory State may continue to accumulate knowledge and change
+    over the lifetime of the system.
+section_id: S_12_07
+id: S_12_07

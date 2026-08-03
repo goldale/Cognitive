@@ -1,0 +1,17 @@
+kind: T_ContentBlock
+schema_version: 0.1.0
+blocks:
+- text: A provider can operate several maintained lineage families and deploy many cloned instances of
+    the best current version within each family.
+  type: paragraph
+- text: Customers select a lineage by objective class and risk profile rather than receiving one universal
+    model. Updates can be tested within a lineage before promotion.
+  type: paragraph
+- text: Failure in one lineage does not automatically corrupt all deployed cognition. Diversity becomes
+    an operational resilience mechanism, not an academic luxury.
+  type: paragraph
+- text: The repository includes a lineage manager that clones champions within lineages and measures distance
+    among lineage signatures.
+  type: paragraph
+section_id: S_10_05
+id: S_16_05

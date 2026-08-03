@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 14 · Section 14.5 · Learning the Cut</title>
+<link rel="stylesheet" href="../cognitive.css">
+</head>
+<body>
+<div class="container">
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="14_04.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="14_06.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 14</p><h1>Hybrid Neural and Algorithmic Computation</h1><p class="section-label">Section 14.5</p><h2>Learning the Cut</h2></header>
+<main><p>A practical meta-architect can be trained today as a contextual bandit or supervised ranker. Each candidate architecture receives measured accuracy, latency, energy, maintenance cost, interpretability, and failure severity.</p><p>The repository implements a lightweight online learner with engineering priors for algorithmic, neural, and hybrid modes. The priors are replaced gradually by outcome data.</p><p>The learner should record failures of decomposition separately from failures of the selected executor. Otherwise it cannot distinguish a poor cut from a poor component.</p><aside class="principle"><h4>Architecture is itself an optimization target</h4><p>Do not optimize only the answer. Optimize the computational organization that repeatedly produces answers.</p></aside></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="14_04.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="14_06.html">Next →</a></nav></footer>
+</div>
+</body>
+</html>
