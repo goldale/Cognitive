@@ -1,0 +1,16 @@
+kind: T_Collection
+schema_version: 0.3.15
+ownership:
+- concept: Architecture Overview
+  canonical_location: Chapter 2
+- concept: Transformer roles
+  canonical_location: Transformer chapter
+- concept: Associative Memory operations
+  canonical_location: Associative Memory chapter
+- concept: Memory State
+  canonical_location: Memory State chapter
+- concept: Semantic Feedback Learning
+  canonical_location: Section 10.1
+- concept: Progressive Training
+  canonical_location: Progressive Training chapter
+rule: Non-owning sections must summarize and link rather than repeat canonical definitions.

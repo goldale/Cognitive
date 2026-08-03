@@ -284,6 +284,7 @@ class DocumentationBuilder:
             else:
                 created.extend(self._build_directory_chapter(output, chapter_index, chapter, pages))
         created.extend(self._build_reference_pages(output))
+        created.extend(self._build_canonical_reference(output))
         created.extend(self._build_alphabetical_index(output))
         return created
 
@@ -331,7 +332,7 @@ class DocumentationBuilder:
             "Cognitive Architecture Specification",
             "cognitive.css",
             nav,
-            '<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version 0.3.8</p>',
+            f'<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version {html.escape(str(self.state.manifest.get("schema_version", self.state.manifest.get("version", "unknown"))))}</p>',
             body,
             "Canonical English architecture specification generated from validated YAML.",
         )
@@ -446,6 +447,13 @@ class DocumentationBuilder:
         for token in self.state.token_entries():
             label = _humanize_token_label(token["token"])
             entries.append((label, token.get("index_target", "../tokens.html"), "Canonical term"))
+        canonical_dir = self.state.root / 'canonical'
+        terminology_path = canonical_dir / 'terminology.yaml'
+        if terminology_path.is_file():
+            from . import yaml_profile
+            terminology = yaml_profile.load(terminology_path)
+            for item in terminology.get('terms', []):
+                entries.append((str(item.get('term', '')), '../canonical-model.html#term-' + re.sub(r'[^a-z0-9]+', '-', str(item.get('term', '')).lower()).strip('-'), 'Canonical architecture term'))
         entries.sort(key=lambda item: item[0].casefold())
         groups: dict[str, list[tuple[str, str, str]]] = {}
         for entry in entries:
@@ -488,6 +496,31 @@ class DocumentationBuilder:
         compatibility_path = output / "alphabetical-index.html"
         compatibility_path.write_text(compatibility, encoding="utf-8")
         return [chapter_path, compatibility_path]
+
+
+    def _build_canonical_reference(self, output: Path) -> list[Path]:
+        from . import yaml_profile
+        canonical_dir = self.state.root / "canonical"
+        if not canonical_dir.is_dir():
+            return []
+        nav = _nav("index.html", "Documentation", None, "index.html", None)
+        parts = ["<h2>Canonical Components</h2>"]
+        components = yaml_profile.load(canonical_dir / "components.yaml").get("components", [])
+        rows = "".join(f"<tr><td>{html.escape(str(c.get('name','')))}</td><td>{html.escape(', '.join(c.get('roles', [])))}</td></tr>" for c in components)
+        parts.append("<table><thead><tr><th>Component</th><th>Roles</th></tr></thead><tbody>" + rows + "</tbody></table>")
+        parts.append("<h2>Operation Contracts</h2>")
+        operations = yaml_profile.load(canonical_dir / "contracts.yaml").get("operations", [])
+        rows = "".join(f"<tr><td><strong>{html.escape(str(o.get('name','')))}</strong></td><td>{html.escape(', '.join(o.get('inputs', [])))}</td><td>{html.escape(', '.join(o.get('outputs', [])))}</td></tr>" for o in operations)
+        parts.append("<table><thead><tr><th>Operation</th><th>Inputs</th><th>Outputs</th></tr></thead><tbody>" + rows + "</tbody></table>")
+        parts.append("<h2>Canonical Terminology</h2>")
+        terms = yaml_profile.load(canonical_dir / "terminology.yaml").get("terms", [])
+        for item in terms:
+            anchor = re.sub(r"[^a-z0-9]+", "-", str(item.get("term", "")).lower()).strip("-")
+            parts.append(f'<section id="term-{anchor}"><h3>{html.escape(str(item.get("term", "")))}</h3><p>{html.escape(str(item.get("definition", "")))}</p></section>')
+        page = _page("Canonical Architecture Model", "cognitive.css", nav, "<h1>Canonical Architecture Model</h1>", "".join(parts), "Generated from state/canonical/*.yaml.")
+        path = output / "canonical-model.html"
+        path.write_text(page, encoding="utf-8")
+        return [path]
 
     def _build_reference_pages(self, output: Path) -> list[Path]:
         created: list[Path] = []

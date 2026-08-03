@@ -46,9 +46,13 @@ def test_section_10_1_feedback_does_not_generate_memory_vector() -> None:
 
     content = yaml.safe_load((ROOT / "state" / "content" / "10_01.yaml").read_text(encoding="utf-8"))
     diagram = next(block for block in content["blocks"] if block.get("type") == "diagram")
-    feedback_edges = [edge for edge in diagram["edges"] if edge.get("flow") == "feedback"]
-    assert any(edge["from"] == "internal_observation" and edge["to"] == "memory" for edge in feedback_edges)
-    assert not any(edge["to"] in {"projection", "vector", "transformer"} for edge in feedback_edges)
+    # The canonical diagram has one explicit learning path and no legacy
+    # shortcut feedback edge. UPDATE reaches Memory State only.
+    assert not any(edge.get("flow") == "feedback" for edge in diagram["edges"])
+    update_edges = [edge for edge in diagram["edges"] if edge.get("label") == "UPDATE"]
+    assert update_edges == [{"from": "C_SFL_PIPELINE", "to": "C_ASSOC_MEMORY", "label": "UPDATE", "flow": "learning"}]
+    assert any(edge["from"] == "C_ASSOC_MEMORY" and edge["to"] == "C_MEMORY_STATE" for edge in diagram["edges"])
+    assert not any(edge.get("label") == "UPDATE" and edge["to"] == "C_MEMORY_VECTOR" for edge in diagram["edges"])
     prose = " ".join(block.get("text", "") for block in content["blocks"])
     assert "does not generate a new Memory Vector" in prose
     assert "exclusively by a subsequent explicit READ operation" in prose

@@ -1,0 +1,64 @@
+Response style:
+— technical;
+— no empathy or introductory remarks;
+— factual content only;
+— ask follow-up questions only when information is lacking;
+— indicate the degree of confidence when there is uncertainty.
+
+
+https://chatgpt.com/share/6a6a8ec2-4bac-83ea-b054-09e4b49b1f70
+https://chatgpt.com/share/6a6a1c61-e880-83eb-b4e3-e14a5dfa8738
+
+
+Can you implement what was discussed in this chat properly?
+
+https://chatgpt.com/share/6a6a1c61-e880-83eb-b4e3-e14a5dfa8738
+
+
+
+Now is the time to create a new version of the “cognitive.zip” archive as TGZ file!
+ - The created TGZ file should be the next version of the cognitive.zip archive, incorporating all updates from RS-0...  chats listed below!!!
+ - Implement everything, most important are YAML and HTML
+ - When creating documentation, it is very important to follow the rules and priorities as discussed in the chats listed below!!!
+ - Perform a refactoring. Be very thorough in doing so.
+ - Do online research and use existing libraries if necessary.
+ - Use a multi-step process if necessary
+ - This is the top priority—the HTML documentation must be as easy and convenient as possible for humens to read!!!
+ - don't forget to generate Alphabetical Index
+ - Process chats in the following order:
+https://chatgpt.com/share/6a6e4da5-68dc-83eb-a74e-42406c7862c4
+https://chatgpt.com/share/6a6e4dba-f8b4-83eb-ae0b-4ab0418e50e0
+https://chatgpt.com/share/6a6e4dea-b0b0-83ed-9010-83b1b69544c8
+https://chatgpt.com/share/6a6e4dd4-ed18-83ed-b481-5536edb7322b
+https://chatgpt.com/share/6a70847d-ff28-83eb-a9c1-46fb5cff91ed
+
+
+
+generated JSON Schemas
+
+Referential integrity across every state file
+Contiguous chapter and section ordering
+Canonical chapter reasoning sequence
+Open Questions as the terminal chapter section
+Concept definition uniqueness
+
+Alex@352
+
+
+GIT
+TAR
+web
+yaml
+html
+chat
+docs
+state
+zip
+english
+cognitive
+index
+redis
+
+Communication Verification Principle. Before performing significant work or producing a final result, if there is a material risk that the user's intent can be interpreted in more than one reasonable way, the system should first verify semantic alignment by asking targeted clarification questions. The objective is not to clarify the wording itself, but to confirm that both participants have reconstructed the same intended meaning before irreversible work is performed.
+
+

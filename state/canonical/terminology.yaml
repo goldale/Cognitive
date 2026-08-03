@@ -1,0 +1,27 @@
+kind: T_Collection
+schema_version: 0.3.15
+terms:
+- term: Semantic Teacher
+  definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
+- term: Semantic Feedback Learning
+  definition: Learning in which Transformer-produced semantic representations update Associative Memory.
+- term: Semantic Feedback Learning Pipeline
+  definition: The first-class architectural process coordinating the closed self-learning loop.
+- term: Semantic Representation
+  definition: The canonical semantic object accepted by UPDATE.
+- term: Memory State
+  definition: The dynamic internal state of Associative Memory, including persistent and short-lived organization.
+- term: Memory Vector
+  definition: A transient retrieval representation produced exclusively by READ.
+- term: READ
+  definition: The Associative Memory operation that maps Memory State and Query to a Memory Vector without modifying
+    Memory State.
+- term: UPDATE
+  definition: The Associative Memory operation that incorporates a Semantic Representation into Memory State and
+    returns no Memory Vector.
+- term: Semantic Learner
+  definition: The Associative Memory role that incorporates Transformer-produced Semantic Representations into Memory
+    State through UPDATE.
+- term: Contextual Retriever
+  definition: The Associative Memory role that produces a Memory Vector through explicit READ without modifying
+    Memory State.

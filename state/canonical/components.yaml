@@ -1,0 +1,42 @@
+kind: T_Collection
+schema_version: 0.3.15
+components:
+- id: C_EXT_INPUT
+  name: External Input
+  kind: external
+  roles:
+  - observation_source
+- id: C_TRANSFORMER
+  name: Transformer
+  kind: subsystem
+  roles:
+  - semantic_reasoning_engine
+  - semantic_teacher
+- id: C_ASSOC_MEMORY
+  name: Associative Memory
+  kind: subsystem
+  roles:
+  - contextual_retriever
+  - semantic_learner
+- id: C_MEMORY_STATE
+  name: Memory State
+  kind: state
+  roles:
+  - persistent_and_dynamic_memory_state
+- id: C_MEMORY_VECTOR
+  name: Memory Vector
+  kind: interface
+  roles:
+  - read_result
+  - transformer_conditioning
+- id: C_SEM_REP
+  name: Semantic Representation
+  kind: data
+  roles:
+  - canonical_update_input
+- id: C_SFL_PIPELINE
+  name: Semantic Feedback Learning Pipeline
+  kind: process
+  roles:
+  - self_learning
+  - learning_coordination

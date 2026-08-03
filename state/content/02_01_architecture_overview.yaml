@@ -1,0 +1,83 @@
+kind: T_Content
+section: S_02_01_ARCH
+blocks:
+- type: paragraph
+  text: Cognitive separates semantic reasoning, associative retrieval, persistent memory state, and self-learning
+    while connecting them through explicit typed interfaces.
+- type: principle
+  title: Primary architectural principle
+  text: The Transformer is both the Semantic Reasoning Engine and the Semantic Teacher of Associative Memory. Associative
+    Memory learns from Transformer-produced Semantic Representations rather than raw external observations.
+- type: diagram
+  title: Cognitive Architecture — Functional Overview
+  description: A compact system-level view. The detailed closed learning lifecycle and operation contracts are defined
+    canonically in Section 10.1.
+  direction: LR
+  size: standard
+  nodes:
+  - id: overview_external
+    label: External Input
+    kind: external
+  - id: overview_memory
+    label: Associative Memory
+    kind: subsystem
+  - id: overview_transformer
+    label: Transformer
+    kind: subsystem
+  - id: overview_learning
+    label: Semantic Feedback Learning Pipeline
+    kind: control
+  - id: overview_state
+    label: Memory State
+    kind: state
+  edges:
+  - from: overview_external
+    to: overview_memory
+    label: query
+    flow: information
+  - from: overview_memory
+    to: overview_transformer
+    label: retrieved context
+    flow: information
+  - from: overview_transformer
+    to: overview_learning
+    label: semantic teaching
+    flow: learning
+  - from: overview_learning
+    to: overview_state
+    label: controlled update
+    flow: learning
+  - from: overview_state
+    to: overview_memory
+    label: retrieval state
+    flow: context
+  readability_priority: true
+  proportionality_priority: true
+- type: note
+  title: Canonical detailed specification
+  text: Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and
+    the rule that UPDATE never produces a Memory Vector. This overview intentionally does not repeat that complete
+    definition.
+- type: heading
+  level: 3
+  text: Operation asymmetry
+- type: table
+  headers:
+  - Operation
+  - Architectural purpose
+  - Canonical owner
+  rows:
+  - - READ
+    - Retrieve context without changing memory
+    - Section 10.1
+  - - UPDATE
+    - Incorporate semantic learning into Memory State
+    - Section 10.1
+- type: paragraph
+  text: The release-blocking READ/UPDATE invariants are defined canonically in Section 10.1 and in state/canonical/invariants.yaml.
+- type: heading
+  level: 3
+  text: First-class self-learning process
+- type: paragraph
+  text: The Semantic Feedback Learning Pipeline is an independent architectural object with explicit stages, contracts,
+    invariants, and future extension points for consolidation, replay, forgetting, structural plasticity, and evaluation.

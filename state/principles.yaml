@@ -4,120 +4,140 @@ principles:
 - kind: T_Principle
   id: P_001
   title: Architecture over component complexity
-  statement: Prefer improved organization of existing components over increasing the
-    complexity of individual components.
+  statement: Prefer improved organization of existing components over increasing the complexity of individual components.
   status: T_Accepted
 - kind: T_Principle
   id: P_002
   title: Evolution over replacement
-  statement: Construct independently useful stages that create evidence and infrastructure
-    for deeper integration.
+  statement: Construct independently useful stages that create evidence and infrastructure for deeper integration.
   status: T_Accepted
 - kind: T_Principle
   id: P_003
   title: Best next step
-  statement: Choose the next architectural change by practical utility, engineering
-    cost, risk, and the number of future options it opens.
+  statement: Choose the next architectural change by practical utility, engineering cost, risk, and the number of
+    future options it opens.
   status: T_Accepted
 - kind: T_Principle
   id: P_004
   title: Biological evidence
-  statement: Treat durable biological solutions as strong architectural candidates,
-    not as proof of engineering optimality.
+  statement: Treat durable biological solutions as strong architectural candidates, not as proof of engineering
+    optimality.
   status: T_Accepted
 - kind: T_Principle
   id: P_005
   title: State and computation separation
-  statement: Keep persistent user or research state independent from replaceable computational
-    models.
+  statement: Keep persistent user or research state independent from replaceable computational models.
   status: T_Accepted
 - kind: T_Principle
   id: P_006
   title: Token semantic stability
-  statement: Never redefine the semantic identity of a Token; introduce a new Token
-    when the meaning changes.
+  statement: Never redefine the semantic identity of a Token; introduce a new Token when the meaning changes.
   status: T_Accepted
 - kind: T_Principle
   id: P_007
   title: Atomic reduction
-  statement: Judge language maturation partly by reduction of the Atomic Token set
-    without loss of expressive power.
+  statement: Judge language maturation partly by reduction of the Atomic Token set without loss of expressive power.
   status: T_Accepted
 - kind: T_Principle
   id: P_008
   title: Single history mechanism
-  statement: Use Git as the only version-history mechanism; do not reproduce repository
-    history inside Research State.
+  statement: Use Git as the only version-history mechanism; do not reproduce repository history inside Research
+    State.
   status: T_Accepted
 - kind: T_Principle
   id: P_009
   title: Semantic transition record
-  statement: Store only the latest semantic consolidation record in each version of
-    Research State; Git distributes prior records across commits.
+  statement: Store only the latest semantic consolidation record in each version of Research State; Git distributes
+    prior records across commits.
   status: T_Accepted
 - kind: T_Principle
   id: P_010
   title: Canonical project language
-  statement: Write all project artifacts in English while permitting design dialogue
-    in any language.
+  statement: Write all project artifacts in English while permitting design dialogue in any language.
   status: T_Accepted
 - kind: T_Principle
   id: P_011
   title: Architectural primacy
-  statement: Engineer fundamental computational mechanisms before directly engineering
-    higher-level behavior.
+  statement: Engineer fundamental computational mechanisms before directly engineering higher-level behavior.
   status: T_Accepted
 - kind: T_Principle
   id: P_012
   title: Communication decomposition
-  statement: Model communication as partial serialization, deserialization, and integration
-    into the recipient's own model.
+  statement: Model communication as partial serialization, deserialization, and integration into the recipient's
+    own model.
   status: T_Accepted
 - kind: T_Principle
   id: P_013
   title: Generated documentation
-  statement: Treat human-readable documents as partial serializations generated from
-    canonical Research State.
+  statement: Treat human-readable documents as partial serializations generated from canonical Research State.
   status: T_Accepted
 - kind: T_Principle
   id: P_014
   title: Delayed deep integration
-  statement: Use current components in a working system before attempting a tighter
-    integrated representation.
+  statement: Use current components in a working system before attempting a tighter integrated representation.
   status: T_Accepted
 - kind: T_Principle
   id: P_015
   title: State recovery
-  statement: Research State and generated documentation must permit work to resume
-    after context loss with minimal reconstruction.
+  statement: Research State and generated documentation must permit work to resume after context loss with minimal
+    reconstruction.
   status: T_Accepted
 - kind: T_Principle
   id: P_016
   title: Receiver-relative meaning
-  statement: Treat semantic meaning and novelty as products of incoming information
-    interacting with the receiving system state.
+  statement: Treat semantic meaning and novelty as products of incoming information interacting with the receiving
+    system state.
   status: T_Accepted
 - kind: T_Principle
   id: P_017
   title: Valid information is not noise
-  statement: Distinguish incorrect or corrupted input from correct information that
-    is irrelevant to the active task.
+  statement: Distinguish incorrect or corrupted input from correct information that is irrelevant to the active
+    task.
   status: T_Accepted
 - kind: T_Principle
   id: P_018
   title: Bounded planning
-  statement: Generate and evaluate a useful bounded set of scenarios rather than delaying
-    action for exhaustive search.
+  statement: Generate and evaluate a useful bounded set of scenarios rather than delaying action for exhaustive
+    search.
   status: T_Accepted
 - kind: T_Principle
   id: P_019
   title: Stable memory interface
-  statement: Permit Associative Memory and Transformer implementations to evolve independently
-    behind a canonical Memory Vector contract.
+  statement: Permit Associative Memory and Transformer implementations to evolve independently behind a canonical
+    Memory Vector contract.
   status: T_Accepted
 - kind: T_Principle
   id: P_020
   title: Knowledge throughput
-  statement: Optimize preprocessing for useful semantic change per unit of time and
-    computation, not data throughput alone.
+  statement: Optimize preprocessing for useful semantic change per unit of time and computation, not data throughput
+    alone.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_021
+  title: Transformer as Semantic Teacher
+  statement: The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative Memory.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_022
+  title: Semantic feedback learning
+  statement: Associative Memory learns from Semantic Representations produced by the Transformer rather than from
+    raw external observations.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_023
+  title: Self-learning as an architectural object
+  statement: The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit stages,
+    contracts, invariants, and extension points.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_024
+  title: READ and UPDATE asymmetry
+  statement: READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but
+    never produces a Memory Vector.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_025
+  title: Explicit retrieval after learning
+  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an
+    implicit READ.
   status: T_Accepted

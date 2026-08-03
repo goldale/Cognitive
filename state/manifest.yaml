@@ -1,6 +1,6 @@
 kind: T_ResearchState
-schema_version: 0.3.14
-version: 0.3.14
+schema_version: 0.3.15
+version: 0.3.15-stage2
 title: Cognitive Architecture Research State
 files:
   chapters: chapters.yaml
@@ -14,3 +14,4 @@ files:
   roadmap: roadmap.yaml
   tokens: tokens.yaml
 canonical_language: en
+architecture_freeze: state/canonical

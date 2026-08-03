@@ -5,8 +5,7 @@ chapters:
   id: C_01
   title: Purpose, Scope, and Architectural Method
   order: 1
-  summary: Defines the purpose, boundaries, principles, and epistemic status of the
-    specification.
+  summary: Defines the purpose, boundaries, principles, and epistemic status of the specification.
   sections:
   - kind: T_Section
     id: S_01_01
@@ -31,43 +30,48 @@ chapters:
   layout: single
 - kind: T_Chapter
   id: C_02
-  title: Design Principles
+  title: Architecture Overview and Design Principles
   order: 2
-  summary: Establishes objective-driven modelling, modular boundaries, bounded computation,
-    and human-readable specification as governing principles.
+  summary: Presents the canonical Cognitive architecture, its semantic self-learning loop, and the design principles
+    governing model evolution.
   sections:
+  - kind: T_Section
+    id: S_02_01_ARCH
+    title: Canonical Architecture Overview
+    order: 1
+    content_file: content/02_01_architecture_overview.yaml
   - kind: T_Section
     id: S_02_01
     title: The Impossibility of a Universal World Model
-    order: 1
+    order: 6
     content_file: content/02_01.yaml
   - kind: T_Section
     id: S_02_02
     title: Objective Functions
-    order: 2
+    order: 7
     content_file: content/02_02.yaml
   - kind: T_Section
     id: S_02_03
     title: Model Classes Rather Than One Model
-    order: 3
+    order: 8
     content_file: content/02_03.yaml
   - kind: T_Section
     id: S_02_04
     title: Objective Drift and Model Evolution
-    order: 4
+    order: 9
     content_file: content/02_04.yaml
   - kind: T_Section
     id: S_02_05
     title: Engineering Consequences
-    order: 5
+    order: 10
     content_file: content/02_05.yaml
   layout: directory
 - kind: T_Chapter
   id: C_03
   title: Information and Communication
   order: 3
-  summary: Defines communication as partial serialization, reconstruction, integration,
-    clarification, and conflict resolution.
+  summary: Defines communication as partial serialization, reconstruction, integration, clarification, and conflict
+    resolution.
   sections:
   - kind: T_Section
     id: S_03_01
@@ -104,8 +108,8 @@ chapters:
   id: C_04
   title: Semantic Representation
   order: 4
-  summary: Describes how decoded signals become context-dependent semantic representations
-    without claiming that serialization alone contains meaning.
+  summary: Describes how decoded signals become context-dependent semantic representations without claiming that
+    serialization alone contains meaning.
   sections:
   - kind: T_Section
     id: S_04_01
@@ -137,8 +141,7 @@ chapters:
   id: C_05
   title: Cognitive Stream Processing
   order: 5
-  summary: Classifies streams by data rate, task relevance, and semantic novelty and
-    selects preprocessing accordingly.
+  summary: Classifies streams by data rate, task relevance, and semantic novelty and selects preprocessing accordingly.
   sections:
   - kind: T_Section
     id: S_05_01
@@ -170,8 +173,7 @@ chapters:
   id: C_06
   title: Temporal Organization
   order: 6
-  summary: Defines temporal attributes, episodes, ordering, causal hypotheses, and
-    action under time pressure.
+  summary: Defines temporal attributes, episodes, ordering, causal hypotheses, and action under time pressure.
   sections:
   - kind: T_Section
     id: S_06_01
@@ -203,8 +205,8 @@ chapters:
   id: C_07
   title: Integrated Evaluation
   order: 7
-  summary: Defines the conservative learned function that compares heterogeneous representations
-    relative to goals, memory, and context.
+  summary: Defines the conservative learned function that compares heterogeneous representations relative to goals,
+    memory, and context.
   sections:
   - kind: T_Section
     id: S_07_01
@@ -236,8 +238,8 @@ chapters:
   id: C_08
   title: Planning and Action Selection
   order: 8
-  summary: Defines planning as bounded generation of temporally attributed alternatives
-    whose final selection is made by Integrated Evaluation.
+  summary: Defines planning as bounded generation of temporally attributed alternatives whose final selection is
+    made by Integrated Evaluation.
   sections:
   - kind: T_Section
     id: S_08_01
@@ -269,8 +271,8 @@ chapters:
   id: C_09
   title: Memory Architecture
   order: 9
-  summary: Introduces working memory, long-term memory, reconstructive storage, functional
-    lossiness, and evidence boundaries.
+  summary: Introduces working memory, long-term memory, reconstructive storage, functional lossiness, and evidence
+    boundaries.
   sections:
   - kind: T_Section
     id: S_09_01
@@ -307,12 +309,12 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Separates reasoning from long-term storage and defines read, update, hybrid-storage,
-    and deferred-maintenance interfaces.
+  summary: Separates reasoning from long-term storage and defines read, update, hybrid-storage, and deferred-maintenance
+    interfaces.
   sections:
   - kind: T_Section
     id: S_10_01
-    title: Subsystem Separation
+    title: Semantic Feedback Learning and Subsystem Separation
     order: 1
     content_file: content/10_01.yaml
   - kind: T_Section
@@ -345,8 +347,8 @@ chapters:
   id: C_11
   title: Canonical Memory Representation
   order: 11
-  summary: Defines the Memory Vector contract, sequential normalization, semantic
-    stability, covariance analysis, and sparse representation optimization.
+  summary: Defines the Memory Vector contract, sequential normalization, semantic stability, covariance analysis,
+    and sparse representation optimization.
   sections:
   - kind: T_Section
     id: S_11_01
@@ -383,9 +385,8 @@ chapters:
   id: C_12
   title: Learning and Memory Update
   order: 12
-  summary: Defines online learning, controlled memory updates, staged integration
-    of the Transformer and Associative Memory, maturity criteria, persistence, rollback,
-    and consolidation triggers.
+  summary: Defines online learning, controlled memory updates, staged integration of the Transformer and Associative
+    Memory, maturity criteria, persistence, rollback, and consolidation triggers.
   sections:
   - kind: T_Section
     id: S_12_01
@@ -427,8 +428,8 @@ chapters:
   id: C_13
   title: Sleep and Structural Learning
   order: 13
-  summary: Defines future offline structural optimization, topology adaptation, connection-state
-    evidence, and the boundary between functional and structural learning.
+  summary: Defines future offline structural optimization, topology adaptation, connection-state evidence, and the
+    boundary between functional and structural learning.
   sections:
   - kind: T_Section
     id: S_13_01
@@ -450,8 +451,7 @@ chapters:
   id: C_14
   title: Hybrid Neural and Algorithmic Computation
   order: 14
-  summary: Allocates operations among neural, algorithmic, finite-state, and hybrid
-    mechanisms.
+  summary: Allocates operations among neural, algorithmic, finite-state, and hybrid mechanisms.
   sections:
   - kind: T_Section
     id: S_14_01
@@ -488,8 +488,7 @@ chapters:
   id: C_15
   title: Cognitive Transformation through Language
   order: 15
-  summary: Describes documents, lectures, dialogue, and education as controlled transformations
-    of a cognitive model.
+  summary: Describes documents, lectures, dialogue, and education as controlled transformations of a cognitive model.
   sections:
   - kind: T_Section
     id: S_15_01
@@ -526,8 +525,7 @@ chapters:
   id: C_16
   title: Population, Deployment, and Governance
   order: 16
-  summary: Addresses cognitive lineages, diversity, experience exchange, deployment,
-    risk, and governance.
+  summary: Addresses cognitive lineages, diversity, experience exchange, deployment, risk, and governance.
   sections:
   - kind: T_Section
     id: S_16_01
@@ -564,8 +562,8 @@ chapters:
   id: C_17
   title: Specification Model and Tooling
   order: 17
-  summary: Defines the canonical YAML model, atomic identifiers, validation, generated
-    documentation, Git workflow, and self-hosting boundaries.
+  summary: Defines the canonical YAML model, atomic identifiers, validation, generated documentation, Git workflow,
+    and self-hosting boundaries.
   sections:
   - kind: T_Section
     id: S_17_01
@@ -602,8 +600,8 @@ chapters:
   id: C_18
   title: Implementation Roadmap and Open Questions
   order: 18
-  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms,
-    and unresolved research questions.
+  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms, and unresolved research
+    questions.
   sections:
   - kind: T_Section
     id: S_18_01

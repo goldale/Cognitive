@@ -1,0 +1,24 @@
+kind: T_Collection
+schema_version: 0.3.15
+invariants:
+- id: INV_001
+  statement: READ never modifies Memory State.
+  severity: release_blocking
+- id: INV_002
+  statement: UPDATE modifies only Memory State.
+  severity: release_blocking
+- id: INV_003
+  statement: UPDATE never produces a Memory Vector.
+  severity: release_blocking
+- id: INV_004
+  statement: UPDATE never performs an implicit READ.
+  severity: release_blocking
+- id: INV_005
+  statement: A new Memory Vector is produced only by an explicit READ.
+  severity: release_blocking
+- id: INV_006
+  statement: Raw external observations are not canonical UPDATE inputs.
+  severity: release_blocking
+- id: INV_007
+  statement: The canonical UPDATE input is a Semantic Representation produced by the Transformer.
+  severity: release_blocking
