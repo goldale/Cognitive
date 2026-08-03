@@ -1,24 +1,32 @@
-# CHANGES — cognitive 0.3.15
+# CHANGES — cognitive 0.3.16
 
-This incremental release introduces a complete architectural refactoring around Semantic Feedback Learning.
+This release documents the authoritative future evolution path of the Cognitive architecture while preserving the architectural baseline established in 0.3.15.
 
-## Architectural changes
+## Added: Part V — Architectural Evolution
 
-- **Transformer as Semantic Teacher** — The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative Memory.
-- **Semantic feedback learning** — Associative Memory learns from Semantic Representations produced by the Transformer rather than from raw external observations.
-- **Self-learning as an architectural object** — The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit stages, contracts, invariants, and extension points.
-- **READ and UPDATE asymmetry** — READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but never produces a Memory Vector.
-- **Explicit retrieval after learning** — A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an implicit READ.
+- Chapter 20 — Architectural Evolution Roadmap.
+- Chapter 21 — Research Agenda.
+- Chapter 22 — Long-Term Vision.
+- Chapter 23 — Open Research Questions.
+- The A–Z Index is moved from Chapter 19 to Chapter 24.
 
-## Interface changes
+## Canonical development order
 
-- `READ(Memory State, Query) -> Memory Vector` is explicitly non-mutating.
-- `UPDATE(Memory State, Semantic Representation) -> Updated Memory State` modifies only Memory State.
-- UPDATE no longer has Question, Answer, hidden state, or Memory Vector as canonical outputs.
+1. Importance Estimation.
+2. Offline Consolidation and Sleep.
+3. Replay.
+4. Forgetting and Memory Pruning.
+5. Structural Plasticity.
+6. Global Evaluation.
+7. Multi-Agent Semantic Learning.
 
-## Generated documentation
+## Preserved architectural invariants
 
-- Chapter 2 is regenerated from canonical YAML.
-- Section 10.1 is completely rewritten.
-- HTML navigation and the A–Z Index are regenerated.
-- Component and canonical-model references are regenerated.
+- Associative Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic Feedback Learning Pipeline.
+- READ never modifies Memory State.
+- UPDATE modifies only Memory State, performs no implicit READ, and never produces a Memory Vector.
+- Replay does not bypass the Transformer or the Semantic Feedback Learning Pipeline.
+
+## Documentation model
+
+The roadmap distinguishes architectural direction from implementation status. Future mechanisms are explicitly marked as planned research and are generated from the canonical YAML Research State.

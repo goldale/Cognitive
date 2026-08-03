@@ -160,7 +160,7 @@ for a in ['Chapter 2 rendering','CHANGES.md','A-Z Index','architecture diagrams'
     ck('J','generated artifact '+a,a in G.get('generated_artifacts',[]))
 
 failed=[c for c in checks if c['status']=='FAIL']
-out={'version':'0.3.15-stage5','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
+out={'version':'0.3.16-stage5','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
 (ROOT/'STAGE5_ARCHITECTURAL_RESULTS.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(out['summary']))
 sys.exit(1 if failed else 0)

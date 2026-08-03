@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.1.0
+schema_version: 0.3.16
 roadmap:
 - kind: T_RoadmapItem
   id: R_001
@@ -47,7 +47,37 @@ roadmap:
   status: T_Planned
   order: 9
 - kind: T_RoadmapItem
-  id: R_010
-  title: Self-hosting Research State rules and generator descriptions
+  id: R_011
+  title: Importance Estimation
   status: T_Planned
-  order: 10
+  order: 11
+- kind: T_RoadmapItem
+  id: R_012
+  title: Offline Consolidation and Sleep
+  status: T_Planned
+  order: 12
+- kind: T_RoadmapItem
+  id: R_013
+  title: Replay
+  status: T_Planned
+  order: 13
+- kind: T_RoadmapItem
+  id: R_014
+  title: Forgetting and Memory Pruning
+  status: T_Planned
+  order: 14
+- kind: T_RoadmapItem
+  id: R_015
+  title: Structural Plasticity
+  status: T_Planned
+  order: 15
+- kind: T_RoadmapItem
+  id: R_016
+  title: Global Evaluation subsystem
+  status: T_Planned
+  order: 16
+- kind: T_RoadmapItem
+  id: R_017
+  title: Multi-Agent Semantic Learning
+  status: T_Planned
+  order: 17

@@ -1,0 +1,80 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: paragraph
+  text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation
+    requires a selection signal; replay requires a policy for deciding what should be reactivated and why.
+- type: diagram
+  title: Ordered Evolution Path
+  description: The architectural priority is Importance Estimation, then Offline Consolidation and Sleep, then Replay.
+    Later mechanisms build on these foundations.
+  direction: TB
+  size: standard
+  nodes:
+  - id: current
+    label: 'cognitive-0.3.15
+
+      Semantic Feedback Learning'
+    kind: state
+  - id: importance
+    label: Importance Estimation
+    kind: subsystem
+    status: future
+  - id: sleep
+    label: Offline Consolidation and Sleep
+    kind: subsystem
+    status: future
+  - id: replay
+    label: Replay
+    kind: subsystem
+    status: future
+  - id: pruning
+    label: Forgetting, Pruning, and Structural Plasticity
+    kind: subsystem
+    status: future
+  - id: evaluation
+    label: Global Evaluation
+    kind: subsystem
+    status: future
+  - id: agents
+    label: Multi-Agent Semantic Learning
+    kind: subsystem
+    status: future
+  edges:
+  - from: current
+    to: importance
+    label: first dependency
+    flow: learning
+  - from: importance
+    to: sleep
+    label: selection signal
+    flow: learning
+  - from: sleep
+    to: replay
+    label: consolidated material
+    flow: learning
+  - from: replay
+    to: pruning
+    label: evidence of utility and interference
+    flow: optimization
+  - from: pruning
+    to: evaluation
+    label: managed memory lifecycle
+    flow: optimization
+  - from: evaluation
+    to: agents
+    label: controlled exchange
+    flow: evaluation
+  readability_priority: true
+  proportionality_priority: true
+- type: list
+  items:
+  - 1. Importance Estimation
+  - 2. Offline Consolidation and Sleep
+  - 3. Replay
+  - 4. Forgetting and Memory Pruning
+  - 5. Structural Plasticity
+  - 6. Global Evaluation
+  - 7. Multi-Agent Semantic Learning
+section_id: S_20_02
+id: S_20_02

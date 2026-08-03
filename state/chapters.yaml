@@ -629,3 +629,159 @@ chapters:
     order: 5
     content_file: content/18_05.yaml
   layout: directory
+- kind: T_Chapter
+  id: C_20
+  title: Architectural Evolution Roadmap
+  order: 20
+  summary: Defines the ordered path from the current semantic-learning architecture toward memory lifecycle management,
+    evaluation, and multi-agent learning.
+  sections:
+  - kind: T_Section
+    id: S_20_01
+    title: Evolution Principles
+    order: 1
+    content_file: content/20_01.yaml
+  - kind: T_Section
+    id: S_20_02
+    title: Development Sequence and Dependencies
+    order: 2
+    content_file: content/20_02.yaml
+  - kind: T_Section
+    id: S_20_03
+    title: Importance Estimation
+    order: 3
+    content_file: content/20_03.yaml
+  - kind: T_Section
+    id: S_20_04
+    title: Offline Consolidation and Sleep
+    order: 4
+    content_file: content/20_04.yaml
+  - kind: T_Section
+    id: S_20_05
+    title: Replay
+    order: 5
+    content_file: content/20_05.yaml
+  - kind: T_Section
+    id: S_20_06
+    title: Forgetting, Pruning, and Structural Plasticity
+    order: 6
+    content_file: content/20_06.yaml
+  - kind: T_Section
+    id: S_20_07
+    title: Global Evaluation and Multi-Agent Learning
+    order: 7
+    content_file: content/20_07.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_21
+  title: Research Agenda
+  order: 21
+  summary: Translates future architectural directions into falsifiable research programs, experiments, measurements,
+    and acceptance criteria.
+  sections:
+  - kind: T_Section
+    id: S_21_01
+    title: Purpose and Research Method
+    order: 1
+    content_file: content/21_01.yaml
+  - kind: T_Section
+    id: S_21_02
+    title: Importance Estimation Experiments
+    order: 2
+    content_file: content/21_02.yaml
+  - kind: T_Section
+    id: S_21_03
+    title: Offline Consolidation and Sleep Experiments
+    order: 3
+    content_file: content/21_03.yaml
+  - kind: T_Section
+    id: S_21_04
+    title: Replay Experiments
+    order: 4
+    content_file: content/21_04.yaml
+  - kind: T_Section
+    id: S_21_05
+    title: Memory Lifecycle Experiments
+    order: 5
+    content_file: content/21_05.yaml
+  - kind: T_Section
+    id: S_21_06
+    title: Evaluation and Multi-Agent Experiments
+    order: 6
+    content_file: content/21_06.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_22
+  title: Long-Term Vision
+  order: 22
+  summary: Describes the intended evolution from semantic reasoning with persistent memory toward a continuously
+    improving cognitive platform.
+  sections:
+  - kind: T_Section
+    id: S_22_01
+    title: Target System
+    order: 1
+    content_file: content/22_01.yaml
+  - kind: T_Section
+    id: S_22_02
+    title: Continuously Improving Memory
+    order: 2
+    content_file: content/22_02.yaml
+  - kind: T_Section
+    id: S_22_03
+    title: Explicit Cognitive Subsystems
+    order: 3
+    content_file: content/22_03.yaml
+  - kind: T_Section
+    id: S_22_04
+    title: Distributed Semantic Learning
+    order: 4
+    content_file: content/22_04.yaml
+  - kind: T_Section
+    id: S_22_05
+    title: Human-Readable Evolution
+    order: 5
+    content_file: content/22_05.yaml
+  layout: directory
+- kind: T_Chapter
+  id: C_23
+  title: Open Research Questions
+  order: 23
+  summary: Records unresolved questions that must remain explicit until evidence supports architectural decisions.
+  sections:
+  - kind: T_Section
+    id: S_23_01
+    title: Importance and Value
+    order: 1
+    content_file: content/23_01.yaml
+  - kind: T_Section
+    id: S_23_02
+    title: Consolidation and Sleep
+    order: 2
+    content_file: content/23_02.yaml
+  - kind: T_Section
+    id: S_23_03
+    title: Replay and Interference
+    order: 3
+    content_file: content/23_03.yaml
+  - kind: T_Section
+    id: S_23_04
+    title: Forgetting and Structural Change
+    order: 4
+    content_file: content/23_04.yaml
+  - kind: T_Section
+    id: S_23_05
+    title: Global Evaluation
+    order: 5
+    content_file: content/23_05.yaml
+  - kind: T_Section
+    id: S_23_06
+    title: Multi-Agent Semantic Learning
+    order: 6
+    content_file: content/23_06.yaml
+  - kind: T_Section
+    id: S_23_07
+    title: Completion and Revision Criteria
+    order: 7
+    content_file: content/23_07.yaml
+  layout: directory

@@ -80,7 +80,7 @@ for f in htmls:
 
 # E terminology and index
 terms=yaml.safe_load((ROOT/'state/canonical/terminology.yaml').read_text())['terms']
-idx=(DOCS/'chapter19/index.html').read_text(encoding='utf-8').lower()
+idx=(DOCS/'chapter24/index.html').read_text(encoding='utf-8').lower()
 for t in terms:
     term=t['term']
     check('E Terminology',f'index: {term}',term.lower() in idx)
@@ -93,7 +93,7 @@ changes=(ROOT/'CHANGES.md').read_text()
 comp=(ROOT/'generated-source/COMPONENT_REFERENCE.md').read_text()
 for phrase in ['Semantic Teacher','Semantic Representation','UPDATE never produces a Memory Vector']:
     check('G Generated',f'Chapter 2: {phrase}',phrase in ch2)
-for phrase in ['cognitive 0.3.15','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
+for phrase in ['cognitive 0.3.16','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
     check('G Generated',f'CHANGES: {phrase}',phrase in changes)
 components=yaml.safe_load((ROOT/'state/canonical/components.yaml').read_text())['components']
 for c in components: check('G Generated',f'component reference: {c["name"]}',c['name'] in comp)

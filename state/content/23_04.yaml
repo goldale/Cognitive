@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: list
+  items:
+  - When is weakening sufficient and when is deletion justified?
+  - How can the system measure the harm caused by stale associations?
+  - What evidence should authorize creation or removal of structural links?
+  - How can topology changes remain explainable and reversible?
+  - How should capacity pressure affect pruning without erasing rare critical knowledge?
+  - What is the correct boundary between functional and structural learning?
+section_id: S_23_04
+id: S_23_04

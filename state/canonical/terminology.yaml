@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.15
+schema_version: 0.3.16
 terms:
 - term: Semantic Teacher
   definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
@@ -25,3 +25,29 @@ terms:
 - term: Contextual Retriever
   definition: The Associative Memory role that produces a Memory Vector through explicit READ without modifying
     Memory State.
+- term: Importance Estimation
+  definition: The future memory-lifecycle subsystem that estimates the context-sensitive significance of semantic
+    knowledge and memory structures.
+- term: Offline Consolidation
+  definition: Protected reorganization of Memory State outside the immediate online response path.
+- term: Sleep
+  definition: A future operating mode for offline consolidation, pruning, structural analysis, and other expensive
+    memory maintenance.
+- term: Replay
+  definition: Controlled reactivation of selected semantic experience through the Transformer and the canonical
+    Semantic Feedback Learning Pipeline.
+- term: Forgetting
+  definition: Controlled reduction of accessibility, precision, or persistence for memory whose expected utility
+    no longer justifies its cost or interference.
+- term: Memory Pruning
+  definition: Removal or compression of redundant, obsolete, low-confidence, or harmful memory structures under
+    explicit policy.
+- term: Structural Plasticity
+  definition: Modification of Associative Memory topology based on accumulated evidence rather than ordinary online
+    weight updates.
+- term: Global Evaluation
+  definition: A future conservative subsystem integrating goals, context, memory, consequences, and candidate actions
+    into system-level evaluation.
+- term: Multi-Agent Semantic Learning
+  definition: Learning between Cognitive systems through exchanged Semantic Representations and local controlled
+    UPDATE.

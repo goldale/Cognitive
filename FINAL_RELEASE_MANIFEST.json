@@ -1,10 +1,35 @@
 {
   "project": "Cognitive Architecture Specification",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "release_date": "2026-08-03",
-  "archive_root": "cognitive-0.3.15",
-  "file_count": 358,
+  "archive_root": "cognitive-0.3.16",
+  "file_count": 446,
   "files": [
+    {
+      "path": ".pytest_cache/.gitignore",
+      "size": 37,
+      "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd"
+    },
+    {
+      "path": ".pytest_cache/CACHEDIR.TAG",
+      "size": 191,
+      "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4"
+    },
+    {
+      "path": ".pytest_cache/README.md",
+      "size": 302,
+      "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad"
+    },
+    {
+      "path": ".pytest_cache/v/cache/lastfailed",
+      "size": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": ".pytest_cache/v/cache/nodeids",
+      "size": 2462,
+      "sha256": "5dd4683cd58d0abfe8b3ef21288b96dea96ffdcfe89bf3aafabfb2b37d20be28"
+    },
     {
       "path": "ARCHITECTURE_FREEZE.md",
       "size": 1397,
@@ -17,33 +42,33 @@
     },
     {
       "path": "CHANGES.md",
-      "size": 1523,
-      "sha256": "35755ee6cb85efea927ddca922cba176539b8e8325f0b50a27878fa851e30dc9"
+      "size": 1302,
+      "sha256": "f31950be6489b25fc940d73f04a5871a63b440fb286ea61eb87709f0ccde3cb6"
     },
     {
       "path": "IMPLEMENTATION_REPORT.md",
-      "size": 2081,
-      "sha256": "10865c80d442e01f32e52c68685107a24c067f3a53c38e25fd443a6d762f2ed6"
+      "size": 635,
+      "sha256": "f8d080cc29c0d24027c2a30e5f2723f6cea020def63b86078de7663fe9abee44"
     },
     {
       "path": "Makefile",
       "size": 942,
-      "sha256": "b910fba6776b3bb029f077e7a6fadc00aeacad83afbb9cded53c88c80dbbf2d7"
+      "sha256": "e4ed91847152b6709301ef1bbc1e9c44f09068c550057fa2fdd8fb00b849b529"
     },
     {
       "path": "README.md",
-      "size": 5484,
-      "sha256": "bf5dab710af3911d3cf85f7ec66a287e48d88bfde541e3e3377885bd8415c476"
+      "size": 5729,
+      "sha256": "034b4ab3743b813f9441d17b42a679c7be0ecc8038171a40a2fc45e915f3c0e9"
     },
     {
       "path": "RELEASE_CERTIFICATE.md",
-      "size": 1520,
-      "sha256": "9de8cf20694565e45eb59f37684e19481fbce103eea9eb3cfa422a5e15726f45"
+      "size": 1477,
+      "sha256": "9d3c32daa0244d8e5c708a1a4681d888f73ab2a2ad178024d3ea6ea07930267f"
     },
     {
       "path": "RELEASE_MANIFEST.json",
-      "size": 1266,
-      "sha256": "dde009c82881be1cf3242bc52bf3863a5853c9b2f832763660bc0f68fd4c5409"
+      "size": 1146,
+      "sha256": "2b0af500d38a4f8a1d12c3e32e147c3aa01dd7cfcc5e3ba6cc56569a04842f92"
     },
     {
       "path": "RELEASE_NOTES_0.3.10.md",
@@ -74,6 +99,11 @@
       "path": "RELEASE_NOTES_0.3.15.md",
       "size": 1580,
       "sha256": "2bff72d60b35066ed4518cefdbb0f0c8457eaddf71f570b8cad7e84b548cdf65"
+    },
+    {
+      "path": "RELEASE_NOTES_0.3.16.md",
+      "size": 785,
+      "sha256": "97714fcad76c0ad533c52adc22724f3952acccc36536f9d0826ad9bfac08d74c"
     },
     {
       "path": "RELEASE_NOTES_0.3.9.md",
@@ -343,577 +373,722 @@
     {
       "path": "docs/alphabetical-index.html",
       "size": 1152,
-      "sha256": "fd3d1bb2f6b093129384edc40f411e2124188045c85e91259db4911a2f3685f9"
+      "sha256": "6ae23af1451752f0cea619989902986d680cfa74ac0d3aa843cc1a7c1f99ca16"
     },
     {
       "path": "docs/canonical-model.html",
-      "size": 3809,
-      "sha256": "ad89e7200820a4ecdaf24d1a0e87251b881b9781f78be9a342af94e2559ccd1c"
+      "size": 5595,
+      "sha256": "9018fc62202321c08d38ff1d6d2ce09a043595a24ee828fa538ecdf05da142f1"
     },
     {
       "path": "docs/chapter01.html",
       "size": 17139,
-      "sha256": "60b7187907c6a90256a5c10fdd4811e6d065fa5c46faebb02b875381c3acf42f"
+      "sha256": "d94ed327e9b00af62ef405afbcd915fec26cf3e287fef00fa30a07a89f63782e"
     },
     {
       "path": "docs/chapter02/02_01.html",
       "size": 9064,
-      "sha256": "379028b417d6d4463d2d778d70017a16412340b71c784a17881ef187b96d3dff"
+      "sha256": "4bd9d577999dabbc86877c97f2ccc5dcc88259af8ff9b7ec77072a402d990f43"
     },
     {
       "path": "docs/chapter02/02_06.html",
       "size": 1978,
-      "sha256": "e200855ee01ae35d05c428e071785f31c72b85fb05f6d0da8a36c439617a897d"
+      "sha256": "240de52345785a143e1a75ebc685360adf2f25f8b060dc6c942e4845d26b8daa"
     },
     {
       "path": "docs/chapter02/02_07.html",
       "size": 2527,
-      "sha256": "8ddef21f7165168114bf647c77a3ac7a5ee59a0f8f1cea816cf2a9fedd6d8ded"
+      "sha256": "c5a7b500724f559504f8de9d242d7e903738f5a6eda120e01211b84852290d87"
     },
     {
       "path": "docs/chapter02/02_08.html",
       "size": 2061,
-      "sha256": "f35b08cbf64e0b86a23f921bbaba802462709e6997c43afc7946322faf970a09"
+      "sha256": "79752be328e27522ced86e4b4a3e363d0acbada212e0175434cfb1b45a4b13b9"
     },
     {
       "path": "docs/chapter02/02_09.html",
       "size": 1971,
-      "sha256": "c191cc1347ddc16a617fec0a054af8c2113798acd6fdd32f37b5f065c63dbca9"
+      "sha256": "8c89c8769b8b0f0a231002c32b876e048fb79a68e4eafc64bc339c7902ca6128"
     },
     {
       "path": "docs/chapter02/02_10.html",
       "size": 1938,
-      "sha256": "51626f6a4531da386f891db0275106bf60abb58ee0fc8ebb2f45fcbc49e81b82"
+      "sha256": "08bfd9fe647aace3adad8286b778913d00708ec8ac2ab119e8f3eaf423bb8bca"
     },
     {
       "path": "docs/chapter02/index.html",
       "size": 1774,
-      "sha256": "7685af3b4e7b39a1a9f37e4353b45daf28d86574eadb8a5aa2773f4bad1e7e18"
+      "sha256": "0f414f67bee6bf5253166317a9cc59f48559f4aca6a64cb2f878771edbafd7aa"
     },
     {
       "path": "docs/chapter03/03_01.html",
       "size": 8909,
-      "sha256": "df5bc6e538c45666b2a33773228cdf0e9f88614f4f90ac92b1d73435d8a50226"
+      "sha256": "418be92025a9ca8f1ea78ea75ea9ba586c4b773a95cecad8082d546490f12b7a"
     },
     {
       "path": "docs/chapter03/03_02.html",
       "size": 2185,
-      "sha256": "61205af4387e5153a1a79187899ee1fad2f2217874f8b4c6aaf6758d0f6641aa"
+      "sha256": "d7c2fc5a4421020ecab53246c2eb341490a79b51d9822d9ee5c083da28e489ac"
     },
     {
       "path": "docs/chapter03/03_03.html",
       "size": 2712,
-      "sha256": "a009bfb6d743043d3a58c658bc63133a1f0c9688c1c0f8331ffbd0408d69f312"
+      "sha256": "8d42a9dc4a16be081ff5496a361661e0ec0105c0588331c72fb4ab4e9d4ef4ab"
     },
     {
       "path": "docs/chapter03/03_04.html",
       "size": 2702,
-      "sha256": "3911bd7e234e527c98443651157238bbe4c42984d8ef89a5dbe652c4b2f1a2c2"
+      "sha256": "3d7315c001bbcb3f382217d7e89c39cb433c53340194287b0deeadc77e167a74"
     },
     {
       "path": "docs/chapter03/03_05.html",
       "size": 2813,
-      "sha256": "ef169fba48d3bb407928f96a13cba809f139a826a1854bc5a1a0c0c35ed2b116"
+      "sha256": "9f63cdc0c66df455ceb2462fc44b71b1916ca04f2f6bbbe97422e22e0a022f92"
     },
     {
       "path": "docs/chapter03/03_06.html",
       "size": 2371,
-      "sha256": "c02b0c4d386650a4b00614dd5a9e566915b1bc2ba0646a14f523be1d540ce823"
+      "sha256": "4bb0aeec54fd5de918b24e19b46295362642aaf04d0f56ae62f4ea61349eb7e4"
     },
     {
       "path": "docs/chapter03/index.html",
       "size": 1738,
-      "sha256": "d4499413aad8dc901a45ca52b0bcf9655f3a5662fb2023cc70ee836b033594e9"
+      "sha256": "7f5d4e92fd30995729c990cb87f4cf873df79c0d752ed06f6203986fb7882f6a"
     },
     {
       "path": "docs/chapter04/04_01.html",
       "size": 1738,
-      "sha256": "c0cd636007d3f7b37f6c90af657cb4f13ba21248a694a390e0957eb79ebddb34"
+      "sha256": "c7858fc5f1d66c8f32e7c940c1c433559393d92b0b14e76d7979a0bfd501ba62"
     },
     {
       "path": "docs/chapter04/04_02.html",
       "size": 8637,
-      "sha256": "5689a8177943f90a1744dcb1196f5c74c6203a1f69bbdb6214ce22cdc7fd2f4f"
+      "sha256": "ed299a6260f8a383c03febc5fb6bd989bd645960d8d2269f91aa61c4044f7c72"
     },
     {
       "path": "docs/chapter04/04_03.html",
       "size": 1577,
-      "sha256": "d330a754273c337da1b21d106359babb2ff4ce50d3b9dba61dca1062c9167b3d"
+      "sha256": "83850d6c4c0120674891f24104e4978c45a111ad012c5b186c6409dede8d7622"
     },
     {
       "path": "docs/chapter04/04_04.html",
       "size": 1665,
-      "sha256": "1233993f474c3cb19c2f4b7c74097beda85aedceed085c8d17477fb1ef26d68c"
+      "sha256": "c5c8a719a92f4f43f64575c8df91f923154093406cdf65db65edda6a94cfef89"
     },
     {
       "path": "docs/chapter04/04_05.html",
       "size": 1591,
-      "sha256": "b2bbf946124ddfb3ad1c63eab736bffde74c4503a3c34409ba5f43066c8ea56b"
+      "sha256": "73164412a65f56f93634ccd2be3811ecabd92bb1096a381b5218d01ccbd00a73"
     },
     {
       "path": "docs/chapter04/index.html",
       "size": 1685,
-      "sha256": "1192a5899a1d1dd00a3811943523c7bf5273a179c451141683ba5890a7aea4c5"
+      "sha256": "e390df63ca0195a65af446ad15f827646e4122dcbffa5d682a96dd571a9ed43a"
     },
     {
       "path": "docs/chapter05/05_01.html",
       "size": 1542,
-      "sha256": "408b7c98726c9dc616254c2aeea8329eea97c8f20b1c4ea324304a2958711850"
+      "sha256": "0ccfeeecec5cffd1fd99190bbf517cd0a3fa795bc322a8f6b3615beecb356100"
     },
     {
       "path": "docs/chapter05/05_02.html",
       "size": 1562,
-      "sha256": "5d636ffe7388c8908d1c618f15e6045a2d72cc9dcc36d1956204fee8c81d749d"
+      "sha256": "50f9f83923343a2f4ee8b573ad7b59f9f638231821f6c18b2e8f2f11523df58e"
     },
     {
       "path": "docs/chapter05/05_03.html",
       "size": 1587,
-      "sha256": "0520b1d77b1eca32fe90c17f63f850ac00abccc52a130a8a9fb278e2a5a2604d"
+      "sha256": "1cb2d95d0c15ae2aa3ea401343be4efa71c63ca8ba35e328c8463e39f8d0f9b0"
     },
     {
       "path": "docs/chapter05/05_04.html",
       "size": 7499,
-      "sha256": "c8d0adc1e08b249b30504c1fdcd8aca91e35cd0a73726af2c94cdad7c3761e50"
+      "sha256": "96e7b26a49847781b116c00a98fee14ce6c3aa7006912548f1daf130d1cbaf25"
     },
     {
       "path": "docs/chapter05/05_05.html",
       "size": 1538,
-      "sha256": "4f2cd30e74bedf28f127961b433a20efd46767ae1688a13df8f6f3d666de641c"
+      "sha256": "bc7698568fef1f0b6a9b25557f50cabca0eeeba8547a0a3340939d0c4bb163a6"
     },
     {
       "path": "docs/chapter05/index.html",
       "size": 1689,
-      "sha256": "aa1b4eca440bda340200af3cb10330b1aa195a75e10a3740596e89d42431d50a"
+      "sha256": "99f8e8dd3cbc7e7bdd47ad6d1f5e31410596c9a5b32f8b964e88dd1e8f7d3ee3"
     },
     {
       "path": "docs/chapter06/06_01.html",
       "size": 1558,
-      "sha256": "d6b5262a490ef7ef39b2b0937fe2467af139923db43d6ef9a3f12a9fbc61e09f"
+      "sha256": "40b574b5d5d5db76a58b683f342253b6ec1833e4b7e76b64aa54fb96988d7569"
     },
     {
       "path": "docs/chapter06/06_02.html",
       "size": 1502,
-      "sha256": "ce80de16ff6aa4d60391745931d0e1359a8c355f635d7c5844cefcffe2b86c6b"
+      "sha256": "c642409c52935db5a41f305af5604a65da6ee8cc3d2ad02e96fd92e21c4bc904"
     },
     {
       "path": "docs/chapter06/06_03.html",
       "size": 1525,
-      "sha256": "77b806ab1744096d1597c7792b027120c94448cbb7ea480a3abd5629fe5fe74f"
+      "sha256": "a882bc6fac26753ab3dce63275dbe731e1188b3ca9d2a27bd89328d715fccafa"
     },
     {
       "path": "docs/chapter06/06_04.html",
       "size": 9322,
-      "sha256": "ae8011d90e2d26b0c8f8b7a0996dd86a865cf6ab1818a741d4d8e703211d5919"
+      "sha256": "a1baa597818fa89d922df04fc37c50a673406af307b7ce0f871e521fde560ebf"
     },
     {
       "path": "docs/chapter06/06_05.html",
       "size": 2009,
-      "sha256": "b959a20ffd6434d24d5d516b64a7123abab6a826f82674519cbfcfd19600069e"
+      "sha256": "7552ec05654c3bfe0812419b7b44a0ac29b9a550c209f94bcf8c1001a62bcd18"
     },
     {
       "path": "docs/chapter06/index.html",
       "size": 1601,
-      "sha256": "2a0e6104d0324aa1e467b9d9b7e3c26a681001b2cee097cb350586152968c59c"
+      "sha256": "c0640df29008f9a546611be33e143f1064767d0fb3e6134439738d77bd99a326"
     },
     {
       "path": "docs/chapter07/07_01.html",
       "size": 9825,
-      "sha256": "cfa4ac7fb5118c552ef7beb40d8a6dbceb7d7941b0cc1e17aedff7f9550139ee"
+      "sha256": "8c009406420f1062e5ab2101b1101f9fa4b7fe28acf991ed7d0cf2c0cbdd2721"
     },
     {
       "path": "docs/chapter07/07_02.html",
       "size": 1624,
-      "sha256": "43b29dbda1773e2248a213a11824ca6f1597ce763d5311b9156d3a2fe9585b7a"
+      "sha256": "e1b25c680caee466aa3ebd584d7eda37f31593b3a0bd0dd0150f53663ee7517d"
     },
     {
       "path": "docs/chapter07/07_03.html",
       "size": 8599,
-      "sha256": "e39c64df8ac3f5e4912e5049997c34b0c36de58469e6c3eeb708730c6f936914"
+      "sha256": "a5f8f03dc99d2c4262418454eb79ffd1c31a089f807979a9bd207463d48fc330"
     },
     {
       "path": "docs/chapter07/07_04.html",
       "size": 2124,
-      "sha256": "449afceaf362b3087b1967fa3d52afc07585c8caf950e0ecc8f12adeb53eafe3"
+      "sha256": "fd578043950f3336ce15412ac0c1f5a82b97faf1976bb09b35162ad6d2417570"
     },
     {
       "path": "docs/chapter07/07_05.html",
       "size": 1918,
-      "sha256": "a94e2b3b0287a2de14c70f28db1adf0b084895d8972aada46314433723235229"
+      "sha256": "ddee819fd3f483fdf82a5d02d1f4c193a12f49b80c6384659b30c3d3d4ed3aa7"
     },
     {
       "path": "docs/chapter07/index.html",
       "size": 1651,
-      "sha256": "592275f849bfc72267d9e1bf33a7928464ad087b011d3769bdac876a820f2f8a"
+      "sha256": "6ff3d32fff3cf61bcb8a8d09a7d9604c17fe4ec79255fe95c9d581f247b434b6"
     },
     {
       "path": "docs/chapter08/08_01.html",
       "size": 10847,
-      "sha256": "bcfe6d0057c97b24a52c0de120205590397d892be56abec88e1f69181f3d38dc"
+      "sha256": "b007742514592e4dcf82c496e464d1bbc75085f5cb151d70957a9406d05fc590"
     },
     {
       "path": "docs/chapter08/08_02.html",
       "size": 1647,
-      "sha256": "20aaf42de54932ded90eed0076b2c945aaaffcb5f74a0e71fbe1fdbc1d37b62e"
+      "sha256": "bfdc99886597d07efb2a9430ffd285c8a025426fa4f089fd06d6ec1b6a797859"
     },
     {
       "path": "docs/chapter08/08_03.html",
       "size": 1864,
-      "sha256": "ce329c4341f604319ac28b7398d28373ec8e349c4557c26927e0557aa991ede0"
+      "sha256": "2abaa54bd209438581d076f12d8af9f429c901d3edeb67e615a9f0594da0c31d"
     },
     {
       "path": "docs/chapter08/08_04.html",
       "size": 1949,
-      "sha256": "75fed994c7509407b062ec2dddbb90fee26b0ef8f2cf5b496786232bf23dd260"
+      "sha256": "3fd9906b1171e851dec1018e7d5e9321babad56b04cd026f2c6d677bd3499a50"
     },
     {
       "path": "docs/chapter08/08_05.html",
       "size": 1943,
-      "sha256": "e4a11f33b225eac89781a031194ed7d5c33cf1eead4cf8b03d2b7357123e4f1d"
+      "sha256": "45704908a06f92f3e20c2403ff64adf13c48ea2af704b29bc6de4b52169ae125"
     },
     {
       "path": "docs/chapter08/index.html",
       "size": 1650,
-      "sha256": "8a2e524f4827ead7ebf9e62077ed89edfd3d922a18d429b284fecdaea6ee5d76"
+      "sha256": "8ecaffd999c16c3b06d3821a9f52a206d766e415d8027f1d3c73365bca1b95ff"
     },
     {
       "path": "docs/chapter09/09_01.html",
       "size": 10392,
-      "sha256": "75c479d78166774550ae15a642715b650ace00767264afdb128a29746a613e36"
+      "sha256": "e84d6f584a8debe57d18a59ada20db916dfda0ad6b4e3b1b207bcfa407c3e330"
     },
     {
       "path": "docs/chapter09/09_02.html",
       "size": 2270,
-      "sha256": "c591eef18a3d62d522f007634d7f9a6ab3eb3e08e73af4b0dc34453e54018a7a"
+      "sha256": "59d237728a9c22dcb2c27cbe1aa08c76eab92cdceac5036ec4afed0fddab3643"
     },
     {
       "path": "docs/chapter09/09_03.html",
       "size": 1527,
-      "sha256": "01d8c808fc657dd7ec74cde088f7c9beb3674125809aa53143c8f88536430d75"
+      "sha256": "ff2f5c98043f03fba033a64520e42f001a819edd5b8e356fc358b0c467721cb9"
     },
     {
       "path": "docs/chapter09/09_04.html",
       "size": 2085,
-      "sha256": "66479467b4eec1996231717d02ac4ff73afa0362e00e9f82936e3da38b028d56"
+      "sha256": "03a70067d2cac8d33ed8f595b1648a70aa3de668dd087f3ee8566c8407d0d49c"
     },
     {
       "path": "docs/chapter09/09_05.html",
       "size": 1825,
-      "sha256": "bcad5b39129085f0b038eb64f290f0ef1d025af37504ec32dc1bb03bf855013b"
+      "sha256": "b2e9fdbc3e0368db5b8e7fee8e70219ff95fe134faabf53503bebceba13f7517"
     },
     {
       "path": "docs/chapter09/09_06.html",
       "size": 1941,
-      "sha256": "bebf64ccbd81b831f2599dd6146b6535a1aa30d230ff5300378991d8e3119a8d"
+      "sha256": "d6d9c140a9a1ebe07e8b1acb31d6877fd3305ef3fa04f2ba44b51f6abef8ccb9"
     },
     {
       "path": "docs/chapter09/index.html",
       "size": 1714,
-      "sha256": "1f28788ccb3dd34773808f1bea3bf36d3cf9b4d79cd3c0031b3d53e6db1ac983"
+      "sha256": "1d1a9df2fe740c7d0b544a00bb12f1d27851361eeed6183d73cfb6daf38d62d6"
     },
     {
       "path": "docs/chapter10/10_01.html",
       "size": 12761,
-      "sha256": "4b13aa1dbbc89223bd069b9d3ec4b32099297c6dc2f9942e1397c0c91e8b5c11"
+      "sha256": "d707da63ca2429014096a4af240f01ea153bc24c12c2c2d9b2f70580a8e298ed"
     },
     {
       "path": "docs/chapter10/10_02.html",
       "size": 1611,
-      "sha256": "fb35e15f233092701a8b8fad8777d01a514c4fb077ee0b63a854d1f5c390789a"
+      "sha256": "b483d6c31e8099125954eb0bfeec19097ecf1031ecc02e3dec4103a8d4336f90"
     },
     {
       "path": "docs/chapter10/10_03.html",
       "size": 7613,
-      "sha256": "81d22bd01ac2c2598a27505e1b0418f34b70a880af440542d925b507a32ed017"
+      "sha256": "dcd03888a77db5f54a4ae8bf496e67c8c2c700fb45e33e3cb3c329a77e14a047"
     },
     {
       "path": "docs/chapter10/10_04.html",
       "size": 1571,
-      "sha256": "8c9d0c4018fed7ed574b0487e02bc4b68d2eac537fe7d4a48043af82f133f521"
+      "sha256": "e63728279f814b472fb15dd719be931e6edfb2f66f88080bda01fe240b34f27b"
     },
     {
       "path": "docs/chapter10/10_05.html",
       "size": 1436,
-      "sha256": "c1acee0de6e950a545526b9e44ff8851552abe1aaea99fac0599ea6b309a3bce"
+      "sha256": "ae958aa19f1fe1125f6bfe494f3b30b4cc6aa62f58c66e1c683ddd8a1c291182"
     },
     {
       "path": "docs/chapter10/10_06.html",
       "size": 14626,
-      "sha256": "84811963008666d59faa7664f44f68667340c1c70399210fad505a93bd3af60e"
+      "sha256": "3374b23898a9649e87f6aaa6dbea2bbb2a07822e74da0aa5dbef3dc840d0500f"
     },
     {
       "path": "docs/chapter10/index.html",
       "size": 1728,
-      "sha256": "5332a6c979ea300b2e0d227cd6fcd6fa127be208e5b05eb633a6ab16df8d477b"
+      "sha256": "6a1cebf709e21bd0bf39d6be2c11fa1ddd7efcdebf2bfd78affcec3dff78b621"
     },
     {
       "path": "docs/chapter11/11_01.html",
       "size": 7072,
-      "sha256": "8e2df9090327b241db6061bef7a5a85fc33fd3bfc1abfb81241a14be77b51fad"
+      "sha256": "2c4dd56a874a5c2b1e8792255208d16d066bf8815e5f8a9a1f5ad0a711b33daa"
     },
     {
       "path": "docs/chapter11/11_02.html",
       "size": 1553,
-      "sha256": "b1cce259d9de5c4a8ded7b971da7e65501822caa56ddb04dbb5dac7a56e6fe91"
+      "sha256": "599276e1d7ed17676088c9fc4b79791c156212f05134b4012dcac5a971d03886"
     },
     {
       "path": "docs/chapter11/11_03.html",
       "size": 1548,
-      "sha256": "1dbeff02afa7d3b55c0dc50dce29f8c2164bbd848933a65309471e275795bc4b"
+      "sha256": "493927f2837ad6fc9a6f3c85a6953e0748014e19c391f7ce25ef693cb8a5b5f3"
     },
     {
       "path": "docs/chapter11/11_04.html",
       "size": 7540,
-      "sha256": "fd3c7cf4146fc5881b2963e254713f3a294ff33d4c69b891e85d6792b8e372f2"
+      "sha256": "0c5c880315581299089d96e6f601b904ac977447c3d439c950b031e29bf4317e"
     },
     {
       "path": "docs/chapter11/11_05.html",
       "size": 1657,
-      "sha256": "f7070ab83b087e2da822cd63a31a34ad06fcda1a1d4c08e133a845470bf44d5d"
+      "sha256": "d6a2ad33791ac40415a0f77e90856fb73e3e04cc396a8efb17c12e887621b462"
     },
     {
       "path": "docs/chapter11/11_06.html",
       "size": 11047,
-      "sha256": "e1fb3194bc316575ca0ee72ea7ffc150c0adcb4b32cece57548c2fc8171e6895"
+      "sha256": "e8ad091df64f6d0d9c2be9fced24b595f4a8f126d1602a6e64e1e0a90b1178cd"
     },
     {
       "path": "docs/chapter11/index.html",
       "size": 1789,
-      "sha256": "66b78895d3c8eca7307dfab3505ee50a57875e0b805af1fba7af643a4461fc59"
+      "sha256": "daa15bd4e8135a91a41d0a1d748505cbf2f03968a73fcc1f05a8f00e5a79c656"
     },
     {
       "path": "docs/chapter12/12_01.html",
       "size": 2021,
-      "sha256": "52b969e9821b7e74a6eff7befed454fa4a8beae08b96dbee40bd8921cb53c38b"
+      "sha256": "04a357e0048b02e021d438bf18007598bf6cf5863cf365477c795e1c20322d7e"
     },
     {
       "path": "docs/chapter12/12_02.html",
       "size": 1783,
-      "sha256": "bd22dc13ed2a3823a850db51379d8dedfef59e551a59dfc182f776593c58549e"
+      "sha256": "8f499e15b718f5bdfcad15b8241859dba9b9c0b3bf635f5597fe54dbe2bc6585"
     },
     {
       "path": "docs/chapter12/12_03.html",
       "size": 8501,
-      "sha256": "b9c1bd7add33932549e3ec1bc2de07339d1594c90d443717186ca7f87ce14a51"
+      "sha256": "fff79678b79c5a2d093673f09c072ad1e57d7a09a022159d2b365a55b1325ddd"
     },
     {
       "path": "docs/chapter12/12_04.html",
       "size": 2029,
-      "sha256": "fe0b1e03b1bb48c787570276bcd7ef5b9a421b7520dc56860aa143c7f5c9b28f"
+      "sha256": "b068f457a2fecdb3154a4a1057866f4f320a6d3b836101cf0c8242171a7494d6"
     },
     {
       "path": "docs/chapter12/12_05.html",
       "size": 1989,
-      "sha256": "61e185a6b46a7ee3672f7f99443fe35e1a880ce59aefa441592438c6d5482517"
+      "sha256": "e04c06159dfbe9a91df154b3b7a5a1e65682bd9bb74ad8fde40242be8f0f2fed"
     },
     {
       "path": "docs/chapter12/12_06.html",
       "size": 12056,
-      "sha256": "cb6932eda1f16744dce236c9fdd30ea69fcf3efc64e495d1f4bd901dddf5dd10"
+      "sha256": "b24c8c233e16a84f7d1727a237d22efbb0af5dbd3ac7b2c414d9f380713d7287"
     },
     {
       "path": "docs/chapter12/12_07.html",
       "size": 10649,
-      "sha256": "1b3a5e3d315f9889922c2b3bf60b1de84f7a3c7c70f54a0e2a30ae3ca4c36d56"
+      "sha256": "72acbcc9aca45a8b1288e5b9ae3f4528aa49682903e6e51ec21eeec7fe4ea340"
     },
     {
       "path": "docs/chapter12/index.html",
       "size": 1862,
-      "sha256": "5fa29d405addd39725a2f94dd9afef395a2cd83a2b906694a95d04263de5868d"
+      "sha256": "122df4016c34e9a1d2948c454a0cb3d1f8af2369f79b46a791abeede59e21e64"
     },
     {
       "path": "docs/chapter13/13_01.html",
       "size": 7904,
-      "sha256": "2a28af09daa1c19fe265c07472fb28224e4e23d8d3449d1aed9f2cf62630cf4e"
+      "sha256": "f24b44c0772b300ba76466875797564067a804ab9a480fad89c3e2ebad84b66a"
     },
     {
       "path": "docs/chapter13/13_02.html",
       "size": 1931,
-      "sha256": "c80aeccc1d6edd9eb46014ccb8a9481cf19de1788d8c5dc03beacc914b00445b"
+      "sha256": "41f5aa477f083e54981218a5d61a044069114db89bd30534b39a0a677202ad0d"
     },
     {
       "path": "docs/chapter13/13_03.html",
       "size": 1559,
-      "sha256": "3955b892677c12f3c3d0b358c9be410c34f9733174c181d72a33ecb856b41b60"
+      "sha256": "882c272752aa7ce4227ae6849bfcdd772771d9a4df887d626c4eb61c7abfa6df"
     },
     {
       "path": "docs/chapter13/index.html",
       "size": 1562,
-      "sha256": "6c295ea744d03440faf7af877a0cf48b79b3fec2aecd29fef61e9d5c1bf43b4a"
+      "sha256": "6c9dd4385c4f2afd2ef519533dc2272e917296645ce9ed05fa0ca40a9ac8a626"
     },
     {
       "path": "docs/chapter14/14_01.html",
       "size": 1913,
-      "sha256": "ab7df33560ef5d3a330cbaa66f0f43f85cc767d2dd6f3486949e890a1f0f38df"
+      "sha256": "b7edd3c0d1cd26359d968ef2b52df5a6a8d75cad530856ef9490f8fb7987dcff"
     },
     {
       "path": "docs/chapter14/14_02.html",
       "size": 1771,
-      "sha256": "049a78462017b4599f45236cfce6a0244d8550d2f1114bb131ce230a20417fd6"
+      "sha256": "d4b41159ef520d34583232a0d00baeaf20aca396781c8728763e5ea2658ce643"
     },
     {
       "path": "docs/chapter14/14_03.html",
       "size": 8414,
-      "sha256": "f26be5a40a9b288a274394da13c5eb5112f140d3af3d8e67cd9d059e6d271e74"
+      "sha256": "36e3bc53f24b333661fb346cfab42f3b8aaa2f492396cf29e5127ad6f0869298"
     },
     {
       "path": "docs/chapter14/14_04.html",
       "size": 1804,
-      "sha256": "47910df04e2e086d2f1e172e32fb8122b97d503cf1ec28782b7729f01b184557"
+      "sha256": "254d0cf501d2f98eb102fc3cc58088de28fe20367c43dc56e5452e008e2e0fdc"
     },
     {
       "path": "docs/chapter14/14_05.html",
       "size": 1956,
-      "sha256": "8a841391071ebce1199d2e5cfea0ae7c74e0f3f5ad51a729054d8479b6d8562c"
+      "sha256": "ae5e6cc78a973a295baf420609ef9b2f9ba2825bff546c6e9c09697924965d77"
     },
     {
       "path": "docs/chapter14/14_06.html",
       "size": 1929,
-      "sha256": "7061785f447daa855f2bee5b775090c0e55718a2674fb00693d94ae0ff26f28a"
+      "sha256": "ae31534280b7711ad1638b07496f540c34f468771d2aa654b0b69be834271a58"
     },
     {
       "path": "docs/chapter14/index.html",
       "size": 1689,
-      "sha256": "de33cef47467e0fb5af3c779c0558902fdf2cec0f3f4223166b07da1637a7b73"
+      "sha256": "42ba455729c9574b48f68c1b197b801397418f16e1acb900ac08eb3705749e12"
     },
     {
       "path": "docs/chapter15/15_01.html",
       "size": 1794,
-      "sha256": "9c14a1189c023cbbfb1654189775c050ed1594d7dff652ec5453107e062c397f"
+      "sha256": "ba1289bb744d3e61343a3cb129e852f01ead83ed791778713bfe339a0829b3cd"
     },
     {
       "path": "docs/chapter15/15_02.html",
       "size": 1861,
-      "sha256": "cdcc0f88fcdeca4aa0d63e6c3e083b3483c67162cf6130fc0a3b8b3f04765d3f"
+      "sha256": "bfbf4419d2d39dc70f4b0ed4a0c9e685d239c5d8985d501f5b77a400f072b8f9"
     },
     {
       "path": "docs/chapter15/15_03.html",
       "size": 1981,
-      "sha256": "eff27036f9c5c1789526be6bdfb825710988e3f57760ce80ba534df778c0fe31"
+      "sha256": "3b95ceb47e1b3f7c62c0cdac1f78e43402514572aa68f6b26ac9b3ecbdef6b55"
     },
     {
       "path": "docs/chapter15/15_04.html",
       "size": 2023,
-      "sha256": "66d2f295d31475635fa84358fe885e05278e674d09220160fc58d65ecc0ec9c0"
+      "sha256": "4e5248efc293f693188c905771c51061167162d16deaf39f396700904f2fb8ba"
     },
     {
       "path": "docs/chapter15/15_05.html",
       "size": 1924,
-      "sha256": "7c35595bd827459cdeb11dcfa7f7735b4ef35b3899a45829a5a2bb25a96c6a24"
+      "sha256": "794715a20c797f7c9aa437d2ae48245febc95f84602de3b5702a4f53c1bc74de"
     },
     {
       "path": "docs/chapter15/15_06.html",
       "size": 1893,
-      "sha256": "7024ca5c7937158116e7a31a813126f7d1a3ad1fed451229197df90fcc5c4c97"
+      "sha256": "e424b76207b90c8780c7f42ef63e1aae2ee02f3cdc8bc113167c7b1f4c9210a6"
     },
     {
       "path": "docs/chapter15/index.html",
       "size": 1719,
-      "sha256": "d3fdd72bdfea78efb53d28cac0b7fe6d53ed0eb9b138bf93011e984fb95461a4"
+      "sha256": "0aa907d3e14dd6c253911f6a36fac9b5b3bcd89c43dbb0df29073b0c64f79a7e"
     },
     {
       "path": "docs/chapter16/16_01.html",
       "size": 1636,
-      "sha256": "66421d5734ee115226c9ce4a5ad4c810c9b3fd37d66a8cdf0621b275f653f01b"
+      "sha256": "38b293e53a8382cc5c3c3681f14c20671d191ba35263a46c8466b86015da4a11"
     },
     {
       "path": "docs/chapter16/16_02.html",
       "size": 1935,
-      "sha256": "75c9a4ed1000f31e336439f2f955a6ebec3a52380c9ec6f86556773f5662b326"
+      "sha256": "cb84506c417c6dbc541c9af05fc938584ec54dfc1c997241da33e76249e23891"
     },
     {
       "path": "docs/chapter16/16_03.html",
       "size": 1840,
-      "sha256": "0bd9bc252ed9e87c6aa200c33c50dcc5a8dfcd46a4fe6534c3b89f0764d9ff6a"
+      "sha256": "8f59f98332cc1461b5436ae6ffb4a95fd5f3e7c9486c35bcb8316139210b1c28"
     },
     {
       "path": "docs/chapter16/16_04.html",
       "size": 1838,
-      "sha256": "247532c4590d78bcd2da756c57c67498a7e1a1ba68399b092e97969a05d17f11"
+      "sha256": "31a173ee2985812092bc8b74d806ad7be2baa12993e9eb8109f1ecae05771eda"
     },
     {
       "path": "docs/chapter16/16_05.html",
       "size": 1791,
-      "sha256": "b16cb9b67f9260e3c338cd504d26e45847219ebd80aec3437c6973ddb1df513a"
+      "sha256": "73a4a741c9ade666834856484216359b24ff16066146e6ed00c462a0f685fe77"
     },
     {
       "path": "docs/chapter16/16_06.html",
       "size": 1856,
-      "sha256": "e5a3430647b23ae8d90860eba9cbcc6e387f861793b78be8ee9c9f740b9a0f97"
+      "sha256": "c0e01f35bc4bb96975645022b3599513f5a501bacd87634ba690340052c3fa64"
     },
     {
       "path": "docs/chapter16/index.html",
       "size": 1702,
-      "sha256": "3afe1ad39398de0b51047daf56c20c948b27c0a2a8b15db1eea945a39b5b28cc"
+      "sha256": "8c3b599817027d092e4b1b0d16d37e8039fd992f8a76e256d18afa4848c9cb6d"
     },
     {
       "path": "docs/chapter17/17_01.html",
       "size": 1938,
-      "sha256": "06490a7fa75652183f1c4df879fe21759721fe4ecab554313a6ff7212cf16539"
+      "sha256": "89ee514aa78836a1924c3fdbe14c8af8ebef7a6ddd9e3fb64f84544797dd0760"
     },
     {
       "path": "docs/chapter17/17_02.html",
       "size": 1873,
-      "sha256": "90d742ede67f50523400088c7f5efab810d0825728e0a48886c670cbf02c46fd"
+      "sha256": "beaa842b349fd0be9f75af14b17a530b889a93b80b2904bb8e8e2224a7f3e786"
     },
     {
       "path": "docs/chapter17/17_03.html",
       "size": 1809,
-      "sha256": "1fbfec8b8e78a66bda144f6c8cbd900856fc8ef7b3bc75877917e4b4197299f9"
+      "sha256": "da927fce0bf9a8205a51635806ea5b847b50412faebbd1ce2bea53b408b16f7b"
     },
     {
       "path": "docs/chapter17/17_04.html",
       "size": 1942,
-      "sha256": "b78a86c48f97b3b26b31f5c221f41fa6ea7f8c90ed15b0c011a74d8d736e3a96"
+      "sha256": "f3a888f0b92ffd6c3e8aae00e2adede78d04ae84f49e5dbcca315fd620ee45a5"
     },
     {
       "path": "docs/chapter17/17_05.html",
       "size": 1876,
-      "sha256": "1dac1126772e9359838e4490ea57dee5581bc7a948bc805f2367107efb90ffde"
+      "sha256": "353c5917c6e58901cf7fbc07f871788745f570b4de5a260471afa00ea9bed2ef"
     },
     {
       "path": "docs/chapter17/17_06.html",
       "size": 1992,
-      "sha256": "286bfe897482fb58ed805e5446163d2dd1df345fdc5425b8c6cb437be46c02d6"
+      "sha256": "06719ec8f99a6b335286e90bbe3d5d51e0ca8066dfa14bde065769421c24fb3b"
     },
     {
       "path": "docs/chapter17/index.html",
       "size": 1721,
-      "sha256": "267235a6bc5362e01c04ca806c11cfe48f26a08bcd8ad3c686e87cc73d5d827f"
+      "sha256": "e4fb3b32fa24eebb9a1fd7aa13148171564c6fd61c8a5ee92205d442ff269b68"
     },
     {
       "path": "docs/chapter18/18_01.html",
       "size": 7641,
-      "sha256": "4a542884211c4963a345f8d16c94def5756e78e2bdf6512697227019d9018b4d"
+      "sha256": "49308b7cc87cf7d68945221baea5347400c25cf70f29d5d8618c70408c82fa3b"
     },
     {
       "path": "docs/chapter18/18_02.html",
       "size": 1959,
-      "sha256": "86217fa6f534c6bec99ea4e1e4f245165775ad5e609c675fa665d5fe606fe019"
+      "sha256": "8b374c25bf9e0fbb9ea216a27b25743e4c25372f88e92ebe2de2460445ec8c8f"
     },
     {
       "path": "docs/chapter18/18_03.html",
       "size": 1650,
-      "sha256": "9a5bbc2951be1972cbf05f89159b180b4fb8049ff7612580f9b4ad03727dc624"
+      "sha256": "39370dc75f04671aa7fb9f8982aa5dd2c1ec1e4018a7342ed911c20052c31b4d"
     },
     {
       "path": "docs/chapter18/18_04.html",
       "size": 1893,
-      "sha256": "376f5e6e2d467ea1694a3728908e5059a50f50df43b0069e88112c8d799a0b2f"
+      "sha256": "06beaa296896a68c2232eba19206a54337356e346ed84a78c4513f0c2021eaba"
     },
     {
       "path": "docs/chapter18/18_05.html",
       "size": 1835,
-      "sha256": "38905d6ce4fd25942ea6a070e993bbdc3da3982d727d1baa123f17b4540eb789"
+      "sha256": "813b05db92dee7f13b6c0b9b739d8464fc50874cb7e8731ed9ec822fe8687cbd"
     },
     {
       "path": "docs/chapter18/index.html",
       "size": 1640,
-      "sha256": "33367a1e1688187549b86fbc64efcfa3397a22e856a81740ce22aad05f37ae9c"
+      "sha256": "04953ae4cc8e3bcc6401f1866b4aef7de8ca7e21f102e15835e2dc3132e6dd20"
     },
     {
-      "path": "docs/chapter19/index.html",
-      "size": 28737,
-      "sha256": "3be54f1ecc59701c95ff4d6291b01b0340c237c5f15bf97c02aa2a448abfad19"
+      "path": "docs/chapter20/20_01.html",
+      "size": 2352,
+      "sha256": "927a774a3ff4fdd7d6347ae70974c2da62f1e14db212df36cebd7807be272bf7"
+    },
+    {
+      "path": "docs/chapter20/20_02.html",
+      "size": 9263,
+      "sha256": "13528e3ba257d45d921d7a4189b2383332ffb1f13d0847d623e2989c86317cd1"
+    },
+    {
+      "path": "docs/chapter20/20_03.html",
+      "size": 2523,
+      "sha256": "1d73b06b62cc426c6318c0344e288026cacc53e59628e5d07fce7b432e4866c1"
+    },
+    {
+      "path": "docs/chapter20/20_04.html",
+      "size": 2534,
+      "sha256": "ab9d83df21fb9b94262a696a4f0ab8e3ec3cfea42805e553ee0409bc59d24694"
+    },
+    {
+      "path": "docs/chapter20/20_05.html",
+      "size": 9598,
+      "sha256": "aa4a428678083be3b0c91b7d61b2690be14f8528522ae268c7de7ee5dcba677d"
+    },
+    {
+      "path": "docs/chapter20/20_06.html",
+      "size": 2375,
+      "sha256": "cedc478ced0669417f7b0984a87ee9e608ff9af7369a8a9527514047c0b1b3e8"
+    },
+    {
+      "path": "docs/chapter20/20_07.html",
+      "size": 2526,
+      "sha256": "2602c23dc55bdee49397308f9741d094845c994c8f8da4ee390549c8a60ce380"
+    },
+    {
+      "path": "docs/chapter20/index.html",
+      "size": 1841,
+      "sha256": "404b5c05c711cc2c21955d217d89af6121edde6f69da684e13d6cbfacfc57dac"
+    },
+    {
+      "path": "docs/chapter21/21_01.html",
+      "size": 1875,
+      "sha256": "c03fb82a102906986e0a58c61a04734665fa99ce1314aa7fa3619f30e0ffb5a9"
+    },
+    {
+      "path": "docs/chapter21/21_02.html",
+      "size": 2274,
+      "sha256": "830036f9db2fa3443ff191834aeecd326b268c251cb9a81e7f5c5d9be10a080e"
+    },
+    {
+      "path": "docs/chapter21/21_03.html",
+      "size": 1883,
+      "sha256": "4af42f0c77793c720094a57446bf9ff5dee14608c7031936227ae3ea0bfeea52"
+    },
+    {
+      "path": "docs/chapter21/21_04.html",
+      "size": 1788,
+      "sha256": "06202fe48c30eb50118373a36b0336091f96a2f7cdaf33310ee0fb15631522bd"
+    },
+    {
+      "path": "docs/chapter21/21_05.html",
+      "size": 1830,
+      "sha256": "64437342affe41b879be792faadee5133ca33287bbc43cc686679d53b12f1a02"
+    },
+    {
+      "path": "docs/chapter21/21_06.html",
+      "size": 1811,
+      "sha256": "0d32db6d7511ed3b4760d7cf8b3fdda5f87a49b991ae24fceacfa8ff6b8b1e44"
+    },
+    {
+      "path": "docs/chapter21/index.html",
+      "size": 1738,
+      "sha256": "a64d9b6bf925538f55f9f191973096bc8518c57d18628f43209978b7d1f27e86"
+    },
+    {
+      "path": "docs/chapter22/22_01.html",
+      "size": 1708,
+      "sha256": "84c00772e3907dca18ecec24522d0756a8e8e2762b6d55ed3c46f3ea43d56065"
+    },
+    {
+      "path": "docs/chapter22/22_02.html",
+      "size": 1679,
+      "sha256": "b85d46afd802b1752be2566bdc6680ddb007d0ee6a89a6df0dc08d9d3162c6e0"
+    },
+    {
+      "path": "docs/chapter22/22_03.html",
+      "size": 1755,
+      "sha256": "dfd6cd5037bb7372907e5c35fcfc6c4ebe6e00becd1ab4b6849af880d608fe7c"
+    },
+    {
+      "path": "docs/chapter22/22_04.html",
+      "size": 1714,
+      "sha256": "8b309d5e967418feeec02c4bfde3f4cb114c1198f952f27d838e127e744f92b7"
+    },
+    {
+      "path": "docs/chapter22/22_05.html",
+      "size": 1728,
+      "sha256": "e17c2ac814a2d172964dfe776f8437252230da66c778f03c808956bbecdd12e7"
+    },
+    {
+      "path": "docs/chapter22/index.html",
+      "size": 1639,
+      "sha256": "42acfd79230f7331eac992819f71cf7dc637a503a2fc363046f1708c58c75d2e"
+    },
+    {
+      "path": "docs/chapter23/23_01.html",
+      "size": 1638,
+      "sha256": "c74e180b60621bbcc69ccfe5fa68ab5b8785892e1be0e362a7584337f9ea6b4a"
+    },
+    {
+      "path": "docs/chapter23/23_02.html",
+      "size": 1696,
+      "sha256": "873c453748122491ca3f39a7bc837226c1d26a8c2d0a6592e5bc0c29fafd970a"
+    },
+    {
+      "path": "docs/chapter23/23_03.html",
+      "size": 1692,
+      "sha256": "528445e03a7f901165f1f50b97463a5a89fcafb606bf5ec737a32feb0d639916"
+    },
+    {
+      "path": "docs/chapter23/23_04.html",
+      "size": 1660,
+      "sha256": "893d1edffcd420dce878b8c2066756191fc4336d0b1159b6aa060e004296f755"
+    },
+    {
+      "path": "docs/chapter23/23_05.html",
+      "size": 1631,
+      "sha256": "3358461494a6bf091b34925336a9b814b0804be8703ec851ccc9685c15fbc6ea"
+    },
+    {
+      "path": "docs/chapter23/23_06.html",
+      "size": 1689,
+      "sha256": "4e9312717642d22e9052ce16639fb4cbd68273f88cb0a01dbb4dbfe56bee58f0"
+    },
+    {
+      "path": "docs/chapter23/23_07.html",
+      "size": 1976,
+      "sha256": "01a12c895c074fecfb4d837012b5346e3dfae54debc7ef17a53b75a67d166602"
+    },
+    {
+      "path": "docs/chapter23/index.html",
+      "size": 1755,
+      "sha256": "4a381a6b8a51617d8e7a27e3f3522e8b50e160786244680005b96f75310db509"
+    },
+    {
+      "path": "docs/chapter24/index.html",
+      "size": 33439,
+      "sha256": "9a71e2a3de50a92ea611ab55cefd30bd9397965a328f07dff98b165ab0324e7d"
     },
     {
       "path": "docs/cognitive.css",
@@ -922,33 +1097,23 @@
     },
     {
       "path": "docs/index.html",
-      "size": 5612,
-      "sha256": "017b6ac81e667036521e0a3b77b3047aa79758cf5d6dfcf7bb2a85f40ec59e63"
+      "size": 6459,
+      "sha256": "595eb9e4bb23a2ea1e126b829e40f33a81d99f0c47f912d396a5d314cbe5603f"
     },
     {
       "path": "docs/research-state.html",
       "size": 1550,
-      "sha256": "54aa4e4f49b9a8c7c89fc40e0e88b3b86a26362b91678dd2b21b50b95d3c72a9"
+      "sha256": "c9d274963e3c791f2c0be2832e372af8dfb7f209072e737a79d0eff6584b3466"
     },
     {
       "path": "docs/style-guide.html",
       "size": 1609,
-      "sha256": "85b52b4b0bc10ca4adcb4a871150dc0842b20c21210e40e5d3f90e62bf33e4bb"
-    },
-    {
-      "path": "docs/token-graph.dot",
-      "size": 8619,
-      "sha256": "71574d2f42793d70e51dec754f2b1ed6a5bf10fd0d231e26c91b1e603471f401"
-    },
-    {
-      "path": "docs/token-graph.svg",
-      "size": 81325,
-      "sha256": "c6ae25a90772d2ef2d0562e5c1c3e52454c20dea2c95a70d48bce094174da8ea"
+      "sha256": "d14102bbbb49672f8b8905ee0e63a4d8a28ac3e930aa6773de9b44f9b2982761"
     },
     {
       "path": "docs/tokens.html",
       "size": 19826,
-      "sha256": "bb4d4ac7503966820cdcf2007d8ffd115706c2faf6449ccff2763743cbe799ce"
+      "sha256": "e562ac5606cbd6adb4eb1b8ff07764167245ff2d58e752e940fd1b63a8f3e89f"
     },
     {
       "path": "examples/change-proposal.yaml",
@@ -988,7 +1153,7 @@
     {
       "path": "pyproject.toml",
       "size": 678,
-      "sha256": "0fe9fde7cffe5169a565ad0c9aa045e5c83e141292e1442cfd1c914512baa342"
+      "sha256": "3c065e8b8f9026d35bf26f231e120dc0390062688314ad00e4414a1ccf9367f6"
     },
     {
       "path": "requirements.txt",
@@ -1018,12 +1183,12 @@
     {
       "path": "scripts/build_release.sh",
       "size": 587,
-      "sha256": "e5a5e884da7474aa2e4301c4bd9f743af602de0b9ae5e193c9c57e94eb99b485"
+      "sha256": "e71b657105e8717f206cc6252c698a9ce0d1f0801340601f8c49df7d979f9b4d"
     },
     {
       "path": "scripts/generate_stage2.py",
       "size": 12636,
-      "sha256": "c3775a6a4aebdcdc0f39bf16031e61fc4dcf99bebac5c539cc65b25c5599caae"
+      "sha256": "7febe388514f8bd0e3fed4ed4b9d81ee86e880d3746d0e416e8c5f87332cc191"
     },
     {
       "path": "scripts/validate_stage1_freeze.py",
@@ -1033,27 +1198,27 @@
     {
       "path": "scripts/validate_stage3_consistency.py",
       "size": 5943,
-      "sha256": "0c294f15881fd0e1f97de31ab44ce31bf92c400efb07fe1203e0bb360a70740b"
+      "sha256": "d52d513f0913322e41d12d3d58ba0048fb11c6e14af9713408a2abb2be7ab8d9"
     },
     {
       "path": "scripts/validate_stage4_duplicates.py",
       "size": 5648,
-      "sha256": "ecf8fb4d15fd0871aea1f512897d46adb4eb3fe98782031177e06f153c511cb9"
+      "sha256": "370efd8b7328f0a110c17499f5f98d22c2403db39c95a89b0575655364b40a13"
     },
     {
       "path": "scripts/validate_stage5_architecture.py",
       "size": 10779,
-      "sha256": "803ad4b73dd7adb9d702ca5bdf6a5fe7b84c40827dbc2db5793d93095a45e6ca"
+      "sha256": "6caa7b03a6ca6e49ea784062d24e1baf4d311d9d57e9ffcca14dbf4ef2663261"
     },
     {
       "path": "scripts/validate_stage6_documentation.py",
       "size": 8022,
-      "sha256": "344b46d7c9c2a45d6721cde0296432ecb36a64267aa9c143053535eb53139a79"
+      "sha256": "2f30727b833913a99024cbe025c4bcdfa530d622f280f50ba975af8ac5422862"
     },
     {
       "path": "scripts/validate_stage7_release.py",
       "size": 2817,
-      "sha256": "dc744b6d263bb9f7f2be4f4bc7d760f0145e1c7d35f912c695a237baf731c949"
+      "sha256": "d1d5bae047b9b7d4321014cea4672324b59d65ae05e3f2435e271e1671aeccd2"
     },
     {
       "path": "spec/Consolidation_Protocol.md",
@@ -1086,6 +1251,61 @@
       "sha256": "5e6c548c68a1e0a2509d6e97b4ef3a22d8f1a7e94f790fc0d7e2daf12e2ed303"
     },
     {
+      "path": "src/cogsys/__pycache__/__init__.cpython-313.pyc",
+      "size": 265,
+      "sha256": "25b4a552887d456c2464c2497bf41211810ad4fa6803d5f0e612c85918bb80c0"
+    },
+    {
+      "path": "src/cogsys/__pycache__/canonical.cpython-313.pyc",
+      "size": 3678,
+      "sha256": "f37cf52660c468db2e750a11d3fd8477747ad2b9277fcb12b54f52b18a3951f5"
+    },
+    {
+      "path": "src/cogsys/__pycache__/cli.cpython-313.pyc",
+      "size": 10866,
+      "sha256": "5c02bf8b326b3ded472dbfdf0d3280bbcddb8243c48fa7c7b0a46aba83226770"
+    },
+    {
+      "path": "src/cogsys/__pycache__/consolidation.cpython-313.pyc",
+      "size": 8533,
+      "sha256": "cd28108b3e5eecd758cc81296b0b5f62293d597a033edb07cd9fc1d23b9d0dac"
+    },
+    {
+      "path": "src/cogsys/__pycache__/docs.cpython-313.pyc",
+      "size": 43497,
+      "sha256": "082dbbfa3125d925c96a9470a6e20ed00a8f89b6065145a612ce549388629156"
+    },
+    {
+      "path": "src/cogsys/__pycache__/errors.cpython-313.pyc",
+      "size": 1184,
+      "sha256": "1449506f791df09bccbaba8b97433ecf6bb131342da8912892c3a2f920d86bfe"
+    },
+    {
+      "path": "src/cogsys/__pycache__/graph.cpython-313.pyc",
+      "size": 1580,
+      "sha256": "7c46070654cd503f761c09b873e8cee3638673fcbbfaa3a173278a8fbe42451a"
+    },
+    {
+      "path": "src/cogsys/__pycache__/semantic_merge.cpython-313.pyc",
+      "size": 5010,
+      "sha256": "9aa736c6fde628f95725e8bd59c81b0f05806d3e288d49d0760e5a0781cde13d"
+    },
+    {
+      "path": "src/cogsys/__pycache__/state.cpython-313.pyc",
+      "size": 6596,
+      "sha256": "23be2d7f293318e727eb613d4eb456c75f092307d23ef3300e16becab83785d3"
+    },
+    {
+      "path": "src/cogsys/__pycache__/validation.cpython-313.pyc",
+      "size": 14962,
+      "sha256": "f33d7feff2a679675cd2434204f95e25d61b0a3540481ce5652a6b7ca7829a95"
+    },
+    {
+      "path": "src/cogsys/__pycache__/yaml_profile.cpython-313.pyc",
+      "size": 5795,
+      "sha256": "2710572f43918c5eb0071147de0cb3f9a90a12bc923944d618e008d9a09f573a"
+    },
+    {
       "path": "src/cogsys/canonical.py",
       "size": 2047,
       "sha256": "5f69113366b0ea6429d575f7bbacaa4579ed0218a593f41fcb6a85867872eee8"
@@ -1103,7 +1323,7 @@
     {
       "path": "src/cogsys/docs.py",
       "size": 29522,
-      "sha256": "31669c3a4f673a2df205fc3d6a3171bd923f4b4caf22bb0f366903a2fa37872b"
+      "sha256": "a73e97da0a107498c07c26bac287d670b2aa4ee830315ecb0f75a80a152ef751"
     },
     {
       "path": "src/cogsys/errors.py",
@@ -1119,6 +1339,46 @@
       "path": "src/cogsys/runtime/__init__.py",
       "size": 666,
       "sha256": "95d8ab35375e0827819d2cde76bc7faa4643e3d215e6358267524b5e73fc05c9"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/__init__.cpython-313.pyc",
+      "size": 768,
+      "sha256": "7b0f9fcf5048154fadfdce95fe8dce3bc2a292b1508541a421394080657a52d0"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/communication.cpython-313.pyc",
+      "size": 8707,
+      "sha256": "8d0671c6ae1129ac8975cabd9478c73c301fdc39727a6656931a8585755af126"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/demo.cpython-313.pyc",
+      "size": 5025,
+      "sha256": "27edd0af483dcc511435c6ae5a94ff22f060d58420d44e1037f6cae025585e48"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/evaluator.cpython-313.pyc",
+      "size": 7844,
+      "sha256": "4f383b8ebbc62e4d301c215233247dc9b354820427a72490a27d7cd1ee3df61c"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/lineages.cpython-313.pyc",
+      "size": 4559,
+      "sha256": "9298fa0b507925f1aaa2c2c50ef0a1cf54d79542005881060615ba0081e7fdf0"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/memory.cpython-313.pyc",
+      "size": 10594,
+      "sha256": "eda2e04c049b7ca9c8c5b75d30ef64fac0d77ac9f70265cd6906ea8e2acab18c"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/meta_architect.cpython-313.pyc",
+      "size": 7131,
+      "sha256": "125b03db725c9915258ccdae0a4e2f30e375b2493d7ff1ba3553fb37627127c0"
+    },
+    {
+      "path": "src/cogsys/runtime/__pycache__/world_model.cpython-313.pyc",
+      "size": 6608,
+      "sha256": "5415386fe04424c5e82009ee9239faa4cc5fc8983df7668276cd04348c3a28a4"
     },
     {
       "path": "src/cogsys/runtime/communication.py",
@@ -1183,42 +1443,42 @@
     {
       "path": "state/canonical/components.yaml",
       "size": 835,
-      "sha256": "1060c75b08dd1633d7f55d949155c6f233f71744a6f8394a039ff37134e1240b"
+      "sha256": "a28ad84d16dee9b6ba6d130b668179c1a874847958ae8a0da225f164822cb7f7"
     },
     {
       "path": "state/canonical/contracts.yaml",
       "size": 799,
-      "sha256": "0fd83dc3007bbe1f88fea64c6ef2c691b4d0c9134bb6110a0805e3cb3e0a0e5e"
+      "sha256": "50004964f4b7fa8f249beac6271e2013adfccb83513c97acf76a4b2dae624ec8"
     },
     {
       "path": "state/canonical/generation.yaml",
       "size": 312,
-      "sha256": "f381106e69d6cca766be4b925aa7d499b2431bd7c8ed10dfb552dec394235f3f"
+      "sha256": "df95ffcdcc368e33b145895483579e0bf8cf30a6b2e6742ee2e2b58bf9ab6ddf"
     },
     {
       "path": "state/canonical/invariants.yaml",
       "size": 796,
-      "sha256": "8905a2047d9ad602217059b3f8ba7ce5c6b13b098eee136960265c06c138b358"
+      "sha256": "bc585f249c3bcae0370719e2f8f96349194a5197c3af861640833a2c94d0e35a"
     },
     {
       "path": "state/canonical/ownership.yaml",
       "size": 594,
-      "sha256": "5d59d583102525a70b492de38d9c3d2a6a20fb85d62dedce1edcd17cc1f42036"
+      "sha256": "9b7c06c5f40c71dd0d817c76e87f55fb20b9b20f5b2e5cbea18912c550925de3"
     },
     {
       "path": "state/canonical/principles.yaml",
       "size": 1225,
-      "sha256": "039a260f35a71a5a523ae52ba5b8e683285bf9e5c18994399f3ae7076688ed5a"
+      "sha256": "4e5609f43adb39a1c02f5b177a03b551695c8fb66f6c00b8b12309e3d83e7351"
     },
     {
       "path": "state/canonical/terminology.yaml",
-      "size": 1439,
-      "sha256": "2b05bd4005c10ce2876e16ff0be1d3ce5dff6ddcd517c84d90fd671ec51a7548"
+      "size": 2915,
+      "sha256": "a3f00b433767ac97e7e885c018136ff0042309949e5fed378ce2fc945744998b"
     },
     {
       "path": "state/chapters.yaml",
-      "size": 16797,
-      "sha256": "39ae180ddfa6bdd9d4f88ce8495fbac43379327309ae6bcb2d67402338868c88"
+      "size": 20924,
+      "sha256": "d252a6c17e681ae7f19541921d2cd64bf41e1c58f0c75c35326a42557f885474"
     },
     {
       "path": "state/consolidation.yaml",
@@ -1716,14 +1976,139 @@
       "sha256": "3a4f1e8e1a2baf74555d279a75e932c6590af7d729a26fc240bcfc22bbda8dd2"
     },
     {
+      "path": "state/content/20_01.yaml",
+      "size": 1283,
+      "sha256": "3a74466b197510eb7a6b9ac191f3e090f07a3a71c0372965c9374bc88fc00ad9"
+    },
+    {
+      "path": "state/content/20_02.yaml",
+      "size": 2080,
+      "sha256": "05cfe224d94fe8fdcbe7867019934da47c8f51bd5b277af598cad61bbfc65e87"
+    },
+    {
+      "path": "state/content/20_03.yaml",
+      "size": 1432,
+      "sha256": "f8e23b1dd33600922c0ae16ae16245f592e9040d718cc6ff03fc97abd11fdcff"
+    },
+    {
+      "path": "state/content/20_04.yaml",
+      "size": 1415,
+      "sha256": "b8dde6cb5e824f1aaa3bfc99914104b27389709409d0397ebba4ac2f7c31f2ef"
+    },
+    {
+      "path": "state/content/20_05.yaml",
+      "size": 2370,
+      "sha256": "d24ea63fe7b7e904bd6421e11fe42e531e39a96e808826c5b0ff038f8d5242e2"
+    },
+    {
+      "path": "state/content/20_06.yaml",
+      "size": 1226,
+      "sha256": "f3f070596f2c0fcecaa238122214b7acf6051ea879b9a8d25dc89910b2f45404"
+    },
+    {
+      "path": "state/content/20_07.yaml",
+      "size": 1401,
+      "sha256": "7ab14d9c16ae267af12ca0cc4f3eff28eb2edfea0ab9372c9e5d3133400a2c27"
+    },
+    {
+      "path": "state/content/21_01.yaml",
+      "size": 816,
+      "sha256": "08c4428d1c2e05b0275e9f4398422dd66291d79c9fb2749e0d99e46379355d97"
+    },
+    {
+      "path": "state/content/21_02.yaml",
+      "size": 1097,
+      "sha256": "f9fe2cbb09434866153c38cf15995af4509db363ec3d5c94f7f89aa40ab073b5"
+    },
+    {
+      "path": "state/content/21_03.yaml",
+      "size": 788,
+      "sha256": "510b508d10e40215ccd063f9d3a30dd2f1344b2a59fd72605471ab1089bce0ba"
+    },
+    {
+      "path": "state/content/21_04.yaml",
+      "size": 735,
+      "sha256": "cceaadae5580e700150d7f38a82643fd9f50c4dfcd49b7f194d3333f71fd6d7e"
+    },
+    {
+      "path": "state/content/21_05.yaml",
+      "size": 757,
+      "sha256": "6030ab7c0ef5ad4f2020af69a0f785e3447f5850ecbff8e404cdd3290259c8fc"
+    },
+    {
+      "path": "state/content/21_06.yaml",
+      "size": 734,
+      "sha256": "be1cbc3af448c6bc2061f5a6ccec41d5cb29fcc5a3b9afab80c7ea71ed060afd"
+    },
+    {
+      "path": "state/content/22_01.yaml",
+      "size": 683,
+      "sha256": "21e5f01395fa635088241c1f424c3f5db98d062cf11c372a4530a7c04ed86924"
+    },
+    {
+      "path": "state/content/22_02.yaml",
+      "size": 607,
+      "sha256": "7200b5eb63cc65c9775c8eebda3f775e81138b168462fef9768b6aa0d3cc9899"
+    },
+    {
+      "path": "state/content/22_03.yaml",
+      "size": 679,
+      "sha256": "a8ba35d3e5c6093fa47d94909e11b277953c02a746d15818feb8a94b2f5a864e"
+    },
+    {
+      "path": "state/content/22_04.yaml",
+      "size": 642,
+      "sha256": "e858c17275fcdfcb5d9e01894ac6f419921bb6b6066cff74e9607072045fb8d5"
+    },
+    {
+      "path": "state/content/22_05.yaml",
+      "size": 674,
+      "sha256": "aa619f4d5a6ed58901ecdb215a9fa2ba29c1cda6c43ffb1dda6cd1cd59206b4f"
+    },
+    {
+      "path": "state/content/23_01.yaml",
+      "size": 569,
+      "sha256": "2055a310e40b175f5aa6ff7fc37549fd8f603cb35855b3a879fd8167b898d9fa"
+    },
+    {
+      "path": "state/content/23_02.yaml",
+      "size": 603,
+      "sha256": "864e4331baf8e69f520de86c0135ee818e13148af5e2989ab9aa5b5a64cf04ac"
+    },
+    {
+      "path": "state/content/23_03.yaml",
+      "size": 597,
+      "sha256": "736ed24d6df2855c30087bb7498e4d49e24c0e5407179026967b6086c47e3a70"
+    },
+    {
+      "path": "state/content/23_04.yaml",
+      "size": 547,
+      "sha256": "a3c4f7b57c28feb49b381be88fe989aa1777b4c46e4242ba5473d585ad29e904"
+    },
+    {
+      "path": "state/content/23_05.yaml",
+      "size": 548,
+      "sha256": "1d4dd9b43b580e3bd135777a5c43083b6ab2320ed48317eea7423d0847526a7f"
+    },
+    {
+      "path": "state/content/23_06.yaml",
+      "size": 582,
+      "sha256": "b9133859a6c266d0f178d0fd34b8b2d18c39f4c9796cf10b85b3d6c461372ad7"
+    },
+    {
+      "path": "state/content/23_07.yaml",
+      "size": 891,
+      "sha256": "9a1812296d27c62e55c5bfedb83eca89b1c2f4df8be4ac13977532de3f0ec5fa"
+    },
+    {
       "path": "state/hypotheses.yaml",
       "size": 6466,
       "sha256": "c75ac92481539b73b9d1af590139bb1fecfc0a92866d96fe3b0fa0512a68a481"
     },
     {
       "path": "state/manifest.yaml",
-      "size": 473,
-      "sha256": "4ad2df1ea52609d2343d7fc0a18e89379a9cd734609205276704a948b6edee8c"
+      "size": 466,
+      "sha256": "48f699c541a7f48dcd65227f67b71e30580739c0eb6e70e229c4aecfc4fc29aa"
     },
     {
       "path": "state/principles.yaml",
@@ -1737,13 +2122,63 @@
     },
     {
       "path": "state/roadmap.yaml",
-      "size": 1310,
-      "sha256": "02caaffce62e4961bd22d281e62a98b41e51e8be722354d5a6d6970bbf910b2c"
+      "size": 1871,
+      "sha256": "21ec1b35b11198348805aba46fb945bc5468a0503f41d6f097e536d35813986f"
     },
     {
       "path": "state/tokens.yaml",
       "size": 17299,
       "sha256": "1e7eb4342c91d1fa5a9f43cb82f0448c96e617db1275a16ef9aa34d48a1ceb82"
+    },
+    {
+      "path": "tests/__pycache__/test_consolidation.cpython-313-pytest-9.0.2.pyc",
+      "size": 3134,
+      "sha256": "08a9f070d30aa8e236d5b655982fdca96832560b19109dfa46723e1784bcfcab"
+    },
+    {
+      "path": "tests/__pycache__/test_diagram_layout_regressions.cpython-313-pytest-9.0.2.pyc",
+      "size": 6488,
+      "sha256": "ae272504e6088d9216685c2f63b8279b5ab57f2fdabc9ad748ac8de397fd76a6"
+    },
+    {
+      "path": "tests/__pycache__/test_diagram_reference_size.cpython-313-pytest-9.0.2.pyc",
+      "size": 2554,
+      "sha256": "996b1e91e92878563b9a2ba2e1cee4bf79bbc07f3232e34f3d8fc5ca6409154b"
+    },
+    {
+      "path": "tests/__pycache__/test_docs.cpython-313-pytest-9.0.2.pyc",
+      "size": 35176,
+      "sha256": "7cbad23c12d7060f72570dc9baa5ed96baf77af7e308ec527d37b293bd790a30"
+    },
+    {
+      "path": "tests/__pycache__/test_merge.cpython-313-pytest-9.0.2.pyc",
+      "size": 5705,
+      "sha256": "316fea6013f1c676a8c7c37e96486652f0b878568cf7c07d9a4aca2db7f2c82d"
+    },
+    {
+      "path": "tests/__pycache__/test_release_0314_content.cpython-313-pytest-9.0.2.pyc",
+      "size": 11379,
+      "sha256": "043ec825c73c3d266f7ad99fd7a2d5c291c00ca7707d8fa3e7a13d81af07bbbb"
+    },
+    {
+      "path": "tests/__pycache__/test_runtime.cpython-313-pytest-9.0.2.pyc",
+      "size": 5751,
+      "sha256": "607b8f5bed28bb0110f7570bf0b3fe4a0c995ca3e887d77bc5625ae7c8c0e8f4"
+    },
+    {
+      "path": "tests/__pycache__/test_section_11_01_diagram.cpython-313-pytest-9.0.2.pyc",
+      "size": 3650,
+      "sha256": "f8b5c02991b699961c496a455ccacb4347aed9382310377ce616fd9b098d4d65"
+    },
+    {
+      "path": "tests/__pycache__/test_validation.cpython-313-pytest-9.0.2.pyc",
+      "size": 4412,
+      "sha256": "5cdb1028d7affbdc88f6345d1245cbe69ceb1f71331123de7f296baa1fb1fe7c"
+    },
+    {
+      "path": "tests/__pycache__/test_yaml_profile.cpython-313-pytest-9.0.2.pyc",
+      "size": 2869,
+      "sha256": "99f6a3b82229a11e60b1518e3a244418467a222bf748102b0ffc22c90f173ee5"
     },
     {
       "path": "tests/test_consolidation.py",
@@ -1763,7 +2198,7 @@
     {
       "path": "tests/test_docs.py",
       "size": 8278,
-      "sha256": "d926f8ace591f60fd40773ad82ea344a2644be852ba955caad13cde7c7260cf0"
+      "sha256": "e26b7f6a5d8bff648be193832da8413ecce2e9c60e7b3a4c7357badc90ce150e"
     },
     {
       "path": "tests/test_merge.py",

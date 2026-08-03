@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: list
+  items:
+  - What should be replayed, how often, and under which context?
+  - How can replay preserve diversity rather than repeatedly strengthen dominant memories?
+  - When should replay weaken or reinterpret knowledge instead of reinforcing it?
+  - How can corrupted or adversarial memories be prevented from amplification?
+  - Does replay require explicit episodic storage, or can it operate over semantic structures alone?
+  - How should replay interact with current goals and Global Evaluation?
+section_id: S_23_03
+id: S_23_03

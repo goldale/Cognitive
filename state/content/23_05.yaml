@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: list
+  items:
+  - What state and goals may Global Evaluation inspect?
+  - How conservative must its learning process be?
+  - How can objective drift be detected before behavior changes become irreversible?
+  - Should evaluation produce a scalar, ordered alternatives, constraints, or a structured judgment?
+  - How does final evaluation interact with planning, action feedback, and memory importance?
+  - Who or what is authorized to modify the evaluator?
+section_id: S_23_05
+id: S_23_05

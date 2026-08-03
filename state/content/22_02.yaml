@@ -1,0 +1,15 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: paragraph
+  text: Memory should evolve from a passive store into a managed lifecycle with explicit acquisition, retrieval,
+    importance, consolidation, replay, weakening, pruning, and structural adaptation.
+- type: list
+  items:
+  - Persistent but not immutable.
+  - Lossy but auditable.
+  - Adaptive but bounded by contracts.
+  - Capable of forgetting without losing provenance of the forgetting decision.
+  - Capable of structural change without confusing topology optimization with ordinary semantic learning.
+section_id: S_22_02
+id: S_22_02

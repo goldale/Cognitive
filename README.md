@@ -111,3 +111,8 @@ The Research State toolchain and runtime demonstrations are executable. The inte
 ## Language and licensing
 
 All project artifacts are canonical in English. No public license is granted by this draft repository. Select and add a license before public distribution or group contribution.
+
+
+## Architectural Evolution
+
+Part V documents the future development sequence: Importance Estimation; Offline Consolidation and Sleep; Replay; forgetting and pruning; structural plasticity; Global Evaluation; and Multi-Agent Semantic Learning.

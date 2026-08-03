@@ -92,12 +92,12 @@ for p in html:
     repeated=[x for x,c in Counter(ids).items() if c>1]
     if repeated: dups.append(f'{p.relative_to(ROOT)}:{repeated}')
 add('F','no duplicate HTML ids',not dups,'; '.join(dups[:10]))
-idx=(ROOT/'docs/chapter19/index.html').read_text(errors='replace') if (ROOT/'docs/chapter19/index.html').exists() else ''
+idx=(ROOT/'docs/chapter24/index.html').read_text(errors='replace') if (ROOT/'docs/chapter24/index.html').exists() else ''
 for term in ['Semantic Teacher','Semantic Learner','Semantic Feedback Learning Pipeline','Memory Vector']:
     add('F',f'A-Z contains {term}',term in idx)
 
 failed=[x for x in checks if x['status']=='FAIL']
-result={'version':'0.3.15-stage4','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
+result={'version':'0.3.16-stage4','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
 (ROOT/'STAGE4_DUPLICATE_RESULTS.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result['summary']))
 sys.exit(1 if failed else 0)

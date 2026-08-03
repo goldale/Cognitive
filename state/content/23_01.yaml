@@ -1,0 +1,13 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: list
+  items:
+  - Can importance be represented by one value, a vector, or a structured state?
+  - How should immediate relevance, long-term utility, novelty, confidence, recurrence, and causal significance
+    interact?
+  - How quickly should importance change after goals or environments change?
+  - How can the system prevent manipulation of importance signals?
+  - Which importance evidence belongs to Semantic Representations, associations, episodes, or connection state?
+section_id: S_23_01
+id: S_23_01

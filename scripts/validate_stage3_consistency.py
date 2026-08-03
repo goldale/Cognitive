@@ -70,7 +70,7 @@ for f,p in parsers.items():
 check('D','all internal HTML links resolve',not broken,'; '.join(broken[:20]))
 
 # A-Z coverage
-idx=(DOCS/'chapter19/index.html').read_text(errors='replace')
+idx=(DOCS/'chapter24/index.html').read_text(errors='replace')
 for t in [x['term'] for x in term.get('terms',[])]: check('E','A-Z term '+t,t in idx)
 for role in ['Semantic Teacher','Semantic Learner']:
     normalized=role.lower().replace(' ','_')
@@ -101,7 +101,7 @@ check('H','Stage 2 provenance manifest exists',(ROOT/'STAGE2_MANIFEST.json').exi
 
 # project tests represented separately by runner
 failed=[c for c in checks if c['status']=='FAIL']
-out={'version':'0.3.15-stage3','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
+out={'version':'0.3.16-stage3','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
 (ROOT/'STAGE3_CONSISTENCY_RESULTS.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(out['summary']))
 sys.exit(1 if failed else 0)

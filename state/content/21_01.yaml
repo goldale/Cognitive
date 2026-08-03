@@ -1,0 +1,16 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: paragraph
+  text: The Research Agenda converts architectural direction into experiments that can falsify assumptions. A future
+    subsystem is not accepted merely because it is biologically plausible or intuitively attractive.
+- type: list
+  items:
+  - State a hypothesis and competing alternatives.
+  - Define observable measurements before implementation.
+  - Use persistent agents and longitudinal experiments where memory effects require time.
+  - Record external ground-truth logs separately from lossy internal memory.
+  - Measure failure, recovery, and unintended interactions as well as average performance.
+  - Promote a mechanism from research to architecture only after its contract and evidence are reviewable.
+section_id: S_21_01
+id: S_21_01

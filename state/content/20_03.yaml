@@ -1,0 +1,28 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: definition
+  title: Importance Estimation
+  text: A future subsystem that assigns context-sensitive significance to Semantic Representations, memory structures,
+    associations, and experiences.
+- type: paragraph
+  text: Importance is required before the system can decide what deserves retention, consolidation, replay, protection
+    from forgetting, or structural investment.
+- type: list
+  items:
+  - Estimate immediate task relevance.
+  - Estimate expected long-term utility.
+  - Record novelty, recurrence, confidence, emotional or evaluative significance, and causal relevance where applicable.
+  - Distinguish frequently accessed knowledge from knowledge that is merely duplicated.
+  - Permit importance to change as goals, context, and later evidence change.
+- type: principle
+  title: No direct raw-observation scoring
+  text: Importance Estimation operates on semantic objects and system context. It must not create a second path
+    through which raw external observations directly train Associative Memory.
+- type: note
+  title: Relationship to Integrated Evaluation
+  text: Importance Estimation may consume evaluative signals, but it is not identical to the future Global Evaluation
+    subsystem. Importance concerns memory lifecycle decisions; Global Evaluation concerns system-wide significance
+    and action selection.
+section_id: S_20_03
+id: S_20_03

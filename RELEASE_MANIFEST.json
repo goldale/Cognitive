@@ -1,0 +1,33 @@
+{
+  "project": "Cognitive Architecture Specification",
+  "release": "0.3.16",
+  "version": "0.3.16",
+  "release_date": "2026-08-03",
+  "canonical_language": "English",
+  "source_of_truth": "YAML in state/",
+  "release_type": "architectural-roadmap",
+  "documentation": {
+    "html_pages": 148,
+    "alphabetical_index": "docs/chapter24/index.html",
+    "compatibility_index": "docs/alphabetical-index.html",
+    "canonical_model": "docs/canonical-model.html",
+    "evolution_part": "docs/chapter20/index.html"
+  },
+  "validation": {
+    "canonical_state": "passed",
+    "automated_tests": "32 passed",
+    "html_generation": "149 files",
+    "alphabetical_index": "passed",
+    "roadmap_order": "passed"
+  },
+  "changes": [
+    "Added Part V — Architectural Evolution",
+    "Added Chapters 20–23",
+    "Moved A–Z Index to Chapter 24",
+    "Established Importance Estimation as first next priority",
+    "Established Offline Consolidation and Sleep as second priority",
+    "Established Replay as third priority",
+    "Preserved all cognitive-0.3.15 Semantic Feedback Learning invariants"
+  ],
+  "release_notes": "RELEASE_NOTES_0.3.16.md"
+}

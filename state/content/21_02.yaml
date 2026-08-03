@@ -1,0 +1,29 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: paragraph
+  text: Importance Estimation should be studied before consolidation and replay policies are fixed.
+- type: table
+  headers:
+  - Experiment
+  - Primary measurement
+  - Failure signal
+  rows:
+  - - Retention prediction
+    - Correlation between estimated importance and future task utility
+    - High-value knowledge is forgotten while low-value noise is preserved
+  - - Context shift
+    - Ability to revise importance after goals change
+    - Scores remain frozen despite changed utility
+  - - Novelty versus frequency
+    - Separation of rare critical knowledge from frequent trivial knowledge
+    - Frequency dominates all other signals
+  - - Interference prediction
+    - Ability to identify knowledge likely to cause destructive overlap
+    - Unexpected degradation after UPDATE or consolidation
+- type: note
+  title: Acceptance direction
+  text: No single scalar is assumed to be sufficient. The representation of importance remains an open design choice
+    until experiments justify it.
+section_id: S_21_02
+id: S_21_02

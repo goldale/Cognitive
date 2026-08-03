@@ -84,7 +84,7 @@ def test_progressive_training_and_memory_maturity_are_preserved() -> None:
     import tempfile
     with tempfile.TemporaryDirectory() as tmp:
         DocumentationBuilder(state, ROOT / "assets").build(Path(tmp))
-        index_html = (Path(tmp) / "chapter19" / "index.html").read_text(encoding="utf-8")
+        index_html = (Path(tmp) / "chapter24" / "index.html").read_text(encoding="utf-8")
         for label in [
             "Memory Vector", "Staged Training", "Null Memory Vector",
             "Forced Memory Utilization", "Associative Memory Maturity",

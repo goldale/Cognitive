@@ -1,0 +1,16 @@
+kind: T_ContentBlock
+schema_version: 0.3.16
+blocks:
+- type: paragraph
+  text: Memory lifecycle experiments combine importance, consolidation, replay, forgetting, pruning, and structural
+    plasticity over long operating periods.
+- type: list
+  items:
+  - Run agents for months or equivalent accelerated trajectories.
+  - Maintain exact external event logs for retrospective comparison.
+  - Track memory size, retrieval latency, semantic coverage, contradiction density, and task performance.
+  - Introduce controlled misinformation and measure quarantine, correction, and residual contamination.
+  - Compare reversible weakening with irreversible deletion.
+  - Test topology changes against stable non-structural baselines.
+section_id: S_21_05
+id: S_21_05
