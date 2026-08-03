@@ -12,7 +12,7 @@ blocks:
   size: standard
   nodes:
   - id: current
-    label: 'cognitive-0.3.15
+    label: 'cognitive-0.3.16
 
       Semantic Feedback Learning'
     kind: state

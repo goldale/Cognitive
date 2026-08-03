@@ -19,7 +19,7 @@ blocks:
   title: Canonical Replay Boundary
   description: Replay reactivates semantic material through the Transformer. It does not bypass the Semantic Feedback
     Learning Pipeline or write raw stored observations directly into Associative Memory.
-  direction: LR
+  direction: TB
   size: standard
   nodes:
   - id: source
