@@ -15,6 +15,7 @@ TOKEN_RE = re.compile(r"\bT_(?:[A-Z][A-Za-z0-9]*)+\b")
 CODE_RE = re.compile(r"`([^`]+)`")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 EM_RE = re.compile(r"(?<!\*)\*([^*]+)\*(?!\*)")
+LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 
 
 @dataclass(frozen=True)
@@ -34,8 +35,17 @@ def _humanize_token_label(token: str) -> str:
 
 
 def _render_inline(text: str) -> str:
-    escaped = html.escape(text, quote=True)
     protected: list[str] = []
+
+    def protect_link(match: re.Match[str]) -> str:
+        label = html.escape(match.group(1), quote=True)
+        href = html.escape(match.group(2), quote=True)
+        rendered = f'<a href="{href}">{label}</a>'
+        protected.append(rendered)
+        return f"\x00{len(protected)-1}\x00"
+
+    text = LINK_RE.sub(protect_link, text)
+    escaped = html.escape(text, quote=True)
 
     def protect_code(match: re.Match[str]) -> str:
         value = match.group(1)

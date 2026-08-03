@@ -19,6 +19,11 @@ blocks:
   - Detect semantic disagreement instead of treating transmission as guaranteed understanding.
   - Permit lineage diversity and prevent a single erroneous agent from globally overwriting population memory.
   - Use explicit policies for trust, quarantine, reconciliation, and rollback.
+- type: note
+  title: Semantic diversity and the Babel hypothesis
+  text: The communication-level argument for preserving partially independent semantic lineages is developed in
+    [Section 3.6, Higher-Level Communication Phenomena](../chapter03/03_06.html). Part V adopts that discussion
+    as a design consideration for Multi-Agent Semantic Learning rather than duplicating it here.
 - type: principle
   title: Exchange boundary
   text: Systems exchange semantic representations or other explicit messages. Receiving Associative Memory still
