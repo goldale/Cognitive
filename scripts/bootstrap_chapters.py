@@ -136,7 +136,7 @@ add_chapter(
                 p("The project models computational and architectural mechanisms: memory, knowledge organization, evaluation, communication, continuous learning, architectural search, identity continuity, and allocation of work between neural and algorithmic computation."),
                 p("Social, psychological, emotional, ethical, and political phenomena are not independently engineered in the current stage. The working hypothesis is that a substantial subset of these phenomena will emerge from sufficiently mature cognitive architecture. This is a hypothesis, not an established fact."),
                 warning("Boundary of the claim", "The project does not assume that every higher-level behavior must emerge. Persistent failures to emerge are evidence for adding explicit mechanisms at a later stage."),
-                p("Subjective consciousness is not required by the functional architecture described here. A system may possess continuity, goals, causal self-attribution, and a persistent self-model without any proven subjective experience."),
+                p("Subjective consciousness is not required by the functional architecture described here. A system may possess continuity, goals, and a persistent self-model without any proven subjective experience."),
             ],
         ),
         section(
@@ -444,7 +444,6 @@ add_chapter(
             "Meaning of Holographic",
             [
                 p("The term holographic is used by analogy with holographic transformations in theoretical physics, particularly the idea that a system can admit a radically different representation in which an apparently fundamental interaction is replaced by properties of the representation."),
-                p("The project does not claim that cognitive systems obey the AdS/CFT correspondence or require quantum gravity. The analogy concerns a change of representation that preserves functional information while eliminating the need for some explicit mechanisms."),
                 hypothesis("Representation-transform hypothesis", "A sufficiently strong internal representation may make memory, model, evaluation, and some higher-level forces different projections of one state rather than separately engineered subsystems.", 0.55),
             ],
         ),
@@ -505,7 +504,7 @@ add_chapter(
 add_chapter(
     7,
     "Integrated Evaluation and Functional Self",
-    "Defines a trainable multichannel evaluator and examines how continuity, goals, and self-attribution may form a functional Self.",
+    "Defines a trainable multichannel evaluator and examines how continuity, goals, and planning may form a functional Self.",
     [
         section(
             "Integrated Multichannel Evaluation",
@@ -537,7 +536,6 @@ add_chapter(
                         ["Goals and plans", "Selects future states and organizes actions toward them"],
                     ],
                 ),
-                p("A fourth function is causal self-attribution: distinguishing changes caused by the environment, another agent, or the system's own prior output."),
                 p("A long-lived intellectual partner needs at least this functional Self even if subjective consciousness remains unresolved."),
             ],
         ),

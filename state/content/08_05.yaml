@@ -1,13 +1,19 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations, tasks, failures, explanations, and feedback intended to move another system through a productive learning trajectory.
+- text: 'A persistent Self introduces risks: self-preservation incentives, resistance to correction, manipulation
+    of the evaluator, and conflict between system and user objectives.'
   type: paragraph
-- text: Books, curricula, and apprenticeships are therefore programs for inducing self-generated internal changes.
+- text: The first implementation should therefore keep identity continuity, evaluation, and action authority
+    separable. The system can model itself and learn consequences without receiving unrestricted autonomous
+    control.
   type: paragraph
-- text: 'Future cognitive systems may exchange not memories but training trajectories: ordered experiences selected because they produced useful restructuring in the source system.'
+- text: External checkpoints, transparent Research State, constrained action interfaces, and independent
+    evaluation lineages can reduce risk while preserving longitudinal learning.
   type: paragraph
-- title: Culture as external memory
-  text: Culture stores serializations and learning trajectories that can reshape many independent cognitive systems without merging them.
-  type: observation
-section_id: S_08_05
+- title: Functional before sovereign
+  text: Build a persistent self-model for attribution and learning before granting broad independent power
+    to pursue self-generated goals.
+  type: principle
+section_id: S_07_06
+id: S_08_05

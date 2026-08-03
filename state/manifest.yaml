@@ -1,7 +1,7 @@
 kind: T_ResearchState
-schema_version: 0.1.0
-version: 0.1.0
-title: Architectural Evolution of Long-Lived Cognitive Systems
+schema_version: 0.3.13
+version: 0.3.13
+title: Cognitive Architecture Research State
 files:
   chapters: chapters.yaml
   architecture: architecture.yaml

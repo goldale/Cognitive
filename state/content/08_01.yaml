@@ -1,10 +1,83 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Written text, speech, lectures, and dialogue all provide linguistic information. Their channel properties differ, but each can trigger T_Deserialization and T_ModelIntegration.
+- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions and multi-step
+    scenarios. Each scenario includes predicted states, branch probabilities, temporal attributes, resource requirements,
+    and uncertainty.
   type: paragraph
-- text: Speech adds timing, emphasis, and emotional coloration. Written text permits arbitrary pacing, exact revisitation, annotation, and repeated integration attempts.
+- type: diagram
+  title: Bounded Planning and Action Selection
+  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects among
+    them under a processing budget.
+  direction: TB
+  nodes:
+  - id: state
+    label: Current State
+    kind: state
+    status: current
+  - id: generator
+    label: Scenario Generator
+    kind: subsystem
+    status: current
+  - id: budget
+    label: Planning Budget
+    kind: control
+    status: current
+  - id: a
+    label: Alternative A
+    kind: data
+    status: current
+  - id: b
+    label: Alternative B
+    kind: data
+    status: current
+  - id: c
+    label: Alternative C
+    kind: data
+    status: current
+  - id: evaluation
+    label: Integrated Evaluation
+    kind: subsystem
+    status: current
+  - id: action
+    label: Selected Action
+    kind: external
+    status: current
+  edges:
+  - from: state
+    to: generator
+    flow: information
+  - from: budget
+    to: generator
+    flow: control
+    label: limits search
+  - from: generator
+    to: a
+    flow: information
+  - from: generator
+    to: b
+    flow: information
+  - from: generator
+    to: c
+    flow: information
+  - from: a
+    to: evaluation
+    flow: information
+  - from: b
+    to: evaluation
+    flow: information
+  - from: c
+    to: evaluation
+    flow: information
+  - from: evaluation
+    to: action
+    flow: evaluation
+    label: best available option
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option. The
+    behavioral result then re-enters the cognitive system as new input and is evaluated again.
   type: paragraph
-- text: A lecture combines prepared serialization with real-time adaptation to questions. Dialogue adds an iterative feedback loop in which the sender can change later serialization based on observed integration failure.
-  type: paragraph
-section_id: S_08_01
+section_id: S_14_03
+id: S_08_01

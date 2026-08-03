@@ -1,15 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant episodes while retaining category boundaries, causal expectations, evaluation changes, and action tendencies.
+- text: High-bandwidth sensory channels require instrumental preprocessing before general semantic reasoning.
+    Candidate mechanisms include change detection, tracking, event detection, key-frame selection, feature
+    extraction, semantic segmentation, and task-conditioned filtering.
   type: paragraph
-- text: Information can disappear from explicit recall while remaining present functionally. A book may no longer be remembered proposition by proposition, yet continue to alter judgments and attention.
+- text: Preprocessing must preserve information that may affect active goals while avoiding the impossible
+    requirement that the reasoning core interpret every pixel, sample, or point at full rate.
   type: paragraph
-- text: The engineering target is therefore not maximum retained bits. It is maximum future utility of the retained internal state.
-  type: paragraph
-- text: MemoryUtility = FuturePrediction + Evaluation + Action + LearningDirection - StorageAndInterferenceCost
-  type: formula
-- title: Auditability requirement
-  text: An engineered cognitive system may require an external exact event log for legal, scientific, or safety auditing even when its internal cognitive memory remains lossy.
-  type: warning
-section_id: S_04_04
+section_id: S_13_04
+id: S_04_04

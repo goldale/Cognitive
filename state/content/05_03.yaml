@@ -1,12 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
+- text: The same document can substantially change a novice world model and add almost nothing to an expert
+    world model. Semantic Novelty is therefore a property of the pair consisting of input and current
+    Memory State.
   type: paragraph
-- text: "Current Architecture\n        ↓\nGenerate Candidate\n        ↓\nReplay and Evaluate\n        ↓\nAccept / Reject / Partially Apply\n        ↓\nRepeat"
-  type: diagram
-- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories, different retention thresholds, or different executor assignments.'
+- text: Repeated information can remain relevant while becoming non-novel. Conversely, unfamiliar information
+    can be novel while remaining irrelevant to the active objective.
   type: paragraph
-- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not automatically superior.
-  type: paragraph
-section_id: S_05_03
+section_id: S_18_03
+id: S_05_03

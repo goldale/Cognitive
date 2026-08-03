@@ -1,12 +1,80 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: The highest-priority experiment is a persistent agent operating for months with exact external logs and lossy internal memory. The experiment should measure retention, adaptation, interference, objective drift, and recovery from false consolidation.
+- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system
+    must generate candidate organizations, evaluate them, retain useful changes, and repeat.
   type: paragraph
-- text: A second experiment trains the meta-architect on multiple task families and compares learned decomposition with fixed all-neural, all-algorithmic, and human-designed hybrid baselines.
+- type: diagram
+  title: Functional and Structural Learning
+  description: Functional learning changes active weights; structural learning changes which connections exist and
+    how topology is organized.
+  direction: TB
+  nodes:
+  - id: experience
+    label: Experience
+    kind: external
+    status: current
+  - id: functional
+    label: Functional Learning
+    kind: subsystem
+    status: current
+  - id: weights
+    label: Weight Updates
+    kind: state
+    status: current
+  - id: signals
+    label: Connection State Signals
+    kind: state
+    status: current
+  - id: structural
+    label: Structural Learning
+    kind: future
+    status: future
+  - id: topology
+    label: Topology Changes
+    kind: storage
+    status: future
+  edges:
+  - from: experience
+    to: functional
+    flow: information
+  - from: functional
+    to: weights
+    flow: learning
+    label: online adaptation
+  - from: experience
+    to: signals
+    flow: information
+  - from: signals
+    to: structural
+    flow: learning
+    label: offline evidence
+  - from: structural
+    to: topology
+    flow: optimization
+    label: create / remove links
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: 'Current Architecture ↓
+
+    Generate Candidate ↓
+
+    Replay and Evaluate ↓
+
+    Accept / Reject / Partially Apply ↓
+
+    Repeat'
+  type: diagram
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories,
+    different retention thresholds, or different executor assignments.'
   type: paragraph
-- text: A third experiment measures cognitive transformation from books and dialogue using future task behavior and question generation rather than recall alone.
+- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge,
+    and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not
+    automatically superior.
   type: paragraph
-- text: A fourth experiment maintains several lineages under simulated environmental regime changes and compares global champion cloning with lineage-preserving deployment.
-  type: paragraph
-section_id: S_12_03
+section_id: S_05_03
+id: S_12_03

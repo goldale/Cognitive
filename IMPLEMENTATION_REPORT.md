@@ -1,51 +1,24 @@
-# Implementation Report
+# Cognitive 0.3.8 Implementation Report
 
-## Release
+This patch corrects diagram proportionality in SECTION 12.6 and restores the explicit sequential Memory Vector normalization procedure as SECTION 11.6. The canonical sequence is: length normalization, semantic stabilization, covariance-driven orthogonalization, and sparse basis rotation. HTML, index entries, and regression tests are regenerated from YAML.
 
-Version 0.1.0 is a complete executable bootstrap of the architecture that can be implemented with current technology.
+## 0.3.10 diagram normalization
 
-## Verified operations
+All architecture diagrams were regenerated using the Section 10.1 diagram as the visual reference. The canonical YAML now assigns the standard size class to every diagram, and regression tests prevent accidental divergence without an explicit future design decision.
 
-- Restricted YAML parsing.
-- Canonical YAML formatting.
-- Research State validation.
-- Atomic and derived Token validation.
-- Generated English HTML documentation.
-- Local-link validation across generated documentation.
-- Semantic proposal application in an isolated transactional copy.
-- Structural three-way merge and explicit conflict reporting.
-- Objective-driven world-model operation.
-- Working-memory to long-term-memory consolidation.
-- Functional forgetting.
-- Iterative selection among candidate memory organizations.
-- Communication, missing-background clarification, integration, and conflict handling.
-- Pairwise lifelong training of an integrated multichannel evaluator.
-- Learned selection among algorithmic, neural, and hybrid execution.
-- Champion cloning inside diverse cognitive lineages.
+## 0.3.11 single-line navigation
 
-## Test status
+- Rebuilt all HTML pages with a five-element single-line navigation bar.
+- Replaced `A–Z Alphabetical Index` with `A–Z Index`.
+- Corrected responsive layout to prevent wrapping; narrow screens use horizontal overflow only when necessary.
+- Removed the separate footer text row so footer navigation remains one line.
+- Added regression tests for the short label and no-wrap layout.
 
-The release contains fifteen automated tests covering the restricted YAML profile, state validation, documentation links, consolidation, semantic merge, evaluator learning, meta-architecture selection, and the complete runtime demonstration.
 
-## Deliberate limitations
+## 0.3.12 Section 11.1 visual correction
 
-The release does not present research hypotheses as completed engineering:
+The Canonical Memory Interface diagram was changed from a narrow top-to-bottom chain to a left-to-right pipeline so that its displayed proportions match the Section 10.1 reference style. A regression test protects the approved direction and standard size.
 
-- Holographic memory-model integration is described and experimentally scoped but not claimed as solved.
-- Functional Self components are separated and prototyped only where current evidence permits.
-- Higher-level social, emotional, ethical, and political behavior remains an emergence hypothesis.
-- Full semantic branch consolidation still requires human-model review after deterministic structural merge.
-- The current world model is symbolic and finite; it is an experiment harness, not a production AGI implementation.
+## 0.3.13 Balanced diagram layouts
 
-## Reproducibility
-
-Run:
-
-```bash
-make validate
-make test
-make docs
-make demo
-```
-
-The release archive is reproducible from the repository with `scripts/build_release.sh`.
+Sections 7.3, 11.4, and 11.6 now use explicit two-row rank groups in the canonical Diagram DSL. This prevents both over-wide, shallow SVGs and narrow, excessively tall SVGs while preserving the Section 10.1 reference scale. The documentation generator now supports `rank_groups`, and regression tests protect the three layouts.

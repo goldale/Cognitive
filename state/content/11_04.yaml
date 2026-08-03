@@ -1,12 +1,78 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Git is the sole history mechanism. Research State stores current state, not a cumulative internal history.
+- text: After the memory representation becomes sufficiently stable, representative Memory Vectors can be analyzed
+    through covariance and correlation structure. Strong off-diagonal dependence reveals redundant or entangled
+    coordinates.
   type: paragraph
-- text: Each version contains a latest T_ConsolidationRecord describing only the semantic transition that produced that version. Earlier records remain available in earlier Git commits.
+- type: diagram
+  title: Representation Optimization Pipeline
+  description: Offline optimization changes the latent coordinate system while preserving represented knowledge.
+  direction: TB
+  nodes:
+  - id: samples
+    label: 'Representative
+
+      Memory Vectors'
+    kind: data
+    status: current
+  - id: cov
+    label: 'Covariance /
+
+      Correlation Analysis'
+    kind: subsystem
+    status: current
+  - id: white
+    label: Whitening
+    kind: subsystem
+    status: current
+  - id: orth
+    label: 'Orthogonal
+
+      Coordinates'
+    kind: subsystem
+    status: current
+  - id: sparse
+    label: 'Sparse Basis
+
+      Rotation'
+    kind: subsystem
+    status: current
+  - id: canonical
+    label: 'Updated
+
+      Canonical Basis'
+    kind: interface
+    status: current
+  edges:
+  - from: samples
+    to: cov
+    flow: information
+  - from: cov
+    to: white
+    flow: information
+  - from: white
+    to: orth
+    flow: information
+  - from: orth
+    to: sparse
+    flow: information
+  - from: sparse
+    to: canonical
+    flow: optimization
+    label: preserves semantics
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  rank_groups:
+  - - samples
+    - cov
+    - white
+  - - canonical
+    - sparse
+    - orth
+- text: Whitening or related basis transformations can reduce second-order correlation without changing the knowledge
+    represented.
   type: paragraph
-- text: When a commit contains no semantic change, the consolidation record may remain unchanged. File diffs then record formatting or generated-artifact changes without inventing a false knowledge transition.
-  type: paragraph
-- text: Three-way file merge is structural. True semantic consolidation can produce a result belonging to neither branch. The tool therefore emits conflict reports for review rather than pretending every textual merge is a cognitive merge.
-  type: paragraph
-section_id: S_11_04
+section_id: S_17_04
+id: S_11_04

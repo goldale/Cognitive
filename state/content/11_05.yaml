@@ -1,12 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: HTML is never the canonical source. The generator reads chapter structure and semantic content blocks from Research State.
+- text: After decorrelation, a further rotation may seek sparse typical representations in which simple
+    concepts activate relatively few coordinates. Statistical independence and semantic interpretability
+    are separate objectives and must not be conflated.
   type: paragraph
-- text: Each page contains stable Up, Previous, Contents, and Next navigation. Large chapters use a directory index and section files; small chapters can remain a single file.
+- text: Representation Optimization changes the coordinate system, not the accumulated knowledge or memory
+    graph topology. It is therefore distinct from UPDATE and from sleep-like structural reorganization.
   type: paragraph
-- text: Semantic CSS classes identify Tokens, definitions, hypotheses, observations, examples, notes, warnings, formulas, and principles. Presentation can change without editing content.
-  type: paragraph
-- text: The current stylesheet follows a restrained ISO, RFC, and W3C-inspired layout with a fixed reading width and a small left indent for body text.
-  type: paragraph
-section_id: S_11_05
+section_id: S_17_05
+id: S_11_05

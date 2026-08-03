@@ -1,15 +1,25 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: When multiple integrations remain possible or required background is absent, a rational cognitive system generates T_ClarificationRequest rather than silently selecting an arbitrary interpretation.
+- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value; exploration
+    may become less important than safety; a research agent may move from discovery to verification.
   type: paragraph
-- text: Clarification questions are therefore not secondary social behavior. They are operations that reduce uncertainty inside T_ModelIntegration.
+- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate, the
+    current organization may become inefficient. Architectural search is then required.
   type: paragraph
-- title: T_Conflict
-  text: A computational state in which received information cannot be integrated under the receiver's current model and constraints without unresolved inconsistency.
-  type: definition
-- text: T_Conflict is distinct from the social dynamics of argument. The project intentionally excludes dominance, persuasion, status, anger, and coalition behavior from this definition.
+- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate reorganizations
+    must be generated, evaluated, partially applied, and compared over time.
   type: paragraph
-- text: T_ModelConflictResolution is an iterative search over additional evidence, revised definitions, confidence changes, local reorganization, or explicit retention of incompatible alternatives.
-  type: paragraph
-section_id: S_02_04
+- text: 'Objective Drift ↓
+
+    Weight and Activation Changes ↓
+
+    Growing Organizational Mismatch ↓
+
+    Iterative Architectural Search'
+  type: diagram
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+section_id: S_03_05
+id: S_02_04

@@ -3,25 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 2 · Section 2.1 · Communication as Partial Serialization</title>
+<title>Chapter 2 · Section 2.1 · The Impossibility of a Universal World Model</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><span class="disabled">← Previous</span><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_02.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 2</p><h1>Communication Between Cognitive Systems</h1><p class="section-label">Section 2.1</p><h2>Communication as Partial Serialization</h2></header>
-<main><p>Communication does not transfer a cognitive model. A sender selects a limited fragment of its internal state and transforms that fragment into a sequence suitable for an external channel. This operation is <span class="token">T_PartialSerialization</span>.</p><p>The receiver does not reconstruct the sender&#x27;s model. It uses the received sequence to extend or reorganize its own model until the message appears interpretable within the receiver&#x27;s current world model.</p><pre class="formula">Sender Model
-      ↓
-T_PartialSerialization
-      ↓
-Communication Channel
-      ↓
-T_Deserialization
-      ↓
-T_ModelIntegration
-      ↓
-Modified Receiver Model</pre><p>The adjective partial is essential. A mature cognitive state is too integrated and too large to serialize completely through ordinary communication. The message is meaningful only against a background already present in the receiver.</p></main>
-<footer><p>Section 2.1 · Communication as Partial Serialization</p><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><span class="disabled">← Previous</span><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_02.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><span class="disabled">← Previous</span><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_02.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 2</p><h1>Design Principles</h1><p class="section-label">Section 2.1</p><h2>The Impossibility of a Universal World Model</h2></header>
+<main><p>A finite cognitive system cannot represent every property of external reality. It must select distinctions, relations, and temporal scales. The selection is governed by what the system must predict, evaluate, or do.</p><p>No world model is produced directly from reality. Observations are first transformed into an internal knowledge model. That knowledge model is then weighted and organized relative to an objective function.</p><pre class="formula">WorldModel = Optimize(KnowledgeModel(ObservedReality), ObjectiveFunction)</pre><p>The phrase universal world model is therefore misleading when applied to a finite system. A model can be broad and transferable, but it remains an optimization for a class of objectives and resource constraints.</p></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><span class="disabled">← Previous</span><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_02.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

@@ -1,21 +1,20 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
+- text: Consolidation is continuous at the level of local reweighting and episodic at the level of architecture.
+    Expensive search should begin only when measurable symptoms justify it.
+  type: paragraph
 - items:
-  - Restricted YAML Research State
-  - Atomic and derived Token validation
-  - Canonical formatting
-  - Semantic change proposals
-  - Structural three-way merge with conflict report
-  - Generated semantic HTML
-  - Working and long-term memory prototype
-  - Lossy consolidation and architecture selection
-  - Communication and clarification pipeline
-  - Trainable multichannel evaluator
-  - Hybrid meta-architect
-  - Cognitive lineage manager
+  - Persistent integration conflicts
+  - Large objective drift
+  - Retrieval cost growth
+  - High interference among related memories
+  - Repeated failure of current categories
+  - Accumulation of local exceptions and compensating patches
   ordered: false
   type: list
-- text: These components are deliberately modular. Their purpose is to create an operational baseline and instrumentation for later integration.
+- text: These symptoms resemble technical debt in software. The point of no return is reached earlier
+    than the point at which failure becomes visible because repair has a braking distance.
   type: paragraph
-section_id: S_12_02
+section_id: S_05_02
+id: S_12_02

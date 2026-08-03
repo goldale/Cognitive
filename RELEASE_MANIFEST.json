@@ -1,31 +1,31 @@
 {
-  "project": "Architectural Evolution of Long-Lived Cognitive Systems",
-  "release": "0.1.0",
-  "release_date": "2026-07-28",
+  "project": "Cognitive Architecture Specification",
+  "release": "0.3.13",
+  "release_date": "2026-08-03",
   "canonical_language": "English",
-  "research_state": {
-    "tokens": 77,
-    "atomic_tokens": 50,
-    "derived_tokens": 27,
-    "chapters": 12,
-    "sections": 71
+  "source_of_truth": "YAML in state/",
+  "release_type": "architectural-specification",
+  "documentation": {
+    "architecture_chapters": 18,
+    "main_table_of_contents_chapters": 19,
+    "alphabetical_index": "docs/chapter19/index.html",
+    "compatibility_index": "docs/alphabetical-index.html",
+    "architecture_diagrams": 27
   },
-  "generated_documentation_files": 85,
-  "automated_tests": 15,
-  "test_status": "passed",
-  "implemented_layers": [
-    "Restricted YAML Research State",
-    "Token language and semantic validation",
-    "Canonical formatting",
-    "Transactional change proposals",
-    "Structural three-way merge with semantic conflict report",
-    "Generated semantic HTML documentation",
-    "Objective-driven world model",
-    "Working and lossy long-term memory",
-    "Iterative consolidation and architecture selection",
-    "Communication, clarification, integration, and conflict handling",
-    "Trainable multichannel evaluator",
-    "Trainable neural-algorithmic meta-architect",
-    "Cognitive lineage diversity manager"
-  ]
+  "validation": {
+    "canonical_state": "passed",
+    "automated_tests": "21 passed",
+    "html_internal_links": "passed (0 broken)",
+    "python_syntax": "passed",
+    "unified_index_navigation": "passed on every HTML page"
+  },
+  "changes": [
+    "Added Associative Memory implementation candidates and implementation gap analysis",
+    "Documented Hopfield/Dense AM, Sparse Distributed Memory, vector search, graph storage, and key-value storage roles",
+    "Specified the recommended hybrid implementation and remaining required mechanisms",
+    "Added Alphabetical Index to the unified top and bottom navigation bar on every HTML page",
+    "Regenerated the complete visual-first HTML specification and index"
+  ],
+  "version": "0.3.13",
+  "release_notes": "RELEASE_NOTES_0.3.13.md"
 }

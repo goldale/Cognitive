@@ -1,12 +1,21 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: As repeated neural solutions reveal stable structure, the system should ask whether part of the behavior can be compiled into a simpler algorithm, rule set, finite-state machine, index, or cache.
+- text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant
+    episodes while retaining category boundaries, causal expectations, evaluation changes, and action
+    tendencies.
   type: paragraph
-- text: Algorithmic compilation reduces cost, improves reproducibility, and exposes invariants. It is a form of crystallized experience.
+- text: Information can disappear from explicit recall while remaining present functionally. A book may
+    no longer be remembered proposition by proposition, yet continue to alter judgments and attention.
   type: paragraph
-- text: The transition is not one-way. When the environment changes and exceptions accumulate, an algorithm may become suboptimal and should be returned to probabilistic search.
+- text: The engineering target is therefore not maximum retained bits. It is maximum future utility of
+    the retained internal state.
   type: paragraph
-- text: Neural Search <-> Stable Structure <-> Algorithmic Compilation
+- text: MemoryUtility = FuturePrediction + Evaluation + Action + LearningDirection - StorageAndInterferenceCost
   type: formula
-section_id: S_09_04
+- title: Auditability requirement
+  text: An engineered cognitive system may require an external exact event log for legal, scientific,
+    or safety auditing even when its internal cognitive memory remains lossy.
+  type: warning
+section_id: S_04_04
+id: S_09_04

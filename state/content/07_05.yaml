@@ -1,13 +1,18 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: A language model output is not passive observation. It changes the recipient's internal model, future decisions, and eventually the external environment. The causal path is indirect but real.
+- text: 'Pairwise preferences provide a practical signal: under a specified context, state A is preferred
+    to state B. Ranking losses avoid requiring an absolute universal numerical scale.'
   type: paragraph
-- text: A long-lived cognitive system must therefore model the effects of its own communications. It should be able to update the evaluation of a prior recommendation when later outcomes become available.
+- text: Training data should include outcomes over different time horizons, reversals after new evidence,
+    conflicts among channels, and cases in which immediate utility damages long-term capability.
   type: paragraph
-- text: This requirement strengthens the need for continuity. Without a self-model, the system cannot distinguish its own causal contribution from unrelated environmental change.
+- text: The evaluator itself requires slow consolidation. Rapidly adapting value weights can destabilize
+    identity and permit transient noise or manipulation to reshape the entire system.
   type: paragraph
-- title: Current limitation
-  text: Stateless sessions can produce useful outputs but cannot reliably learn from the long-horizon consequences of their own advice.
-  type: observation
-section_id: S_07_05
+- title: Evaluator capture
+  text: A system whose global evaluator can be modified by a single interaction is structurally vulnerable
+    even when its inference model is strong.
+  type: warning
+section_id: S_07_02
+id: S_07_05

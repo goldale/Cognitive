@@ -1,12 +1,84 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: A finite cognitive system cannot represent every property of external reality. It must select distinctions, relations, and temporal scales. The selection is governed by what the system must predict, evaluate, or do.
+- text: Communication does not transfer a cognitive model. A sender selects a limited fragment of its internal state
+    and transforms that fragment into a sequence suitable for an external channel. This operation is T_PartialSerialization.
   type: paragraph
-- text: No world model is produced directly from reality. Observations are first transformed into an internal knowledge model. That knowledge model is then weighted and organized relative to an objective function.
+- type: diagram
+  title: Communication and Semantic Reconstruction
+  description: Communication transfers a partial serialized signal; the receiver reconstructs meaning using its
+    own context and memory.
+  direction: LR
+  nodes:
+  - id: model_a
+    label: Internal Model A
+    kind: state
+    status: current
+  - id: serialize
+    label: Partial Serialization
+    kind: subsystem
+    status: current
+  - id: signal
+    label: Serialized Signal
+    kind: data
+    status: current
+  - id: decode
+    label: Decoding and Preprocessing
+    kind: subsystem
+    status: current
+  - id: context
+    label: Receiver Context and Memory
+    kind: state
+    status: current
+  - id: representation
+    label: Reconstructed Semantic Representation
+    kind: state
+    status: current
+  - id: integration
+    label: Model Integration
+    kind: subsystem
+    status: current
+  edges:
+  - from: model_a
+    to: serialize
+    flow: information
+  - from: serialize
+    to: signal
+    flow: information
+  - from: signal
+    to: decode
+    flow: information
+  - from: decode
+    to: representation
+    flow: information
+  - from: context
+    to: representation
+    flow: context
+    label: conditions interpretation
+  - from: representation
+    to: integration
+    flow: information
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: The receiver does not reconstruct the sender's model. It uses the received sequence to extend or reorganize
+    its own model until the message appears interpretable within the receiver's current world model.
   type: paragraph
-- text: WorldModel = Optimize(KnowledgeModel(ObservedReality), ObjectiveFunction)
+- text: 'Sender Model ↓
+
+    T_PartialSerialization ↓
+
+    Communication Channel ↓
+
+    T_Deserialization ↓
+
+    T_ModelIntegration ↓
+
+    Modified Receiver Model'
   type: formula
-- text: The phrase universal world model is therefore misleading when applied to a finite system. A model can be broad and transferable, but it remains an optimization for a class of objectives and resource constraints.
+- text: The adjective partial is essential. A mature cognitive state is too integrated and too large to serialize
+    completely through ordinary communication. The message is meaningful only against a background already present
+    in the receiver.
   type: paragraph
-section_id: S_03_01
+section_id: S_02_01
+id: S_03_01

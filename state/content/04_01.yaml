@@ -1,12 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent, and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological memory in organisms with developed nervous systems, while acknowledging that direct measurement becomes increasingly difficult outside humans.
+- text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains
+    constraints that a receiving cognitive system interprets using its existing Memory State, context,
+    objectives, language competence, and learned world model.
   type: paragraph
-- title: Functional lossiness
-  confidence: 0.78
-  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not only because biological storage is limited.
-  type: hypothesis
-- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under resource constraints. A memory architecture that preserves fewer literal details but produces a more usable model can outperform an exact archive.
+- text: The same message can produce different internal meanings in different systems because information
+    implicit in the recipient is not present in the transmitted sequence. Semantic reconstruction is therefore
+    an interaction between signal and receiver, not a property of the signal alone.
   type: paragraph
-section_id: S_04_01
+section_id: S_13_01
+id: S_04_01

@@ -1,12 +1,17 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: The same text produces different integrations as the reader changes. A book read at twenty, forty, and sixty can be three different cognitive events because the background model and objectives differ.
+- text: The best next step is not necessarily the change with the largest immediate benchmark gain. It
+    is the change that creates a fully working system, produces the highest utility for foreseeable cost,
+    and expands the space of later improvements.
   type: paragraph
-- text: An artificial cognitive system should revisit important books after substantial model change. Repetition should continue while rereading materially changes the model or the direction of future learning.
-  type: paragraph
-- text: A stronger stopping rule is not merely no further factual change. Reading can remain valuable while changing which questions receive attention. Iteration stops when additional exposure no longer changes either the model or the learning trajectory within the relevant objective class.
-  type: paragraph
-- text: Read -> Integrate -> Act and Learn -> Changed Model -> Re-read
+- text: Priority = PracticalUtility × FutureOptionValue / (Cost × Risk × Irreversibility)
   type: formula
-section_id: S_08_03
+- text: This criterion favors persistent Research State, consolidation infrastructure, and hybrid orchestration
+    because each improves current work while generating data for later architecture.
+  type: paragraph
+- text: A speculative integrated memory may have larger theoretical value but lower current priority when
+    it cannot yet be evaluated or repaired.
+  type: paragraph
+section_id: S_12_01
+id: S_08_03

@@ -24,7 +24,7 @@ The repository contains four operational layers.
    - Token dependency graph generation.
 
 3. **Generated documentation**
-   - Twelve English chapters generated from Research State.
+   - Eighteen English chapters generated from Research State.
    - Semantic HTML and an ISO/RFC/W3C-inspired stylesheet.
    - Stable Up, Previous, Contents, and Next navigation.
    - Separate rendering for Tokens, definitions, hypotheses, observations, examples, notes, warnings, formulas, and principles.

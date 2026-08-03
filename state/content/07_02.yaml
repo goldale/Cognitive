@@ -1,13 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: 'Pairwise preferences provide a practical signal: under a specified context, state A is preferred to state B. Ranking losses avoid requiring an absolute universal numerical scale.'
+- text: The evaluator should provide a common decision interface for heterogeneous considerations such
+    as safety, curiosity, effort, delayed benefit, social consequences, consistency with memory, and goal
+    progress.
   type: paragraph
-- text: Training data should include outcomes over different time horizons, reversals after new evidence, conflicts among channels, and cases in which immediate utility damages long-term capability.
+- text: The output need not be a single human-readable scalar. It must nevertheless support stable comparison
+    among alternatives and provide enough structure to select, reject, defer, or request further analysis.
   type: paragraph
-- text: The evaluator itself requires slow consolidation. Rapidly adapting value weights can destabilize identity and permit transient noise or manipulation to reshape the entire system.
-  type: paragraph
-- title: Evaluator capture
-  text: A system whose global evaluator can be modified by a single interaction is structurally vulnerable even when its inference model is strong.
-  type: warning
-section_id: S_07_02
+section_id: S_14_02
+id: S_07_02

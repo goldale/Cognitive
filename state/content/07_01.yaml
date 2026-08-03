@@ -1,12 +1,76 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: 'A cognitive system receives incomparable inputs: sensory evidence, predicted reward, memory consistency, uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires a mechanism that makes these inputs jointly evaluable.'
+- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints, predicted
+    outcomes, uncertainty, and current context must be compared by an Integrated Evaluation process.
   type: paragraph
-- text: The project proposes a trainable T_GlobalEvaluation implemented initially as one or more neural networks. It need not output a consciously accessible scalar, but it must support comparison among candidate states and actions.
+- type: diagram
+  title: Integrated Evaluation Inputs and Output
+  description: Integrated Evaluation compares heterogeneous representations in one learned decision context.
+  direction: TB
+  nodes:
+  - id: semantic
+    label: Semantic Representation
+    kind: state
+    status: current
+  - id: goals
+    label: Goals
+    kind: state
+    status: current
+  - id: memory
+    label: Memory
+    kind: state
+    status: current
+  - id: context
+    label: Current Context
+    kind: state
+    status: current
+  - id: temporal
+    label: Temporal Attributes
+    kind: state
+    status: current
+  - id: evaluation
+    label: Integrated Evaluation
+    kind: subsystem
+    status: current
+  - id: score
+    label: Comparative Evaluation
+    kind: data
+    status: current
+  - id: behavior
+    label: Behavioral Priority
+    kind: external
+    status: current
+  edges:
+  - from: semantic
+    to: evaluation
+    flow: information
+  - from: goals
+    to: evaluation
+    flow: information
+  - from: memory
+    to: evaluation
+    flow: information
+  - from: context
+    to: evaluation
+    flow: information
+  - from: temporal
+    to: evaluation
+    flow: information
+  - from: evaluation
+    to: score
+    flow: evaluation
+    label: learned comparison
+  - from: score
+    to: behavior
+    flow: control
+    label: guides selection
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation may
+    resemble a unified value space, but that phrase describes only one possible implementation and is not the architectural
+    name.
   type: paragraph
-- text: 'Initial training uses evaluated examples rather than a fully explicit utility formula. Disputes about the initial example library remain local: individual examples can be reviewed without requiring universal agreement on an abstract definition of value.'
-  type: paragraph
-- text: Lifelong training is mandatory. A fixed evaluator would freeze the assumptions of its initial designers and prevent genuine cognitive development.
-  type: paragraph
-section_id: S_07_01
+section_id: S_14_01
+id: S_07_01

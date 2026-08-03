@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 2 · Section 2.4 · Clarification and Model Conflict</title>
+<title>Chapter 2 · Section 2.4 · Objective Drift and Model Evolution</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_05.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 2</p><h1>Communication Between Cognitive Systems</h1><p class="section-label">Section 2.4</p><h2>Clarification and Model Conflict</h2></header>
-<main><p>When multiple integrations remain possible or required background is absent, a rational cognitive system generates <span class="token">T_ClarificationRequest</span> rather than silently selecting an arbitrary interpretation.</p><p>Clarification questions are therefore not secondary social behavior. They are operations that reduce uncertainty inside <span class="token">T_ModelIntegration</span>.</p><aside class="definition"><h4><span class="token">T_Conflict</span></h4><p>A computational state in which received information cannot be integrated under the receiver&#x27;s current model and constraints without unresolved inconsistency.</p></aside><p><span class="token">T_Conflict</span> is distinct from the social dynamics of argument. The project intentionally excludes dominance, persuasion, status, anger, and coalition behavior from this definition.</p><p><span class="token">T_ModelConflictResolution</span> is an iterative search over additional evidence, revised definitions, confidence changes, local reorganization, or explicit retention of incompatible alternatives.</p></main>
-<footer><p>Section 2.4 · Clarification and Model Conflict</p><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_05.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_05.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 2</p><h1>Design Principles</h1><p class="section-label">Section 2.4</p><h2>Objective Drift and Model Evolution</h2></header>
+<main><p>A long-lived system can change its objectives. Work may lose value; caregiving may gain value; exploration may become less important than safety; a research agent may move from discovery to verification.</p><p>Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate, the current organization may become inefficient. Architectural search is then required.</p><p>The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate reorganizations must be generated, evaluated, partially applied, and compared over time.</p><pre class="diagram diagram-fallback">Objective Drift ↓
+Weight and Activation Changes ↓
+Growing Organizational Mismatch ↓
+Iterative Architectural Search</pre></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_05.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

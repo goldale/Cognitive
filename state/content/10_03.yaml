@@ -1,11 +1,63 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: 'Ants, termites, and bees demonstrate a successful biological compromise: large numbers of similar or genetically close agents operate efficiently inside a colony while colonies and species preserve population-level variation.'
+- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory Vector
+    used by the Transformer to generate a response.
   type: paragraph
-- text: The analogy is not exact. Digital cognitive lineages can share tools, Research State, and selected learning trajectories at much higher bandwidth. The useful principle is multilevel selection rather than literal imitation of insect biology.
+- type: diagram
+  title: Memory UPDATE Path
+  description: The completed interaction and Transformer state are used to update memory without generating a second
+    user-visible answer.
+  direction: TB
+  nodes:
+  - id: question
+    label: Last Question
+    kind: data
+    status: current
+  - id: answer
+    label: Generated Answer
+    kind: data
+    status: current
+  - id: hidden
+    label: Transformer Hidden State
+    kind: state
+    status: current
+  - id: update
+    label: UPDATE_ONLY
+    kind: subsystem
+    status: current
+  - id: memory
+    label: Associative Memory
+    kind: subsystem
+    status: current
+  - id: state
+    label: Updated Memory State
+    kind: state
+    status: current
+  edges:
+  - from: question
+    to: update
+    flow: information
+  - from: answer
+    to: update
+    flow: information
+  - from: hidden
+    to: update
+    flow: information
+    label: non-zero mode signal
+  - from: update
+    to: memory
+    flow: learning
+    label: learning request
+  - from: memory
+    to: state
+    flow: learning
+    label: content update
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are supplied to
+    memory so that experience can be integrated without rerunning a full user-facing inference cycle.
   type: paragraph
-- title: Two optimization levels
-  text: Exploit the current champion inside each lineage; preserve diversity and competition among lineages.
-  type: observation
-section_id: S_10_03
+section_id: S_16_03
+id: S_10_03

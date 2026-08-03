@@ -1,10 +1,118 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Digital systems can clone a high-performing model at negligible marginal cost. Global cloning maximizes immediate exploitation but reduces diversity and makes the population vulnerable to unforeseen environmental changes or shared failure modes.
+- text: The near-term architecture separates a Transformer from Associative Memory. The Transformer performs language
+    processing, general inference, planning, and response generation. Associative Memory stores accumulated experience,
+    supports associative retrieval, and evolves independently. The generated answer must return to Associative Memory
+    as an internal observation, creating a back link that keeps the cognitive cycle continuous rather than terminating
+    at output generation. This feedback path modifies Associative Memory only; it does not perform a READ operation
+    and therefore does not generate a new Memory Vector.
   type: paragraph
-- text: Individual evolution without cloning preserves diversity but sacrifices commercial efficiency and reproducibility.
+- type: diagram
+  title: Associative Memory Read Path
+  description: An external utterance initiates an explicit READ operation that produces a Memory Vector for the
+    Transformer. The generated answer returns as an internal observation and changes Associative Memory, but the
+    feedback path does not produce another Memory Vector.
+  direction: TB
+  nodes:
+  - id: input
+    label: External Input
+    kind: external
+    status: current
+  - id: encoder
+    label: Memory Query Encoder
+    kind: subsystem
+    status: current
+  - id: memory
+    label: Associative Memory
+    kind: subsystem
+    status: current
+  - id: state
+    label: Memory State
+    kind: state
+    status: current
+  - id: projection
+    label: Projection
+    kind: subsystem
+    status: current
+  - id: vector
+    label: Memory Vector
+    kind: interface
+    status: current
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+    status: current
+  - id: answer
+    label: Answer
+    kind: external
+    status: current
+  - id: internal_observation
+    label: Internal Observation
+    kind: data
+    status: current
+  - id: feedback_effect
+    label: 'Associative Memory State Changed
+
+      No Memory Vector Generated'
+    kind: state
+    status: current
+  edges:
+  - from: input
+    to: encoder
+    flow: information
+  - from: encoder
+    to: memory
+    flow: information
+    label: query
+  - from: memory
+    to: state
+    flow: information
+    label: spreading activation
+  - from: state
+    to: projection
+    flow: information
+  - from: projection
+    to: vector
+    flow: information
+  - from: vector
+    to: transformer
+    flow: interface
+    label: prefix conditioning
+  - from: input
+    to: transformer
+    flow: information
+    label: current utterance
+  - from: transformer
+    to: answer
+    flow: information
+  - from: answer
+    to: internal_observation
+    flow: feedback
+    label: generated result
+  - from: internal_observation
+    to: memory
+    flow: feedback
+    label: 'feedback: state change only'
+  - from: memory
+    to: feedback_effect
+    flow: feedback
+    label: no READ
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- type: paragraph
+  text: The back link is a key architectural requirement. An answer is not only an external response; it is also
+    information produced by the system itself. Associative Memory receives that result as an internal observation
+    and changes its internal state, including short-term activation and association context. The feedback path does
+    not invoke projection, does not call the Transformer interface, and does not generate a new Memory Vector. A
+    Memory Vector is produced exclusively by a subsequent explicit READ operation. Persistent learning remains a
+    separate UPDATE path, and long-term knowledge may remain unchanged.
+- type: paragraph
+  text: 'Architectural invariant: Memory Vectors are generated only by explicit READ operations. Feedback, UPDATE,
+    learning, and Sleep may change Associative Memory, but none of these operations generates a Memory Vector by
+    itself.'
+- text: This is an engineering decomposition, not a claim that the mature architecture must remain permanently modular.
   type: paragraph
-- text: The proposed compromise separates selection within lineages from selection across lineages.
-  type: paragraph
-section_id: S_10_01
+section_id: S_16_01
+id: S_10_01

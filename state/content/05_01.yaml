@@ -1,13 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Consolidation should normally execute outside the interactive response path. A dialogue system must remain responsive; a consolidation system should be conservative, evidence-seeking, and willing to leave information unresolved.
+- text: Cognitive stream processing distinguishes Data Rate, Task Relevance, and Semantic Novelty. Data
+    Rate describes physical intensity; Task Relevance describes relation to active goals and context;
+    Semantic Novelty describes expected contribution relative to Memory State.
   type: paragraph
-- text: The biological analogy is sleep, but the engineering requirement is simply asynchronous processing with access to recent experience, current memory, objectives, and outcome feedback.
+- text: No one of these quantities can be reliably inferred from the others.
   type: paragraph
-- text: An initial implementation can use scheduled jobs, replay buffers, clustering, confidence updates, and candidate evaluation without changing the base neural model.
-  type: paragraph
-- title: Different optimization criteria require different subsystems
-  text: The dialogue component optimizes responsiveness and usefulness. The consolidation component optimizes long-term consistency, retention, and corrigibility.
-  type: principle
-section_id: S_05_01
+section_id: S_18_01
+id: S_05_01

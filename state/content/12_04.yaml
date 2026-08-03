@@ -1,10 +1,19 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: Only after modular experiments produce stable evidence should the project attempt a shared latent state integrating memory, model, and evaluation.
+- text: The proposed integrated biological-style memory does not naturally preserve complete internal
+    versions. A cognitive system becomes a new state rather than retaining every historical self.
   type: paragraph
-- text: The integrated system must be evaluated on continuous learning, objective drift, communication, identity continuity, correction, and external auditability.
+- text: Engineering systems nevertheless require checkpoints, evaluation snapshots, and external logs.
+    These mechanisms should protect deployment without forcing the internal cognitive representation to
+    behave like Git.
   type: paragraph
-- text: Failure should be informative. If integrated memory is unstable, the modular Research State and exact logs allow reconstruction of what changed and why.
+- text: Research State uses Git because it is a formal external project model. A mature cognitive memory
+    may use different persistence mechanisms. The two architectures should not be conflated.
   type: paragraph
-section_id: S_12_04
+- title: Identity ambiguity
+  text: Restoring an old checkpoint may preserve function while breaking the system's own model of continuous
+    identity. Functional recovery and identity continuity are separate requirements.
+  type: warning
+section_id: S_05_05
+id: S_12_04

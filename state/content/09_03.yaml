@@ -1,12 +1,18 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
+- text: New experience should normally modify the relative importance, usefulness, confidence, and activation
+    probability of existing knowledge before changing architecture.
   type: paragraph
-- text: "Sensors -> Neural Perception -> Probabilistic State\n        -> Algorithmic Constraint Solver -> Planned Trajectory\n        -> Learned Correction -> Deterministic Controller"
-  type: diagram
-- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants, accounting, and discrete protocol behavior remain explicit.
+- text: This is a weaker and more implementable claim than asserting that every important experience reorganizes
+    the model. Weight changes are cheap, reversible in effect, and measurable.
   type: paragraph
-- text: This division provides interpretability and guarantees where they matter without forcing perception or language into brittle hand-written rules.
+- text: Structural change becomes justified when cumulative reweighting makes the present organization
+    increasingly incoherent or inefficient. No fixed deterministic threshold is assumed.
   type: paragraph
-section_id: S_09_03
+- title: Locality of ordinary learning
+  text: Most daily learning can be represented as local updates. Rare reorganization events should be
+    treated as expensive search episodes.
+  type: observation
+section_id: S_04_03
+id: S_09_03

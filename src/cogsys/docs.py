@@ -3,6 +3,7 @@ from __future__ import annotations
 import html
 import re
 import shutil
+import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -23,6 +24,13 @@ class PageRef:
     path: str
     chapter_title: str
     section_title: str
+
+
+def _humanize_token_label(token: str) -> str:
+    label = token.removeprefix("T_")
+    label = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", label)
+    label = re.sub(r"(?<=[A-Z])(?=[A-Z][a-z])", " ", label)
+    return label
 
 
 def _render_inline(text: str) -> str:
@@ -59,9 +67,12 @@ def _render_block(block: dict[str, Any]) -> str:
         tag = "ol" if block.get("ordered") else "ul"
         items = "".join(f"<li>{_render_inline(str(item))}</li>" for item in block.get("items", []))
         return f"<{tag}>{items}</{tag}>"
-    if block_type in {"formula", "diagram"}:
-        class_name = "formula" if block_type == "formula" else "diagram"
-        return f'<pre class="{class_name}">{html.escape(str(block.get("text", "")))}</pre>'
+    if block_type == "formula":
+        return f'<pre class="formula">{html.escape(str(block.get("text", "")))}</pre>'
+    if block_type == "diagram":
+        if block.get("nodes"):
+            return _render_structured_diagram(block)
+        return f'<pre class="diagram diagram-fallback">{html.escape(str(block.get("text", "")))}</pre>'
     if block_type == "quote":
         return f"<blockquote>{_render_inline(str(block.get('text', '')))}</blockquote>"
     if block_type in {"definition", "hypothesis", "observation", "example", "note", "warning", "principle"}:
@@ -89,7 +100,126 @@ def _render_block(block: dict[str, Any]) -> str:
     raise ValueError(f"Unsupported content block type: {block_type}")
 
 
-def _nav(up_href: str, up_label: str, previous: tuple[str, str] | None, contents_href: str, next_page: tuple[str, str] | None) -> str:
+def _dot_quote(value: Any) -> str:
+    return '"' + str(value).replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n') + '"'
+
+
+def _render_structured_diagram(block: dict[str, Any]) -> str:
+    title = str(block.get("title", "Architecture diagram"))
+    description = str(block.get("description", title))
+    direction = str(block.get("direction", "TB"))
+    size = str(block.get("size", "standard"))
+    if size not in {"compact", "standard", "medium", "large", "extra-large"}:
+        size = "standard"
+    if direction not in {"TB", "BT", "LR", "RL"}:
+        direction = "TB"
+
+    shape_by_kind = {
+        "external": "oval",
+        "data": "note",
+        "state": "box3d",
+        "storage": "cylinder",
+        "interface": "component",
+        "control": "hexagon",
+        "subsystem": "box",
+    }
+    fill_by_kind = {
+        "external": "#f8fafc",
+        "data": "#f7f7fb",
+        "state": "#eef6fb",
+        "storage": "#f1f7f2",
+        "interface": "#fff8e8",
+        "control": "#fff3ed",
+        "subsystem": "#f3f7fa",
+    }
+    color_by_flow = {
+        "information": "#174a7e",
+        "interface": "#8a6415",
+        "evaluation": "#9a5a12",
+        "control": "#a33e32",
+        "learning": "#277448",
+        "optimization": "#6b4fa1",
+        "feedback": "#53606b",
+        "context": "#53606b",
+    }
+
+    node_fontsize = {"compact": 11.5, "standard": 12, "medium": 13, "large": 15, "extra-large": 17}[size]
+    edge_fontsize = {"compact": 9.5, "standard": 10, "medium": 10.5, "large": 12, "extra-large": 14}[size]
+    node_margin = {"compact": "0.12,0.07", "standard": "0.16,0.10", "medium": "0.19,0.12", "large": "0.24,0.16", "extra-large": "0.30,0.20"}[size]
+    nodesep = {"compact": "0.32", "standard": "0.48", "medium": "0.56", "large": "0.72", "extra-large": "0.90"}[size]
+    ranksep = {"compact": "0.42", "standard": "0.72", "medium": "0.82", "large": "1.05", "extra-large": "1.25"}[size]
+
+    lines = [
+        "digraph G {",
+        f"rankdir={direction};",
+        f'graph [bgcolor="transparent", pad="0.34", nodesep="{nodesep}", ranksep="{ranksep}", splines="ortho", outputorder="edgesfirst"];',
+        f'node [fontname="Arial", fontsize="{node_fontsize}", color="#365b78", fontcolor="#202124", penwidth="1.3", style="rounded,filled", margin="{node_margin}"];',
+        f'edge [fontname="Arial", fontsize="{edge_fontsize}", color="#174a7e", fontcolor="#4f5962", penwidth="1.45", arrowsize="0.82"];',
+    ]
+    for node in block.get("nodes", []):
+        node_id = str(node.get("id", ""))
+        label = str(node.get("label", node_id))
+        kind = str(node.get("kind", "subsystem"))
+        status = str(node.get("status", "current"))
+        attrs = {
+            "label": label,
+            "shape": shape_by_kind.get(kind, "box"),
+            "fillcolor": fill_by_kind.get(kind, "#f3f7fa"),
+        }
+        if status == "future":
+            attrs["style"] = "rounded,dashed,filled"
+            attrs["color"] = "#7c7f83"
+        rendered = ", ".join(f"{key}={_dot_quote(value)}" for key, value in attrs.items())
+        lines.append(f"{_dot_quote(node_id)} [{rendered}];")
+    for group in block.get("rank_groups", []):
+        members = "; ".join(_dot_quote(node_id) for node_id in group)
+        if members:
+            lines.append(f"{{ rank=same; {members}; }}")
+    for edge in block.get("edges", []):
+        source = _dot_quote(edge.get("from", ""))
+        target = _dot_quote(edge.get("to", ""))
+        flow = str(edge.get("flow", "information"))
+        attrs: dict[str, Any] = {"color": color_by_flow.get(flow, "#174a7e")}
+        if edge.get("label"):
+            attrs["label"] = str(edge["label"])
+        if flow in {"feedback", "context"}:
+            attrs["style"] = "dashed"
+        rendered = ", ".join(f"{key}={_dot_quote(value)}" for key, value in attrs.items())
+        lines.append(f"{source} -> {target} [{rendered}];")
+    lines.append("}")
+    dot = "\n".join(lines)
+    try:
+        result = subprocess.run(
+            ["dot", "-Tsvg"],
+            input=dot,
+            text=True,
+            capture_output=True,
+            check=True,
+            timeout=10,
+        )
+        svg = result.stdout
+        svg = re.sub(r"<\?xml[^>]*>\s*", "", svg)
+        svg = re.sub(r"<!DOCTYPE[^>]*>\s*", "", svg)
+        svg = svg.replace("<svg ", '<svg role="img" aria-label="' + html.escape(description, quote=True) + '" ' , 1)
+        return (
+            f'<figure class="architecture-diagram diagram-size-{size}">'
+            f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
+            f'<div class="diagram-canvas">{svg}</div>'
+            f'<figcaption>{_render_inline(description)}</figcaption>'
+            '</figure>'
+        )
+    except (OSError, subprocess.SubprocessError):
+        labels = " → ".join(str(node.get("label", node.get("id", ""))) for node in block.get("nodes", []))
+        return (
+            f'<figure class="architecture-diagram diagram-size-{size}">'
+            f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
+            f'<pre class="diagram diagram-fallback">{html.escape(labels)}</pre>'
+            f'<figcaption>{_render_inline(description)}</figcaption>'
+            '</figure>'
+        )
+
+
+def _nav(up_href: str, up_label: str, previous: tuple[str, str] | None, contents_href: str, next_page: tuple[str, str] | None, index_href: str = "chapter19/index.html") -> str:
     previous_html = (
         f'<a rel="prev" href="{html.escape(previous[0])}">← {html.escape(previous[1])}</a>'
         if previous
@@ -105,6 +235,7 @@ def _nav(up_href: str, up_label: str, previous: tuple[str, str] | None, contents
         f'<a class="up" href="{html.escape(up_href)}">↑ {html.escape(up_label)}</a>'
         f"{previous_html}"
         f'<a class="contents" href="{html.escape(contents_href)}">☰ Contents</a>'
+        f'<a class="alphabetical-index" href="{html.escape(index_href)}">A–Z Index</a>'
         f"{next_html}"
         "</nav>"
     )
@@ -124,7 +255,7 @@ def _page(title: str, stylesheet_href: str, navigation: str, heading_html: str, 
 {navigation}
 <header>{heading_html}</header>
 <main>{body_html}</main>
-<footer><p>{html.escape(footer_text)}</p>{navigation}</footer>
+<footer>{navigation}</footer>
 </div>
 </body>
 </html>
@@ -153,6 +284,7 @@ class DocumentationBuilder:
             else:
                 created.extend(self._build_directory_chapter(output, chapter_index, chapter, pages))
         created.extend(self._build_reference_pages(output))
+        created.extend(self._build_alphabetical_index(output))
         return created
 
     def _page_sequence(self) -> list[PageRef]:
@@ -177,27 +309,31 @@ class DocumentationBuilder:
                 f'<li><a href="{href}">Chapter {chapter["order"]}: {html.escape(chapter["title"])}</a>'
                 f'<p>{_render_inline(chapter.get("summary", ""))}</p></li>'
             )
+        chapter_items.append(
+            '<li><a href="chapter19/index.html">Chapter 19: Alphabetical Index</a>'
+            '<p>Alphabetical access to chapters, sections, and canonical terms.</p></li>'
+        )
         body = (
             '<section class="document-summary"><p>'
             'A practical engineering architecture for long-lived cognitive systems, '
             'continuous memory consolidation, objective-driven world models, communication, '
-            'hybrid computation, and persistent Research State.'
+            'hybrid computation, persistent memory, and controlled architectural evolution.'
             '</p></section>'
             '<h2>Chapters</h2><ol class="chapter-list">' + "".join(chapter_items) + "</ol>"
             '<h2>Project References</h2><ul>'
             '<li><a href="tokens.html">Token Registry</a></li>'
-            '<li><a href="research-state.html">Research State Summary</a></li>'
+            '<li><a href="research-state.html">Canonical YAML Model</a></li>'
             '<li><a href="style-guide.html">Documentation Style Guide</a></li>'
             '</ul>'
         )
         nav = _nav("index.html", "Documentation", None, "index.html", None)
         page = _page(
-            "Architectural Evolution of Long-Lived Cognitive Systems",
+            "Cognitive Architecture Specification",
             "cognitive.css",
             nav,
-            '<h1>Architectural Evolution of Long-Lived Cognitive Systems</h1><p class="subtitle">Engineering Research Draft 0.1</p>',
+            '<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version 0.3.8</p>',
             body,
-            "Canonical English documentation generated from Research State.",
+            "Canonical English architecture specification generated from validated YAML.",
         )
         path = output / "index.html"
         path.write_text(page, encoding="utf-8")
@@ -215,6 +351,8 @@ class DocumentationBuilder:
             chapter = self.chapters[chapter_index + 1]
             target = f"chapter{chapter['order']:02d}.html" if chapter["layout"] == "single" else f"chapter{chapter['order']:02d}/index.html"
             next_page = (prefix + target, f"Chapter {chapter['order']}")
+        elif chapter_index == len(self.chapters) - 1:
+            next_page = (prefix + "chapter19/index.html", "Chapter 19")
         return previous, next_page
 
     def _build_single_chapter(self, output: Path, chapter_index: int, chapter: dict[str, Any]) -> Path:
@@ -245,7 +383,7 @@ class DocumentationBuilder:
         created: list[Path] = []
         sections = sorted(chapter["sections"], key=lambda value: value["order"])
         previous_chapter, next_chapter = self._chapter_links(chapter_index, True)
-        index_nav = _nav("../index.html", "Documentation", previous_chapter, "index.html", next_chapter)
+        index_nav = _nav("../index.html", "Documentation", previous_chapter, "index.html", next_chapter, "../chapter19/index.html")
         items = "".join(
             f'<li><a href="{chapter["order"]:02d}_{section["order"]:02d}.html">'
             f'{chapter["order"]}.{section["order"]} {html.escape(section["title"])}</a></li>'
@@ -274,7 +412,7 @@ class DocumentationBuilder:
             if local_index + 1 < len(sections):
                 nxt = sections[local_index + 1]
                 next_page = (f'{chapter["order"]:02d}_{nxt["order"]:02d}.html', "Next")
-            nav = _nav("index.html", "Up", previous, "../index.html", next_page)
+            nav = _nav("index.html", "Up", previous, "../index.html", next_page, "../chapter19/index.html")
             body = "".join(_render_block(block) for block in content.get("blocks", []))
             page = _page(
                 f"Chapter {chapter['order']} · Section {chapter['order']}.{section['order']} · {section['title']}",
@@ -293,6 +431,63 @@ class DocumentationBuilder:
             path.write_text(page, encoding="utf-8")
             created.append(path)
         return created
+
+    def _build_alphabetical_index(self, output: Path) -> list[Path]:
+        entries: list[tuple[str, str, str]] = []
+        for chapter in self.chapters:
+            chapter_href = (f"../chapter{chapter['order']:02d}.html" if chapter["layout"] == "single" else f"../chapter{chapter['order']:02d}/index.html")
+            entries.append((chapter["title"], chapter_href, f"Chapter {chapter['order']}"))
+            for section in sorted(chapter["sections"], key=lambda value: value["order"]):
+                if chapter["layout"] == "single":
+                    href = chapter_href + f"#section-{section['order']}"
+                else:
+                    href = f"../chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html"
+                entries.append((section["title"], href, f"Section {chapter['order']}.{section['order']}"))
+        for token in self.state.token_entries():
+            label = _humanize_token_label(token["token"])
+            entries.append((label, token.get("index_target", "../tokens.html"), "Canonical term"))
+        entries.sort(key=lambda item: item[0].casefold())
+        groups: dict[str, list[tuple[str, str, str]]] = {}
+        for entry in entries:
+            key = entry[0][0].upper() if entry[0] else "#"
+            groups.setdefault(key, []).append(entry)
+        jump = " ".join(f'<a href="#index-{html.escape(letter)}">{html.escape(letter)}</a>' for letter in groups)
+        sections = [f'<nav class="index-jump" aria-label="Alphabetical index letters">{jump}</nav>']
+        for letter, values in groups.items():
+            items = "".join(f'<li><a href="{html.escape(href)}">{html.escape(label)}</a><span class="index-kind">{html.escape(kind)}</span></li>' for label, href, kind in values)
+            sections.append(f'<section class="alphabetical-group" id="index-{html.escape(letter)}"><h2>{html.escape(letter)}</h2><ul>{items}</ul></section>')
+
+        directory = output / "chapter19"
+        directory.mkdir()
+        previous_chapter = self.chapters[-1]
+        previous_target = (
+            f"../chapter{previous_chapter['order']:02d}.html"
+            if previous_chapter["layout"] == "single"
+            else f"../chapter{previous_chapter['order']:02d}/index.html"
+        )
+        nav = _nav("../index.html", "Documentation", (previous_target, f"Chapter {previous_chapter['order']}"), "../index.html", None, "index.html")
+        page = _page(
+            "Chapter 19 · Alphabetical Index",
+            "../cognitive.css",
+            nav,
+            '<p class="chapter-label">Chapter 19</p><h1>Alphabetical Index</h1><p class="subtitle">Chapters, sections, and canonical terms</p>',
+            "".join(sections),
+            "Chapter 19 · Generated from the canonical specification model.",
+        )
+        chapter_path = directory / "index.html"
+        chapter_path.write_text(page, encoding="utf-8")
+
+        compatibility = _page(
+            "Alphabetical Index",
+            "cognitive.css",
+            _nav("index.html", "Documentation", None, "index.html", ("chapter19/index.html", "Chapter 19")),
+            '<h1>Alphabetical Index</h1>',
+            '<p>The Alphabetical Index is now <a href="chapter19/index.html">Chapter 19 of the main documentation</a>.</p>',
+            "Compatibility entry point.",
+        )
+        compatibility_path = output / "alphabetical-index.html"
+        compatibility_path.write_text(compatibility, encoding="utf-8")
+        return [chapter_path, compatibility_path]
 
     def _build_reference_pages(self, output: Path) -> list[Path]:
         created: list[Path] = []
@@ -331,13 +526,13 @@ class DocumentationBuilder:
                 count = 0
             summaries.append(f"<tr><td>{html.escape(role)}</td><td>{count}</td></tr>")
         state_page = _page(
-            "Research State Summary",
+            "Canonical YAML Model",
             "cognitive.css",
             nav,
-            "<h1>Research State Summary</h1>",
-            '<p>The Research State is the canonical, implementation-independent project state from which documentation is generated.</p>'
+            "<h1>Canonical YAML Model</h1>",
+            '<p>The canonical YAML model is the implementation-independent source from which this specification is generated.</p>'
             '<table><thead><tr><th>Role</th><th>Entity count</th></tr></thead><tbody>' + "".join(summaries) + "</tbody></table>",
-            "Generated Research State overview.",
+            "Generated canonical-model overview.",
         )
         state_path = output / "research-state.html"
         state_path.write_text(state_page, encoding="utf-8")

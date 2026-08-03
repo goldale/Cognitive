@@ -1,13 +1,126 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: Many improvements in current systems are obtained by increasing model scale or adding specialized components. This project instead examines whether a different organization of existing components can create a larger gain than making any one component more complex.
+- text: Many improvements in current systems are obtained by increasing model scale or adding specialized components.
+    This project instead examines whether a different organization of existing components can create a larger gain
+    than making any one component more complex.
   type: paragraph
-- text: The strategy is evolutionary. Each stage must be fully operational, independently useful, measurable, and capable of supplying evidence for the next stage. Tighter integration is deferred until the modular implementation has generated enough operational data to justify it.
+- type: diagram
+  title: Overall Cognitive Architecture
+  description: The end-to-end relationship between input streams, semantic processing, evaluation, planning, memory,
+    reasoning, action, and feedback.
+  direction: TB
+  nodes:
+  - id: inputs
+    label: Input Streams
+    kind: external
+    status: current
+  - id: streams
+    label: Cognitive Stream Processing
+    kind: subsystem
+    status: current
+  - id: semantic
+    label: Semantic Representation
+    kind: subsystem
+    status: current
+  - id: temporal
+    label: Temporal Organization
+    kind: subsystem
+    status: current
+  - id: evaluation
+    label: Integrated Evaluation
+    kind: subsystem
+    status: current
+  - id: planning
+    label: Planning and Action Selection
+    kind: subsystem
+    status: current
+  - id: memory
+    label: Associative Memory
+    kind: subsystem
+    status: current
+  - id: vector
+    label: Canonical Memory Vector
+    kind: interface
+    status: current
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+    status: current
+  - id: action
+    label: Output / Action
+    kind: external
+    status: current
+  - id: feedback
+    label: Observed Consequences
+    kind: external
+    status: current
+  edges:
+  - from: inputs
+    to: streams
+    flow: information
+  - from: streams
+    to: semantic
+    flow: information
+  - from: semantic
+    to: temporal
+    flow: information
+  - from: temporal
+    to: evaluation
+    flow: information
+  - from: evaluation
+    to: planning
+    flow: evaluation
+    label: priorities
+  - from: evaluation
+    to: memory
+    flow: evaluation
+    label: relevance and novelty
+  - from: memory
+    to: vector
+    flow: information
+    label: projection
+  - from: vector
+    to: transformer
+    flow: interface
+    label: memory interface
+  - from: planning
+    to: transformer
+    flow: information
+    label: candidate plans
+  - from: transformer
+    to: action
+    flow: information
+  - from: action
+    to: feedback
+    flow: control
+    label: changes environment
+  - from: feedback
+    to: streams
+    flow: feedback
+    label: new input
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: The strategy is evolutionary. Each stage must be fully operational, independently useful, measurable, and
+    capable of supplying evidence for the next stage. Tighter integration is deferred until the modular implementation
+    has generated enough operational data to justify it.
   type: paragraph
-- text: "Existing Components\n        ↓\nImproved Organization\n        ↓\nOperational Evidence\n        ↓\nDeeper Integration"
+- text: 'Existing Components ↓
+
+    Improved Organization ↓
+
+    Operational Evidence ↓
+
+    Deeper Integration'
   type: diagram
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
 - title: No speculative dependency
-  text: A proposed mechanism belongs in the engineering roadmap only when it can be implemented with current technology, requires an identifiable extension of current technology, or can be experimentally tested in the foreseeable future.
+  text: A proposed mechanism belongs in the engineering roadmap only when it can be implemented with current technology,
+    requires an identifiable extension of current technology, or can be experimentally tested in the foreseeable
+    future.
   type: principle
 section_id: S_01_02
+id: S_01_02

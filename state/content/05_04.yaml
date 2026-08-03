@@ -1,13 +1,65 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization changes cross-domain evaluation, fundamental categories, objective priorities, or the relationship between memory and model.
+- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task Relevance
+    evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
   type: paragraph
-- text: Local changes should be common. Global changes should require stronger evidence because their errors propagate widely and can alter identity continuity.
+- type: diagram
+  title: Hierarchical Cognitive Filtering
+  description: Information is progressively filtered by meaning, current relevance, and novelty before memory is
+    changed.
+  direction: TB
+  nodes:
+  - id: stream
+    label: Input Stream
+    kind: external
+    status: current
+  - id: extract
+    label: Semantic Extraction
+    kind: subsystem
+    status: current
+  - id: relevance
+    label: Task Relevance Evaluation
+    kind: subsystem
+    status: current
+  - id: novelty
+    label: Semantic Novelty Evaluation
+    kind: subsystem
+    status: current
+  - id: decision
+    label: Memory Update Decision
+    kind: subsystem
+    status: current
+  - id: memory
+    label: Memory State
+    kind: state
+    status: current
+  edges:
+  - from: stream
+    to: extract
+    flow: information
+  - from: extract
+    to: relevance
+    flow: information
+  - from: relevance
+    to: novelty
+    flow: information
+  - from: novelty
+    to: decision
+    flow: information
+  - from: decision
+    to: memory
+    flow: learning
+    label: accepted update
+  - from: memory
+    to: novelty
+    flow: feedback
+    label: current knowledge
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: 'Each stage answers a different question: what is present, what matters now, what is new, and whether persistent
+    state should change.'
   type: paragraph
-- text: Only one major model should normally undergo cardinal restructuring at a time. Rate limits and staged evaluation reduce cascading adaptation to noise. Emergency exceptions remain possible when evidence indicates a global regime change.
-  type: paragraph
-- title: Conservative structural change
-  text: Adapt quickly through weights and slowly through architecture.
-  type: principle
-section_id: S_05_04
+section_id: S_18_04
+id: S_05_04

@@ -1,23 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Strong integration conflicts with Git-friendly local changes. Altering one experience can influence many later reconstructions. An external symbolic state remains useful for audit, collaboration, and project management even if the internal memory becomes nonlocal.
+- text: An internal clock provides a shared reference for incoming signals, system actions, and state
+    transitions. Exact physical time is not always necessary, but consistent ordering and elapsed-time
+    estimates are essential.
   type: paragraph
-- text: 'This produces two representations: an internal integrated state optimized for cognition and an external symbolic Research State optimized for human review, versioning, branching, and controlled exchange.'
+- text: Planning budgets are themselves temporal constraints. When the budget expires, the system should
+    execute the best available option, continue planning in parallel when safe, or choose a protective
+    fallback.
   type: paragraph
-- headers:
-  - Representation
-  - Primary objective
-  - Expected property
-  rows:
-  - - Internal cognitive state
-    - Functional adaptation
-    - Distributed and nonlocal
-  - - Research State
-    - Review and reproducibility
-    - Formal and Git-compatible
-  - - Generated document
-    - Human communication
-    - Audience-specific partial serialization
-  type: table
-section_id: S_06_05
+section_id: S_15_05
+id: S_06_05

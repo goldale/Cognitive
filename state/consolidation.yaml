@@ -1,29 +1,22 @@
-kind: T_ConsolidationRecord
-schema_version: 0.1.0
+kind: T_Collection
+schema_version: 0.2.0
 latest:
+  id: CR_030_ARCHITECTURAL_SPECIFICATION
   kind: T_ConsolidationRecord
-  id: CR_001
-  summary: Initial consolidated implementation of the long-lived cognitive systems project.
-  rationale: The selected architecture maximizes current practical utility while creating reusable infrastructure for deeper future integration.
-  alternatives:
-  - Document-first development without canonical Research State
-  - Unrestricted YAML
-  - One universal cognitive model
-  changed_roles:
-  - tokens
-  - principles
-  - hypotheses
-  - architecture
-  - questions
-  - roadmap
-  - chapters
-  inputs:
-  - Extended human-model design dialogue
-  open_questions:
-  - Q_001
-  - Q_002
-  - Q_003
-  - Q_005
-  - Q_006
+  timestamp: '2026-08-03T12:45:00+00:00'
+  summary: Restructured the canonical material as a dependency-ordered architectural specification.
   semantic_change: true
-  timestamp: '2026-07-28T00:00:00+00:00'
+  inputs:
+    - Canonical project model
+    - Reviewed architectural decisions
+  changed_roles:
+    - architecture
+    - chapters
+    - consolidation
+    - content
+    - documentation
+  alternatives:
+    - Preserve the historical chapter order
+    - Publish discussion summaries as specification chapters
+  rationale: The public specification must describe the architecture directly rather than preserve discussion chronology.
+  open_questions: []

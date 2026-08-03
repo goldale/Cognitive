@@ -1,13 +1,19 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: A practical meta-architect can be trained today as a contextual bandit or supervised ranker. Each candidate architecture receives measured accuracy, latency, energy, maintenance cost, interpretability, and failure severity.
+- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore also
+    an interpretation event.
   type: paragraph
-- text: The repository implements a lightweight online learner with engineering priors for algorithmic, neural, and hybrid modes. The priors are replaced gradually by outcome data.
+- text: 'After recall, the reconstructed state may be stored again under current weights. This creates reconsolidation:
+    the act of using memory can alter future memory.'
   type: paragraph
-- text: The learner should record failures of decomposition separately from failures of the selected executor. Otherwise it cannot distinguish a poor cut from a poor component.
+- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate internal
+    functional memory from immutable external evidence when exact provenance matters.
   type: paragraph
-- title: Architecture is itself an optimization target
-  text: Do not optimize only the answer. Optimize the computational organization that repeatedly produces answers.
-  type: principle
-section_id: S_09_05
+- text: Distributed Traces + Current World Model ↓ Reconstruction ↓ Use and Evaluation ↓ Reconsolidation
+  type: diagram
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+section_id: S_04_05
+id: S_09_05

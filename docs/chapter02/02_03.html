@@ -3,19 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 2 · Section 2.3 · Model Integration</title>
+<title>Chapter 2 · Section 2.3 · Model Classes Rather Than One Model</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_04.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 2</p><h1>Communication Between Cognitive Systems</h1><p class="section-label">Section 2.3</p><h2>Model Integration</h2></header>
-<main><aside class="definition"><h4><span class="token">T_ModelIntegration</span></h4><p>An iterative modification of the receiver&#x27;s existing cognitive model using deserialized information and the receiver&#x27;s current objectives, knowledge, and experience.</p></aside><p>Integration is objective-dependent and path-dependent. Identical serialized information can produce different changes in systems with different experience, objective functions, confidence distributions, or category structures.</p><p>Most integrations should begin with inexpensive local changes: altered importance, utility, confidence, or activation; new relations; removed relations; or reclassification. Structural architectural changes are not a deterministic consequence of a single important message.</p><pre class="formula">Current Model + Deserialized Structure
-                 ↓
-          T_ModelIntegration
-                 ↓
-Weights, Relations, Categories, or Architecture</pre><p>Integration is complete only when the receiver has a usable interpretation. Reading or hearing the message is not sufficient.</p></main>
-<footer><p>Section 2.3 · Model Integration</p><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a rel="next" href="02_04.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_04.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 2</p><h1>Design Principles</h1><p class="section-label">Section 2.3</p><h2>Model Classes Rather Than One Model</h2></header>
+<main><p>A useful unit of design is not a unique world model but a bounded class of models associated with a bounded class of systems. Members of a class share objectives, representational conventions, and relevant environmental regularities while retaining individual histories.</p><p>This class-based view permits controlled cloning and commercial deployment without forcing every deployed system into one global cognitive state.</p><p>Models from different classes can remain mutually intelligible through explicit communication while preserving different internal organizations. Compatibility does not require identity.</p><aside class="hypothesis"><h4>Class-limited optimality</h4><p>A model can be near-optimal within a restricted class of objectives while being systematically poor for another class.</p><p class="metadata">Confidence: 0.92</p></aside></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="02_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter19/index.html">A–Z Index</a><a rel="next" href="02_04.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

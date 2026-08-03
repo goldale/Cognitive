@@ -1,21 +1,87 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: The word Self combines several functions that should be separated before asking whether a system possesses one.
+- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are evaluated;
+    an action is selected; the environment and internal state change; the observed result is represented and evaluated
+    again.'
   type: paragraph
-- headers:
-  - Layer
-  - Function
-  rows:
-  - - Integrated evaluation
-    - Combines heterogeneous information in one decision process
-  - - Continuity
-    - Attributes states at different times to one continuing system
-  - - Goals and plans
-    - Selects future states and organizes actions toward them
-  type: table
-- text: 'A fourth function is causal self-attribution: distinguishing changes caused by the environment, another agent, or the system''s own prior output.'
+- type: diagram
+  title: Evaluation Feedback Loop
+  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive control
+    loop.
+  direction: TB
+  nodes:
+  - id: representation
+    label: 'Current
+
+      Representation'
+    kind: state
+    status: current
+  - id: evaluation
+    label: 'Integrated
+
+      Evaluation'
+    kind: subsystem
+    status: current
+  - id: behavior
+    label: 'Selected
+
+      Behavior'
+    kind: external
+    status: current
+  - id: world
+    label: 'Environment /
+
+      Other Systems'
+    kind: external
+    status: current
+  - id: consequence
+    label: 'Observed
+
+      Consequences'
+    kind: data
+    status: current
+  - id: memory
+    label: 'Memory / Context
+
+      Update'
+    kind: subsystem
+    status: current
+  edges:
+  - from: representation
+    to: evaluation
+    flow: information
+  - from: evaluation
+    to: behavior
+    flow: evaluation
+    label: selection
+  - from: behavior
+    to: world
+    flow: control
+    label: action
+  - from: world
+    to: consequence
+    flow: information
+  - from: consequence
+    to: memory
+    flow: learning
+    label: learning signal
+  - from: memory
+    to: representation
+    flow: feedback
+    label: updated context
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  rank_groups:
+  - - representation
+    - evaluation
+    - behavior
+  - - memory
+    - consequence
+    - world
+- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is semantically
+    expressible as a fixed hand-written utility function.
   type: paragraph
-- text: A long-lived intellectual partner needs at least this functional Self even if subjective consciousness remains unresolved.
-  type: paragraph
-section_id: S_07_03
+section_id: S_14_05
+id: S_07_03

@@ -1,29 +1,22 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- title: T_ObjectiveFunction
-  text: A mechanism that evaluates candidate states relative to the objectives of a cognitive system.
+- title: T_Deserialization
+  text: Transformation of a received communication sequence into a structured temporary representation
+    that can participate in cognitive processing.
   type: definition
-- text: An objective function influences far more than final action selection. Over time it changes what is attended to, what is stored, what is forgotten, which categories are created, which errors matter, and which communication is considered useful.
+- text: Deserialization is not understanding. It may recover lexical, syntactic, spatial, graphical, prosodic,
+    or symbolic structure while leaving the resulting structure incompatible with the receiver's current
+    knowledge.
   type: paragraph
-- text: The objective function need not be explicit, scalar, stable, or fully consistent. In biological systems it is likely implemented by several interacting evaluation mechanisms. An engineered system can begin with an explicit approximation and allow the evaluation mechanism to learn.
+- text: Written text and speech differ as channels. Speech carries timing, prosody, and emotional coloration.
+    Text permits the receiver to control processing speed, revisit earlier material, and perform repeated
+    deserialization. Both channels feed the same later integration process.
   type: paragraph
-- headers:
-  - System class
-  - High-value distinctions
-  - Low-value distinctions
-  rows:
-  - - Predator
-    - Prey, motion, concealment, energy
-    - Taxonomic detail unrelated to hunting
-  - - Herbivore
-    - Food, predators, escape routes
-    - Predator hunting strategy beyond avoidance
-  - - Scientist
-    - Prediction, explanation, reproducibility
-    - Immediate utility without explanatory value
-  - - Artist
-    - Form, contrast, meaning, emotional effect
-    - Mechanistic detail irrelevant to expression
-  type: table
-section_id: S_03_02
+- title: Correct parsing without integration
+  text: A listener may recognize every word and grammatical relation in a sentence while remaining unable
+    to connect the sentence to any coherent interpretation. Deserialization succeeded; model integration
+    did not.
+  type: example
+section_id: S_02_02
+id: S_03_02

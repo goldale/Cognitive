@@ -1,12 +1,77 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: The inverse of generation is not a literal caption. A useful encoder must map rich experience into a state from which the system can reconstruct different task-relevant aspects later.
+- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization constraints,
+    and probability distributions over completion or transition times.
   type: paragraph
-- text: The target is not pixel-perfect or word-perfect reconstruction. It is reconstruction sufficient for changed objectives and future reasoning.
+- type: diagram
+  title: Temporal Scenario Organization
+  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses before
+    evaluation.
+  direction: TB
+  nodes:
+  - id: state
+    label: Current State
+    kind: state
+    status: current
+  - id: organize
+    label: Temporal Organization
+    kind: subsystem
+    status: current
+  - id: s1
+    label: Scenario A
+    kind: data
+    status: current
+  - id: s2
+    label: Scenario B
+    kind: data
+    status: current
+  - id: s3
+    label: Scenario C
+    kind: data
+    status: current
+  - id: evaluate
+    label: Integrated Evaluation
+    kind: subsystem
+    status: current
+  - id: selected
+    label: Selected Next Action
+    kind: external
+    status: current
+  edges:
+  - from: state
+    to: organize
+    flow: information
+  - from: organize
+    to: s1
+    flow: information
+    label: time + probability
+  - from: organize
+    to: s2
+    flow: information
+    label: time + probability
+  - from: organize
+    to: s3
+    flow: information
+    label: time + probability
+  - from: s1
+    to: evaluate
+    flow: information
+  - from: s2
+    to: evaluate
+    flow: information
+  - from: s3
+    to: evaluate
+    flow: information
+  - from: evaluate
+    to: selected
+    flow: evaluation
+    label: highest evaluated option
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents a plan from
+    being treated as an unordered list of semantically valid actions.
   type: paragraph
-- text: Experience -> Integrated Latent State -> Task-Conditioned Reconstruction
-  type: formula
-- text: The encoder should therefore be trained on future functional performance, not only reconstruction error. Different decoders may recover text, imagery, causal relations, emotion-like evaluation, or action policies from one latent state.
-  type: paragraph
-section_id: S_06_04
+section_id: S_15_04
+id: S_06_04

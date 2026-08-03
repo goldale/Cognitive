@@ -1,19 +1,19 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: The current Research State contains formal open-question entities. The most consequential unresolved areas are listed below.
+- text: A practical prototype can implement consolidation around an unchanged language model. Recent events
+    enter working memory; a scheduled process extracts entities, adjusts confidence and utility, builds
+    clusters, identifies conflicts, and writes a compact long-term state.
   type: paragraph
-- items:
-  - Minimal Atomic Token basis
-  - Integrated memory-model representation
-  - Architectural-search trigger and candidate generation
-  - Stable lifelong training of global evaluation
-  - Optimal neural-algorithmic split features
-  - Identity continuity across hardware migration
-  - Population resilience and lineage count
-  - Boundary between emergent and explicitly required higher-level behavior
-  ordered: false
-  type: list
-- text: The open questions define the research program. They are not defects to hide and should not be replaced by confident prose before experiments exist.
+- text: The prototype in this repository implements working memory, long-term memory, functional forgetting,
+    and iterative selection among flat, clustered, and hybrid organizations.
   type: paragraph
-section_id: S_12_05
+- text: The prototype is not evidence that these three organizations are sufficient. Its purpose is to
+    make the architectural loop executable and measurable.
+  type: paragraph
+- title: Operational evidence first
+  text: Use the modular prototype to collect failure cases before attempting a deeply integrated memory-model
+    representation.
+  type: principle
+section_id: S_05_06
+id: S_12_05

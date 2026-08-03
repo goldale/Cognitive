@@ -1,12 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: Direct internal-state Merge between mature lineages is expected to be destructive or undefined. Exchange should use dialogue, externalized Research State, experiments, books, and training trajectories.
+- text: Associative retrieval and classical storage solve different problems. Learned or graph-based association
+    identifies relevant keys and relationships; hash tables, key-value stores, and databases retain large
+    volumes of exact or structured state economically.
   type: paragraph
-- text: This protects identity and diversity while permitting useful discoveries to propagate.
+- text: The architecture should therefore combine neural association with conventional storage and finite-state
+    control where deterministic behavior is preferable.
   type: paragraph
-- text: A receiving lineage integrates exported knowledge according to its own objectives. It need not reproduce the source representation or conclusions exactly.
-  type: paragraph
-- text: "Internal Model A -> Partial Serialization -> Research State / Dialogue\n                                  -> Model Integration -> Internal Model B"
-  type: diagram
-section_id: S_10_04
+section_id: S_16_04
+id: S_10_04

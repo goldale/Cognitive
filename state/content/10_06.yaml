@@ -1,13 +1,153 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
-blocks:
-- text: Lineage specialization can produce incompatible values, communication failures, and hidden shared dependencies. Apparent diversity may be superficial when all lineages inherit one base model or evaluator.
-  type: paragraph
-- text: Evaluation must therefore distinguish architectural diversity, training-data diversity, objective diversity, and operational independence.
-  type: paragraph
-- text: Cross-lineage review and adversarial testing should be institutionalized without forcing convergence.
-  type: paragraph
-- title: Preserve meaningful variance
-  text: Do not measure diversity only by parameter distance; measure different failure modes, objectives, abstractions, and responses to environmental change.
-  type: principle
+schema_version: 0.3.9
+id: S_10_06
 section_id: S_10_06
+blocks:
+- type: paragraph
+  text: The required Associative Memory is not available as one ready-made component. However, several established
+    families already provide important parts of the target behavior. The practical implementation strategy is therefore
+    to combine existing mechanisms while explicitly engineering the missing state, interface, learning, and lifecycle
+    properties.
+- type: diagram
+  title: Associative Memory Implementation Gap Map
+  description: Existing associative, vector, graph, and exact-storage technologies provide complementary capabilities.
+    Cognitive adds dynamic Memory State, spreading activation, explicit READ and UPDATE semantics, canonical Memory
+    Vector projection, feedback-only state changes, and future structural optimization.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: existing
+    label: Existing Building Blocks
+    kind: external
+    status: current
+  - id: hopfield
+    label: Hopfield / Dense Associative Memory
+    kind: subsystem
+    status: current
+  - id: vector
+    label: Vector Search / ANN
+    kind: subsystem
+    status: current
+  - id: graph
+    label: Graph / Knowledge Storage
+    kind: subsystem
+    status: current
+  - id: kv
+    label: Key–Value / Hash Storage
+    kind: storage
+    status: current
+  - id: integration
+    label: Hybrid Associative Integration Layer
+    kind: subsystem
+    status: experimental
+  - id: target
+    label: Cognitive Associative Memory
+    kind: interface
+    status: future
+  edges:
+  - from: existing
+    to: hopfield
+    flow: information
+  - from: existing
+    to: vector
+    flow: information
+  - from: existing
+    to: graph
+    flow: information
+  - from: existing
+    to: kv
+    flow: information
+  - from: hopfield
+    to: integration
+    flow: information
+    label: pattern completion
+  - from: vector
+    to: integration
+    flow: information
+    label: candidate retrieval
+  - from: graph
+    to: integration
+    flow: information
+    label: relations
+  - from: kv
+    to: integration
+    flow: information
+    label: exact large-scale storage
+  - from: integration
+    to: target
+    flow: optimization
+    label: add missing architecture
+- type: heading
+  level: 3
+  text: Hopfield and Dense Associative Memory
+- type: paragraph
+  text: Classical Hopfield networks, Dense Associative Memory, and modern continuous associative-memory formulations
+    already provide content-addressable retrieval, pattern completion, and convergence toward attractor states.
+    These mechanisms are useful candidates for the neural activation core.
+- type: paragraph
+  text: They still require continual knowledge insertion, explicit separation of short-term activation from long-term
+    structure, dynamic association creation and removal, controlled forgetting, scalable external storage, and the
+    Cognitive interface contract in which only READ produces a Memory Vector.
+- type: heading
+  level: 3
+  text: Sparse Distributed Memory
+- type: paragraph
+  text: Sparse Distributed Memory provides distributed storage, retrieval from incomplete cues, and graceful degradation
+    under partial damage. These properties fit the requirement that knowledge should not reside in one fragile location.
+- type: paragraph
+  text: It must be extended with learned semantic addressing, weighted spreading activation, evolving topology,
+    importance and usage statistics, and canonical projection from active Memory State into a Memory Vector.
+- type: heading
+  level: 3
+  text: Vector Search and Approximate Nearest-Neighbour Systems
+- type: paragraph
+  text: Vector databases and approximate nearest-neighbour libraries can efficiently retrieve candidate memory elements
+    from very large collections. They are valuable retrieval accelerators but are not sufficient as Associative
+    Memory by themselves.
+- type: paragraph
+  text: The missing functions include persistent dynamic activation, multi-hop association, state changes caused
+    by feedback, integration of multiple retrieved elements into one Memory State, and explicit READ projection
+    into the canonical Memory Vector.
+- type: heading
+  level: 3
+  text: Graph and Knowledge Storage
+- type: paragraph
+  text: Graph databases and knowledge graphs provide explicit nodes, typed relations, traversal, indexing, and durable
+    structured storage. They can serve as a structural substrate for associations and exact relationships.
+- type: paragraph
+  text: Cognitive additionally requires learned connection strengths, activation propagation, implicit distributed
+    knowledge, online formation of associations, short-term state, and a latent canonical interface to the Transformer.
+- type: heading
+  level: 3
+  text: Key–Value and Hash Storage
+- type: paragraph
+  text: Key–value systems can retain enormous volumes of exact data economically. Associative mechanisms may identify
+    relevant keys, while conventional storage retains documents, events, binary objects, exact values, and large
+    structured records.
+- type: paragraph
+  text: This division allows neural components to perform semantic association while classical storage performs
+    reliable, inexpensive retention. It also preserves the project principle that neural networks and deterministic
+    algorithms should be used where each is strongest.
+- type: heading
+  level: 3
+  text: Recommended Initial Hybrid
+- type: paragraph
+  text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates neural
+    and graph associations; vector search proposes candidates; graph traversal and spreading activation construct
+    dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation projects the
+    resulting state into the canonical Memory Vector.'
+- type: principle
+  title: Implementation gap principle
+  text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive memory contract.
+    The engineering task is to integrate them while adding dynamic Memory State, READ-only Memory Vector generation,
+    feedback without implicit READ, separate UPDATE semantics, semantic invariance, and future topology optimization.
+- type: heading
+  level: 3
+  text: Required Additions Before the Target Is Reached
+- type: paragraph
+  text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading activation;
+    online knowledge accumulation; semantic equivalence across wording and language; canonical Memory Vector normalization;
+    explicit READ and UPDATE operations; Answer-to-Memory feedback that changes state without generating a vector;
+    controlled forgetting; structural connection state; and later Sleep-like offline optimization.'

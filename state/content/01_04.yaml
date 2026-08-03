@@ -1,13 +1,22 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: The architecture arose through a long research dialogue between a human systems engineer with a background in applied mathematics, physics, and software engineering and a language model. Many ideas existed in partial form before the dialogue; others emerged only after repeated criticism, reformulation, and integration.
+- text: The document separates implemented mechanisms, architectural decisions, working hypotheses, observations,
+    and open questions. Confidence values are engineering estimates, not statistical posterior probabilities
+    unless an experiment explicitly establishes that interpretation.
   type: paragraph
-- text: The resulting document is not a transcript and not a sequence in which one party wrote and the other edited. It is a consolidated model produced by repeated transformation of a shared conceptual state.
+- text: Biological evolution is treated as a very large empirical search that produced robust cognitive
+    architectures under severe real-world constraints. Evolutionary persistence makes a mechanism a strong
+    candidate for study, but does not prove that the mechanism is optimal for an engineered system with
+    different resources and objectives.
   type: paragraph
-- title: Dialogue as method
-  text: 'The production process is itself an example of the proposed communication model: partial serialization, deserialization, integration, clarification, conflict detection, and consolidation.'
-  type: observation
-- text: Project artifacts are canonical in English. Design discussion may occur in any language. English is an implementation choice for broad technical interoperability, not a claim that natural English is an optimal internal cognitive language.
+- text: A good project model must remain corrigible. New evidence may refine definitions, change confidence,
+    replace architecture decisions, or create new Tokens. Existing Tokens do not change semantic identity;
+    semantic replacement requires a new Token.
   type: paragraph
-section_id: S_01_04
+- title: State recovery
+  text: The canonical Research State and generated documentation must permit a new human or model participant
+    to resume the project after context loss without replaying the complete discussion history.
+  type: principle
+section_id: S_01_05
+id: S_01_04

@@ -1,12 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- text: A provider can operate several maintained lineage families and deploy many cloned instances of the best current version within each family.
+- text: Sleep-like structural reorganization and the final global evaluation mechanism are intentionally
+    deferred from the first implementation of the Transformer-memory interface.
   type: paragraph
-- text: Customers select a lineage by objective class and risk profile rather than receiving one universal model. Updates can be tested within a lineage before promotion.
+- text: Deferral is an architectural boundary, not rejection. Initial versions should establish a working
+    memory contract before adding offline topology optimization, forgetting, global reweighting, and more
+    general evaluation.
   type: paragraph
-- text: Failure in one lineage does not automatically corrupt all deployed cognition. Diversity becomes an operational resilience mechanism, not an academic luxury.
-  type: paragraph
-- text: The repository includes a lineage manager that clones champions within lineages and measures distance among lineage signatures.
-  type: paragraph
-section_id: S_10_05
+section_id: S_16_05
+id: S_10_05

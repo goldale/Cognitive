@@ -1,13 +1,61 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.2.0
 blocks:
-- title: T_ResearchState
-  text: The canonical implementation-independent state of the research model from which human-readable and machine-readable artifacts are generated.
-  type: definition
-- text: Research State stores the current consolidated model, not the full dialogue transcript. It includes Tokens, principles, hypotheses, architecture decisions, open questions, roadmap items, chapter structure, and the latest consolidation record.
+- text: The raw state produced by Associative Memory should be projected and canonicalized before entering the Transformer.
+    The resulting Memory Vector is the complete public interface of the memory subsystem.
   type: paragraph
-- text: The state must support recovery after session loss, use by a different model, and long-term local ownership.
+- type: diagram
+  title: Canonical Memory Interface
+  description: Canonicalization separates the evolving internal Memory State from the stable interface consumed
+    by the Transformer.
+  direction: LR
+  nodes:
+  - id: state
+    label: Memory State
+    kind: state
+    status: current
+  - id: projection
+    label: Projection
+    kind: subsystem
+    status: current
+  - id: raw
+    label: Raw Memory Vector
+    kind: data
+    status: current
+  - id: canonical
+    label: Runtime Canonicalization
+    kind: subsystem
+    status: current
+  - id: vector
+    label: Canonical Memory Vector
+    kind: interface
+    status: current
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+    status: current
+  edges:
+  - from: state
+    to: projection
+    flow: information
+  - from: projection
+    to: raw
+    flow: information
+  - from: raw
+    to: canonical
+    flow: information
+  - from: canonical
+    to: vector
+    flow: information
+  - from: vector
+    to: transformer
+    flow: interface
+    label: stable contract
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- text: Canonicalization protects the Transformer from internal memory drift and allows both subsystems to evolve
+    independently.
   type: paragraph
-- text: Documentation is a partial serialization of Research State for a human audience. English and future language versions are separate serializations, not an original plus literal translations.
-  type: paragraph
-section_id: S_11_01
+section_id: S_17_01
+id: S_11_01

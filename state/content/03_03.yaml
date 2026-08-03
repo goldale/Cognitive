@@ -1,14 +1,24 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: A useful unit of design is not a unique world model but a bounded class of models associated with a bounded class of systems. Members of a class share objectives, representational conventions, and relevant environmental regularities while retaining individual histories.
+- title: T_ModelIntegration
+  text: An iterative modification of the receiver's existing cognitive model using deserialized information
+    and the receiver's current objectives, knowledge, and experience.
+  type: definition
+- text: Integration is objective-dependent and path-dependent. Identical serialized information can produce
+    different changes in systems with different experience, objective functions, confidence distributions,
+    or category structures.
   type: paragraph
-- text: This class-based view permits controlled cloning and commercial deployment without forcing every deployed system into one global cognitive state.
+- text: 'Most integrations should begin with inexpensive local changes: altered importance, utility, confidence,
+    or activation; new relations; removed relations; or reclassification. Structural architectural changes
+    are not a deterministic consequence of a single important message.'
   type: paragraph
-- text: Models from different classes can remain mutually intelligible through explicit communication while preserving different internal organizations. Compatibility does not require identity.
+- text: 'Current Model + Deserialized Structure ↓ T_ModelIntegration ↓
+
+    Weights, Relations, Categories, or Architecture'
+  type: formula
+- text: Integration is complete only when the receiver has a usable interpretation. Reading or hearing
+    the message is not sufficient.
   type: paragraph
-- title: Class-limited optimality
-  confidence: 0.92
-  text: A model can be near-optimal within a restricted class of objectives while being systematically poor for another class.
-  type: hypothesis
-section_id: S_03_03
+section_id: S_02_03
+id: S_03_03

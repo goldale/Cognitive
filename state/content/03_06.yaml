@@ -1,13 +1,26 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: Benchmarking a cognitive system without declaring its objective class can be meaningless. A model may underperform on one benchmark because its architecture preserves information needed for another objective.
+- text: Human debates, teaching, literary interpretation, and cultural communication include computational
+    integration together with social and emotional objectives. The current architecture models the integration
+    layer first.
   type: paragraph
-- text: System design should therefore expose objective assumptions, allow objective revision, and measure the cost of reorganizing knowledge when objectives change.
+- text: The working hypothesis is that many higher-level phenomena will emerge when persistent agents
+    with different objectives repeatedly serialize, integrate, act, remember consequences, and model one
+    another.
   type: paragraph
-- text: Population design should preserve several objective-driven lineages rather than globally replacing all systems with the current single champion.
+- text: Language diversity may increase population-level cognitive variability. A single language maximizes
+    immediate interoperability; multiple languages can preserve different category systems, compression
+    schemes, and optimization paths.
   type: paragraph
-- title: Objective declaration
-  text: Every experiment on a world model should state the objective function, resource constraints, evaluation horizon, and model class for which performance is claimed.
-  type: principle
-section_id: S_03_06
+- title: Reinterpretation of the Babel story
+  text: From a population-optimization perspective, language fragmentation can be interpreted not only
+    as communication loss but also as an increase in model diversity and an additional dimension for evolutionary
+    search.
+  type: observation
+- title: Not an established historical claim
+  text: The Babel interpretation is an architectural analogy, not a claim about the historical origin
+    or purpose of human language diversity.
+  type: warning
+section_id: S_02_06
+id: S_03_06

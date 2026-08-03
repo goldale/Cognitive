@@ -1,23 +1,69 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: Neural networks and classical programs both seek states that optimize a task-dependent functional, but they operate under different knowledge conditions.
+- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
+    and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological
+    memory in organisms with developed nervous systems, while acknowledging that direct measurement becomes increasingly
+    difficult outside humans.
   type: paragraph
-- headers:
-  - Class
-  - Functional
-  - Typical executor
-  rows:
-  - - I
-    - Well defined and tractable
-    - Algorithm, solver, finite-state machine
-  - - II
-    - Not explicit; examples are evaluated
-    - Neural network
-  - - III
-    - Partly defined and partly example-based
-    - Hybrid architecture
-  type: table
-- text: The third class includes many practical robotics, autonomous driving, diagnosis, planning, and dialogue tasks. The central engineering problem is where to cut the computation.
+- type: diagram
+  title: Memory Architecture
+  description: Memory State combines persistent associative structure with dynamic short-term activation and exposes
+    knowledge through a stable vector interface.
+  direction: TB
+  nodes:
+  - id: long
+    label: Long-Term Associative Structure
+    kind: storage
+    status: current
+  - id: short
+    label: Short-Term Activation State
+    kind: state
+    status: current
+  - id: state
+    label: Memory State
+    kind: state
+    status: current
+  - id: projection
+    label: Projection and Canonicalization
+    kind: subsystem
+    status: current
+  - id: vector
+    label: Memory Vector
+    kind: interface
+    status: current
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+    status: current
+  edges:
+  - from: long
+    to: state
+    flow: information
+  - from: short
+    to: state
+    flow: information
+  - from: state
+    to: projection
+    flow: information
+  - from: projection
+    to: vector
+    flow: information
+  - from: vector
+    to: transformer
+    flow: interface
+    label: stable public interface
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+- title: Functional lossiness
+  confidence: 0.78
+  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not
+    only because biological storage is limited.
+  type: hypothesis
+- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under resource
+    constraints. A memory architecture that preserves fewer literal details but produces a more usable model can
+    outperform an exact archive.
   type: paragraph
-section_id: S_09_01
+section_id: S_04_01
+id: S_09_01

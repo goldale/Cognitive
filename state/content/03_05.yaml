@@ -1,12 +1,24 @@
 kind: T_ContentBlock
 schema_version: 0.1.0
 blocks:
-- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value; exploration may become less important than safety; a research agent may move from discovery to verification.
+- text: 'Every communication contains two informational components: the shared cultural and informational
+    background, and the new serialization transmitted against that background.'
   type: paragraph
-- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate, the current organization may become inefficient. Architectural search is then required.
+- text: The shared background contains the larger information volume by definition. A short message can
+    activate a large internal structure only because most of that structure already exists in the receiver.
   type: paragraph
-- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate reorganizations must be generated, evaluated, partially applied, and compared over time.
+- title: Background compression hypothesis
+  confidence: 0.9
+  text: Communication efficiency is determined primarily by similarity between the participating cognitive
+    models rather than by raw channel bandwidth.
+  type: hypothesis
+- title: Recently cloned systems
+  text: Two recently cloned cognitive systems may exchange highly context-dependent symbols that are opaque
+    to outsiders but trigger large, precise updates in each other because their background states are
+    nearly identical.
+  type: example
+- text: As independently evolving systems diverge, the same compact language becomes less effective. More
+    explicit serialization, definitions, examples, and clarification cycles are required.
   type: paragraph
-- text: "Objective Drift\n      ↓\nWeight and Activation Changes\n      ↓\nGrowing Organizational Mismatch\n      ↓\nIterative Architectural Search"
-  type: diagram
-section_id: S_03_05
+section_id: S_02_05
+id: S_03_05
