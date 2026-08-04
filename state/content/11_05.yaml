@@ -1,12 +1,132 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.20
 blocks:
-- text: After decorrelation, a further rotation may seek sparse typical representations in which simple
-    concepts activate relatively few coordinates. Statistical independence and semantic interpretability
-    are separate objectives and must not be conflated.
-  type: paragraph
-- text: Representation Optimization changes the coordinate system, not the accumulated knowledge or memory
-    graph topology. It is therefore distinct from UPDATE and from sleep-like structural reorganization.
-  type: paragraph
-section_id: S_17_05
+- type: heading
+  level: 3
+  text: Motivation
+- type: paragraph
+  text: The semantic coordinate system of Associative Memory is not fixed in advance. It emerges gradually as the
+    cognitive system accumulates experience.
+- type: paragraph
+  text: During continuous learning, different semantic dimensions may begin to encode partially overlapping properties.
+    This creates representational redundancy, increases statistical correlation between dimensions, and reduces
+    the efficiency of the latent semantic space.
+- type: paragraph
+  text: The purpose of semantic coordinate optimization is not merely to eliminate statistical correlation. Its
+    broader objective is to maintain a stable, efficient, and minimally redundant semantic basis throughout the
+    lifetime of the cognitive system.
+- type: paragraph
+  text: Semantic coordinates should gradually evolve toward a representation in which each dimension describes a
+    distinct semantic property with minimal overlap with other dimensions.
+- type: heading
+  level: 3
+  text: Stage 1 — Global Basis Initialization
+- type: paragraph
+  text: After the Memory State has accumulated sufficient experience and reached an acceptable level of semantic
+    stability, a one-time global optimization is performed.
+- type: list
+  items:
+  - Compute the correlation matrix of the semantic vector dimensions.
+  - Construct an approximately orthogonal semantic coordinate system.
+  - Transform the existing semantic representations into the resulting basis.
+- type: paragraph
+  text: This operation establishes the initial canonical semantic coordinate system used by Associative Memory and
+    the Transformer. Global basis initialization is performed only once during the lifetime of the cognitive system
+    and is not repeated as new experience accumulates.
+- type: heading
+  level: 3
+  text: Stage 2 — Localized Semantic Basis Maintenance
+- type: paragraph
+  text: As new experience is incorporated into Memory State, the statistical properties of the semantic coordinate
+    system gradually evolve. This process may introduce new correlations between semantic dimensions that were previously
+    approximately independent.
+- type: paragraph
+  text: The existing semantic basis is therefore maintained through incremental localized optimization rather than
+    repeated global orthogonalization.
+- type: list
+  items:
+  - Update the maintained correlation matrix.
+  - Identify the pair of semantic dimensions with the strongest remaining correlation.
+  - Select, from the remaining semantic coordinate axes, the one having the weakest statistical correlation with
+    the selected semantic pair to serve as the reference rotation axis.
+  - Determine the rotation angle that minimizes the correlation of the selected semantic pair while preserving the
+    selected reference axis.
+  - Apply the corresponding local rotation, modifying only the selected pair of semantic coordinates.
+  - Immediately update the correlation matrix.
+- type: paragraph
+  text: Each refinement step changes exactly two elements of the semantic vector. The selected reference axis and
+    all remaining semantic coordinates remain unchanged.
+- type: paragraph
+  text: The procedure may be repeated for additional coordinate pairs until the remaining correlations fall below
+    the required threshold or the available optimization budget is exhausted.
+- type: heading
+  level: 3
+  text: Semantic Continuity and Transformer Adaptation
+- type: paragraph
+  text: Restricting each refinement step to a localized transformation minimizes disruption to the established semantic
+    basis. Only the selected pair of semantic dimensions is modified during a single optimization step. All remaining
+    semantic coordinates preserve their semantic interpretation.
+- type: list
+  items:
+  - Previously learned representations remain valid for all unaffected dimensions.
+  - Adaptation is limited to the modified semantic pair.
+  - Semantic evolution becomes gradual rather than disruptive.
+  - Computational cost and Transformer retraining effort are substantially reduced.
+- type: paragraph
+  text: This localized optimization allows the semantic coordinate system to evolve continuously throughout the
+    lifetime of the cognitive system while preserving semantic continuity and Transformer stability.
+- type: heading
+  level: 3
+  text: Semantic Drift
+- type: paragraph
+  text: Continuous learning gradually changes the statistical distribution of semantic representations. This long-term
+    evolution is referred to as semantic drift. Semantic drift is a natural consequence of incorporating new knowledge
+    and refining existing semantic distinctions.
+- type: paragraph
+  text: Localized semantic basis maintenance compensates for accumulated drift through small rotations. It preserves
+    the established coordinate system wherever possible while correcting only dimensions that have developed significant
+    redundancy.
+- type: paragraph
+  text: The objective is not to maintain perfect orthogonality at every moment. The objective is to preserve a sufficiently
+    independent, stable, and efficient semantic basis under continuous learning.
+- type: heading
+  level: 3
+  text: Relationship to Offline Consolidation
+- type: paragraph
+  text: Semantic basis optimization is a form of structural learning. It is not performed during normal READ or
+    UPDATE operations.
+- type: list
+  items:
+  - READ never modifies the semantic coordinate system.
+  - UPDATE stores semantic representations using the currently active basis.
+  - Online functional learning does not perform coordinate rotations.
+  - Global basis initialization and localized basis maintenance are performed exclusively during Offline Consolidation
+    (Sleep).
+- type: paragraph
+  text: Offline Consolidation is responsible for coordinating the corresponding adaptation of the Transformer and
+    persistent memory representations. A basis refinement must not become visible to normal online processing until
+    the affected memory representations and Transformer interfaces are mutually consistent.
+- type: principle
+  title: Semantic preservation invariant
+  text: Coordinate optimization may change the latent basis, but it must preserve represented knowledge and the
+    strict separation of READ, UPDATE, and Offline Consolidation.
+- type: heading
+  level: 3
+  text: Design Rationale
+- type: paragraph
+  text: The semantic coordinate system is treated as a long-lived internal representation rather than as a fixed
+    mathematical structure.
+- type: list
+  items:
+  - An initially coherent semantic coordinate system.
+  - Lifelong semantic self-organization.
+  - Gradual reduction of representational redundancy.
+  - Preservation of semantic continuity.
+  - Localized and computationally efficient optimization.
+  - Reduced adaptation requirements for the Transformer.
+  - Avoidance of repeated disruptive global transformations.
+- type: paragraph
+  text: The resulting semantic basis remains stable enough for reliable online reasoning while retaining the ability
+    to adapt incrementally as the cognitive system acquires new experience.
+section_id: S_11_05
 id: S_11_05

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.19
+schema_version: 0.3.20
 blocks:
 - text: Human debates, teaching, literary interpretation, and cultural communication
     include computational integration together with social and emotional objectives.

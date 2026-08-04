@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.19
+schema_version: 0.3.20
 blocks:
 - title: T_ModelIntegration
   text: An iterative modification of the receiver's existing cognitive model using
