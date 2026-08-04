@@ -1,8 +1,8 @@
 {
   "project": "Cognitive Architecture Specification",
-  "version": "0.3.16",
+  "version": "0.3.17",
   "release_date": "2026-08-03",
-  "archive_root": "cognitive-0.3.16",
+  "archive_root": "cognitive-0.3.17",
   "file_count": 446,
   "files": [
     {
@@ -101,7 +101,7 @@
       "sha256": "2bff72d60b35066ed4518cefdbb0f0c8457eaddf71f570b8cad7e84b548cdf65"
     },
     {
-      "path": "RELEASE_NOTES_0.3.16.md",
+      "path": "RELEASE_NOTES_0.3.17.md",
       "size": 785,
       "sha256": "97714fcad76c0ad533c52adc22724f3952acccc36536f9d0826ad9bfac08d74c"
     },

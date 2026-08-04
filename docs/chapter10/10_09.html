@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 10 · Section 10.9 · Latent Compression Engine</title>
+<link rel="stylesheet" href="../cognitive.css">
+</head>
+<body>
+<div class="container">
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_08.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter24/index.html">A–Z Index</a><a rel="next" href="10_10.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 10</p><h1>Associative Memory</h1><p class="section-label">Section 10.9</p><h2>Latent Compression Engine</h2></header>
+<main><aside class="definition"><h4>Latent Compression Engine</h4><p>The validated UPDATE-side encoder that maps a high-dimensional semantic state into z_new ∈ R^4096 for staging and possible persistent storage.</p></aside><pre class="code"><code data-language="text">Transformer
+  ↓
+Semantic Representation
+  ↓
+Semantic Feedback Learning Pipeline
+  ↓
+Validated Semantic State
+  ↓
+Latent Compression Engine
+  ↓ z_new ∈ R^4096
+Staging Area
+  ↓
+Associative Memory UPDATE</code></pre><p>A reference implementation may encode an internal state of 1024 × 1024 × 8 elements using hierarchical learned downsampling, residual feature extraction, a Perceiver-style cross-attention bottleneck, final projection, and optional L2 normalization.</p><pre class="code"><code data-language="text">1024×1024×8×1
+  ↓ stride (4,4,2)
+256×256×4×64
+  ↓ stride (4,4,2)
+64×64×2×256
+  ↓ stride (4,4,2)
+16×16×1×1024
+  ↓ cross-attention bottleneck
+z_new ∈ R^4096</code></pre><p>The nominal payload compression is 8,388,608 / 4,096 = 2,048:1. With FP16 this corresponds to 16 MiB for the dense tensor and 8 KiB for the latent vector, excluding graph, index, metadata, allocator, provenance, and replication overhead.</p><aside class="note"><h4>Information-theoretic limitation</h4><p>A deterministic mapping from R^8,388,608 to R^4,096 cannot be losslessly invertible for arbitrary tensors. Useful reconstruction requires valid semantic states to occupy a structured, substantially lower-dimensional manifold.</p></aside><p>Encoder and decoder may be trained jointly with reconstruction, feature-space, contrastive, semantic-preservation, and retrieval-margin objectives. The architecture does not mandate a universal Hopfield loss.</p><aside class="principle"><h4>Operational asymmetry</h4><p>The decoder belongs to READ and reconstructs transient context. The encoder is available only inside the validated Semantic Feedback Learning Pipeline for UPDATE. This prevents memory from reinforcing its own generated outputs.</p></aside></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_08.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter24/index.html">A–Z Index</a><a rel="next" href="10_10.html">Next →</a></nav></footer>
+</div>
+</body>
+</html>

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.16
+schema_version: 0.3.17
 blocks:
 - type: paragraph
   text: A mature memory system requires an explicit lifecycle rather than unlimited accumulation.

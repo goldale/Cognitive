@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.16
+schema_version: 0.3.17
 blocks:
 - type: paragraph
   text: Offline Consolidation and Sleep experiments should compare online-only learning against scheduled maintenance

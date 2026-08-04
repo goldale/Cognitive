@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.16
+schema_version: 0.3.17
 blocks:
 - type: paragraph
   text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation
@@ -12,7 +12,7 @@ blocks:
   size: standard
   nodes:
   - id: current
-    label: 'cognitive-0.3.16
+    label: 'cognitive-0.3.17
 
       Semantic Feedback Learning'
     kind: state

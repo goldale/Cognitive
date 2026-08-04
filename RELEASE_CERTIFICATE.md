@@ -1,4 +1,4 @@
-# Cognitive 0.3.16 — Release Certificate
+# Cognitive 0.3.17 — Release Certificate
 
 **Release date:** 2026-08-03  
 **Release type:** Architectural evolution roadmap  
@@ -41,4 +41,4 @@
 | A–Z Index navigation | PASS |
 | Roadmap priority order | PASS |
 
-This certificate applies to the archive identified by `cognitive-0.3.16.tgz.sha256`.
+This certificate applies to the archive identified by `cognitive-0.3.17.tgz.sha256`.

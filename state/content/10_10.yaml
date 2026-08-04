@@ -1,0 +1,41 @@
+kind: T_ContentBlock
+schema_version: 0.3.17
+blocks:
+- type: definition
+  title: Reference target
+  text: The first cognitive-0.3.17 implementation targets a single-server Associative Memory capable of producing
+    a 1024 × 1024 × 8 transient Memory Tensor from compact latent states.
+- type: list
+  items:
+  - 'Associative candidate index: FAISS, Qdrant, HNSW, IVF, or future equivalent.'
+  - 'Local attractor retrieval: Modern Hopfield or attention-equivalent mechanism.'
+  - 'Latent dimensionality: reference value 4096; alternatives remain possible.'
+  - 'Tensor reconstruction: hierarchical decoder or factorized generator.'
+  - 'Compression: hierarchical encoder with attention bottleneck.'
+  - 'Hardware reference: one modern GPU and sufficient host memory; exact requirements are benchmark-dependent.'
+- type: paragraph
+  text: Technology names are reference implementations rather than architectural dependencies. Latency claims such
+    as sub-5-ms READ, 1–3-ms encoding, or microsecond UPDATE are experimental targets and must not be treated as
+    canonical guarantees before reproducible measurement.
+- type: definition
+  title: Staging Area
+  text: A quarantine boundary that evaluates semantic validity, reconstruction quality, novelty, duplication, contradiction,
+    provenance, confidence, importance, and attractor stability before UPDATE commits persistent state.
+- type: list
+  items:
+  - Accept a novel validated code.
+  - Merge only when semantic equivalence, provenance, time, and confidence permit it.
+  - Preserve close but conflicting states as distinct alternatives.
+  - Reject invalid or self-generated states.
+  - Defer expensive restructuring to Offline Consolidation and Sleep.
+- type: paragraph
+  text: Round-trip validation may decode z_new and compare the reconstructed state with the validated semantic input.
+    Acceptance should consider semantic equivalence, preserved relations, uncertainty, provenance, and absence of
+    invented content—not only element-wise reconstruction error.
+- type: principle
+  title: Preserved v0.3.16 invariants
+  text: Associative Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic
+    Feedback Learning Pipeline. READ remains read-only; UPDATE performs no implicit READ and produces no Memory
+    Vector.
+section_id: S_10_10
+id: S_10_10

@@ -1,0 +1,39 @@
+kind: T_ContentBlock
+schema_version: 0.3.17
+blocks:
+- type: definition
+  title: Memory Tensor
+  text: A transient structured state V with shape 1024 × 1024 × 8, containing 8,388,608 scalar elements. It is reconstructed
+    during READ and is not a set of 8,388,608 independent persistent memory records.
+- type: paragraph
+  text: 'cognitive-0.3.17 introduces a hybrid internal implementation: Sparse Associative Index + Latent Aggregator
+    + Tensor Reconstruction Engine. Persistent memory stores compact semantic keys, latent codes, links, importance,
+    confidence, provenance, and structural metadata; the dense Memory Tensor is generated only when needed.'
+- type: code
+  text: "Query\n  ↓\nApproximate Associative Index\n  ↓ Top-K latent states\nLatent Aggregator\n  ↓ z_target ∈ R^4096\n\
+    Tensor Reconstruction Engine\n  ↓\nMemory Tensor V ∈ R^(1024×1024×8)\n  ↓ projection\nMemory Vector\n  ↓\nTransformer"
+- type: list
+  items:
+  - READ never modifies Memory State.
+  - The reconstructed Memory Tensor is transient.
+  - The canonical external output of READ remains the Memory Vector.
+  - Generated or interpolated tensor states are hypotheses, not automatically persistent knowledge.
+- type: definition
+  title: Tensor Reconstruction Engine
+  text: A shared decoder that maps an aggregated latent state into the transient Memory Tensor. Reference implementations
+    include hierarchical convolutional decoding and low-rank or factorized tensor generation.
+- type: paragraph
+  text: A factorized generator may represent V(x,y,c) as a sum of rank components A_r(x)B_r(y)C_r(c), avoiding mandatory
+    dense materialization. CP, Tucker, Tensor Train, block-sparse, or hierarchical low-rank decompositions are implementation
+    candidates.
+- type: note
+  title: Information boundary
+  text: The dimensions of the Memory Tensor do not necessarily correspond to physical 3-D space. Conv3D is a reference
+    implementation, not an architectural requirement.
+- type: principle
+  title: No self-authorized learning
+  text: A tensor produced by READ cannot be encoded and written back directly. Any conclusion derived from it must
+    be interpreted by the Transformer and returned as a Semantic Representation through the Semantic Feedback Learning
+    Pipeline.
+section_id: S_10_07
+id: S_10_07

@@ -1,7 +1,7 @@
 {
   "project": "Cognitive Architecture Specification",
-  "release": "0.3.16",
-  "version": "0.3.16",
+  "release": "0.3.17",
+  "version": "0.3.17",
   "release_date": "2026-08-03",
   "canonical_language": "English",
   "source_of_truth": "YAML in state/",
@@ -29,5 +29,5 @@
     "Established Replay as third priority",
     "Preserved all cognitive-0.3.15 Semantic Feedback Learning invariants"
   ],
-  "release_notes": "RELEASE_NOTES_0.3.16.md"
+  "release_notes": "RELEASE_NOTES_0.3.17.md"
 }

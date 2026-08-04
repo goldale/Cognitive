@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.16
+schema_version: 0.3.17
 ownership:
 - concept: Architecture Overview
   canonical_location: Chapter 2

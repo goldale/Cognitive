@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.16
+schema_version: 0.3.17
 blocks:
 - type: paragraph
   text: The architecture must remain understandable to engineers as it becomes more capable. Formal precision is
