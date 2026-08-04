@@ -1,21 +1,20 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant
-    episodes while retaining category boundaries, causal expectations, evaluation changes, and action
-    tendencies.
+- text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant episodes
+    while retaining category boundaries, causal expectations, evaluation changes, and action tendencies.
   type: paragraph
-- text: Information can disappear from explicit recall while remaining present functionally. A book may
-    no longer be remembered proposition by proposition, yet continue to alter judgments and attention.
+- text: Information can disappear from explicit recall while remaining present functionally. A book may no longer
+    be remembered proposition by proposition, yet continue to alter judgments and attention.
   type: paragraph
-- text: The engineering target is therefore not maximum retained bits. It is maximum future utility of
-    the retained internal state.
+- text: The engineering target is therefore not maximum retained bits. It is maximum future utility of the retained
+    internal state.
   type: paragraph
 - text: MemoryUtility = FuturePrediction + Evaluation + Action + LearningDirection - StorageAndInterferenceCost
   type: formula
 - title: Auditability requirement
-  text: An engineered cognitive system may require an external exact event log for legal, scientific,
-    or safety auditing even when its internal cognitive memory remains lossy.
+  text: An engineered cognitive system may require an external exact event log for legal, scientific, or safety
+    auditing even when its internal cognitive memory remains lossy.
   type: warning
 section_id: S_04_04
 id: S_09_04

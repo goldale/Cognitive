@@ -1,20 +1,20 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: A useful unit of design is not a unique world model but a bounded class of models associated with
-    a bounded class of systems. Members of a class share objectives, representational conventions, and
-    relevant environmental regularities while retaining individual histories.
+- text: A useful unit of design is not a unique world model but a bounded class of models associated with a bounded
+    class of systems. Members of a class share objectives, representational conventions, and relevant environmental
+    regularities while retaining individual histories.
   type: paragraph
-- text: This class-based view permits controlled cloning and commercial deployment without forcing every
-    deployed system into one global cognitive state.
+- text: This class-based view permits controlled cloning and commercial deployment without forcing every deployed
+    system into one global cognitive state.
   type: paragraph
-- text: Models from different classes can remain mutually intelligible through explicit communication
-    while preserving different internal organizations. Compatibility does not require identity.
+- text: Models from different classes can remain mutually intelligible through explicit communication while preserving
+    different internal organizations. Compatibility does not require identity.
   type: paragraph
 - title: Class-limited optimality
   confidence: 0.92
-  text: A model can be near-optimal within a restricted class of objectives while being systematically
-    poor for another class.
+  text: A model can be near-optimal within a restricted class of objectives while being systematically poor for
+    another class.
   type: hypothesis
 section_id: S_03_03
 id: S_02_03

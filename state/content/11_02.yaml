@@ -1,11 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: As an initial approximation, the raw vector is L2-normalized. Direction represents which knowledge
-    is activated, while the original magnitude is retained separately as activation strength.
+- text: As an initial approximation, the raw vector is L2-normalized. Direction represents which knowledge is activated,
+    while the original magnitude is retained separately as activation strength.
   type: paragraph
-- text: This separation avoids forcing two different quantities into one unstable signal and provides
-    the Transformer with a more predictable input distribution.
+- text: This separation avoids forcing two different quantities into one unstable signal and provides the Transformer
+    with a more predictable input distribution.
   type: paragraph
 section_id: S_17_02
 id: S_11_02

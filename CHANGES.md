@@ -1,10 +1,15 @@
-# CHANGES - cognitive 0.3.20
+# CHANGES - cognitive 0.3.30
 
-- Replaced Section 11.5 with **Self-Organizing Semantic Coordinate System**.
-- Defined one-time Global Basis Initialization after semantic stabilization.
-- Defined continuous localized semantic basis maintenance without repeated global orthogonalization.
-- Added deterministic selection of the reference rotation axis: among the remaining axes, choose the axis having the weakest statistical correlation with the selected strongly correlated semantic pair.
-- Limited each refinement step to modification of exactly two semantic vector elements.
-- Clarified semantic continuity, Transformer adaptation, semantic drift, and the exclusive relationship of basis optimization to Offline Consolidation (Sleep).
-- Regenerated HTML, PDF, cross-references, and the A-Z Index from canonical YAML.
-- Preserved the canonical learning loop, strict READ / UPDATE separation, Single Source of Truth, and clean-release policy.
+- Replaced the arbitrary-angle formulation in Section 11.5 with deterministic localized semantic basis maintenance.
+- Defined norm-preserving transfer of a correlated coordinate pair into the dominant retained coordinate while zeroing the secondary coordinate.
+- Added Effective Semantic Dimensionality as a first-class architectural result.
+- Restricted dimensional removal to release engineering; runtime dimensionality remains fixed.
+- Added Dense Architecture with Progressive Semantic Compaction.
+- Clarified that the implementation is dense, not sparse-first; temporary zero coordinates do not make the architecture sparse.
+- Added a prospective Distributed Photonic-Spintronic Associative Tensor Memory implementation.
+- Defined query and response tensors up to 1024 x 1024 x 8 elements.
+- Clarified that 256 denotes processing layers, not vector dimensionality.
+- Defined the 10,000,000 x 256 scale as dense programmable positions across processing layers.
+- Limited canonical precision tiers to INT4, INT8, and INT16.
+- Preserved the canonical learning loop, strict READ/UPDATE separation, YAML Single Source of Truth, modular HTML documentation, and fixed runtime semantic dimensionality.
+- Removed obsolete monolithic combined HTML and obsolete release artifacts from the release snapshot.

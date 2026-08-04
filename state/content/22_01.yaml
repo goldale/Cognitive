@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.20
+schema_version: 0.3.30
 blocks:
 - type: paragraph
   text: The long-term target is a cognitive platform that can reason semantically, maintain a persistent and evolving

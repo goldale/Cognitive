@@ -1,13 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: The objective of planning is to construct the most useful set of plausible developments, not an
-    exhaustive set of all possible futures. Search is bounded by time, memory, computation, maximum scenario
-    count, and required response latency.
+- text: The objective of planning is to construct the most useful set of plausible developments, not an exhaustive
+    set of all possible futures. Search is bounded by time, memory, computation, maximum scenario count, and required
+    response latency.
   type: paragraph
-- text: When delay is dangerous, the architecture must prefer a sufficiently evaluated action over indefinite
-    analysis. In practical terms, an imperfect action may be safer than remaining motionless while the
-    environment continues to change.
+- text: When delay is dangerous, the architecture must prefer a sufficiently evaluated action over indefinite analysis.
+    In practical terms, an imperfect action may be safer than remaining motionless while the environment continues
+    to change.
   type: paragraph
 section_id: S_14_04
 id: S_08_02

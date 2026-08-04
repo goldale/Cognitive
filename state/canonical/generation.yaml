@@ -1,5 +1,5 @@
 kind: T_GenerationPolicy
-schema_version: 0.3.20
+schema_version: 0.3.30
 source_of_truth:
 - state/*.yaml
 - state/content/*.yaml

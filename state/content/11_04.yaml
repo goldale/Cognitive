@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
 - text: After the memory representation becomes sufficiently stable, representative Memory Vectors can be analyzed
     through covariance and correlation structure. Strong off-diagonal dependence reveals redundant or entangled

@@ -1,0 +1,38 @@
+kind: T_ContentBlock
+schema_version: 0.3.30
+blocks:
+- type: heading
+  level: 3
+  text: Precision Tiers
+- type: list
+  items:
+  - INT4 provides maximum storage density and bandwidth efficiency.
+  - INT8 is the default operational precision.
+  - INT16 is reserved for sensitive layers, accumulation, calibration, high-dynamic-range state, and Offline Consolidation
+    statistics.
+- type: paragraph
+  text: INT8 may be implemented through two INT4 slices, and INT16 through multiple lower-precision slices. Bit-sliced
+    realization is preferred when a single physical cell cannot provide sufficiently stable multilevel precision.
+- type: heading
+  level: 3
+  text: Physical READ / UPDATE Separation
+- type: list
+  items:
+  - READ uses non-destructive sensing paths and never applies programming pulses.
+  - UPDATE uses dedicated programming paths and never performs retrieval.
+  - UPDATE modifies persistent state but never produces a Memory Vector.
+  - A new Memory Vector is produced only by an explicit later READ.
+- type: heading
+  level: 3
+  text: Offline Consolidation
+- type: paragraph
+  text: Offline Consolidation may recalibrate devices, replay important states, strengthen or weaken associations,
+    maintain the semantic basis, collect dimensional-usage statistics, and produce release-level architectural recommendations.
+    It must not change runtime dimensionality.
+- type: warning
+  title: Research status
+  text: Photonic-spin glass, magnonic, spintronic, memristive, and phase-change implementations remain prospective
+    technologies. This chapter defines architectural compatibility and evaluation criteria rather than claiming
+    an existing complete implementation.
+section_id: S_18_09
+id: S_18_09

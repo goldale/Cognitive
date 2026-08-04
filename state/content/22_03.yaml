@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.20
+schema_version: 0.3.30
 blocks:
 - type: paragraph
   text: Cognitive capabilities should appear as explicit architectural subsystems with named inputs, outputs, state

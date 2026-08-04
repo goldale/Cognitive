@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.1.0
+schema_version: 0.3.30
 principles:
 - kind: T_Principle
   id: P_001

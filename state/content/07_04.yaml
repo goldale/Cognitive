@@ -1,20 +1,20 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
 - text: 'A cognitive system receives incomparable inputs: sensory evidence, predicted reward, memory consistency,
-    uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires
-    a mechanism that makes these inputs jointly evaluable.'
+    uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires a mechanism
+    that makes these inputs jointly evaluable.'
   type: paragraph
-- text: The project proposes a trainable T_GlobalEvaluation implemented initially as one or more neural
-    networks. It need not output a consciously accessible scalar, but it must support comparison among
-    candidate states and actions.
+- text: The project proposes a trainable T_GlobalEvaluation implemented initially as one or more neural networks.
+    It need not output a consciously accessible scalar, but it must support comparison among candidate states and
+    actions.
   type: paragraph
-- text: 'Initial training uses evaluated examples rather than a fully explicit utility formula. Disputes
-    about the initial example library remain local: individual examples can be reviewed without requiring
-    universal agreement on an abstract definition of value.'
+- text: 'Initial training uses evaluated examples rather than a fully explicit utility formula. Disputes about the
+    initial example library remain local: individual examples can be reviewed without requiring universal agreement
+    on an abstract definition of value.'
   type: paragraph
-- text: Lifelong training is mandatory. A fixed evaluator would freeze the assumptions of its initial
-    designers and prevent genuine cognitive development.
+- text: Lifelong training is mandatory. A fixed evaluator would freeze the assumptions of its initial designers
+    and prevent genuine cognitive development.
   type: paragraph
 section_id: S_07_01
 id: S_07_04

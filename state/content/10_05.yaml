@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
 - text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update contract.
     Offline topology optimization, controlled forgetting, and broader global evaluation are deferred to the learning

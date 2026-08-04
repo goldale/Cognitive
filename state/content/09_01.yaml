@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
 - text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
     and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological

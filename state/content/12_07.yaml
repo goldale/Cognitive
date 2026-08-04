@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.8
+schema_version: 0.3.30
 blocks:
 - type: paragraph
   text: Associative Memory should not be considered ready for Transformer integration merely because its training

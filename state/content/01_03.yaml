@@ -1,20 +1,20 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: 'The project models computational and architectural mechanisms: memory, knowledge organization,
-    evaluation, communication, continuous learning, architectural search, identity continuity, and allocation
-    of work between neural and algorithmic computation.'
+- text: 'The project models computational and architectural mechanisms: memory, knowledge organization, evaluation,
+    communication, continuous learning, architectural search, identity continuity, and allocation of work between
+    neural and algorithmic computation.'
   type: paragraph
-- text: Social, psychological, emotional, ethical, and political phenomena are not independently engineered
-    in the current stage. The working hypothesis is that a substantial subset of these phenomena will
-    emerge from sufficiently mature cognitive architecture. This is a hypothesis, not an established fact.
+- text: Social, psychological, emotional, ethical, and political phenomena are not independently engineered in the
+    current stage. The working hypothesis is that a substantial subset of these phenomena will emerge from sufficiently
+    mature cognitive architecture. This is a hypothesis, not an established fact.
   type: paragraph
 - title: Boundary of the claim
-  text: The project does not assume that every higher-level behavior must emerge. Persistent failures
-    to emerge are evidence for adding explicit mechanisms at a later stage.
+  text: The project does not assume that every higher-level behavior must emerge. Persistent failures to emerge
+    are evidence for adding explicit mechanisms at a later stage.
   type: warning
-- text: Subjective consciousness is not required by the functional architecture described here. A system
-    may possess continuity, goals, and a persistent self-model without any proven subjective experience.
+- text: Subjective consciousness is not required by the functional architecture described here. A system may possess
+    continuity, goals, and a persistent self-model without any proven subjective experience.
   type: paragraph
 section_id: S_01_03
 id: S_01_03

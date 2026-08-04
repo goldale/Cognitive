@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
 - text: 'The engineering pipeline separates physical decoding from semantic reconstruction: channel decoding produces
     symbols or perceptual features; contextual interpretation relates them to active memory; model integration proposes

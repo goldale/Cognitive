@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
 - text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
   type: paragraph

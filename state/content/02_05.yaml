@@ -1,15 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: Benchmarking a cognitive system without declaring its objective class can be meaningless. A model
-    may underperform on one benchmark because its architecture preserves information needed for another
-    objective.
+- text: Benchmarking a cognitive system without declaring its objective class can be meaningless. A model may underperform
+    on one benchmark because its architecture preserves information needed for another objective.
   type: paragraph
-- text: System design should therefore expose objective assumptions, allow objective revision, and measure
-    the cost of reorganizing knowledge when objectives change.
+- text: System design should therefore expose objective assumptions, allow objective revision, and measure the cost
+    of reorganizing knowledge when objectives change.
   type: paragraph
-- text: Population design should preserve several objective-driven lineages rather than globally replacing
-    all systems with the current single champion.
+- text: Population design should preserve several objective-driven lineages rather than globally replacing all systems
+    with the current single champion.
   type: paragraph
 - title: Objective declaration
   text: Every experiment on a world model should state the objective function, resource constraints, evaluation

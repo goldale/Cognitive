@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.20
+schema_version: 0.3.30
 components:
 - id: C_EXT_INPUT
   name: External Input

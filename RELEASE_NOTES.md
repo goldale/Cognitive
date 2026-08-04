@@ -1,15 +1,22 @@
-# Release Notes - cognitive-0.3.20
+# Release Notes - cognitive-0.3.30
 
 ## Scope
 
-This release refines the canonical semantic-coordinate optimization model while preserving all stable Cognitive Architecture invariants from cognitive-0.3.19.
+This release updates semantic basis maintenance and adds a prospective dense photonic-spintronic hardware realization while preserving all canonical Cognitive invariants.
 
-## Changes
+## Highlights
 
-- Replaced Section 11.5 with **Self-Organizing Semantic Coordinate System**.
-- Retained a one-time global basis initialization after Memory State stabilization.
-- Added continuous localized basis maintenance driven by the maintained correlation matrix.
-- Each refinement selects the strongest-correlated semantic pair and uses the remaining axis having the weakest statistical correlation with that pair as the reference rotation axis.
-- Each refinement modifies exactly two semantic-vector elements; all other coordinates remain unchanged.
-- Clarified that basis optimization belongs exclusively to Offline Consolidation (Sleep), minimizing Transformer adaptation and preserving semantic continuity.
-- Regenerated HTML, PDF, cross-references, and the A-Z Index from canonical YAML.
+- Deterministic localized semantic compaction in Section 11.5.
+- Empirical discovery of effective semantic dimensionality.
+- Fixed runtime dimensionality with release-only reduction.
+- Dense architecture with progressive semantic compaction.
+- Semantic query and response tensors up to 1024 x 1024 x 8.
+- 256 processing layers, explicitly separated from tensor dimensionality.
+- Up to ten million programmable processing or memory positions across the layered implementation.
+- INT4, INT8, and INT16 precision tiers.
+- Prospective distributed photonic-spintronic, magnonic, memristive, and phase-change implementation options.
+- Physical READ/UPDATE separation and Offline Consolidation compatibility.
+
+## Compatibility
+
+The canonical learning loop, explicit READ/UPDATE asymmetry, Transformer-mediated learning, YAML Single Source of Truth, modular HTML documentation, and clean-release policy remain unchanged.

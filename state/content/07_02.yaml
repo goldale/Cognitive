@@ -1,12 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: The evaluator should provide a common decision interface for heterogeneous considerations such
-    as safety, curiosity, effort, delayed benefit, social consequences, consistency with memory, and goal
-    progress.
+- text: The evaluator should provide a common decision interface for heterogeneous considerations such as safety,
+    curiosity, effort, delayed benefit, social consequences, consistency with memory, and goal progress.
   type: paragraph
-- text: The output need not be a single human-readable scalar. It must nevertheless support stable comparison
-    among alternatives and provide enough structure to select, reject, defer, or request further analysis.
+- text: The output need not be a single human-readable scalar. It must nevertheless support stable comparison among
+    alternatives and provide enough structure to select, reject, defer, or request further analysis.
   type: paragraph
 section_id: S_14_02
 id: S_07_02

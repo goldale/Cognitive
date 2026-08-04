@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
 - text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization
     changes cross-domain evaluation, fundamental categories, objective priorities, or the relationship between memory

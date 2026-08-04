@@ -1,15 +1,15 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: The first implementable architecture separates T_WorkingMemory from T_LongTermMemory. Working
-    memory retains high-detail recent structures required for current computation. Long-term memory retains
-    consolidated structures chosen for future utility.
+- text: The first implementable architecture separates T_WorkingMemory from T_LongTermMemory. Working memory retains
+    high-detail recent structures required for current computation. Long-term memory retains consolidated structures
+    chosen for future utility.
   type: paragraph
-- text: Migration is controlled by T_Consolidation. Repetition, novelty, objective relevance, confidence,
-    causal effect, and unresolved conflict can all influence selection.
+- text: Migration is controlled by T_Consolidation. Repetition, novelty, objective relevance, confidence, causal
+    effect, and unresolved conflict can all influence selection.
   type: paragraph
-- text: The separation is functional, not necessarily physical. Future integrated representations may
-    implement both states inside one network while preserving different update rates and retention policies.
+- text: The separation is functional, not necessarily physical. Future integrated representations may implement
+    both states inside one network while preserving different update rates and retention policies.
   type: paragraph
 - headers:
   - Property

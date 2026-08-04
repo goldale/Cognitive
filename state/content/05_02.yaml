@@ -1,11 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: High-bandwidth streams such as video contain large amounts of valid information that may not relate
-    to the current dialogue or task. This information is not garbage and should not be mislabeled as noise.
+- text: High-bandwidth streams such as video contain large amounts of valid information that may not relate to the
+    current dialogue or task. This information is not garbage and should not be mislabeled as noise.
   type: paragraph
-- text: Task-conditioned preprocessing suppresses or postpones irrelevant detail while preserving the
-    ability to recover it when goals change or uncertainty increases.
+- text: Task-conditioned preprocessing suppresses or postpones irrelevant detail while preserving the ability to
+    recover it when goals change or uncertainty increases.
   type: paragraph
 section_id: S_18_02
 id: S_05_02

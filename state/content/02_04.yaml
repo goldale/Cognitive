@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
 - text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value; exploration
     may become less important than safety; a research agent may move from discovery to verification.

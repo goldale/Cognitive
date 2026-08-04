@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.8
+schema_version: 0.3.30
 blocks:
 - type: paragraph
   text: The Transformer and Associative Memory should be trained in stages rather than optimized as a single coupled

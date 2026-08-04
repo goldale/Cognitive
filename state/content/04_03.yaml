@@ -1,12 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: Video is a serialized observation stream with extreme Data Rate, substantial temporal redundancy,
-    and large quantities of valid information unrelated to the active dialogue or task.
+- text: Video is a serialized observation stream with extreme Data Rate, substantial temporal redundancy, and large
+    quantities of valid information unrelated to the active dialogue or task.
   type: paragraph
-- text: This unrelated information is not noise. Buildings, illumination, background motion, faces, clothing,
-    and spatial layout may all be correct descriptions of the world while being irrelevant to the current
-    cognitive objective.
+- text: This unrelated information is not noise. Buildings, illumination, background motion, faces, clothing, and
+    spatial layout may all be correct descriptions of the world while being irrelevant to the current cognitive
+    objective.
   type: paragraph
 section_id: S_13_03
 id: S_04_03

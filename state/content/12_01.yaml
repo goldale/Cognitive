@@ -1,19 +1,19 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: Consolidation should normally execute outside the interactive response path. A dialogue system
-    must remain responsive; a consolidation system should be conservative, evidence-seeking, and willing
-    to leave information unresolved.
+- text: Consolidation should normally execute outside the interactive response path. A dialogue system must remain
+    responsive; a consolidation system should be conservative, evidence-seeking, and willing to leave information
+    unresolved.
   type: paragraph
-- text: The biological analogy is sleep, but the engineering requirement is simply asynchronous processing
-    with access to recent experience, current memory, objectives, and outcome feedback.
+- text: The biological analogy is sleep, but the engineering requirement is simply asynchronous processing with
+    access to recent experience, current memory, objectives, and outcome feedback.
   type: paragraph
-- text: An initial implementation can use scheduled jobs, replay buffers, clustering, confidence updates,
-    and candidate evaluation without changing the base neural model.
+- text: An initial implementation can use scheduled jobs, replay buffers, clustering, confidence updates, and candidate
+    evaluation without changing the base neural model.
   type: paragraph
 - title: Different optimization criteria require different subsystems
-  text: The dialogue component optimizes responsiveness and usefulness. The consolidation component optimizes
-    long-term consistency, retention, and corrigibility.
+  text: The dialogue component optimizes responsiveness and usefulness. The consolidation component optimizes long-term
+    consistency, retention, and corrigibility.
   type: principle
 section_id: S_05_01
 id: S_12_01

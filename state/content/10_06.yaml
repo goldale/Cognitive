@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.9
+schema_version: 0.3.30
 id: S_10_06
 section_id: S_10_06
 blocks:
@@ -141,15 +141,19 @@ blocks:
 - type: diagram
   title: Recommended Initial Hybrid — Architecture
   description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning Pipeline,
-    Associative Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary are
-    shown as distinct architectural responsibilities.
+    Associative Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary
+    are shown as distinct architectural responsibilities.
   direction: TB
   size: standard
   readability_priority: true
   proportionality_priority: true
   nodes:
   - id: transformer
-    label: "Transformer\nSemantic Reasoning Engine\nSemantic Teacher"
+    label: 'Transformer
+
+      Semantic Reasoning Engine
+
+      Semantic Teacher'
     kind: subsystem
     status: current
   - id: feedback
@@ -161,19 +165,29 @@ blocks:
     kind: subsystem
     status: current
   - id: index
-    label: "Associative Index\nHNSW / Modern Hopfield / Vector Search"
+    label: 'Associative Index
+
+      HNSW / Modern Hopfield / Vector Search'
     kind: subsystem
     status: experimental
   - id: graph_store
-    label: "Graph and Exact Storage\nAssociations / Relations / Key–Value Content"
+    label: 'Graph and Exact Storage
+
+      Associations / Relations / Key–Value Content'
     kind: storage
     status: experimental
   - id: reconstruction
-    label: "Tensor Reconstruction Engine\nREAD-side transient reconstruction"
+    label: 'Tensor Reconstruction Engine
+
+      READ-side transient reconstruction'
     kind: subsystem
     status: experimental
   - id: tensor
-    label: "Memory Tensor\n1024 × 1024 × 8\nTransient READ state"
+    label: 'Memory Tensor
+
+      1024 × 1024 × 8
+
+      Transient READ state'
     kind: state
     status: experimental
   - id: projection
@@ -181,11 +195,15 @@ blocks:
     kind: subsystem
     status: experimental
   - id: compression
-    label: "Latent Compression Engine\nUPDATE-side encoding"
+    label: 'Latent Compression Engine
+
+      UPDATE-side encoding'
     kind: subsystem
     status: experimental
   - id: staging
-    label: "Staging Area\nValidation / Merge / Reject / Defer"
+    label: 'Staging Area
+
+      Validation / Merge / Reject / Defer'
     kind: subsystem
     status: experimental
   edges:
@@ -231,9 +249,9 @@ blocks:
     label: accepted UPDATE
 - type: diagram
   title: Recommended Initial Hybrid — Operational Flows
-  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory Vector.
-    The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic Feedback Learning
-    Pipeline. It does not return a Memory Vector.
+  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory
+    Vector. The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic
+    Feedback Learning Pipeline. It does not return a Memory Vector.
   direction: TB
   size: standard
   readability_priority: true
@@ -244,11 +262,15 @@ blocks:
     kind: interface
     status: current
   - id: read_index
-    label: "Associative Index\nCandidate Retrieval"
+    label: 'Associative Index
+
+      Candidate Retrieval'
     kind: subsystem
     status: experimental
   - id: read_context
-    label: "Activated Semantic Context\nGraph Traversal / Exact Content"
+    label: 'Activated Semantic Context
+
+      Graph Traversal / Exact Content'
     kind: state
     status: experimental
   - id: read_reconstruct
@@ -256,7 +278,9 @@ blocks:
     kind: subsystem
     status: experimental
   - id: read_tensor
-    label: "Memory Tensor\n1024 × 1024 × 8"
+    label: 'Memory Tensor
+
+      1024 × 1024 × 8'
     kind: state
     status: experimental
   - id: read_vector

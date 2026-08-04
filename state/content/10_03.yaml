@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
 - text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory Vector
     used by the Transformer to generate a response.

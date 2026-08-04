@@ -1,19 +1,18 @@
 kind: T_ContentBlock
-schema_version: 0.1.0
+schema_version: 0.3.30
 blocks:
-- text: The initial compiler and schema are written in ordinary Python, JSON Schema, and YAML. As the
-    language matures, its own schema, consolidation rules, and generator descriptions can be represented
-    inside Research State.
+- text: The initial compiler and schema are written in ordinary Python, JSON Schema, and YAML. As the language matures,
+    its own schema, consolidation rules, and generator descriptions can be represented inside Research State.
   type: paragraph
-- text: This is analogous to rewriting a compiler in the language it compiles. Self-hosting is a maturity
-    target, not a requirement for the first operational version.
+- text: This is analogous to rewriting a compiler in the language it compiles. Self-hosting is a maturity target,
+    not a requirement for the first operational version.
   type: paragraph
-- text: 'The research environment then becomes an experiment in the architecture it describes: working
-    discussion, consolidation, long-term state, partial serialization, review, and further integration.'
+- text: 'The research environment then becomes an experiment in the architecture it describes: working discussion,
+    consolidation, long-term state, partial serialization, review, and further integration.'
   type: paragraph
 - title: Use the project to build the project
-  text: A mechanism should first prove useful as research infrastructure before becoming a candidate component
-    of the cognitive architecture itself.
+  text: A mechanism should first prove useful as research infrastructure before becoming a candidate component of
+    the cognitive architecture itself.
   type: principle
 section_id: S_11_06
 id: S_17_06

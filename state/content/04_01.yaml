@@ -1,13 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.2.0
+schema_version: 0.3.30
 blocks:
-- text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains
-    constraints that a receiving cognitive system interprets using its existing Memory State, context,
-    objectives, language competence, and learned world model.
+- text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains constraints
+    that a receiving cognitive system interprets using its existing Memory State, context, objectives, language
+    competence, and learned world model.
   type: paragraph
-- text: The same message can produce different internal meanings in different systems because information
-    implicit in the recipient is not present in the transmitted sequence. Semantic reconstruction is therefore
-    an interaction between signal and receiver, not a property of the signal alone.
+- text: The same message can produce different internal meanings in different systems because information implicit
+    in the recipient is not present in the transmitted sequence. Semantic reconstruction is therefore an interaction
+    between signal and receiver, not a property of the signal alone.
   type: paragraph
 section_id: S_13_01
 id: S_04_01
