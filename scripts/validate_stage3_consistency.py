@@ -101,7 +101,7 @@ check('H','Stage 2 provenance manifest exists',(ROOT/'STAGE2_MANIFEST.json').exi
 
 # project tests represented separately by runner
 failed=[c for c in checks if c['status']=='FAIL']
-out={'version':'0.3.16-stage3','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
+out={'version':'0.3.17-stage3','summary':{'total':len(checks),'pass':len(checks)-len(failed),'fail':len(failed),'status':'PASS' if not failed else 'FAIL'},'checks':checks}
 (ROOT/'STAGE3_CONSISTENCY_RESULTS.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps(out['summary']))
 sys.exit(1 if failed else 0)

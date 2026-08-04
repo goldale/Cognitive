@@ -93,7 +93,7 @@ changes=(ROOT/'CHANGES.md').read_text()
 comp=(ROOT/'generated-source/COMPONENT_REFERENCE.md').read_text()
 for phrase in ['Semantic Teacher','Semantic Representation','UPDATE never produces a Memory Vector']:
     check('G Generated',f'Chapter 2: {phrase}',phrase in ch2)
-for phrase in ['cognitive 0.3.16','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
+for phrase in ['cognitive 0.3.17','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
     check('G Generated',f'CHANGES: {phrase}',phrase in changes)
 components=yaml.safe_load((ROOT/'state/canonical/components.yaml').read_text())['components']
 for c in components: check('G Generated',f'component reference: {c["name"]}',c['name'] in comp)
