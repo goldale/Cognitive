@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_24_04
 blocks:
 - title: DA-0006 — Automatic Generation

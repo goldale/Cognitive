@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_16_03
 blocks:
 - text: 'Ants, termites, and bees demonstrate a successful biological compromise: large numbers of similar or genetically close agents operate efficiently inside a colony while colonies and species preserve population-level variation.'

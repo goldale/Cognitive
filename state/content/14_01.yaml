@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_14_01
 blocks:
 - text: Neural networks and classical programs both seek states that optimize a task-dependent functional, but they operate under different knowledge conditions.

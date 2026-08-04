@@ -173,3 +173,26 @@ def test_navigation_is_single_line_and_uses_short_index_label(tmp_path: Path) ->
         text = html_file.read_text(encoding="utf-8")
         assert "A–Z Alphabetical Index" not in text, html_file
         assert text.count("A–Z Index") >= 2, html_file
+
+
+def test_all_alphabetical_index_links_target_canonical_index(tmp_path):
+    import re
+    from pathlib import Path
+    from cogsys.state import ResearchState
+    from cogsys.docs import DocumentationBuilder
+
+    state = ResearchState.load(Path("state"))
+    DocumentationBuilder(state, Path("assets")).build(tmp_path)
+    expected = (tmp_path / "chapter26" / "index.html").resolve()
+    html_files = sorted(tmp_path.rglob("*.html"))
+    assert html_files
+    for html_file in html_files:
+        source = html_file.read_text(encoding="utf-8")
+        hrefs = re.findall(
+            r'<a\b(?=[^>]*\bclass=["\'][^"\']*\balphabetical-index\b[^"\']*["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>',
+            source,
+            re.I,
+        )
+        assert len(hrefs) >= 2, html_file
+        for href in hrefs:
+            assert (html_file.parent / href.split("#", 1)[0]).resolve() == expected, (html_file, href)

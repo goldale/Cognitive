@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_07_01
 blocks:
 - text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints, predicted outcomes, uncertainty, and current context must be compared by an Integrated Evaluation process.

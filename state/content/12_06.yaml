@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_12_06
 blocks:
 - text: The Transformer and Associative Memory should be trained in stages rather than optimized as a single coupled system from the beginning. This reduces optimization complexity and gives each subsystem a stable role before the Memory Vector interface is activated.

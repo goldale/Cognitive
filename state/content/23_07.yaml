@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_23_07
 blocks:
 - text: Open questions move into canonical architecture only after a documented decision identifies evidence, alternatives, contracts, invariants, and migration impact.

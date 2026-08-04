@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_18_02
 blocks:
 - text: The highest-priority experiment is a persistent agent operating for months with exact external logs and lossy internal memory. The experiment should measure retention, adaptation, interference, objective drift, and recovery from false consolidation.

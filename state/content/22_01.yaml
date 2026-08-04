@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_22_01
 blocks:
 - text: The long-term target is a cognitive platform that can reason semantically, maintain a persistent and evolving world model, learn continuously, and improve its own memory organization without collapsing reasoning, learning, and evaluation into one opaque operation.

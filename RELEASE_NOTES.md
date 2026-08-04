@@ -1,4 +1,12 @@
-# Release Notes - cognitive-0.3.32
+# Cognitive 0.3.33 Release Notes
+
+**Release date:** 2026-08-04
+
+This maintenance release corrects A–Z Index navigation throughout the modular HTML documentation. The generator no longer contains a stale chapter-number default; index destinations are passed explicitly from the current documentation model. A semantic integrity check and regression test now block packaging if any A–Z navigation link resolves to a page other than the canonical alphabetical index.
+
+## Previous release notes
+
+# Release Notes - cognitive-0.3.33
 
 
 ## Associative Memory READ/UPDATE integration diagram

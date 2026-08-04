@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_02_03
 blocks:
 - text: A useful unit of design is not a unique world model but a bounded class of models associated with a bounded class of systems. Members of a class share objectives, representational conventions, and relevant environmental regularities while retaining individual histories.

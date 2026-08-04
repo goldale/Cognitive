@@ -1,6 +1,6 @@
-# Release Certificate - cognitive-0.3.32
+# Release Certificate - cognitive-0.3.33
 
-- Version: 0.3.32
+- Version: 0.3.33
 - Canonical source: YAML
 - Validation: passed
 - Test suite: 32 tests passed

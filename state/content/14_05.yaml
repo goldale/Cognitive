@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_14_05
 blocks:
 - text: A practical meta-architect can be trained today as a contextual bandit or supervised ranker. Each candidate architecture receives measured accuracy, latency, energy, maintenance cost, interpretability, and failure severity.

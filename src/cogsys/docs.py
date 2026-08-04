@@ -249,7 +249,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
         )
 
 
-def _nav(up_href: str, up_label: str, previous: tuple[str, str] | None, contents_href: str, next_page: tuple[str, str] | None, index_href: str = "chapter24/index.html") -> str:
+def _nav(up_href: str, up_label: str, previous: tuple[str, str] | None, contents_href: str, next_page: tuple[str, str] | None, index_href: str) -> str:
     previous_html = (
         f'<a rel="prev" href="{html.escape(previous[0])}">← {html.escape(previous[1])}</a>'
         if previous
@@ -360,7 +360,7 @@ class DocumentationBuilder:
             '<li><a href="style-guide.html">Documentation Style Guide</a></li>'
             '</ul>'
         )
-        nav = _nav("index.html", "Documentation", None, "index.html", None)
+        nav = _nav("index.html", "Documentation", None, "index.html", None, f"chapter{self.index_order:02d}/index.html")
         page = _page(
             "Cognitive Architecture Specification",
             "cognitive.css",
@@ -398,7 +398,7 @@ class DocumentationBuilder:
             body_parts.extend(_render_block(block) for block in content.get("blocks", []))
             body_parts.append("</section>")
         previous, next_page = self._chapter_links(chapter_index, False)
-        nav = _nav("index.html", "Documentation", previous, "index.html", next_page)
+        nav = _nav("index.html", "Documentation", previous, "index.html", next_page, f"chapter{self.index_order:02d}/index.html")
         page = _page(
             f"Chapter {chapter['order']} · {chapter['title']}",
             "cognitive.css",
@@ -534,7 +534,7 @@ class DocumentationBuilder:
         compatibility = _page(
             "Alphabetical Index",
             "cognitive.css",
-            _nav("index.html", "Documentation", None, "index.html", (f"chapter{self.index_order:02d}/index.html", f"Chapter {self.index_order}")),
+            _nav("index.html", "Documentation", None, "index.html", (f"chapter{self.index_order:02d}/index.html", f"Chapter {self.index_order}"), f"chapter{self.index_order:02d}/index.html"),
             '<h1>Alphabetical Index</h1>',
             f'<p>The Alphabetical Index is now <a href="chapter{self.index_order:02d}/index.html">Chapter {self.index_order} of the main documentation</a>.</p>',
             "Compatibility entry point.",
@@ -549,7 +549,7 @@ class DocumentationBuilder:
         canonical_dir = self.state.root / "canonical"
         if not canonical_dir.is_dir():
             return []
-        nav = _nav("index.html", "Documentation", None, "index.html", None)
+        nav = _nav("index.html", "Documentation", None, "index.html", None, f"chapter{self.index_order:02d}/index.html")
         parts = ["<h2>Canonical Components</h2>"]
         components = yaml_profile.load(canonical_dir / "components.yaml").get("components", [])
         rows = "".join(f"<tr><td>{html.escape(str(c.get('name','')))}</td><td>{html.escape(', '.join(c.get('roles', [])))}</td></tr>" for c in components)
@@ -570,7 +570,7 @@ class DocumentationBuilder:
 
     def _build_reference_pages(self, output: Path) -> list[Path]:
         created: list[Path] = []
-        nav = _nav("index.html", "Documentation", None, "index.html", None)
+        nav = _nav("index.html", "Documentation", None, "index.html", None, f"chapter{self.index_order:02d}/index.html")
 
         token_rows = []
         for token in self.state.token_entries():

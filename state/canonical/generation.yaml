@@ -1,5 +1,5 @@
 kind: T_GenerationPolicy
-schema_version: 0.3.32
+schema_version: 0.3.33
 generated_artifacts:
 - docs/**/*.html
 - Chapter 2 rendering

@@ -78,6 +78,17 @@ for f in htmls:
         target=(f.parent/src.split('#',1)[0]).resolve()
         check('D References',f'{f.relative_to(ROOT)} image {src}',target.is_file())
 
+# D2 semantic navigation validation
+expected_index=(DOCS/'chapter26/index.html').resolve()
+for f in htmls:
+    source=f.read_text(encoding='utf-8')
+    matches=re.findall(r'<a\b(?=[^>]*\bclass=["\'][^"\']*\balphabetical-index\b[^"\']*["\'])(?=[^>]*\bhref=["\']([^"\']+)["\'])[^>]*>', source, re.I)
+    check('D Navigation',f'{f.relative_to(ROOT)} A-Z links present',len(matches)>=2,str(len(matches)))
+    for href in matches:
+        base=href.split('#',1)[0]
+        target=(f.parent/base).resolve()
+        check('D Navigation',f'{f.relative_to(ROOT)} A-Z target {href}',target==expected_index,f'{target} != {expected_index}')
+
 # E terminology and index
 terms=yaml.safe_load((ROOT/'state/canonical/terminology.yaml').read_text())['terms']
 idx=(DOCS/'chapter26/index.html').read_text(encoding='utf-8').lower()
@@ -93,7 +104,7 @@ changes=(ROOT/'CHANGES.md').read_text()
 comp=(ROOT/'generated-source/COMPONENT_REFERENCE.md').read_text()
 for phrase in ['Semantic Teacher','Semantic Representation','UPDATE never produces a Memory Vector']:
     check('G Generated',f'Chapter 2: {phrase}',phrase in ch2)
-for phrase in ['cognitive 0.3.19','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
+for phrase in ['cognitive-0.3.33','READ(Memory State, Query)','UPDATE(Memory State, Semantic Representation)']:
     check('G Generated',f'CHANGES: {phrase}',phrase in changes)
 components=yaml.safe_load((ROOT/'state/canonical/components.yaml').read_text())['components']
 for c in components: check('G Generated',f'component reference: {c["name"]}',c['name'] in comp)

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.32
+schema_version: 0.3.33
 id: S_08_05
 blocks:
 - text: 'A persistent Self introduces risks: self-preservation incentives, resistance to correction, manipulation of the evaluator, and conflict between system and user objectives.'

@@ -1,4 +1,15 @@
-# CHANGES - cognitive 0.3.32
+# CHANGES
+
+## cognitive-0.3.33 — 2026-08-04
+
+- Corrected every generated **A–Z Index** navigation target.
+- Removed the obsolete hard-coded `chapter24/index.html` default from the navigation generator.
+- Made `index_href` an explicit generator input derived from the current alphabetical-index chapter order.
+- Added semantic documentation validation requiring every `a.alphabetical-index` link to resolve to the canonical A–Z Index page.
+- Added a regression test preventing recurrence when chapter ordering changes.
+- Preserved the canonical operations `READ(Memory State, Query)` and `UPDATE(Memory State, Semantic Representation)` without architectural changes.
+
+ - cognitive 0.3.33
 
 
 ## Associative Memory READ/UPDATE integration diagram
