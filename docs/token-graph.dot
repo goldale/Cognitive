@@ -224,4 +224,7 @@ digraph TokenGraph {
   "T_SparseDistributedMemory" [shape=ellipse];
   "T_VectorCandidateRetrieval" [shape=ellipse];
   "T_HybridAssociativeMemory" [shape=ellipse];
+  "T_ContextSelector" [shape=ellipse];
+  "T_ContextConditionedRouting" [shape=ellipse];
+  "T_TraversalState" [shape=ellipse];
 }

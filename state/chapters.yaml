@@ -834,6 +834,11 @@ chapters:
     title: Conventional-Hardware Replay Prototype
     order: 10
     content_file: content/23_10.yaml
+  - kind: T_Section
+    id: S_23_11
+    title: Context-Conditioned Routing Across Overlapping Trajectories
+    order: 11
+    content_file: content/23_11.yaml
   layout: directory
 - kind: T_Chapter
   id: C_24

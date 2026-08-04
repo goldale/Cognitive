@@ -590,3 +590,21 @@ tokens:
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Hybrid Associative Memory
+- token: T_ContextSelector
+  atomic: true
+  definition: A compact discriminative representation used by READ to determine whether a transition is applicable under the current semantic and traversal context.
+  status: T_Active
+  index_target: ../chapter23/23_11.html
+  label: Context Selector
+- token: T_ContextConditionedRouting
+  atomic: true
+  definition: READ-stage selection of transitions using query context, accumulated path context, temporal compatibility, and transition evidence.
+  status: T_Active
+  index_target: ../chapter23/23_11.html
+  label: Context-Conditioned Routing
+- token: T_TraversalState
+  atomic: true
+  definition: The dynamic READ state containing accumulated semantic context, temporal constraints, selected transitions, uncertainty, and path score during trajectory reconstruction.
+  status: T_Active
+  index_target: ../chapter23/23_11.html
+  label: Traversal State
