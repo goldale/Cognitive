@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.17
+schema_version: 0.3.19
 blocks:
 - type: paragraph
   text: Memory should evolve from a passive store into a managed lifecycle with explicit acquisition, retrieval,

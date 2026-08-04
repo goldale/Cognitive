@@ -1,0 +1,44 @@
+kind: T_ContentBlock
+schema_version: 0.3.19
+blocks:
+- type: paragraph
+  text: Documentation Architecture governs how knowledge about the Cognitive architecture
+    is represented, related, generated, and validated. It is part of the project Single
+    Source of Truth.
+- type: diagram
+  title: Three-Level Self-Describing Project
+  description: Documentation Architecture describes the documentation that describes
+    the Cognitive architecture.
+  direction: TB
+  size: standard
+  nodes:
+  - id: da
+    label: Documentation Architecture
+    kind: control
+  - id: docs
+    label: Cognitive Architecture Documentation
+    kind: data
+  - id: arch
+    label: Cognitive Architecture
+    kind: subsystem
+  edges:
+  - from: da
+    to: docs
+    label: governs representation
+    flow: control
+  - from: docs
+    to: arch
+    label: describes
+    flow: information
+  readability_priority: true
+  proportionality_priority: true
+- type: principle
+  title: DA-0001 — Single Source of Truth
+  text: Canonical knowledge exists once. HTML, PDF, indexes, registries, release notes,
+    and references are generated from canonical sources.
+- type: principle
+  title: DA-0002 — Separation of Normative and Contextual Content
+  text: Architectural invariants and contracts remain distinct from hypotheses, explanatory
+    notes, implementation guidance, and historical analogies.
+section_id: S_24_01
+id: S_24_01

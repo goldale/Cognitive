@@ -1,0 +1,20 @@
+kind: T_ContentBlock
+schema_version: 0.3.19
+blocks:
+- type: principle
+  title: DA-0006 — Automatic Generation
+  text: The generator creates navigation, HTML anchors, typed registries, A–Z entries, cross-references, and future
+    PDF output from canonical data.
+- type: list
+  items:
+  - Every typed object must have a unique identifier.
+  - Every internal reference must resolve.
+  - Generated HTML must expose a stable anchor for each typed object.
+  - Registries list canonical objects without duplicating their full text.
+  - Human readability has priority over excessive formalization.
+  - Release validation must detect duplicate identifiers and broken references.
+- type: paragraph
+  text: Future releases may represent the canonical documentation as an explicit graph of objects and relations
+    while preserving the current human-readable chapter structure.
+section_id: S_24_04
+id: S_24_04

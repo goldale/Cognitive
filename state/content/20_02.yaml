@@ -1,21 +1,20 @@
 kind: T_ContentBlock
-schema_version: 0.3.17
+schema_version: 0.3.19
 blocks:
 - type: paragraph
   text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation
     requires a selection signal; replay requires a policy for deciding what should be reactivated and why.
 - type: diagram
-  title: Ordered Evolution Path
-  description: The architectural priority is Importance Estimation, then Offline Consolidation and Sleep, then Replay.
-    Later mechanisms build on these foundations.
+  title: Canonical Development Sequence
+  description: The canonical Semantic Feedback Learning Pipeline is the stable foundation. Importance Estimation,
+    Offline Consolidation and Sleep, and Replay are introduced as explicit dependent subsystems; later memory-lifecycle
+    and evaluation mechanisms build on them.
   direction: TB
   size: standard
   nodes:
   - id: current
-    label: 'cognitive-0.3.17
-
-      Semantic Feedback Learning'
-    kind: state
+    label: Canonical Semantic Feedback Learning Pipeline
+    kind: control
   - id: importance
     label: Importance Estimation
     kind: subsystem
@@ -43,7 +42,7 @@ blocks:
   edges:
   - from: current
     to: importance
-    label: first dependency
+    label: stable foundation
     flow: learning
   - from: importance
     to: sleep

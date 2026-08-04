@@ -1,0 +1,18 @@
+kind: T_ContentBlock
+schema_version: 0.3.19
+blocks:
+- type: principle
+  title: DA-0004 — Stable Identifiers
+  text: Identifiers such as RN-0002 remain stable across releases even if wording, location, or generated presentation
+    changes.
+- type: principle
+  title: DA-0005 — Traceability
+  text: Readers must be able to navigate from an architectural decision to its rationale, research motivation, implementation
+    guidance, diagrams, and reverse references.
+- type: formula
+  text: Architecture → Architectural Note → Research Motivation → Implementation Note
+- type: paragraph
+  text: The canonical source is progressively evolving toward an explicit knowledge graph. Sections, notes, concepts,
+    diagrams, and references are treated as addressable objects rather than anonymous page fragments.
+section_id: S_24_03
+id: S_24_03

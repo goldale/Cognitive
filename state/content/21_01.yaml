@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.17
+schema_version: 0.3.19
 blocks:
 - type: paragraph
   text: The Research Agenda converts architectural direction into experiments that can falsify assumptions. A future

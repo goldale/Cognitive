@@ -138,6 +138,189 @@ blocks:
     and graph associations; vector search proposes candidates; graph traversal and spreading activation construct
     dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation projects the
     resulting state into the canonical Memory Vector.'
+- type: diagram
+  title: Recommended Initial Hybrid — Architecture
+  description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning Pipeline,
+    Associative Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary are
+    shown as distinct architectural responsibilities.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: transformer
+    label: "Transformer\nSemantic Reasoning Engine\nSemantic Teacher"
+    kind: subsystem
+    status: current
+  - id: feedback
+    label: Semantic Feedback Learning Pipeline
+    kind: subsystem
+    status: current
+  - id: memory
+    label: Associative Memory
+    kind: subsystem
+    status: current
+  - id: index
+    label: "Associative Index\nHNSW / Modern Hopfield / Vector Search"
+    kind: subsystem
+    status: experimental
+  - id: graph_store
+    label: "Graph and Exact Storage\nAssociations / Relations / Key–Value Content"
+    kind: storage
+    status: experimental
+  - id: reconstruction
+    label: "Tensor Reconstruction Engine\nREAD-side transient reconstruction"
+    kind: subsystem
+    status: experimental
+  - id: tensor
+    label: "Memory Tensor\n1024 × 1024 × 8\nTransient READ state"
+    kind: state
+    status: experimental
+  - id: projection
+    label: Memory Vector Projection
+    kind: subsystem
+    status: experimental
+  - id: compression
+    label: "Latent Compression Engine\nUPDATE-side encoding"
+    kind: subsystem
+    status: experimental
+  - id: staging
+    label: "Staging Area\nValidation / Merge / Reject / Defer"
+    kind: subsystem
+    status: experimental
+  edges:
+  - from: memory
+    to: index
+    flow: information
+  - from: memory
+    to: graph_store
+    flow: information
+  - from: index
+    to: reconstruction
+    flow: information
+    label: retrieved latent state
+  - from: graph_store
+    to: reconstruction
+    flow: information
+    label: exact and relational context
+  - from: reconstruction
+    to: tensor
+    flow: information
+  - from: tensor
+    to: projection
+    flow: information
+  - from: projection
+    to: transformer
+    flow: information
+    label: Memory Vector
+  - from: transformer
+    to: feedback
+    flow: feedback
+    label: Semantic Representation
+  - from: feedback
+    to: compression
+    flow: feedback
+    label: validated semantic state
+  - from: compression
+    to: staging
+    flow: feedback
+    label: z_new
+  - from: staging
+    to: memory
+    flow: feedback
+    label: accepted UPDATE
+- type: diagram
+  title: Recommended Initial Hybrid — Operational Flows
+  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory Vector.
+    The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic Feedback Learning
+    Pipeline. It does not return a Memory Vector.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: query
+    label: Query
+    kind: interface
+    status: current
+  - id: read_index
+    label: "Associative Index\nCandidate Retrieval"
+    kind: subsystem
+    status: experimental
+  - id: read_context
+    label: "Activated Semantic Context\nGraph Traversal / Exact Content"
+    kind: state
+    status: experimental
+  - id: read_reconstruct
+    label: Tensor Reconstruction Engine
+    kind: subsystem
+    status: experimental
+  - id: read_tensor
+    label: "Memory Tensor\n1024 × 1024 × 8"
+    kind: state
+    status: experimental
+  - id: read_vector
+    label: Memory Vector
+    kind: interface
+    status: current
+  - id: flow_transformer
+    label: Transformer
+    kind: subsystem
+    status: current
+  - id: semantic
+    label: Semantic Representation
+    kind: state
+    status: current
+  - id: learning
+    label: Semantic Feedback Learning Pipeline
+    kind: subsystem
+    status: current
+  - id: encoder
+    label: Latent Compression Engine
+    kind: subsystem
+    status: experimental
+  - id: flow_staging
+    label: Staging Area
+    kind: subsystem
+    status: experimental
+  - id: state
+    label: Memory State
+    kind: storage
+    status: current
+  edges:
+  - from: query
+    to: read_index
+    flow: information
+  - from: read_index
+    to: read_context
+    flow: information
+  - from: read_context
+    to: read_reconstruct
+    flow: information
+  - from: read_reconstruct
+    to: read_tensor
+    flow: information
+  - from: read_tensor
+    to: read_vector
+    flow: information
+  - from: read_vector
+    to: flow_transformer
+    flow: information
+  - from: flow_transformer
+    to: semantic
+    flow: feedback
+  - from: semantic
+    to: learning
+    flow: feedback
+  - from: learning
+    to: encoder
+    flow: feedback
+  - from: encoder
+    to: flow_staging
+    flow: feedback
+  - from: flow_staging
+    to: state
+    flow: feedback
 - type: principle
   title: Implementation gap principle
   text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive memory contract.

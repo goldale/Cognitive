@@ -91,8 +91,10 @@ def _render_block(block: dict[str, Any]) -> str:
         extra = ""
         if block_type == "hypothesis" and block.get("confidence") is not None:
             extra = f'<p class="metadata">Confidence: {html.escape(str(block["confidence"]))}</p>'
+        object_id = str(block.get("object_id", "")).strip()
+        id_attr = f' id="{html.escape(object_id, quote=True)}"' if object_id else ""
         return (
-            f'<aside class="{block_type}"><h4>{_render_inline(str(title))}</h4>'
+            f'<aside class="{block_type}"{id_attr}><h4>{_render_inline(str(title))}</h4>'
             f"<p>{body}</p>{extra}</aside>"
         )
     if block_type == "code":
@@ -210,6 +212,14 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
         svg = result.stdout
         svg = re.sub(r"<\?xml[^>]*>\s*", "", svg)
         svg = re.sub(r"<!DOCTYPE[^>]*>\s*", "", svg)
+        # Graphviz restarts SVG element IDs for every diagram. Namespace them so
+        # multiple diagrams can coexist on one generated HTML page without duplicate IDs.
+        diagram_prefix = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-") or "diagram"
+        svg = re.sub(
+            r'id="([^"]+)"',
+            lambda match: f'id="{diagram_prefix}-{match.group(1)}"',
+            svg,
+        )
         svg = svg.replace("<svg ", '<svg role="img" aria-label="' + html.escape(description, quote=True) + '" ' , 1)
         return (
             f'<figure class="architecture-diagram diagram-size-{size}">'
@@ -278,6 +288,7 @@ class DocumentationBuilder:
         self.assets_dir = Path(assets_dir)
         chapter_document = state.documents.get("chapters", {})
         self.chapters = sorted(chapter_document.get("chapters", []), key=lambda value: value["order"])
+        self.index_order = max((chapter["order"] for chapter in self.chapters), default=0) + 1
 
     def build(self, output_dir: str | Path) -> list[Path]:
         output = Path(output_dir)
@@ -321,8 +332,8 @@ class DocumentationBuilder:
                 f'<p>{_render_inline(chapter.get("summary", ""))}</p></li>'
             )
         chapter_items.append(
-            '<li><a href="chapter24/index.html">Chapter 24: Alphabetical Index</a>'
-            '<p>Alphabetical access to chapters, sections, and canonical terms.</p></li>'
+            f'<li><a href="chapter{self.index_order:02d}/index.html">Chapter {self.index_order}: Alphabetical Index</a>'
+            '<p>Alphabetical access to chapters, sections, typed knowledge objects, and canonical terms.</p></li>'
         )
         body = (
             '<section class="document-summary"><p>'
@@ -342,7 +353,7 @@ class DocumentationBuilder:
             "Cognitive Architecture Specification",
             "cognitive.css",
             nav,
-            f'<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version {html.escape(str(self.state.manifest.get("schema_version", self.state.manifest.get("version", "unknown"))))}</p>',
+            f'<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version {html.escape(str(self.state.manifest.get("schema_version", self.state.manifest.get("version", "unknown"))))}</p><p class="document-author"><strong>Author</strong><br>Alex Goldenstein</p>',
             body,
             "Canonical English architecture specification generated from validated YAML.",
         )
@@ -363,7 +374,7 @@ class DocumentationBuilder:
             target = f"chapter{chapter['order']:02d}.html" if chapter["layout"] == "single" else f"chapter{chapter['order']:02d}/index.html"
             next_page = (prefix + target, f"Chapter {chapter['order']}")
         elif chapter_index == len(self.chapters) - 1:
-            next_page = (prefix + "chapter24/index.html", "Chapter 24")
+            next_page = (prefix + f"chapter{self.index_order:02d}/index.html", f"Chapter {self.index_order}")
         return previous, next_page
 
     def _build_single_chapter(self, output: Path, chapter_index: int, chapter: dict[str, Any]) -> Path:
@@ -394,7 +405,7 @@ class DocumentationBuilder:
         created: list[Path] = []
         sections = sorted(chapter["sections"], key=lambda value: value["order"])
         previous_chapter, next_chapter = self._chapter_links(chapter_index, True)
-        index_nav = _nav("../index.html", "Documentation", previous_chapter, "index.html", next_chapter, "../chapter24/index.html")
+        index_nav = _nav("../index.html", "Documentation", previous_chapter, "index.html", next_chapter, f"../chapter{self.index_order:02d}/index.html")
         items = "".join(
             f'<li><a href="{chapter["order"]:02d}_{section["order"]:02d}.html">'
             f'{chapter["order"]}.{section["order"]} {html.escape(section["title"])}</a></li>'
@@ -423,7 +434,7 @@ class DocumentationBuilder:
             if local_index + 1 < len(sections):
                 nxt = sections[local_index + 1]
                 next_page = (f'{chapter["order"]:02d}_{nxt["order"]:02d}.html', "Next")
-            nav = _nav("index.html", "Up", previous, "../index.html", next_page, "../chapter24/index.html")
+            nav = _nav("index.html", "Up", previous, "../index.html", next_page, f"../chapter{self.index_order:02d}/index.html")
             body = "".join(_render_block(block) for block in content.get("blocks", []))
             page = _page(
                 f"Chapter {chapter['order']} · Section {chapter['order']}.{section['order']} · {section['title']}",
@@ -454,6 +465,19 @@ class DocumentationBuilder:
                 else:
                     href = f"../chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html"
                 entries.append((section["title"], href, f"Section {chapter['order']}.{section['order']}"))
+        for chapter in self.chapters:
+            for section in chapter["sections"]:
+                content = self.state.load_content(section["content_file"])
+                for block in content.get("blocks", []):
+                    object_id = str(block.get("object_id", "")).strip()
+                    if not object_id:
+                        continue
+                    if chapter["layout"] == "single":
+                        href = f"../chapter{chapter['order']:02d}.html#" + object_id
+                    else:
+                        href = f"../chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html#" + object_id
+                    object_kind = {"RN": "Research Note", "AN": "Architectural Note", "IN": "Implementation Note", "HP": "Historical Perspective"}.get(object_id.split("-", 1)[0], "Typed knowledge object")
+                    entries.append((str(block.get("title", object_id)), href, object_kind))
         for token in self.state.token_entries():
             label = _humanize_token_label(token["token"])
             entries.append((label, token.get("index_target", "../tokens.html"), "Canonical term"))
@@ -475,7 +499,7 @@ class DocumentationBuilder:
             items = "".join(f'<li><a href="{html.escape(href)}">{html.escape(label)}</a><span class="index-kind">{html.escape(kind)}</span></li>' for label, href, kind in values)
             sections.append(f'<section class="alphabetical-group" id="index-{html.escape(letter)}"><h2>{html.escape(letter)}</h2><ul>{items}</ul></section>')
 
-        directory = output / "chapter24"
+        directory = output / f"chapter{self.index_order:02d}"
         directory.mkdir()
         previous_chapter = self.chapters[-1]
         previous_target = (
@@ -485,12 +509,12 @@ class DocumentationBuilder:
         )
         nav = _nav("../index.html", "Documentation", (previous_target, f"Chapter {previous_chapter['order']}"), "../index.html", None, "index.html")
         page = _page(
-            "Chapter 24 · Alphabetical Index",
+            f"Chapter {self.index_order} · Alphabetical Index",
             "../cognitive.css",
             nav,
-            '<p class="chapter-label">Chapter 24</p><h1>Alphabetical Index</h1><p class="subtitle">Chapters, sections, and canonical terms</p>',
+            f'<p class="chapter-label">Chapter {self.index_order}</p><h1>Alphabetical Index</h1><p class="subtitle">Chapters, sections, typed knowledge objects, and canonical terms</p>',
             "".join(sections),
-            "Chapter 24 · Generated from the canonical specification model.",
+            f"Chapter {self.index_order} · Generated from the canonical specification model.",
         )
         chapter_path = directory / "index.html"
         chapter_path.write_text(page, encoding="utf-8")
@@ -498,9 +522,9 @@ class DocumentationBuilder:
         compatibility = _page(
             "Alphabetical Index",
             "cognitive.css",
-            _nav("index.html", "Documentation", None, "index.html", ("chapter24/index.html", "Chapter 24")),
+            _nav("index.html", "Documentation", None, "index.html", (f"chapter{self.index_order:02d}/index.html", f"Chapter {self.index_order}")),
             '<h1>Alphabetical Index</h1>',
-            '<p>The Alphabetical Index is now <a href="chapter24/index.html">Chapter 24 of the main documentation</a>.</p>',
+            f'<p>The Alphabetical Index is now <a href="chapter{self.index_order:02d}/index.html">Chapter {self.index_order} of the main documentation</a>.</p>',
             "Compatibility entry point.",
         )
         compatibility_path = output / "alphabetical-index.html"

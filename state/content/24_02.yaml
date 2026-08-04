@@ -1,0 +1,33 @@
+kind: T_ContentBlock
+schema_version: 0.3.19
+blocks:
+- type: paragraph
+  text: Typed knowledge objects make epistemic and normative status explicit.
+- type: table
+  headers:
+  - Identifier
+  - Type
+  - Purpose
+  rows:
+  - - RN
+    - Research Note
+    - Hypotheses and open research directions
+  - - AN
+    - Architectural Note
+    - Rationale and interpretation of architectural decisions
+  - - IN
+    - Implementation Note
+    - Reference engineering approaches and non-normative technology choices
+  - - HP
+    - Historical Perspective
+    - Historical analogies and motivating examples without claims of historical proof
+- type: principle
+  title: DA-0003 — Typed Knowledge Objects
+  text: Every contextual knowledge object has a declared type, stable identifier, title, status, canonical location,
+    and linkable HTML anchor.
+- type: warning
+  title: Normative boundary
+  text: RN, IN, and HP objects do not change architectural contracts unless a separate canonical architectural revision
+    explicitly adopts their conclusions.
+section_id: S_24_02
+id: S_24_02
