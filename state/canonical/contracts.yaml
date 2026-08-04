@@ -1,31 +1,31 @@
 kind: T_Collection
-schema_version: 0.3.30
+schema_version: 0.3.32
 operations:
 - id: OP_READ
-  name: READ
-  owner: Associative Memory
-  inputs:
-  - Memory State
-  - Query
-  outputs:
-  - Memory Vector
   effects: []
   forbidden_outputs:
   - Updated Memory State
-- id: OP_UPDATE
-  name: UPDATE
-  owner: Associative Memory
   inputs:
   - Memory State
-  - Semantic Representation
+  - Query
+  name: READ
   outputs:
-  - Updated Memory State
+  - Memory Vector
+  owner: Associative Memory
+- id: OP_UPDATE
   effects:
   - modifies Memory State
   forbidden_outputs:
   - Memory Vector
   implicit_operations_forbidden:
   - READ
+  inputs:
+  - Memory State
+  - Semantic Representation
+  name: UPDATE
+  outputs:
+  - Updated Memory State
+  owner: Associative Memory
 pipeline:
   id: PROC_SFL
   name: Semantic Feedback Learning Pipeline

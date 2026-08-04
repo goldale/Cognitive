@@ -1,73 +1,66 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_09_01
 blocks:
-- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
-    and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological
-    memory in organisms with developed nervous systems, while acknowledging that direct measurement becomes increasingly
-    difficult outside humans.
+- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent, and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological memory in organisms with developed nervous systems, while acknowledging that direct measurement becomes increasingly difficult outside humans.
   type: paragraph
-- type: diagram
-  title: Memory Architecture
-  description: Memory State combines persistent associative structure with dynamic short-term activation. An explicit
-    READ produces the canonical Memory Vector for the Transformer; Transformer output returns to Memory State as
-    feedback without generating another Memory Vector.
+- title: Memory Architecture
+  description: Memory State combines persistent associative structure with dynamic short-term activation. An explicit READ produces the canonical Memory Vector for the Transformer; Transformer output returns to Memory State as feedback without generating another Memory Vector.
   direction: TB
-  nodes:
-  - id: long
-    label: Long-Term Associative Structure
-    kind: storage
-    status: current
-  - id: short
-    label: Short-Term Activation State
-    kind: state
-    status: current
-  - id: state
-    label: Memory State
-    kind: state
-    status: current
-  - id: projection
-    label: Projection and Canonicalization
-    kind: subsystem
-    status: current
-  - id: vector
-    label: Memory Vector
-    kind: interface
-    status: current
-  - id: transformer
-    label: Transformer
-    kind: subsystem
-    status: current
-  - id: answer
-    label: Transformer Output / Internal Observation
-    kind: data
-    status: current
   edges:
-  - from: long
+  - flow: information
+    from: long
     to: state
-    flow: information
-  - from: short
+  - flow: information
+    from: short
     to: state
-    flow: information
-  - from: state
+  - flow: information
+    from: state
     to: projection
-    flow: information
-  - from: projection
+  - flow: information
+    from: projection
     to: vector
-    flow: information
-  - from: vector
-    to: transformer
-    flow: interface
+  - flow: interface
+    from: vector
     label: stable public interface
-  - from: transformer
-    to: answer
-    flow: feedback
+    to: transformer
+  - flow: feedback
+    from: transformer
     label: output
-  - from: answer
-    to: state
-    flow: feedback
+    to: answer
+  - flow: feedback
+    from: answer
     label: changes memory state only; no Memory Vector
-  size: standard
-  readability_priority: true
+    to: state
+  nodes:
+  - kind: data
+    id: answer
+    status: current
+    label: Transformer Output / Internal Observation
+  - kind: storage
+    id: long
+    status: current
+    label: Long-Term Associative Structure
+  - kind: subsystem
+    id: projection
+    status: current
+    label: Projection and Canonicalization
+  - kind: state
+    id: short
+    status: current
+    label: Short-Term Activation State
+  - kind: state
+    id: state
+    status: current
+    label: Memory State
+  - kind: subsystem
+    id: transformer
+    status: current
+    label: Transformer
+  - kind: interface
+    id: vector
+    status: current
+    label: Memory Vector
   proportionality_priority: true
   rank_groups:
   - - long
@@ -77,19 +70,16 @@ blocks:
     - vector
     - transformer
   - - answer
+  readability_priority: true
+  size: standard
+  type: diagram
 - title: Feedback invariant
-  text: Transformer output returns to Memory State as an internal observation. This feedback may change short-term
-    activation or other internal memory state, but it does not invoke Projection and does not generate a new Memory
-    Vector. A Memory Vector is produced only by a later explicit READ operation.
+  text: Transformer output returns to Memory State as an internal observation. This feedback may change short-term activation or other internal memory state, but it does not invoke Projection and does not generate a new Memory Vector. A Memory Vector is produced only by a later explicit READ operation.
   type: principle
 - title: Functional lossiness
   confidence: 0.78
-  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not
-    only because biological storage is limited.
+  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not only because biological storage is limited.
   type: hypothesis
-- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under resource
-    constraints. A memory architecture that preserves fewer literal details but produces a more usable model can
-    outperform an exact archive.
+- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under resource constraints. A memory architecture that preserves fewer literal details but produces a more usable model can outperform an exact archive.
   type: paragraph
 section_id: S_04_01
-id: S_09_01

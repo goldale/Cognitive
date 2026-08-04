@@ -1,22 +1,22 @@
 kind: T_Collection
-schema_version: 0.3.30
+schema_version: 0.3.32
 latest:
-  id: CR_030_ARCHITECTURAL_SPECIFICATION
   kind: T_ConsolidationRecord
-  timestamp: '2026-08-03T12:45:00+00:00'
+  id: CR_030_ARCHITECTURAL_SPECIFICATION
   summary: Restructured the canonical material as a dependency-ordered architectural specification.
-  semantic_change: true
-  inputs:
-  - Canonical project model
-  - Reviewed architectural decisions
+  rationale: The public specification must describe the architecture directly rather than preserve discussion chronology.
+  alternatives:
+  - Preserve the historical chapter order
+  - Publish discussion summaries as specification chapters
   changed_roles:
   - architecture
   - chapters
   - consolidation
   - content
   - documentation
-  alternatives:
-  - Preserve the historical chapter order
-  - Publish discussion summaries as specification chapters
-  rationale: The public specification must describe the architecture directly rather than preserve discussion chronology.
+  inputs:
+  - Canonical project model
+  - Reviewed architectural decisions
   open_questions: []
+  semantic_change: true
+  timestamp: '2026-08-03T12:45:00+00:00'

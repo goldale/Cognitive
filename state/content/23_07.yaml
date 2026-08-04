@@ -1,20 +1,18 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_23_07
 blocks:
-- type: paragraph
-  text: Open questions move into canonical architecture only after a documented decision identifies evidence, alternatives,
-    contracts, invariants, and migration impact.
-- type: list
-  items:
+- text: Open questions move into canonical architecture only after a documented decision identifies evidence, alternatives, contracts, invariants, and migration impact.
+  type: paragraph
+- items:
   - A mechanism has a named architectural owner.
   - Inputs, outputs, and state effects are explicit.
   - Interaction with READ, UPDATE, and Semantic Feedback Learning is defined.
   - Failure modes and rollback are documented.
   - Implementation status is clearly separated from design intention.
   - Tests and generated documentation enforce the accepted decision.
-- type: note
-  title: Revision rule
-  text: The roadmap is authoritative for direction but not immutable. New evidence may reorder or remove work items,
-    provided the rationale and impact on existing invariants are recorded.
+  type: list
+- title: Revision rule
+  text: The roadmap is authoritative for direction but not immutable. New evidence may reorder or remove work items, provided the rationale and impact on existing invariants are recorded.
+  type: note
 section_id: S_23_07
-id: S_23_07

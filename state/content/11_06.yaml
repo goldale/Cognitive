@@ -1,77 +1,71 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_11_06
 blocks:
-- type: paragraph
-  text: Memory Vector canonicalization should be introduced as a sequence of increasingly demanding normalization
-    stages. The stages must not be collapsed into one operation because each depends on evidence that becomes available
-    only after the previous stage and the Memory State have stabilized.
-- type: diagram
-  title: Sequential Memory Vector Normalization
-  description: 'The Memory Vector representation is normalized progressively: first by length, then by statistical
-    orthogonalization after representation stability, and finally by sparse basis rotation while preserving semantic
-    content.'
+- text: Memory Vector canonicalization should be introduced as a sequence of increasingly demanding normalization stages. The stages must not be collapsed into one operation because each depends on evidence that becomes available only after the previous stage and the Memory State have stabilized.
+  type: paragraph
+- title: Sequential Memory Vector Normalization
+  description: 'The Memory Vector representation is normalized progressively: first by length, then by statistical orthogonalization after representation stability, and finally by sparse basis rotation while preserving semantic content.'
   direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
+  edges:
+  - flow: information
+    from: raw
+    to: l2
+  - flow: evaluation
+    from: l2
+    label: continue training
+    to: stable
+  - flow: control
+    from: stable
+    label: after stabilization
+    to: orth
+  - flow: optimization
+    from: orth
+    to: rotate
+  - flow: interface
+    from: rotate
+    label: preserve meaning
+    to: canonical
   nodes:
-  - id: raw
-    label: 'Raw
+  - kind: interface
+    id: canonical
+    status: future
+    label: 'Canonical
 
       Memory Vector'
-    kind: data
+  - kind: subsystem
+    id: l2
     status: current
-  - id: l2
     label: 'Stage 1
 
       Length Normalization'
-    kind: subsystem
-    status: current
-  - id: stable
-    label: 'Semantic
-
-      Stabilization Gate'
-    kind: state
-    status: current
-  - id: orth
+  - kind: subsystem
+    id: orth
+    status: future
     label: 'Stage 2
 
       Covariance Analysis and
 
       Orthogonal Coordinate Transformation'
-    kind: subsystem
+  - kind: data
+    id: raw
+    status: current
+    label: 'Raw
+
+      Memory Vector'
+  - kind: subsystem
+    id: rotate
     status: future
-  - id: rotate
     label: 'Stage 3
 
       Sparse Basis Rotation'
-    kind: subsystem
-    status: future
-  - id: canonical
-    label: 'Canonical
+  - kind: state
+    id: stable
+    status: current
+    label: 'Semantic
 
-      Memory Vector'
-    kind: interface
-    status: future
-  edges:
-  - from: raw
-    to: l2
-    flow: information
-  - from: l2
-    to: stable
-    flow: evaluation
-    label: continue training
-  - from: stable
-    to: orth
-    flow: control
-    label: after stabilization
-  - from: orth
-    to: rotate
-    flow: optimization
-  - from: rotate
-    to: canonical
-    flow: interface
-    label: preserve meaning
+      Stabilization Gate'
+  proportionality_priority: true
   rank_groups:
   - - raw
     - l2
@@ -79,48 +73,34 @@ blocks:
   - - canonical
     - rotate
     - orth
-- type: heading
-  level: 3
+  readability_priority: true
+  size: standard
+  type: diagram
+- level: 3
   text: Stage 1 — Length Normalization
-- type: paragraph
-  text: At the initial integration stage, every non-zero raw Memory Vector is normalized by its Euclidean length
-    before it is delivered to the Transformer. The vector direction carries the activated semantic pattern, while
-    the original length is retained separately as activation magnitude. A zero raw vector maps to the canonical
-    null Memory Vector and is never divided by zero.
-- type: principle
-  title: Initial normalization rule
-  text: Length normalization is the only normalization that should be assumed before sufficient representative Memory
-    Vector statistics exist. Early coordinates may be provisionally treated as independent, but that assumption
-    is not evidence that the learned coordinates are actually orthogonal.
-- type: heading
-  level: 3
+  type: heading
+- text: At the initial integration stage, every non-zero raw Memory Vector is normalized by its Euclidean length before it is delivered to the Transformer. The vector direction carries the activated semantic pattern, while the original length is retained separately as activation magnitude. A zero raw vector maps to the canonical null Memory Vector and is never divided by zero.
+  type: paragraph
+- title: Initial normalization rule
+  text: Length normalization is the only normalization that should be assumed before sufficient representative Memory Vector statistics exist. Early coordinates may be provisionally treated as independent, but that assumption is not evidence that the learned coordinates are actually orthogonal.
+  type: principle
+- level: 3
   text: Stage 2 — Statistical Orthogonalization
-- type: paragraph
-  text: After Associative Memory has stabilized enough that semantically equivalent inputs generate nearby Memory
-    Vectors, a representative sample of vectors is collected. Its covariance or correlation matrix is estimated.
-    A whitening or related coordinate transformation is then learned so that off-diagonal covariance becomes negligible
-    and redundant coordinate coupling is reduced.
-- type: warning
-  title: Do not orthogonalize an unstable representation
-  text: Applying covariance-based basis changes while Memory State is still changing rapidly would optimize a transient
-    distribution and could make the public interface less stable. Orthogonalization therefore follows semantic stabilization
-    rather than preceding it.
-- type: heading
-  level: 3
+  type: heading
+- text: After Associative Memory has stabilized enough that semantically equivalent inputs generate nearby Memory Vectors, a representative sample of vectors is collected. Its covariance or correlation matrix is estimated. A whitening or related coordinate transformation is then learned so that off-diagonal covariance becomes negligible and redundant coordinate coupling is reduced.
+  type: paragraph
+- title: Do not orthogonalize an unstable representation
+  text: Applying covariance-based basis changes while Memory State is still changing rapidly would optimize a transient distribution and could make the public interface less stable. Orthogonalization therefore follows semantic stabilization rather than preceding it.
+  type: warning
+- level: 3
   text: Stage 3 — Sparse Basis Rotation
-- type: paragraph
-  text: Once an approximately orthogonal coordinate system has been obtained, an additional rotation may be optimized
-    to minimize the number of non-zero or materially active coordinates for simple input assertions. The objective
-    is a sparse canonical representation in which each axis corresponds as closely as practical to one independent
-    semantic property.
-- type: note
-  title: Separate objectives
-  text: Orthogonality removes second-order statistical coupling. Sparse rotation reduces active coordinate count.
-    Semantic interpretability is a further objective and is not guaranteed automatically by either operation.
-- type: principle
-  title: Semantic preservation invariant
-  text: Every normalization stage may change the coordinate system and interface statistics, but it must preserve
-    the knowledge represented by Memory State. Representation Optimization is therefore distinct from learning,
-    UPDATE, and structural reorganization.
+  type: heading
+- text: Once an approximately orthogonal coordinate system has been obtained, an additional rotation may be optimized to minimize the number of non-zero or materially active coordinates for simple input assertions. The objective is a sparse canonical representation in which each axis corresponds as closely as practical to one independent semantic property.
+  type: paragraph
+- title: Separate objectives
+  text: Orthogonality removes second-order statistical coupling. Sparse rotation reduces active coordinate count. Semantic interpretability is a further objective and is not guaranteed automatically by either operation.
+  type: note
+- title: Semantic preservation invariant
+  text: Every normalization stage may change the coordinate system and interface statistics, but it must preserve the knowledge represented by Memory State. Representation Optimization is therefore distinct from learning, UPDATE, and structural reorganization.
+  type: principle
 section_id: S_11_06
-id: S_11_06

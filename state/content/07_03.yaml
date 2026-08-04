@@ -1,77 +1,72 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_07_03
 blocks:
-- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are evaluated;
-    an action is selected; the environment and internal state change; the observed result is represented and evaluated
-    again.'
+- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are evaluated; an action is selected; the environment and internal state change; the observed result is represented and evaluated again.'
   type: paragraph
-- type: diagram
-  title: Evaluation Feedback Loop
-  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive control
-    loop.
+- title: Evaluation Feedback Loop
+  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive control loop.
   direction: TB
+  edges:
+  - flow: information
+    from: representation
+    to: evaluation
+  - flow: evaluation
+    from: evaluation
+    label: selection
+    to: behavior
+  - flow: control
+    from: behavior
+    label: action
+    to: world
+  - flow: information
+    from: world
+    to: consequence
+  - flow: learning
+    from: consequence
+    label: learning signal
+    to: memory
+  - flow: feedback
+    from: memory
+    label: updated context
+    to: representation
   nodes:
-  - id: representation
-    label: 'Current
-
-      Representation'
-    kind: state
+  - kind: external
+    id: behavior
     status: current
-  - id: evaluation
-    label: 'Integrated
-
-      Evaluation'
-    kind: subsystem
-    status: current
-  - id: behavior
     label: 'Selected
 
       Behavior'
-    kind: external
+  - kind: data
+    id: consequence
     status: current
-  - id: world
-    label: 'Environment /
-
-      Other Systems'
-    kind: external
-    status: current
-  - id: consequence
     label: 'Observed
 
       Consequences'
-    kind: data
+  - kind: subsystem
+    id: evaluation
     status: current
-  - id: memory
+    label: 'Integrated
+
+      Evaluation'
+  - kind: subsystem
+    id: memory
+    status: current
     label: 'Memory / Context
 
       Update'
-    kind: subsystem
+  - kind: state
+    id: representation
     status: current
-  edges:
-  - from: representation
-    to: evaluation
-    flow: information
-  - from: evaluation
-    to: behavior
-    flow: evaluation
-    label: selection
-  - from: behavior
-    to: world
-    flow: control
-    label: action
-  - from: world
-    to: consequence
-    flow: information
-  - from: consequence
-    to: memory
-    flow: learning
-    label: learning signal
-  - from: memory
-    to: representation
-    flow: feedback
-    label: updated context
-  size: standard
-  readability_priority: true
+    label: 'Current
+
+      Representation'
+  - kind: external
+    id: world
+    status: current
+    label: 'Environment /
+
+      Other Systems'
   proportionality_priority: true
   rank_groups:
   - - representation
@@ -80,8 +75,9 @@ blocks:
   - - memory
     - consequence
     - world
-- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is semantically
-    expressible as a fixed hand-written utility function.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is semantically expressible as a fixed hand-written utility function.
   type: paragraph
 section_id: S_14_05
-id: S_07_03

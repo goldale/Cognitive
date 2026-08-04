@@ -1,63 +1,60 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_10_03
 blocks:
-- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory Vector
-    used by the Transformer to generate a response.
+- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory Vector used by the Transformer to generate a response.
   type: paragraph
-- type: diagram
-  title: Memory UPDATE Path
-  description: The completed interaction and Transformer state are used to update memory without generating a second
-    user-visible answer.
+- title: Memory UPDATE Path
+  description: The completed interaction and Transformer state are used to update memory without generating a second user-visible answer.
   direction: TB
-  nodes:
-  - id: question
-    label: Last Question
-    kind: data
-    status: current
-  - id: answer
-    label: Generated Answer
-    kind: data
-    status: current
-  - id: hidden
-    label: Transformer Hidden State
-    kind: state
-    status: current
-  - id: update
-    label: UPDATE_ONLY
-    kind: subsystem
-    status: current
-  - id: memory
-    label: Associative Memory
-    kind: subsystem
-    status: current
-  - id: state
-    label: Updated Memory State
-    kind: state
-    status: current
   edges:
-  - from: question
+  - flow: information
+    from: question
     to: update
-    flow: information
-  - from: answer
+  - flow: information
+    from: answer
     to: update
-    flow: information
-  - from: hidden
-    to: update
-    flow: information
+  - flow: information
+    from: hidden
     label: non-zero mode signal
-  - from: update
-    to: memory
-    flow: learning
+    to: update
+  - flow: learning
+    from: update
     label: learning request
-  - from: memory
-    to: state
-    flow: learning
+    to: memory
+  - flow: learning
+    from: memory
     label: content update
-  size: standard
-  readability_priority: true
+    to: state
+  nodes:
+  - kind: data
+    id: answer
+    status: current
+    label: Generated Answer
+  - kind: state
+    id: hidden
+    status: current
+    label: Transformer Hidden State
+  - kind: subsystem
+    id: memory
+    status: current
+    label: Associative Memory
+  - kind: data
+    id: question
+    status: current
+    label: Last Question
+  - kind: state
+    id: state
+    status: current
+    label: Updated Memory State
+  - kind: subsystem
+    id: update
+    status: current
+    label: UPDATE_ONLY
   proportionality_priority: true
-- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are supplied to
-    memory so that experience can be integrated without rerunning a full user-facing inference cycle.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are supplied to memory so that experience can be integrated without rerunning a full user-facing inference cycle.
   type: paragraph
 section_id: S_16_03
-id: S_10_03

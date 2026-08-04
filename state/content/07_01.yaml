@@ -1,76 +1,73 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_07_01
 blocks:
-- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints, predicted
-    outcomes, uncertainty, and current context must be compared by an Integrated Evaluation process.
+- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints, predicted outcomes, uncertainty, and current context must be compared by an Integrated Evaluation process.
   type: paragraph
-- type: diagram
-  title: Integrated Evaluation Inputs and Output
+- title: Integrated Evaluation Inputs and Output
   description: Integrated Evaluation compares heterogeneous representations in one learned decision context.
   direction: TB
-  nodes:
-  - id: semantic
-    label: Semantic Representation
-    kind: state
-    status: current
-  - id: goals
-    label: Goals
-    kind: state
-    status: current
-  - id: memory
-    label: Memory
-    kind: state
-    status: current
-  - id: context
-    label: Current Context
-    kind: state
-    status: current
-  - id: temporal
-    label: Temporal Attributes
-    kind: state
-    status: current
-  - id: evaluation
-    label: Integrated Evaluation
-    kind: subsystem
-    status: current
-  - id: score
-    label: Comparative Evaluation
-    kind: data
-    status: current
-  - id: behavior
-    label: Behavioral Priority
-    kind: external
-    status: current
   edges:
-  - from: semantic
+  - flow: information
+    from: semantic
     to: evaluation
-    flow: information
-  - from: goals
+  - flow: information
+    from: goals
     to: evaluation
-    flow: information
-  - from: memory
+  - flow: information
+    from: memory
     to: evaluation
-    flow: information
-  - from: context
+  - flow: information
+    from: context
     to: evaluation
-    flow: information
-  - from: temporal
+  - flow: information
+    from: temporal
     to: evaluation
-    flow: information
-  - from: evaluation
-    to: score
-    flow: evaluation
+  - flow: evaluation
+    from: evaluation
     label: learned comparison
-  - from: score
-    to: behavior
-    flow: control
+    to: score
+  - flow: control
+    from: score
     label: guides selection
-  size: standard
-  readability_priority: true
+    to: behavior
+  nodes:
+  - kind: external
+    id: behavior
+    status: current
+    label: Behavioral Priority
+  - kind: state
+    id: context
+    status: current
+    label: Current Context
+  - kind: subsystem
+    id: evaluation
+    status: current
+    label: Integrated Evaluation
+  - kind: state
+    id: goals
+    status: current
+    label: Goals
+  - kind: state
+    id: memory
+    status: current
+    label: Memory
+  - kind: data
+    id: score
+    status: current
+    label: Comparative Evaluation
+  - kind: state
+    id: semantic
+    status: current
+    label: Semantic Representation
+  - kind: state
+    id: temporal
+    status: current
+    label: Temporal Attributes
   proportionality_priority: true
-- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation may
-    resemble a unified value space, but that phrase describes only one possible implementation and is not the architectural
-    name.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation may resemble a unified value space, but that phrase describes only one possible implementation and is not the architectural name.
   type: paragraph
 section_id: S_14_01
-id: S_07_01

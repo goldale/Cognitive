@@ -1,73 +1,70 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_20_02
 blocks:
-- type: paragraph
-  text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation
-    requires a selection signal; replay requires a policy for deciding what should be reactivated and why.
-- type: diagram
-  title: Canonical Development Sequence
-  description: The canonical Semantic Feedback Learning Pipeline is the stable foundation. Importance Estimation,
-    Offline Consolidation and Sleep, and Replay are introduced as explicit dependent subsystems; later memory-lifecycle
-    and evaluation mechanisms build on them.
+- text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation requires a selection signal; replay requires a policy for deciding what should be reactivated and why.
+  type: paragraph
+- title: Canonical Development Sequence
+  description: The canonical Semantic Feedback Learning Pipeline is the stable foundation. Importance Estimation, Offline Consolidation and Sleep, and Replay are introduced as explicit dependent subsystems; later memory-lifecycle and evaluation mechanisms build on them.
   direction: TB
-  size: standard
-  nodes:
-  - id: current
-    label: Canonical Semantic Feedback Learning Pipeline
-    kind: control
-  - id: importance
-    label: Importance Estimation
-    kind: subsystem
-    status: future
-  - id: sleep
-    label: Offline Consolidation and Sleep
-    kind: subsystem
-    status: future
-  - id: replay
-    label: Replay
-    kind: subsystem
-    status: future
-  - id: pruning
-    label: Forgetting, Pruning, and Structural Plasticity
-    kind: subsystem
-    status: future
-  - id: evaluation
-    label: Global Evaluation
-    kind: subsystem
-    status: future
-  - id: agents
-    label: Multi-Agent Semantic Learning
-    kind: subsystem
-    status: future
   edges:
-  - from: current
-    to: importance
+  - flow: learning
+    from: current
     label: stable foundation
-    flow: learning
-  - from: importance
-    to: sleep
+    to: importance
+  - flow: learning
+    from: importance
     label: selection signal
-    flow: learning
-  - from: sleep
-    to: replay
+    to: sleep
+  - flow: learning
+    from: sleep
     label: consolidated material
-    flow: learning
-  - from: replay
-    to: pruning
+    to: replay
+  - flow: optimization
+    from: replay
     label: evidence of utility and interference
-    flow: optimization
-  - from: pruning
-    to: evaluation
+    to: pruning
+  - flow: optimization
+    from: pruning
     label: managed memory lifecycle
-    flow: optimization
-  - from: evaluation
-    to: agents
+    to: evaluation
+  - flow: evaluation
+    from: evaluation
     label: controlled exchange
-    flow: evaluation
-  readability_priority: true
+    to: agents
+  nodes:
+  - kind: subsystem
+    id: agents
+    status: future
+    label: Multi-Agent Semantic Learning
+  - kind: control
+    id: current
+    label: Canonical Semantic Feedback Learning Pipeline
+  - kind: subsystem
+    id: evaluation
+    status: future
+    label: Global Evaluation
+  - kind: subsystem
+    id: importance
+    status: future
+    label: Importance Estimation
+  - kind: subsystem
+    id: pruning
+    status: future
+    label: Forgetting, Pruning, and Structural Plasticity
+  - kind: subsystem
+    id: replay
+    status: future
+    label: Replay
+  - kind: subsystem
+    id: sleep
+    status: future
+    label: Offline Consolidation and Sleep
   proportionality_priority: true
-- type: list
-  items:
+  readability_priority: true
+  size: standard
+  type: diagram
+- items:
   - 1. Importance Estimation
   - 2. Offline Consolidation and Sleep
   - 3. Replay
@@ -75,5 +72,5 @@ blocks:
   - 5. Structural Plasticity
   - 6. Global Evaluation
   - 7. Multi-Agent Semantic Learning
+  type: list
 section_id: S_20_02
-id: S_20_02

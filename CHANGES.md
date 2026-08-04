@@ -1,15 +1,20 @@
-# CHANGES - cognitive 0.3.30
+# CHANGES - cognitive 0.3.32
 
-- Replaced the arbitrary-angle formulation in Section 11.5 with deterministic localized semantic basis maintenance.
-- Defined norm-preserving transfer of a correlated coordinate pair into the dominant retained coordinate while zeroing the secondary coordinate.
-- Added Effective Semantic Dimensionality as a first-class architectural result.
-- Restricted dimensional removal to release engineering; runtime dimensionality remains fixed.
-- Added Dense Architecture with Progressive Semantic Compaction.
-- Clarified that the implementation is dense, not sparse-first; temporary zero coordinates do not make the architecture sparse.
-- Added a prospective Distributed Photonic-Spintronic Associative Tensor Memory implementation.
-- Defined query and response tensors up to 1024 x 1024 x 8 elements.
-- Clarified that 256 denotes processing layers, not vector dimensionality.
-- Defined the 10,000,000 x 256 scale as dense programmable positions across processing layers.
-- Limited canonical precision tiers to INT4, INT8, and INT16.
-- Preserved the canonical learning loop, strict READ/UPDATE separation, YAML Single Source of Truth, modular HTML documentation, and fixed runtime semantic dimensionality.
-- Removed obsolete monolithic combined HTML and obsolete release artifacts from the release snapshot.
+
+## Associative Memory READ/UPDATE integration diagram
+
+- Added a canonical explanatory diagram for the hybrid Associative Memory implementation.
+- Clarified that GraphRAG components operate inside READ and do not directly define Memory State.
+- Documented spreading activation, Dynamic Memory State, explicit Memory Vector projection, Integrated Evaluation placement, and the separate UPDATE-only modification path.
+- Added the diagram source as a release asset and included it in modular HTML and PDF documentation.
+
+- Clarified that vector search and embeddings are candidate-retrieval accelerators, not a complete Associative Memory.
+- Required explicit typed graph relations for dependency, blocking, enabling, temporal structure, and causal hypotheses.
+- Clarified that a labelled graph edge is not proof of causality and requires provenance, confidence, and supporting evidence.
+- Defined the initial memory implementation as a hybrid of vector retrieval, graph relations, exact storage, dynamic associative activation, and explicit READ projection.
+- Preserved strict READ/UPDATE separation and Transformer-mediated memory learning.
+- Replaced the earlier multiplicative priority ratio as a canonical decision rule.
+- Added admissibility gates for catastrophic, prohibited, unauthorized, or insufficiently reversible actions before ranking.
+- Added normalized multi-criteria estimation with explicit residual risk, effective cost, delay cost, and temporally discounted future options.
+- Clarified that action scores are inputs to Integrated Evaluation rather than autonomous decisions.
+- Recorded unresolved weighting, normalization, causal-confidence, discounting, and planning-horizon choices as open questions requiring experiments.

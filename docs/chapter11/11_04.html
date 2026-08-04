@@ -17,23 +17,11 @@
  viewBox="0.00 0.00 919.96 181.96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="representation-optimization-pipeline-graph0" class="graph" transform="scale(1 1) rotate(0) translate(24.48 157.48)">
 <title>G</title>
-<!-- samples&#45;&gt;cov -->
-<g id="representation-optimization-pipeline-edge1" class="edge">
-<title>samples&#45;&gt;cov</title>
-<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M110.25,-113C110.25,-113 171.17,-113 171.17,-113"/>
-<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="171.17,-115.87 179.37,-113 171.17,-110.13 171.17,-115.87"/>
-</g>
 <!-- cov&#45;&gt;white -->
 <g id="representation-optimization-pipeline-edge2" class="edge">
 <title>cov&#45;&gt;white</title>
 <path fill="none" stroke="#174a7e" stroke-width="1.45" d="M312.54,-113C312.54,-113 374.24,-113 374.24,-113"/>
 <polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="374.24,-115.87 382.44,-113 374.24,-110.13 374.24,-115.87"/>
-</g>
-<!-- white&#45;&gt;orth -->
-<g id="representation-optimization-pipeline-edge3" class="edge">
-<title>white&#45;&gt;orth</title>
-<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M422,-94.63C422,-94.63 422,-48.47 422,-48.47"/>
-<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="424.87,-48.47 422,-40.27 419.13,-48.47 424.87,-48.47"/>
 </g>
 <!-- orth&#45;&gt;sparse -->
 <g id="representation-optimization-pipeline-edge4" class="edge">
@@ -41,20 +29,32 @@
 <path fill="none" stroke="#174a7e" stroke-width="1.45" d="M467.4,-20C467.4,-20 528.79,-20 528.79,-20"/>
 <polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="528.79,-22.87 536.99,-20 528.79,-17.13 528.79,-22.87"/>
 </g>
+<!-- samples&#45;&gt;cov -->
+<g id="representation-optimization-pipeline-edge1" class="edge">
+<title>samples&#45;&gt;cov</title>
+<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M110.25,-113C110.25,-113 171.17,-113 171.17,-113"/>
+<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="171.17,-115.87 179.37,-113 171.17,-110.13 171.17,-115.87"/>
+</g>
 <!-- sparse&#45;&gt;canonical -->
 <g id="representation-optimization-pipeline-edge5" class="edge">
 <title>sparse&#45;&gt;canonical</title>
 <path fill="none" stroke="#6b4fa1" stroke-width="1.45" d="M633.22,-20C633.22,-20 750.54,-20 750.54,-20"/>
 <polygon fill="#6b4fa1" stroke="#6b4fa1" stroke-width="1.45" points="750.54,-22.87 758.74,-20 750.54,-17.13 750.54,-22.87"/>
 </g>
-<!-- samples -->
+<!-- white&#45;&gt;orth -->
+<g id="representation-optimization-pipeline-edge3" class="edge">
+<title>white&#45;&gt;orth</title>
+<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M422,-94.63C422,-94.63 422,-48.47 422,-48.47"/>
+<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="424.87,-48.47 422,-40.27 419.13,-48.47 424.87,-48.47"/>
+</g>
+<!-- canonical -->
 <g id="representation-optimization-pipeline-node1" class="node">
-<title>samples</title>
-<polygon fill="#f7f7fb" stroke="#365b78" stroke-width="1.3" points="104,-133 0,-133 0,-93 110,-93 110,-127 104,-133"/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="104,-133 104,-127 "/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="110,-127 104,-127 "/>
-<text text-anchor="middle" x="55" y="-116.4" font-family="Arial" font-size="12.00" fill="#202124">Representative</text>
-<text text-anchor="middle" x="55" y="-103.4" font-family="Arial" font-size="12.00" fill="#202124">Memory Vectors</text>
+<title>canonical</title>
+<polygon fill="#fff8e8" stroke="#365b78" stroke-width="1.3" points="871,-40 759,-40 759,-36 755,-36 755,-32 759,-32 759,-8 755,-8 755,-4 759,-4 759,0 871,0 871,-40"/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="759,-36 763,-36 763,-32 759,-32 "/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="759,-8 763,-8 763,-4 759,-4 "/>
+<text text-anchor="middle" x="815" y="-23.4" font-family="Arial" font-size="12.00" fill="#202124">Updated</text>
+<text text-anchor="middle" x="815" y="-10.4" font-family="Arial" font-size="12.00" fill="#202124">Canonical Basis</text>
 </g>
 <!-- cov -->
 <g id="representation-optimization-pipeline-node2" class="node">
@@ -63,18 +63,21 @@
 <text text-anchor="middle" x="246" y="-116.4" font-family="Arial" font-size="12.00" fill="#202124">Covariance /</text>
 <text text-anchor="middle" x="246" y="-103.4" font-family="Arial" font-size="12.00" fill="#202124">Correlation Analysis</text>
 </g>
-<!-- white -->
-<g id="representation-optimization-pipeline-node3" class="node">
-<title>white</title>
-<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M449.5,-131C449.5,-131 394.5,-131 394.5,-131 388.5,-131 382.5,-125 382.5,-119 382.5,-119 382.5,-107 382.5,-107 382.5,-101 388.5,-95 394.5,-95 394.5,-95 449.5,-95 449.5,-95 455.5,-95 461.5,-101 461.5,-107 461.5,-107 461.5,-119 461.5,-119 461.5,-125 455.5,-131 449.5,-131"/>
-<text text-anchor="middle" x="422" y="-109.9" font-family="Arial" font-size="12.00" fill="#202124">Whitening</text>
-</g>
 <!-- orth -->
-<g id="representation-optimization-pipeline-node4" class="node">
+<g id="representation-optimization-pipeline-node3" class="node">
 <title>orth</title>
 <path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M455,-40C455,-40 389,-40 389,-40 383,-40 377,-34 377,-28 377,-28 377,-12 377,-12 377,-6 383,0 389,0 389,0 455,0 455,0 461,0 467,-6 467,-12 467,-12 467,-28 467,-28 467,-34 461,-40 455,-40"/>
 <text text-anchor="middle" x="422" y="-23.4" font-family="Arial" font-size="12.00" fill="#202124">Orthogonal</text>
 <text text-anchor="middle" x="422" y="-10.4" font-family="Arial" font-size="12.00" fill="#202124">Coordinates</text>
+</g>
+<!-- samples -->
+<g id="representation-optimization-pipeline-node4" class="node">
+<title>samples</title>
+<polygon fill="#f7f7fb" stroke="#365b78" stroke-width="1.3" points="104,-133 0,-133 0,-93 110,-93 110,-127 104,-133"/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="104,-133 104,-127 "/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="110,-127 104,-127 "/>
+<text text-anchor="middle" x="55" y="-116.4" font-family="Arial" font-size="12.00" fill="#202124">Representative</text>
+<text text-anchor="middle" x="55" y="-103.4" font-family="Arial" font-size="12.00" fill="#202124">Memory Vectors</text>
 </g>
 <!-- sparse -->
 <g id="representation-optimization-pipeline-node5" class="node">
@@ -83,14 +86,11 @@
 <text text-anchor="middle" x="585" y="-23.4" font-family="Arial" font-size="12.00" fill="#202124">Sparse Basis</text>
 <text text-anchor="middle" x="585" y="-10.4" font-family="Arial" font-size="12.00" fill="#202124">Rotation</text>
 </g>
-<!-- canonical -->
+<!-- white -->
 <g id="representation-optimization-pipeline-node6" class="node">
-<title>canonical</title>
-<polygon fill="#fff8e8" stroke="#365b78" stroke-width="1.3" points="871,-40 759,-40 759,-36 755,-36 755,-32 759,-32 759,-8 755,-8 755,-4 759,-4 759,0 871,0 871,-40"/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="759,-36 763,-36 763,-32 759,-32 "/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="759,-8 763,-8 763,-4 759,-4 "/>
-<text text-anchor="middle" x="815" y="-23.4" font-family="Arial" font-size="12.00" fill="#202124">Updated</text>
-<text text-anchor="middle" x="815" y="-10.4" font-family="Arial" font-size="12.00" fill="#202124">Canonical Basis</text>
+<title>white</title>
+<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M449.5,-131C449.5,-131 394.5,-131 394.5,-131 388.5,-131 382.5,-125 382.5,-119 382.5,-119 382.5,-107 382.5,-107 382.5,-101 388.5,-95 394.5,-95 394.5,-95 449.5,-95 449.5,-95 455.5,-95 461.5,-101 461.5,-107 461.5,-107 461.5,-119 461.5,-119 461.5,-125 455.5,-131 449.5,-131"/>
+<text text-anchor="middle" x="422" y="-109.9" font-family="Arial" font-size="12.00" fill="#202124">Whitening</text>
 </g>
 </g>
 </svg>

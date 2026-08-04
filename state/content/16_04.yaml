@@ -1,19 +1,16 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_16_04
 blocks:
-- text: Direct internal-state Merge between mature lineages is expected to be destructive or undefined. Exchange
-    should use dialogue, externalized Research State, experiments, books, and training trajectories.
+- text: Direct internal-state Merge between mature lineages is expected to be destructive or undefined. Exchange should use dialogue, externalized Research State, experiments, books, and training trajectories.
   type: paragraph
 - text: This protects identity and diversity while permitting useful discoveries to propagate.
   type: paragraph
-- text: A receiving lineage integrates exported knowledge according to its own objectives. It need not reproduce
-    the source representation or conclusions exactly.
+- text: A receiving lineage integrates exported knowledge according to its own objectives. It need not reproduce the source representation or conclusions exactly.
   type: paragraph
-- text: Internal Model A -> Partial Serialization -> Research State / Dialogue -> Model Integration -> Internal
-    Model B
-  type: diagram
-  size: standard
+- proportionality_priority: true
   readability_priority: true
-  proportionality_priority: true
+  size: standard
+  text: Internal Model A -> Partial Serialization -> Research State / Dialogue -> Model Integration -> Internal Model B
+  type: diagram
 section_id: S_10_04
-id: S_16_04

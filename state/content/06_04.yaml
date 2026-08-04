@@ -1,77 +1,74 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_06_04
 blocks:
-- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization constraints,
-    and probability distributions over completion or transition times.
+- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization constraints, and probability distributions over completion or transition times.
   type: paragraph
-- type: diagram
-  title: Temporal Scenario Organization
-  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses before
-    evaluation.
+- title: Temporal Scenario Organization
+  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses before evaluation.
   direction: TB
-  nodes:
-  - id: state
-    label: Current State
-    kind: state
-    status: current
-  - id: organize
-    label: Temporal Organization
-    kind: subsystem
-    status: current
-  - id: s1
-    label: Scenario A
-    kind: data
-    status: current
-  - id: s2
-    label: Scenario B
-    kind: data
-    status: current
-  - id: s3
-    label: Scenario C
-    kind: data
-    status: current
-  - id: evaluate
-    label: Integrated Evaluation
-    kind: subsystem
-    status: current
-  - id: selected
-    label: Selected Next Action
-    kind: external
-    status: current
   edges:
-  - from: state
+  - flow: information
+    from: state
     to: organize
-    flow: information
-  - from: organize
+  - flow: information
+    from: organize
+    label: time + probability
     to: s1
-    flow: information
+  - flow: information
+    from: organize
     label: time + probability
-  - from: organize
     to: s2
-    flow: information
+  - flow: information
+    from: organize
     label: time + probability
-  - from: organize
     to: s3
-    flow: information
-    label: time + probability
-  - from: s1
+  - flow: information
+    from: s1
     to: evaluate
-    flow: information
-  - from: s2
+  - flow: information
+    from: s2
     to: evaluate
-    flow: information
-  - from: s3
+  - flow: information
+    from: s3
     to: evaluate
-    flow: information
-  - from: evaluate
-    to: selected
-    flow: evaluation
+  - flow: evaluation
+    from: evaluate
     label: highest evaluated option
-  size: standard
-  readability_priority: true
+    to: selected
+  nodes:
+  - kind: subsystem
+    id: evaluate
+    status: current
+    label: Integrated Evaluation
+  - kind: subsystem
+    id: organize
+    status: current
+    label: Temporal Organization
+  - kind: data
+    id: s1
+    status: current
+    label: Scenario A
+  - kind: data
+    id: s2
+    status: current
+    label: Scenario B
+  - kind: data
+    id: s3
+    status: current
+    label: Scenario C
+  - kind: external
+    id: selected
+    status: current
+    label: Selected Next Action
+  - kind: state
+    id: state
+    status: current
+    label: Current State
   proportionality_priority: true
-- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents a plan from
-    being treated as an unordered list of semantically valid actions.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents a plan from being treated as an unordered list of semantically valid actions.
   type: paragraph
 section_id: S_15_04
-id: S_06_04

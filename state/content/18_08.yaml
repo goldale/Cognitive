@@ -1,19 +1,15 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_18_08
 blocks:
-- type: heading
-  level: 3
+- level: 3
   text: Scale Parameters
-- type: paragraph
-  text: Semantic query and response representations may reach 1024 x 1024 x 8 elements, or 8,388,608 elements per
-    tensor. The value 256 denotes processing layers and must not be interpreted as query, response, or Memory Vector
-    dimensionality.
-- type: paragraph
-  text: The architectural scale parameter 10,000,000 x 256 denotes a dense logical organization of up to ten million
-    programmable processing or memory positions considered across 256 processing layers. It is not a table of ten
-    million 256-dimensional stored vectors.
-- type: table
-  headers:
+  type: heading
+- text: Semantic query and response representations may reach 1024 x 1024 x 8 elements, or 8,388,608 elements per tensor. Processing depth is an experimental implementation parameter ranging from 8 to 256 layers. The value 256 is an upper experimental bound and must not be interpreted as query, response, or Memory Vector dimensionality.
+  type: paragraph
+- text: The architectural scale parameter 10,000,000 x 256 denotes a dense logical organization of up to ten million programmable processing or memory positions considered across an experimental depth of 8 to 256 processing layers. It is not a table of ten million 256-dimensional stored vectors.
+  type: paragraph
+- headers:
   - Representation
   - Elements
   - INT4
@@ -30,24 +26,25 @@ blocks:
     - 8 MiB
     - 16 MiB
     - 32 MiB
-  - - 256 full intermediate tensors
+  - - Upper-bound 256 full intermediate tensors
     - 2,147,483,648
     - 1 GiB
     - 2 GiB
     - 4 GiB
-- type: paragraph
-  text: A physical implementation may use pipelining, temporal reuse, tiling, wavelength multiplexing, spatial multiplexing,
-    polarization, or modal channels. These are implementation strategies for a dense logical architecture.
-- type: heading
-  level: 3
+  type: table
+- level: 3
+  text: Processing Depth
+  type: heading
+- text: The architecture does not prescribe a fixed processing depth. The reference implementation supports an experimental range of 8 to 256 layers. The required depth must be determined experimentally from associative learning quality, retrieval accuracy, and computational cost. A released implementation fixes the selected depth for that release.
+  type: paragraph
+- text: A physical implementation may use pipelining, temporal reuse, tiling, wavelength multiplexing, spatial multiplexing, polarization, or modal channels. These are implementation strategies for a dense logical architecture.
+  type: paragraph
+- level: 3
   text: Dense Topology and Basis Compaction
-- type: paragraph
-  text: The implementation does not depend on sparse candidate routing as its primary model. Sequential localized
-    orthogonalization removes semantic redundancy, transfers correlated magnitude into retained coordinates, and
-    progressively compacts useful information.
-- type: principle
-  title: Dense hardware invariant
-  text: Temporary inactive coordinates may reduce activity and power, but all released coordinates remain addressable
-    until validated dimensional reduction is performed in a later release.
+  type: heading
+- text: The implementation does not depend on sparse candidate routing as its primary model. Sequential localized orthogonalization removes semantic redundancy, transfers correlated magnitude into retained coordinates, and progressively compacts useful information.
+  type: paragraph
+- title: Dense hardware invariant
+  text: Temporary inactive coordinates may reduce activity and power, but all released coordinates remain addressable until validated dimensional reduction is performed in a later release.
+  type: principle
 section_id: S_18_08
-id: S_18_08

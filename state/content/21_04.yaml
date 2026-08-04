@@ -1,14 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_21_04
 blocks:
-- type: paragraph
-  text: Replay experiments must separate the benefits of reactivation from simple repeated exposure.
-- type: list
-  items:
+- text: Replay experiments must separate the benefits of reactivation from simple repeated exposure.
+  type: paragraph
+- items:
   - Compare importance-prioritized, recency-based, uniform, diversity-preserving, and counterexample replay.
   - Measure catastrophic forgetting, overfitting to recent experience, semantic drift, and recovery speed.
   - Test replay under changed goals to determine whether old knowledge is reinterpreted or merely reinforced.
   - Measure whether replay increases false confidence or amplifies corrupted memories.
   - Verify that all learning effects occur through explicit Semantic Representations and UPDATE.
+  type: list
 section_id: S_21_04
-id: S_21_04

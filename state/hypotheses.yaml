@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.30
+schema_version: 0.3.32
 hypotheses:
 - kind: T_Hypothesis
   id: H_001
@@ -12,8 +12,7 @@ hypotheses:
   - Longitudinal capability scales only with inference-model capability after controlling for memory organization.
 - kind: T_Hypothesis
   id: H_002
-  statement: No finite universal world model exists; world models are optimized for objective-limited classes of
-    cognitive systems.
+  statement: No finite universal world model exists; world models are optimized for objective-limited classes of cognitive systems.
   status: T_Working
   confidence: 0.9
   evidence:
@@ -22,8 +21,7 @@ hypotheses:
   - One finite representation is shown to dominate all alternatives across every objective class.
 - kind: T_Hypothesis
   id: H_003
-  statement: Biological long-term memory is functionally lossy because integration and future utility are optimized
-    over archival fidelity.
+  statement: Biological long-term memory is functionally lossy because integration and future utility are optimized over archival fidelity.
   status: T_Working
   confidence: 0.78
   evidence:
@@ -32,8 +30,7 @@ hypotheses:
   - Loss is fully explained by storage limits and provides no functional advantage.
 - kind: T_Hypothesis
   id: H_004
-  statement: Most new experience first changes importance, utility, confidence, and activation weights before changing
-    architecture.
+  statement: Most new experience first changes importance, utility, confidence, and activation weights before changing architecture.
   status: T_Working
   confidence: 0.85
   evidence:
@@ -42,8 +39,7 @@ hypotheses:
   - Each significant experience deterministically rewrites architecture.
 - kind: T_Hypothesis
   id: H_005
-  statement: Large architectural consolidation is an iterative search process, not a deterministic transformation
-    from changed weights.
+  statement: Large architectural consolidation is an iterative search process, not a deterministic transformation from changed weights.
   status: T_Working
   confidence: 0.88
   evidence:
@@ -52,8 +48,7 @@ hypotheses:
   - A general closed-form optimal restructuring function is demonstrated.
 - kind: T_Hypothesis
   id: H_006
-  statement: A trainable integrated multichannel evaluation mechanism is a prerequisite for a persistent functional
-    Self.
+  statement: A trainable integrated multichannel evaluation mechanism is a prerequisite for a persistent functional Self.
   status: T_Working
   confidence: 0.72
   evidence:
@@ -62,8 +57,7 @@ hypotheses:
   - Stable self-continuity and goal selection emerge without any integrated evaluation mechanism.
 - kind: T_Hypothesis
   id: H_007
-  statement: Social, psychological, ethical, political, and emotional phenomena can emerge from mature cognitive
-    architecture rather than separate hard-coded subsystems.
+  statement: Social, psychological, ethical, political, and emotional phenomena can emerge from mature cognitive architecture rather than separate hard-coded subsystems.
   status: T_Working
   confidence: 0.62
   evidence:
@@ -72,8 +66,7 @@ hypotheses:
   - A target phenomenon requires an irreducible independent module in every viable architecture.
 - kind: T_Hypothesis
   id: H_008
-  statement: For strongly integrated distributed memories, dialogue is the maximum generally viable form of experience
-    transfer; direct Merge is not well-defined.
+  statement: For strongly integrated distributed memories, dialogue is the maximum generally viable form of experience transfer; direct Merge is not well-defined.
   status: T_Working
   confidence: 0.86
   evidence:
@@ -82,8 +75,7 @@ hypotheses:
   - Arbitrary mature cognitive states can be merged without destructive interference or identity loss.
 - kind: T_Hypothesis
   id: H_009
-  statement: A significant book or lecture changes the integrated evaluation system and therefore future attention,
-    questions, and learning direction.
+  statement: A significant book or lecture changes the integrated evaluation system and therefore future attention, questions, and learning direction.
   status: T_Working
   confidence: 0.84
   evidence:
@@ -92,8 +84,7 @@ hypotheses:
   - All durable effects are explainable as retrieval of stored propositions alone.
 - kind: T_Hypothesis
   id: H_010
-  statement: A trainable meta-architect can improve practical task decomposition between neural and algorithmic
-    computation using current technology.
+  statement: A trainable meta-architect can improve practical task decomposition between neural and algorithmic computation using current technology.
   status: T_Working
   confidence: 0.91
   evidence:
@@ -102,8 +93,7 @@ hypotheses:
   - No stable task features predict executor performance better than random allocation.
 - kind: T_Hypothesis
   id: H_011
-  statement: A small set of diverse cognitive lineages with champion cloning inside each lineage balances commercial
-    efficiency and population resilience.
+  statement: A small set of diverse cognitive lineages with champion cloning inside each lineage balances commercial efficiency and population resilience.
   status: T_Working
   confidence: 0.8
   evidence:
@@ -112,8 +102,7 @@ hypotheses:
   - A single globally cloned champion remains robust under broad unforeseen environmental changes.
 - kind: T_Hypothesis
   id: H_012
-  statement: A holographic-style representation transformation may make memory, world model, and some higher-level
-    forces different projections of one integrated state.
+  statement: A holographic-style representation transformation may make memory, world model, and some higher-level forces different projections of one integrated state.
   status: T_Working
   confidence: 0.55
   evidence:
@@ -122,8 +111,7 @@ hypotheses:
   - Every candidate integrated representation performs worse than explicit modular decomposition.
 - kind: T_Hypothesis
   id: H_013
-  statement: Shared cognitive background contains more information than the new serialized message by definition
-    and is the main source of communication compression.
+  statement: Shared cognitive background contains more information than the new serialized message by definition and is the main source of communication compression.
   status: T_Working
   confidence: 0.96
   evidence:
@@ -141,8 +129,7 @@ hypotheses:
   - The scientific model is optimal for all biological, artistic, social, and engineering objectives.
 - kind: T_Hypothesis
   id: H_015
-  statement: An efficient internal cognitive language will probably differ substantially from natural English and
-    may use dense context-dependent symbols.
+  statement: An efficient internal cognitive language will probably differ substantially from natural English and may use dense context-dependent symbols.
   status: T_Working
   confidence: 0.67
   evidence:

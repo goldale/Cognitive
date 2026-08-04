@@ -1,89 +1,82 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_08_01
 blocks:
-- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions and multi-step
-    scenarios. Each scenario includes predicted states, branch probabilities, temporal attributes, resource requirements,
-    and uncertainty.
+- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions and multi-step scenarios. Each scenario includes predicted states, branch probabilities, temporal attributes, resource requirements, and uncertainty.
   type: paragraph
 - title: Planning a move in a chess game
-  text: When planning a chess move, the system does not seek one move in isolation. It generates a bounded tree
-    of candidate moves, likely replies, subsequent continuations, branch probabilities or confidence estimates,
-    and time costs. Integrated Evaluation compares the resulting scenarios and selects the best available move before
-    the available thinking time expires.
+  text: When planning a chess move, the system does not seek one move in isolation. It generates a bounded tree of candidate moves, likely replies, subsequent continuations, branch probabilities or confidence estimates, and time costs. Integrated Evaluation compares the resulting scenarios and selects the best available move before the available thinking time expires.
   type: example
-- type: diagram
-  title: Bounded Planning and Action Selection
-  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects among
-    them under a processing budget.
+- title: Bounded Planning and Action Selection
+  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects among them under a processing budget.
   direction: TB
-  nodes:
-  - id: state
-    label: Current State
-    kind: state
-    status: current
-  - id: generator
-    label: Scenario Generator
-    kind: subsystem
-    status: current
-  - id: budget
-    label: Planning Budget
-    kind: control
-    status: current
-  - id: a
-    label: Alternative A
-    kind: data
-    status: current
-  - id: b
-    label: Alternative B
-    kind: data
-    status: current
-  - id: c
-    label: Alternative C
-    kind: data
-    status: current
-  - id: evaluation
-    label: Integrated Evaluation
-    kind: subsystem
-    status: current
-  - id: action
-    label: Selected Action
-    kind: external
-    status: current
   edges:
-  - from: state
+  - flow: information
+    from: state
     to: generator
-    flow: information
-  - from: budget
-    to: generator
-    flow: control
+  - flow: control
+    from: budget
     label: limits search
-  - from: generator
+    to: generator
+  - flow: information
+    from: generator
     to: a
-    flow: information
-  - from: generator
+  - flow: information
+    from: generator
     to: b
-    flow: information
-  - from: generator
+  - flow: information
+    from: generator
     to: c
-    flow: information
-  - from: a
+  - flow: information
+    from: a
     to: evaluation
-    flow: information
-  - from: b
+  - flow: information
+    from: b
     to: evaluation
-    flow: information
-  - from: c
+  - flow: information
+    from: c
     to: evaluation
-    flow: information
-  - from: evaluation
-    to: action
-    flow: evaluation
+  - flow: evaluation
+    from: evaluation
     label: best available option
-  size: standard
-  readability_priority: true
+    to: action
+  nodes:
+  - kind: data
+    id: a
+    status: current
+    label: Alternative A
+  - kind: external
+    id: action
+    status: current
+    label: Selected Action
+  - kind: data
+    id: b
+    status: current
+    label: Alternative B
+  - kind: control
+    id: budget
+    status: current
+    label: Planning Budget
+  - kind: data
+    id: c
+    status: current
+    label: Alternative C
+  - kind: subsystem
+    id: evaluation
+    status: current
+    label: Integrated Evaluation
+  - kind: subsystem
+    id: generator
+    status: current
+    label: Scenario Generator
+  - kind: state
+    id: state
+    status: current
+    label: Current State
   proportionality_priority: true
-- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option. The
-    behavioral result then re-enters the cognitive system as new input and is evaluated again.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option. The behavioral result then re-enters the cognitive system as new input and is evaluated again.
   type: paragraph
 section_id: S_14_03
-id: S_08_01

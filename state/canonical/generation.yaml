@@ -1,15 +1,15 @@
 kind: T_GenerationPolicy
-schema_version: 0.3.30
-source_of_truth:
-- state/*.yaml
-- state/content/*.yaml
-- state/canonical/*.yaml
+schema_version: 0.3.32
 generated_artifacts:
 - docs/**/*.html
 - Chapter 2 rendering
 - CHANGES.md
 - A-Z Index
 - architecture diagrams
+incremental_release_model: true
 manual_editing_forbidden:
 - docs/**/*.html
-incremental_release_model: true
+source_of_truth:
+- state/*.yaml
+- state/content/*.yaml
+- state/canonical/*.yaml

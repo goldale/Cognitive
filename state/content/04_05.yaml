@@ -1,11 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_04_05
 blocks:
-- text: A Perceptual Integration Buffer should retain a bounded, temporally organized intermediate representation
-    from which the system can construct events, query omitted detail, and integrate multiple channels.
+- text: A Perceptual Integration Buffer should retain a bounded, temporally organized intermediate representation from which the system can construct events, query omitted detail, and integrate multiple channels.
   type: paragraph
-- text: The buffer is not long-term memory. It is a staging area between high-rate preprocessing and semantic integration,
-    allowing the system to trade precision, latency, and computational cost according to the task.
+- text: The buffer is not long-term memory. It is a staging area between high-rate preprocessing and semantic integration, allowing the system to trade precision, latency, and computational cost according to the task.
   type: paragraph
 section_id: S_13_05
-id: S_04_05

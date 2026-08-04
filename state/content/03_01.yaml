@@ -1,68 +1,66 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_03_01
 blocks:
-- text: Communication does not transfer a cognitive model. A sender selects a limited fragment of its internal state
-    and transforms that fragment into a sequence suitable for an external channel. This operation is T_PartialSerialization.
+- text: Communication does not transfer a cognitive model. A sender selects a limited fragment of its internal state and transforms that fragment into a sequence suitable for an external channel. This operation is T_PartialSerialization.
   type: paragraph
-- type: diagram
-  title: Communication and Semantic Reconstruction
-  description: Communication transfers a partial serialized signal; the receiver reconstructs meaning using its
-    own context and memory.
+- title: Communication and Semantic Reconstruction
+  description: Communication transfers a partial serialized signal; the receiver reconstructs meaning using its own context and memory.
   direction: LR
-  nodes:
-  - id: model_a
-    label: Internal Model A
-    kind: state
-    status: current
-  - id: serialize
-    label: Partial Serialization
-    kind: subsystem
-    status: current
-  - id: signal
-    label: Serialized Signal
-    kind: data
-    status: current
-  - id: decode
-    label: Decoding and Preprocessing
-    kind: subsystem
-    status: current
-  - id: context
-    label: Receiver Context and Memory
-    kind: state
-    status: current
-  - id: representation
-    label: Reconstructed Semantic Representation
-    kind: state
-    status: current
-  - id: integration
-    label: Model Integration
-    kind: subsystem
-    status: current
   edges:
-  - from: model_a
+  - flow: information
+    from: model_a
     to: serialize
-    flow: information
-  - from: serialize
+  - flow: information
+    from: serialize
     to: signal
-    flow: information
-  - from: signal
+  - flow: information
+    from: signal
     to: decode
-    flow: information
-  - from: decode
+  - flow: information
+    from: decode
     to: representation
-    flow: information
-  - from: context
-    to: representation
-    flow: context
+  - flow: context
+    from: context
     label: conditions interpretation
-  - from: representation
+    to: representation
+  - flow: information
+    from: representation
     to: integration
-    flow: information
-  size: standard
-  readability_priority: true
+  nodes:
+  - kind: state
+    id: context
+    status: current
+    label: Receiver Context and Memory
+  - kind: subsystem
+    id: decode
+    status: current
+    label: Decoding and Preprocessing
+  - kind: subsystem
+    id: integration
+    status: current
+    label: Model Integration
+  - kind: state
+    id: model_a
+    status: current
+    label: Internal Model A
+  - kind: state
+    id: representation
+    status: current
+    label: Reconstructed Semantic Representation
+  - kind: subsystem
+    id: serialize
+    status: current
+    label: Partial Serialization
+  - kind: data
+    id: signal
+    status: current
+    label: Serialized Signal
   proportionality_priority: true
-- text: The receiver does not reconstruct the sender's model. It uses the received sequence to extend or reorganize
-    its own model until the message appears interpretable within the receiver's current world model.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: The receiver does not reconstruct the sender's model. It uses the received sequence to extend or reorganize its own model until the message appears interpretable within the receiver's current world model.
   type: paragraph
 - text: 'Sender Model ↓
 
@@ -76,9 +74,6 @@ blocks:
 
     Modified Receiver Model'
   type: formula
-- text: The adjective partial is essential. A mature cognitive state is too integrated and too large to serialize
-    completely through ordinary communication. The message is meaningful only against a background already present
-    in the receiver.
+- text: The adjective partial is essential. A mature cognitive state is too integrated and too large to serialize completely through ordinary communication. The message is meaningful only against a background already present in the receiver.
   type: paragraph
 section_id: S_02_01
-id: S_03_01

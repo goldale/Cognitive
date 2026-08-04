@@ -1,17 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_15_05
 blocks:
-- text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations, tasks,
-    failures, explanations, and feedback intended to move another system through a productive learning trajectory.
+- text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations, tasks, failures, explanations, and feedback intended to move another system through a productive learning trajectory.
   type: paragraph
 - text: Books, curricula, and apprenticeships are therefore programs for inducing self-generated internal changes.
   type: paragraph
-- text: 'Future cognitive systems may exchange not memories but training trajectories: ordered experiences selected
-    because they produced useful restructuring in the source system.'
+- text: 'Future cognitive systems may exchange not memories but training trajectories: ordered experiences selected because they produced useful restructuring in the source system.'
   type: paragraph
 - title: Culture as external memory
-  text: Culture stores serializations and learning trajectories that can reshape many independent cognitive systems
-    without merging them.
+  text: Culture stores serializations and learning trajectories that can reshape many independent cognitive systems without merging them.
   type: observation
 section_id: S_08_05
-id: S_15_05

@@ -1,15 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
-blocks:
-- type: paragraph
-  text: This chapter defines a prospective hardware realization path. It does not replace the technology-independent
-    cognitive architecture and must preserve all canonical invariants.
-- type: principle
-  title: Technology-neutral core
-  text: Associative Memory, READ, UPDATE, Memory State, Memory Vector, Offline Consolidation, and semantic basis
-    maintenance remain logical contracts independent of a specific material platform.
-- type: paragraph
-  text: The preferred research direction is a distributed dense photonic-spintronic associative tensor memory combining
-    photonic transport and transformation with nonvolatile programmable material state.
-section_id: S_18_06
+schema_version: 0.3.32
 id: S_18_06
+blocks:
+- text: This chapter defines a prospective hardware realization path. It does not replace the technology-independent cognitive architecture and must preserve all canonical invariants.
+  type: paragraph
+- title: Technology-neutral core
+  text: Associative Memory, READ, UPDATE, Memory State, Memory Vector, Offline Consolidation, and semantic basis maintenance remain logical contracts independent of a specific material platform.
+  type: principle
+- text: The preferred research direction is a distributed dense photonic-spintronic associative tensor memory combining photonic transport and transformation with nonvolatile programmable material state.
+  type: paragraph
+section_id: S_18_06

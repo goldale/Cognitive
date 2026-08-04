@@ -1,21 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_01_01
 blocks:
-- text: This document develops an engineering architecture for long-lived cognitive systems capable of accumulating
-    experience, reorganizing knowledge, preserving continuity, and improving throughout an operational lifetime
-    measured in years or decades.
+- text: This document develops an engineering architecture for long-lived cognitive systems capable of accumulating experience, reorganizing knowledge, preserving continuity, and improving throughout an operational lifetime measured in years or decades.
   type: paragraph
-- text: The immediate objective is not to claim a finished general intelligence architecture. The objective is to
-    identify the next implementable architectural changes that provide the greatest increase in practical utility
-    for foreseeable engineering cost while increasing the number of useful future development paths.
+- text: The immediate objective is not to claim a finished general intelligence architecture. The objective is to identify the next implementable architectural changes that provide the greatest increase in practical utility for foreseeable engineering cost while increasing the number of useful future development paths.
   type: paragraph
 - title: Primary optimization criterion
-  text: Select the next architectural step by the ratio of practical utility to implementation cost, adjusted for
-    risk and for the additional future options enabled by that step.
+  text: Select the next architectural step by the ratio of practical utility to implementation cost, adjusted for risk and for the additional future options enabled by that step.
   type: principle
-- text: The project therefore treats existing neural models, classical programs, storage systems, version-control
-    systems, and document generators as reusable components. Novel work is concentrated on their organization, interfaces,
-    persistent state, and long-term evolution.
+- text: The project therefore treats existing neural models, classical programs, storage systems, version-control systems, and document generators as reusable components. Novel work is concentrated on their organization, interfaces, persistent state, and long-term evolution.
   type: paragraph
 section_id: S_01_01
-id: S_01_01

@@ -1,10 +1,10 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_21_02
 blocks:
-- type: paragraph
-  text: Importance Estimation should be studied before consolidation and replay policies are fixed.
-- type: table
-  headers:
+- text: Importance Estimation should be studied before consolidation and replay policies are fixed.
+  type: paragraph
+- headers:
   - Experiment
   - Primary measurement
   - Failure signal
@@ -21,9 +21,8 @@ blocks:
   - - Interference prediction
     - Ability to identify knowledge likely to cause destructive overlap
     - Unexpected degradation after UPDATE or consolidation
-- type: note
-  title: Acceptance direction
-  text: No single scalar is assumed to be sufficient. The representation of importance remains an open design choice
-    until experiments justify it.
+  type: table
+- title: Acceptance direction
+  text: No single scalar is assumed to be sufficient. The representation of importance remains an open design choice until experiments justify it.
+  type: note
 section_id: S_21_02
-id: S_21_02

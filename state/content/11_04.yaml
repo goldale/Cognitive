@@ -1,68 +1,64 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_11_04
 blocks:
-- text: After the memory representation becomes sufficiently stable, representative Memory Vectors can be analyzed
-    through covariance and correlation structure. Strong off-diagonal dependence reveals redundant or entangled
-    coordinates.
+- text: After the memory representation becomes sufficiently stable, representative Memory Vectors can be analyzed through covariance and correlation structure. Strong off-diagonal dependence reveals redundant or entangled coordinates.
   type: paragraph
-- type: diagram
-  title: Representation Optimization Pipeline
+- title: Representation Optimization Pipeline
   description: Offline optimization changes the latent coordinate system while preserving represented knowledge.
   direction: TB
+  edges:
+  - flow: information
+    from: samples
+    to: cov
+  - flow: information
+    from: cov
+    to: white
+  - flow: information
+    from: white
+    to: orth
+  - flow: information
+    from: orth
+    to: sparse
+  - flow: optimization
+    from: sparse
+    label: preserves semantics
+    to: canonical
   nodes:
-  - id: samples
-    label: 'Representative
-
-      Memory Vectors'
-    kind: data
+  - kind: interface
+    id: canonical
     status: current
-  - id: cov
-    label: 'Covariance /
-
-      Correlation Analysis'
-    kind: subsystem
-    status: current
-  - id: white
-    label: Whitening
-    kind: subsystem
-    status: current
-  - id: orth
-    label: 'Orthogonal
-
-      Coordinates'
-    kind: subsystem
-    status: current
-  - id: sparse
-    label: 'Sparse Basis
-
-      Rotation'
-    kind: subsystem
-    status: current
-  - id: canonical
     label: 'Updated
 
       Canonical Basis'
-    kind: interface
+  - kind: subsystem
+    id: cov
     status: current
-  edges:
-  - from: samples
-    to: cov
-    flow: information
-  - from: cov
-    to: white
-    flow: information
-  - from: white
-    to: orth
-    flow: information
-  - from: orth
-    to: sparse
-    flow: information
-  - from: sparse
-    to: canonical
-    flow: optimization
-    label: preserves semantics
-  size: standard
-  readability_priority: true
+    label: 'Covariance /
+
+      Correlation Analysis'
+  - kind: subsystem
+    id: orth
+    status: current
+    label: 'Orthogonal
+
+      Coordinates'
+  - kind: data
+    id: samples
+    status: current
+    label: 'Representative
+
+      Memory Vectors'
+  - kind: subsystem
+    id: sparse
+    status: current
+    label: 'Sparse Basis
+
+      Rotation'
+  - kind: subsystem
+    id: white
+    status: current
+    label: Whitening
   proportionality_priority: true
   rank_groups:
   - - samples
@@ -71,8 +67,9 @@ blocks:
   - - canonical
     - sparse
     - orth
-- text: Whitening or related basis transformations can reduce second-order correlation without changing the knowledge
-    represented.
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: Whitening or related basis transformations can reduce second-order correlation without changing the knowledge represented.
   type: paragraph
 section_id: S_17_04
-id: S_11_04

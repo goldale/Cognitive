@@ -1,62 +1,64 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_12_03
 blocks:
-- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system
-    must generate candidate organizations, evaluate them, retain useful changes, and repeat.
+- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
   type: paragraph
-- type: diagram
-  title: Functional and Structural Learning
-  description: Functional learning changes active weights; structural learning changes which connections exist and
-    how topology is organized.
+- title: Functional and Structural Learning
+  description: Functional learning changes active weights; structural learning changes which connections exist and how topology is organized.
   direction: TB
-  nodes:
-  - id: experience
-    label: Experience
-    kind: external
-    status: current
-  - id: functional
-    label: Functional Learning
-    kind: subsystem
-    status: current
-  - id: weights
-    label: Weight Updates
-    kind: state
-    status: current
-  - id: signals
-    label: Connection State Signals
-    kind: state
-    status: current
-  - id: structural
-    label: Structural Learning
-    kind: future
-    status: future
-  - id: topology
-    label: Topology Changes
-    kind: storage
-    status: future
   edges:
-  - from: experience
+  - flow: information
+    from: experience
     to: functional
-    flow: information
-  - from: functional
-    to: weights
-    flow: learning
+  - flow: learning
+    from: functional
     label: online adaptation
-  - from: experience
+    to: weights
+  - flow: information
+    from: experience
     to: signals
-    flow: information
-  - from: signals
-    to: structural
-    flow: learning
+  - flow: learning
+    from: signals
     label: offline evidence
-  - from: structural
-    to: topology
-    flow: optimization
+    to: structural
+  - flow: optimization
+    from: structural
     label: create / remove links
-  size: standard
-  readability_priority: true
+    to: topology
+  nodes:
+  - kind: external
+    id: experience
+    status: current
+    label: Experience
+  - kind: subsystem
+    id: functional
+    status: current
+    label: Functional Learning
+  - kind: state
+    id: signals
+    status: current
+    label: Connection State Signals
+  - kind: future
+    id: structural
+    status: future
+    label: Structural Learning
+  - kind: storage
+    id: topology
+    status: future
+    label: Topology Changes
+  - kind: state
+    id: weights
+    status: current
+    label: Weight Updates
   proportionality_priority: true
-- text: 'Current Architecture ↓
+  readability_priority: true
+  size: standard
+  type: diagram
+- proportionality_priority: true
+  readability_priority: true
+  size: standard
+  text: 'Current Architecture ↓
 
     Generate Candidate ↓
 
@@ -66,15 +68,8 @@ blocks:
 
     Repeat'
   type: diagram
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
-- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories,
-    different retention thresholds, or different executor assignments.'
+- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories, different retention thresholds, or different executor assignments.'
   type: paragraph
-- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge,
-    and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not
-    automatically superior.
+- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not automatically superior.
   type: paragraph
 section_id: S_05_03
-id: S_12_03

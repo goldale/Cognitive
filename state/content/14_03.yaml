@@ -1,76 +1,72 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_14_03
 blocks:
 - text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
   type: paragraph
-- type: diagram
-  title: Hybrid Neural and Algorithmic Processing
-  description: Learned components provide semantic and probabilistic representations; classical algorithms enforce
-    explicit constraints and deterministic control.
+- title: Hybrid Neural and Algorithmic Processing
+  description: Learned components provide semantic and probabilistic representations; classical algorithms enforce explicit constraints and deterministic control.
   direction: TB
-  nodes:
-  - id: sensor
-    label: Input / Sensors
-    kind: external
-    status: current
-  - id: neural
-    label: Neural Perception
-    kind: subsystem
-    status: current
-  - id: state
-    label: Probabilistic Semantic State
-    kind: state
-    status: current
-  - id: algorithm
-    label: Classical Algorithm / State Machine
-    kind: subsystem
-    status: current
-  - id: plan
-    label: Constraint-Satisfying Plan
-    kind: data
-    status: current
-  - id: controller
-    label: Deterministic Controller
-    kind: subsystem
-    status: current
-  - id: action
-    label: Action
-    kind: external
-    status: current
   edges:
-  - from: sensor
+  - flow: information
+    from: sensor
     to: neural
-    flow: information
-  - from: neural
+  - flow: information
+    from: neural
     to: state
-    flow: information
-  - from: state
+  - flow: information
+    from: state
     to: algorithm
-    flow: information
-  - from: algorithm
-    to: plan
-    flow: control
+  - flow: control
+    from: algorithm
     label: explicit rules
-  - from: plan
+    to: plan
+  - flow: information
+    from: plan
     to: controller
-    flow: information
-  - from: controller
+  - flow: information
+    from: controller
     to: action
-    flow: information
-  size: standard
-  readability_priority: true
+  nodes:
+  - kind: external
+    id: action
+    status: current
+    label: Action
+  - kind: subsystem
+    id: algorithm
+    status: current
+    label: Classical Algorithm / State Machine
+  - kind: subsystem
+    id: controller
+    status: current
+    label: Deterministic Controller
+  - kind: subsystem
+    id: neural
+    status: current
+    label: Neural Perception
+  - kind: data
+    id: plan
+    status: current
+    label: Constraint-Satisfying Plan
+  - kind: external
+    id: sensor
+    status: current
+    label: Input / Sensors
+  - kind: state
+    id: state
+    status: current
+    label: Probabilistic Semantic State
   proportionality_priority: true
-- text: Sensors -> Neural Perception -> Probabilistic State -> Algorithmic Constraint Solver -> Planned Trajectory
-    -> Learned Correction -> Deterministic Controller
+  readability_priority: true
+  size: standard
   type: diagram
-  size: standard
+- proportionality_priority: true
   readability_priority: true
-  proportionality_priority: true
-- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants,
-    accounting, and discrete protocol behavior remain explicit.
+  size: standard
+  text: Sensors -> Neural Perception -> Probabilistic State -> Algorithmic Constraint Solver -> Planned Trajectory -> Learned Correction -> Deterministic Controller
+  type: diagram
+- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants, accounting, and discrete protocol behavior remain explicit.
   type: paragraph
-- text: This division provides interpretability and guarantees where they matter without forcing perception or language
-    into brittle hand-written rules.
+- text: This division provides interpretability and guarantees where they matter without forcing perception or language into brittle hand-written rules.
   type: paragraph
 section_id: S_09_03
-id: S_14_03

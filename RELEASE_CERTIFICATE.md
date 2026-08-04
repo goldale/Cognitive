@@ -1,23 +1,20 @@
-# Release Certificate - cognitive-0.3.30
+# Release Certificate - cognitive-0.3.32
 
-- Version: 0.3.30
+- Version: 0.3.32
 - Canonical source: YAML
 - Validation: passed
 - Test suite: 32 tests passed
 - Modular HTML documentation: generated
 - PDF documentation: generated and rendered for visual verification
+- PDF pages: 220
 - A-Z Index: generated
 - Monolithic combined HTML: absent
-- Runtime semantic dimensionality: fixed per release
 - Canonical READ/UPDATE separation: preserved
 - Release archive policy: clean canonical snapshot
 
-## Principal architectural additions
+## Principal architectural changes
 
-- Deterministic localized semantic basis maintenance.
-- Effective Semantic Dimensionality.
-- Dense Architecture with Progressive Semantic Compaction.
-- Prospective distributed photonic-spintronic associative tensor memory.
-- Query and response tensors up to 1024 x 1024 x 8.
-- 256 processing layers.
-- INT4, INT8, and INT16 precision tiers.
+- Hybrid associative retrieval combining vector candidates, typed graph relations, exact storage, and dynamic activation.
+- Explicit distinction between semantic similarity and causal or dependency relations.
+- Constraint-first action admissibility followed by normalized estimation and Integrated Evaluation.
+- Explicit registration of unresolved implementation choices as open questions.

@@ -1,18 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_17_05
 blocks:
-- text: HTML is never the canonical source. The generator reads chapter structure and semantic content blocks from
-    Research State.
+- text: HTML is never the canonical source. The generator reads chapter structure and semantic content blocks from Research State.
   type: paragraph
-- text: Each page contains a single-line navigation bar with Up, Previous, Contents, A–Z Index, and Next links at
-    both the top and bottom. Large chapters use a directory index and section files; small chapters can remain a
-    single file.
+- text: Each page contains a single-line navigation bar with Up, Previous, Contents, A–Z Index, and Next links at both the top and bottom. Large chapters use a directory index and section files; small chapters can remain a single file.
   type: paragraph
-- text: Semantic CSS classes identify Tokens, definitions, hypotheses, observations, examples, notes, warnings,
-    formulas, and principles. Presentation can change without editing content.
+- text: Semantic CSS classes identify Tokens, definitions, hypotheses, observations, examples, notes, warnings, formulas, and principles. Presentation can change without editing content.
   type: paragraph
-- text: The current stylesheet follows a restrained ISO, RFC, and W3C-inspired layout with a fixed reading width
-    and a small left indent for body text.
+- text: The current stylesheet follows a restrained ISO, RFC, and W3C-inspired layout with a fixed reading width and a small left indent for body text.
   type: paragraph
 section_id: S_11_05
-id: S_17_05

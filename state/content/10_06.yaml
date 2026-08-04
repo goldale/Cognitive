@@ -1,360 +1,430 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
 id: S_10_06
-section_id: S_10_06
 blocks:
-- type: paragraph
-  text: The required Associative Memory is not available as one ready-made component. However, several established
-    families already provide important parts of the target behavior. The practical implementation strategy is therefore
-    to combine existing mechanisms while explicitly engineering the missing state, interface, learning, and lifecycle
-    properties.
-- type: diagram
-  title: Associative Memory Implementation Gap Map
-  description: Existing associative, vector, graph, and exact-storage technologies provide complementary capabilities.
-    Cognitive adds dynamic Memory State, spreading activation, explicit READ and UPDATE semantics, canonical Memory
-    Vector projection, feedback-only state changes, and future structural optimization.
+- text: The required Associative Memory is not available as one ready-made component. However, several established families
+    already provide important parts of the target behavior. The practical implementation strategy is therefore to combine
+    existing mechanisms while explicitly engineering the missing state, interface, learning, and lifecycle properties.
+  type: paragraph
+- title: Associative Memory Implementation Gap Map
+  description: Existing associative, vector, graph, and exact-storage technologies provide complementary capabilities. Cognitive
+    adds dynamic Memory State, spreading activation, explicit READ and UPDATE semantics, canonical Memory Vector projection,
+    feedback-only state changes, and future structural optimization.
   direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
-  nodes:
-  - id: existing
-    label: Existing Building Blocks
-    kind: external
-    status: current
-  - id: hopfield
-    label: Hopfield / Dense Associative Memory
-    kind: subsystem
-    status: current
-  - id: vector
-    label: Vector Search / ANN
-    kind: subsystem
-    status: current
-  - id: graph
-    label: Graph / Knowledge Storage
-    kind: subsystem
-    status: current
-  - id: kv
-    label: Key–Value / Hash Storage
-    kind: storage
-    status: current
-  - id: integration
-    label: Hybrid Associative Integration Layer
-    kind: subsystem
-    status: experimental
-  - id: target
-    label: Cognitive Associative Memory
-    kind: interface
-    status: future
   edges:
-  - from: existing
+  - flow: information
+    from: existing
     to: hopfield
-    flow: information
-  - from: existing
+  - flow: information
+    from: existing
     to: vector
-    flow: information
-  - from: existing
+  - flow: information
+    from: existing
     to: graph
-    flow: information
-  - from: existing
+  - flow: information
+    from: existing
     to: kv
-    flow: information
-  - from: hopfield
-    to: integration
-    flow: information
+  - flow: information
+    from: hopfield
     label: pattern completion
-  - from: vector
     to: integration
-    flow: information
+  - flow: information
+    from: vector
     label: candidate retrieval
-  - from: graph
     to: integration
-    flow: information
+  - flow: information
+    from: graph
     label: relations
-  - from: kv
     to: integration
-    flow: information
+  - flow: information
+    from: kv
     label: exact large-scale storage
-  - from: integration
-    to: target
-    flow: optimization
+    to: integration
+  - flow: optimization
+    from: integration
     label: add missing architecture
-- type: heading
-  level: 3
-  text: Hopfield and Dense Associative Memory
-- type: paragraph
-  text: Classical Hopfield networks, Dense Associative Memory, and modern continuous associative-memory formulations
-    already provide content-addressable retrieval, pattern completion, and convergence toward attractor states.
-    These mechanisms are useful candidates for the neural activation core.
-- type: paragraph
-  text: They still require continual knowledge insertion, explicit separation of short-term activation from long-term
-    structure, dynamic association creation and removal, controlled forgetting, scalable external storage, and the
-    Cognitive interface contract in which only READ produces a Memory Vector.
-- type: heading
-  level: 3
-  text: Sparse Distributed Memory
-- type: paragraph
-  text: Sparse Distributed Memory provides distributed storage, retrieval from incomplete cues, and graceful degradation
-    under partial damage. These properties fit the requirement that knowledge should not reside in one fragile location.
-- type: paragraph
-  text: It must be extended with learned semantic addressing, weighted spreading activation, evolving topology,
-    importance and usage statistics, and canonical projection from active Memory State into a Memory Vector.
-- type: heading
-  level: 3
-  text: Vector Search and Approximate Nearest-Neighbour Systems
-- type: paragraph
-  text: Vector databases and approximate nearest-neighbour libraries can efficiently retrieve candidate memory elements
-    from very large collections. They are valuable retrieval accelerators but are not sufficient as Associative
-    Memory by themselves.
-- type: paragraph
-  text: The missing functions include persistent dynamic activation, multi-hop association, state changes caused
-    by feedback, integration of multiple retrieved elements into one Memory State, and explicit READ projection
-    into the canonical Memory Vector.
-- type: heading
-  level: 3
-  text: Graph and Knowledge Storage
-- type: paragraph
-  text: Graph databases and knowledge graphs provide explicit nodes, typed relations, traversal, indexing, and durable
-    structured storage. They can serve as a structural substrate for associations and exact relationships.
-- type: paragraph
-  text: Cognitive additionally requires learned connection strengths, activation propagation, implicit distributed
-    knowledge, online formation of associations, short-term state, and a latent canonical interface to the Transformer.
-- type: heading
-  level: 3
-  text: Key–Value and Hash Storage
-- type: paragraph
-  text: Key–value systems can retain enormous volumes of exact data economically. Associative mechanisms may identify
-    relevant keys, while conventional storage retains documents, events, binary objects, exact values, and large
-    structured records.
-- type: paragraph
-  text: This division allows neural components to perform semantic association while classical storage performs
-    reliable, inexpensive retention. It also preserves the project principle that neural networks and deterministic
-    algorithms should be used where each is strongest.
-- type: heading
-  level: 3
-  text: Recommended Initial Hybrid
-- type: paragraph
-  text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates neural
-    and graph associations; vector search proposes candidates; graph traversal and spreading activation construct
-    dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation projects the
-    resulting state into the canonical Memory Vector.'
-- type: diagram
-  title: Recommended Initial Hybrid — Architecture
-  description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning Pipeline,
-    Associative Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary
-    are shown as distinct architectural responsibilities.
-  direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
+    to: target
   nodes:
-  - id: transformer
-    label: 'Transformer
-
-      Semantic Reasoning Engine
-
-      Semantic Teacher'
-    kind: subsystem
+  - kind: external
+    id: existing
     status: current
-  - id: feedback
-    label: Semantic Feedback Learning Pipeline
-    kind: subsystem
+    label: Existing Building Blocks
+  - kind: subsystem
+    id: graph
     status: current
-  - id: memory
-    label: Associative Memory
-    kind: subsystem
+    label: Graph / Knowledge Storage
+  - kind: subsystem
+    id: hopfield
     status: current
-  - id: index
-    label: 'Associative Index
-
-      HNSW / Modern Hopfield / Vector Search'
-    kind: subsystem
+    label: Hopfield / Dense Associative Memory
+  - kind: subsystem
+    id: integration
     status: experimental
-  - id: graph_store
+    label: Hybrid Associative Integration Layer
+  - kind: storage
+    id: kv
+    status: current
+    label: Key–Value / Hash Storage
+  - kind: interface
+    id: target
+    status: future
+    label: Cognitive Associative Memory
+  - kind: subsystem
+    id: vector
+    status: current
+    label: Vector Search / ANN
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- level: 3
+  text: Hopfield and Dense Associative Memory
+  type: heading
+- text: Classical Hopfield networks, Dense Associative Memory, and modern continuous associative-memory formulations already
+    provide content-addressable retrieval, pattern completion, and convergence toward attractor states. These mechanisms are
+    useful candidates for the neural activation core.
+  type: paragraph
+- text: They still require continual knowledge insertion, explicit separation of short-term activation from long-term structure,
+    dynamic association creation and removal, controlled forgetting, scalable external storage, and the Cognitive interface
+    contract in which only READ produces a Memory Vector.
+  type: paragraph
+- level: 3
+  text: Sparse Distributed Memory
+  type: heading
+- text: Sparse Distributed Memory provides distributed storage, retrieval from incomplete cues, and graceful degradation under
+    partial damage. These properties fit the requirement that knowledge should not reside in one fragile location.
+  type: paragraph
+- text: It must be extended with learned semantic addressing, weighted spreading activation, evolving topology, importance
+    and usage statistics, and canonical projection from active Memory State into a Memory Vector.
+  type: paragraph
+- level: 3
+  text: Vector Search and Approximate Nearest-Neighbour Systems
+  type: heading
+- type: paragraph
+  text: Vector databases and approximate nearest-neighbour systems are effective candidate-retrieval mechanisms. They find
+    semantically similar past events even when wording differs, and they can expose historical execution cost, hidden risks,
+    and prior outcomes that improve current estimates.
+- type: paragraph
+  text: Vector similarity does not identify the type or direction of a relationship. Proximity alone cannot determine that
+    one step creates an API required by another, that one event causes another, or that one action blocks a dependent operation.
+    Vector search therefore remains a retrieval accelerator rather than a complete Associative Memory.
+- type: paragraph
+  text: The accepted implementation rule is that vector retrieval may propose candidate memory elements during READ, but it
+    must not define causality, dependency, or final relevance by itself. Candidate evidence must be integrated with explicit
+    relations, dynamic activation, exact stored content, and the current Memory State before projection into a Memory Vector.
+- level: 3
+  text: Graph and Knowledge Storage
+  type: heading
+- type: paragraph
+  text: Graph databases and knowledge graphs provide explicit nodes, typed and directed relations, traversal, dependency representation,
+    and durable structural storage. They are appropriate for relations such as depends on, blocks, enables, precedes, contradicts,
+    and is a candidate cause of.
+- type: paragraph
+  text: A graph relation must not be treated as proof of causality merely because it is labelled causal. Causal assertions
+    require provenance, confidence, supporting observations, intervention evidence where available, or an explicit status
+    as a causal hypothesis.
+- type: paragraph
+  text: Graph storage is also not sufficient as Associative Memory by itself. Cognitive additionally requires learned connection
+    strengths, distributed latent knowledge, short-term activation, spreading activation, online association formation, integration
+    of several retrieved elements, and explicit READ projection into the canonical Memory Vector.
+- level: 3
+  text: Key–Value and Hash Storage
+  type: heading
+- text: Key–value systems can retain enormous volumes of exact data economically. Associative mechanisms may identify relevant
+    keys, while conventional storage retains documents, events, binary objects, exact values, and large structured records.
+  type: paragraph
+- text: This division allows neural components to perform semantic association while classical storage performs reliable,
+    inexpensive retention. It also preserves the project principle that neural networks and deterministic algorithms should
+    be used where each is strongest.
+  type: paragraph
+- type: heading
+  level: 3
+  text: Accepted Architectural Conclusions
+- type: list
+  items:
+  - Vector search is retained as a semantic candidate-retrieval mechanism, not as the definition of Associative Memory.
+  - Typed graph relations are required for explicit dependency, blocking, enabling, temporal, and causal-hypothesis structure.
+  - Exact key-value or document storage remains separate from associative indexing and dynamic activation.
+  - READ integrates vector candidates, graph relations, exact content, and transient associative activation into Memory State
+    before producing a Memory Vector.
+  - UPDATE remains the only operation permitted to modify persistent memory and learns only from Transformer-produced Semantic
+    Representations.
+- type: heading
+  level: 3
+  text: Open Questions Requiring Experimental Resolution
+- type: observation
+  title: Discussion status
+  text: 'The following choices are intentionally not canonicalized in this release: the relative weighting of vector similarity
+    and graph evidence; the representation and validation of causal confidence; the preferred graph traversal and spreading-activation
+    algorithm; and the point at which learned associations should become explicit typed relations. These questions require
+    experiments and must be recorded rather than silently resolved by implementation convenience.'
+- level: 3
+  text: Recommended Initial Hybrid
+  type: heading
+- text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates neural and graph
+    associations; vector search proposes candidates; graph traversal and spreading activation construct dynamic Memory State;
+    key–value storage supplies exact content; and an explicit READ operation projects the resulting state into the canonical
+    Memory Vector.'
+  type: paragraph
+- type: heading
+  level: 3
+  text: Associative Memory READ and UPDATE Integration Path
+- type: paragraph
+  text: The following scheme is the canonical explanatory view of the recommended initial implementation. It extends a conventional
+    GraphRAG pipeline by placing vector retrieval, typed graph traversal, and pattern matching inside an explicit non-destructive
+    READ operation. Their results do not go directly to the Transformer as retrieved text. They first participate in spreading
+    activation, form a transient Dynamic Memory State, and are then projected into the canonical Memory Vector.
+- type: image
+  src: ../associative-memory-read-update-path.png
+  alt: Cognitive architecture diagram showing the Associative Memory READ path, spreading activation, Dynamic Memory State,
+    Memory Vector projection, Transformer, Integrated Evaluation, tool execution, and the separate UPDATE path.
+  title: Cognitive Architecture — Associative Memory READ Path
+  caption: Hybrid vector and graph retrieval is only the first stage of READ. Spreading activation integrates retrieved elements
+    and relations into Dynamic Memory State. Explicit projection produces the Memory Vector consumed by the Transformer. Only
+    the separate UPDATE path may modify persistent Memory State.
+- type: heading
+  level: 4
+  text: Interpretation of the Scheme
+- type: list
+  items:
+  - The Encoder and Query Builder construct a semantic query; they do not write to memory.
+  - Vector Retrieval answers what is semantically similar, while Graph Traversal exposes typed dependency, temporal, enabling,
+    blocking, contradiction, and causal-hypothesis relations.
+  - Pattern Matching contributes structural, temporal, and episodic analogues that may not be the nearest vector neighbours.
+  - Spreading Activation propagates relevance through retrieved elements and relations without changing persistent memory.
+  - Dynamic Memory State is the unified transient state created by READ; it may contain retrieved nodes, exact content, activated
+    relations, confidence, provenance, temporal attributes, importance, and working-memory links.
+  - Memory Vector Projection is an explicit READ operation. It aggregates and maps Dynamic Memory State into the stable interface
+    consumed by the Transformer.
+  - Integrated Evaluation and Tool Selection occur after memory reconstruction because action selection must use the reconstructed
+    context rather than raw retrieval results.
+  - Execution results are converted by the Transformer into Semantic Representations and may enter the Semantic Feedback Learning
+    Pipeline.
+  - Only UPDATE may validate, merge, reject, defer, add, strengthen, or otherwise modify persistent Memory State. Offline
+    Consolidation remains structurally separate.
+- type: principle
+  title: GraphRAG is an implementation substrate, not the memory definition
+  text: Vector databases, graph databases, and exact document stores provide complementary retrieval and storage mechanisms.
+    Cognitive Associative Memory is defined by the complete READ reconstruction and UPDATE learning contracts, including spreading
+    activation, Dynamic Memory State, explicit Memory Vector projection, and strict READ/UPDATE separation.
+- title: Recommended Initial Hybrid — Architecture
+  description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning Pipeline, Associative
+    Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary are shown as distinct
+    architectural responsibilities.
+  direction: TB
+  edges:
+  - flow: information
+    from: memory
+    to: index
+  - flow: information
+    from: memory
+    to: graph_store
+  - flow: information
+    from: index
+    label: retrieved latent state
+    to: reconstruction
+  - flow: information
+    from: graph_store
+    label: exact and relational context
+    to: reconstruction
+  - flow: information
+    from: reconstruction
+    to: tensor
+  - flow: information
+    from: tensor
+    to: projection
+  - flow: information
+    from: projection
+    label: Memory Vector
+    to: transformer
+  - flow: feedback
+    from: transformer
+    label: Semantic Representation
+    to: feedback
+  - flow: feedback
+    from: feedback
+    label: validated semantic state
+    to: compression
+  - flow: feedback
+    from: compression
+    label: z_new
+    to: staging
+  - flow: feedback
+    from: staging
+    label: accepted UPDATE
+    to: memory
+  nodes:
+  - kind: subsystem
+    id: compression
+    status: experimental
+    label: 'Latent Compression Engine
+
+      UPDATE-side encoding'
+  - kind: subsystem
+    id: feedback
+    status: current
+    label: Semantic Feedback Learning Pipeline
+  - kind: storage
+    id: graph_store
+    status: experimental
     label: 'Graph and Exact Storage
 
       Associations / Relations / Key–Value Content'
-    kind: storage
+  - kind: subsystem
+    id: index
     status: experimental
-  - id: reconstruction
+    label: 'Associative Index
+
+      HNSW / Modern Hopfield / Vector Search'
+  - kind: subsystem
+    id: memory
+    status: current
+    label: Associative Memory
+  - kind: subsystem
+    id: projection
+    status: experimental
+    label: Memory Vector Projection
+  - kind: subsystem
+    id: reconstruction
+    status: experimental
     label: 'Tensor Reconstruction Engine
 
       READ-side transient reconstruction'
-    kind: subsystem
+  - kind: subsystem
+    id: staging
     status: experimental
-  - id: tensor
+    label: 'Staging Area
+
+      Validation / Merge / Reject / Defer'
+  - kind: state
+    id: tensor
+    status: experimental
     label: 'Memory Tensor
 
       1024 × 1024 × 8
 
       Transient READ state'
-    kind: state
-    status: experimental
-  - id: projection
-    label: Memory Vector Projection
-    kind: subsystem
-    status: experimental
-  - id: compression
-    label: 'Latent Compression Engine
-
-      UPDATE-side encoding'
-    kind: subsystem
-    status: experimental
-  - id: staging
-    label: 'Staging Area
-
-      Validation / Merge / Reject / Defer'
-    kind: subsystem
-    status: experimental
-  edges:
-  - from: memory
-    to: index
-    flow: information
-  - from: memory
-    to: graph_store
-    flow: information
-  - from: index
-    to: reconstruction
-    flow: information
-    label: retrieved latent state
-  - from: graph_store
-    to: reconstruction
-    flow: information
-    label: exact and relational context
-  - from: reconstruction
-    to: tensor
-    flow: information
-  - from: tensor
-    to: projection
-    flow: information
-  - from: projection
-    to: transformer
-    flow: information
-    label: Memory Vector
-  - from: transformer
-    to: feedback
-    flow: feedback
-    label: Semantic Representation
-  - from: feedback
-    to: compression
-    flow: feedback
-    label: validated semantic state
-  - from: compression
-    to: staging
-    flow: feedback
-    label: z_new
-  - from: staging
-    to: memory
-    flow: feedback
-    label: accepted UPDATE
-- type: diagram
-  title: Recommended Initial Hybrid — Operational Flows
-  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory
-    Vector. The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic
-    Feedback Learning Pipeline. It does not return a Memory Vector.
-  direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
-  nodes:
-  - id: query
-    label: Query
-    kind: interface
+  - kind: subsystem
+    id: transformer
     status: current
-  - id: read_index
-    label: 'Associative Index
+    label: 'Transformer
 
-      Candidate Retrieval'
-    kind: subsystem
+      Semantic Reasoning Engine
+
+      Semantic Teacher'
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- title: Recommended Initial Hybrid — Operational Flows
+  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory Vector.
+    The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic Feedback Learning
+    Pipeline. It does not return a Memory Vector.
+  direction: TB
+  edges:
+  - flow: information
+    from: query
+    to: read_index
+  - flow: information
+    from: read_index
+    to: read_context
+  - flow: information
+    from: read_context
+    to: read_reconstruct
+  - flow: information
+    from: read_reconstruct
+    to: read_tensor
+  - flow: information
+    from: read_tensor
+    to: read_vector
+  - flow: information
+    from: read_vector
+    to: flow_transformer
+  - flow: feedback
+    from: flow_transformer
+    to: semantic
+  - flow: feedback
+    from: semantic
+    to: learning
+  - flow: feedback
+    from: learning
+    to: encoder
+  - flow: feedback
+    from: encoder
+    to: flow_staging
+  - flow: feedback
+    from: flow_staging
+    to: state
+  nodes:
+  - kind: subsystem
+    id: encoder
     status: experimental
-  - id: read_context
+    label: Latent Compression Engine
+  - kind: subsystem
+    id: flow_staging
+    status: experimental
+    label: Staging Area
+  - kind: subsystem
+    id: flow_transformer
+    status: current
+    label: Transformer
+  - kind: subsystem
+    id: learning
+    status: current
+    label: Semantic Feedback Learning Pipeline
+  - kind: interface
+    id: query
+    status: current
+    label: Query
+  - kind: state
+    id: read_context
+    status: experimental
     label: 'Activated Semantic Context
 
       Graph Traversal / Exact Content'
-    kind: state
+  - kind: subsystem
+    id: read_index
     status: experimental
-  - id: read_reconstruct
+    label: 'Associative Index
+
+      Candidate Retrieval'
+  - kind: subsystem
+    id: read_reconstruct
+    status: experimental
     label: Tensor Reconstruction Engine
-    kind: subsystem
+  - kind: state
+    id: read_tensor
     status: experimental
-  - id: read_tensor
     label: 'Memory Tensor
 
       1024 × 1024 × 8'
-    kind: state
-    status: experimental
-  - id: read_vector
+  - kind: interface
+    id: read_vector
+    status: current
     label: Memory Vector
-    kind: interface
+  - kind: state
+    id: semantic
     status: current
-  - id: flow_transformer
-    label: Transformer
-    kind: subsystem
-    status: current
-  - id: semantic
     label: Semantic Representation
-    kind: state
+  - kind: storage
+    id: state
     status: current
-  - id: learning
-    label: Semantic Feedback Learning Pipeline
-    kind: subsystem
-    status: current
-  - id: encoder
-    label: Latent Compression Engine
-    kind: subsystem
-    status: experimental
-  - id: flow_staging
-    label: Staging Area
-    kind: subsystem
-    status: experimental
-  - id: state
     label: Memory State
-    kind: storage
-    status: current
-  edges:
-  - from: query
-    to: read_index
-    flow: information
-  - from: read_index
-    to: read_context
-    flow: information
-  - from: read_context
-    to: read_reconstruct
-    flow: information
-  - from: read_reconstruct
-    to: read_tensor
-    flow: information
-  - from: read_tensor
-    to: read_vector
-    flow: information
-  - from: read_vector
-    to: flow_transformer
-    flow: information
-  - from: flow_transformer
-    to: semantic
-    flow: feedback
-  - from: semantic
-    to: learning
-    flow: feedback
-  - from: learning
-    to: encoder
-    flow: feedback
-  - from: encoder
-    to: flow_staging
-    flow: feedback
-  - from: flow_staging
-    to: state
-    flow: feedback
-- type: principle
-  title: Implementation gap principle
-  text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive memory contract.
-    The engineering task is to integrate them while adding dynamic Memory State, READ-only Memory Vector generation,
-    feedback without implicit READ, separate UPDATE semantics, semantic invariance, and future topology optimization.
-- type: heading
-  level: 3
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- title: Implementation gap principle
+  text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive memory contract. The
+    engineering task is to integrate them while adding dynamic Memory State, READ-only Memory Vector generation, feedback
+    without implicit READ, separate UPDATE semantics, semantic invariance, and future topology optimization.
+  type: principle
+- level: 3
   text: Required Additions Before the Target Is Reached
-- type: paragraph
-  text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading activation;
-    online knowledge accumulation; semantic equivalence across wording and language; canonical Memory Vector normalization;
-    explicit READ and UPDATE operations; Answer-to-Memory feedback that changes state without generating a vector;
-    controlled forgetting; structural connection state; and later Sleep-like offline optimization.'
+  type: heading
+- text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading activation; online
+    knowledge accumulation; semantic equivalence across wording and language; canonical Memory Vector normalization; explicit
+    READ and UPDATE operations; Answer-to-Memory feedback that changes state without generating a vector; controlled forgetting;
+    structural connection state; and later Sleep-like offline optimization.'
+  type: paragraph
+section_id: S_10_06

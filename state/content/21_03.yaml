@@ -1,16 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_21_03
 blocks:
-- type: paragraph
-  text: Offline Consolidation and Sleep experiments should compare online-only learning against scheduled maintenance
-    under identical experience streams.
-- type: list
-  items:
-  - Measure retention, compression, retrieval quality, interference, contradiction handling, and recovery from false
-    consolidation.
+- text: Offline Consolidation and Sleep experiments should compare online-only learning against scheduled maintenance under identical experience streams.
+  type: paragraph
+- items:
+  - Measure retention, compression, retrieval quality, interference, contradiction handling, and recovery from false consolidation.
   - Compare fixed schedules, activity-triggered schedules, and resource-triggered schedules.
   - Test whether offline reorganization improves later READ results without changing the READ contract.
   - Measure the cost of consolidation and the effect of interrupted or incomplete sleep cycles.
   - Require snapshot, rollback, and audit trails for destructive operations.
+  type: list
 section_id: S_21_03
-id: S_21_03

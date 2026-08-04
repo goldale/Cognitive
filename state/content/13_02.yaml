@@ -1,18 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_13_02
 blocks:
-- text: New experience should normally modify the relative importance, usefulness, confidence, and activation probability
-    of existing knowledge before changing architecture.
+- text: New experience should normally modify the relative importance, usefulness, confidence, and activation probability of existing knowledge before changing architecture.
   type: paragraph
-- text: This is a weaker and more implementable claim than asserting that every important experience reorganizes
-    the model. Weight changes are cheap, reversible in effect, and measurable.
+- text: This is a weaker and more implementable claim than asserting that every important experience reorganizes the model. Weight changes are cheap, reversible in effect, and measurable.
   type: paragraph
-- text: Structural change becomes justified when cumulative reweighting makes the present organization increasingly
-    incoherent or inefficient. No fixed deterministic threshold is assumed.
+- text: Structural change becomes justified when cumulative reweighting makes the present organization increasingly incoherent or inefficient. No fixed deterministic threshold is assumed.
   type: paragraph
 - title: Locality of ordinary learning
-  text: Most daily learning can be represented as local updates. Rare reorganization events should be treated as
-    expensive search episodes.
+  text: Most daily learning can be represented as local updates. Rare reorganization events should be treated as expensive search episodes.
   type: observation
 section_id: S_04_03
-id: S_13_02

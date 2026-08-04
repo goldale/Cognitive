@@ -83,6 +83,16 @@ def _render_block(block: dict[str, Any]) -> str:
         if block.get("nodes"):
             return _render_structured_diagram(block)
         return f'<pre class="diagram diagram-fallback">{html.escape(str(block.get("text", "")))}</pre>'
+    if block_type == "image":
+        src = html.escape(str(block.get("src", "")), quote=True)
+        alt = html.escape(str(block.get("alt", "")), quote=True)
+        caption = _render_inline(str(block.get("caption", "")))
+        title = _render_inline(str(block.get("title", "")))
+        heading = f'<div class="diagram-heading"><strong>{title}</strong></div>' if title else ""
+        figcaption = f'<figcaption>{caption}</figcaption>' if caption else ""
+        return (f'<figure class="architecture-diagram imported-architecture-diagram">{heading}'
+                f'<a href="{src}" target="_blank" rel="noopener"><img src="{src}" alt="{alt}"></a>'
+                f'{figcaption}</figure>')
     if block_type == "quote":
         return f"<blockquote>{_render_inline(str(block.get('text', '')))}</blockquote>"
     if block_type in {"definition", "hypothesis", "observation", "example", "note", "warning", "principle"}:
@@ -295,7 +305,9 @@ class DocumentationBuilder:
         if output.exists():
             shutil.rmtree(output)
         output.mkdir(parents=True)
-        shutil.copy2(self.assets_dir / "cognitive.css", output / "cognitive.css")
+        for asset in self.assets_dir.iterdir():
+            if asset.is_file():
+                shutil.copy2(asset, output / asset.name)
         created = [output / "cognitive.css"]
         pages = self._page_sequence()
         created.extend(self._build_global_index(output))

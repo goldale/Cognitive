@@ -1,75 +1,71 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_20_05
 blocks:
-- type: definition
-  title: Replay
-  text: Controlled reactivation of selected semantic experience so the system can verify, reinforce, compare, reinterpret,
-    or intentionally weaken memory structures.
-- type: paragraph
-  text: Replay follows Importance Estimation and the initial design of Offline Consolidation because it requires
-    both a selection policy and a protected execution context.
-- type: list
-  items:
+- title: Replay
+  text: Controlled reactivation of selected semantic experience so the system can verify, reinforce, compare, reinterpret, or intentionally weaken memory structures.
+  type: definition
+- text: Replay follows Importance Estimation and the initial design of Offline Consolidation because it requires both a selection policy and a protected execution context.
+  type: paragraph
+- items:
   - Priority replay for high-importance or unstable knowledge.
   - Diversity replay to prevent narrow recent experience from dominating memory.
   - Counterexample replay to test overgeneralized associations.
   - Recovery replay after rollback or detected false consolidation.
   - Cross-context replay to measure whether knowledge remains useful under changed goals or environments.
-- type: diagram
-  title: Canonical Replay Boundary
-  description: Replay reactivates semantic material through the Transformer. It does not bypass the Semantic Feedback
-    Learning Pipeline or write raw stored observations directly into Associative Memory.
+  type: list
+- title: Canonical Replay Boundary
+  description: Replay reactivates semantic material through the Transformer. It does not bypass the Semantic Feedback Learning Pipeline or write raw stored observations directly into Associative Memory.
   direction: TB
-  size: standard
+  edges:
+  - flow: context
+    from: source
+    label: reactivation context
+    to: transformer
+  - flow: learning
+    from: transformer
+    label: reinterpretation
+    to: representation
+  - flow: learning
+    from: representation
+    label: canonical learning object
+    to: pipeline
+  - flow: learning
+    from: pipeline
+    label: explicit UPDATE
+    to: memory
+  - flow: learning
+    from: memory
+    label: state effect only
+    to: state
   nodes:
-  - id: source
-    label: Selected Replay Source
-    kind: state
-  - id: transformer
-    label: 'Transformer
-
-      Semantic Teacher'
-    kind: subsystem
-  - id: representation
-    label: Semantic Representation
-    kind: data
-  - id: pipeline
-    label: Semantic Feedback Learning Pipeline
-    kind: control
-  - id: memory
+  - kind: subsystem
+    id: memory
     label: 'Associative Memory
 
       UPDATE'
-    kind: subsystem
-  - id: state
+  - kind: control
+    id: pipeline
+    label: Semantic Feedback Learning Pipeline
+  - kind: data
+    id: representation
+    label: Semantic Representation
+  - kind: state
+    id: source
+    label: Selected Replay Source
+  - kind: state
+    id: state
     label: Updated Memory State
-    kind: state
-  edges:
-  - from: source
-    to: transformer
-    label: reactivation context
-    flow: context
-  - from: transformer
-    to: representation
-    label: reinterpretation
-    flow: learning
-  - from: representation
-    to: pipeline
-    label: canonical learning object
-    flow: learning
-  - from: pipeline
-    to: memory
-    label: explicit UPDATE
-    flow: learning
-  - from: memory
-    to: state
-    label: state effect only
-    flow: learning
-  readability_priority: true
+  - kind: subsystem
+    id: transformer
+    label: 'Transformer
+
+      Semantic Teacher'
   proportionality_priority: true
-- type: principle
-  title: Explicit retrieval remains mandatory
-  text: When replay needs current memory context, it must perform an explicit READ. UPDATE never performs implicit
-    READ and never produces a Memory Vector.
+  readability_priority: true
+  size: standard
+  type: diagram
+- title: Explicit retrieval remains mandatory
+  text: When replay needs current memory context, it must perform an explicit READ. UPDATE never performs implicit READ and never produces a Memory Vector.
+  type: principle
 section_id: S_20_05
-id: S_20_05

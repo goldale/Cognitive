@@ -1,17 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_15_02
 blocks:
-- text: A significant book is not merely a container of propositions. It is a designed sequence of stimuli capable
-    of changing categories, evaluations, attention, and future questions.
+- text: A significant book is not merely a container of propositions. It is a designed sequence of stimuli capable of changing categories, evaluations, attention, and future questions.
   type: paragraph
-- text: The reader may forget most explicit sentences while retaining a changed system of integrated evaluation.
-    The durable output is therefore a modified reader, not a copied text.
+- text: The reader may forget most explicit sentences while retaining a changed system of integrated evaluation. The durable output is therefore a modified reader, not a copied text.
   type: paragraph
 - title: Cognitive value of a book
-  text: The measurable change in future interpretation, evaluation, learning direction, and action induced by iterative
-    integration of the book.
+  text: The measurable change in future interpretation, evaluation, learning direction, and action induced by iterative integration of the book.
   type: definition
 - text: This definition permits evaluation without assuming perfect recall.
   type: paragraph
 section_id: S_08_02
-id: S_15_02

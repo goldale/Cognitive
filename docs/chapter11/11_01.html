@@ -17,11 +17,11 @@
  viewBox="0.00 0.00 1099.96 84.96" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="canonical-memory-interface-graph0" class="graph" transform="scale(1 1) rotate(0) translate(24.48 60.48)">
 <title>G</title>
-<!-- state&#45;&gt;projection -->
-<g id="canonical-memory-interface-edge1" class="edge">
-<title>state&#45;&gt;projection</title>
-<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M98.09,-18C98.09,-18 142.64,-18 142.64,-18"/>
-<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="142.64,-20.87 150.84,-18 142.64,-15.13 142.64,-20.87"/>
+<!-- canonical&#45;&gt;vector -->
+<g id="canonical-memory-interface-edge4" class="edge">
+<title>canonical&#45;&gt;vector</title>
+<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M631.28,-18C631.28,-18 675.79,-18 675.79,-18"/>
+<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="675.79,-20.87 683.99,-18 675.79,-15.13 675.79,-20.87"/>
 </g>
 <!-- projection&#45;&gt;raw -->
 <g id="canonical-memory-interface-edge2" class="edge">
@@ -35,11 +35,11 @@
 <path fill="none" stroke="#174a7e" stroke-width="1.45" d="M415.21,-18C415.21,-18 459.78,-18 459.78,-18"/>
 <polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="459.78,-20.87 467.98,-18 459.78,-15.13 459.78,-20.87"/>
 </g>
-<!-- canonical&#45;&gt;vector -->
-<g id="canonical-memory-interface-edge4" class="edge">
-<title>canonical&#45;&gt;vector</title>
-<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M631.28,-18C631.28,-18 675.79,-18 675.79,-18"/>
-<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="675.79,-20.87 683.99,-18 675.79,-15.13 675.79,-20.87"/>
+<!-- state&#45;&gt;projection -->
+<g id="canonical-memory-interface-edge1" class="edge">
+<title>state&#45;&gt;projection</title>
+<path fill="none" stroke="#174a7e" stroke-width="1.45" d="M98.09,-18C98.09,-18 142.64,-18 142.64,-18"/>
+<polygon fill="#174a7e" stroke="#174a7e" stroke-width="1.45" points="142.64,-20.87 150.84,-18 142.64,-15.13 142.64,-20.87"/>
 </g>
 <!-- vector&#45;&gt;transformer -->
 <g id="canonical-memory-interface-edge5" class="edge">
@@ -48,14 +48,11 @@
 <polygon fill="#8a6415" stroke="#8a6415" stroke-width="1.45" points="954.76,-20.87 962.96,-18 954.76,-15.13 954.76,-20.87"/>
 <text text-anchor="middle" x="904.5" y="-21" font-family="Arial" font-size="10.00" fill="#4f5962">stable contract</text>
 </g>
-<!-- state -->
+<!-- canonical -->
 <g id="canonical-memory-interface-node1" class="node">
-<title>state</title>
-<polygon fill="#eef6fb" stroke="#365b78" stroke-width="1.3" points="98,-36 4,-36 0,-32 0,0 94,0 98,-4 98,-36"/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 0,-32 "/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 94,0 "/>
-<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 98,-36 "/>
-<text text-anchor="middle" x="49" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Memory State</text>
+<title>canonical</title>
+<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M619,-36C619,-36 480,-36 480,-36 474,-36 468,-30 468,-24 468,-24 468,-12 468,-12 468,-6 474,0 480,0 480,0 619,0 619,0 625,0 631,-6 631,-12 631,-12 631,-24 631,-24 631,-30 625,-36 619,-36"/>
+<text text-anchor="middle" x="549.5" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Runtime Canonicalization</text>
 </g>
 <!-- projection -->
 <g id="canonical-memory-interface-node2" class="node">
@@ -71,25 +68,28 @@
 <polyline fill="none" stroke="#365b78" stroke-width="1.3" points="415,-30 409,-30 "/>
 <text text-anchor="middle" x="349" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Raw Memory Vector</text>
 </g>
-<!-- canonical -->
+<!-- state -->
 <g id="canonical-memory-interface-node4" class="node">
-<title>canonical</title>
-<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M619,-36C619,-36 480,-36 480,-36 474,-36 468,-30 468,-24 468,-24 468,-12 468,-12 468,-6 474,0 480,0 480,0 619,0 619,0 625,0 631,-6 631,-12 631,-12 631,-24 631,-24 631,-30 625,-36 619,-36"/>
-<text text-anchor="middle" x="549.5" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Runtime Canonicalization</text>
+<title>state</title>
+<polygon fill="#eef6fb" stroke="#365b78" stroke-width="1.3" points="98,-36 4,-36 0,-32 0,0 94,0 98,-4 98,-36"/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 0,-32 "/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 94,0 "/>
+<polyline fill="none" stroke="#365b78" stroke-width="1.3" points="94,-32 98,-36 "/>
+<text text-anchor="middle" x="49" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Memory State</text>
+</g>
+<!-- transformer -->
+<g id="canonical-memory-interface-node5" class="node">
+<title>transformer</title>
+<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M1039,-36C1039,-36 975,-36 975,-36 969,-36 963,-30 963,-24 963,-24 963,-12 963,-12 963,-6 969,0 975,0 975,0 1039,0 1039,0 1045,0 1051,-6 1051,-12 1051,-12 1051,-24 1051,-24 1051,-30 1045,-36 1039,-36"/>
+<text text-anchor="middle" x="1007" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Transformer</text>
 </g>
 <!-- vector -->
-<g id="canonical-memory-interface-node5" class="node">
+<g id="canonical-memory-interface-node6" class="node">
 <title>vector</title>
 <polygon fill="#fff8e8" stroke="#365b78" stroke-width="1.3" points="846,-36 684,-36 684,-32 680,-32 680,-28 684,-28 684,-8 680,-8 680,-4 684,-4 684,0 846,0 846,-36"/>
 <polyline fill="none" stroke="#365b78" stroke-width="1.3" points="684,-32 688,-32 688,-28 684,-28 "/>
 <polyline fill="none" stroke="#365b78" stroke-width="1.3" points="684,-8 688,-8 688,-4 684,-4 "/>
 <text text-anchor="middle" x="765" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Canonical Memory Vector</text>
-</g>
-<!-- transformer -->
-<g id="canonical-memory-interface-node6" class="node">
-<title>transformer</title>
-<path fill="#f3f7fa" stroke="#365b78" stroke-width="1.3" d="M1039,-36C1039,-36 975,-36 975,-36 969,-36 963,-30 963,-24 963,-24 963,-12 963,-12 963,-6 969,0 975,0 975,0 1039,0 1039,0 1045,0 1051,-6 1051,-12 1051,-12 1051,-24 1051,-24 1051,-30 1045,-36 1039,-36"/>
-<text text-anchor="middle" x="1007" y="-14.9" font-family="Arial" font-size="12.00" fill="#202124">Transformer</text>
 </g>
 </g>
 </svg>

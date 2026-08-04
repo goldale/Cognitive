@@ -1,12 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_04_04
 blocks:
-- text: High-bandwidth sensory channels require instrumental preprocessing before general semantic reasoning. Candidate
-    mechanisms include change detection, tracking, event detection, key-frame selection, feature extraction, semantic
-    segmentation, and task-conditioned filtering.
+- text: High-bandwidth sensory channels require instrumental preprocessing before general semantic reasoning. Candidate mechanisms include change detection, tracking, event detection, key-frame selection, feature extraction, semantic segmentation, and task-conditioned filtering.
   type: paragraph
-- text: Preprocessing must preserve information that may affect active goals while avoiding the impossible requirement
-    that the reasoning core interpret every pixel, sample, or point at full rate.
+- text: Preprocessing must preserve information that may affect active goals while avoiding the impossible requirement that the reasoning core interpret every pixel, sample, or point at full rate.
   type: paragraph
 section_id: S_13_04
-id: S_04_04

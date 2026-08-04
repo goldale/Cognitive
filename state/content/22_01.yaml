@@ -1,13 +1,10 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
-blocks:
-- type: paragraph
-  text: The long-term target is a cognitive platform that can reason semantically, maintain a persistent and evolving
-    world model, learn continuously, and improve its own memory organization without collapsing reasoning, learning,
-    and evaluation into one opaque operation.
-- type: principle
-  title: Evolution without architectural amnesia
-  text: Future releases should extend the stable abstractions of earlier releases or explicitly document why an
-    invariant must be replaced. Silent reversion to direct observation-driven Associative Memory learning is prohibited.
-section_id: S_22_01
+schema_version: 0.3.32
 id: S_22_01
+blocks:
+- text: The long-term target is a cognitive platform that can reason semantically, maintain a persistent and evolving world model, learn continuously, and improve its own memory organization without collapsing reasoning, learning, and evaluation into one opaque operation.
+  type: paragraph
+- title: Evolution without architectural amnesia
+  text: Future releases should extend the stable abstractions of earlier releases or explicitly document why an invariant must be replaced. Silent reversion to direct observation-driven Associative Memory learning is prohibited.
+  type: principle
+section_id: S_22_01

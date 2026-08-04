@@ -1,8 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_17_03
 blocks:
-- text: YAML is used as a readable serialization of the formal state. Its flexibility is restricted by schema and
-    profile rules.
+- text: YAML is used as a readable serialization of the formal state. Its flexibility is restricted by schema and profile rules.
   type: paragraph
 - items:
   - Mappings with string keys
@@ -14,11 +14,8 @@ blocks:
   - No implicit date or time values
   ordered: false
   type: list
-- text: Canonical formatting produces stable field order and entity order while preserving semantically ordered
-    block sequences.
+- text: Canonical formatting produces stable field order and entity order while preserving semantically ordered block sequences.
   type: paragraph
-- text: The format remains parseable by standard YAML tools and is validated against JSON Schema plus project-specific
-    semantic rules.
+- text: The format remains parseable by standard YAML tools and is validated against JSON Schema plus project-specific semantic rules.
   type: paragraph
 section_id: S_11_03
-id: S_17_03

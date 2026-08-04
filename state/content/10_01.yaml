@@ -1,116 +1,104 @@
 kind: T_Content
-section: S_10_01
 blocks:
-- type: paragraph
-  text: Transformer and Associative Memory are separated by responsibility but coupled by a closed semantic learning
-    loop. The Transformer does not merely consume memory for reasoning; it teaches Associative Memory by producing
-    the semantic objects used for learning.
-- type: definition
-  title: Semantic Teacher
-  text: The Transformer role that converts externally grounded processing and retrieved context into a Semantic
-    Representation suitable for Associative Memory UPDATE.
-- type: definition
-  title: Semantic Feedback Learning Pipeline
-  text: A first-class architectural process coordinating explicit READ, semantic reasoning, semantic teaching, UPDATE,
-    and the resulting evolution of Memory State.
-- type: diagram
-  title: Closed Semantic Learning Loop
-  description: External Input is interpreted with an explicitly retrieved Memory Vector. Transformer output becomes
-    a Semantic Representation. UPDATE changes Memory State only; a later READ is required to obtain another Memory
-    Vector.
+- text: Transformer and Associative Memory are separated by responsibility but coupled by a closed semantic learning loop. The Transformer does not merely consume memory for reasoning; it teaches Associative Memory by producing the semantic objects used for learning.
+  type: paragraph
+- title: Semantic Teacher
+  text: The Transformer role that converts externally grounded processing and retrieved context into a Semantic Representation suitable for Associative Memory UPDATE.
+  type: definition
+- title: Semantic Feedback Learning Pipeline
+  text: A first-class architectural process coordinating explicit READ, semantic reasoning, semantic teaching, UPDATE, and the resulting evolution of Memory State.
+  type: definition
+- title: Closed Semantic Learning Loop
+  description: External Input is interpreted with an explicitly retrieved Memory Vector. Transformer output becomes a Semantic Representation. UPDATE changes Memory State only; a later READ is required to obtain another Memory Vector.
   direction: TB
-  size: standard
-  nodes:
-  - id: C_EXT_INPUT
-    label: External Input
-    kind: external
-  - id: C_TRANSFORMER
-    label: Transformer
-    kind: subsystem
-  - id: C_ASSOC_MEMORY
-    label: Associative Memory
-    kind: subsystem
-  - id: C_MEMORY_STATE
-    label: Memory State
-    kind: state
-  - id: C_MEMORY_VECTOR
-    label: Memory Vector
-    kind: interface
-  - id: C_SEM_REP
-    label: Semantic Representation
-    kind: data
-  - id: C_SFL_PIPELINE
-    label: Semantic Feedback Learning Pipeline
-    kind: control
   edges:
-  - from: C_EXT_INPUT
-    to: C_ASSOC_MEMORY
+  - flow: information
+    from: C_EXT_INPUT
     label: query
-    flow: information
-  - from: C_MEMORY_STATE
     to: C_ASSOC_MEMORY
+  - flow: context
+    from: C_MEMORY_STATE
     label: READ state
-    flow: context
-  - from: C_ASSOC_MEMORY
-    to: C_MEMORY_VECTOR
-    label: READ
-    flow: information
-  - from: C_MEMORY_VECTOR
-    to: C_TRANSFORMER
-    label: conditioning
-    flow: information
-  - from: C_TRANSFORMER
-    to: C_SEM_REP
-    label: semantic teaching
-    flow: learning
-  - from: C_SEM_REP
-    to: C_SFL_PIPELINE
-    label: learning input
-    flow: learning
-  - from: C_SFL_PIPELINE
     to: C_ASSOC_MEMORY
+  - flow: information
+    from: C_ASSOC_MEMORY
+    label: READ
+    to: C_MEMORY_VECTOR
+  - flow: information
+    from: C_MEMORY_VECTOR
+    label: conditioning
+    to: C_TRANSFORMER
+  - flow: learning
+    from: C_TRANSFORMER
+    label: semantic teaching
+    to: C_SEM_REP
+  - flow: learning
+    from: C_SEM_REP
+    label: learning input
+    to: C_SFL_PIPELINE
+  - flow: learning
+    from: C_SFL_PIPELINE
     label: UPDATE
-    flow: learning
-  - from: C_ASSOC_MEMORY
-    to: C_MEMORY_STATE
+    to: C_ASSOC_MEMORY
+  - flow: learning
+    from: C_ASSOC_MEMORY
     label: updated state
-    flow: learning
-  readability_priority: true
+    to: C_MEMORY_STATE
+  nodes:
+  - kind: subsystem
+    id: C_ASSOC_MEMORY
+    label: Associative Memory
+  - kind: external
+    id: C_EXT_INPUT
+    label: External Input
+  - kind: state
+    id: C_MEMORY_STATE
+    label: Memory State
+  - kind: interface
+    id: C_MEMORY_VECTOR
+    label: Memory Vector
+  - kind: data
+    id: C_SEM_REP
+    label: Semantic Representation
+  - kind: control
+    id: C_SFL_PIPELINE
+    label: Semantic Feedback Learning Pipeline
+  - kind: subsystem
+    id: C_TRANSFORMER
+    label: Transformer
   proportionality_priority: true
-- type: heading
-  level: 3
+  readability_priority: true
+  size: standard
+  type: diagram
+- level: 3
   text: READ contract
-- type: formula
-  text: READ(Memory State, Query) -> Memory Vector
-- type: paragraph
-  text: READ is a retrieval operation. It may expose context to the Transformer but never modifies Memory State.
-- type: heading
-  level: 3
+  type: heading
+- text: READ(Memory State, Query) -> Memory Vector
+  type: formula
+- text: READ is a retrieval operation. It may expose context to the Transformer but never modifies Memory State.
+  type: paragraph
+- level: 3
   text: UPDATE contract
-- type: formula
-  text: UPDATE(Memory State, Semantic Representation) -> Updated Memory State
-- type: paragraph
-  text: UPDATE is a learning operation. Its only architectural effect is modification of Memory State. It does not
-    generate a new Memory Vector and performs no implicit retrieval. A Memory Vector is generated exclusively by
-    a subsequent explicit READ operation.
-- type: principle
-  title: Why semantic feedback is necessary
-  text: Raw external observations are not stable learning targets. Transformer-produced Semantic Representations
-    provide interpretation, normalization, context, and abstraction before information is incorporated into Associative
-    Memory.
-- type: heading
-  level: 3
+  type: heading
+- text: UPDATE(Memory State, Semantic Representation) -> Updated Memory State
+  type: formula
+- text: UPDATE is a learning operation. Its only architectural effect is modification of Memory State. It does not generate a new Memory Vector and performs no implicit retrieval. A Memory Vector is generated exclusively by a subsequent explicit READ operation.
+  type: paragraph
+- title: Why semantic feedback is necessary
+  text: Raw external observations are not stable learning targets. Transformer-produced Semantic Representations provide interpretation, normalization, context, and abstraction before information is incorporated into Associative Memory.
+  type: principle
+- level: 3
   text: Lifecycle and extension boundary
-- type: list
-  items:
+  type: heading
+- items:
   - Explicit READ retrieves a Memory Vector from the current Memory State.
   - Transformer performs semantic reasoning using external input and retrieved context.
   - Transformer acts as Semantic Teacher and produces a Semantic Representation.
   - The Semantic Feedback Learning Pipeline submits that representation to UPDATE.
   - UPDATE modifies Memory State only.
   - Any effect of learning on retrieval is observed only by a later explicit READ.
-- type: note
-  title: Deferred extensions
-  text: Sleep, replay, forgetting, importance estimation, structural plasticity, and global evaluation may extend
-    the pipeline later, but they must preserve the READ/UPDATE asymmetry unless a future architecture decision explicitly
-    replaces it.
+  type: list
+- title: Deferred extensions
+  text: Sleep, replay, forgetting, importance estimation, structural plasticity, and global evaluation may extend the pipeline later, but they must preserve the READ/UPDATE asymmetry unless a future architecture decision explicitly replaces it.
+  type: note
+section: S_10_01

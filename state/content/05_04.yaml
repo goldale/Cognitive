@@ -1,65 +1,62 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_05_04
 blocks:
-- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task Relevance
-    evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
+- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task Relevance evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
   type: paragraph
-- type: diagram
-  title: Hierarchical Cognitive Filtering
-  description: Information is progressively filtered by meaning, current relevance, and novelty before memory is
-    changed.
+- title: Hierarchical Cognitive Filtering
+  description: Information is progressively filtered by meaning, current relevance, and novelty before memory is changed.
   direction: TB
-  nodes:
-  - id: stream
-    label: Input Stream
-    kind: external
-    status: current
-  - id: extract
-    label: Semantic Extraction
-    kind: subsystem
-    status: current
-  - id: relevance
-    label: Task Relevance Evaluation
-    kind: subsystem
-    status: current
-  - id: novelty
-    label: Semantic Novelty Evaluation
-    kind: subsystem
-    status: current
-  - id: decision
-    label: Memory Update Decision
-    kind: subsystem
-    status: current
-  - id: memory
-    label: Memory State
-    kind: state
-    status: current
   edges:
-  - from: stream
+  - flow: information
+    from: stream
     to: extract
-    flow: information
-  - from: extract
+  - flow: information
+    from: extract
     to: relevance
-    flow: information
-  - from: relevance
+  - flow: information
+    from: relevance
     to: novelty
-    flow: information
-  - from: novelty
+  - flow: information
+    from: novelty
     to: decision
-    flow: information
-  - from: decision
-    to: memory
-    flow: learning
+  - flow: learning
+    from: decision
     label: accepted update
-  - from: memory
-    to: novelty
-    flow: feedback
+    to: memory
+  - flow: feedback
+    from: memory
     label: current knowledge
-  size: standard
-  readability_priority: true
+    to: novelty
+  nodes:
+  - kind: subsystem
+    id: decision
+    status: current
+    label: Memory Update Decision
+  - kind: subsystem
+    id: extract
+    status: current
+    label: Semantic Extraction
+  - kind: state
+    id: memory
+    status: current
+    label: Memory State
+  - kind: subsystem
+    id: novelty
+    status: current
+    label: Semantic Novelty Evaluation
+  - kind: subsystem
+    id: relevance
+    status: current
+    label: Task Relevance Evaluation
+  - kind: external
+    id: stream
+    status: current
+    label: Input Stream
   proportionality_priority: true
-- text: 'Each stage answers a different question: what is present, what matters now, what is new, and whether persistent
-    state should change.'
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: 'Each stage answers a different question: what is present, what matters now, what is new, and whether persistent state should change.'
   type: paragraph
 section_id: S_18_04
-id: S_05_04

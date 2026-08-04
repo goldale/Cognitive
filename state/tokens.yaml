@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.30
+schema_version: 0.3.32
 version: 0.2.0
 optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive power.
 tokens:
@@ -462,14 +462,12 @@ tokens:
   status: T_Active
 - token: T_StagedTraining
   atomic: true
-  definition: A progressive training strategy that first stabilizes the Transformer with a null Memory Vector and
-    then integrates Associative Memory.
+  definition: A progressive training strategy that first stabilizes the Transformer with a null Memory Vector and then integrates Associative Memory.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_NullMemoryVector
   atomic: true
-  definition: The fixed all-zero canonical Memory Vector used while training the Transformer before Associative
-    Memory is enabled.
+  definition: The fixed all-zero canonical Memory Vector used while training the Transformer before Associative Memory is enabled.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_ForcedMemoryUtilization
@@ -519,86 +517,76 @@ tokens:
   index_target: ../chapter11/11_01.html
 - token: T_MemoryVectorNormalization
   atomic: true
-  definition: The staged canonicalization of Memory Vector through length normalization, post-stabilization orthogonalization,
-    and sparse basis rotation.
+  definition: The staged canonicalization of Memory Vector through length normalization, post-stabilization orthogonalization, and sparse basis rotation.
   status: T_Active
   index_target: ../chapter11/11_06.html
 - token: T_OrthogonalCoordinates
   atomic: true
-  definition: A transformed coordinate system with negligible off-diagonal covariance for representative Memory
-    Vectors.
+  definition: A transformed coordinate system with negligible off-diagonal covariance for representative Memory Vectors.
   status: T_Active
   index_target: ../chapter11/11_04.html
 - token: T_SparseBasisRotation
   atomic: true
-  definition: A basis rotation intended to minimize the number of non-zero or significantly active coordinates for
-    simple meanings.
+  definition: A basis rotation intended to minimize the number of non-zero or significantly active coordinates for simple meanings.
   status: T_Active
   index_target: ../chapter11/11_05.html
 - token: T_SequentialMemoryVectorNormalization
   atomic: true
-  label: Sequential Memory Vector Normalization
-  definition: 'A staged canonicalization process: length normalization first, statistical orthogonalization after
-    semantic stabilization, and sparse basis rotation last.'
+  definition: 'A staged canonicalization process: length normalization first, statistical orthogonalization after semantic stabilization, and sparse basis rotation last.'
   status: T_Active
   index_target: ../chapter11/11_06.html
+  label: Sequential Memory Vector Normalization
 - token: T_LengthNormalizationStage
   atomic: true
-  label: Length Normalization Stage
-  definition: The first canonicalization stage, which normalizes every non-zero raw Memory Vector by Euclidean length
-    while retaining activation magnitude separately.
+  definition: The first canonicalization stage, which normalizes every non-zero raw Memory Vector by Euclidean length while retaining activation magnitude separately.
   status: T_Active
   index_target: ../chapter11/11_06.html
+  label: Length Normalization Stage
 - token: T_StatisticalOrthogonalizationStage
   atomic: true
-  label: Statistical Orthogonalization Stage
-  definition: The post-stabilization stage that estimates covariance and transforms Memory Vector coordinates toward
-    negligible off-diagonal coupling.
+  definition: The post-stabilization stage that estimates covariance and transforms Memory Vector coordinates toward negligible off-diagonal coupling.
   status: T_Active
   index_target: ../chapter11/11_06.html
+  label: Statistical Orthogonalization Stage
 - token: T_SparseRotationStage
   atomic: true
-  label: Sparse Rotation Stage
-  definition: The final normalization stage that rotates an approximately orthogonal basis to reduce the number
-    of materially active coordinates for simple meanings.
+  definition: The final normalization stage that rotates an approximately orthogonal basis to reduce the number of materially active coordinates for simple meanings.
   status: T_Active
   index_target: ../chapter11/11_06.html
+  label: Sparse Rotation Stage
 - token: T_AssociativeMemoryImplementationCandidates
   atomic: true
-  label: Associative Memory Implementation Candidates
   definition: Existing technical families that can supply parts of the Cognitive memory architecture.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Associative Memory Implementation Candidates
 - token: T_ImplementationGapAnalysis
   atomic: true
-  label: Implementation Gap Analysis
   definition: A comparison between existing memory technologies and the additional mechanisms required by Cognitive.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Implementation Gap Analysis
 - token: T_DenseAssociativeMemory
   atomic: true
-  label: Dense Associative Memory
-  definition: A high-capacity attractor-based associative memory candidate for pattern completion and content-addressable
-    retrieval.
+  definition: A high-capacity attractor-based associative memory candidate for pattern completion and content-addressable retrieval.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Dense Associative Memory
 - token: T_SparseDistributedMemory
   atomic: true
-  label: Sparse Distributed Memory
   definition: A distributed content-addressable storage model that supports partial-cue retrieval and graceful degradation.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Sparse Distributed Memory
 - token: T_VectorCandidateRetrieval
   atomic: true
-  label: Vector Candidate Retrieval
-  definition: Approximate nearest-neighbour retrieval used to propose memory elements for subsequent associative
-    activation.
+  definition: Approximate nearest-neighbour retrieval used to propose memory elements for subsequent associative activation.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Vector Candidate Retrieval
 - token: T_HybridAssociativeMemory
   atomic: true
-  label: Hybrid Associative Memory
-  definition: An implementation combining neural association, vector retrieval, graph structure, and exact key–value
-    storage.
+  definition: An implementation combining neural association, vector retrieval, graph structure, and exact key–value storage.
   status: T_Active
   index_target: ../chapter10/10_06.html
+  label: Hybrid Associative Memory

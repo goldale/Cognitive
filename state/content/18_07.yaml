@@ -1,67 +1,66 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_18_07
 blocks:
-- type: heading
-  level: 3
+- level: 3
   text: Functional Partition
-- type: list
-  items:
+  type: heading
+- items:
   - Photonic fabric distributes and transforms semantic tensors at high bandwidth.
   - Spintronic, memristive, or phase-change elements store persistent coefficients and programmable state.
   - A dense layered processing fabric applies semantic transformations.
   - Offline Consolidation performs controlled structural maintenance and hardware reprogramming.
-- type: diagram
-  title: Distributed Photonic-Spintronic Associative Tensor Memory
+  type: list
+- title: Distributed Photonic-Spintronic Associative Tensor Memory
   description: A prospective dense hardware implementation preserving explicit READ and UPDATE separation.
   direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
+  edges:
+  - flow: information
+    from: query
+    label: READ input
+    to: photo
+  - flow: context
+    from: memory
+    label: persistent state
+    to: photo
+  - flow: information
+    from: photo
+    label: READ result
+    to: response
+  - flow: optimization
+    from: offline
+    label: controlled reprogramming
+    to: memory
   nodes:
-  - id: query
-    label: 'Semantic Query Tensor
-
-      up to 1024 x 1024 x 8'
-    kind: data
-  - id: photo
-    label: 'Dense Photonic Processing Fabric
-
-      256 logical processing layers'
-    kind: subsystem
-  - id: memory
+  - kind: storage
+    id: memory
     label: 'Spintronic / Memristive Persistent State
 
       up to 10,000,000 programmable elements'
-    kind: storage
-  - id: response
-    label: 'Semantic Response Tensor
-
-      up to 1024 x 1024 x 8'
-    kind: data
-  - id: offline
+  - kind: control
+    id: offline
     label: 'Offline Consolidation
 
       structural maintenance'
-    kind: control
-  edges:
-  - from: query
-    to: photo
-    label: READ input
-    flow: information
-  - from: memory
-    to: photo
-    label: persistent state
-    flow: context
-  - from: photo
-    to: response
-    label: READ result
-    flow: information
-  - from: offline
-    to: memory
-    label: controlled reprogramming
-    flow: optimization
-- type: paragraph
-  text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling strategy;
-    it does not imply a sparse semantic architecture.
+  - kind: subsystem
+    id: photo
+    label: 'Dense Photonic Processing Fabric
+
+      256 logical processing layers'
+  - kind: data
+    id: query
+    label: 'Semantic Query Tensor
+
+      up to 1024 x 1024 x 8'
+  - kind: data
+    id: response
+    label: 'Semantic Response Tensor
+
+      up to 1024 x 1024 x 8'
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling strategy; it does not imply a sparse semantic architecture.
+  type: paragraph
 section_id: S_18_07
-id: S_18_07

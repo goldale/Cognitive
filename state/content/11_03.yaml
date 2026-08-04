@@ -1,11 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_11_03
 blocks:
-- text: A mature Memory State should map semantically equivalent inputs to nearby Memory Vectors even when wording
-    or language differs. This is a test of invariance to surface serialization, not proof of complete semantic understanding.
+- text: A mature Memory State should map semantically equivalent inputs to nearby Memory Vectors even when wording or language differs. This is a test of invariance to surface serialization, not proof of complete semantic understanding.
   type: paragraph
-- text: Stability should be measured over equivalence classes, paraphrases, translations, and context-preserving
-    reformulations.
+- text: Stability should be measured over equivalence classes, paraphrases, translations, and context-preserving reformulations.
   type: paragraph
 section_id: S_17_03
-id: S_11_03

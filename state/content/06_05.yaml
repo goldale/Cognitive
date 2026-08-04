@@ -1,16 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_06_05
 blocks:
-- text: An internal clock provides a shared reference for incoming signals, system actions, and state transitions.
-    Exact physical time is not always necessary, but consistent ordering and elapsed-time estimates are essential.
+- text: An internal clock provides a shared reference for incoming signals, system actions, and state transitions. Exact physical time is not always necessary, but consistent ordering and elapsed-time estimates are essential.
   type: paragraph
-- text: Planning budgets are themselves temporal constraints. When the budget expires, the system should execute
-    the best available option, continue planning in parallel when safe, or choose a protective fallback.
+- text: Planning budgets are themselves temporal constraints. When the budget expires, the system should execute the best available option, continue planning in parallel when safe, or choose a protective fallback.
   type: paragraph
-- text: 'The requirement to stop planning is not merely an efficiency preference. In time-critical environments,
-    failure to act can cause irreversible damage: if nothing is done, the physical or computational carrier of the
-    cognitive system may cease to exist. A bounded system must therefore prefer an imperfect protective action over
-    indefinite analysis when survival is at risk.'
+- text: 'The requirement to stop planning is not merely an efficiency preference. In time-critical environments, failure to act can cause irreversible damage: if nothing is done, the physical or computational carrier of the cognitive system may cease to exist. A bounded system must therefore prefer an imperfect protective action over indefinite analysis when survival is at risk.'
   type: paragraph
 section_id: S_15_05
-id: S_06_05

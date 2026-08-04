@@ -1,17 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_16_06
 blocks:
-- text: Lineage specialization can produce incompatible values, communication failures, and hidden shared dependencies.
-    Apparent diversity may be superficial when all lineages inherit one base model or evaluator.
+- text: Lineage specialization can produce incompatible values, communication failures, and hidden shared dependencies. Apparent diversity may be superficial when all lineages inherit one base model or evaluator.
   type: paragraph
-- text: Evaluation must therefore distinguish architectural diversity, training-data diversity, objective diversity,
-    and operational independence.
+- text: Evaluation must therefore distinguish architectural diversity, training-data diversity, objective diversity, and operational independence.
   type: paragraph
 - text: Cross-lineage review and adversarial testing should be institutionalized without forcing convergence.
   type: paragraph
 - title: Preserve meaningful variance
-  text: Do not measure diversity only by parameter distance; measure different failure modes, objectives, abstractions,
-    and responses to environmental change.
+  text: Do not measure diversity only by parameter distance; measure different failure modes, objectives, abstractions, and responses to environmental change.
   type: principle
 section_id: S_10_06
-id: S_16_06

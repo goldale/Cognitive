@@ -1,11 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_10_02
 blocks:
-- text: Associative Memory exposes its retrieved state through a Memory Vector. The Transformer is trained to consume
-    this vector as prefix-like conditioning rather than receiving retrieved text passages as its only memory interface.
+- text: Associative Memory exposes its retrieved state through a Memory Vector. The Transformer is trained to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as its only memory interface.
   type: paragraph
-- text: The vector may encode activation across a graph, spreading activation results, confidence, context, and
-    other state. The public contract must remain stable even when the internal memory implementation changes.
+- text: The vector may encode activation across a graph, spreading activation results, confidence, context, and other state. The public contract must remain stable even when the internal memory implementation changes.
   type: paragraph
 section_id: S_16_02
-id: S_10_02

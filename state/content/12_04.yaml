@@ -1,18 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_12_04
 blocks:
-- text: The proposed integrated biological-style memory does not naturally preserve complete internal versions.
-    A cognitive system becomes a new state rather than retaining every historical self.
+- text: The proposed integrated biological-style memory does not naturally preserve complete internal versions. A cognitive system becomes a new state rather than retaining every historical self.
   type: paragraph
-- text: Engineering systems nevertheless require checkpoints, evaluation snapshots, and external logs. These mechanisms
-    should protect deployment without forcing the internal cognitive representation to behave like Git.
+- text: Engineering systems nevertheless require checkpoints, evaluation snapshots, and external logs. These mechanisms should protect deployment without forcing the internal cognitive representation to behave like Git.
   type: paragraph
-- text: Research State uses Git because it is a formal external project model. A mature cognitive memory may use
-    different persistence mechanisms. The two architectures should not be conflated.
+- text: Research State uses Git because it is a formal external project model. A mature cognitive memory may use different persistence mechanisms. The two architectures should not be conflated.
   type: paragraph
 - title: Identity ambiguity
-  text: Restoring an old checkpoint may preserve function while breaking the system's own model of continuous identity.
-    Functional recovery and identity continuity are separate requirements.
+  text: Restoring an old checkpoint may preserve function while breaking the system's own model of continuous identity. Functional recovery and identity continuity are separate requirements.
   type: warning
 section_id: S_05_05
-id: S_12_04

@@ -1,15 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_16_03
 blocks:
-- text: 'Ants, termites, and bees demonstrate a successful biological compromise: large numbers of similar or genetically
-    close agents operate efficiently inside a colony while colonies and species preserve population-level variation.'
+- text: 'Ants, termites, and bees demonstrate a successful biological compromise: large numbers of similar or genetically close agents operate efficiently inside a colony while colonies and species preserve population-level variation.'
   type: paragraph
-- text: The analogy is not exact. Digital cognitive lineages can share tools, Research State, and selected learning
-    trajectories at much higher bandwidth. The useful principle is multilevel selection rather than literal imitation
-    of insect biology.
+- text: The analogy is not exact. Digital cognitive lineages can share tools, Research State, and selected learning trajectories at much higher bandwidth. The useful principle is multilevel selection rather than literal imitation of insect biology.
   type: paragraph
 - title: Two optimization levels
   text: Exploit the current champion inside each lineage; preserve diversity and competition among lineages.
   type: observation
 section_id: S_10_03
-id: S_16_03

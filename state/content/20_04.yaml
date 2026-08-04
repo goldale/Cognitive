@@ -1,28 +1,24 @@
 kind: T_ContentBlock
-schema_version: 0.3.30
+schema_version: 0.3.32
+id: S_20_04
 blocks:
-- type: definition
-  title: Offline Consolidation
-  text: A future process that reorganizes Memory State outside the immediate online response path, using accumulated
-    semantic knowledge and importance evidence.
-- type: definition
-  title: Sleep
-  text: The operating mode in which offline consolidation, topology analysis, compression, pruning, and structural
-    learning may occur with reduced interference from online activity.
-- type: paragraph
-  text: Sleep is not defined as passive inactivity. It is a controlled architectural mode for expensive memory maintenance
-    that should not be mixed invisibly with ordinary READ or UPDATE operations.
-- type: list
-  items:
+- title: Offline Consolidation
+  text: A future process that reorganizes Memory State outside the immediate online response path, using accumulated semantic knowledge and importance evidence.
+  type: definition
+- title: Sleep
+  text: The operating mode in which offline consolidation, topology analysis, compression, pruning, and structural learning may occur with reduced interference from online activity.
+  type: definition
+- text: Sleep is not defined as passive inactivity. It is a controlled architectural mode for expensive memory maintenance that should not be mixed invisibly with ordinary READ or UPDATE operations.
+  type: paragraph
+- items:
   - Group semantically related knowledge.
   - Resolve redundancy and selected contradictions.
   - Compress repeated semantic structures.
   - Promote stable knowledge and weaken low-value structures.
   - Collect evidence for structural changes without requiring them during every online interaction.
   - Preserve rollback and provenance so destructive consolidation can be detected and reversed.
-- type: principle
-  title: Semantic boundary
-  text: Offline mechanisms may inspect Memory State and Transformer-produced Semantic Representations, but any ordinary
-    learning update must continue to obey the canonical Semantic Feedback Learning contract.
+  type: list
+- title: Semantic boundary
+  text: Offline mechanisms may inspect Memory State and Transformer-produced Semantic Representations, but any ordinary learning update must continue to obey the canonical Semantic Feedback Learning contract.
+  type: principle
 section_id: S_20_04
-id: S_20_04
