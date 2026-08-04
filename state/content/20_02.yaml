@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_20_02
 blocks:
 - text: The next development cycle begins with the ability to estimate the importance of semantic knowledge. Consolidation requires a selection signal; replay requires a policy for deciding what should be reactivated and why.

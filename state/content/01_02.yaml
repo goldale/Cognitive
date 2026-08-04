@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_01_02
 blocks:
 - text: Many improvements in current systems are obtained by increasing model scale or adding specialized components. This project instead examines whether a different organization of existing components can create a larger gain than making any one component more complex.

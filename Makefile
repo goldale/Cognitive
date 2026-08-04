@@ -29,7 +29,7 @@ test:
 
 release: validate test docs graph
 	mkdir -p dist
-	PYTHONPATH=src $(PYTHON) -m cogsys.cli release . --output dist/cognitive-0.3.34.tgz
+	PYTHONPATH=src $(PYTHON) -m cogsys.cli release . --output dist/cognitive-0.3.35.tgz
 
 clean:
 	rm -rf docs/* dist/* .pytest_cache

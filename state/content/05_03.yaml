@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_05_03
 blocks:
 - text: The same document can substantially change a novice world model and add almost nothing to an expert world model. Semantic Novelty is therefore a property of the pair consisting of input and current Memory State.

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_06_02
 blocks:
 - text: Temporally related observations should be organized into episodes. Episodes preserve local order, duration, concurrency, interruption, and the distinction between an event and a persistent state.

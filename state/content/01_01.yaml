@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_01_01
 blocks:
 - text: This document develops an engineering architecture for long-lived cognitive systems capable of accumulating experience, reorganizing knowledge, preserving continuity, and improving throughout an operational lifetime measured in years or decades.

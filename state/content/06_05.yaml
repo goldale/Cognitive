@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_06_05
 blocks:
 - text: An internal clock provides a shared reference for incoming signals, system actions, and state transitions. Exact physical time is not always necessary, but consistent ordering and elapsed-time estimates are essential.

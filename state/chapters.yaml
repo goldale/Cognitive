@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.34
+schema_version: 0.3.35
 chapters:
 - kind: T_Chapter
   id: C_01
@@ -819,6 +819,21 @@ chapters:
     title: Completion and Revision Criteria
     order: 7
     content_file: content/23_07.yaml
+  - kind: T_Section
+    id: S_23_08
+    title: Associative Retrieval and Episode-Specific Chronology
+    order: 8
+    content_file: content/23_08.yaml
+  - kind: T_Section
+    id: S_23_09
+    title: Working Hypothesis for Offline Replay
+    order: 9
+    content_file: content/23_09.yaml
+  - kind: T_Section
+    id: S_23_10
+    title: Conventional-Hardware Replay Prototype
+    order: 10
+    content_file: content/23_10.yaml
   layout: directory
 - kind: T_Chapter
   id: C_24

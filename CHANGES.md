@@ -1,6 +1,6 @@
 # Changes
 
-## cognitive-0.3.34 — 2026-08-04
+## cognitive-0.3.35 — 2026-08-04
 
 - Added topology-oriented heterogeneous Associative Memory stages.
 - Added dedicated-hardware-per-topology architectural guidance.
@@ -43,3 +43,10 @@
 
 - Semantic Teacher remains the Transformer role that produces Semantic Representation.
 - Semantic Feedback Learning Pipeline remains the validated path carrying Semantic Representation to UPDATE.
+
+## 0.3.35 — 2026-08-04
+
+- Added RN-0003 on episode-specific relational-temporal reinstatement.
+- Added a working offline replay hypothesis based on distributed Event States and context-compatible transitions.
+- Added a conventional-hardware prototype proposal using vector search, bidirectional transition storage, and streaming context-boundary detection.
+- Preserved Vector DB and graph technologies as READ-stage implementation components only.

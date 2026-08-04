@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_18_05
 blocks:
 - text: The project does not have a fixed final architecture. A release is successful when it improves the current working system, preserves state recovery, documents semantic change, and makes the next experiment easier to perform.

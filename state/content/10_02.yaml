@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_10_02
 blocks:
 - text: Associative Memory exposes its retrieved state through a Memory Vector. The Transformer is trained to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as its only memory interface.

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_09_02
 blocks:
 - text: The first implementable architecture separates T_WorkingMemory from T_LongTermMemory. Working memory retains high-detail recent structures required for current computation. Long-term memory retains consolidated structures chosen for future utility.

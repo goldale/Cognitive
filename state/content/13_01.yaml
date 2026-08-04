@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_13_01
 blocks:
 - text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization

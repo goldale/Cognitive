@@ -1,0 +1,22 @@
+kind: T_ContentBlock
+schema_version: 0.3.35
+id: S_23_08
+blocks:
+- title: RN-0003 — Episodic Retrieval and Chronological Reinstatement
+  object_id: RN-0003
+  text: Associative retrieval and episodic chronology must not be described as necessarily sequential operations. The phrase “after an episode has been found” already assumes an unverified key–value architecture in which associative retrieval first identifies an episode and a separate mechanism subsequently loads its internal structure.
+  type: note
+- text: A more neutral working hypothesis is that successful associative retrieval directly reinstates an episode-specific relational-temporal configuration. Under this interpretation, roles, relations, and chronology are not recovered after the episode; their recovery constitutes retrieval of the episode itself.
+  type: paragraph
+- title: Reuse of the same semantic components
+  text: Two events may contain the same entities and actions while remaining immediately distinguishable because their bindings differ. “A dog bit a person” and “a person bit a dog” reuse the same semantic components but reverse agent and patient roles. Likewise, two conversations with Ivan at the same breakfast may remain distinct because speaker, listener, message, and local temporal relations are bound differently.
+  type: example
+- text: A simple linear superposition of semantic elements cannot preserve role assignment or chronology. The episode representation must preserve episode-specific bindings among entities, roles, relations, and temporal organization.
+  type: principle
+- title: Neutral open problem
+  text: How can a shared distributed memory encode and reinstate multiple episode-specific relational-temporal configurations that reuse the same semantic components, without requiring a dedicated cell population or an explicitly addressable record for every episode?
+  type: warning
+- title: Architectural boundary
+  text: Associative mechanisms may provide content-addressed access and pattern completion, but they must not be assumed to generate chronology from an unordered semantic set. Chronology must already be present in, or inseparable from, the reinstated episodic configuration.
+  type: principle
+section_id: S_23_08

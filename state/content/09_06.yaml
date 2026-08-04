@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_09_06
 blocks:
 - text: The functional interpretation of lossy memory remains a hypothesis. Biological memory may also be constrained by energy, tissue, noise, and developmental mechanisms unrelated to functional compression.

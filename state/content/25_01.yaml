@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_25_01
 blocks:
 - text: This registry points to canonical Research Notes. Full text remains at the contextual source location.
@@ -7,5 +7,6 @@ blocks:
 - items:
   - '[RN-0001 — The Babel Hypothesis](../chapter03/03_06.html#RN-0001)'
   - '[RN-0002 — Translation as Cognitive State Reconstruction](../chapter03/03_03.html#RN-0002)'
+  - '[RN-0003 — Episodic Retrieval and Chronological Reinstatement](../chapter23/23_08.html#RN-0003)'
   type: list
 section_id: S_25_01

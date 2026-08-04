@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_07_04
 blocks:
 - text: 'A cognitive system receives incomparable inputs: sensory evidence, predicted reward, memory consistency, uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires a mechanism that makes these inputs jointly evaluable.'

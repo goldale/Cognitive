@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_04_01
 blocks:
 - text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains constraints that a receiving cognitive system interprets using its existing Memory State, context, objectives, language competence, and learned world model.

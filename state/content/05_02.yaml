@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.34
+schema_version: 0.3.35
 id: S_05_02
 blocks:
 - text: High-bandwidth streams such as video contain large amounts of valid information that may not relate to the current dialogue or task. This information is not garbage and should not be mislabeled as noise.

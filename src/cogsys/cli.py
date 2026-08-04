@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import json
 import shutil
 import sys
@@ -94,12 +95,25 @@ def cmd_release(args: argparse.Namespace) -> int:
         output = output.with_suffix(output.suffix + ".tar.gz" if output.suffix else ".tar.gz")
     excluded_directories = {".git", ".venv", ".pytest_cache", "__pycache__", "dist", "build"}
     excluded_suffixes = {".pyc", ".pyo"}
+
+    def excluded_release_artifact(relative: Path) -> bool:
+        # Stage-gate generators, validators, and reports are build/validation
+        # artifacts, not release content. Match at any directory depth and
+        # without case sensitivity (for example STAGE3_*, validate_stage3_*).
+        if re.search(r"stage[0-9]+_", relative.name, flags=re.IGNORECASE):
+            return True
+        # Git and release archives use one unversioned release-notes file.
+        # Any versioned RELEASE_NOTES_*.md file is a stale release artifact.
+        if len(relative.parts) == 1 and relative.name.startswith("RELEASE_NOTES_"):
+            return True
+        return False
+
     with tarfile.open(output, "w:gz") as archive:
         for path in sorted(root.rglob("*")):
             relative = path.relative_to(root)
             if any(part in excluded_directories or part.endswith(".egg-info") for part in relative.parts):
                 continue
-            if path.suffix in excluded_suffixes:
+            if path.suffix in excluded_suffixes or excluded_release_artifact(relative):
                 continue
             archive.add(path, arcname=Path(root.name) / relative, recursive=False)
     print(output)
