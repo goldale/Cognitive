@@ -131,6 +131,8 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
     description = str(block.get("description", title))
     direction = str(block.get("direction", "TB"))
     size = str(block.get("size", "standard"))
+    display_scale = float(block.get("display_scale", 1.0))
+    display_scale = min(1.0, max(0.25, display_scale))
     if size not in {"compact", "standard", "medium", "large", "extra-large"}:
         size = "standard"
     if direction not in {"TB", "BT", "LR", "RL"}:
@@ -232,7 +234,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
         )
         svg = svg.replace("<svg ", '<svg role="img" aria-label="' + html.escape(description, quote=True) + '" ' , 1)
         return (
-            f'<figure class="architecture-diagram diagram-size-{size}">'
+            f'<figure class="architecture-diagram diagram-size-{size}" style="--diagram-scale:{display_scale:.3f}">'
             f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
             f'<div class="diagram-canvas">{svg}</div>'
             f'<figcaption>{_render_inline(description)}</figcaption>'
@@ -241,7 +243,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
     except (OSError, subprocess.SubprocessError):
         labels = " → ".join(str(node.get("label", node.get("id", ""))) for node in block.get("nodes", []))
         return (
-            f'<figure class="architecture-diagram diagram-size-{size}">'
+            f'<figure class="architecture-diagram diagram-size-{size}" style="--diagram-scale:{display_scale:.3f}">'
             f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
             f'<pre class="diagram diagram-fallback">{html.escape(labels)}</pre>'
             f'<figcaption>{_render_inline(description)}</figcaption>'

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_08_01
 blocks:
 - text: Planning does not directly answer what to do. It constructs a bounded set of possible actions and multi-step scenarios. Each scenario includes predicted states, branch probabilities, temporal attributes, resource requirements, and uncertainty.

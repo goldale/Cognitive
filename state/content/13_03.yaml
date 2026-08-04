@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_13_03
 blocks:
 - text: Sleep-like structural reorganization and the final global evaluation mechanism are intentionally deferred from the first implementation of the Transformer-memory interface.

@@ -1,0 +1,151 @@
+{
+  "release": "cognitive-0.3.34",
+  "stage": 7,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "manifest release",
+      "status": "PASS",
+      "detail": "0.3.34"
+    },
+    {
+      "name": "manifest version",
+      "status": "PASS",
+      "detail": "0.3.34"
+    },
+    {
+      "name": "release notes target",
+      "status": "PASS",
+      "detail": "RELEASE_NOTES_0.3.34.md"
+    },
+    {
+      "name": "pyproject version",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:README.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:CHANGES.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:ARCHITECTURE_FREEZE.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:RELEASE_MANIFEST.json",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:RELEASE_NOTES_0.3.34.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:state",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:docs",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:src",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:tests",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "required:scripts",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "no transient artifacts",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate:STAGE3_CHECK_SUMMARY.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate:STAGE4_CHECK_SUMMARY.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate:STAGE5_CHECK_SUMMARY.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "gate:STAGE6_CHECK_SUMMARY.txt",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "build release version",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "docs index",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "A-Z index",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "all state YAML parse",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "validator:validate_stage1_freeze.py",
+      "status": "PASS",
+      "detail": "STAGE 1 FREEZE VALIDATION: PASS\n7 canonical files parsed; READ/UPDATE asymmetry verified.\n"
+    },
+    {
+      "name": "validator:validate_stage3_consistency.py",
+      "status": "PASS",
+      "detail": "{\"total\": 247, \"pass\": 247, \"fail\": 0, \"status\": \"PASS\"}\n"
+    },
+    {
+      "name": "validator:validate_stage4_duplicates.py",
+      "status": "PASS",
+      "detail": "{\"total\": 21, \"pass\": 21, \"fail\": 0, \"status\": \"PASS\"}\n"
+    },
+    {
+      "name": "validator:validate_stage5_architecture.py",
+      "status": "PASS",
+      "detail": "{\"total\": 156, \"pass\": 156, \"fail\": 0, \"status\": \"PASS\"}\n"
+    },
+    {
+      "name": "validator:validate_stage6_documentation.py",
+      "status": "PASS",
+      "detail": "{\"total\": 3351, \"pass\": 3351, \"fail\": 0, \"status\": \"PASS\"}\n"
+    }
+  ],
+  "summary": {
+    "pass": 28,
+    "fail": 0
+  }
+}

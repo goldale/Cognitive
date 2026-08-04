@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_03_06
 blocks:
 - text: Human debates, teaching, literary interpretation, and cultural communication include computational integration together with social and emotional objectives. The current architecture models the integration layer first.

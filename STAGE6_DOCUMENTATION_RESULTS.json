@@ -5145,7 +5145,7 @@
       "group": "F Readability",
       "name": "docs/chapter10/10_06.html heading hierarchy",
       "status": "PASS",
-      "detail": "[1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3]"
+      "detail": "[1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 3, 4]"
     },
     {
       "group": "D References",
@@ -10311,7 +10311,7 @@
       "group": "F Readability",
       "name": "docs/chapter18/18_07.html heading hierarchy",
       "status": "PASS",
-      "detail": "[1, 2, 3]"
+      "detail": "[1, 2, 3, 4]"
     },
     {
       "group": "D References",
@@ -16743,13 +16743,13 @@
       "group": "D Navigation",
       "name": "docs/alphabetical-index.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/alphabetical-index.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16761,13 +16761,13 @@
       "group": "D Navigation",
       "name": "docs/canonical-model.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/canonical-model.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16779,13 +16779,13 @@
       "group": "D Navigation",
       "name": "docs/chapter01.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter01.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16797,13 +16797,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16815,13 +16815,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16833,13 +16833,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16851,13 +16851,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16869,13 +16869,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16887,13 +16887,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/02_10.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/02_10.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16905,13 +16905,13 @@
       "group": "D Navigation",
       "name": "docs/chapter02/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter02/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16923,13 +16923,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16941,13 +16941,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16959,13 +16959,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16977,13 +16977,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -16995,13 +16995,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17013,13 +17013,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/03_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/03_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17031,13 +17031,13 @@
       "group": "D Navigation",
       "name": "docs/chapter03/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter03/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17049,13 +17049,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/04_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/04_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17067,13 +17067,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/04_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/04_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17085,13 +17085,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/04_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/04_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17103,13 +17103,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/04_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/04_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17121,13 +17121,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/04_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/04_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17139,13 +17139,13 @@
       "group": "D Navigation",
       "name": "docs/chapter04/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter04/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17157,13 +17157,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/05_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/05_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17175,13 +17175,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/05_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/05_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17193,13 +17193,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/05_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/05_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17211,13 +17211,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/05_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/05_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17229,13 +17229,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/05_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/05_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17247,13 +17247,13 @@
       "group": "D Navigation",
       "name": "docs/chapter05/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter05/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17265,13 +17265,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/06_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/06_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17283,13 +17283,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/06_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/06_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17301,13 +17301,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/06_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/06_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17319,13 +17319,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/06_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/06_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17337,13 +17337,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/06_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/06_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17355,13 +17355,13 @@
       "group": "D Navigation",
       "name": "docs/chapter06/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter06/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17373,13 +17373,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/07_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/07_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17391,13 +17391,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/07_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/07_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17409,13 +17409,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/07_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/07_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17427,13 +17427,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/07_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/07_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17445,13 +17445,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/07_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/07_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17463,13 +17463,13 @@
       "group": "D Navigation",
       "name": "docs/chapter07/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter07/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17481,13 +17481,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/08_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/08_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17499,13 +17499,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/08_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/08_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17517,13 +17517,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/08_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/08_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17535,13 +17535,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/08_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/08_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17553,13 +17553,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/08_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/08_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17571,13 +17571,13 @@
       "group": "D Navigation",
       "name": "docs/chapter08/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter08/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17589,13 +17589,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17607,13 +17607,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17625,13 +17625,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17643,13 +17643,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17661,13 +17661,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17679,13 +17679,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/09_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/09_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17697,13 +17697,13 @@
       "group": "D Navigation",
       "name": "docs/chapter09/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter09/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17715,13 +17715,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17733,13 +17733,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17751,13 +17751,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17769,13 +17769,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17787,13 +17787,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17805,13 +17805,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17823,13 +17823,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17841,13 +17841,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17859,13 +17859,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17877,13 +17877,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/10_10.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/10_10.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17895,13 +17895,13 @@
       "group": "D Navigation",
       "name": "docs/chapter10/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter10/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17913,13 +17913,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17931,13 +17931,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17949,13 +17949,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17967,13 +17967,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -17985,13 +17985,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18003,13 +18003,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18021,13 +18021,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/11_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/11_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18039,13 +18039,13 @@
       "group": "D Navigation",
       "name": "docs/chapter11/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter11/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18057,13 +18057,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18075,13 +18075,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18093,13 +18093,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18111,13 +18111,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18129,13 +18129,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18147,13 +18147,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18165,13 +18165,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/12_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/12_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18183,13 +18183,13 @@
       "group": "D Navigation",
       "name": "docs/chapter12/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter12/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18201,13 +18201,13 @@
       "group": "D Navigation",
       "name": "docs/chapter13/13_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter13/13_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18219,13 +18219,13 @@
       "group": "D Navigation",
       "name": "docs/chapter13/13_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter13/13_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18237,13 +18237,13 @@
       "group": "D Navigation",
       "name": "docs/chapter13/13_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter13/13_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18255,13 +18255,13 @@
       "group": "D Navigation",
       "name": "docs/chapter13/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter13/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18273,13 +18273,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18291,13 +18291,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18309,13 +18309,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18327,13 +18327,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18345,13 +18345,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18363,13 +18363,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/14_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/14_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18381,13 +18381,13 @@
       "group": "D Navigation",
       "name": "docs/chapter14/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter14/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18399,13 +18399,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18417,13 +18417,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18435,13 +18435,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18453,13 +18453,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18471,13 +18471,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18489,13 +18489,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/15_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/15_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18507,13 +18507,13 @@
       "group": "D Navigation",
       "name": "docs/chapter15/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter15/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18525,13 +18525,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18543,13 +18543,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18561,13 +18561,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18579,13 +18579,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18597,13 +18597,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18615,13 +18615,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/16_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/16_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18633,13 +18633,13 @@
       "group": "D Navigation",
       "name": "docs/chapter16/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter16/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18651,13 +18651,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18669,13 +18669,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18687,13 +18687,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18705,13 +18705,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18723,13 +18723,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18741,13 +18741,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/17_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/17_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18759,13 +18759,13 @@
       "group": "D Navigation",
       "name": "docs/chapter17/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter17/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18777,13 +18777,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18795,13 +18795,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18813,13 +18813,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18831,13 +18831,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18849,13 +18849,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18867,13 +18867,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18885,13 +18885,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18903,13 +18903,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18921,13 +18921,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/18_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/18_09.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18939,13 +18939,13 @@
       "group": "D Navigation",
       "name": "docs/chapter18/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter18/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18957,13 +18957,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18975,13 +18975,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -18993,13 +18993,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19011,13 +19011,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19029,13 +19029,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19047,13 +19047,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19065,13 +19065,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19083,13 +19083,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/20_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/20_08.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19101,13 +19101,13 @@
       "group": "D Navigation",
       "name": "docs/chapter20/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter20/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19119,13 +19119,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19137,13 +19137,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19155,13 +19155,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19173,13 +19173,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19191,13 +19191,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19209,13 +19209,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/21_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/21_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19227,13 +19227,13 @@
       "group": "D Navigation",
       "name": "docs/chapter21/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter21/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19245,13 +19245,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/22_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/22_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19263,13 +19263,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/22_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/22_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19281,13 +19281,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/22_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/22_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19299,13 +19299,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/22_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/22_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19317,13 +19317,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/22_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/22_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19335,13 +19335,13 @@
       "group": "D Navigation",
       "name": "docs/chapter22/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter22/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19353,13 +19353,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19371,13 +19371,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19389,13 +19389,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19407,13 +19407,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19425,13 +19425,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_05.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19443,13 +19443,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_06.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19461,13 +19461,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/23_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/23_07.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19479,13 +19479,13 @@
       "group": "D Navigation",
       "name": "docs/chapter23/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter23/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19497,13 +19497,13 @@
       "group": "D Navigation",
       "name": "docs/chapter24/24_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter24/24_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19515,13 +19515,13 @@
       "group": "D Navigation",
       "name": "docs/chapter24/24_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter24/24_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19533,13 +19533,13 @@
       "group": "D Navigation",
       "name": "docs/chapter24/24_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter24/24_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19551,13 +19551,13 @@
       "group": "D Navigation",
       "name": "docs/chapter24/24_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter24/24_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19569,13 +19569,13 @@
       "group": "D Navigation",
       "name": "docs/chapter24/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter24/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19587,13 +19587,13 @@
       "group": "D Navigation",
       "name": "docs/chapter25/25_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter25/25_01.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19605,13 +19605,13 @@
       "group": "D Navigation",
       "name": "docs/chapter25/25_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter25/25_02.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19623,13 +19623,13 @@
       "group": "D Navigation",
       "name": "docs/chapter25/25_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter25/25_03.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19641,13 +19641,13 @@
       "group": "D Navigation",
       "name": "docs/chapter25/25_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter25/25_04.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19659,13 +19659,13 @@
       "group": "D Navigation",
       "name": "docs/chapter25/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter25/index.html A-Z target ../chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19677,13 +19677,13 @@
       "group": "D Navigation",
       "name": "docs/chapter26/index.html A-Z target index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/chapter26/index.html A-Z target index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19695,13 +19695,13 @@
       "group": "D Navigation",
       "name": "docs/index.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/index.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19713,13 +19713,13 @@
       "group": "D Navigation",
       "name": "docs/research-state.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/research-state.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19731,13 +19731,13 @@
       "group": "D Navigation",
       "name": "docs/style-guide.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/style-guide.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
@@ -19749,13 +19749,13 @@
       "group": "D Navigation",
       "name": "docs/tokens.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "D Navigation",
       "name": "docs/tokens.html A-Z target chapter26/index.html",
       "status": "PASS",
-      "detail": "/mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html != /mnt/data/cognitive0333_work/cognitive-0.3.33/docs/chapter26/index.html"
+      "detail": "/mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html != /mnt/data/cog034_work/cognitive-0.3.34/docs/chapter26/index.html"
     },
     {
       "group": "E Terminology",

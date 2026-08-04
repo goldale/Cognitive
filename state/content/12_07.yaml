@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_12_07
 blocks:
 - text: Associative Memory should not be considered ready for Transformer integration merely because its training loss is low. Its representation must become stable with respect to meaning rather than surface form.

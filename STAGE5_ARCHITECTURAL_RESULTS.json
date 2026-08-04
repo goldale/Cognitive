@@ -1,0 +1,947 @@
+{
+  "version": "0.3.19-stage5",
+  "summary": {
+    "total": 156,
+    "pass": 156,
+    "fail": 0,
+    "status": "PASS"
+  },
+  "checks": [
+    {
+      "group": "A",
+      "name": "principle P_021",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "P_021 accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "principle P_022",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "P_022 accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "principle P_023",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "P_023 accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "principle P_024",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "P_024 accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "principle P_025",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "P_025 accepted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "Transformer semantic teacher principle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "semantic representations learning principle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "pipeline first-class principle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "READ UPDATE asymmetry principle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "explicit READ after learning principle",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component External Input",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Transformer",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Associative Memory",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Transformer role semantic_reasoning_engine",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Transformer role semantic_teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Associative Memory role contextual_retriever",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Associative Memory role semantic_learner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Memory Vector role read_result",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Memory Vector role transformer_conditioning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Semantic Representation role canonical_update_input",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Semantic Feedback Learning Pipeline role self_learning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Semantic Feedback Learning Pipeline role learning_coordination",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component ids unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "only READ and UPDATE operations",
+      "status": "PASS",
+      "detail": "['READ', 'UPDATE']"
+    },
+    {
+      "group": "C",
+      "name": "READ input Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "READ input Query",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "READ output exactly Memory Vector",
+      "status": "PASS",
+      "detail": "['Memory Vector']"
+    },
+    {
+      "group": "C",
+      "name": "READ has no effects",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "C",
+      "name": "READ forbids Updated Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE input Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE input Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE output exactly Updated Memory State",
+      "status": "PASS",
+      "detail": "['Updated Memory State']"
+    },
+    {
+      "group": "C",
+      "name": "UPDATE modifies Memory State",
+      "status": "PASS",
+      "detail": "['modifies Memory State']"
+    },
+    {
+      "group": "C",
+      "name": "UPDATE forbids Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE forbids implicit READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_001",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_001 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_002",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_002 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_003",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_003 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_004",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_004 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_005",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_005 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_006",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_006 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "invariant INV_007",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_007 release blocking",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "INV_001 exact statement",
+      "status": "PASS",
+      "detail": "READ never modifies Memory State."
+    },
+    {
+      "group": "D",
+      "name": "INV_002 exact statement",
+      "status": "PASS",
+      "detail": "UPDATE modifies only Memory State."
+    },
+    {
+      "group": "D",
+      "name": "INV_003 exact statement",
+      "status": "PASS",
+      "detail": "UPDATE never produces a Memory Vector."
+    },
+    {
+      "group": "D",
+      "name": "INV_004 exact statement",
+      "status": "PASS",
+      "detail": "UPDATE never performs an implicit READ."
+    },
+    {
+      "group": "D",
+      "name": "INV_005 exact statement",
+      "status": "PASS",
+      "detail": "A new Memory Vector is produced only by an explicit READ."
+    },
+    {
+      "group": "D",
+      "name": "INV_006 exact statement",
+      "status": "PASS",
+      "detail": "Raw external observations are not canonical UPDATE inputs."
+    },
+    {
+      "group": "D",
+      "name": "INV_007 exact statement",
+      "status": "PASS",
+      "detail": "The canonical UPDATE input is a Semantic Representation produced by the Transformer."
+    },
+    {
+      "group": "E",
+      "name": "pipeline sequence exact",
+      "status": "PASS",
+      "detail": "['External Input', 'Associative Memory READ', 'Memory Vector', 'Transformer semantic reasoning', 'Transformer semantic teaching', 'Semantic Representation', 'Associative Memory UPDATE', 'Updated Memory State']"
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering External Input before Associative Memory READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Associative Memory READ before Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Memory Vector before Transformer semantic reasoning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Transformer semantic reasoning before Transformer semantic teaching",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Transformer semantic teaching before Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Semantic Representation before Associative Memory UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "pipeline ordering Associative Memory UPDATE before Updated Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "no direct External Input to UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 has one detailed diagram",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "group": "F",
+      "name": "diagram title canonical",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node ids unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_EXT_INPUT",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_TRANSFORMER",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_ASSOC_MEMORY",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_MEMORY_STATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_MEMORY_VECTOR",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_SEM_REP",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram node C_SFL_PIPELINE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "all diagram edge endpoints exist",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "no orphan diagram nodes",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_EXT_INPUT->C_ASSOC_MEMORY [query]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_MEMORY_STATE->C_ASSOC_MEMORY [READ state]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_ASSOC_MEMORY->C_MEMORY_VECTOR [READ]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_MEMORY_VECTOR->C_TRANSFORMER [conditioning]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_TRANSFORMER->C_SEM_REP [semantic teaching]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_SEM_REP->C_SFL_PIPELINE [learning input]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_SFL_PIPELINE->C_ASSOC_MEMORY [UPDATE]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram edge C_ASSOC_MEMORY->C_MEMORY_STATE [updated state]",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "diagram has no UPDATE to Memory Vector",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no passive storage assertion",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no raw observation canonical update",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no implicit read assertion",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no UPDATE produces vector",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "canonical phrase present: Transformer is both the Semantic Reasoning Engine and the Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "G",
+      "name": "canonical phrase present: Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "G",
+      "name": "canonical phrase present: UPDATE never produces a Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "G",
+      "name": "canonical phrase present: subsequent explicit READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Semantic Feedback Learning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Semantic Learner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "term Contextual Retriever",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "terminology unique",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "H",
+      "name": "ownership Architecture Overview",
+      "status": "PASS",
+      "detail": "Chapter 2"
+    },
+    {
+      "group": "H",
+      "name": "ownership Semantic Feedback Learning",
+      "status": "PASS",
+      "detail": "Section 10.1"
+    },
+    {
+      "group": "H",
+      "name": "ownership Memory State",
+      "status": "PASS",
+      "detail": "Memory State chapter"
+    },
+    {
+      "group": "H",
+      "name": "ownership Progressive Training",
+      "status": "PASS",
+      "detail": "Progressive Training chapter"
+    },
+    {
+      "group": "H",
+      "name": "ownership anti-duplication rule present",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "artifact exists docs/chapter02/02_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "02_01.html contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "artifact exists docs/chapter10/10_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "10_01.html contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "artifact exists docs/canonical-model.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "canonical-model.html contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "artifact exists CHANGES.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "CHANGES.md contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "HTML Section 10.1 explicit UPDATE invariant",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "I",
+      "name": "HTML Section 10.1 explicit later READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "incremental release model preserved",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "canonical yaml source included",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "HTML manual editing forbidden",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "generated artifact Chapter 2 rendering",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "generated artifact CHANGES.md",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "generated artifact A-Z Index",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "J",
+      "name": "generated artifact architecture diagrams",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

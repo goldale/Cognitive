@@ -1,11 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_12_06
 blocks:
-- text: The Transformer and Associative Memory should be trained in stages rather than optimized as a single coupled system from the beginning. This reduces optimization complexity and gives each subsystem a stable role before the Memory Vector interface is activated.
+- text: The Transformer and Associative Memory should be trained in stages rather than optimized as a single coupled
+    system from the beginning. This reduces optimization complexity and gives each subsystem a stable role before
+    the Memory Vector interface is activated.
   type: paragraph
 - title: Progressive Training Strategy
-  description: Training begins with a fixed null Memory Vector, then activates the real memory interface, verifies that the Transformer uses it, and finally permits joint adaptation.
+  description: Training begins with a fixed null Memory Vector, then activates the real memory interface, verifies
+    that the Transformer uses it, and finally permits joint adaptation.
   direction: TB
   edges:
   - flow: interface
@@ -68,33 +71,47 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
+  display_scale: 0.5
 - level: 3
   text: Stage 1 — Transformer Training with a Null Memory Vector
   type: heading
-- text: During the first stage, the Transformer receives a fixed canonical null Memory Vector, normally the all-zero vector. The Transformer learns language interpretation, reasoning, planning, and answer generation without depending on an immature external memory subsystem.
+- text: During the first stage, the Transformer receives a fixed canonical null Memory Vector, normally the all-zero
+    vector. The Transformer learns language interpretation, reasoning, planning, and answer generation without depending
+    on an immature external memory subsystem.
   type: paragraph
 - title: Null-interface invariant
-  text: The dimensionality and placement of the Memory Vector interface should already match the final architecture even while its value is fixed at zero. This prevents a later interface-shape change from becoming entangled with memory integration.
+  text: The dimensionality and placement of the Memory Vector interface should already match the final architecture
+    even while its value is fixed at zero. This prevents a later interface-shape change from becoming entangled
+    with memory integration.
   type: principle
 - level: 3
   text: Stage 2 — Associative Memory Integration
   type: heading
-- text: After the Transformer baseline has stabilized, Associative Memory is enabled and explicit READ operations begin supplying non-zero canonical Memory Vectors. Training then teaches the Transformer to condition its reasoning on this additional source of knowledge.
+- text: After the Transformer baseline has stabilized, Associative Memory is enabled and explicit READ operations
+    begin supplying non-zero canonical Memory Vectors. Training then teaches the Transformer to condition its reasoning
+    on this additional source of knowledge.
   type: paragraph
 - title: Risk of ignoring the Memory Vector
-  text: Because the Transformer may already solve many tasks from its parameters and input context, ordinary optimization may converge while the model largely ignores the Memory Vector.
+  text: Because the Transformer may already solve many tasks from its parameters and input context, ordinary optimization
+    may converge while the model largely ignores the Memory Vector.
   type: warning
 - level: 3
   text: Possible forced utilization
   type: heading
-- text: It may therefore be necessary to force Memory Vector utilization during part of training. Candidate mechanisms include examples that cannot be solved without memory, controlled removal of equivalent context, auxiliary losses measuring memory dependence, progressive gating, or temporary constraints on the parameter-only path.
+- text: It may therefore be necessary to force Memory Vector utilization during part of training. Candidate mechanisms
+    include examples that cannot be solved without memory, controlled removal of equivalent context, auxiliary losses
+    measuring memory dependence, progressive gating, or temporary constraints on the parameter-only path.
   type: paragraph
 - title: Open engineering question
-  text: The specification does not select a single forcing mechanism. The requirement is to measure whether the Memory Vector causally influences the answer and to introduce a forcing mechanism if passive integration is insufficient.
+  text: The specification does not select a single forcing mechanism. The requirement is to measure whether the
+    Memory Vector causally influences the answer and to introduce a forcing mechanism if passive integration is
+    insufficient.
   type: note
 - level: 3
   text: Stage 3 — Joint Adaptation
   type: heading
-- text: Joint adaptation should begin only after the Transformer can use the Memory Vector and Associative Memory has reached sufficient representational maturity. The two subsystems remain independently replaceable because the canonical Memory Vector is their stable public interface.
+- text: Joint adaptation should begin only after the Transformer can use the Memory Vector and Associative Memory
+    has reached sufficient representational maturity. The two subsystems remain independently replaceable because
+    the canonical Memory Vector is their stable public interface.
   type: paragraph
 section_id: S_12_06

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_25_01
 blocks:
 - text: This registry points to canonical Research Notes. Full text remains at the contextual source location.

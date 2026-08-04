@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_21_03
 blocks:
 - text: Offline Consolidation and Sleep experiments should compare online-only learning against scheduled maintenance under identical experience streams.

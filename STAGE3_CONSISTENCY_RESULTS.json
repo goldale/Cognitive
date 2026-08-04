@@ -1,0 +1,1493 @@
+{
+  "version": "0.3.19-stage3",
+  "summary": {
+    "total": 247,
+    "pass": 247,
+    "fail": 0,
+    "status": "PASS"
+  },
+  "checks": [
+    {
+      "group": "A",
+      "name": "parse principles.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse components.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse contracts.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse invariants.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse terminology.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse ownership.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "A",
+      "name": "parse generation.yaml",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Transformer",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Associative Memory",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "component Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Transformer semantic_teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "B",
+      "name": "Associative Memory semantic_learner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "READ output Memory Vector",
+      "status": "PASS",
+      "detail": "['Memory Vector']"
+    },
+    {
+      "group": "C",
+      "name": "READ no effects",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "C",
+      "name": "UPDATE output Updated Memory State",
+      "status": "PASS",
+      "detail": "['Updated Memory State']"
+    },
+    {
+      "group": "C",
+      "name": "UPDATE forbids Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE forbids implicit READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "C",
+      "name": "UPDATE input Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/alphabetical-index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/canonical-model.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_08.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_09.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/02_10.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter02/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/03_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter03/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/04_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/04_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/04_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/04_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/04_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter04/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/05_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/05_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/05_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/05_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/05_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter05/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/06_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/06_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/06_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/06_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/06_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter06/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/07_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/07_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/07_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/07_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/07_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter07/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/08_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/08_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/08_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/08_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/08_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter08/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/09_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter09/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_08.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_09.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/10_10.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter10/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/11_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter11/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/12_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter12/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter13/13_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter13/13_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter13/13_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter13/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/14_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter14/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/15_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter15/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/16_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter16/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/17_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter17/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_08.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/18_09.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter18/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/20_08.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter20/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/21_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter21/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/22_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/22_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/22_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/22_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/22_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter22/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_05.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_06.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/23_07.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter23/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter24/24_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter24/24_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter24/24_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter24/24_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter24/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter25/25_01.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter25/25_02.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter25/25_03.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter25/25_04.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter25/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/chapter26/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/index.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/research-state.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/style-guide.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "unique ids docs/tokens.html",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "D",
+      "name": "all internal HTML links resolve",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Semantic Feedback Learning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Semantic Learner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Contextual Retriever",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Importance Estimation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Offline Consolidation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Sleep",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Replay",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Forgetting",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Memory Pruning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Structural Plasticity",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Global Evaluation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z term Multi-Agent Semantic Learning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z role Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "E",
+      "name": "A-Z role Semantic Learner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Chapter 2 contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Section 10.1 contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "Canonical model contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES exists",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains Semantic Teacher",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains Semantic Feedback Learning Pipeline",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains Semantic Representation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains Memory State",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains Memory Vector",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains READ",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "F",
+      "name": "CHANGES contains UPDATE",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "group": "G",
+      "name": "no passive storage assertion",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no raw observation direct update",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "G",
+      "name": "no UPDATE positively produces Memory Vector",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "group": "H",
+      "name": "Stage 2 provenance manifest exists",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

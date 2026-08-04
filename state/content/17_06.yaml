@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_17_06
 blocks:
 - text: The initial compiler and schema are written in ordinary Python, JSON Schema, and YAML. As the language matures, its own schema, consolidation rules, and generator descriptions can be represented inside Research State.

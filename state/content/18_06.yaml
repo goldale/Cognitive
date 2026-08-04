@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_18_06
 blocks:
 - text: This chapter defines a prospective hardware realization path. It does not replace the technology-independent cognitive architecture and must preserve all canonical invariants.

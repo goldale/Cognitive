@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_11_06
 blocks:
 - text: Memory Vector canonicalization should be introduced as a sequence of increasingly demanding normalization stages. The stages must not be collapsed into one operation because each depends on evidence that becomes available only after the previous stage and the Memory State have stabilized.

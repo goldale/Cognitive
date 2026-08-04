@@ -1,0 +1,8 @@
+{
+  "release": "0.3.34",
+  "version": "0.3.34",
+  "release_notes": "RELEASE_NOTES_0.3.34.md",
+  "canonical_source": "state/*.yaml",
+  "generated_documentation": "docs/",
+  "date": "2026-08-04"
+}

@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.33
+schema_version: 0.3.34
 terms:
 - definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
   term: Semantic Teacher

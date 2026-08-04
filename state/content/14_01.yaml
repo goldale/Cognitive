@@ -1,8 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_14_01
 blocks:
-- text: Neural networks and classical programs both seek states that optimize a task-dependent functional, but they operate under different knowledge conditions.
+- text: Neural networks and classical programs both seek states that optimize a task-dependent functional, but they
+    operate under different knowledge conditions.
   type: paragraph
 - headers:
   - Class
@@ -16,9 +17,10 @@ blocks:
     - Not explicit; examples are evaluated
     - Neural network
   - - III
-    - Partly defined and partly example-based
+    - Partly defined and partly example-based, or fully defined but very complicated.
     - Hybrid architecture
   type: table
-- text: The third class includes many practical robotics, autonomous driving, diagnosis, planning, and dialogue tasks. The central engineering problem is where to cut the computation.
+- text: The third class includes many practical robotics, autonomous driving, diagnosis, planning, and dialogue
+    tasks. The central engineering problem is where to cut the computation.
   type: paragraph
 section_id: S_09_01

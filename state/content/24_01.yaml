@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_24_01
 blocks:
 - text: Documentation Architecture governs how knowledge about the Cognitive architecture is represented, related, generated, and validated. It is part of the project Single Source of Truth.

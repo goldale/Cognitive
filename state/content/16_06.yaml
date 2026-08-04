@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_16_06
 blocks:
 - text: Lineage specialization can produce incompatible values, communication failures, and hidden shared dependencies. Apparent diversity may be superficial when all lineages inherit one base model or evaluator.

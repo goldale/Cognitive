@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_09_03
 blocks:
 - text: Ordinary memory adaptation should prefer local changes to importance, confidence, activation, and relation weights. The detailed separation between functional learning and structural learning is specified in Chapter 13; this chapter only establishes the memory-side boundary that topology change is exceptional rather than the default response to experience.

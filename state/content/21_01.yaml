@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_21_01
 blocks:
 - text: The Research Agenda converts architectural direction into experiments that can falsify assumptions. A future subsystem is not accepted merely because it is biologically plausible or intuitively attractive.

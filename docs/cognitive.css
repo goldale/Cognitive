@@ -293,8 +293,8 @@ th {
 }
 .diagram-canvas svg {
   display: block;
-  width: 100%;
-  max-width: 100%;
+  width: calc(100% * var(--diagram-scale, 1));
+  max-width: calc(100% * var(--diagram-scale, 1));
   height: auto;
   min-height: 12rem;
   margin: 0 auto;

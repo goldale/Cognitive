@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_14_04
 blocks:
 - text: As repeated neural solutions reveal stable structure, the system should ask whether part of the behavior can be compiled into a simpler algorithm, rule set, finite-state machine, index, or cache.

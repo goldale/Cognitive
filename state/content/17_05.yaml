@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_17_05
 blocks:
 - text: HTML is never the canonical source. The generator reads chapter structure and semantic content blocks from Research State.

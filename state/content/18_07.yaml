@@ -1,66 +1,88 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_18_07
 blocks:
-- level: 3
-  text: Functional Partition
-  type: heading
-- items:
-  - Photonic fabric distributes and transforms semantic tensors at high bandwidth.
-  - Spintronic, memristive, or phase-change elements store persistent coefficients and programmable state.
-  - A dense layered processing fabric applies semantic transformations.
-  - Offline Consolidation performs controlled structural maintenance and hardware reprogramming.
-  type: list
-- title: Distributed Photonic-Spintronic Associative Tensor Memory
-  description: A prospective dense hardware implementation preserving explicit READ and UPDATE separation.
+- type: heading
+  level: 3
+  text: Physically Heterogeneous Associative Memory
+- type: paragraph
+  text: The Associative Memory subsystem is physically heterogeneous. Its stages differ in node population, topology
+    of connectivity, activation dynamics, and READ/UPDATE requirements. Each specialized topology may therefore
+    require its own hardware substrate.
+- type: table
+  headers:
+  - Topology
+  - Hardware requirement
+  - Candidate substrates
+  rows:
+  - - Input / Addressing
+    - Feed-forward normalization, routing, and address formation
+    - Digital SIMD/NPU, tensor accelerator, or photonic matrix processor
+  - - Pattern Separation
+    - Representation expansion, competition, locally sparse activation, minimal recurrence
+    - Event-driven competitive hardware, local crossbar arrays, or specialized digital/analog arrays
+  - - Associative Binding / Index
+    - Dense recurrence, persistent state, spreading activation, rapid local UPDATE
+    - Spintronic, memristive, phase-change, or other persistent in-memory substrate
+  - - Output / Projection
+    - Dense integration and compression into Memory Vector
+    - Photonic matrix processor or tensor accelerator
+- type: principle
+  title: Hardware specialization follows topology
+  text: The physical implementation of each stage shall be selected according to its number of processing nodes,
+    topology of connectivity, activation dynamics, and state-update requirements. Specific technologies remain an
+    open research question.
+- type: diagram
+  title: Heterogeneous Associative Memory Hardware Pipeline
+  description: Specialized connection topologies may be implemented on different hardware substrates while preserving
+    the canonical READ/UPDATE boundary.
   direction: TB
-  edges:
-  - flow: information
-    from: query
-    label: READ input
-    to: photo
-  - flow: context
-    from: memory
-    label: persistent state
-    to: photo
-  - flow: information
-    from: photo
-    label: READ result
-    to: response
-  - flow: optimization
-    from: offline
-    label: controlled reprogramming
-    to: memory
-  nodes:
-  - kind: storage
-    id: memory
-    label: 'Spintronic / Memristive Persistent State
-
-      up to 10,000,000 programmable elements'
-  - kind: control
-    id: offline
-    label: 'Offline Consolidation
-
-      structural maintenance'
-  - kind: subsystem
-    id: photo
-    label: 'Dense Photonic Processing Fabric
-
-      256 logical processing layers'
-  - kind: data
-    id: query
-    label: 'Semantic Query Tensor
-
-      up to 1024 x 1024 x 8'
-  - kind: data
-    id: response
-    label: 'Semantic Response Tensor
-
-      up to 1024 x 1024 x 8'
-  proportionality_priority: true
-  readability_priority: true
   size: standard
-  type: diagram
-- text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling strategy; it does not imply a sparse semantic architecture.
-  type: paragraph
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: input
+    kind: subsystem
+    status: experimental
+    label: Input / Addressing Hardware
+  - id: separate
+    kind: subsystem
+    status: experimental
+    label: Pattern Separation Hardware
+  - id: bind
+    kind: storage
+    status: experimental
+    label: Persistent Recurrent Associative Hardware
+  - id: project
+    kind: subsystem
+    status: experimental
+    label: Projection Hardware
+  - id: vector
+    kind: data
+    status: current
+    label: Memory Vector
+  - id: update
+    kind: control
+    status: experimental
+    label: Validated UPDATE Controller
+  edges:
+  - from: input
+    to: separate
+    flow: information
+  - from: separate
+    to: bind
+    flow: information
+  - from: bind
+    to: project
+    flow: information
+  - from: project
+    to: vector
+    flow: interface
+  - from: update
+    to: bind
+    flow: learning
+    label: persistent changes only
+- type: paragraph
+  text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling strategy
+    and does not imply a sparse semantic architecture.
 section_id: S_18_07

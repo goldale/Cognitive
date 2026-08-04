@@ -1,4 +1,13 @@
-# CHANGES
+# Changes
+
+## cognitive-0.3.34 — 2026-08-04
+
+- Added topology-oriented heterogeneous Associative Memory stages.
+- Added dedicated-hardware-per-topology architectural guidance.
+- Added biological node-population ratios as initial hardware-sizing evidence.
+- Corrected processing depth to the 4–8 layer working hypothesis.
+- Added reproducible 0.5 diagram scaling for Sections 12.6 and 13.1.
+- Corrected and uniformly formatted the Section 14.1 comparison table.
 
 ## cognitive-0.3.33 — 2026-08-04
 
@@ -29,3 +38,8 @@
 - Added normalized multi-criteria estimation with explicit residual risk, effective cost, delay cost, and temporally discounted future options.
 - Clarified that action scores are inputs to Integrated Evaluation rather than autonomous decisions.
 - Recorded unresolved weighting, normalization, causal-confidence, discounting, and planning-horizon choices as open questions requiring experiments.
+
+## Canonical terminology retained
+
+- Semantic Teacher remains the Transformer role that produces Semantic Representation.
+- Semantic Feedback Learning Pipeline remains the validated path carrying Semantic Representation to UPDATE.

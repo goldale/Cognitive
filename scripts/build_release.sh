@@ -8,4 +8,4 @@ PYTHONPATH=src python3 -m cogsys.cli build state --output docs --assets assets
 PYTHONPATH=src python3 -m cogsys.cli graph state --output docs/token-graph.dot
 if command -v dot >/dev/null 2>&1; then dot -Tsvg docs/token-graph.dot -o docs/token-graph.svg; fi
 mkdir -p dist
-PYTHONPATH=src python3 -m cogsys.cli release . --output dist/cognitive-0.3.33.tgz
+PYTHONPATH=src python3 -m cogsys.cli release . --output dist/cognitive-0.3.34.tgz

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_08_02
 blocks:
 - text: The objective of planning is to construct the most useful set of plausible developments, not an exhaustive set of all possible futures. Search is bounded by time, memory, computation, maximum scenario count, and required response latency.

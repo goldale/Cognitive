@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.33
+schema_version: 0.3.34
 id: S_07_05
 blocks:
 - text: 'Pairwise preferences provide a practical signal: under a specified context, state A is preferred to state B. Ranking losses avoid requiring an absolute universal numerical scale.'
