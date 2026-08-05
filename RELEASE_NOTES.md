@@ -1,23 +1,24 @@
-# Release Notes — cognitive-0.3.48
+# Release Notes — cognitive-0.3.49
 
-## LTM-2 READ and Memory Vector generation
+## Canonical naming migration
 
-- Defines the complete Stage-1 algorithm that generates the Memory Vector from the latest sequenced STM event.
-- The Sequencer assigns a position number to every node in the linear STM Sequence.
-- Every Sequence node emits `msg2(amplitude, sequence_number)` through its permanent projection to the corresponding LTM input node.
-- Every `msg2` propagates exclusively through the persistent associative graph stored in LTM-1. READ creates no temporary associative connections.
-- LTM-2 has no independent propagation graph or propagation logic; it uses the LTM-1 associative structure as its computational substrate while maintaining an orthogonal MSG2-specific state subspace.
-- The resulting distributed response is reduced to the fixed-dimensional Memory Vector through a configurable readout operator.
-- The initial implementation compares MAX and SUM readout operators under identical conditions.
-- For deterministic READ, the operator producing the higher non-degenerate Memory Vector entropy over representative memory states and events is preferred. For stochastic READ, mutual information is required to distinguish signal entropy from noise.
+The architecture now uses only the following canonical spellings:
 
-## Master Architecture Diagram
+- `LTM1`
+- `LTM2`
+- `MSG1`
+- `MSG2`
 
-- Updates the canonical Master Architecture Diagram YAML and verifies its internal consistency.
-- Generates an A3 PDF because PDF generation was explicitly requested.
-- Does not regenerate PNG or SVG visualizations.
+All legacy hyphenated and lowercase variants are no longer permitted in project text or generated documentation.
 
-## Release quality
+## Definition-level alphabetical index
 
-- Audits duplicate files, YAML identifiers, index entries, repeated definitions, and conflicting architectural rules.
-- Preserves one physical LTM with LTM-1 and LTM-2 as orthogonal logical domains.
+- Every textual `definition` block receives a stable HTML anchor.
+- The alphabetical index includes direct links to definitions in chapter text.
+- Canonical architecture definitions remain separately linked to the Canonical Architecture Model.
+- Token Registry entries now link to the exact token definition row rather than to the beginning of the registry.
+
+## Canonical architecture source
+
+- The Master Architecture Diagram YAML is updated to version 0.3.49 and remains the canonical source.
+- No PNG, SVG, or PDF architecture diagram is generated in this release.

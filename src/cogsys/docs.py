@@ -27,6 +27,16 @@ class PageRef:
     section_title: str
 
 
+def _anchor_slug(value: str) -> str:
+    canonical = value.strip().upper()
+    if canonical in {"LTM1", "LTM2", "MSG1", "MSG2"}:
+        return canonical
+    slug = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-") or "definition"
+    for name in ("LTM1", "LTM2", "MSG1", "MSG2"):
+        slug = re.sub(rf"(?<![a-z0-9]){name.lower()}(?![a-z0-9])", name, slug)
+    return slug
+
+
 def _humanize_token_label(token: str) -> str:
     label = token.removeprefix("T_")
     label = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", label)
@@ -102,6 +112,8 @@ def _render_block(block: dict[str, Any]) -> str:
         if block_type == "hypothesis" and block.get("confidence") is not None:
             extra = f'<p class="metadata">Confidence: {html.escape(str(block["confidence"]))}</p>'
         object_id = str(block.get("object_id", "")).strip()
+        if not object_id and block_type == "definition":
+            object_id = "definition-" + _anchor_slug(str(title))
         id_attr = f' id="{html.escape(object_id, quote=True)}"' if object_id else ""
         return (
             f'<aside class="{block_type}"{id_attr}><h4>{_render_inline(str(title))}</h4>'
@@ -484,24 +496,32 @@ class DocumentationBuilder:
                 content = self.state.load_content(section["content_file"])
                 for block in content.get("blocks", []):
                     object_id = str(block.get("object_id", "")).strip()
+                    block_type = str(block.get("type", "")).strip()
+                    if not object_id and block_type == "definition":
+                        object_id = "definition-" + _anchor_slug(str(block.get("title", "Definition")))
                     if not object_id:
                         continue
                     if chapter["layout"] == "single":
                         href = f"../chapter{chapter['order']:02d}.html#" + object_id
                     else:
                         href = f"../chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html#" + object_id
-                    object_kind = {"RS": "Research Session", "RN": "Research Note", "AN": "Architectural Note", "IN": "Implementation Note", "HP": "Historical Perspective", "MN": "Margin Note"}.get(object_id.split("-", 1)[0], "Typed knowledge object")
+                    object_kind = (
+                        "Definition in text"
+                        if block_type == "definition"
+                        else {"RS": "Research Session", "RN": "Research Note", "AN": "Architectural Note", "IN": "Implementation Note", "HP": "Historical Perspective", "MN": "Margin Note"}.get(object_id.split("-", 1)[0], "Typed knowledge object")
+                    )
                     entries.append((str(block.get("title", object_id)), href, object_kind))
         for token in self.state.token_entries():
             label = _humanize_token_label(token["token"])
-            entries.append((label, token.get("index_target", "../tokens.html"), "Canonical term"))
+            default_target = "../tokens.html#token-" + _anchor_slug(label)
+            entries.append((label, token.get("index_target", default_target), "Canonical term"))
         canonical_dir = self.state.root / 'canonical'
         terminology_path = canonical_dir / 'terminology.yaml'
         if terminology_path.is_file():
             from . import yaml_profile
             terminology = yaml_profile.load(terminology_path)
             for item in terminology.get('terms', []):
-                entries.append((str(item.get('term', '')), '../canonical-model.html#term-' + re.sub(r'[^a-z0-9]+', '-', str(item.get('term', '')).lower()).strip('-'), 'Canonical architecture term'))
+                entries.append((str(item.get('term', '')), '../canonical-model.html#term-' + _anchor_slug(str(item.get('term', ''))), 'Canonical architecture term'))
         entries.sort(key=lambda item: item[0].casefold())
         groups: dict[str, list[tuple[str, str, str]]] = {}
         for entry in entries:
@@ -563,7 +583,7 @@ class DocumentationBuilder:
         parts.append("<h2>Canonical Terminology</h2>")
         terms = yaml_profile.load(canonical_dir / "terminology.yaml").get("terms", [])
         for item in terms:
-            anchor = re.sub(r"[^a-z0-9]+", "-", str(item.get("term", "")).lower()).strip("-")
+            anchor = _anchor_slug(str(item.get("term", "")))
             parts.append(f'<section id="term-{anchor}"><h3>{html.escape(str(item.get("term", "")))}</h3><p>{html.escape(str(item.get("definition", "")))}</p></section>')
         page = _page("Canonical Architecture Model", "cognitive.css", nav, "<h1>Canonical Architecture Model</h1>", "".join(parts), "Generated from state/canonical/*.yaml.")
         path = output / "canonical-model.html"
@@ -583,8 +603,9 @@ class DocumentationBuilder:
                 expression = token.get("expression", {})
                 definition = f"{expression.get('operator')}({', '.join(expression.get('arguments', []))})"
                 form = "Derived"
+            label = _humanize_token_label(token["token"])
             token_rows.append(
-                f'<tr><td><span class="token">{html.escape(token["token"])}</span></td>'
+                f'<tr id="token-{_anchor_slug(label)}"><td><span class="token">{html.escape(token["token"])}</span></td>'
                 f'<td>{form}</td><td>{_render_inline(str(definition))}</td></tr>'
             )
         token_page = _page(

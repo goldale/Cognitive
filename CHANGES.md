@@ -1,10 +1,18 @@
 # Changes
 
+## cognitive-0.3.49 — 2026-08-05
+
+- Standardized the canonical names as `LTM1`, `LTM2`, `MSG1`, and `MSG2` everywhere.
+- Removed legacy hyphenated and lowercase variants from canonical YAML, source documentation, generated HTML, diagrams, tests, and release metadata.
+- Added stable anchors to every textual definition block.
+- Updated the alphabetical index so canonical terms link directly to their definitions in the documentation text, while canonical-model links remain available as separate entries.
+- Added exact anchors for all Token Registry definitions.
+
 ## cognitive-0.3.48 — 2026-08-05
 
-- Completed the LTM-2 READ contract and Memory Vector generation algorithm.
-- Added Sequencer position numbers to `msg2(amplitude, sequence_number)`.
-- Made propagation exclusively dependent on the persistent LTM-1 associative graph.
+- Completed the LTM2 READ contract and Memory Vector generation algorithm.
+- Added Sequencer position numbers to `MSG2(amplitude, sequence_number)`.
+- Made propagation exclusively dependent on the persistent LTM1 associative graph.
 - Added MAX/SUM readout experimentation and entropy-based selection.
 - Added canonical Master Architecture Diagram YAML and an explicitly requested A3 PDF.
 - Added release-blocking invariants and duplicate-audit coverage for the new contract.
@@ -13,7 +21,7 @@
 
 - Renamed Episode Boundary Transformer to Sequencer and located it in the Input / STM subsystem.
 - Added the master information-lifecycle diagram and explicit runtime/offline interaction path.
-- Kept one physical LTM with LTM-1 and LTM-2 logical domains.
+- Kept one physical LTM with LTM1 and LTM2 logical domains.
 - Synchronized generated documentation and index data from YAML.
 
 ## cognitive-0.3.46 — 2026-08-05

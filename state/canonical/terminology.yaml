@@ -13,8 +13,8 @@ terms:
 - definition: The fixed-dimensional, opaque output produced by READ from the distributed MSG2 response of the current
     long-term-memory state to the latest Sequencer chain. Individual coordinates have no predefined semantics.
   term: Memory Vector
-- definition: The non-mutating operation in which every node of the latest STM Sequencer chain emits msg2(amplitude,
-    sequence_number), MSG2 propagates exclusively through the persistent LTM-1 associative graph, and a readout
+- definition: The non-mutating operation in which every node of the latest STM Sequencer chain emits MSG2(amplitude,
+    sequence_number), MSG2 propagates exclusively through the persistent LTM1 associative graph, and a readout
     operator produces the Memory Vector.
   term: READ
 - definition: The Associative Memory operation that incorporates a Semantic Representation into Memory State and
@@ -82,14 +82,14 @@ terms:
 - term: Long-Term Memory
   definition: The single physical persistent associative memory implemented by one shared vertex and connection
     array.
-- term: LTM-1
+- term: LTM1
   definition: The semantic logical domain of the single physical LTM, accessed through MSG1 and its orthogonal message-specific
     state subspace.
-- term: LTM-2
-  definition: The episodic MSG2-specific logical domain of the single physical LTM. LTM-2 has no independent propagation
-    graph; MSG2 uses the persistent LTM-1 associative graph as its computational substrate.
+- term: LTM2
+  definition: The episodic MSG2-specific logical domain of the single physical LTM. LTM2 has no independent propagation
+    graph; MSG2 uses the persistent LTM1 associative graph as its computational substrate.
 - term: MSG1
-  definition: The element-LTM-1 message type operating exclusively in the MSG1 orthogonal state subspace.
+  definition: The element-LTM1 message type operating exclusively in the MSG1 orthogonal state subspace.
 - term: MSG2
   definition: The completed-episode LTM message type carrying per-element contextual data and Transformer-defined
     causal topology in the MSG2 orthogonal state subspace.

@@ -6,7 +6,7 @@ blocks:
   object_id: RS-0011
   text: 'Research Session. Status: Working architecture accepted. Canonical owner: Section 10.14.'
 - type: paragraph
-  text: The session began by testing the deferred LTM-2 logical domain and examined how a history of directed episode
+  text: The session began by testing the deferred LTM2 logical domain and examined how a history of directed episode
     graphs could remain searchable from any participating semantic element without cognitive addresses.
 - type: list
   title: Rejected alternatives

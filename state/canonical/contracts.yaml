@@ -15,9 +15,9 @@ operations:
   stages:
   - Reset Memory Vector output cells
   - Assign or preserve Sequencer position numbers
-  - Emit msg2(amplitude, sequence_number) from every active Sequence node
+  - Emit MSG2(amplitude, sequence_number) from every active Sequence node
   - Inject MSG2 through permanent STM-to-LTM projections
-  - Propagate MSG2 exclusively through the persistent LTM-1 associative graph
+  - Propagate MSG2 exclusively through the persistent LTM1 associative graph
   - Reduce the distributed response with MAX or SUM readout
   - Return Memory Vector
   - Clear transient MSG2 state

@@ -308,7 +308,7 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface, the Input Buffer–STM–LTM-1 path, logical episode
+  summary: Defines the canonical memory interface, the Input Buffer–STM–LTM1 path, logical episode
     formation, and the working model for associative storage and retrieval of directed episode graphs.
   sections:
   - kind: T_Section

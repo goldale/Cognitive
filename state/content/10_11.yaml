@@ -7,29 +7,29 @@ blocks:
     through an explicit release-level architectural change.
   type: warning
 - title: Single physical LTM with two logical domains
-  text: The architecture contains one physical Long-Term Memory vertex and connection array. LTM-1 and LTM-2 are
+  text: The architecture contains one physical Long-Term Memory vertex and connection array. LTM1 and LTM2 are
     not separate physical memories. They are orthogonal logical domains implemented through different message types
     and message-specific state subspaces within the same physical LTM.
   type: principle
-- title: LTM-1
-  text: LTM-1 is the semantic logical domain of the single physical LTM. It contains stable Items of the world,
+- title: LTM1
+  text: LTM1 is the semantic logical domain of the single physical LTM. It contains stable Items of the world,
     basic properties, and a small bounded set of fundamental relations. Examples include chair–sit and bed–lie.
     In the initial architecture it is treated as effectively immutable, analogous to the initially cloned Transformer.
   type: definition
-- title: LTM-2
-  text: LTM-2 is the episodic logical domain of the same physical LTM. It stores completed Logical Episodes through
-    MSG2 while remaining physically co-located with LTM-1 and isolated from it by an orthogonal message-specific
+- title: LTM2
+  text: LTM2 is the episodic logical domain of the same physical LTM. It stores completed Logical Episodes through
+    MSG2 while remaining physically co-located with LTM1 and isolated from it by an orthogonal message-specific
     state subspace.
   type: definition
 - items:
   - An Item may later acquire a formally defined attribute set.
   - An Item may have more than one basic relation, with an initial working limit of no more than eight.
-  - LTM-1 does not initially store the personal event sequences generated during operation.
-  - LTM-1 is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support READ only.
+  - LTM1 does not initially store the personal event sequences generated during operation.
+  - LTM1 is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support READ only.
   type: list
 - title: Semantically neutral STM
   text: STM contains no objects, labels, addresses, or intrinsic Item attributes. Its nodes are semantically neutral.
-    Meaning arises only through the physical interaction of STM activity with LTM-1.
+    Meaning arises only through the physical interaction of STM activity with LTM1.
   type: principle
 - title: Physical topology of STM
   text: STM is a fixed, fully connected, non-directed physical network. The physical connectivity is not created,
@@ -48,15 +48,15 @@ blocks:
   - A Sequence is linear and preserves the observed temporal order of the selected Input Buffer segment.
   - Its direction represents input order, not causal structure.
   - Different Sequences may reuse and overlap the same semantically neutral STM nodes.
-  - The Sequence remains active in STM until the completed Logical Episode has been successfully committed to LTM-2.
+  - The Sequence remains active in STM until the completed Logical Episode has been successfully committed to LTM2.
     After a successful commit, the beginning of the circular input buffer advances to the next Sequence, making
     the committed Sequence no longer part of STM.
   type: list
-- title: STM–LTM-1 projection
-  text: Every STM node has one permanent physical projection to an input point of LTM-1. This projection is a physical
+- title: STM–LTM1 projection
+  text: Every STM node has one permanent physical projection to an input point of LTM1. This projection is a physical
     connection, not an address, pointer, identifier lookup, or table-based binding.
   type: principle
-- text: STM node excitation → fixed physical projection → LTM-1 input excitation → massively parallel propagation
+- text: STM node excitation → fixed physical projection → LTM1 input excitation → massively parallel propagation
     and semantic stabilization
   type: formula
 - title: Transient semantic association
@@ -65,7 +65,7 @@ blocks:
     action, or other Item and retains no permanent semantic attribute after the excitation ends.
   type: paragraph
 - title: Parallel interpretation
-  text: A request excites a distributed linear STM Sequence. Every active Sequence node emits msg2(amplitude, sequence_number)
+  text: A request excites a distributed linear STM Sequence. Every active Sequence node emits MSG2(amplitude, sequence_number)
     through its permanent projection to the corresponding LTM input. The complete set of messages constitutes the
     READ stimulus.
   type: principle
@@ -76,8 +76,8 @@ blocks:
   type: warning
 - title: READ interpretation
   text: READ is not address lookup or retrieval of a selected episode. Every node of the latest STM Sequence emits
-    msg2(amplitude, sequence_number). MSG2 propagates exclusively through the persistent associative graph stored
-    in LTM-1, and the resulting distributed response is reduced to the Memory Vector. READ remains non-mutating.
+    MSG2(amplitude, sequence_number). MSG2 propagates exclusively through the persistent associative graph stored
+    in LTM1, and the resulting distributed response is reduced to the Memory Vector. READ remains non-mutating.
   type: principle
 - title: Single physical LTM
   text: The architecture contains one physical LTM node and connection array. Semantic element processing and completed-episode
@@ -90,27 +90,27 @@ blocks:
   - How are concurrent associative waves scheduled and measured in hardware?
   type: list
 - type: principle
-  title: Canonical LTM-2 READ algorithm
+  title: Canonical LTM2 READ algorithm
   text: The latest event is represented by the linear STM Sequence produced by the Sequencer. The Sequencer numbers
-    its nodes. Every active node emits msg2(amplitude, sequence_number) through its permanent STM-to-LTM projection.
+    its nodes. Every active node emits MSG2(amplitude, sequence_number) through its permanent STM-to-LTM projection.
     These messages excite the corresponding LTM inputs and propagate exclusively through the persistent associative
-    graph stored in LTM-1. The distributed MSG2 response is then reduced to the fixed-dimensional Memory Vector.
+    graph stored in LTM1. The distributed MSG2 response is then reduced to the fixed-dimensional Memory Vector.
 - type: formula
-  text: Sequencer chain -> msg2(amplitude, sequence_number) -> propagation through persistent LTM-1 graph -> MAX
+  text: Sequencer chain -> MSG2(amplitude, sequence_number) -> propagation through persistent LTM1 graph -> MAX
     or SUM readout -> Memory Vector
 - type: principle
-  title: No independent LTM-2 propagation graph
-  text: LTM-2 does not have its own propagation logic or connectivity. It uses the existing associative structure
-    of LTM-1 as its computational substrate while MSG2 state remains isolated in an orthogonal message-specific
+  title: No independent LTM2 propagation graph
+  text: LTM2 does not have its own propagation logic or connectivity. It uses the existing associative structure
+    of LTM1 as its computational substrate while MSG2 state remains isolated in an orthogonal message-specific
     state subspace.
 - type: principle
   title: Persistent-graph invariant
-  text: The READ operation never creates temporary associative connections. Every msg2 propagates exclusively through
-    the persistent associative graph stored in LTM-1. Consequently, the generated Memory Vector is a direct consequence
+  text: The READ operation never creates temporary associative connections. Every MSG2 propagates exclusively through
+    the persistent associative graph stored in LTM1. Consequently, the generated Memory Vector is a direct consequence
     of the accumulated associative structure of long-term memory rather than of the current STM event alone.
 - type: definition
   title: MSG2 payload
-  text: msg2(amplitude, sequence_number). Amplitude carries the STM activation strength. sequence_number carries
+  text: MSG2(amplitude, sequence_number). Amplitude carries the STM activation strength. sequence_number carries
     the node position assigned by the Sequencer. The target concept identity is supplied by the permanent physical
     projection rather than encoded as an address in MSG2.
 - type: list
@@ -119,9 +119,9 @@ blocks:
   - Set operation mode to READ.
   - Reset the fixed Memory Vector output cells.
   - Number all nodes of the latest linear STM Sequence.
-  - Every active Sequence node emits msg2(amplitude, sequence_number).
+  - Every active Sequence node emits MSG2(amplitude, sequence_number).
   - Inject each message through the permanent projection to its corresponding LTM input.
-  - Propagate every msg2 exclusively through the persistent LTM-1 associative graph.
+  - Propagate every MSG2 exclusively through the persistent LTM1 associative graph.
   - Reduce the distributed response into Memory Vector cells using MAX or SUM.
   - Return the Memory Vector and clear transient MSG2 excitation.
 - type: principle

@@ -85,7 +85,7 @@ blocks:
   type: formula
 - title: Sequence lifetime
   text: The Sequence remains active in STM until the completed Logical Episode has been successfully committed to
-    LTM-2. After a successful commit, the beginning of the circular input buffer advances to the next Sequence,
+    LTM2. After a successful commit, the beginning of the circular input buffer advances to the next Sequence,
     making the committed Sequence no longer part of STM.
   type: principle
 - title: Architectural boundary

@@ -626,14 +626,14 @@ tokens:
   definition: The semantic logical domain of the single physical Long-Term Memory, accessed through MSG1 and an
     orthogonal message-specific state subspace.
   status: T_Active
-  label: LTM-1
+  label: LTM1
   index_target: ../chapter10/10_11.html
 - token: T_LTM2
   atomic: true
   definition: The episodic logical domain of the single physical Long-Term Memory, used to store completed Logical
     Episodes through MSG2 and an orthogonal message-specific state subspace.
   status: T_Active
-  label: LTM-2
+  label: LTM2
   index_target: ../chapter10/10_11.html
 - token: T_ShortTermMemory
   atomic: true
@@ -649,7 +649,7 @@ tokens:
   status: T_Active
 - token: T_PhysicalProjection
   atomic: true
-  definition: A permanent non-addressed physical connection from one STM node to one input point of LTM-1.
+  definition: A permanent non-addressed physical connection from one STM node to one input point of LTM1.
   status: T_Active
 - token: T_TraceList
   atomic: true

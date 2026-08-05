@@ -16,7 +16,7 @@ blocks:
 - title: Canonical input path
   description: Language / Messages and Stream Input are equal external channels. They converge on one modality-neutral
     Input Buffer. The Sequencer orders and normalizes the combined stream before forming the active Semantically
-    Neutral STM sequence, which projects physically into LTM-1.
+    Neutral STM sequence, which projects physically into LTM1.
   direction: LR
   edges:
   - flow: information
@@ -59,7 +59,7 @@ blocks:
     label: Semantically Neutral STM
   - kind: storage
     id: ltm
-    label: LTM-1
+    label: LTM1
   proportionality_priority: true
   readability_priority: true
   size: standard

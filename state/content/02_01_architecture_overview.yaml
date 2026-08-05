@@ -32,7 +32,7 @@ blocks:
     id: master_ltm
     label: 'Single Physical LTM
 
-      LTM-1 · LTM-2'
+      LTM1 · LTM2'
   - kind: subsystem
     id: master_transformer
     label: 'Transformer
