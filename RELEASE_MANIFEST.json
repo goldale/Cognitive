@@ -1,10 +1,11 @@
 {
-  "release": "0.3.47",
-  "version": "0.3.47",
+  "release": "0.3.48",
+  "version": "0.3.48",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
+  "master_architecture_diagram_yaml": "state/master-architecture-diagram.yaml",
   "generated_documentation": "docs/",
+  "explicit_visual_artifact": "docs/master-architecture-diagram.pdf",
   "date": "2026-08-05",
-  "baseline_archive": "cognitive-0.3.42(1).tgz",
-  "baseline_sha256": "e52602eb20735a79507fb3b8297b492edb37391310f0baf35960a209efcc2ac9"
+  "baseline_archive": "cognitive-0.3.47.tgz"
 }

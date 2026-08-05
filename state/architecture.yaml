@@ -116,3 +116,16 @@ architectures:
   - External Sources -> Input Buffer
   - Input Buffer -> STM
   - STM -> LTM-1
+- kind: T_ArchitectureDecision
+  id: A_014
+  title: LTM-2 READ through the LTM-1 graph
+  status: T_Accepted
+  summary: The latest STM Sequencer chain emits msg2(amplitude, sequence_number). MSG2 propagates exclusively through
+    the persistent LTM-1 associative graph; LTM-2 has no independent propagation graph. MAX and SUM readouts are
+    compared by information entropy.
+  relations:
+  - Sequencer -> STM Sequence
+  - STM Sequence -> MSG2
+  - MSG2 -> LTM-1 Associative Graph
+  - LTM-1 Associative Graph -> Memory Vector Readout
+  - Memory Vector Readout -> Memory Vector

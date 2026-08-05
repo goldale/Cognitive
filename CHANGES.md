@@ -1,5 +1,14 @@
 # Changes
 
+## cognitive-0.3.48 — 2026-08-05
+
+- Completed the LTM-2 READ contract and Memory Vector generation algorithm.
+- Added Sequencer position numbers to `msg2(amplitude, sequence_number)`.
+- Made propagation exclusively dependent on the persistent LTM-1 associative graph.
+- Added MAX/SUM readout experimentation and entropy-based selection.
+- Added canonical Master Architecture Diagram YAML and an explicitly requested A3 PDF.
+- Added release-blocking invariants and duplicate-audit coverage for the new contract.
+
 ## cognitive-0.3.47 — 2026-08-05
 
 - Renamed Episode Boundary Transformer to Sequencer and located it in the Input / STM subsystem.

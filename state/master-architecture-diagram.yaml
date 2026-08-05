@@ -1,0 +1,72 @@
+kind: T_Collection
+diagram:
+  id: MASTER_ARCHITECTURE_DIAGRAM
+  title: Cognitive Master Architecture Diagram
+  version: 0.3.48
+  canonical: true
+  visual_generation_policy:
+    yaml_updated_each_release: true
+    internal_consistency_checked_each_release: true
+    png_svg_pdf_generated_only_on_explicit_request: true
+    generated_in_this_release:
+    - PDF
+  nodes:
+  - id: input_buffer
+    label: Input Buffer
+    kind: state
+  - id: sequencer
+    label: Sequencer
+    kind: process
+  - id: stm_sequence
+    label: Linear STM Sequence
+    kind: state
+  - id: msg2
+    label: msg2(amplitude, sequence_number)
+    kind: message
+  - id: ltm1_graph
+    label: Persistent LTM-1 Associative Graph
+    kind: storage
+  - id: ltm2_state
+    label: Orthogonal LTM-2 / MSG2 State
+    kind: logical_domain
+  - id: readout
+    label: Memory Vector Readout (MAX or SUM)
+    kind: process
+  - id: memory_vector
+    label: Memory Vector
+    kind: interface
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+  edges:
+  - from: input_buffer
+    to: sequencer
+    label: completed event segment
+  - from: sequencer
+    to: stm_sequence
+    label: linear chain + position numbers
+  - from: stm_sequence
+    to: msg2
+    label: every node emits
+  - from: msg2
+    to: ltm1_graph
+    label: permanent STM-to-LTM projection
+  - from: ltm1_graph
+    to: ltm2_state
+    label: MSG2 propagation uses LTM-1 connectivity
+  - from: ltm2_state
+    to: readout
+    label: distributed response
+  - from: readout
+    to: memory_vector
+    label: fixed-dimensional reduction
+  - from: memory_vector
+    to: transformer
+    label: opaque conditioning interface
+  invariants:
+  - READ never creates temporary associative connections.
+  - Every msg2 propagates exclusively through the persistent LTM-1 associative graph.
+  - LTM-2 has no independent propagation graph or propagation logic.
+  - Memory Vector coordinates have no individually prescribed semantics.
+  - MAX and SUM are compared under identical conditions.
+  - Deterministic readout selection maximizes non-degenerate Memory Vector entropy.

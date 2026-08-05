@@ -25,18 +25,41 @@ invariants:
   statement: Input Buffer elements are filled sequentially without semantic routing or destination lookup.
   severity: release_blocking
 - id: INV_009
-  statement: Every Input Buffer element has exactly one permanent physical projection to one corresponding
-    STM node.
+  statement: Every Input Buffer element has exactly one permanent physical projection to one corresponding STM node.
   severity: release_blocking
 - id: INV_010
   statement: Input Buffer element count equals STM node count, and their per-element runtime vector dimensionality
     is equal.
   severity: release_blocking
 - id: INV_011
-  statement: One coordinate of the fixed-dimensional input activation vector is reserved for transmission
-    context and does not encode Item identity.
+  statement: One coordinate of the fixed-dimensional input activation vector is reserved for transmission context
+    and does not encode Item identity.
   severity: release_blocking
 - id: INV_012
-  statement: Stage-1 temporal order is derived from sequential Input Buffer insertion; parallel completion
-    order must not redefine observation order.
+  statement: Stage-1 temporal order is derived from sequential Input Buffer insertion; parallel completion order
+    must not redefine observation order.
+  severity: release_blocking
+- id: INV_013
+  statement: The Sequencer assigns a position number to every node of the linear STM Sequence.
+  severity: release_blocking
+- id: INV_014
+  statement: Every active Sequence node initiates READ by emitting msg2(amplitude, sequence_number) through its
+    permanent projection to the corresponding LTM input node.
+  severity: release_blocking
+- id: INV_015
+  statement: Every msg2 propagates exclusively through the persistent associative graph stored in LTM-1.
+  severity: release_blocking
+- id: INV_016
+  statement: READ never creates temporary associative connections.
+  severity: release_blocking
+- id: INV_017
+  statement: LTM-2 has no independent propagation graph or propagation logic.
+  severity: release_blocking
+- id: INV_018
+  statement: The initial Memory Vector readout implementation supports both MAX and SUM under identical dimensionality
+    and evaluation conditions.
+  severity: release_blocking
+- id: INV_019
+  statement: For deterministic READ, readout selection is based on non-degenerate Memory Vector entropy over representative
+    LTM states and event queries; stochastic READ additionally requires noise-aware mutual-information analysis.
   severity: release_blocking

@@ -57,3 +57,16 @@ components:
   - single_physical_associative_memory
   - ltm_1_semantic_domain
   - ltm_2_episodic_domain
+- kind: subsystem
+  id: C_SEQUENCER
+  name: Sequencer
+  roles:
+  - linear_sequence_construction
+  - sequence_position_numbering
+- kind: interface
+  id: C_MV_READOUT
+  name: Memory Vector Readout
+  roles:
+  - fixed_dimensional_readout
+  - max_sum_experimentation
+  - entropy_evaluation

@@ -37,9 +37,9 @@ blocks:
     does not.
   type: definition
 - title: Sequence
-  text: 'A Sequence is a directed linear activation graph formed within the fully connected STM from the Input Buffer
-    segment identified as one Logical Episode. It is a direct reflection of that segment: every buffered element
-    is represented by one activated STM node, and directed activation links preserve the original input order.'
+  text: A Sequence is a directed linear activation chain formed within the fully connected STM from the Input Buffer
+    segment identified as one Logical Episode. The Sequencer assigns every active node a position number preserving
+    the original input order.
   type: definition
 - text: Identified Input Buffer segment → directed linear STM Sequence
   type: formula
@@ -65,20 +65,19 @@ blocks:
     action, or other Item and retains no permanent semantic attribute after the excitation ends.
   type: paragraph
 - title: Parallel interpretation
-  text: A request normally excites a distributed set of STM nodes, not one node. Their fixed projections excite
-    many LTM-1 inputs in parallel. Semantic interpretation arises from the joint LTM response to the complete active
-    STM graph, while each active STM node remains physically coupled to one LTM input for that excitation.
+  text: A request excites a distributed linear STM Sequence. Every active Sequence node emits msg2(amplitude, sequence_number)
+    through its permanent projection to the corresponding LTM input. The complete set of messages constitutes the
+    READ stimulus.
   type: principle
 - title: Transformer boundary
-  text: The Transformer must receive a semantically interpretable representation equivalent in content to an expression
-    such as “Vasya sat on a chair,” not an uninterpreted sequence of neutral node symbols. The exact projection
-    from the stabilized LTM-1 response to the canonical Memory Vector or another Transformer-consumable representation
-    remains an implementation and research question.
+  text: The Transformer receives the fixed-dimensional Memory Vector generated from the distributed LTM response.
+    Memory Vector coordinates are intentionally opaque and have no individually prescribed semantics; the Transformer
+    is trained to use the joint pattern.
   type: warning
 - title: READ interpretation
-  text: READ through LTM-1 is not an address lookup. It is parallel excitation from the active STM graph through
-    fixed physical projections into LTM-1, followed by propagation, competition, and stabilization into a semantic
-    representation suitable for the Transformer. READ remains non-mutating.
+  text: READ is not address lookup or retrieval of a selected episode. Every node of the latest STM Sequence emits
+    msg2(amplitude, sequence_number). MSG2 propagates exclusively through the persistent associative graph stored
+    in LTM-1, and the resulting distributed response is reduced to the Memory Vector. READ remains non-mutating.
   type: principle
 - title: Single physical LTM
   text: The architecture contains one physical LTM node and connection array. Semantic element processing and completed-episode
@@ -88,7 +87,47 @@ blocks:
   items:
   - What node and connection variables implement the transient linear Sequence without changing physical STM topology?
   - How does the Sequencer estimate Logical Episode boundary confidence?
-  - What exact encodings define MSG1 and MSG2 while preserving orthogonality?
   - How are concurrent associative waves scheduled and measured in hardware?
   type: list
+- type: principle
+  title: Canonical LTM-2 READ algorithm
+  text: The latest event is represented by the linear STM Sequence produced by the Sequencer. The Sequencer numbers
+    its nodes. Every active node emits msg2(amplitude, sequence_number) through its permanent STM-to-LTM projection.
+    These messages excite the corresponding LTM inputs and propagate exclusively through the persistent associative
+    graph stored in LTM-1. The distributed MSG2 response is then reduced to the fixed-dimensional Memory Vector.
+- type: formula
+  text: Sequencer chain -> msg2(amplitude, sequence_number) -> propagation through persistent LTM-1 graph -> MAX
+    or SUM readout -> Memory Vector
+- type: principle
+  title: No independent LTM-2 propagation graph
+  text: LTM-2 does not have its own propagation logic or connectivity. It uses the existing associative structure
+    of LTM-1 as its computational substrate while MSG2 state remains isolated in an orthogonal message-specific
+    state subspace.
+- type: principle
+  title: Persistent-graph invariant
+  text: The READ operation never creates temporary associative connections. Every msg2 propagates exclusively through
+    the persistent associative graph stored in LTM-1. Consequently, the generated Memory Vector is a direct consequence
+    of the accumulated associative structure of long-term memory rather than of the current STM event alone.
+- type: definition
+  title: MSG2 payload
+  text: msg2(amplitude, sequence_number). Amplitude carries the STM activation strength. sequence_number carries
+    the node position assigned by the Sequencer. The target concept identity is supplied by the permanent physical
+    projection rather than encoded as an address in MSG2.
+- type: list
+  title: READ stages
+  items:
+  - Set operation mode to READ.
+  - Reset the fixed Memory Vector output cells.
+  - Number all nodes of the latest linear STM Sequence.
+  - Every active Sequence node emits msg2(amplitude, sequence_number).
+  - Inject each message through the permanent projection to its corresponding LTM input.
+  - Propagate every msg2 exclusively through the persistent LTM-1 associative graph.
+  - Reduce the distributed response into Memory Vector cells using MAX or SUM.
+  - Return the Memory Vector and clear transient MSG2 excitation.
+- type: principle
+  title: Information-preserving readout selection
+  text: The initial implementation supports both MAX and SUM readout operators without assuming either is optimal.
+    Under deterministic READ, both are evaluated on identical representative LTM states and Event Queries, and the
+    operator producing the higher non-degenerate Memory Vector entropy is preferred. If READ becomes stochastic,
+    mutual information must be used to distinguish memory-dependent information from internally generated noise.
 section_id: S_10_11
