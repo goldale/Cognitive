@@ -235,4 +235,7 @@ digraph TokenGraph {
   "T_MinimalSemanticSearchTrace" [shape=ellipse];
   "T_ProgressiveVirtualContraction" [shape=ellipse];
   "T_EpisodeGraphVertex" [shape=ellipse];
+  "T_EpisodeBoundaryTransformer" [shape=ellipse];
+  "T_MessageSpecificStateSubspace" [shape=ellipse];
+  "T_AssociativeRetrievalWave" [shape=ellipse];
 }

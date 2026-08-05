@@ -1,6 +1,6 @@
 {
-  "release": "0.3.43",
-  "version": "0.3.43",
+  "release": "0.3.45",
+  "version": "0.3.45",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
   "generated_documentation": "docs/",

@@ -1,6 +1,7 @@
 kind: T_Collection
 terms:
-- definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
+- definition: The Transformer role that produces semantic representations suitable for Associative Memory
+    learning.
   term: Semantic Teacher
 - definition: Learning in which Transformer-produced semantic representations update Associative Memory.
   term: Semantic Feedback Learning
@@ -12,68 +13,85 @@ terms:
   term: Memory State
 - definition: A transient retrieval representation produced exclusively by READ.
   term: Memory Vector
-- definition: The Associative Memory operation that maps Memory State and Query to a Memory Vector without modifying
-    Memory State.
+- definition: The Associative Memory operation that maps Memory State and Query to a Memory Vector without
+    modifying Memory State.
   term: READ
-- definition: The Associative Memory operation that incorporates a Semantic Representation into Memory State and
-    returns no Memory Vector.
+- definition: The Associative Memory operation that incorporates a Semantic Representation into Memory
+    State and returns no Memory Vector.
   term: UPDATE
-- definition: The Associative Memory role that incorporates Transformer-produced Semantic Representations into Memory
-    State through UPDATE.
+- definition: The Associative Memory role that incorporates Transformer-produced Semantic Representations
+    into Memory State through UPDATE.
   term: Semantic Learner
-- definition: The Associative Memory role that produces a Memory Vector through explicit READ without modifying
-    Memory State.
+- definition: The Associative Memory role that produces a Memory Vector through explicit READ without
+    modifying Memory State.
   term: Contextual Retriever
-- definition: The future memory-lifecycle subsystem that estimates the context-sensitive significance of semantic
-    knowledge and memory structures.
+- definition: The future memory-lifecycle subsystem that estimates the context-sensitive significance
+    of semantic knowledge and memory structures.
   term: Importance Estimation
 - definition: Protected reorganization of Memory State outside the immediate online response path.
   term: Offline Consolidation
-- definition: A future operating mode for offline consolidation, pruning, structural analysis, and other expensive
-    memory maintenance.
+- definition: A future operating mode for offline consolidation, pruning, structural analysis, and other
+    expensive memory maintenance.
   term: Sleep
-- definition: Controlled reactivation of selected semantic experience through the Transformer and the canonical
-    Semantic Feedback Learning Pipeline.
+- definition: Controlled reactivation of selected semantic experience through the Transformer and the
+    canonical Semantic Feedback Learning Pipeline.
   term: Replay
-- definition: Controlled reduction of accessibility, precision, or persistence for memory whose expected utility
-    no longer justifies its cost or interference.
+- definition: Controlled reduction of accessibility, precision, or persistence for memory whose expected
+    utility no longer justifies its cost or interference.
   term: Forgetting
-- definition: Removal or compression of redundant, obsolete, low-confidence, or harmful memory structures under
-    explicit policy.
+- definition: Removal or compression of redundant, obsolete, low-confidence, or harmful memory structures
+    under explicit policy.
   term: Memory Pruning
-- definition: Modification of Associative Memory topology based on accumulated evidence rather than ordinary online
-    weight updates.
+- definition: Modification of Associative Memory topology based on accumulated evidence rather than ordinary
+    online weight updates.
   term: Structural Plasticity
-- definition: A future conservative subsystem integrating goals, context, memory, consequences, and candidate actions
-    into system-level evaluation.
+- definition: A future conservative subsystem integrating goals, context, memory, consequences, and candidate
+    actions into system-level evaluation.
   term: Global Evaluation
-- definition: Learning between Cognitive systems through exchanged Semantic Representations and local controlled
-    UPDATE.
+- definition: Learning between Cognitive systems through exchanged Semantic Representations and local
+    controlled UPDATE.
   term: Multi-Agent Semantic Learning
-- definition: A modality-neutral linear or circular field of fixed-dimensional input elements written sequentially
-    before activation enters STM.
+- definition: A modality-neutral linear or circular field of fixed-dimensional input elements written
+    sequentially before activation enters STM.
   term: Input Buffer
-- definition: One fixed-dimensional modality-neutral physical element of the Input Buffer, permanently connected
-    to one corresponding STM node.
+- definition: One fixed-dimensional modality-neutral physical element of the Input Buffer, permanently
+    connected to one corresponding STM node.
   term: Input Buffer Element
-- definition: The service coordinate reserved within an activation vector to preserve source or transmission mode
-    without encoding Item identity.
+- definition: The service coordinate reserved within an activation vector to preserve source or transmission
+    mode without encoding Item identity.
   term: Transmission Context
-- definition: A mutex-protected queueing mechanism that writes the next available event into the next Input Buffer
-    element without semantic routing.
+- definition: A mutex-protected queueing mechanism that writes the next available event into the next
+    Input Buffer element without semantic routing.
   term: Sequential Input Multiplexer
-- definition: A typed non-normative documentation object that preserves a deferred alternative or side observation
-    outside the canonical architecture.
+- definition: A typed non-normative documentation object that preserves a deferred alternative or side
+    observation outside the canonical architecture.
   term: Margin Note
 - term: Trace List
-  definition: A list of independently matchable local trace structures stored on one physical LTM connection and
-    used as the associative-search domain at that connection.
+  definition: A list of independently matchable local trace structures stored on one physical LTM connection
+    and used as the associative-search domain at that connection.
 - term: Minimal Semantic Search Trace
-  definition: A connection-local associative discriminator whose placement identifies a possible transition and
-    whose value determines compatibility with the current activation.
+  definition: A connection-local associative discriminator whose placement identifies a possible transition
+    and whose value determines compatibility with the current activation.
 - term: Progressive Virtual Contraction
-  definition: A semantic-search process in which the origin remains fixed while each successful transition replaces
-    the temporary virtual endpoint, without intermediate switch-fabric reconfiguration.
+  definition: A semantic-search process in which the origin remains fixed while each successful transition
+    replaces the temporary virtual endpoint, without intermediate switch-fabric reconfiguration.
 - term: Episode Graph Vertex
-  definition: The unique storage location for the complete Transformer-produced vector of one element in one completed
-    Logical Episode.
+  definition: The unique storage location for the complete Transformer-produced vector of one element
+    in one completed Logical Episode.
+- term: Episode Boundary Transformer
+  definition: A specialized Transformer that identifies candidate logical start and end boundaries in
+    the combined Input Buffer context and delegates uncertain cases to the main Transformer.
+- term: MSG1
+  definition: The element-semantic LTM message type operating exclusively in the MSG1 orthogonal state
+    subspace.
+- term: MSG2
+  definition: The completed-episode LTM message type carrying per-element contextual data and Transformer-defined
+    causal topology in the MSG2 orthogonal state subspace.
+- term: Orthogonal Message-Specific State Subspace
+  definition: The portion of LTM vertex and connection state activated and updated exclusively by one
+    message type.
+- term: Associative Retrieval Wave
+  definition: A repeated local match-and-transition process confined to one message-specific state subspace.
+- term: Sequence
+  definition: A directed linear STM activation graph that directly reflects the selected Input Buffer
+    segment and preserves its temporal order.

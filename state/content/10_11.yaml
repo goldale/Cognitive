@@ -7,10 +7,9 @@ blocks:
     the hypothesis only through an explicit release-level architectural change.
   type: warning
 - title: Stage-1 memory scope
-  text: 'The first stage defines Short-Term Memory and one Long-Term Memory: Semantic LTM. Semantic LTM
-    is the cloned semantic dictionary of the world. A second LTM is not defined yet; its necessity and
-    structure must be derived later from the mechanism that transfers or consolidates STM activity into
-    persistent personal memory.'
+  text: The first stage defines Short-Term Memory and the semantic operation of the single physical Long-Term
+    Memory. The same physical LTM node and connection array also supports episodic operation through a
+    different message type and an orthogonal state subspace.
   type: principle
 - title: Semantic LTM
   text: Semantic LTM contains stable Items of the world, basic properties, and a small bounded set of
@@ -34,20 +33,19 @@ blocks:
     complete connectivity does not.
   type: definition
 - title: Sequence
-  text: A sequence is a directed activation graph embedded in the fully connected STM. Direction belongs
-    to the active causal graph of the current excitation, not to the physical topology of STM.
+  text: 'A Sequence is a directed linear activation graph formed within the fully connected STM from the
+    Input Buffer segment identified as one Logical Episode. It is a direct reflection of that segment:
+    every buffered element is represented by one activated STM node, and directed activation links preserve
+    the original input order.'
   type: definition
-- text: Fully connected, non-directed STM topology + transient directed activation graph = current causal
-    sequence
+- text: Identified Input Buffer segment → directed linear STM Sequence
   type: formula
 - items:
-  - A sequence is not an array, list, address chain, or permanently created set of physical links.
-  - The active graph may contain branches and convergences; it need not be a simple path.
-  - Different sequences may reuse and overlap the same neutral STM nodes.
-  - 'The direction of an active edge records causal propagation: one excitation contributes to the next
-    excitation.'
-  - Clock time is not assumed to be intrinsic to STM activation. Temporal interpretation may be added
-    by other cognitive functions.
+  - A Sequence is not an address chain or a permanently created set of physical links.
+  - A Sequence is linear and preserves the observed temporal order of the selected Input Buffer segment.
+  - Its direction represents input order, not causal structure.
+  - Different Sequences may reuse and overlap the same semantically neutral STM nodes.
+  - The Sequence remains active until the completed Logical Episode has been integrated into LTM.
   type: list
 - title: STM–Semantic LTM projection
   text: Every STM node has one permanent physical projection to an input point of Semantic LTM. This projection
@@ -79,18 +77,17 @@ blocks:
     through fixed physical projections into Semantic LTM, followed by propagation, competition, and stabilization
     into a semantic representation suitable for the Transformer. READ remains non-mutating.
   type: principle
-- title: Explicitly deferred second LTM
-  text: The architecture deliberately does not define a second LTM in this release. It will be introduced
-    only when the project begins to specify how directed activation graphs in STM are selected, transformed,
-    and consolidated into persistent personal sequences.
-  type: note
+- title: Single physical LTM
+  text: The architecture contains one physical LTM node and connection array. Semantic element processing
+    and completed-episode processing use different message types and orthogonal message-specific state
+    subspaces within that same LTM.
+  type: principle
 - title: Open questions
   items:
-  - How is an external request converted into the initial distributed excitation of STM?
-  - What node and connection state variables define the transient directed activation graph without changing
-    physical STM topology?
-  - How does Semantic LTM stabilize a distributed excitation into explicit Items and relations?
-  - How is the stabilized semantic result serialized or projected for Transformer consumption?
-  - What criteria select an STM activation graph for later consolidation into a second LTM?
+  - What node and connection variables implement the transient linear Sequence without changing physical
+    STM topology?
+  - How does the Episode Boundary Transformer estimate boundary confidence?
+  - What exact encodings define MSG1 and MSG2 while preserving orthogonality?
+  - How are concurrent associative waves scheduled and measured in hardware?
   type: list
 section_id: S_10_11

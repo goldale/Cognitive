@@ -1,5 +1,17 @@
 # Changes
 
+## cognitive-0.3.45 — 2026-08-05
+
+- Defined logical episode start and end as semantic boundaries independent of physical Input Buffer boundaries.
+- Added the specialized Episode Boundary Transformer with main-Transformer fallback for uncertain segmentation.
+- Redefined Sequence as the directed linear STM reflection of the selected Input Buffer segment.
+- Separated temporal Sequence topology from Transformer-defined causal episode-graph topology.
+- Replaced the physical two-LTM interpretation with one physical LTM vertex and connection array.
+- Defined MSG1 and MSG2 as orthogonal message-mediated processes within the same LTM.
+- Added orthogonal message-specific state subspaces and concurrent independent associative retrieval waves.
+- Extended MN-0001 with the cross-stream causal-dependency failure of independent parallel segmentation.
+- Regenerated all YAML-derived HTML and the alphabetical index.
+
 ## cognitive-0.3.43 — 2026-08-05
 
 - Added canonical Section 10.14 for directed episode graph storage and Connection Trace Lists.

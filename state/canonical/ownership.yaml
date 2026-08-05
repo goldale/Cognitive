@@ -20,4 +20,12 @@ ownership:
   concept: Directed episode graph storage
 - canonical_location: Section 10.14
   concept: Connection Trace Lists
+- canonical_location: Section 10.13
+  concept: Logical Episode boundaries
+- canonical_location: Section 10.13
+  concept: Sequence and temporal-to-causal transformation
+- canonical_location: Section 10.14
+  concept: LTM message types and orthogonal state subspaces
+- canonical_location: Section 10.14
+  concept: Concurrent associative retrieval waves
 rule: Non-owning sections must summarize and link rather than repeat canonical definitions.

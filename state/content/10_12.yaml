@@ -91,10 +91,12 @@ blocks:
 - title: MN-0001 — Alternative parallel input processing
   object_id: MN-0001
   text: A deferred alternative uses a pool of identical input-processing paths. A free path temporarily
-    connects to a data source, processes one event, writes the result, and returns to the pool. This may
-    improve throughput and preserve modality neutrality, but parallel completion can reorder observations.
-    Because Stage 1 currently derives time and initial causal order from sequential Input Buffer insertion,
-    this alternative is not canonical. Reconsider it only after observation order, processing order, and
-    publication order are explicitly separated and causality is preserved.
+    connects to a data source, processes one event, publishes the result, and returns to the pool. Parallel
+    completion can reorder observations. More importantly, events from different source streams may belong
+    to the same Logical Episode and may participate in one causal chain. Independent per-stream segmentation
+    can assign such events to different episodes and break cross-stream causal continuity. Because final
+    episode-boundary detection requires the combined context of all relevant streams, this alternative
+    is not canonical. It may be reconsidered only if observation order, processing order, publication
+    order, and cross-stream causal coherence are all preserved.
   type: note
 section_id: S_10_12

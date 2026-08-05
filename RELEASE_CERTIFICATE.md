@@ -1,6 +1,6 @@
-# Release Certificate - cognitive-0.3.43
+# Release Certificate - cognitive-0.3.45
 
-- Version: 0.3.43
+- Version: 0.3.45
 - Date: 2026-08-05
 - Canonical source: YAML under `state/`
 - Generated documentation: `docs/`
