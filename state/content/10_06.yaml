@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_10_06
 blocks:
 - text: The required Associative Memory is not available as one ready-made component. However, several established

@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.35
+schema_version: 0.3.36
 chapters:
 - kind: T_Chapter
   id: C_01
@@ -32,7 +32,8 @@ chapters:
   id: C_02
   title: Architecture Overview and Design Principles
   order: 2
-  summary: Presents the canonical Cognitive architecture, its semantic self-learning loop, and the design principles governing model evolution.
+  summary: Presents the canonical Cognitive architecture, its semantic self-learning loop, and the design principles governing
+    model evolution.
   sections:
   - kind: T_Section
     id: S_02_01_ARCH
@@ -106,7 +107,8 @@ chapters:
   id: C_04
   title: Semantic Representation
   order: 4
-  summary: Describes how decoded signals become context-dependent semantic representations without claiming that serialization alone contains meaning.
+  summary: Describes how decoded signals become context-dependent semantic representations without claiming that serialization
+    alone contains meaning.
   sections:
   - kind: T_Section
     id: S_04_01
@@ -202,7 +204,8 @@ chapters:
   id: C_07
   title: Integrated Evaluation
   order: 7
-  summary: Defines the conservative learned function that compares heterogeneous representations relative to goals, memory, and context.
+  summary: Defines the conservative learned function that compares heterogeneous representations relative to goals, memory,
+    and context.
   sections:
   - kind: T_Section
     id: S_07_01
@@ -234,7 +237,8 @@ chapters:
   id: C_08
   title: Planning and Action Selection
   order: 8
-  summary: Defines planning as bounded generation of temporally attributed alternatives whose final selection is made by Integrated Evaluation.
+  summary: Defines planning as bounded generation of temporally attributed alternatives whose final selection is made by Integrated
+    Evaluation.
   sections:
   - kind: T_Section
     id: S_08_01
@@ -303,7 +307,8 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface and the dynamic associative-memory reference architecture introduced in cognitive-0.3.17.
+  summary: Defines the canonical memory interface, the Stage-1 STM–Semantic LTM hypothesis, and the dynamic associative-memory
+    reference architecture.
   sections:
   - kind: T_Section
     id: S_10_01
@@ -355,12 +360,18 @@ chapters:
     title: Reference Implementation and Validation
     order: 10
     content_file: content/10_10.yaml
+  - kind: T_Section
+    id: S_10_11
+    title: Stage-1 Short-Term Memory and Semantic Dictionary LTM
+    order: 11
+    content_file: content/10_11.yaml
   layout: directory
 - kind: T_Chapter
   id: C_11
   title: Canonical Memory Representation
   order: 11
-  summary: Defines the Memory Vector contract, semantic stability, localized basis maintenance, effective dimensionality, and dense progressive semantic compaction.
+  summary: Defines the Memory Vector contract, semantic stability, localized basis maintenance, effective dimensionality,
+    and dense progressive semantic compaction.
   sections:
   - kind: T_Section
     id: S_11_01
@@ -402,7 +413,8 @@ chapters:
   id: C_12
   title: Learning and Memory Update
   order: 12
-  summary: Defines online learning, controlled memory updates, staged integration of the Transformer and Associative Memory, maturity criteria, persistence, rollback, and consolidation triggers.
+  summary: Defines online learning, controlled memory updates, staged integration of the Transformer and Associative Memory,
+    maturity criteria, persistence, rollback, and consolidation triggers.
   sections:
   - kind: T_Section
     id: S_12_01
@@ -444,7 +456,8 @@ chapters:
   id: C_13
   title: Sleep and Structural Learning
   order: 13
-  summary: Defines future offline structural optimization, topology adaptation, connection-state evidence, and the boundary between functional and structural learning.
+  summary: Defines future offline structural optimization, topology adaptation, connection-state evidence, and the boundary
+    between functional and structural learning.
   sections:
   - kind: T_Section
     id: S_13_01
@@ -577,7 +590,8 @@ chapters:
   id: C_17
   title: Specification Model and Tooling
   order: 17
-  summary: Defines the canonical YAML model, atomic identifiers, validation, generated documentation, Git workflow, and self-hosting boundaries.
+  summary: Defines the canonical YAML model, atomic identifiers, validation, generated documentation, Git workflow, and self-hosting
+    boundaries.
   sections:
   - kind: T_Section
     id: S_17_01
@@ -614,7 +628,8 @@ chapters:
   id: C_18
   title: Implementation Roadmap and Open Questions
   order: 18
-  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms, unresolved questions, and prospective dense photonic-spintronic hardware realization.
+  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms, unresolved questions, and prospective
+    dense photonic-spintronic hardware realization.
   sections:
   - kind: T_Section
     id: S_18_01
@@ -666,7 +681,8 @@ chapters:
   id: C_20
   title: Architectural Evolution Roadmap
   order: 20
-  summary: Defines the ordered evolution from semantic learning toward importance estimation, sleep, replay, connection-state evidence, structural plasticity, evaluation, and multi-agent learning.
+  summary: Defines the ordered evolution from semantic learning toward importance estimation, sleep, replay, connection-state
+    evidence, structural plasticity, evaluation, and multi-agent learning.
   sections:
   - kind: T_Section
     id: S_20_01
@@ -713,7 +729,8 @@ chapters:
   id: C_21
   title: Research Agenda
   order: 21
-  summary: Translates future architectural directions into falsifiable research programs, experiments, measurements, and acceptance criteria.
+  summary: Translates future architectural directions into falsifiable research programs, experiments, measurements, and acceptance
+    criteria.
   sections:
   - kind: T_Section
     id: S_21_01
@@ -750,7 +767,8 @@ chapters:
   id: C_22
   title: Long-Term Vision
   order: 22
-  summary: Describes the intended evolution from semantic reasoning with persistent memory toward a continuously improving cognitive platform.
+  summary: Describes the intended evolution from semantic reasoning with persistent memory toward a continuously improving
+    cognitive platform.
   sections:
   - kind: T_Section
     id: S_22_01
@@ -844,7 +862,8 @@ chapters:
   id: C_24
   title: Documentation Architecture
   order: 24
-  summary: Defines how canonical project knowledge is typed, identified, related, generated, validated, and evolved under Single Source of Truth.
+  summary: Defines how canonical project knowledge is typed, identified, related, generated, validated, and evolved under
+    Single Source of Truth.
   sections:
   - kind: T_Section
     id: S_24_01

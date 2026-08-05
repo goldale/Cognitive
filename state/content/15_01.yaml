@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_15_01
 blocks:
 - text: Written text, speech, lectures, and dialogue all provide linguistic information. Their channel properties differ, but each can trigger T_Deserialization and T_ModelIntegration.

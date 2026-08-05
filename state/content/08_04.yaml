@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_08_04
 blocks:
 - text: A language model output is not passive observation. It changes the recipient's internal model, future decisions, and eventually the external environment. The causal path is indirect but real.

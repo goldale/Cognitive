@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_11_07
 blocks:
 - text: The target implementation uses a dense semantic architecture. Efficiency is achieved not by imposing a sparse topology, but by progressively reorganizing the semantic basis so that relevant information becomes concentrated in retained coordinates.

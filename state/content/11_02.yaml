@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_11_02
 blocks:
 - text: As an initial approximation, the raw vector is L2-normalized. Direction represents which knowledge is activated, while the original magnitude is retained separately as activation strength.

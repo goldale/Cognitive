@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.35
+schema_version: 0.3.36
 components:
 - kind: subsystem
   id: C_ASSOC_MEMORY

@@ -1,5 +1,14 @@
 # Changes
 
+## cognitive-0.3.36 — 2026-08-05
+
+- Added Stage-1 STM and Semantic LTM architecture.
+- Defined STM as physically fully connected, non-directed, and semantically neutral.
+- Defined sequences as transient directed causal activation graphs embedded in STM.
+- Added permanent physical STM-node projections to Semantic LTM inputs without addresses or lookup.
+- Deferred the second LTM until consolidation from STM is specified.
+- Preserved Context Selector and overlapping-trajectory documentation from the prior clean build.
+
 ## cognitive-0.3.35 — 2026-08-04
 
 - Added topology-oriented heterogeneous Associative Memory stages.

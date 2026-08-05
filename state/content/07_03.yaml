@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_07_03
 blocks:
 - text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are evaluated; an action is selected; the environment and internal state change; the observed result is represented and evaluated again.'

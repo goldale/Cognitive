@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_04_04
 blocks:
 - text: High-bandwidth sensory channels require instrumental preprocessing before general semantic reasoning. Candidate mechanisms include change detection, tracking, event detection, key-frame selection, feature extraction, semantic segmentation, and task-conditioned filtering.

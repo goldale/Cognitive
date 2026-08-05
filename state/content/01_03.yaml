@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_01_03
 blocks:
 - text: 'The project models computational and architectural mechanisms: memory, knowledge organization, evaluation, communication, continuous learning, architectural search, identity continuity, and allocation of work between neural and algorithmic computation.'

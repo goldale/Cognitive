@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_06_03
 blocks:
 - text: Temporal order is necessary but not sufficient for causality. The system may form causal hypotheses when one event precedes another and a model predicts a dependency, but the relation remains uncertain until supported by further evidence.

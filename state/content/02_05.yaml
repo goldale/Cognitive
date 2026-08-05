@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_02_05
 blocks:
 - text: Benchmarking a cognitive system without declaring its objective class can be meaningless. A model may underperform on one benchmark because its architecture preserves information needed for another objective.

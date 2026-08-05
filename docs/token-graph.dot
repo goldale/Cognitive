@@ -227,4 +227,8 @@ digraph TokenGraph {
   "T_ContextSelector" [shape=ellipse];
   "T_ContextConditionedRouting" [shape=ellipse];
   "T_TraversalState" [shape=ellipse];
+  "T_SemanticLTM" [shape=ellipse];
+  "T_ShortTermMemory" [shape=ellipse];
+  "T_DirectedActivationGraph" [shape=ellipse];
+  "T_PhysicalProjection" [shape=ellipse];
 }

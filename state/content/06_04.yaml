@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_06_04
 blocks:
 - text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization constraints, and probability distributions over completion or transition times.

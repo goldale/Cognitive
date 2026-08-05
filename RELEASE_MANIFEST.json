@@ -1,8 +1,8 @@
 {
-  "release": "0.3.35",
-  "version": "0.3.35",
+  "release": "0.3.36",
+  "version": "0.3.36",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
   "generated_documentation": "docs/",
-  "date": "2026-08-04"
+  "date": "2026-08-05"
 }

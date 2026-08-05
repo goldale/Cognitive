@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_12_01
 blocks:
 - text: Consolidation should normally execute outside the interactive response path. A dialogue system must remain responsive; a consolidation system should be conservative, evidence-seeking, and willing to leave information unresolved.

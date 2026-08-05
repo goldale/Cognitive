@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_11_03
 blocks:
 - text: A mature Memory State should map semantically equivalent inputs to nearby Memory Vectors even when wording or language differs. This is a test of invariance to surface serialization, not proof of complete semantic understanding.

@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_05_05
 blocks:
 - text: Classical systems primarily maximize data throughput. AI-native systems should maximize useful knowledge made available to reasoning per unit of computational cost and time.

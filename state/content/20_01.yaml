@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.35
+schema_version: 0.3.36
 id: S_20_01
 blocks:
 - text: Part V documents the intended evolution of Cognitive beyond release 0.3.15. It is an architectural roadmap rather than a promise that every mechanism is already implemented.
