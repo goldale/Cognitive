@@ -31,7 +31,8 @@ chapters:
   id: C_02
   title: Architecture Overview and Design Principles
   order: 2
-  summary: Presents the canonical Cognitive architecture, its semantic self-learning loop, and the design principles governing model evolution.
+  summary: Presents the canonical Cognitive architecture, its semantic self-learning loop, and the design principles
+    governing model evolution.
   sections:
   - kind: T_Section
     id: S_02_01_ARCH
@@ -68,7 +69,8 @@ chapters:
   id: C_03
   title: Information and Communication
   order: 3
-  summary: Defines communication as partial serialization, reconstruction, integration, clarification, and conflict resolution.
+  summary: Defines communication as partial serialization, reconstruction, integration, clarification, and conflict
+    resolution.
   sections:
   - kind: T_Section
     id: S_03_01
@@ -105,7 +107,8 @@ chapters:
   id: C_04
   title: Semantic Representation
   order: 4
-  summary: Describes how decoded signals become context-dependent semantic representations without claiming that serialization alone contains meaning.
+  summary: Describes how decoded signals become context-dependent semantic representations without claiming that
+    serialization alone contains meaning.
   sections:
   - kind: T_Section
     id: S_04_01
@@ -201,7 +204,8 @@ chapters:
   id: C_07
   title: Integrated Evaluation
   order: 7
-  summary: Defines the conservative learned function that compares heterogeneous representations relative to goals, memory, and context.
+  summary: Defines the conservative learned function that compares heterogeneous representations relative to goals,
+    memory, and context.
   sections:
   - kind: T_Section
     id: S_07_01
@@ -233,7 +237,8 @@ chapters:
   id: C_08
   title: Planning and Action Selection
   order: 8
-  summary: Defines planning as bounded generation of temporally attributed alternatives whose final selection is made by Integrated Evaluation.
+  summary: Defines planning as bounded generation of temporally attributed alternatives whose final selection is
+    made by Integrated Evaluation.
   sections:
   - kind: T_Section
     id: S_08_01
@@ -265,7 +270,8 @@ chapters:
   id: C_09
   title: Memory Architecture
   order: 9
-  summary: Introduces working memory, long-term memory, reconstructive storage, functional lossiness, and evidence boundaries.
+  summary: Introduces working memory, long-term memory, reconstructive storage, functional lossiness, and evidence
+    boundaries.
   sections:
   - kind: T_Section
     id: S_09_01
@@ -302,7 +308,8 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface, the Stage-1 Input Buffer–STM–Semantic LTM path, and the deferred transfer of logically completed episodes into the second Long-Term Memory.
+  summary: Defines the canonical memory interface, the Stage-1 Input Buffer–STM–Semantic LTM path, logical episode
+    formation, and the working model for associative storage and retrieval of directed episode graphs.
   sections:
   - kind: T_Section
     id: S_10_01
@@ -369,12 +376,18 @@ chapters:
     title: Logical Episode Consolidation Boundary
     order: 13
     content_file: content/10_13.yaml
+  - kind: T_Section
+    id: S_10_14
+    title: Directed Episode Graph Storage and Connection Trace Lists
+    order: 14
+    content_file: content/10_14.yaml
   layout: directory
 - kind: T_Chapter
   id: C_11
   title: Canonical Memory Representation
   order: 11
-  summary: Defines the Memory Vector contract, semantic stability, localized basis maintenance, effective dimensionality, and dense progressive semantic compaction.
+  summary: Defines the Memory Vector contract, semantic stability, localized basis maintenance, effective dimensionality,
+    and dense progressive semantic compaction.
   sections:
   - kind: T_Section
     id: S_11_01
@@ -416,7 +429,8 @@ chapters:
   id: C_12
   title: Learning and Memory Update
   order: 12
-  summary: Defines online learning, controlled memory updates, staged integration of the Transformer and Associative Memory, maturity criteria, persistence, rollback, and consolidation triggers.
+  summary: Defines online learning, controlled memory updates, staged integration of the Transformer and Associative
+    Memory, maturity criteria, persistence, rollback, and consolidation triggers.
   sections:
   - kind: T_Section
     id: S_12_01
@@ -458,7 +472,8 @@ chapters:
   id: C_13
   title: Sleep and Structural Learning
   order: 13
-  summary: Defines future offline structural optimization, topology adaptation, connection-state evidence, and the boundary between functional and structural learning.
+  summary: Defines future offline structural optimization, topology adaptation, connection-state evidence, and the
+    boundary between functional and structural learning.
   sections:
   - kind: T_Section
     id: S_13_01
@@ -591,7 +606,8 @@ chapters:
   id: C_17
   title: Specification Model and Tooling
   order: 17
-  summary: Defines the canonical YAML model, atomic identifiers, validation, generated documentation, Git workflow, and self-hosting boundaries.
+  summary: Defines the canonical YAML model, atomic identifiers, validation, generated documentation, Git workflow,
+    and self-hosting boundaries.
   sections:
   - kind: T_Section
     id: S_17_01
@@ -628,7 +644,8 @@ chapters:
   id: C_18
   title: Implementation Roadmap and Open Questions
   order: 18
-  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms, unresolved questions, and prospective dense photonic-spintronic hardware realization.
+  summary: Separates implemented infrastructure, near-term experiments, deferred mechanisms, unresolved questions,
+    and prospective dense photonic-spintronic hardware realization.
   sections:
   - kind: T_Section
     id: S_18_01
@@ -680,7 +697,8 @@ chapters:
   id: C_20
   title: Architectural Evolution Roadmap
   order: 20
-  summary: Defines the ordered evolution from semantic learning toward importance estimation, sleep, replay, connection-state evidence, structural plasticity, evaluation, and multi-agent learning.
+  summary: Defines the ordered evolution from semantic learning toward importance estimation, sleep, replay, connection-state
+    evidence, structural plasticity, evaluation, and multi-agent learning.
   sections:
   - kind: T_Section
     id: S_20_01
@@ -727,7 +745,8 @@ chapters:
   id: C_21
   title: Research Agenda
   order: 21
-  summary: Translates future architectural directions into falsifiable research programs, experiments, measurements, and acceptance criteria.
+  summary: Translates future architectural directions into falsifiable research programs, experiments, measurements,
+    and acceptance criteria.
   sections:
   - kind: T_Section
     id: S_21_01
@@ -764,7 +783,8 @@ chapters:
   id: C_22
   title: Long-Term Vision
   order: 22
-  summary: Describes the intended evolution from semantic reasoning with persistent memory toward a continuously improving cognitive platform.
+  summary: Describes the intended evolution from semantic reasoning with persistent memory toward a continuously
+    improving cognitive platform.
   sections:
   - kind: T_Section
     id: S_22_01
@@ -858,12 +878,18 @@ chapters:
     title: RS-0010 — Logical Episode Boundary Detection
     order: 12
     content_file: content/23_12.yaml
+  - kind: T_Section
+    id: S_23_13
+    title: RS-0011 — Directed Episode Graph Storage
+    order: 13
+    content_file: content/23_13.yaml
   layout: directory
 - kind: T_Chapter
   id: C_24
   title: Documentation Architecture
   order: 24
-  summary: Defines how canonical project knowledge is typed, identified, related, generated, validated, and evolved under Single Source of Truth.
+  summary: Defines how canonical project knowledge is typed, identified, related, generated, validated, and evolved
+    under Single Source of Truth.
   sections:
   - kind: T_Section
     id: S_24_01
@@ -890,7 +916,8 @@ chapters:
   id: C_25
   title: Typed Knowledge Appendices
   order: 25
-  summary: Provides generated registries for Research Sessions, Research Notes, Architectural Notes, Implementation Notes, Historical Perspectives, and Margin Notes.
+  summary: Provides generated registries for Research Sessions, Research Notes, Architectural Notes, Implementation
+    Notes, Historical Perspectives, and Margin Notes.
   sections:
   - kind: T_Section
     id: S_25_01

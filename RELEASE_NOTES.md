@@ -1,25 +1,29 @@
-# Release Notes — cognitive-0.3.40
+# Release Notes — cognitive-0.3.43
 
 Release date: **2026-08-05**.
 
-## Sequential multimodal Input Buffer
+## Directed episode graph storage
 
-- Added a modality-neutral Input Buffer between input sources and STM.
-- Defined a simple sequential multiplexer as a mutex-protected queue with no semantic routing, prioritization, lookup, or destination selection.
-- Defined linear or circular filling: the next available event is written into the next Input Buffer element.
-- Defined each Input Buffer element as a fixed-dimensional activation vector; the Stage-1 working dimensionality is eight.
-- Reserved one coordinate for Transmission Context, initially preserving signal source or transmission mode without encoding Item identity.
-- Required equality between Input Buffer element count and STM node count, and equality of their per-element runtime vector dimensionality.
-- Added one permanent physical projection from every Input Buffer element to its corresponding STM node.
-- Defined Input Buffer insertion order as implicit system-observed time and clarified that order alone is not proof of external causality.
+- Added the canonical working architecture for storing logically completed directed episode graphs.
+- Defined one Transformer-produced contextual data vector for every episode element.
+- Required the full vector to be stored exactly once in its episode-graph vertex.
+- Defined graph orientation as causality rather than physical connection or signal direction.
 
-## Margin Notes
+## Associative search on connections
 
-- Added Margin Notes as an official non-normative documentation object.
-- Added **MN-0001 — Alternative parallel input processing**.
-- Recorded the processor-pool alternative as deferred because parallel completion can invert observation order and damage the Stage-1 causal interpretation.
-- Added Margin Notes to generated HTML and the alphabetical index.
+- Defined a Trace List on every participating physical LTM connection.
+- Defined associative retrieval as repeated matching over connection-local Trace Lists followed by one local transition.
+- Excluded global graph lookup, episode IDs, cognitive addresses, stored routes, and special initial search state from the minimal trace contract.
+- Added Progressive Virtual Contraction with one final switch-fabric reconfiguration only after the target is reached.
 
-## Architectural status
+## Scale and forgetting
 
-This release extends the working Stage-1 hypothesis. The Input Buffer mechanism is canonical for this release; the parallel processor-pool alternative remains explicitly non-canonical. READ/UPDATE separation and all prior baseline invariants remain in force.
+- Recorded large Trace Lists as the expected cost of exact distinguishable associative history.
+- Required Transformer participation in semantic forgetting, consolidation, and destructive deletion.
+- Added MN-0002 for deferred compressed or superposed Trace storage.
+
+## Documentation quality
+
+- Added Section 10.14 as the single canonical owner of these decisions.
+- Added RS-0011 as a non-duplicating research record.
+- Removed duplicate normative formulations and regenerated YAML-derived HTML and the alphabetical index.

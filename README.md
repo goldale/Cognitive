@@ -116,3 +116,7 @@ All project artifacts are canonical in English. No public license is granted by 
 ## Architectural Evolution
 
 Part V documents the future development sequence: Importance Estimation; Offline Consolidation and Sleep; Replay; forgetting and pruning; structural plasticity; Global Evaluation; and Multi-Agent Semantic Learning.
+
+## Current canonical extension
+
+Section 10.14 defines directed episode graph storage, connection-local Trace Lists, associative search on connections, Progressive Virtual Contraction, and Transformer-guided forgetting.

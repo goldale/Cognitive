@@ -3,30 +3,59 @@ principles:
 - kind: T_Principle
   id: P_021
   title: Transformer as Semantic Teacher
-  statement: The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative
-    Memory.
+  statement: The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative Memory.
   status: T_Accepted
 - kind: T_Principle
   id: P_022
   title: Semantic feedback learning
-  statement: Associative Memory learns from Semantic Representations produced by the Transformer rather
-    than from raw external observations.
+  statement: Associative Memory learns from Semantic Representations produced by the Transformer rather than from
+    raw external observations.
   status: T_Accepted
 - kind: T_Principle
   id: P_023
   title: Self-learning as an architectural object
-  statement: The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit
-    stages, contracts, invariants, and extension points.
+  statement: The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit stages,
+    contracts, invariants, and extension points.
   status: T_Accepted
 - kind: T_Principle
   id: P_024
   title: READ and UPDATE asymmetry
-  statement: READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory
-    State but never produces a Memory Vector.
+  statement: READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but
+    never produces a Memory Vector.
   status: T_Accepted
 - kind: T_Principle
   id: P_025
   title: Explicit retrieval after learning
-  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers
-    an implicit READ.
+  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an
+    implicit READ.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_026
+  title: Per-element episode representation
+  statement: Transformer output for a completed Logical Episode is a context-dependent vector for every participating
+    element; each full vector is stored once in its episode-graph vertex.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_027
+  title: Causal graph orientation
+  statement: Direction in an episode graph expresses causality and is independent of physical connection orientation
+    and current activation propagation.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_028
+  title: Connection Trace Lists
+  statement: Every physical LTM connection may hold multiple independently matchable traces, and associative retrieval
+    evaluates those connection-local lists.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_029
+  title: Virtual path contraction
+  statement: Semantic search advances a temporary endpoint while retaining the origin; intermediate steps remain
+    virtual and only the completed endpoint pair may trigger switch reconfiguration.
+  status: T_Accepted
+- kind: T_Principle
+  id: P_030
+  title: Semantic forgetting requires Transformer evaluation
+  statement: Local trace statistics cannot determine semantic dispensability; retained graph structure must be reconstructed
+    and evaluated by the Transformer before destructive forgetting.
   status: T_Accepted

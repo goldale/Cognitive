@@ -1,8 +1,10 @@
 {
-  "release": "0.3.40",
-  "version": "0.3.40",
+  "release": "0.3.43",
+  "version": "0.3.43",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
   "generated_documentation": "docs/",
-  "date": "2026-08-05"
+  "date": "2026-08-05",
+  "baseline_archive": "cognitive-0.3.42(1).tgz",
+  "baseline_sha256": "e52602eb20735a79507fb3b8297b492edb37391310f0baf35960a209efcc2ac9"
 }

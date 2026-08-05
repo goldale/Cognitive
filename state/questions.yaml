@@ -52,8 +52,7 @@ questions:
   priority: high
 - kind: T_OpenQuestion
   id: Q_011
-  title: Which parts of higher-level social and emotional behavior fail to emerge and require explicit
-    mechanisms?
+  title: Which parts of higher-level social and emotional behavior fail to emerge and require explicit mechanisms?
   status: T_Open
   priority: medium
 - kind: T_OpenQuestion
@@ -61,3 +60,18 @@ questions:
   title: Can a mature cognitive state be cloned onto new hardware while preserving identity continuity?
   status: T_Open
   priority: medium
+- kind: T_OpenQuestion
+  id: Q_031
+  question: What is the minimum encoding and dimensionality of a connection Trace that preserves reliable element-based
+    associative transition?
+  status: T_Open
+- kind: T_OpenQuestion
+  id: Q_032
+  question: How should very long Trace Lists be accelerated or tiered without introducing a cognitive address lookup
+    or changing retrieval semantics?
+  status: T_Open
+- kind: T_OpenQuestion
+  id: Q_033
+  question: How can Transformer-guided forgetting remove graph data and unique access traces while preserving all
+    retained retrieval paths and causal structure?
+  status: T_Open

@@ -16,4 +16,8 @@ ownership:
   concept: Input Buffer and sequential input path
 - canonical_location: Appendix H
   concept: Margin Notes
+- canonical_location: Section 10.14
+  concept: Directed episode graph storage
+- canonical_location: Section 10.14
+  concept: Connection Trace Lists
 rule: Non-owning sections must summarize and link rather than repeat canonical definitions.

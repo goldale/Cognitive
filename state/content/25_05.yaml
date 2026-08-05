@@ -1,11 +1,12 @@
 kind: T_ContentBlock
 id: S_25_05
 blocks:
-- text: This registry points to canonical Margin Notes. Margin Notes preserve useful alternatives and
-    side observations without making them part of the canonical architecture.
+- text: This registry points to canonical Margin Notes. Margin Notes preserve useful alternatives and side observations
+    without making them part of the canonical architecture.
   type: paragraph
 - items:
   - '[MN-0001 — Alternative parallel input processing](../chapter10/10_12.html#MN-0001)'
+  - '[MN-0002 — Compressed or superposed Trace storage](../chapter10/10_14.html#MN-0002)'
   type: list
 - title: Normative boundary
   text: A Margin Note is documentation, not an architectural invariant. Adoption requires a separate release-level

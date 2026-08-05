@@ -1,0 +1,36 @@
+kind: T_ContentBlock
+id: S_23_13
+blocks:
+- type: note
+  title: RS-0011 — Directed Episode Graph Storage
+  object_id: RS-0011
+  text: 'Research Session. Status: Working architecture accepted. Canonical owner: Section 10.14.'
+- type: paragraph
+  text: The session began with the deferred Second Long-Term Memory and tested how a history of directed episode
+    graphs could remain searchable from any participating semantic element without cognitive addresses.
+- type: list
+  title: Rejected alternatives
+  items:
+  - A separate addressable graph store as the primary retrieval mechanism.
+  - One identifier or one shared vector standing in for every element of an episode.
+  - One associative state per physical connection.
+  - Persistent storage of multi-hop semantic-search routes.
+  - Repeated multiplexer reconfiguration while a route is being contracted.
+  - A central topology controller receiving Item addresses.
+  - Physical signal direction as the meaning of graph orientation.
+  - Local forgetting based only on age, frequency, or trace strength.
+- type: list
+  title: Accepted result
+  items:
+  - Transformer output is per episode element.
+  - Full element data is stored once in the graph vertex.
+  - Causality defines orientation.
+  - Each physical connection stores a list of locally matchable trace structures.
+  - Associative retrieval repeatedly matches those lists and crosses the selected connection.
+  - Semantic-search contraction is virtual until one final hardware reconfiguration.
+  - Trace-list scale makes Transformer-guided forgetting mandatory.
+- type: warning
+  title: Remaining research
+  text: Section 10.14 defines the logical storage and retrieval contract. Encoding, capacity, compression, acceleration,
+    and forgetting protocols remain experimental.
+section_id: S_23_13

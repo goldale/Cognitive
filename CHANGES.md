@@ -1,5 +1,16 @@
 # Changes
 
+## cognitive-0.3.43 — 2026-08-05
+
+- Added canonical Section 10.14 for directed episode graph storage and Connection Trace Lists.
+- Defined associative search as repeated matching over lists of trace structures stored on physical connections.
+- Defined one complete per-element Transformer vector stored once in each episode-graph vertex.
+- Defined graph orientation as causality.
+- Added Progressive Virtual Contraction and one final switch-fabric reconfiguration.
+- Required Transformer-guided semantic forgetting because Trace Lists grow with distinguishable history.
+- Added RS-0011 and MN-0002 without duplicating canonical definitions.
+- Regenerated all documentation and the alphabetical index from canonical YAML.
+
 ## cognitive-0.3.40 — 2026-08-05
 
 - Added the sequential multimodal Input Buffer before STM.
