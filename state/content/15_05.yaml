@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_15_05
 blocks:
 - text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations, tasks, failures, explanations, and feedback intended to move another system through a productive learning trajectory.

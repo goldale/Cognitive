@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_16_01
 blocks:
 - text: Digital systems can clone a high-performing model at negligible marginal cost. Global cloning maximizes immediate exploitation but reduces diversity and makes the population vulnerable to unforeseen environmental changes or shared failure modes.

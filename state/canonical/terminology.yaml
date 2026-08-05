@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.36
+schema_version: 0.3.40
 terms:
 - definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
   term: Semantic Teacher
@@ -39,3 +39,14 @@ terms:
   term: Global Evaluation
 - definition: Learning between Cognitive systems through exchanged Semantic Representations and local controlled UPDATE.
   term: Multi-Agent Semantic Learning
+
+- definition: A modality-neutral linear or circular field of fixed-dimensional input elements written sequentially before activation enters STM.
+  term: Input Buffer
+- definition: One fixed-dimensional modality-neutral physical element of the Input Buffer, permanently connected to one corresponding STM node.
+  term: Input Buffer Element
+- definition: The service coordinate reserved within an activation vector to preserve source or transmission mode without encoding Item identity.
+  term: Transmission Context
+- definition: A mutex-protected queueing mechanism that writes the next available event into the next Input Buffer element without semantic routing.
+  term: Sequential Input Multiplexer
+- definition: A typed non-normative documentation object that preserves a deferred alternative or side observation outside the canonical architecture.
+  term: Margin Note

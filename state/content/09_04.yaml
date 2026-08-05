@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_09_04
 blocks:
 - text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant episodes while retaining category boundaries, causal expectations, evaluation changes, and action tendencies.

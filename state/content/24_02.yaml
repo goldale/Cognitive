@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_24_02
 blocks:
 - text: Typed knowledge objects make epistemic and normative status explicit.
@@ -21,11 +21,14 @@ blocks:
   - - HP
     - Historical Perspective
     - Historical analogies and motivating examples without claims of historical proof
+  - - MN
+    - Margin Note
+    - Deferred alternatives and side observations preserved outside the canonical architecture
   type: table
 - title: DA-0003 — Typed Knowledge Objects
   text: Every contextual knowledge object has a declared type, stable identifier, title, status, canonical location, and linkable HTML anchor.
   type: principle
 - title: Normative boundary
-  text: RN, IN, and HP objects do not change architectural contracts unless a separate canonical architectural revision explicitly adopts their conclusions.
+  text: RN, IN, HP, and MN objects do not change architectural contracts unless a separate canonical architectural revision explicitly adopts their conclusions.
   type: warning
 section_id: S_24_02

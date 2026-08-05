@@ -1,6 +1,18 @@
 # Changes
 
-## cognitive-0.3.36 — 2026-08-05
+## cognitive-0.3.40 — 2026-08-05
+
+- Added the sequential multimodal Input Buffer before STM.
+- Added the mutex-protected Sequential Input Multiplexer with no semantic routing.
+- Added fixed eight-dimensional input-element state as a working Stage-1 dimensionality.
+- Reserved one vector coordinate for Transmission Context.
+- Required one-to-one permanent physical Input Buffer-to-STM projections.
+- Defined implicit temporal order from sequential Input Buffer insertion.
+- Added Margin Notes as a typed non-normative documentation object.
+- Added MN-0001 documenting the deferred parallel input-processor pool and its causality problem.
+- Regenerated human-readable HTML and the complete alphabetical index from YAML.
+
+## cognitive-0.3.40 — 2026-08-05
 
 - Added Stage-1 STM and Semantic LTM architecture.
 - Defined STM as physically fully connected, non-directed, and semantically neutral.

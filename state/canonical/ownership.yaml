@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.36
+schema_version: 0.3.40
 ownership:
 - canonical_location: Chapter 2
   concept: Architecture Overview
@@ -13,4 +13,8 @@ ownership:
   concept: Semantic Feedback Learning
 - canonical_location: Progressive Training chapter
   concept: Progressive Training
+- canonical_location: Section 10.12
+  concept: Input Buffer and sequential input path
+- canonical_location: Appendix H
+  concept: Margin Notes
 rule: Non-owning sections must summarize and link rather than repeat canonical definitions.

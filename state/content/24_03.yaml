@@ -1,9 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_24_03
 blocks:
 - title: DA-0004 — Stable Identifiers
-  text: Identifiers such as RN-0002 remain stable across releases even if wording, location, or generated presentation changes.
+  text: Identifiers such as RN-0002 and MN-0001 remain stable across releases even if wording, location, or generated presentation changes.
   type: principle
 - title: DA-0005 — Traceability
   text: Readers must be able to navigate from an architectural decision to its rationale, research motivation, implementation guidance, diagrams, and reverse references.

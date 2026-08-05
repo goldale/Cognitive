@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_04_05
 blocks:
 - text: A Perceptual Integration Buffer should retain a bounded, temporally organized intermediate representation from which the system can construct events, query omitted detail, and integrate multiple channels.

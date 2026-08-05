@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_22_02
 blocks:
 - text: Memory should evolve from a passive store into a managed lifecycle with explicit acquisition, retrieval, importance, consolidation, replay, weakening, pruning, and structural adaptation.

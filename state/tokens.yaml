@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.36
+schema_version: 0.3.40
 version: 0.2.0
 optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive power.
 tokens:

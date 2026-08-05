@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_06_01
 blocks:
 - text: Semantic representation answers what an entity or event is, but it does not by itself specify when it occurs. Cognitive state therefore requires explicit temporal attributes such as start time, end time, duration, order, recurrence, deadline, and uncertainty.

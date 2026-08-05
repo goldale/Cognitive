@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_01_04
 blocks:
 - text: The document separates implemented mechanisms, architectural decisions, working hypotheses, observations, and open questions. Confidence values are engineering estimates, not statistical posterior probabilities unless an experiment explicitly establishes that interpretation.

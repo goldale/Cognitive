@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_21_05
 blocks:
 - text: Memory lifecycle experiments combine importance, consolidation, replay, forgetting, pruning, and structural plasticity over long operating periods.

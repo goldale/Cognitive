@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_21_02
 blocks:
 - text: Importance Estimation should be studied before consolidation and replay policies are fixed.

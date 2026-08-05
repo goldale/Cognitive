@@ -1,5 +1,5 @@
 kind: T_ContentBlock
-schema_version: 0.3.36
+schema_version: 0.3.40
 id: S_21_06
 blocks:
 - text: Global Evaluation and multi-agent experiments require stronger governance because errors can influence both behavior and other systems.

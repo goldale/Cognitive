@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.36
+schema_version: 0.3.40
 chapters:
 - kind: T_Chapter
   id: C_01
@@ -307,7 +307,7 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface, the Stage-1 STM–Semantic LTM hypothesis, and the dynamic associative-memory
+  summary: Defines the canonical memory interface, the Stage-1 Input Buffer–STM–Semantic LTM hypothesis, and the dynamic associative-memory
     reference architecture.
   sections:
   - kind: T_Section
@@ -365,6 +365,11 @@ chapters:
     title: Stage-1 Short-Term Memory and Semantic Dictionary LTM
     order: 11
     content_file: content/10_11.yaml
+  - kind: T_Section
+    id: S_10_12
+    title: Sequential Multimodal Input Buffer
+    order: 12
+    content_file: content/10_12.yaml
   layout: directory
 - kind: T_Chapter
   id: C_11
@@ -912,4 +917,9 @@ chapters:
     title: Appendix G — Historical Perspectives
     order: 4
     content_file: content/25_04.yaml
+  - kind: T_Section
+    id: S_25_05
+    title: Appendix H — Margin Notes
+    order: 5
+    content_file: content/25_05.yaml
   layout: directory

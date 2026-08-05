@@ -1,5 +1,5 @@
 kind: T_Collection
-schema_version: 0.3.36
+schema_version: 0.3.40
 architectures:
 - kind: T_ArchitectureDecision
   id: A_001
@@ -95,3 +95,14 @@ architectures:
   status: T_Accepted
   summary: READ alone produces Memory Vector; UPDATE changes Memory State only and never invokes READ implicitly.
   relations: []
+
+- kind: T_ArchitectureDecision
+  id: A_013
+  title: Sequential multimodal Input Buffer
+  status: T_Accepted
+  summary: A mutex-protected sequential multiplexer writes fixed-dimensional modality-neutral events into the next Input Buffer element; permanent 1:1 projections transfer the ordered activation field into STM.
+  relations:
+  - External Sources -> Sequential Input Multiplexer
+  - Sequential Input Multiplexer -> Input Buffer
+  - Input Buffer -> STM
+  - STM -> Semantic LTM
