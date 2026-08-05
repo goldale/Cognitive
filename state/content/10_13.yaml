@@ -12,13 +12,14 @@ blocks:
   text: The beginning and end of a Logical Episode are inferred from the combined semantic context of the buffered
     stream. The logical beginning need not coincide with the physical beginning of the Input Buffer.
   type: definition
-- title: Hierarchical boundary detection
-  text: A specialized Episode Boundary Transformer normally analyzes the buffered stream and returns candidate start
-    and end boundaries together with confidence. If it cannot determine the boundaries with sufficient confidence,
-    the same task is delegated to the main Transformer, which makes the final boundary decision.
+- title: Sequencer boundary detection
+  text: The Sequencer normally analyzes the combined buffered stream and returns candidate start and end boundaries
+    together with confidence. If it cannot determine the boundaries with sufficient confidence, the same task is
+    delegated to the main Transformer, which makes the final boundary decision. The Sequencer is part of the Input
+    / STM subsystem and is not itself a Transformer.
   type: principle
 - title: Boundary detection and final processing are distinct
-  text: Repeated boundary analysis and final processing of a completed Sequence are separate Transformer operations.
+  text: Repeated boundary analysis by the Sequencer and final processing of a completed Sequence are distinct operations.
     After both boundaries are known, the main Transformer processes the complete Sequence and produces one contextual
     data vector for every participating element.
   type: principle
@@ -50,7 +51,7 @@ blocks:
     label: Input Buffer
   - kind: control
     id: boundary
-    label: 'Episode Boundary Transformer
+    label: 'Sequencer
 
       (main Transformer fallback)'
   - kind: state

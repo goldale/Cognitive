@@ -74,11 +74,20 @@ terms:
 - term: Episode Graph Vertex
   definition: The unique storage location for the complete Transformer-produced vector of one element in one completed
     Logical Episode.
-- term: Episode Boundary Transformer
-  definition: A specialized Transformer that identifies candidate logical start and end boundaries in the combined
-    Input Buffer context and delegates uncertain cases to the main Transformer.
+- term: Sequencer
+  definition: The Input / STM component that orders and normalizes the combined buffered stream, proposes Logical
+    Episode boundaries, and delegates uncertain boundary cases to the main Transformer.
+- term: Long-Term Memory
+  definition: The single physical persistent associative memory implemented by one shared vertex and connection
+    array.
+- term: LTM-1
+  definition: The semantic logical domain of the single physical LTM, accessed through MSG1 and its orthogonal message-specific
+    state subspace.
+- term: LTM-2
+  definition: The episodic logical domain of the single physical LTM, used to store completed Logical Episodes through
+    MSG2 and its orthogonal message-specific state subspace.
 - term: MSG1
-  definition: The element-semantic LTM message type operating exclusively in the MSG1 orthogonal state subspace.
+  definition: The element-LTM-1 message type operating exclusively in the MSG1 orthogonal state subspace.
 - term: MSG2
   definition: The completed-episode LTM message type carrying per-element contextual data and Transformer-defined
     causal topology in the MSG2 orthogonal state subspace.

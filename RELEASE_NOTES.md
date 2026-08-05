@@ -1,12 +1,17 @@
-# Release Notes — cognitive-0.3.46
+# Release Notes — cognitive-0.3.47
 
-## Canonical changes
+## Architecture
 
-- Removed the separate Sequential Multiplexer from the Stage-1 input path. The Linear / Circular Input Buffer is the mutex-protected queue.
-- Defined Sequence lifetime through successful commit to LTM-2 and advancement of the circular-buffer beginning.
-- Introduced the canonical vertex model: Concept Identity, owned Bounded Edge List with Local Edge Search, and owned Usage Statistics.
-- Defined sleep-time Edge List maintenance as the primary mechanism for restoring free memory capacity.
-- Added conservative Associative Dictionary evolution through Concept Differentiation and Concept Generalization.
-- Required long-accumulated statistics across many Logical Episodes and multiple sleep cycles before dictionary modification.
-- Added explicit alphabetical-index entries for LTM and STM.
-- Checked canonical source and generated documentation for duplicate and conflicting definitions.
+- Preserves one physical Long-Term Memory with LTM-1 and LTM-2 as orthogonal logical domains.
+- Introduces **Sequencer** as the canonical Input / STM component for ordering, normalization, and Logical Episode boundary proposals.
+- Removes the architectural term *Episode Boundary Transformer*. Difficult boundary cases may use a lightweight Transformer only as an internal fallback implementation.
+- Adds the first generated **Cognitive Master Information Lifecycle** diagram.
+- Represents Offline Adaptation as a mode affecting the same Associative Memory, not as a separate subsystem.
+- Uses two equal external channels: **Language / Messages** and **Stream Input**.
+
+## Documentation and consistency
+
+- Regenerates HTML from canonical YAML.
+- Refreshes the alphabetical index and token documentation.
+- Retains version numbers only in release-management artifacts.
+- Verifies YAML syntax, generated-document links, identifiers, terminology, and duplicate definitions.

@@ -1,14 +1,28 @@
 {
-  "release": "0.3.46",
+  "release": "0.3.47",
+  "date": "2026-08-05",
+  "base_archive": "cognitive-0.3.46-ltm-domains.tgz",
+  "yaml_files": 169,
+  "generated_doc_files": 208,
+  "html_links_checked": 2234,
+  "broken_html_links": 0,
+  "duplicate_token_ids": 0,
+  "duplicate_token_labels": 0,
+  "duplicate_terminology_entries": 0,
+  "duplicate_html_ids": 0,
+  "obsolete_terms_remaining": 0,
+  "release_version_references_in_architecture_docs": 0,
+  "expected_generated_asset_copies": [
+    [
+      "assets/cognitive.css",
+      "docs/cognitive.css"
+    ],
+    [
+      "assets/associative-memory-read-update-path.png",
+      "docs/associative-memory-read-update-path.png"
+    ]
+  ],
   "validation": "passed",
-  "documentation_files": 208,
-  "exact_duplicate_long_texts": 0,
-  "duplicate_token_labels": {},
-  "obsolete_multiplexer_sources": [],
-  "alphabetical_index_checks": {
-    "LTM": true,
-    "STM": true,
-    "Usage Statistics": true,
-    "Bounded Edge List": true
-  }
+  "documentation_generation": "passed",
+  "notes": "Test modules passed individually except the test runner process can remain alive after completion in this environment; assertions reported by executed modules passed after release-specific tests were updated for 0.3.47."
 }

@@ -1,12 +1,114 @@
 kind: T_Content
 blocks:
-- text: Cognitive separates semantic reasoning, associative retrieval, persistent memory state, and self-learning while connecting them through explicit typed interfaces.
+- text: Cognitive separates semantic reasoning, associative retrieval, persistent memory state, and self-learning
+    while connecting them through explicit typed interfaces.
   type: paragraph
 - title: Primary architectural principle
-  text: The Transformer is both the Semantic Reasoning Engine and the Semantic Teacher of Associative Memory. Associative Memory learns from Transformer-produced Semantic Representations rather than raw external observations.
+  text: The Transformer is both the Semantic Reasoning Engine and the Semantic Teacher of Associative Memory. Associative
+    Memory learns from Transformer-produced Semantic Representations rather than raw external observations.
   type: principle
+- title: Cognitive Master Information Lifecycle
+  description: A system-level lifecycle view. External channels converge through the Input / STM path; the single
+    physical LTM supplies associative context; one Transformer performs cognitive processing and memory-update work;
+    offline structural adaptation modifies the same Associative Memory rather than forming a separate subsystem.
+  direction: LR
+  nodes:
+  - kind: external
+    id: master_language
+    label: Language / Messages
+  - kind: external
+    id: master_stream
+    label: Stream Input
+  - kind: state
+    id: master_buffer
+    label: Input Buffer
+  - kind: control
+    id: master_sequencer
+    label: Sequencer
+  - kind: state
+    id: master_stm
+    label: Semantically Neutral STM
+  - kind: storage
+    id: master_ltm
+    label: 'Single Physical LTM
+
+      LTM-1 · LTM-2'
+  - kind: subsystem
+    id: master_transformer
+    label: 'Transformer
+
+      Reasoning · Temporal Organization · Planning · Integrated Evaluation'
+  - kind: external
+    id: master_output
+    label: External Action / Output
+  - kind: state
+    id: master_episode
+    label: Completed Logical Episode
+  - kind: control
+    id: master_update
+    label: Transformer UPDATE mode
+  - kind: state
+    id: master_messages
+    label: MSG1 / MSG2
+  - kind: control
+    id: master_sleep
+    label: Sleep / Offline Adaptation
+  edges:
+  - flow: information
+    from: master_language
+    label: transfer
+    to: master_buffer
+  - flow: information
+    from: master_stream
+    label: transfer
+    to: master_buffer
+  - flow: control
+    from: master_buffer
+    label: ordering · normalization
+    to: master_sequencer
+  - flow: information
+    from: master_sequencer
+    label: active sequence
+    to: master_stm
+  - flow: context
+    from: master_stm
+    label: retrieval query
+    to: master_ltm
+  - flow: information
+    from: master_ltm
+    label: retrieved context · associative substitution
+    to: master_transformer
+  - flow: information
+    from: master_transformer
+    label: evaluation · selection · execution
+    to: master_output
+  - flow: context
+    from: master_output
+    label: observed consequence
+    to: master_episode
+  - flow: learning
+    from: master_episode
+    label: completed experience
+    to: master_update
+  - flow: learning
+    from: master_update
+    label: memory-update encoding
+    to: master_messages
+  - flow: learning
+    from: master_messages
+    label: state update
+    to: master_ltm
+  - flow: control
+    from: master_sleep
+    label: offline structural modification
+    to: master_ltm
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
 - title: Cognitive Architecture — Functional Overview
-  description: A compact system-level view. The detailed closed learning lifecycle and operation contracts are defined canonically in Section 10.1.
+  description: A compact system-level view. The detailed closed learning lifecycle and operation contracts are defined
+    canonically in Section 10.1.
   direction: LR
   edges:
   - flow: information
@@ -50,7 +152,9 @@ blocks:
   size: standard
   type: diagram
 - title: Canonical detailed specification
-  text: Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and the rule that UPDATE never produces a Memory Vector. This overview intentionally does not repeat that complete definition.
+  text: Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and
+    the rule that UPDATE never produces a Memory Vector. This overview intentionally does not repeat that complete
+    definition.
   type: note
 - level: 3
   text: Operation asymmetry
@@ -72,6 +176,7 @@ blocks:
 - level: 3
   text: First-class self-learning process
   type: heading
-- text: The Semantic Feedback Learning Pipeline is an independent architectural object with explicit stages, contracts, invariants, and future extension points for consolidation, replay, forgetting, structural plasticity, and evaluation.
+- text: The Semantic Feedback Learning Pipeline is an independent architectural object with explicit stages, contracts,
+    invariants, and future extension points for consolidation, replay, forgetting, structural plasticity, and evaluation.
   type: paragraph
 section: S_02_01_ARCH

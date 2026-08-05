@@ -1,7 +1,7 @@
 kind: T_ContentBlock
 id: S_25_03
 blocks:
-- text: The Implementation Notes registry is established in cognitive-0.3.20. Canonical IN objects will
+- text: The Implementation Notes registry is established in Cognitive. Canonical IN objects will
     be added as future material is explicitly classified; no existing normative text is silently reclassified.
   type: paragraph
 section_id: S_25_03

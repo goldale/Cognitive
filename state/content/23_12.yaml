@@ -6,7 +6,7 @@ blocks:
   text: 'Research Session. Status: Open. Priority: Highest current architectural research priority after completion of the Stage-1 Input Buffer architecture.'
   type: note
 - title: Research question
-  text: How should the Transformer identify logical episode boundaries within the continuous linear Input Buffer stream, so that complete semantic episodes can be transferred into the second Long-Term Memory?
+  text: How should the Transformer identify logical episode boundaries within the continuous linear Input Buffer stream, so that complete semantic episodes can be transferred into LTM-2 within the single physical LTM?
   type: principle
 - title: Established constraints
   items:
@@ -14,17 +14,17 @@ blocks:
   - Time is not explicitly stored inside events.
   - Input Buffer and STM contain no semantic objects, addresses, graph structure, or episode markers.
   - Logical boundaries must not retroactively introduce semantics into Input Buffer or STM.
-  - The second Long-Term Memory must not receive arbitrary STM windows.
+  - LTM-2 must not receive arbitrary STM windows.
   type: list
 - title: Required research outcomes
   items:
-  - Specify what representation reaches the boundary detector from Semantic LTM.
+  - Specify what representation reaches the boundary detector from LTM-1.
   - Determine whether detection is causal, retrospective, or a hybrid of both.
   - Define how an episode remains open while additional evidence arrives.
   - Define evidence for logical start, continuation, interruption, resumption, and logical end.
   - Handle nested, overlapping, interleaved, and uncertain episodes without rewriting physical order.
   - Specify revision semantics for premature or false boundaries.
-  - Define the transfer contract that preserves a completed sequence until the second LTM accepts it.
+  - Define the transfer contract that preserves a completed sequence until LTM-2 accepts it.
   - Develop training objectives and measurable validation criteria.
   type: list
 - title: Working hypothesis

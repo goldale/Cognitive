@@ -2,7 +2,7 @@
 
 **Status:** FROZEN FOR DOCUMENTATION REFACTORING  
 **Date:** 2026-08-03  
-**Baseline:** cognitive-0.3.14
+**Baseline:** Cognitive canonical architecture
 
 ## Fundamental change
 

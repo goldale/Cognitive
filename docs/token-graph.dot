@@ -227,7 +227,8 @@ digraph TokenGraph {
   "T_ContextSelector" [shape=ellipse];
   "T_ContextConditionedRouting" [shape=ellipse];
   "T_TraversalState" [shape=ellipse];
-  "T_SemanticLTM" [shape=ellipse];
+  "T_LTM1" [shape=ellipse];
+  "T_LTM2" [shape=ellipse];
   "T_ShortTermMemory" [shape=ellipse];
   "T_DirectedActivationGraph" [shape=ellipse];
   "T_PhysicalProjection" [shape=ellipse];
@@ -235,7 +236,7 @@ digraph TokenGraph {
   "T_MinimalSemanticSearchTrace" [shape=ellipse];
   "T_ProgressiveVirtualContraction" [shape=ellipse];
   "T_EpisodeGraphVertex" [shape=ellipse];
-  "T_EpisodeBoundaryTransformer" [shape=ellipse];
+  "T_Sequencer" [shape=ellipse];
   "T_MessageSpecificStateSubspace" [shape=ellipse];
   "T_AssociativeRetrievalWave" [shape=ellipse];
   "T_AssociativeDictionary" [shape=ellipse];

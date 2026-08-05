@@ -1,7 +1,7 @@
 kind: T_ContentBlock
 id: S_25_04
 blocks:
-- text: The Historical Perspectives registry is established in cognitive-0.3.20. Canonical HP objects
+- text: The Historical Perspectives registry is established in Cognitive. Canonical HP objects
     will be added as future material is explicitly classified; no existing normative text is silently
     reclassified.
   type: paragraph

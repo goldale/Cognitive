@@ -51,7 +51,9 @@ components:
   roles:
   - semantically_neutral_activation_substrate
 - kind: storage
-  id: C_SEMANTIC_LTM
-  name: Semantic LTM
+  id: C_LTM
+  name: Long-Term Memory
   roles:
-  - cloned_semantic_dictionary
+  - single_physical_associative_memory
+  - ltm_1_semantic_domain
+  - ltm_2_episodic_domain

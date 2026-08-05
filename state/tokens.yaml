@@ -621,11 +621,19 @@ tokens:
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Traversal State
-- token: T_SemanticLTM
+- token: T_LTM1
   atomic: true
-  definition: 'Long-Term Memory: the persistent associative memory system used by the canonical architecture.'
+  definition: The semantic logical domain of the single physical Long-Term Memory, accessed through MSG1 and an
+    orthogonal message-specific state subspace.
   status: T_Active
-  label: LTM
+  label: LTM-1
+  index_target: ../chapter10/10_11.html
+- token: T_LTM2
+  atomic: true
+  definition: The episodic logical domain of the single physical Long-Term Memory, used to store completed Logical
+    Episodes through MSG2 and an orthogonal message-specific state subspace.
+  status: T_Active
+  label: LTM-2
   index_target: ../chapter10/10_11.html
 - token: T_ShortTermMemory
   atomic: true
@@ -641,7 +649,7 @@ tokens:
   status: T_Active
 - token: T_PhysicalProjection
   atomic: true
-  definition: A permanent non-addressed physical connection from one STM node to one input point of Semantic LTM.
+  definition: A permanent non-addressed physical connection from one STM node to one input point of LTM-1.
   status: T_Active
 - token: T_TraceList
   atomic: true
@@ -671,13 +679,13 @@ tokens:
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Episode Graph Vertex
-- token: T_EpisodeBoundaryTransformer
+- token: T_Sequencer
   atomic: true
-  definition: A specialized Transformer that detects logical episode boundaries and delegates uncertain cases to
-    the main Transformer.
+  definition: The Input / STM component that orders and normalizes the combined buffered stream, detects candidate
+    Logical Episode boundaries, and delegates uncertain cases to the main Transformer.
   status: T_Active
-  index_target: ../chapter10/10_13.html
-  label: Episode Boundary Transformer
+  index_target: ../chapter10/10_12.html
+  label: Sequencer
 - token: T_MessageSpecificStateSubspace
   atomic: true
   definition: An orthogonal LTM state subspace activated and updated exclusively by one message type.

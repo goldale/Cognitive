@@ -6,26 +6,30 @@ blocks:
     eventual biological or hardware implementation is already known. Later evidence may revise the hypothesis only
     through an explicit release-level architectural change.
   type: warning
-- title: Stage-1 memory scope
-  text: The first stage defines Short-Term Memory and the semantic operation of the single physical Long-Term Memory.
-    The same physical LTM node and connection array also supports episodic operation through a different message
-    type and an orthogonal state subspace.
+- title: Single physical LTM with two logical domains
+  text: The architecture contains one physical Long-Term Memory vertex and connection array. LTM-1 and LTM-2 are
+    not separate physical memories. They are orthogonal logical domains implemented through different message types
+    and message-specific state subspaces within the same physical LTM.
   type: principle
-- title: Semantic LTM
-  text: Semantic LTM contains stable Items of the world, basic properties, and a small bounded set of fundamental
-    relations. Examples include chair–sit and bed–lie. At Stage 1 it is treated as effectively immutable, analogous
-    to the initially cloned Transformer.
+- title: LTM-1
+  text: LTM-1 is the semantic logical domain of the single physical LTM. It contains stable Items of the world,
+    basic properties, and a small bounded set of fundamental relations. Examples include chair–sit and bed–lie.
+    In the initial architecture it is treated as effectively immutable, analogous to the initially cloned Transformer.
+  type: definition
+- title: LTM-2
+  text: LTM-2 is the episodic logical domain of the same physical LTM. It stores completed Logical Episodes through
+    MSG2 while remaining physically co-located with LTM-1 and isolated from it by an orthogonal message-specific
+    state subspace.
   type: definition
 - items:
   - An Item may later acquire a formally defined attribute set.
   - An Item may have more than one basic relation, with an initial working limit of no more than eight.
-  - Semantic LTM does not initially store the personal event sequences generated during operation.
-  - Semantic LTM is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support READ
-    only.
+  - LTM-1 does not initially store the personal event sequences generated during operation.
+  - LTM-1 is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support READ only.
   type: list
 - title: Semantically neutral STM
   text: STM contains no objects, labels, addresses, or intrinsic Item attributes. Its nodes are semantically neutral.
-    Meaning arises only through the physical interaction of STM activity with Semantic LTM.
+    Meaning arises only through the physical interaction of STM activity with LTM-1.
   type: principle
 - title: Physical topology of STM
   text: STM is a fixed, fully connected, non-directed physical network. The physical connectivity is not created,
@@ -48,11 +52,11 @@ blocks:
     After a successful commit, the beginning of the circular input buffer advances to the next Sequence, making
     the committed Sequence no longer part of STM.
   type: list
-- title: STM–Semantic LTM projection
-  text: Every STM node has one permanent physical projection to an input point of Semantic LTM. This projection
-    is a physical connection, not an address, pointer, identifier lookup, or table-based binding.
+- title: STM–LTM-1 projection
+  text: Every STM node has one permanent physical projection to an input point of LTM-1. This projection is a physical
+    connection, not an address, pointer, identifier lookup, or table-based binding.
   type: principle
-- text: STM node excitation → fixed physical projection → Semantic LTM input excitation → massively parallel propagation
+- text: STM node excitation → fixed physical projection → LTM-1 input excitation → massively parallel propagation
     and semantic stabilization
   type: formula
 - title: Transient semantic association
@@ -62,18 +66,18 @@ blocks:
   type: paragraph
 - title: Parallel interpretation
   text: A request normally excites a distributed set of STM nodes, not one node. Their fixed projections excite
-    many Semantic LTM inputs in parallel. Semantic interpretation arises from the joint LTM response to the complete
-    active STM graph, while each active STM node remains physically coupled to one LTM input for that excitation.
+    many LTM-1 inputs in parallel. Semantic interpretation arises from the joint LTM response to the complete active
+    STM graph, while each active STM node remains physically coupled to one LTM input for that excitation.
   type: principle
 - title: Transformer boundary
   text: The Transformer must receive a semantically interpretable representation equivalent in content to an expression
     such as “Vasya sat on a chair,” not an uninterpreted sequence of neutral node symbols. The exact projection
-    from the stabilized Semantic LTM response to the canonical Memory Vector or another Transformer-consumable representation
+    from the stabilized LTM-1 response to the canonical Memory Vector or another Transformer-consumable representation
     remains an implementation and research question.
   type: warning
 - title: READ interpretation
-  text: At Stage 1, READ is not an address lookup. It is parallel excitation from the active STM graph through fixed
-    physical projections into Semantic LTM, followed by propagation, competition, and stabilization into a semantic
+  text: READ through LTM-1 is not an address lookup. It is parallel excitation from the active STM graph through
+    fixed physical projections into LTM-1, followed by propagation, competition, and stabilization into a semantic
     representation suitable for the Transformer. READ remains non-mutating.
   type: principle
 - title: Single physical LTM
@@ -83,7 +87,7 @@ blocks:
 - title: Open questions
   items:
   - What node and connection variables implement the transient linear Sequence without changing physical STM topology?
-  - How does the Episode Boundary Transformer estimate boundary confidence?
+  - How does the Sequencer estimate Logical Episode boundary confidence?
   - What exact encodings define MSG1 and MSG2 while preserving orthogonality?
   - How are concurrent associative waves scheduled and measured in hardware?
   type: list

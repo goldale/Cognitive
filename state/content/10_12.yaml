@@ -2,23 +2,38 @@ kind: T_ContentBlock
 id: S_10_12
 blocks:
 - title: Input Buffer
-  text: The Stage-1 input path contains a modality-neutral Input Buffer between external or internal sources and
+  text: The canonical input path contains a modality-neutral Input Buffer between external or internal sources and
     STM. The buffer is not semantic memory, does not store objects or addresses, and performs no lookup. It temporarily
     holds a linearly ordered stream of input elements.
   type: definition
-- title: Canonical Stage-1 input path
-  description: Multiple external and internal sources write completed events directly into a linear or circular
-    Input Buffer. The Input Buffer is itself a queue protected by a mutex. Each buffer element has one permanent
-    physical projection to the corresponding STM node.
-  direction: TB
+- title: Sequencer
+  text: The Sequencer is the Input / STM component that orders the combined buffered stream, performs representation
+    normalization required by the input path, proposes Logical Episode boundaries, and prepares the active sequence
+    for STM and associative retrieval. It performs no general reasoning. A dedicated lightweight Transformer may
+    be used internally only as an implementation fallback for difficult boundary cases; this does not create a second
+    architectural Transformer subsystem.
+  type: definition
+- title: Canonical input path
+  description: Language / Messages and Stream Input are equal external channels. They converge on one modality-neutral
+    Input Buffer. The Sequencer orders and normalizes the combined stream before forming the active Semantically
+    Neutral STM sequence, which projects physically into LTM-1.
+  direction: LR
   edges:
   - flow: information
-    from: sources
-    label: mutex-protected enqueue
+    from: language
+    label: transfer
     to: buffer
   - flow: information
+    from: stream
+    label: transfer
+    to: buffer
+  - flow: control
     from: buffer
-    label: permanent 1:1 physical projections
+    label: ordering · normalization · segmentation
+    to: sequencer
+  - flow: information
+    from: sequencer
+    label: active linear sequence
     to: stm
   - flow: information
     from: stm
@@ -26,19 +41,25 @@ blocks:
     to: ltm
   nodes:
   - kind: external
-    id: sources
-    label: Vision · Hearing · Touch · Language · Internal Sources
+    id: language
+    label: Language / Messages
+  - kind: external
+    id: stream
+    label: Stream Input
   - kind: state
     id: buffer
     label: 'Linear / Circular Input Buffer
 
       queue protected by mutex'
+  - kind: control
+    id: sequencer
+    label: Sequencer
   - kind: subsystem
     id: stm
     label: Semantically Neutral STM
   - kind: storage
     id: ltm
-    label: Semantic LTM
+    label: LTM-1
   proportionality_priority: true
   readability_priority: true
   size: standard
@@ -59,15 +80,15 @@ blocks:
   type: warning
 - title: Input Buffer element
   text: Each Input Buffer element is a modality-neutral physical element with a fixed-dimensional activation vector.
-    The current Stage-1 working dimensionality is eight coordinates. The same physical element may be populated
-    at different times from vision, hearing, touch, language, another external source, or an internal source.
+    The current working dimensionality is eight coordinates. The same physical element may be populated at different
+    times from vision, hearing, touch, language, another external source, or an internal source.
   type: definition
 - text: '[v1, v2, v3, v4, v5, v6, v7, transmission_context]'
   type: formula
 - title: Transmission Context
   text: One coordinate of the fixed eight-dimensional vector is reserved for service-level transmission context.
-    At Stage 1 its primary role is to preserve the source or mode of the current signal. It does not encode the
-    semantic identity of the observed Item.
+    Its primary role is to preserve the source or mode of the current signal. It does not encode the semantic identity
+    of the observed Item.
   type: definition
 - title: Fixed dimensional correspondence
   text: The number of Input Buffer elements equals the number of STM nodes. The vector dimensionality of one Input

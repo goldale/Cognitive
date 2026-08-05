@@ -308,7 +308,7 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface, the Stage-1 Input Buffer–STM–Semantic LTM path, logical episode
+  summary: Defines the canonical memory interface, the Input Buffer–STM–LTM-1 path, logical episode
     formation, and the working model for associative storage and retrieval of directed episode graphs.
   sections:
   - kind: T_Section
@@ -363,7 +363,7 @@ chapters:
     content_file: content/10_10.yaml
   - kind: T_Section
     id: S_10_11
-    title: Stage-1 Short-Term Memory and Semantic Dictionary LTM
+    title: Semantically Neutral STM and Single Physical LTM
     order: 11
     content_file: content/10_11.yaml
   - kind: T_Section

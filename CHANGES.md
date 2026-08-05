@@ -1,5 +1,12 @@
 # Changes
 
+## cognitive-0.3.47 — 2026-08-05
+
+- Renamed Episode Boundary Transformer to Sequencer and located it in the Input / STM subsystem.
+- Added the master information-lifecycle diagram and explicit runtime/offline interaction path.
+- Kept one physical LTM with LTM-1 and LTM-2 logical domains.
+- Synchronized generated documentation and index data from YAML.
+
 ## cognitive-0.3.46 — 2026-08-05
 
 - Canonical vertex-owned associative memory model and conservative dictionary evolution.

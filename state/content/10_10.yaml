@@ -2,7 +2,7 @@ kind: T_ContentBlock
 id: S_10_10
 blocks:
 - title: Reference target
-  text: The first cognitive-0.3.17 implementation targets a single-server Associative Memory capable of
+  text: The first Cognitive implementation targets a single-server Associative Memory capable of
     producing a 1024 × 1024 × 8 transient Memory Tensor from compact latent states.
   type: definition
 - items:
