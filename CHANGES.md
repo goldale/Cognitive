@@ -12,8 +12,6 @@
 - Added MN-0001 documenting the deferred parallel input-processor pool and its causality problem.
 - Regenerated human-readable HTML and the complete alphabetical index from YAML.
 
-## cognitive-0.3.40 — 2026-08-05
-
 - Added Stage-1 STM and Semantic LTM architecture.
 - Defined STM as physically fully connected, non-directed, and semantically neutral.
 - Defined sequences as transient directed causal activation graphs embedded in STM.
@@ -39,7 +37,6 @@
 - Added a regression test preventing recurrence when chapter ordering changes.
 - Preserved the canonical operations `READ(Memory State, Query)` and `UPDATE(Memory State, Semantic Representation)` without architectural changes.
 
- - cognitive 0.3.33
 
 
 ## Associative Memory READ/UPDATE integration diagram
@@ -65,7 +62,6 @@
 - Semantic Teacher remains the Transformer role that produces Semantic Representation.
 - Semantic Feedback Learning Pipeline remains the validated path carrying Semantic Representation to UPDATE.
 
-## 0.3.35 — 2026-08-04
 
 - Added RN-0003 on episode-specific relational-temporal reinstatement.
 - Added a working offline replay hypothesis based on distributed Event States and context-compatible transitions.

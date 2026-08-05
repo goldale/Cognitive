@@ -1,9 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_23_02
 blocks:
 - items:
-  - 'What triggers Sleep: elapsed time, accumulated load, instability, resource availability, or explicit policy?'
+  - 'What triggers Sleep: elapsed time, accumulated load, instability, resource availability, or explicit
+    policy?'
   - Which operations are safe during partial online activity?
   - How can consolidation distinguish productive abstraction from destructive information loss?
   - How should contradictions be preserved, reconciled, or separated?

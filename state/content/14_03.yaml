@@ -1,11 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_14_03
 blocks:
 - text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
   type: paragraph
 - title: Hybrid Neural and Algorithmic Processing
-  description: Learned components provide semantic and probabilistic representations; classical algorithms enforce explicit constraints and deterministic control.
+  description: Learned components provide semantic and probabilistic representations; classical algorithms
+    enforce explicit constraints and deterministic control.
   direction: TB
   edges:
   - flow: information
@@ -63,10 +63,13 @@ blocks:
 - proportionality_priority: true
   readability_priority: true
   size: standard
-  text: Sensors -> Neural Perception -> Probabilistic State -> Algorithmic Constraint Solver -> Planned Trajectory -> Learned Correction -> Deterministic Controller
+  text: Sensors -> Neural Perception -> Probabilistic State -> Algorithmic Constraint Solver -> Planned
+    Trajectory -> Learned Correction -> Deterministic Controller
   type: diagram
-- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes, invariants, accounting, and discrete protocol behavior remain explicit.
+- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes,
+    invariants, accounting, and discrete protocol behavior remain explicit.
   type: paragraph
-- text: This division provides interpretability and guarantees where they matter without forcing perception or language into brittle hand-written rules.
+- text: This division provides interpretability and guarantees where they matter without forcing perception
+    or language into brittle hand-written rules.
   type: paragraph
 section_id: S_09_03

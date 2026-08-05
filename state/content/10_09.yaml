@@ -1,24 +1,36 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_09
 blocks:
 - title: Latent Compression Engine
-  text: The validated UPDATE-side encoder that maps a high-dimensional semantic state into z_new ∈ R^4096 for staging and possible persistent storage.
+  text: The validated UPDATE-side encoder that maps a high-dimensional semantic state into z_new ∈ R^4096
+    for staging and possible persistent storage.
   type: definition
-- text: "Transformer\n  ↓\nSemantic Representation\n  ↓\nSemantic Feedback Learning Pipeline\n  ↓\nValidated Semantic State\n  ↓\nLatent Compression Engine\n  ↓ z_new ∈ R^4096\nStaging Area\n  ↓\nAssociative Memory UPDATE"
+- text: "Transformer\n  ↓\nSemantic Representation\n  ↓\nSemantic Feedback Learning Pipeline\n  ↓\nValidated\
+    \ Semantic State\n  ↓\nLatent Compression Engine\n  ↓ z_new ∈ R^4096\nStaging Area\n  ↓\nAssociative\
+    \ Memory UPDATE"
   type: code
-- text: A reference implementation may encode an internal state of 1024 × 1024 × 8 elements using hierarchical learned downsampling, residual feature extraction, a Perceiver-style cross-attention bottleneck, final projection, and optional L2 normalization.
+- text: A reference implementation may encode an internal state of 1024 × 1024 × 8 elements using hierarchical
+    learned downsampling, residual feature extraction, a Perceiver-style cross-attention bottleneck, final
+    projection, and optional L2 normalization.
   type: paragraph
-- text: "1024×1024×8×1\n  ↓ stride (4,4,2)\n256×256×4×64\n  ↓ stride (4,4,2)\n64×64×2×256\n  ↓ stride (4,4,2)\n16×16×1×1024\n  ↓ cross-attention bottleneck\nz_new ∈ R^4096"
+- text: "1024×1024×8×1\n  ↓ stride (4,4,2)\n256×256×4×64\n  ↓ stride (4,4,2)\n64×64×2×256\n  ↓ stride\
+    \ (4,4,2)\n16×16×1×1024\n  ↓ cross-attention bottleneck\nz_new ∈ R^4096"
   type: code
-- text: The nominal payload compression is 8,388,608 / 4,096 = 2,048:1. With FP16 this corresponds to 16 MiB for the dense tensor and 8 KiB for the latent vector, excluding graph, index, metadata, allocator, provenance, and replication overhead.
+- text: The nominal payload compression is 8,388,608 / 4,096 = 2,048:1. With FP16 this corresponds to
+    16 MiB for the dense tensor and 8 KiB for the latent vector, excluding graph, index, metadata, allocator,
+    provenance, and replication overhead.
   type: paragraph
 - title: Information-theoretic limitation
-  text: A deterministic mapping from R^8,388,608 to R^4,096 cannot be losslessly invertible for arbitrary tensors. Useful reconstruction requires valid semantic states to occupy a structured, substantially lower-dimensional manifold.
+  text: A deterministic mapping from R^8,388,608 to R^4,096 cannot be losslessly invertible for arbitrary
+    tensors. Useful reconstruction requires valid semantic states to occupy a structured, substantially
+    lower-dimensional manifold.
   type: note
-- text: Encoder and decoder may be trained jointly with reconstruction, feature-space, contrastive, semantic-preservation, and retrieval-margin objectives. The architecture does not mandate a universal Hopfield loss.
+- text: Encoder and decoder may be trained jointly with reconstruction, feature-space, contrastive, semantic-preservation,
+    and retrieval-margin objectives. The architecture does not mandate a universal Hopfield loss.
   type: paragraph
 - title: Operational asymmetry
-  text: The decoder belongs to READ and reconstructs transient context. The encoder is available only inside the validated Semantic Feedback Learning Pipeline for UPDATE. This prevents memory from reinforcing its own generated outputs.
+  text: The decoder belongs to READ and reconstructs transient context. The encoder is available only
+    inside the validated Semantic Feedback Learning Pipeline for UPDATE. This prevents memory from reinforcing
+    its own generated outputs.
   type: principle
 section_id: S_10_09

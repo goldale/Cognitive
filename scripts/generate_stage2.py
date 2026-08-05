@@ -23,7 +23,7 @@ _existing_terms = {item['term'] for item in terms}
 for _term, _definition in _role_terms.items():
     if _term not in _existing_terms:
         terms.append({'term': _term, 'definition': _definition})
-dump(CAN/'terminology.yaml', {'kind': 'T_Collection', 'schema_version': '0.3.19', 'terms': terms})
+dump(CAN/'terminology.yaml', {'kind': 'T_Collection', 'terms': terms})
 principles=load('principles.yaml')['principles']
 
 # Chapter 2: preserve old sections while inserting a generated architecture overview first.
@@ -133,6 +133,5 @@ for c in components:
 pp=ROOT/'pyproject.toml'; txt=pp.read_text(); txt=txt.replace('version = "0.3.14"','version = "0.3.19"'); pp.write_text(txt)
 mk=ROOT/'Makefile'; txt=mk.read_text().replace('cognitive-systems-lab-0.3.14.tar.gz','cognitive-systems-lab-0.3.19.tar.gz'); mk.write_text(txt)
 br=ROOT/'scripts'/'build_release.sh'; txt=br.read_text().replace('cognitive-systems-lab-0.3.14.tar.gz','cognitive-systems-lab-0.3.19.tar.gz'); br.write_text(txt)
-manifest=yaml.safe_load((STATE/'manifest.yaml').read_text()); manifest['version']='0.3.19-stage2'; dump(STATE/'manifest.yaml',manifest)
 
 print('Stage 2 canonical derivatives generated.')

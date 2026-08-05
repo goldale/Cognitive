@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_20_05
 blocks:
 - title: Replay
-  text: Controlled reactivation of selected semantic experience so the system can verify, reinforce, compare, reinterpret, or intentionally weaken memory structures.
+  text: Controlled reactivation of selected semantic experience so the system can verify, reinforce, compare,
+    reinterpret, or intentionally weaken memory structures.
   type: definition
-- text: Replay follows Importance Estimation and the initial design of Offline Consolidation because it requires both a selection policy and a protected execution context.
+- text: Replay follows Importance Estimation and the initial design of Offline Consolidation because it
+    requires both a selection policy and a protected execution context.
   type: paragraph
 - items:
   - Priority replay for high-importance or unstable knowledge.
@@ -15,7 +16,8 @@ blocks:
   - Cross-context replay to measure whether knowledge remains useful under changed goals or environments.
   type: list
 - title: Canonical Replay Boundary
-  description: Replay reactivates semantic material through the Transformer. It does not bypass the Semantic Feedback Learning Pipeline or write raw stored observations directly into Associative Memory.
+  description: Replay reactivates semantic material through the Transformer. It does not bypass the Semantic
+    Feedback Learning Pipeline or write raw stored observations directly into Associative Memory.
   direction: TB
   edges:
   - flow: context
@@ -66,6 +68,7 @@ blocks:
   size: standard
   type: diagram
 - title: Explicit retrieval remains mandatory
-  text: When replay needs current memory context, it must perform an explicit READ. UPDATE never performs implicit READ and never produces a Memory Vector.
+  text: When replay needs current memory context, it must perform an explicit READ. UPDATE never performs
+    implicit READ and never produces a Memory Vector.
   type: principle
 section_id: S_20_05

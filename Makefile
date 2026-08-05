@@ -2,6 +2,7 @@ PYTHON ?= python3
 STATE := state
 DOCS := docs
 SCHEMA := schemas/research-state.schema.json
+RELEASE_ARCHIVE ?= dist/cognitive.tgz
 
 .PHONY: install validate format docs graph demo test release clean
 
@@ -29,7 +30,7 @@ test:
 
 release: validate test docs graph
 	mkdir -p dist
-	PYTHONPATH=src $(PYTHON) -m cogsys.cli release . --output dist/cognitive-0.3.40.tgz
+	PYTHONPATH=src $(PYTHON) -m cogsys.cli release . --output $(RELEASE_ARCHIVE)
 
 clean:
 	rm -rf docs/* dist/* .pytest_cache

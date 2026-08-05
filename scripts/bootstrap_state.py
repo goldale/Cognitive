@@ -125,8 +125,6 @@ write(
     "tokens.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
-        "version": "0.1.0",
         "tokens": atomic_tokens + derived_tokens,
         "optimization_goal": "Reduce the Atomic Token set while preserving or increasing expressive power.",
     },
@@ -153,7 +151,6 @@ write(
     "principles.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "principles": [
             {
                 "id": pid,
@@ -188,7 +185,6 @@ write(
     "hypotheses.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "hypotheses": [
             {
                 "id": hid,
@@ -287,7 +283,6 @@ write(
     "architecture.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "architectures": architectures,
     },
 )
@@ -310,7 +305,6 @@ write(
     "questions.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "questions": [
             {
                 "id": qid,
@@ -340,7 +334,6 @@ write(
     "roadmap.yaml",
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "roadmap": [
             {
                 "id": rid,
@@ -358,7 +351,6 @@ write(
     "consolidation.yaml",
     {
         "kind": "T_ConsolidationRecord",
-        "schema_version": "0.1.0",
         "latest": {
             "id": "CR_001",
             "kind": "T_ConsolidationRecord",
@@ -390,8 +382,6 @@ write(
     "manifest.yaml",
     {
         "kind": "T_ResearchState",
-        "schema_version": "0.1.0",
-        "version": "0.1.0",
         "title": "Architectural Evolution of Long-Lived Cognitive Systems",
         "canonical_language": "en",
         "files": {

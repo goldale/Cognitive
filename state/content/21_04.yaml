@@ -1,5 +1,4 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_21_04
 blocks:
 - text: Replay experiments must separate the benefits of reactivation from simple repeated exposure.

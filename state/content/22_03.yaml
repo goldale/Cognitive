@@ -1,8 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_22_03
 blocks:
-- text: Cognitive capabilities should appear as explicit architectural subsystems with named inputs, outputs, state effects, and ownership.
+- text: Cognitive capabilities should appear as explicit architectural subsystems with named inputs, outputs,
+    state effects, and ownership.
   type: paragraph
 - items:
   - Semantic Reasoning remains distinct from memory maintenance.

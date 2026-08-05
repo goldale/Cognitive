@@ -1,11 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_07_03
 blocks:
-- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are evaluated; an action is selected; the environment and internal state change; the observed result is represented and evaluated again.'
+- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are
+    evaluated; an action is selected; the environment and internal state change; the observed result is
+    represented and evaluated again.'
   type: paragraph
 - title: Evaluation Feedback Loop
-  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive control loop.
+  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive
+    control loop.
   direction: TB
   edges:
   - flow: information
@@ -78,6 +80,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is semantically expressible as a fixed hand-written utility function.
+- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is
+    semantically expressible as a fixed hand-written utility function.
   type: paragraph
 section_id: S_14_05

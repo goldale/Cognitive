@@ -1,5 +1,4 @@
 kind: T_Collection
-schema_version: 0.3.40
 questions:
 - kind: T_OpenQuestion
   id: Q_001
@@ -53,7 +52,8 @@ questions:
   priority: high
 - kind: T_OpenQuestion
   id: Q_011
-  title: Which parts of higher-level social and emotional behavior fail to emerge and require explicit mechanisms?
+  title: Which parts of higher-level social and emotional behavior fail to emerge and require explicit
+    mechanisms?
   status: T_Open
   priority: medium
 - kind: T_OpenQuestion

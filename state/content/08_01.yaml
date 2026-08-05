@@ -1,14 +1,19 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_08_01
 blocks:
-- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions and multi-step scenarios. Each scenario includes predicted states, branch probabilities, temporal attributes, resource requirements, and uncertainty.
+- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions
+    and multi-step scenarios. Each scenario includes predicted states, branch probabilities, temporal
+    attributes, resource requirements, and uncertainty.
   type: paragraph
 - title: Planning a move in a chess game
-  text: When planning a chess move, the system does not seek one move in isolation. It generates a bounded tree of candidate moves, likely replies, subsequent continuations, branch probabilities or confidence estimates, and time costs. Integrated Evaluation compares the resulting scenarios and selects the best available move before the available thinking time expires.
+  text: When planning a chess move, the system does not seek one move in isolation. It generates a bounded
+    tree of candidate moves, likely replies, subsequent continuations, branch probabilities or confidence
+    estimates, and time costs. Integrated Evaluation compares the resulting scenarios and selects the
+    best available move before the available thinking time expires.
   type: example
 - title: Bounded Planning and Action Selection
-  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects among them under a processing budget.
+  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects
+    among them under a processing budget.
   direction: TB
   edges:
   - flow: information
@@ -77,6 +82,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option. The behavioral result then re-enters the cognitive system as new input and is evaluated again.
+- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option.
+    The behavioral result then re-enters the cognitive system as new input and is evaluated again.
   type: paragraph
 section_id: S_14_03

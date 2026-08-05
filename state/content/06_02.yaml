@@ -1,9 +1,10 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_06_02
 blocks:
-- text: Temporally related observations should be organized into episodes. Episodes preserve local order, duration, concurrency, interruption, and the distinction between an event and a persistent state.
+- text: Temporally related observations should be organized into episodes. Episodes preserve local order,
+    duration, concurrency, interruption, and the distinction between an event and a persistent state.
   type: paragraph
-- text: Temporal organization is separate from semantic meaning and evaluation, although all three interact during interpretation and planning.
+- text: Temporal organization is separate from semantic meaning and evaluation, although all three interact
+    during interpretation and planning.
   type: paragraph
 section_id: S_15_02

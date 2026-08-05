@@ -1,11 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_01_02
 blocks:
-- text: Many improvements in current systems are obtained by increasing model scale or adding specialized components. This project instead examines whether a different organization of existing components can create a larger gain than making any one component more complex.
+- text: Many improvements in current systems are obtained by increasing model scale or adding specialized
+    components. This project instead examines whether a different organization of existing components
+    can create a larger gain than making any one component more complex.
   type: paragraph
 - title: Overall Cognitive Architecture
-  description: The end-to-end relationship between input streams, semantic processing, evaluation, planning, memory, reasoning, action, and feedback.
+  description: The end-to-end relationship between input streams, semantic processing, evaluation, planning,
+    memory, reasoning, action, and feedback.
   direction: TB
   edges:
   - flow: information
@@ -100,7 +102,9 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: The strategy is evolutionary. Each stage must be fully operational, independently useful, measurable, and capable of supplying evidence for the next stage. Tighter integration is deferred until the modular implementation has generated enough operational data to justify it.
+- text: The strategy is evolutionary. Each stage must be fully operational, independently useful, measurable,
+    and capable of supplying evidence for the next stage. Tighter integration is deferred until the modular
+    implementation has generated enough operational data to justify it.
   type: paragraph
 - proportionality_priority: true
   readability_priority: true
@@ -114,6 +118,8 @@ blocks:
     Deeper Integration'
   type: diagram
 - title: No speculative dependency
-  text: A proposed mechanism belongs in the engineering roadmap only when it can be implemented with current technology, requires an identifiable extension of current technology, or can be experimentally tested in the foreseeable future.
+  text: A proposed mechanism belongs in the engineering roadmap only when it can be implemented with current
+    technology, requires an identifiable extension of current technology, or can be experimentally tested
+    in the foreseeable future.
   type: principle
 section_id: S_01_02

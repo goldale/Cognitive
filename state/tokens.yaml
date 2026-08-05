@@ -1,6 +1,4 @@
 kind: T_Collection
-schema_version: 0.3.40
-version: 0.2.0
 optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive power.
 tokens:
 - token: T_Token
@@ -462,24 +460,26 @@ tokens:
   status: T_Active
 - token: T_StagedTraining
   atomic: true
-  definition: A progressive training strategy that first stabilizes the Transformer with a null Memory Vector and then integrates
-    Associative Memory.
+  definition: A progressive training strategy that first stabilizes the Transformer with a null Memory
+    Vector and then integrates Associative Memory.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_NullMemoryVector
   atomic: true
-  definition: The fixed all-zero canonical Memory Vector used while training the Transformer before Associative Memory is
-    enabled.
+  definition: The fixed all-zero canonical Memory Vector used while training the Transformer before Associative
+    Memory is enabled.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_ForcedMemoryUtilization
   atomic: true
-  definition: A training intervention used when the Transformer does not causally depend on the Memory Vector.
+  definition: A training intervention used when the Transformer does not causally depend on the Memory
+    Vector.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_AssociativeMemoryMaturity
   atomic: true
-  definition: The representational stability required before Associative Memory is integrated with the Transformer.
+  definition: The representational stability required before Associative Memory is integrated with the
+    Transformer.
   status: T_Active
   index_target: ../chapter12/12_07.html
 - token: T_SemanticEquivalenceClass
@@ -494,7 +494,8 @@ tokens:
   index_target: ../chapter12/12_07.html
 - token: T_SemanticDiscrimination
   atomic: true
-  definition: The property that semantically different inputs remain separated in canonical Memory Vector space.
+  definition: The property that semantically different inputs remain separated in canonical Memory Vector
+    space.
   status: T_Active
   index_target: ../chapter12/12_07.html
 - token: T_MultilingualConsistency
@@ -519,46 +520,47 @@ tokens:
   index_target: ../chapter11/11_01.html
 - token: T_MemoryVectorNormalization
   atomic: true
-  definition: The staged canonicalization of Memory Vector through length normalization, post-stabilization orthogonalization,
-    and sparse basis rotation.
+  definition: The staged canonicalization of Memory Vector through length normalization, post-stabilization
+    orthogonalization, and sparse basis rotation.
   status: T_Active
   index_target: ../chapter11/11_06.html
 - token: T_OrthogonalCoordinates
   atomic: true
-  definition: A transformed coordinate system with negligible off-diagonal covariance for representative Memory Vectors.
+  definition: A transformed coordinate system with negligible off-diagonal covariance for representative
+    Memory Vectors.
   status: T_Active
   index_target: ../chapter11/11_04.html
 - token: T_SparseBasisRotation
   atomic: true
-  definition: A basis rotation intended to minimize the number of non-zero or significantly active coordinates for simple
-    meanings.
+  definition: A basis rotation intended to minimize the number of non-zero or significantly active coordinates
+    for simple meanings.
   status: T_Active
   index_target: ../chapter11/11_05.html
 - token: T_SequentialMemoryVectorNormalization
   atomic: true
-  definition: 'A staged canonicalization process: length normalization first, statistical orthogonalization after semantic
-    stabilization, and sparse basis rotation last.'
+  definition: 'A staged canonicalization process: length normalization first, statistical orthogonalization
+    after semantic stabilization, and sparse basis rotation last.'
   status: T_Active
   index_target: ../chapter11/11_06.html
   label: Sequential Memory Vector Normalization
 - token: T_LengthNormalizationStage
   atomic: true
-  definition: The first canonicalization stage, which normalizes every non-zero raw Memory Vector by Euclidean length while
-    retaining activation magnitude separately.
+  definition: The first canonicalization stage, which normalizes every non-zero raw Memory Vector by Euclidean
+    length while retaining activation magnitude separately.
   status: T_Active
   index_target: ../chapter11/11_06.html
   label: Length Normalization Stage
 - token: T_StatisticalOrthogonalizationStage
   atomic: true
-  definition: The post-stabilization stage that estimates covariance and transforms Memory Vector coordinates toward negligible
-    off-diagonal coupling.
+  definition: The post-stabilization stage that estimates covariance and transforms Memory Vector coordinates
+    toward negligible off-diagonal coupling.
   status: T_Active
   index_target: ../chapter11/11_06.html
   label: Statistical Orthogonalization Stage
 - token: T_SparseRotationStage
   atomic: true
-  definition: The final normalization stage that rotates an approximately orthogonal basis to reduce the number of materially
-    active coordinates for simple meanings.
+  definition: The final normalization stage that rotates an approximately orthogonal basis to reduce the
+    number of materially active coordinates for simple meanings.
   status: T_Active
   index_target: ../chapter11/11_06.html
   label: Sparse Rotation Stage
@@ -570,70 +572,77 @@ tokens:
   label: Associative Memory Implementation Candidates
 - token: T_ImplementationGapAnalysis
   atomic: true
-  definition: A comparison between existing memory technologies and the additional mechanisms required by Cognitive.
+  definition: A comparison between existing memory technologies and the additional mechanisms required
+    by Cognitive.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Implementation Gap Analysis
 - token: T_DenseAssociativeMemory
   atomic: true
-  definition: A high-capacity attractor-based associative memory candidate for pattern completion and content-addressable
-    retrieval.
+  definition: A high-capacity attractor-based associative memory candidate for pattern completion and
+    content-addressable retrieval.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Dense Associative Memory
 - token: T_SparseDistributedMemory
   atomic: true
-  definition: A distributed content-addressable storage model that supports partial-cue retrieval and graceful degradation.
+  definition: A distributed content-addressable storage model that supports partial-cue retrieval and
+    graceful degradation.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Sparse Distributed Memory
 - token: T_VectorCandidateRetrieval
   atomic: true
-  definition: Approximate nearest-neighbour retrieval used to propose memory elements for subsequent associative activation.
+  definition: Approximate nearest-neighbour retrieval used to propose memory elements for subsequent associative
+    activation.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Vector Candidate Retrieval
 - token: T_HybridAssociativeMemory
   atomic: true
-  definition: An implementation combining neural association, vector retrieval, graph structure, and exact key–value storage.
+  definition: An implementation combining neural association, vector retrieval, graph structure, and exact
+    key–value storage.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Hybrid Associative Memory
 - token: T_ContextSelector
   atomic: true
-  definition: A compact discriminative representation used by READ to determine whether a transition is applicable under the
-    current semantic and traversal context.
+  definition: A compact discriminative representation used by READ to determine whether a transition is
+    applicable under the current semantic and traversal context.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Context Selector
 - token: T_ContextConditionedRouting
   atomic: true
-  definition: READ-stage selection of transitions using query context, accumulated path context, temporal compatibility, and
-    transition evidence.
+  definition: READ-stage selection of transitions using query context, accumulated path context, temporal
+    compatibility, and transition evidence.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Context-Conditioned Routing
 - token: T_TraversalState
   atomic: true
-  definition: The dynamic READ state containing accumulated semantic context, temporal constraints, selected transitions,
-    uncertainty, and path score during trajectory reconstruction.
+  definition: The dynamic READ state containing accumulated semantic context, temporal constraints, selected
+    transitions, uncertainty, and path score during trajectory reconstruction.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Traversal State
 - token: T_SemanticLTM
   atomic: true
-  definition: The Stage-1 cloned long-term semantic dictionary containing stable world Items and bounded basic relations.
+  definition: The Stage-1 cloned long-term semantic dictionary containing stable world Items and bounded
+    basic relations.
   status: T_Active
 - token: T_ShortTermMemory
   atomic: true
-  definition: A fixed fully connected semantically neutral network on which transient directed activation graphs occur.
+  definition: A fixed fully connected semantically neutral network on which transient directed activation
+    graphs occur.
   status: T_Active
 - token: T_DirectedActivationGraph
   atomic: true
-  definition: A transient causal graph embedded in STM whose direction belongs to excitation propagation rather than physical
-    topology.
+  definition: A transient causal graph embedded in STM whose direction belongs to excitation propagation
+    rather than physical topology.
   status: T_Active
 - token: T_PhysicalProjection
   atomic: true
-  definition: A permanent non-addressed physical connection from one STM node to one input point of Semantic LTM.
+  definition: A permanent non-addressed physical connection from one STM node to one input point of Semantic
+    LTM.
   status: T_Active

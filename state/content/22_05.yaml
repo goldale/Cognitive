@@ -1,8 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_22_05
 blocks:
-- text: The architecture must remain understandable to engineers as it becomes more capable. Formal precision is useful only when it clarifies behavior, contracts, evidence, or risk.
+- text: The architecture must remain understandable to engineers as it becomes more capable. Formal precision
+    is useful only when it clarifies behavior, contracts, evidence, or risk.
   type: paragraph
 - items:
   - Canonical explanations appear once.

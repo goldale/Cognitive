@@ -1,9 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_06_03
 blocks:
-- text: Temporal order is necessary but not sufficient for causality. The system may form causal hypotheses when one event precedes another and a model predicts a dependency, but the relation remains uncertain until supported by further evidence.
+- text: Temporal order is necessary but not sufficient for causality. The system may form causal hypotheses
+    when one event precedes another and a model predicts a dependency, but the relation remains uncertain
+    until supported by further evidence.
   type: paragraph
-- text: The architecture should preserve the difference between observed sequence, predicted mechanism, and confirmed causal model.
+- text: The architecture should preserve the difference between observed sequence, predicted mechanism,
+    and confirmed causal model.
   type: paragraph
 section_id: S_15_03

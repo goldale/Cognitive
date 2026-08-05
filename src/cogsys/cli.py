@@ -115,7 +115,7 @@ def cmd_release(args: argparse.Namespace) -> int:
                 continue
             if path.suffix in excluded_suffixes or excluded_release_artifact(relative):
                 continue
-            archive.add(path, arcname=Path(root.name) / relative, recursive=False)
+            archive.add(path, arcname=Path("cognitive") / relative, recursive=False)
     print(output)
     return 0
 

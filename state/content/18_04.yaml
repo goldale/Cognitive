@@ -1,8 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_18_04
 blocks:
-- text: The current Research State contains formal open-question entities. The most consequential unresolved areas are listed below.
+- text: The current Research State contains formal open-question entities. The most consequential unresolved
+    areas are listed below.
   type: paragraph
 - items:
   - Minimal Atomic Token basis
@@ -15,6 +15,7 @@ blocks:
   - Boundary between emergent and explicitly required higher-level behavior
   ordered: false
   type: list
-- text: The open questions define the research program. They are not defects to hide and should not be replaced by confident prose before experiments exist.
+- text: The open questions define the research program. They are not defects to hide and should not be
+    replaced by confident prose before experiments exist.
   type: paragraph
 section_id: S_12_05

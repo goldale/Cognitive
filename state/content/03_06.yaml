@@ -1,33 +1,52 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_03_06
 blocks:
-- text: Human debates, teaching, literary interpretation, and cultural communication include computational integration together with social and emotional objectives. The current architecture models the integration layer first.
+- text: Human debates, teaching, literary interpretation, and cultural communication include computational
+    integration together with social and emotional objectives. The current architecture models the integration
+    layer first.
   type: paragraph
-- text: The working hypothesis is that many higher-level phenomena will emerge when persistent agents with different objectives repeatedly serialize, integrate, act, remember consequences, and model one another.
+- text: The working hypothesis is that many higher-level phenomena will emerge when persistent agents
+    with different objectives repeatedly serialize, integrate, act, remember consequences, and model one
+    another.
   type: paragraph
 - level: 3
   text: 'The Babel Hypothesis: Semantic Diversity and Population Stability'
   type: heading
-- text: 'The story of the Tower of Babel is usually read as a catastrophe of failed communication. For cognitive architecture, it also supports a different interpretation: fragmentation of one uniform language into multiple partially independent semantic systems may reduce immediate interoperability while increasing population-level diversity, resilience, and long-term stability.'
+- text: 'The story of the Tower of Babel is usually read as a catastrophe of failed communication. For
+    cognitive architecture, it also supports a different interpretation: fragmentation of one uniform
+    language into multiple partially independent semantic systems may reduce immediate interoperability
+    while increasing population-level diversity, resilience, and long-term stability.'
   type: paragraph
 - title: Uniformity creates correlated failure modes
-  text: A population sharing one language, one category system, and one strongly synchronized world model can communicate efficiently. The same synchronization also allows conceptual errors, false assumptions, and defective optimization criteria to propagate through the entire population with little resistance.
+  text: A population sharing one language, one category system, and one strongly synchronized world model
+    can communicate efficiently. The same synchronization also allows conceptual errors, false assumptions,
+    and defective optimization criteria to propagate through the entire population with little resistance.
   type: observation
 - title: Diversity creates independent search paths
-  text: Different languages can preserve different category boundaries, abstractions, compression schemes, metaphors, and problem-solving traditions. Partially isolated semantic communities therefore behave as parallel searches through different regions of conceptual space.
+  text: Different languages can preserve different category boundaries, abstractions, compression schemes,
+    metaphors, and problem-solving traditions. Partially isolated semantic communities therefore behave
+    as parallel searches through different regions of conceptual space.
   type: observation
 - title: RN-0001 — Babel diversity hypothesis
   confidence: 0.68
   object_id: RN-0001
-  text: Limited semantic divergence may increase the stability and adaptive capacity of a cognitive population. Communication becomes more expensive, but the population becomes less vulnerable to one globally shared conceptual error and more likely to preserve alternative solutions.
+  text: Limited semantic divergence may increase the stability and adaptive capacity of a cognitive population.
+    Communication becomes more expensive, but the population becomes less vulnerable to one globally shared
+    conceptual error and more likely to preserve alternative solutions.
   type: hypothesis
 - title: Perfect semantic synchronization is not always optimal
-  text: A multi-agent cognitive ecosystem should balance semantic interoperability with preservation of independent semantic lineages. Periodic exchange can propagate successful discoveries without forcing all agents into one identical internal model.
+  text: A multi-agent cognitive ecosystem should balance semantic interoperability with preservation of
+    independent semantic lineages. Periodic exchange can propagate successful discoveries without forcing
+    all agents into one identical internal model.
   type: principle
-- text: This interpretation suggests a population architecture of independent semantic communities, controlled translation and clarification, explicit disagreement detection, and periodic semantic synchronization. Diversity is preserved as a source of robustness and exploration rather than treated only as a communication defect.
+- text: This interpretation suggests a population architecture of independent semantic communities, controlled
+    translation and clarification, explicit disagreement detection, and periodic semantic synchronization.
+    Diversity is preserved as a source of robustness and exploration rather than treated only as a communication
+    defect.
   type: paragraph
 - title: Architectural analogy, not historical claim
-  text: The Babel hypothesis is not a claim about the historical origin, purpose, or religious meaning of human language diversity. It is an architectural analogy used to examine the tradeoff between communication efficiency and cognitive diversity.
+  text: The Babel hypothesis is not a claim about the historical origin, purpose, or religious meaning
+    of human language diversity. It is an architectural analogy used to examine the tradeoff between communication
+    efficiency and cognitive diversity.
   type: warning
 section_id: S_02_06

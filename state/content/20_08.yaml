@@ -1,14 +1,18 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_20_08
 blocks:
 - title: Connection State Vector
-  text: A persistent state vector attached to each associative connection. It accumulates local evidence about how the connection is used, including activation frequency, recency, co-activation context, semantic utility, confidence, conflict, and contribution to successful reconstruction.
+  text: A persistent state vector attached to each associative connection. It accumulates local evidence
+    about how the connection is used, including activation frequency, recency, co-activation context,
+    semantic utility, confidence, conflict, and contribution to successful reconstruction.
   type: definition
-- text: Ordinary online operation updates connection-state statistics without immediately changing memory topology. This separates inexpensive functional learning from expensive structural learning.
+- text: Ordinary online operation updates connection-state statistics without immediately changing memory
+    topology. This separates inexpensive functional learning from expensive structural learning.
   type: paragraph
 - title: Connection-State Evidence and Sleep-Time Structural Learning
-  description: Online activity accumulates local statistics in each associative connection. Offline Consolidation and Sleep later use that evidence to modify topology, connection strength, routing, merging, creation, or removal.
+  description: Online activity accumulates local statistics in each associative connection. Offline Consolidation
+    and Sleep later use that evidence to modify topology, connection strength, routing, merging, creation,
+    or removal.
   direction: TB
   edges:
   - flow: learning
@@ -58,7 +62,10 @@ blocks:
   size: standard
   type: diagram
 - title: Neuromodulator analogy
-  text: 'The Connection State Vector is architecturally analogous to locally accumulated biochemical modulation around biological synapses: repeated use, salience, reward, stress, novelty, and other context-dependent signals can leave traces that later influence plasticity. This is an engineering analogy, not a claim that the vector literally reproduces any specific neurotransmitter or neuromodulator mechanism.'
+  text: 'The Connection State Vector is architecturally analogous to locally accumulated biochemical modulation
+    around biological synapses: repeated use, salience, reward, stress, novelty, and other context-dependent
+    signals can leave traces that later influence plasticity. This is an engineering analogy, not a claim
+    that the vector literally reproduces any specific neurotransmitter or neuromodulator mechanism.'
   type: note
 - items:
   - 'Online phase: accumulate statistics and permit small reversible parameter updates.'
@@ -67,6 +74,8 @@ blocks:
   - Preserve provenance, rollback information, and uncertainty for every destructive change.
   type: list
 - title: Functional and structural learning remain separate
-  text: Connection State Vectors collect evidence during normal operation. They do not authorize immediate topology changes. Expensive structural modification is performed only by an explicit Offline Consolidation / Sleep subsystem under validation and rollback controls.
+  text: Connection State Vectors collect evidence during normal operation. They do not authorize immediate
+    topology changes. Expensive structural modification is performed only by an explicit Offline Consolidation
+    / Sleep subsystem under validation and rollback controls.
   type: principle
 section_id: S_20_08

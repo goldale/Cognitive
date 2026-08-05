@@ -1,5 +1,4 @@
 kind: T_Collection
-schema_version: 0.3.40
 components:
 - kind: subsystem
   id: C_ASSOC_MEMORY
@@ -40,7 +39,6 @@ components:
   roles:
   - semantic_reasoning_engine
   - semantic_teacher
-
 - kind: state
   id: C_INPUT_BUFFER
   name: Input Buffer

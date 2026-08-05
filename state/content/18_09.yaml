@@ -1,5 +1,4 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_18_09
 blocks:
 - level: 3
@@ -8,9 +7,12 @@ blocks:
 - items:
   - INT4 provides maximum storage density and bandwidth efficiency.
   - INT8 is the default operational precision.
-  - INT16 is reserved for sensitive layers, accumulation, calibration, high-dynamic-range state, and Offline Consolidation statistics.
+  - INT16 is reserved for sensitive layers, accumulation, calibration, high-dynamic-range state, and Offline
+    Consolidation statistics.
   type: list
-- text: INT8 may be implemented through two INT4 slices, and INT16 through multiple lower-precision slices. Bit-sliced realization is preferred when a single physical cell cannot provide sufficiently stable multilevel precision.
+- text: INT8 may be implemented through two INT4 slices, and INT16 through multiple lower-precision slices.
+    Bit-sliced realization is preferred when a single physical cell cannot provide sufficiently stable
+    multilevel precision.
   type: paragraph
 - level: 3
   text: Physical READ / UPDATE Separation
@@ -24,9 +26,13 @@ blocks:
 - level: 3
   text: Offline Consolidation
   type: heading
-- text: Offline Consolidation may recalibrate devices, replay important states, strengthen or weaken associations, maintain the semantic basis, collect dimensional-usage statistics, and produce release-level architectural recommendations. It must not change runtime dimensionality.
+- text: Offline Consolidation may recalibrate devices, replay important states, strengthen or weaken associations,
+    maintain the semantic basis, collect dimensional-usage statistics, and produce release-level architectural
+    recommendations. It must not change runtime dimensionality.
   type: paragraph
 - title: Research status
-  text: Photonic-spin glass, magnonic, spintronic, memristive, and phase-change implementations remain prospective technologies. This chapter defines architectural compatibility and evaluation criteria rather than claiming an existing complete implementation.
+  text: Photonic-spin glass, magnonic, spintronic, memristive, and phase-change implementations remain
+    prospective technologies. This chapter defines architectural compatibility and evaluation criteria
+    rather than claiming an existing complete implementation.
   type: warning
 section_id: S_18_09

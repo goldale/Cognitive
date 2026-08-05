@@ -1,14 +1,17 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_09_06
 blocks:
-- text: The functional interpretation of lossy memory remains a hypothesis. Biological memory may also be constrained by energy, tissue, noise, and developmental mechanisms unrelated to functional compression.
+- text: The functional interpretation of lossy memory remains a hypothesis. Biological memory may also
+    be constrained by energy, tissue, noise, and developmental mechanisms unrelated to functional compression.
   type: paragraph
-- text: 'A practical test compares systems with equal storage and inference resources but different consolidation objectives: archival fidelity versus future-task utility.'
+- text: 'A practical test compares systems with equal storage and inference resources but different consolidation
+    objectives: archival fidelity versus future-task utility.'
   type: paragraph
-- text: Longitudinal evaluation should measure adaptation, interference, transfer, recovery after objective drift, and the ability to explain retained or discarded state.
+- text: Longitudinal evaluation should measure adaptation, interference, transfer, recovery after objective
+    drift, and the ability to explain retained or discarded state.
   type: paragraph
 - title: Dual-memory experiment
-  text: Maintain an immutable event store beside a lossy cognitive memory. Evaluate behavior from cognitive memory while using the event store only for audit and controlled replay.
+  text: Maintain an immutable event store beside a lossy cognitive memory. Evaluate behavior from cognitive
+    memory while using the event store only for audit and controlled replay.
   type: principle
 section_id: S_04_06

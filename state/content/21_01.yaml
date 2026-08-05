@@ -1,8 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_21_01
 blocks:
-- text: The Research Agenda converts architectural direction into experiments that can falsify assumptions. A future subsystem is not accepted merely because it is biologically plausible or intuitively attractive.
+- text: The Research Agenda converts architectural direction into experiments that can falsify assumptions.
+    A future subsystem is not accepted merely because it is biologically plausible or intuitively attractive.
   type: paragraph
 - items:
   - State a hypothesis and competing alternatives.

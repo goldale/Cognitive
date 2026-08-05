@@ -1,11 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_04_02
 blocks:
-- text: 'The engineering pipeline separates physical decoding from semantic reconstruction: channel decoding produces symbols or perceptual features; contextual interpretation relates them to active memory; model integration proposes changes to the recipient world model; clarification is requested when ambiguity or conflict remains.'
+- text: 'The engineering pipeline separates physical decoding from semantic reconstruction: channel decoding
+    produces symbols or perceptual features; contextual interpretation relates them to active memory;
+    model integration proposes changes to the recipient world model; clarification is requested when ambiguity
+    or conflict remains.'
   type: paragraph
 - title: Semantic Reconstruction Pipeline
-  description: A decoded signal becomes meaningful only through preprocessing, contextual interpretation, and integration with the current world model.
+  description: A decoded signal becomes meaningful only through preprocessing, contextual interpretation,
+    and integration with the current world model.
   direction: TB
   edges:
   - flow: information
@@ -61,6 +64,8 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: the earlier analysis does not claim to solve the general problem of deriving meaning from arbitrary serialized signals. It identifies architectural constraints and candidate stages that a future implementation must test.
+- text: the earlier analysis does not claim to solve the general problem of deriving meaning from arbitrary
+    serialized signals. It identifies architectural constraints and candidate stages that a future implementation
+    must test.
   type: paragraph
 section_id: S_13_02

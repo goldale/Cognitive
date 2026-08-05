@@ -1,5 +1,4 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_21_02
 blocks:
 - text: Importance Estimation should be studied before consolidation and replay policies are fixed.
@@ -23,6 +22,7 @@ blocks:
     - Unexpected degradation after UPDATE or consolidation
   type: table
 - title: Acceptance direction
-  text: No single scalar is assumed to be sufficient. The representation of importance remains an open design choice until experiments justify it.
+  text: No single scalar is assumed to be sufficient. The representation of importance remains an open
+    design choice until experiments justify it.
   type: note
 section_id: S_21_02

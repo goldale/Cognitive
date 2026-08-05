@@ -1,13 +1,16 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_02_02
 blocks:
 - title: T_ObjectiveFunction
   text: A mechanism that evaluates candidate states relative to the objectives of a cognitive system.
   type: definition
-- text: An objective function influences far more than final action selection. Over time it changes what is attended to, what is stored, what is forgotten, which categories are created, which errors matter, and which communication is considered useful.
+- text: An objective function influences far more than final action selection. Over time it changes what
+    is attended to, what is stored, what is forgotten, which categories are created, which errors matter,
+    and which communication is considered useful.
   type: paragraph
-- text: The objective function need not be explicit, scalar, stable, or fully consistent. In biological systems it is likely implemented by several interacting evaluation mechanisms. An engineered system can begin with an explicit approximation and allow the evaluation mechanism to learn.
+- text: The objective function need not be explicit, scalar, stable, or fully consistent. In biological
+    systems it is likely implemented by several interacting evaluation mechanisms. An engineered system
+    can begin with an explicit approximation and allow the evaluation mechanism to learn.
   type: paragraph
 - headers:
   - System class

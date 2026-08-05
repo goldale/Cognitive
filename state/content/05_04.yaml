@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_05_04
 blocks:
-- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task Relevance evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
+- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task
+    Relevance evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
   type: paragraph
 - title: Hierarchical Cognitive Filtering
-  description: Information is progressively filtered by meaning, current relevance, and novelty before memory is changed.
+  description: Information is progressively filtered by meaning, current relevance, and novelty before
+    memory is changed.
   direction: TB
   edges:
   - flow: information
@@ -57,6 +58,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: 'Each stage answers a different question: what is present, what matters now, what is new, and whether persistent state should change.'
+- text: 'Each stage answers a different question: what is present, what matters now, what is new, and
+    whether persistent state should change.'
   type: paragraph
 section_id: S_18_04

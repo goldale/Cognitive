@@ -1,28 +1,32 @@
 kind: T_Collection
-schema_version: 0.3.40
 principles:
 - kind: T_Principle
   id: P_021
   title: Transformer as Semantic Teacher
-  statement: The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative Memory.
+  statement: The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative
+    Memory.
   status: T_Accepted
 - kind: T_Principle
   id: P_022
   title: Semantic feedback learning
-  statement: Associative Memory learns from Semantic Representations produced by the Transformer rather than from raw external observations.
+  statement: Associative Memory learns from Semantic Representations produced by the Transformer rather
+    than from raw external observations.
   status: T_Accepted
 - kind: T_Principle
   id: P_023
   title: Self-learning as an architectural object
-  statement: The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit stages, contracts, invariants, and extension points.
+  statement: The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit
+    stages, contracts, invariants, and extension points.
   status: T_Accepted
 - kind: T_Principle
   id: P_024
   title: READ and UPDATE asymmetry
-  statement: READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but never produces a Memory Vector.
+  statement: READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory
+    State but never produces a Memory Vector.
   status: T_Accepted
 - kind: T_Principle
   id: P_025
   title: Explicit retrieval after learning
-  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an implicit READ.
+  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers
+    an implicit READ.
   status: T_Accepted

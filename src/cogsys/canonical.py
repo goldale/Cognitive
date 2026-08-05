@@ -9,8 +9,6 @@ from . import yaml_profile
 
 PREFERRED_KEYS = (
     "kind",
-    "schema_version",
-    "version",
     "id",
     "token",
     "atomic",

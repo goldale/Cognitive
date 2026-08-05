@@ -1,12 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_02_04
 blocks:
-- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value; exploration may become less important than safety; a research agent may move from discovery to verification.
+- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value;
+    exploration may become less important than safety; a research agent may move from discovery to verification.
   type: paragraph
-- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate, the current organization may become inefficient. Architectural search is then required.
+- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate,
+    the current organization may become inefficient. Architectural search is then required.
   type: paragraph
-- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate reorganizations must be generated, evaluated, partially applied, and compared over time.
+- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate
+    reorganizations must be generated, evaluated, partially applied, and compared over time.
   type: paragraph
 - proportionality_priority: true
   readability_priority: true

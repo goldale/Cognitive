@@ -1,10 +1,10 @@
 kind: T_Collection
-schema_version: 0.3.40
 latest:
   kind: T_ConsolidationRecord
   id: CR_030_ARCHITECTURAL_SPECIFICATION
   summary: Restructured the canonical material as a dependency-ordered architectural specification.
-  rationale: The public specification must describe the architecture directly rather than preserve discussion chronology.
+  rationale: The public specification must describe the architecture directly rather than preserve discussion
+    chronology.
   alternatives:
   - Preserve the historical chapter order
   - Publish discussion summaries as specification chapters

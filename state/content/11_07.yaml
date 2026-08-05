@@ -1,13 +1,16 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_11_07
 blocks:
-- text: The target implementation uses a dense semantic architecture. Efficiency is achieved not by imposing a sparse topology, but by progressively reorganizing the semantic basis so that relevant information becomes concentrated in retained coordinates.
+- text: The target implementation uses a dense semantic architecture. Efficiency is achieved not by imposing
+    a sparse topology, but by progressively reorganizing the semantic basis so that relevant information
+    becomes concentrated in retained coordinates.
   type: paragraph
 - level: 3
   text: Dense Runtime State
   type: heading
-- text: All coordinates defined by a released architecture remain available throughout the operational lifetime of that release. A semantic state may contain zero or low-magnitude coordinates, but the complete coordinate system remains present and may be required by other states.
+- text: All coordinates defined by a released architecture remain available throughout the operational
+    lifetime of that release. A semantic state may contain zero or low-magnitude coordinates, but the
+    complete coordinate system remains present and may be required by other states.
   type: paragraph
 - items:
   - Stable coordinate identity.
@@ -20,15 +23,21 @@ blocks:
 - level: 3
   text: Progressive Semantic Compaction
   type: heading
-- text: Localized basis maintenance concentrates correlated semantic magnitude into retained coordinates while secondary coordinates become zero or insignificant. Repeated application causes independent semantic properties to become more clearly separated and makes the useful semantic structure progressively denser.
+- text: Localized basis maintenance concentrates correlated semantic magnitude into retained coordinates
+    while secondary coordinates become zero or insignificant. Repeated application causes independent
+    semantic properties to become more clearly separated and makes the useful semantic structure progressively
+    denser.
   type: paragraph
 - title: Compaction objective
-  text: The system improves density by concentrating independent semantic content into retained coordinates. It does not use sparsity as the primary implementation model.
+  text: The system improves density by concentrating independent semantic content into retained coordinates.
+    It does not use sparsity as the primary implementation model.
   type: principle
 - level: 3
   text: Dense Architecture versus Sparse Activation
   type: heading
-- text: Temporary zero coordinates are a property of a particular state, not evidence that the architecture is sparse. Persistent inactivity is an architectural observation that may support release-level dimensional reduction only after representative validation.
+- text: Temporary zero coordinates are a property of a particular state, not evidence that the architecture
+    is sparse. Persistent inactivity is an architectural observation that may support release-level dimensional
+    reduction only after representative validation.
   type: paragraph
 - level: 3
   text: Runtime Compaction
@@ -44,12 +53,16 @@ blocks:
 - level: 3
   text: Release-Level Compaction
   type: heading
-- text: A new release may remove validated inactive dimensions and construct a smaller dense architecture. The new release again exposes fixed dimensions and a complete dense processing structure.
+- text: A new release may remove validated inactive dimensions and construct a smaller dense architecture.
+    The new release again exposes fixed dimensions and a complete dense processing structure.
   type: paragraph
 - level: 3
   text: Hardware Interpretation
   type: heading
-- text: Dense photonic processing is suitable for interference-based transformations, localized coordinate rotations, tensor transport, and multiplexing. Spintronic or memristive storage is suitable for persistent coefficients, programmable connection state, calibration data, importance state, and Offline Consolidation updates.
+- text: Dense photonic processing is suitable for interference-based transformations, localized coordinate
+    rotations, tensor transport, and multiplexing. Spintronic or memristive storage is suitable for persistent
+    coefficients, programmable connection state, calibration data, importance state, and Offline Consolidation
+    updates.
   type: paragraph
 - level: 3
   text: Numerical Representation
@@ -63,12 +76,15 @@ blocks:
   - - INT8
     - Default operational representation for most memory and processing state.
   - - INT16
-    - Sensitive transformations, accumulation, calibration, consolidation statistics, and high-dynamic-range state.
+    - Sensitive transformations, accumulation, calibration, consolidation statistics, and high-dynamic-range
+      state.
   type: table
 - title: Storage precision versus accumulation precision
-  text: Physical compute units may use wider temporary accumulators when required. Persistent and external architectural representations remain within the approved INT4, INT8, and INT16 tiers.
+  text: Physical compute units may use wider temporary accumulators when required. Persistent and external
+    architectural representations remain within the approved INT4, INT8, and INT16 tiers.
   type: note
 - title: Canonical implementation description
-  text: The implementation is a dense architecture with progressive semantic compaction, not a sparse associative architecture.
+  text: The implementation is a dense architecture with progressive semantic compaction, not a sparse
+    associative architecture.
   type: principle
 section_id: S_11_07

@@ -1,14 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_18_07
 blocks:
 - type: heading
   level: 3
   text: Physically Heterogeneous Associative Memory
 - type: paragraph
-  text: The Associative Memory subsystem is physically heterogeneous. Its stages differ in node population, topology
-    of connectivity, activation dynamics, and READ/UPDATE requirements. Each specialized topology may therefore
-    require its own hardware substrate.
+  text: The Associative Memory subsystem is physically heterogeneous. Its stages differ in node population,
+    topology of connectivity, activation dynamics, and READ/UPDATE requirements. Each specialized topology
+    may therefore require its own hardware substrate.
 - type: table
   headers:
   - Topology
@@ -29,13 +28,13 @@ blocks:
     - Photonic matrix processor or tensor accelerator
 - type: principle
   title: Hardware specialization follows topology
-  text: The physical implementation of each stage shall be selected according to its number of processing nodes,
-    topology of connectivity, activation dynamics, and state-update requirements. Specific technologies remain an
-    open research question.
+  text: The physical implementation of each stage shall be selected according to its number of processing
+    nodes, topology of connectivity, activation dynamics, and state-update requirements. Specific technologies
+    remain an open research question.
 - type: diagram
   title: Heterogeneous Associative Memory Hardware Pipeline
-  description: Specialized connection topologies may be implemented on different hardware substrates while preserving
-    the canonical READ/UPDATE boundary.
+  description: Specialized connection topologies may be implemented on different hardware substrates while
+    preserving the canonical READ/UPDATE boundary.
   direction: TB
   size: standard
   readability_priority: true
@@ -83,6 +82,6 @@ blocks:
     flow: learning
     label: persistent changes only
 - type: paragraph
-  text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling strategy
-    and does not imply a sparse semantic architecture.
+  text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling
+    strategy and does not imply a sparse semantic architecture.
 section_id: S_18_07

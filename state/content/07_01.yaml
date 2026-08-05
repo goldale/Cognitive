@@ -1,8 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_07_01
 blocks:
-- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints, predicted outcomes, uncertainty, and current context must be compared by an Integrated Evaluation process.
+- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints,
+    predicted outcomes, uncertainty, and current context must be compared by an Integrated Evaluation
+    process.
   type: paragraph
 - title: Integrated Evaluation Inputs and Output
   description: Integrated Evaluation compares heterogeneous representations in one learned decision context.
@@ -68,6 +69,8 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation may resemble a unified value space, but that phrase describes only one possible implementation and is not the architectural name.
+- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation
+    may resemble a unified value space, but that phrase describes only one possible implementation and
+    is not the architectural name.
   type: paragraph
 section_id: S_14_01

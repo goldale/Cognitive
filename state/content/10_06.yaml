@@ -1,16 +1,16 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_06
 blocks:
-- text: The required Associative Memory is not available as one ready-made component. However, several established
-    families already provide important parts of the target behavior. The practical implementation strategy is therefore
-    to combine existing mechanisms while explicitly engineering the missing state, interface, learning, and lifecycle
-    properties.
+- text: The required Associative Memory is not available as one ready-made component. However, several
+    established families already provide important parts of the target behavior. The practical implementation
+    strategy is therefore to combine existing mechanisms while explicitly engineering the missing state,
+    interface, learning, and lifecycle properties.
   type: paragraph
 - title: Associative Memory Implementation Gap Map
-  description: Existing associative, vector, graph, and exact-storage technologies provide complementary capabilities.
-    Cognitive adds dynamic Memory State, spreading activation, explicit READ and UPDATE semantics, canonical Memory
-    Vector projection, feedback-only state changes, and future structural optimization.
+  description: Existing associative, vector, graph, and exact-storage technologies provide complementary
+    capabilities. Cognitive adds dynamic Memory State, spreading activation, explicit READ and UPDATE
+    semantics, canonical Memory Vector projection, feedback-only state changes, and future structural
+    optimization.
   direction: TB
   edges:
   - flow: information
@@ -81,66 +81,68 @@ blocks:
 - level: 3
   text: Hopfield and Dense Associative Memory
   type: heading
-- text: Classical Hopfield networks, Dense Associative Memory, and modern continuous associative-memory formulations
-    already provide content-addressable retrieval, pattern completion, and convergence toward attractor states.
-    These mechanisms are useful candidates for the neural activation core.
+- text: Classical Hopfield networks, Dense Associative Memory, and modern continuous associative-memory
+    formulations already provide content-addressable retrieval, pattern completion, and convergence toward
+    attractor states. These mechanisms are useful candidates for the neural activation core.
   type: paragraph
-- text: They still require continual knowledge insertion, explicit separation of short-term activation from long-term
-    structure, dynamic association creation and removal, controlled forgetting, scalable external storage, and the
-    Cognitive interface contract in which only READ produces a Memory Vector.
+- text: They still require continual knowledge insertion, explicit separation of short-term activation
+    from long-term structure, dynamic association creation and removal, controlled forgetting, scalable
+    external storage, and the Cognitive interface contract in which only READ produces a Memory Vector.
   type: paragraph
 - level: 3
   text: Sparse Distributed Memory
   type: heading
-- text: Sparse Distributed Memory provides distributed storage, retrieval from incomplete cues, and graceful degradation
-    under partial damage. These properties fit the requirement that knowledge should not reside in one fragile location.
+- text: Sparse Distributed Memory provides distributed storage, retrieval from incomplete cues, and graceful
+    degradation under partial damage. These properties fit the requirement that knowledge should not reside
+    in one fragile location.
   type: paragraph
-- text: It must be extended with learned semantic addressing, weighted spreading activation, evolving topology,
-    importance and usage statistics, and canonical projection from active Memory State into a Memory Vector.
+- text: It must be extended with learned semantic addressing, weighted spreading activation, evolving
+    topology, importance and usage statistics, and canonical projection from active Memory State into
+    a Memory Vector.
   type: paragraph
 - level: 3
   text: Vector Search and Approximate Nearest-Neighbour Systems
   type: heading
 - type: paragraph
   text: Vector databases and approximate nearest-neighbour systems are effective candidate-retrieval mechanisms.
-    They find semantically similar past events even when wording differs, and they can expose historical execution
-    cost, hidden risks, and prior outcomes that improve current estimates.
+    They find semantically similar past events even when wording differs, and they can expose historical
+    execution cost, hidden risks, and prior outcomes that improve current estimates.
 - type: paragraph
-  text: Vector similarity does not identify the type or direction of a relationship. Proximity alone cannot determine
-    that one step creates an API required by another, that one event causes another, or that one action blocks a
-    dependent operation. Vector search therefore remains a retrieval accelerator rather than a complete Associative
-    Memory.
+  text: Vector similarity does not identify the type or direction of a relationship. Proximity alone cannot
+    determine that one step creates an API required by another, that one event causes another, or that
+    one action blocks a dependent operation. Vector search therefore remains a retrieval accelerator rather
+    than a complete Associative Memory.
 - type: paragraph
-  text: The accepted implementation rule is that vector retrieval may propose candidate memory elements during READ,
-    but it must not define causality, dependency, or final relevance by itself. Candidate evidence must be integrated
-    with explicit relations, dynamic activation, exact stored content, and the current Memory State before projection
-    into a Memory Vector.
+  text: The accepted implementation rule is that vector retrieval may propose candidate memory elements
+    during READ, but it must not define causality, dependency, or final relevance by itself. Candidate
+    evidence must be integrated with explicit relations, dynamic activation, exact stored content, and
+    the current Memory State before projection into a Memory Vector.
 - level: 3
   text: Graph and Knowledge Storage
   type: heading
 - type: paragraph
-  text: Graph databases and knowledge graphs provide explicit nodes, typed and directed relations, traversal, dependency
-    representation, and durable structural storage. They are appropriate for relations such as depends on, blocks,
-    enables, precedes, contradicts, and is a candidate cause of.
+  text: Graph databases and knowledge graphs provide explicit nodes, typed and directed relations, traversal,
+    dependency representation, and durable structural storage. They are appropriate for relations such
+    as depends on, blocks, enables, precedes, contradicts, and is a candidate cause of.
 - type: paragraph
-  text: A graph relation must not be treated as proof of causality merely because it is labelled causal. Causal
-    assertions require provenance, confidence, supporting observations, intervention evidence where available, or
-    an explicit status as a causal hypothesis.
+  text: A graph relation must not be treated as proof of causality merely because it is labelled causal.
+    Causal assertions require provenance, confidence, supporting observations, intervention evidence where
+    available, or an explicit status as a causal hypothesis.
 - type: paragraph
-  text: Graph storage is also not sufficient as Associative Memory by itself. Cognitive additionally requires learned
-    connection strengths, distributed latent knowledge, short-term activation, spreading activation, online association
-    formation, integration of several retrieved elements, and explicit READ projection into the canonical Memory
-    Vector.
+  text: Graph storage is also not sufficient as Associative Memory by itself. Cognitive additionally requires
+    learned connection strengths, distributed latent knowledge, short-term activation, spreading activation,
+    online association formation, integration of several retrieved elements, and explicit READ projection
+    into the canonical Memory Vector.
 - level: 3
   text: Key–Value and Hash Storage
   type: heading
-- text: Key–value systems can retain enormous volumes of exact data economically. Associative mechanisms may identify
-    relevant keys, while conventional storage retains documents, events, binary objects, exact values, and large
-    structured records.
+- text: Key–value systems can retain enormous volumes of exact data economically. Associative mechanisms
+    may identify relevant keys, while conventional storage retains documents, events, binary objects,
+    exact values, and large structured records.
   type: paragraph
-- text: This division allows neural components to perform semantic association while classical storage performs
-    reliable, inexpensive retention. It also preserves the project principle that neural networks and deterministic
-    algorithms should be used where each is strongest.
+- text: This division allows neural components to perform semantic association while classical storage
+    performs reliable, inexpensive retention. It also preserves the project principle that neural networks
+    and deterministic algorithms should be used where each is strongest.
   type: paragraph
 - type: heading
   level: 3
@@ -152,8 +154,8 @@ blocks:
   - Typed graph relations are required for explicit dependency, blocking, enabling, temporal, and causal-hypothesis
     structure.
   - Exact key-value or document storage remains separate from associative indexing and dynamic activation.
-  - READ integrates vector candidates, graph relations, exact content, and transient associative activation into
-    Memory State before producing a Memory Vector.
+  - READ integrates vector candidates, graph relations, exact content, and transient associative activation
+    into Memory State before producing a Memory Vector.
   - UPDATE remains the only operation permitted to modify persistent memory and learns only from Transformer-produced
     Semantic Representations.
 - type: heading
@@ -161,9 +163,9 @@ blocks:
   text: Topology-Oriented Associative Memory
 - type: principle
   title: Topology defines computation
-  text: Associative Memory is composed of specialized connection topologies. The computational behavior of each
-    stage emerges primarily from its node population, connectivity topology, activation dynamics, and state-update
-    rules rather than from assigning the same generic network different software responsibilities.
+  text: Associative Memory is composed of specialized connection topologies. The computational behavior
+    of each stage emerges primarily from its node population, connectivity topology, activation dynamics,
+    and state-update rules rather than from assigning the same generic network different software responsibilities.
 - type: table
   headers:
   - Stage
@@ -183,92 +185,94 @@ blocks:
     - Dense integration and compression; direct input comparison path
     - Projects reconstructed Dynamic Memory State into the fixed-dimensional Memory Vector.
 - type: paragraph
-  text: Localized sparse activity in Pattern Separation is a property of that specialized topology only. It does
-    not replace the project-wide dense semantic architecture or make the system sparse-first.
+  text: Localized sparse activity in Pattern Separation is a property of that specialized topology only.
+    It does not replace the project-wide dense semantic architecture or make the system sparse-first.
 - type: paragraph
-  text: The hippocampal analogy is used as an architectural guide rather than as a literal biological copy. Associative
-    Memory is treated as a rapidly changing short-term and episodic memory subsystem. Stable long-term organization
-    is produced later through Offline Consolidation.
+  text: The hippocampal analogy is used as an architectural guide rather than as a literal biological
+    copy. Associative Memory is treated as a rapidly changing short-term and episodic memory subsystem.
+    Stable long-term organization is produced later through Offline Consolidation.
 - type: heading
   level: 3
   text: Biological Scale as an Initial Hardware Estimate
 - type: paragraph
-  text: Relative neuronal populations in hippocampal subsystems provide initial estimates for the distribution of
-    hardware resources. These biological counts are not mapped one-to-one to artificial nodes. They guide estimates
-    of the number of processing nodes and the topology of their connectivity in each specialized stage.
+  text: Relative neuronal populations in hippocampal subsystems provide initial estimates for the distribution
+    of hardware resources. These biological counts are not mapped one-to-one to artificial nodes. They
+    guide estimates of the number of processing nodes and the topology of their connectivity in each specialized
+    stage.
 - type: principle
   title: Hardware specialization follows topology
-  text: Each specialized connection topology is a candidate for its own dedicated hardware substrate. A single universal
-    processing fabric is not assumed to be optimal for Input / Addressing, Pattern Separation, Associative Binding
-    / Index, and Output / Projection.
+  text: Each specialized connection topology is a candidate for its own dedicated hardware substrate.
+    A single universal processing fabric is not assumed to be optimal for Input / Addressing, Pattern
+    Separation, Associative Binding / Index, and Output / Projection.
 - type: heading
   level: 3
   text: Open Questions Requiring Experimental Resolution
 - type: observation
   title: Discussion status
-  text: 'The following choices are intentionally not canonicalized in this release: the relative weighting of vector
-    similarity and graph evidence; the representation and validation of causal confidence; the preferred graph traversal
-    and spreading-activation algorithm; and the point at which learned associations should become explicit typed
-    relations. These questions require experiments and must be recorded rather than silently resolved by implementation
-    convenience.'
+  text: 'The following choices are intentionally not canonicalized in this release: the relative weighting
+    of vector similarity and graph evidence; the representation and validation of causal confidence; the
+    preferred graph traversal and spreading-activation algorithm; and the point at which learned associations
+    should become explicit typed relations. These questions require experiments and must be recorded rather
+    than silently resolved by implementation convenience.'
 - level: 3
   text: Recommended Initial Hybrid
   type: heading
-- text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates neural
-    and graph associations; vector search proposes candidates; graph traversal and spreading activation construct
-    dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation projects the
-    resulting state into the canonical Memory Vector.'
+- text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates
+    neural and graph associations; vector search proposes candidates; graph traversal and spreading activation
+    construct dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation
+    projects the resulting state into the canonical Memory Vector.'
   type: paragraph
 - type: heading
   level: 3
   text: Associative Memory READ and UPDATE Integration Path
 - type: paragraph
-  text: The following scheme is the canonical explanatory view of the recommended initial implementation. It extends
-    a conventional GraphRAG pipeline by placing vector retrieval, typed graph traversal, and pattern matching inside
-    an explicit non-destructive READ operation. Their results do not go directly to the Transformer as retrieved
-    text. They first participate in spreading activation, form a transient Dynamic Memory State, and are then projected
-    into the canonical Memory Vector.
+  text: The following scheme is the canonical explanatory view of the recommended initial implementation.
+    It extends a conventional GraphRAG pipeline by placing vector retrieval, typed graph traversal, and
+    pattern matching inside an explicit non-destructive READ operation. Their results do not go directly
+    to the Transformer as retrieved text. They first participate in spreading activation, form a transient
+    Dynamic Memory State, and are then projected into the canonical Memory Vector.
 - type: image
   src: ../associative-memory-read-update-path.png
-  alt: Cognitive architecture diagram showing the Associative Memory READ path, spreading activation, Dynamic Memory
-    State, Memory Vector projection, Transformer, Integrated Evaluation, tool execution, and the separate UPDATE
-    path.
+  alt: Cognitive architecture diagram showing the Associative Memory READ path, spreading activation,
+    Dynamic Memory State, Memory Vector projection, Transformer, Integrated Evaluation, tool execution,
+    and the separate UPDATE path.
   title: Cognitive Architecture — Associative Memory READ Path
-  caption: Hybrid vector and graph retrieval is only the first stage of READ. Spreading activation integrates retrieved
-    elements and relations into Dynamic Memory State. Explicit projection produces the Memory Vector consumed by
-    the Transformer. Only the separate UPDATE path may modify persistent Memory State.
+  caption: Hybrid vector and graph retrieval is only the first stage of READ. Spreading activation integrates
+    retrieved elements and relations into Dynamic Memory State. Explicit projection produces the Memory
+    Vector consumed by the Transformer. Only the separate UPDATE path may modify persistent Memory State.
 - type: heading
   level: 4
   text: Interpretation of the Scheme
 - type: list
   items:
   - The Encoder and Query Builder construct a semantic query; they do not write to memory.
-  - Vector Retrieval answers what is semantically similar, while Graph Traversal exposes typed dependency, temporal,
-    enabling, blocking, contradiction, and causal-hypothesis relations.
-  - Pattern Matching contributes structural, temporal, and episodic analogues that may not be the nearest vector
-    neighbours.
-  - Spreading Activation propagates relevance through retrieved elements and relations without changing persistent
-    memory.
-  - Dynamic Memory State is the unified transient state created by READ; it may contain retrieved nodes, exact content,
-    activated relations, confidence, provenance, temporal attributes, importance, and working-memory links.
-  - Memory Vector Projection is an explicit READ operation. It aggregates and maps Dynamic Memory State into the
-    stable interface consumed by the Transformer.
-  - Integrated Evaluation and Tool Selection occur after memory reconstruction because action selection must use
-    the reconstructed context rather than raw retrieval results.
-  - Execution results are converted by the Transformer into Semantic Representations and may enter the Semantic
-    Feedback Learning Pipeline.
-  - Only UPDATE may validate, merge, reject, defer, add, strengthen, or otherwise modify persistent Memory State.
-    Offline Consolidation remains structurally separate.
+  - Vector Retrieval answers what is semantically similar, while Graph Traversal exposes typed dependency,
+    temporal, enabling, blocking, contradiction, and causal-hypothesis relations.
+  - Pattern Matching contributes structural, temporal, and episodic analogues that may not be the nearest
+    vector neighbours.
+  - Spreading Activation propagates relevance through retrieved elements and relations without changing
+    persistent memory.
+  - Dynamic Memory State is the unified transient state created by READ; it may contain retrieved nodes,
+    exact content, activated relations, confidence, provenance, temporal attributes, importance, and working-memory
+    links.
+  - Memory Vector Projection is an explicit READ operation. It aggregates and maps Dynamic Memory State
+    into the stable interface consumed by the Transformer.
+  - Integrated Evaluation and Tool Selection occur after memory reconstruction because action selection
+    must use the reconstructed context rather than raw retrieval results.
+  - Execution results are converted by the Transformer into Semantic Representations and may enter the
+    Semantic Feedback Learning Pipeline.
+  - Only UPDATE may validate, merge, reject, defer, add, strengthen, or otherwise modify persistent Memory
+    State. Offline Consolidation remains structurally separate.
 - type: principle
   title: GraphRAG is an implementation substrate, not the memory definition
-  text: Vector databases, graph databases, and exact document stores provide complementary retrieval and storage
-    mechanisms. Cognitive Associative Memory is defined by the complete READ reconstruction and UPDATE learning
-    contracts, including spreading activation, Dynamic Memory State, explicit Memory Vector projection, and strict
-    READ/UPDATE separation.
+  text: Vector databases, graph databases, and exact document stores provide complementary retrieval and
+    storage mechanisms. Cognitive Associative Memory is defined by the complete READ reconstruction and
+    UPDATE learning contracts, including spreading activation, Dynamic Memory State, explicit Memory Vector
+    projection, and strict READ/UPDATE separation.
 - title: Recommended Initial Hybrid — Architecture
-  description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning Pipeline,
-    Associative Index, graph and exact storage, transient reconstruction components, and validated UPDATE boundary
-    are shown as distinct architectural responsibilities.
+  description: Structural view of the recommended initial hybrid. The Transformer, Semantic Feedback Learning
+    Pipeline, Associative Index, graph and exact storage, transient reconstruction components, and validated
+    UPDATE boundary are shown as distinct architectural responsibilities.
   direction: TB
   edges:
   - flow: information
@@ -375,9 +379,9 @@ blocks:
   size: standard
   type: diagram
 - title: Recommended Initial Hybrid — Operational Flows
-  description: Operational view of the same hybrid architecture. READ constructs transient state and returns a Memory
-    Vector. The separate write path accepts only a Transformer-generated Semantic Representation through the Semantic
-    Feedback Learning Pipeline. It does not return a Memory Vector.
+  description: Operational view of the same hybrid architecture. READ constructs transient state and returns
+    a Memory Vector. The separate write path accepts only a Transformer-generated Semantic Representation
+    through the Semantic Feedback Learning Pipeline. It does not return a Memory Vector.
   direction: TB
   edges:
   - flow: information
@@ -473,16 +477,18 @@ blocks:
   size: standard
   type: diagram
 - title: Implementation gap principle
-  text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive memory contract.
-    The engineering task is to integrate them while adding dynamic Memory State, READ-only Memory Vector generation,
-    feedback without implicit READ, separate UPDATE semantics, semantic invariance, and future topology optimization.
+  text: Existing systems solve important subproblems, but none already satisfies the complete Cognitive
+    memory contract. The engineering task is to integrate them while adding dynamic Memory State, READ-only
+    Memory Vector generation, feedback without implicit READ, separate UPDATE semantics, semantic invariance,
+    and future topology optimization.
   type: principle
 - level: 3
   text: Required Additions Before the Target Is Reached
   type: heading
-- text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading activation;
-    online knowledge accumulation; semantic equivalence across wording and language; canonical Memory Vector normalization;
-    explicit READ and UPDATE operations; Answer-to-Memory feedback that changes state without generating a vector;
-    controlled forgetting; structural connection state; and later Sleep-like offline optimization.'
+- text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading
+    activation; online knowledge accumulation; semantic equivalence across wording and language; canonical
+    Memory Vector normalization; explicit READ and UPDATE operations; Answer-to-Memory feedback that changes
+    state without generating a vector; controlled forgetting; structural connection state; and later Sleep-like
+    offline optimization.'
   type: paragraph
 section_id: S_10_06

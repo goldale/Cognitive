@@ -1,26 +1,33 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_20_07
 blocks:
 - title: Global Evaluation
-  text: A future conservative subsystem that integrates goals, Memory State, context, predicted consequences, and candidate actions into a final system-level evaluation.
+  text: A future conservative subsystem that integrates goals, Memory State, context, predicted consequences,
+    and candidate actions into a final system-level evaluation.
   type: definition
-- text: Global Evaluation is deferred because it influences every major behavior and must be introduced only after its authority, training path, stability, and governance are explicit.
+- text: Global Evaluation is deferred because it influences every major behavior and must be introduced
+    only after its authority, training path, stability, and governance are explicit.
   type: paragraph
 - title: Multi-Agent Semantic Learning
-  text: Exchange of Transformer-produced Semantic Representations between Cognitive systems without copying entire private Memory States as the default learning mechanism.
+  text: Exchange of Transformer-produced Semantic Representations between Cognitive systems without copying
+    entire private Memory States as the default learning mechanism.
   type: definition
 - items:
   - Evaluate imported representations before UPDATE.
   - Preserve source identity, confidence, provenance, and version.
   - Detect semantic disagreement instead of treating transmission as guaranteed understanding.
-  - Permit lineage diversity and prevent a single erroneous agent from globally overwriting population memory.
+  - Permit lineage diversity and prevent a single erroneous agent from globally overwriting population
+    memory.
   - Use explicit policies for trust, quarantine, reconciliation, and rollback.
   type: list
 - title: Semantic diversity and the Babel hypothesis
-  text: The communication-level argument for preserving partially independent semantic lineages is developed in [Section 3.6, Higher-Level Communication Phenomena](../chapter03/03_06.html). Part V adopts that discussion as a design consideration for Multi-Agent Semantic Learning rather than duplicating it here.
+  text: The communication-level argument for preserving partially independent semantic lineages is developed
+    in [Section 3.6, Higher-Level Communication Phenomena](../chapter03/03_06.html). Part V adopts that
+    discussion as a design consideration for Multi-Agent Semantic Learning rather than duplicating it
+    here.
   type: note
 - title: Exchange boundary
-  text: Systems exchange semantic representations or other explicit messages. Receiving Associative Memory still learns only through its local Semantic Feedback Learning Pipeline.
+  text: Systems exchange semantic representations or other explicit messages. Receiving Associative Memory
+    still learns only through its local Semantic Feedback Learning Pipeline.
   type: principle
 section_id: S_20_07

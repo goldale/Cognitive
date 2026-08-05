@@ -1,14 +1,17 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_15_06
 blocks:
-- text: A reading experiment should measure model change before and after a text, behavior on later unrelated tasks, attention allocation, question generation, and the value of rereading after intervening experience.
+- text: A reading experiment should measure model change before and after a text, behavior on later unrelated
+    tasks, attention allocation, question generation, and the value of rereading after intervening experience.
   type: paragraph
-- text: A dialogue experiment should compare one-way transfer, clarification-enabled transfer, and full iterative model conflict resolution.
+- text: A dialogue experiment should compare one-way transfer, clarification-enabled transfer, and full
+    iterative model conflict resolution.
   type: paragraph
-- text: The repository's communication prototype supplies the minimal serialization, deserialization, missing-background, integration, and conflict objects required for such experiments.
+- text: The repository's communication prototype supplies the minimal serialization, deserialization,
+    missing-background, integration, and conflict objects required for such experiments.
   type: paragraph
 - title: Measure transformation, not recall alone
-  text: Immediate factual recall is one output of linguistic integration, not the primary measure of cognitive change.
+  text: Immediate factual recall is one output of linguistic integration, not the primary measure of cognitive
+    change.
   type: principle
 section_id: S_08_06

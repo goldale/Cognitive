@@ -367,7 +367,7 @@ class DocumentationBuilder:
             "Cognitive Architecture Specification",
             "cognitive.css",
             nav,
-            f'<h1>Cognitive Architecture Specification</h1><p class="subtitle">Version {html.escape(str(self.state.manifest.get("schema_version", self.state.manifest.get("version", "unknown"))))}</p><p class="document-author"><strong>Author</strong><br>Alex Goldenstein</p>',
+            '<h1>Cognitive Architecture Specification</h1><p class="document-author"><strong>Author</strong><br>Alex Goldenstein</p>',
             body,
             "Canonical English architecture specification generated from validated YAML.",
         )
@@ -490,7 +490,7 @@ class DocumentationBuilder:
                         href = f"../chapter{chapter['order']:02d}.html#" + object_id
                     else:
                         href = f"../chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html#" + object_id
-                    object_kind = {"RN": "Research Note", "AN": "Architectural Note", "IN": "Implementation Note", "HP": "Historical Perspective", "MN": "Margin Note"}.get(object_id.split("-", 1)[0], "Typed knowledge object")
+                    object_kind = {"RS": "Research Session", "RN": "Research Note", "AN": "Architectural Note", "IN": "Implementation Note", "HP": "Historical Perspective", "MN": "Margin Note"}.get(object_id.split("-", 1)[0], "Typed knowledge object")
                     entries.append((str(block.get("title", object_id)), href, object_kind))
         for token in self.state.token_entries():
             label = _humanize_token_label(token["token"])

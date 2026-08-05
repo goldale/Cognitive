@@ -1,12 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_09_05
 blocks:
-- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore also an interpretation event.
+- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore
+    also an interpretation event.
   type: paragraph
-- text: 'After recall, the reconstructed state may be stored again under current weights. This creates reconsolidation: the act of using memory can alter future memory.'
+- text: 'After recall, the reconstructed state may be stored again under current weights. This creates
+    reconsolidation: the act of using memory can alter future memory.'
   type: paragraph
-- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate internal functional memory from immutable external evidence when exact provenance matters.
+- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate
+    internal functional memory from immutable external evidence when exact provenance matters.
   type: paragraph
 - proportionality_priority: true
   readability_priority: true

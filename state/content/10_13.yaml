@@ -1,0 +1,69 @@
+kind: T_ContentBlock
+id: S_10_13
+blocks:
+- title: Physical order is not a logical episode
+  text: The Input Buffer always produces one branch-free linear observation stream. This physical order preserves the sequence in which Cognitive receives events, but it does not by itself define where a semantically complete episode begins or ends.
+  type: principle
+- text: E₁ → E₂ → E₃ → E₄ → E₅ → …
+  type: formula
+- title: Graphs emerge after semantic interpretation
+  text: The external world may contain arbitrary graph structures, concurrent processes, and interacting causes. Input Buffer and STM do not store those graphs as explicit objects. Relational, causal, and graph structure emerges later through semantic interpretation.
+  type: principle
+- title: Logical episode
+  text: A Logical Episode is a semantically coherent and sufficiently complete sequence whose logical start and logical end are inferred after semantic interpretation. Its boundaries are interpretations of the stream, not physical markers stored in Input Buffer or STM.
+  type: definition
+- title: Deferred second Long-Term Memory path
+  description: The second Long-Term Memory receives logically completed event sequences rather than individual events, STM nodes, or arbitrary temporal windows.
+  direction: TB
+  edges:
+  - flow: information
+    from: buffer
+    to: stm
+  - flow: information
+    from: stm
+    to: semantic_ltm
+  - flow: information
+    from: semantic_ltm
+    to: transformer
+  - flow: control
+    from: transformer
+    label: infers logical start and end
+    to: episode
+  - flow: information
+    from: episode
+    label: completed sequence
+    to: second_ltm
+  nodes:
+  - kind: state
+    id: buffer
+    label: Input Buffer
+  - kind: subsystem
+    id: stm
+    label: STM
+  - kind: storage
+    id: semantic_ltm
+    label: Semantic LTM
+  - kind: subsystem
+    id: transformer
+    label: Transformer
+  - kind: data
+    id: episode
+    label: Logical Episode
+  - kind: storage
+    id: second_ltm
+    label: Second Long-Term Memory (deferred)
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- title: Canonical consolidation unit
+  text: The unit transferred into the second Long-Term Memory is not an individual event, not an STM node, and not an arbitrary temporal window. It is a logically bounded sequence inferred from semantic interpretation.
+  type: principle
+- title: Architectural boundary
+  items:
+  - Input Buffer remains sequential, branch-free, fixed-size, circular, and semantically neutral.
+  - STM remains semantically neutral and stores no objects, attributes, addresses, or explicit episode markers.
+  - The Transformer may infer boundaries only from semantic evidence available downstream of Semantic LTM.
+  - The second Long-Term Memory remains deferred until boundary inference and transfer semantics are specified and validated.
+  type: list
+section_id: S_10_13

@@ -1,7 +1,8 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_05
 blocks:
-- text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update contract. Offline topology optimization, controlled forgetting, and broader global evaluation are deferred to the learning and Sleep architecture described in Chapter 13.
+- text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update
+    contract. Offline topology optimization, controlled forgetting, and broader global evaluation are
+    deferred to the learning and Sleep architecture described in Chapter 13.
   type: paragraph
 section_id: S_16_05

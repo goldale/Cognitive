@@ -1,14 +1,18 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_14_06
 blocks:
-- text: Initial experiments should use tasks with several plausible decompositions and measurable non-accuracy costs. Autonomous-control simulations, document processing, tool-using agents, and software maintenance are suitable candidates.
+- text: Initial experiments should use tasks with several plausible decompositions and measurable non-accuracy
+    costs. Autonomous-control simulations, document processing, tool-using agents, and software maintenance
+    are suitable candidates.
   type: paragraph
-- text: Baselines include all-neural, all-algorithmic, fixed hybrid, human-designed hybrid, and learned hybrid architectures.
+- text: Baselines include all-neural, all-algorithmic, fixed hybrid, human-designed hybrid, and learned
+    hybrid architectures.
   type: paragraph
-- text: The highest-value result may be an allocator that improves only modestly on current tasks but creates a reusable architecture-search loop for future systems.
+- text: The highest-value result may be an allocator that improves only modestly on current tasks but
+    creates a reusable architecture-search loop for future systems.
   type: paragraph
 - title: Branching value
-  text: An improvement that opens many later architectures can be more valuable than a larger immediate benchmark gain that leaves the system structurally unchanged.
+  text: An improvement that opens many later architectures can be more valuable than a larger immediate
+    benchmark gain that leaves the system structurally unchanged.
   type: observation
 section_id: S_09_06

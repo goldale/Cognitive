@@ -1,9 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_18_01
 blocks:
 - title: Implementation Sequence
-  description: The roadmap introduces the smallest useful architecture first and defers topology optimization and global maintenance until evidence justifies them.
+  description: The roadmap introduces the smallest useful architecture first and defers topology optimization
+    and global maintenance until evidence justifies them.
   direction: TB
   edges:
   - flow: information
@@ -66,6 +66,7 @@ blocks:
   - Cognitive lineage manager
   ordered: false
   type: list
-- text: These components are deliberately modular. Their purpose is to create an operational baseline and instrumentation for later integration.
+- text: These components are deliberately modular. Their purpose is to create an operational baseline
+    and instrumentation for later integration.
   type: paragraph
 section_id: S_12_02

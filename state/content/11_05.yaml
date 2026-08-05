@@ -1,18 +1,23 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_11_05
 blocks:
 - level: 3
   text: Motivation
   type: heading
-- text: The semantic coordinate system of Associative Memory is not fixed in advance. It emerges as the cognitive system accumulates experience and must remain stable enough for the Transformer while continuing to reduce semantic redundancy.
+- text: The semantic coordinate system of Associative Memory is not fixed in advance. It emerges as the
+    cognitive system accumulates experience and must remain stable enough for the Transformer while continuing
+    to reduce semantic redundancy.
   type: paragraph
-- text: The objective is not merely statistical decorrelation. The system progressively concentrates correlated semantic information into retained coordinates, reveals the effective dimensionality of the semantic space, and preserves a fixed runtime interface for every released version.
+- text: The objective is not merely statistical decorrelation. The system progressively concentrates correlated
+    semantic information into retained coordinates, reveals the effective dimensionality of the semantic
+    space, and preserves a fixed runtime interface for every released version.
   type: paragraph
 - level: 3
   text: Stage 1 — Global Basis Initialization
   type: heading
-- text: After Memory State has accumulated sufficient representative experience and reached semantic stability, a one-time global initialization constructs an approximately orthogonal semantic coordinate system and transforms existing semantic representations into that basis.
+- text: After Memory State has accumulated sufficient representative experience and reached semantic stability,
+    a one-time global initialization constructs an approximately orthogonal semantic coordinate system
+    and transforms existing semantic representations into that basis.
   type: paragraph
 - items:
   - Compute a representative correlation matrix for semantic coordinates.
@@ -23,14 +28,17 @@ blocks:
 - level: 3
   text: Stage 2 — Localized Semantic Basis Maintenance
   type: heading
-- text: After global initialization, the semantic basis is maintained through deterministic localized refinement during Offline Consolidation.
+- text: After global initialization, the semantic basis is maintained through deterministic localized
+    refinement during Offline Consolidation.
   type: paragraph
 - items:
   - Update the maintained correlation matrix.
   - Identify the pair of semantic dimensions with the strongest remaining correlation.
-  - Select, from the remaining semantic coordinate axes, the coordinate axis having the weakest statistical correlation with the selected semantic pair to serve as the reference rotation axis.
+  - Select, from the remaining semantic coordinate axes, the coordinate axis having the weakest statistical
+    correlation with the selected semantic pair to serve as the reference rotation axis.
   - Identify the coordinate with the greater absolute value within the selected pair as the retained coordinate.
-  - Compute the rotation that transfers the complete magnitude of the selected pair into the retained coordinate and reduces the second coordinate to zero.
+  - Compute the rotation that transfers the complete magnitude of the selected pair into the retained
+    coordinate and reduces the second coordinate to zero.
   - Apply the localized rotation.
   - Immediately update the correlation matrix.
   ordered: true
@@ -39,30 +47,41 @@ blocks:
   type: formula
 - text: 'If |x_j| > |x_i|:  (x_i, x_j) -> (0, sign(x_j) * sqrt(x_i^2 + x_j^2))'
   type: formula
-- text: The original maximum component is not preserved numerically. The retained coordinate increases because it receives the complete magnitude of both original components. The Euclidean norm of the selected pair is preserved.
+- text: The original maximum component is not preserved numerically. The retained coordinate increases
+    because it receives the complete magnitude of both original components. The Euclidean norm of the
+    selected pair is preserved.
   type: paragraph
 - level: 3
   text: Transformer Stability
   type: heading
-- text: Only two semantic coordinates are affected by one maintenance step. The coordinate with greater absolute magnitude retains the dominant semantic direction, the complete pair magnitude is transferred into it, and the second coordinate becomes zero. All remaining coordinates stay unchanged.
+- text: Only two semantic coordinates are affected by one maintenance step. The coordinate with greater
+    absolute magnitude retains the dominant semantic direction, the complete pair magnitude is transferred
+    into it, and the second coordinate becomes zero. All remaining coordinates stay unchanged.
   type: paragraph
 - title: Localized adaptation invariant
-  text: The Transformer adapts only to a localized redistribution between two semantic components rather than to a broad transformation of the semantic basis.
+  text: The Transformer adapts only to a localized redistribution between two semantic components rather
+    than to a broad transformation of the semantic basis.
   type: principle
 - level: 3
   text: Effective Semantic Dimensionality
   type: heading
-- text: Repeated concentration of correlated information provides an empirical estimate of the effective dimensionality required by the cognitive system. Persistently active coordinates indicate required semantic degrees of freedom. Persistently inactive coordinates indicate possible architectural excess.
+- text: Repeated concentration of correlated information provides an empirical estimate of the effective
+    dimensionality required by the cognitive system. Persistently active coordinates indicate required
+    semantic degrees of freedom. Persistently inactive coordinates indicate possible architectural excess.
   type: paragraph
 - title: A zero coordinate is not automatically redundant
-  text: A coordinate must not be considered unnecessary merely because it is zero in one Memory Vector or one semantic state.
+  text: A coordinate must not be considered unnecessary merely because it is zero in one Memory Vector
+    or one semantic state.
   type: warning
-- text: A coordinate becomes a candidate for removal only when it remains zero or below a defined significance threshold across sufficiently diverse semantic states, a representative distribution of Memory Vectors, a sufficiently long observation period, and rare but important semantic states.
+- text: A coordinate becomes a candidate for removal only when it remains zero or below a defined significance
+    threshold across sufficiently diverse semantic states, a representative distribution of Memory Vectors,
+    a sufficiently long observation period, and rare but important semantic states.
   type: paragraph
 - level: 3
   text: Runtime Observation versus Architectural Change
   type: heading
-- text: Discovery of effective dimensionality occurs during system operation and Offline Consolidation. The dimensionality of a released cognitive system remains fixed throughout its operational lifetime.
+- text: Discovery of effective dimensionality occurs during system operation and Offline Consolidation.
+    The dimensionality of a released cognitive system remains fixed throughout its operational lifetime.
   type: paragraph
 - items:
   - Offline Consolidation may observe persistently inactive coordinates.
@@ -74,7 +93,8 @@ blocks:
 - level: 3
   text: Release-Only Dimensional Reduction
   type: heading
-- text: Reduction of semantic dimensionality is exclusively an architectural release operation, not a runtime optimization.
+- text: Reduction of semantic dimensionality is exclusively an architectural release operation, not a
+    runtime optimization.
   type: paragraph
 - items:
   - Review accumulated dimensional-usage statistics.
@@ -92,9 +112,12 @@ blocks:
 - level: 3
   text: Runtime Evolution and Release Evolution
   type: heading
-- text: Runtime evolution learns, accumulates experience, reorganizes semantic information locally, identifies persistently inactive dimensions, and records architectural recommendations without changing released dimensionality.
+- text: Runtime evolution learns, accumulates experience, reorganizes semantic information locally, identifies
+    persistently inactive dimensions, and records architectural recommendations without changing released
+    dimensionality.
   type: paragraph
-- text: Release evolution may remove validated inactive dimensions, simplify memory structures, reduce computational requirements, update Transformer interfaces, and establish a new fixed semantic dimensionality.
+- text: Release evolution may remove validated inactive dimensions, simplify memory structures, reduce
+    computational requirements, update Transformer interfaces, and establish a new fixed semantic dimensionality.
   type: paragraph
 - level: 3
   text: Relationship to READ, UPDATE, and Offline Consolidation
@@ -103,9 +126,12 @@ blocks:
   - READ never modifies Memory State or the semantic coordinate system.
   - UPDATE stores Transformer-produced Semantic Representations using the currently active basis.
   - UPDATE never performs READ and never produces a Memory Vector.
-  - Localized basis maintenance and dimensional-usage validation are structural learning performed exclusively during Offline Consolidation.
+  - Localized basis maintenance and dimensional-usage validation are structural learning performed exclusively
+    during Offline Consolidation.
   type: list
 - title: Semantic preservation invariant
-  text: Coordinate optimization may change the latent basis, but it must preserve represented knowledge, strict READ/UPDATE separation, Transformer consistency, and fixed runtime dimensionality within each release.
+  text: Coordinate optimization may change the latent basis, but it must preserve represented knowledge,
+    strict READ/UPDATE separation, Transformer consistency, and fixed runtime dimensionality within each
+    release.
   type: principle
 section_id: S_11_05

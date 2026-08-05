@@ -1,12 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_14_04
 blocks:
-- text: As repeated neural solutions reveal stable structure, the system should ask whether part of the behavior can be compiled into a simpler algorithm, rule set, finite-state machine, index, or cache.
+- text: As repeated neural solutions reveal stable structure, the system should ask whether part of the
+    behavior can be compiled into a simpler algorithm, rule set, finite-state machine, index, or cache.
   type: paragraph
-- text: Algorithmic compilation reduces cost, improves reproducibility, and exposes invariants. It is a form of crystallized experience.
+- text: Algorithmic compilation reduces cost, improves reproducibility, and exposes invariants. It is
+    a form of crystallized experience.
   type: paragraph
-- text: The transition is not one-way. When the environment changes and exceptions accumulate, an algorithm may become suboptimal and should be returned to probabilistic search.
+- text: The transition is not one-way. When the environment changes and exceptions accumulate, an algorithm
+    may become suboptimal and should be returned to probabilistic search.
   type: paragraph
 - text: Neural Search <-> Stable Structure <-> Algorithmic Compilation
   type: formula

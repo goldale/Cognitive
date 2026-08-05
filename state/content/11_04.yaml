@@ -1,11 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_11_04
 blocks:
-- text: After the memory representation becomes sufficiently stable, representative Memory Vectors can be analyzed through covariance and correlation structure. Strong off-diagonal dependence reveals redundant or entangled coordinates.
+- text: After the memory representation becomes sufficiently stable, representative Memory Vectors can
+    be analyzed through covariance and correlation structure. Strong off-diagonal dependence reveals redundant
+    or entangled coordinates.
   type: paragraph
 - title: Representation Optimization Pipeline
-  description: Offline optimization changes the latent coordinate system while preserving represented knowledge.
+  description: Offline optimization changes the latent coordinate system while preserving represented
+    knowledge.
   direction: TB
   edges:
   - flow: information
@@ -70,6 +72,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: Whitening or related basis transformations can reduce second-order correlation without changing the knowledge represented.
+- text: Whitening or related basis transformations can reduce second-order correlation without changing
+    the knowledge represented.
   type: paragraph
 section_id: S_17_04

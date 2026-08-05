@@ -1,11 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_20_01
 blocks:
-- text: Part V documents the intended evolution of Cognitive beyond release 0.3.15. It is an architectural roadmap rather than a promise that every mechanism is already implemented.
+- text: Part V documents the intended evolution of Cognitive beyond release 0.3.15. It is an architectural
+    roadmap rather than a promise that every mechanism is already implemented.
   type: paragraph
 - title: Preserve canonical invariants
-  text: Future mechanisms must preserve the explicit READ/UPDATE asymmetry and the rule that Associative Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic Feedback Learning Pipeline.
+  text: Future mechanisms must preserve the explicit READ/UPDATE asymmetry and the rule that Associative
+    Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic
+    Feedback Learning Pipeline.
   type: principle
 - items:
   - Extend the architecture through explicit subsystems rather than hidden side effects.
@@ -15,6 +17,7 @@ blocks:
   - Maintain human readability so engineers can reason about the system without unnecessary formalism.
   type: list
 - title: Roadmap status
-  text: The order in this part expresses architectural priority and dependency. It does not imply that every mechanism forms one rigid runtime pipeline.
+  text: The order in this part expresses architectural priority and dependency. It does not imply that
+    every mechanism forms one rigid runtime pipeline.
   type: note
 section_id: S_20_01

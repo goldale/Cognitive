@@ -1,9 +1,10 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_05_05
 blocks:
-- text: Classical systems primarily maximize data throughput. AI-native systems should maximize useful knowledge made available to reasoning per unit of computational cost and time.
+- text: Classical systems primarily maximize data throughput. AI-native systems should maximize useful
+    knowledge made available to reasoning per unit of computational cost and time.
   type: paragraph
-- text: The optimal preprocessing architecture is determined not by stream type or bandwidth alone, but by expected effect on goals, decisions, and Memory State.
+- text: The optimal preprocessing architecture is determined not by stream type or bandwidth alone, but
+    by expected effect on goals, decisions, and Memory State.
   type: paragraph
 section_id: S_18_05

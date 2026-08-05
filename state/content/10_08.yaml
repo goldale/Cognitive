@@ -1,25 +1,35 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_08
 blocks:
 - title: Modern Hopfield Retrieval
-  text: An energy-based local attractor mechanism used inside READ after scalable candidate selection. It restores or composes latent context but does not independently modify Memory State.
+  text: An energy-based local attractor mechanism used inside READ after scalable candidate selection.
+    It restores or composes latent context but does not independently modify Memory State.
   type: definition
-- text: For stored latent patterns M and query q, a continuous Modern Hopfield update has the attention-equivalent form q_next = M^T softmax(βMq). In the more general key/value form, z_target = V^T softmax(βKq). β is an inverse-temperature parameter and need not equal standard Transformer scaling.
+- text: For stored latent patterns M and query q, a continuous Modern Hopfield update has the attention-equivalent
+    form q_next = M^T softmax(βMq). In the more general key/value form, z_target = V^T softmax(βKq). β
+    is an inverse-temperature parameter and need not equal standard Transformer scaling.
   type: paragraph
-- text: "Semantic Query\n  ↓\nHNSW / IVF / future candidate index\n  ↓ Top-L candidates\nModern Hopfield attractor update\n  ↓\nz_target + retrieval metadata"
+- text: "Semantic Query\n  ↓\nHNSW / IVF / future candidate index\n  ↓ Top-L candidates\nModern Hopfield\
+    \ attractor update\n  ↓\nz_target + retrieval metadata"
   type: code
-- text: Dense comparison against every persistent code is O(Nd). Sublinear large-scale behavior is supplied by the approximate index; the local Hopfield or attention update over L candidates is approximately O(Ld).
+- text: Dense comparison against every persistent code is O(Nd). Sublinear large-scale behavior is supplied
+    by the approximate index; the local Hopfield or attention update over L candidates is approximately
+    O(Ld).
   type: paragraph
 - items:
   - 'High concentration: dominant-attractor recall.'
   - 'Moderate concentration: associative composition or interpolation.'
   - 'High entropy: ambiguous or weak retrieval.'
-  - Every result carries supporting memory identifiers, entropy, similarity margin, conflict estimate, and composition degree.
+  - Every result carries supporting memory identifiers, entropy, similarity margin, conflict estimate,
+    and composition degree.
   type: list
-- text: Theoretical storage capacity may grow exponentially with latent dimensionality under separation and distribution assumptions. A 4096-dimensional space therefore offers substantial theoretical capacity, but it does not guarantee a fixed number of reliable semantic states. Effective capacity must be established empirically.
+- text: Theoretical storage capacity may grow exponentially with latent dimensionality under separation
+    and distribution assumptions. A 4096-dimensional space therefore offers substantial theoretical capacity,
+    but it does not guarantee a fixed number of reliable semantic states. Effective capacity must be established
+    empirically.
   type: paragraph
 - title: Epistemic labeling
-  text: A composed, interpolated, or metastable latent result must be marked as such. Attention-weighted reconstruction is a hypothesis-producing mechanism, not an automatic source of truth.
+  text: A composed, interpolated, or metastable latent result must be marked as such. Attention-weighted
+    reconstruction is a hypothesis-producing mechanism, not an automatic source of truth.
   type: principle
 section_id: S_10_08

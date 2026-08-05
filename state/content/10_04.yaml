@@ -1,9 +1,11 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_04
 blocks:
-- text: Associative retrieval and classical storage solve different problems. Learned or graph-based association identifies relevant keys and relationships; hash tables, key-value stores, and databases retain large volumes of exact or structured state economically.
+- text: Associative retrieval and classical storage solve different problems. Learned or graph-based association
+    identifies relevant keys and relationships; hash tables, key-value stores, and databases retain large
+    volumes of exact or structured state economically.
   type: paragraph
-- text: The architecture should therefore combine neural association with conventional storage and finite-state control where deterministic behavior is preferable.
+- text: The architecture should therefore combine neural association with conventional storage and finite-state
+    control where deterministic behavior is preferable.
   type: paragraph
 section_id: S_16_04

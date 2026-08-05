@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_11_01
 blocks:
-- text: The raw state produced by Associative Memory should be projected and canonicalized before entering the Transformer. The resulting Memory Vector is the complete public interface of the memory subsystem.
+- text: The raw state produced by Associative Memory should be projected and canonicalized before entering
+    the Transformer. The resulting Memory Vector is the complete public interface of the memory subsystem.
   type: paragraph
 - title: Canonical Memory Interface
-  description: Canonicalization separates the evolving internal Memory State from the stable interface consumed by the Transformer.
+  description: Canonicalization separates the evolving internal Memory State from the stable interface
+    consumed by the Transformer.
   direction: LR
   edges:
   - flow: information
@@ -53,6 +54,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: Canonicalization protects the Transformer from internal memory drift and allows both subsystems to evolve independently.
+- text: Canonicalization protects the Transformer from internal memory drift and allows both subsystems
+    to evolve independently.
   type: paragraph
 section_id: S_17_01

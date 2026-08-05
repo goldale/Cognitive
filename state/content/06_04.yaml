@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_06_04
 blocks:
-- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization constraints, and probability distributions over completion or transition times.
+- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization
+    constraints, and probability distributions over completion or transition times.
   type: paragraph
 - title: Temporal Scenario Organization
-  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses before evaluation.
+  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses
+    before evaluation.
   direction: TB
   edges:
   - flow: information
@@ -69,6 +70,7 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents a plan from being treated as an unordered list of semantically valid actions.
+- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents
+    a plan from being treated as an unordered list of semantically valid actions.
   type: paragraph
 section_id: S_15_04

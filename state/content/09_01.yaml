@@ -1,11 +1,15 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_09_01
 blocks:
-- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent, and vulnerable to systematic distortion. The project generalizes this observation from human memory to biological memory in organisms with developed nervous systems, while acknowledging that direct measurement becomes increasingly difficult outside humans.
+- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
+    and vulnerable to systematic distortion. The project generalizes this observation from human memory
+    to biological memory in organisms with developed nervous systems, while acknowledging that direct
+    measurement becomes increasingly difficult outside humans.
   type: paragraph
 - title: Memory Architecture
-  description: Memory State combines persistent associative structure with dynamic short-term activation. An explicit READ produces the canonical Memory Vector for the Transformer; Transformer output returns to Memory State as feedback without generating another Memory Vector.
+  description: Memory State combines persistent associative structure with dynamic short-term activation.
+    An explicit READ produces the canonical Memory Vector for the Transformer; Transformer output returns
+    to Memory State as feedback without generating another Memory Vector.
   direction: TB
   edges:
   - flow: information
@@ -74,12 +78,17 @@ blocks:
   size: standard
   type: diagram
 - title: Feedback invariant
-  text: Transformer output returns to Memory State as an internal observation. This feedback may change short-term activation or other internal memory state, but it does not invoke Projection and does not generate a new Memory Vector. A Memory Vector is produced only by a later explicit READ operation.
+  text: Transformer output returns to Memory State as an internal observation. This feedback may change
+    short-term activation or other internal memory state, but it does not invoke Projection and does not
+    generate a new Memory Vector. A Memory Vector is produced only by a later explicit READ operation.
   type: principle
 - title: Functional lossiness
   confidence: 0.78
-  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not only because biological storage is limited.
+  text: Memory loss and reconstruction are partly selected because they improve integration and future
+    action, not only because biological storage is limited.
   type: hypothesis
-- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under resource constraints. A memory architecture that preserves fewer literal details but produces a more usable model can outperform an exact archive.
+- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under
+    resource constraints. A memory architecture that preserves fewer literal details but produces a more
+    usable model can outperform an exact archive.
   type: paragraph
 section_id: S_04_01

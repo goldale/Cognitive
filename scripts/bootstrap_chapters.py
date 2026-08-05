@@ -90,7 +90,6 @@ def add_chapter(order: int, title: str, summary: str, sections: list[dict], layo
         )
         content[file_name] = {
             "kind": "T_ContentBlock",
-            "schema_version": "0.1.0",
             "section_id": f"S_{order:02d}_{index:02d}",
             "blocks": value["blocks"],
         }
@@ -920,7 +919,6 @@ for relative, document in content.items():
 yaml_profile.dump(
     {
         "kind": "T_Collection",
-        "schema_version": "0.1.0",
         "chapters": chapters,
     },
     STATE / "chapters.yaml",

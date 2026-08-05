@@ -1,14 +1,21 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_01_04
 blocks:
-- text: The document separates implemented mechanisms, architectural decisions, working hypotheses, observations, and open questions. Confidence values are engineering estimates, not statistical posterior probabilities unless an experiment explicitly establishes that interpretation.
+- text: The document separates implemented mechanisms, architectural decisions, working hypotheses, observations,
+    and open questions. Confidence values are engineering estimates, not statistical posterior probabilities
+    unless an experiment explicitly establishes that interpretation.
   type: paragraph
-- text: Biological evolution is treated as a very large empirical search that produced robust cognitive architectures under severe real-world constraints. Evolutionary persistence makes a mechanism a strong candidate for study, but does not prove that the mechanism is optimal for an engineered system with different resources and objectives.
+- text: Biological evolution is treated as a very large empirical search that produced robust cognitive
+    architectures under severe real-world constraints. Evolutionary persistence makes a mechanism a strong
+    candidate for study, but does not prove that the mechanism is optimal for an engineered system with
+    different resources and objectives.
   type: paragraph
-- text: A good project model must remain corrigible. New evidence may refine definitions, change confidence, replace architecture decisions, or create new Tokens. Existing Tokens do not change semantic identity; semantic replacement requires a new Token.
+- text: A good project model must remain corrigible. New evidence may refine definitions, change confidence,
+    replace architecture decisions, or create new Tokens. Existing Tokens do not change semantic identity;
+    semantic replacement requires a new Token.
   type: paragraph
 - title: State recovery
-  text: The canonical Research State and generated documentation must permit a new human or model participant to resume the project after context loss without replaying the complete discussion history.
+  text: The canonical Research State and generated documentation must permit a new human or model participant
+    to resume the project after context loss without replaying the complete discussion history.
   type: principle
 section_id: S_01_05

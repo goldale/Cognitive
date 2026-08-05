@@ -1,13 +1,14 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_21_06
 blocks:
-- text: Global Evaluation and multi-agent experiments require stronger governance because errors can influence both behavior and other systems.
+- text: Global Evaluation and multi-agent experiments require stronger governance because errors can influence
+    both behavior and other systems.
   type: paragraph
 - items:
   - Compare local evaluation with proposed global evaluation on long-horizon decisions.
   - Measure objective drift and recovery after misleading feedback.
-  - Exchange semantically equivalent messages across languages and formulations and measure reconstruction consistency.
+  - Exchange semantically equivalent messages across languages and formulations and measure reconstruction
+    consistency.
   - Test disagreement detection, trust calibration, quarantine, and rollback across lineages.
   - Prevent benchmark success from being mistaken for general safety or cognitive maturity.
   type: list

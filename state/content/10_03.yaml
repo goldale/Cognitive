@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_03
 blocks:
-- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory Vector used by the Transformer to generate a response.
+- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory
+    Vector used by the Transformer to generate a response.
   type: paragraph
 - title: Memory UPDATE Path
-  description: The completed interaction and Transformer state are used to update memory without generating a second user-visible answer.
+  description: The completed interaction and Transformer state are used to update memory without generating
+    a second user-visible answer.
   direction: TB
   edges:
   - flow: information
@@ -55,6 +56,8 @@ blocks:
   readability_priority: true
   size: standard
   type: diagram
-- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are supplied to memory so that experience can be integrated without rerunning a full user-facing inference cycle.
+- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are
+    supplied to memory so that experience can be integrated without rerunning a full user-facing inference
+    cycle.
   type: paragraph
 section_id: S_16_03

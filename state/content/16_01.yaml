@@ -1,10 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_16_01
 blocks:
-- text: Digital systems can clone a high-performing model at negligible marginal cost. Global cloning maximizes immediate exploitation but reduces diversity and makes the population vulnerable to unforeseen environmental changes or shared failure modes.
+- text: Digital systems can clone a high-performing model at negligible marginal cost. Global cloning
+    maximizes immediate exploitation but reduces diversity and makes the population vulnerable to unforeseen
+    environmental changes or shared failure modes.
   type: paragraph
-- text: Individual evolution without cloning preserves diversity but sacrifices commercial efficiency and reproducibility.
+- text: Individual evolution without cloning preserves diversity but sacrifices commercial efficiency
+    and reproducibility.
   type: paragraph
 - text: The proposed compromise separates selection within lineages from selection across lineages.
   type: paragraph

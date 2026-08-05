@@ -1,9 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_10
 blocks:
 - title: Reference target
-  text: The first cognitive-0.3.17 implementation targets a single-server Associative Memory capable of producing a 1024 × 1024 × 8 transient Memory Tensor from compact latent states.
+  text: The first cognitive-0.3.17 implementation targets a single-server Associative Memory capable of
+    producing a 1024 × 1024 × 8 transient Memory Tensor from compact latent states.
   type: definition
 - items:
   - 'Associative candidate index: FAISS, Qdrant, HNSW, IVF, or future equivalent.'
@@ -13,10 +13,14 @@ blocks:
   - 'Compression: hierarchical encoder with attention bottleneck.'
   - 'Hardware reference: one modern GPU and sufficient host memory; exact requirements are benchmark-dependent.'
   type: list
-- text: Technology names are reference implementations rather than architectural dependencies. Latency claims such as sub-5-ms READ, 1–3-ms encoding, or microsecond UPDATE are experimental targets and must not be treated as canonical guarantees before reproducible measurement.
+- text: Technology names are reference implementations rather than architectural dependencies. Latency
+    claims such as sub-5-ms READ, 1–3-ms encoding, or microsecond UPDATE are experimental targets and
+    must not be treated as canonical guarantees before reproducible measurement.
   type: paragraph
 - title: Staging Area
-  text: A quarantine boundary that evaluates semantic validity, reconstruction quality, novelty, duplication, contradiction, provenance, confidence, importance, and attractor stability before UPDATE commits persistent state.
+  text: A quarantine boundary that evaluates semantic validity, reconstruction quality, novelty, duplication,
+    contradiction, provenance, confidence, importance, and attractor stability before UPDATE commits persistent
+    state.
   type: definition
 - items:
   - Accept a novel validated code.
@@ -25,9 +29,13 @@ blocks:
   - Reject invalid or self-generated states.
   - Defer expensive restructuring to Offline Consolidation and Sleep.
   type: list
-- text: Round-trip validation may decode z_new and compare the reconstructed state with the validated semantic input. Acceptance should consider semantic equivalence, preserved relations, uncertainty, provenance, and absence of invented content—not only element-wise reconstruction error.
+- text: Round-trip validation may decode z_new and compare the reconstructed state with the validated
+    semantic input. Acceptance should consider semantic equivalence, preserved relations, uncertainty,
+    provenance, and absence of invented content—not only element-wise reconstruction error.
   type: paragraph
 - title: Preserved v0.3.16 invariants
-  text: Associative Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic Feedback Learning Pipeline. READ remains read-only; UPDATE performs no implicit READ and produces no Memory Vector.
+  text: Associative Memory learns exclusively from Transformer-produced Semantic Representations through
+    the Semantic Feedback Learning Pipeline. READ remains read-only; UPDATE performs no implicit READ
+    and produces no Memory Vector.
   type: principle
 section_id: S_10_10

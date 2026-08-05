@@ -196,3 +196,37 @@ def test_all_alphabetical_index_links_target_canonical_index(tmp_path):
         assert len(hrefs) >= 2, html_file
         for href in hrefs:
             assert (html_file.parent / href.split("#", 1)[0]).resolve() == expected, (html_file, href)
+
+
+def test_generated_html_contains_no_document_version_metadata(tmp_path: Path) -> None:
+    state = ResearchState.load(ROOT / "state")
+    DocumentationBuilder(state, ROOT / "assets").build(tmp_path)
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert '<p class="subtitle">Version ' not in index
+    assert "schema_version" not in index
+
+
+def test_canonical_yaml_contains_no_version_metadata() -> None:
+    import yaml
+
+    forbidden = {"schema_version", "version", "release", "revision", "build_number"}
+    for path in sorted((ROOT / "state").rglob("*.yaml")):
+        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        if isinstance(document, dict):
+            assert forbidden.isdisjoint(document), path
+
+
+def test_logical_episode_and_git_version_policy_are_documented():
+    root = Path(__file__).resolve().parents[1]
+    canonical = (root / "state/content/10_13.yaml").read_text(encoding="utf-8")
+    research = (root / "state/content/23_12.yaml").read_text(encoding="utf-8")
+    policy = (root / "state/content/24_04.yaml").read_text(encoding="utf-8")
+    assert "Canonical consolidation unit" in canonical
+    assert "RS-0010" in research
+    assert "Git is the version authority" in policy
+
+
+def test_changelog_has_no_duplicate_release_heading():
+    root = Path(__file__).resolve().parents[1]
+    changes = (root / "CHANGES.md").read_text(encoding="utf-8")
+    assert changes.count("## cognitive-0.3.40 — 2026-08-05") == 1

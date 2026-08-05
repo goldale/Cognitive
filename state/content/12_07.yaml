@@ -1,11 +1,13 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_12_07
 blocks:
-- text: Associative Memory should not be considered ready for Transformer integration merely because its training loss is low. Its representation must become stable with respect to meaning rather than surface form.
+- text: Associative Memory should not be considered ready for Transformer integration merely because its
+    training loss is low. Its representation must become stable with respect to meaning rather than surface
+    form.
   type: paragraph
 - title: Semantic Equivalence Maturity Test
-  description: Different formulations and languages expressing the same meaning should converge to nearby canonical Memory Vectors, while different meanings remain separated.
+  description: Different formulations and languages expressing the same meaning should converge to nearby
+    canonical Memory Vectors, while different meanings remain separated.
   direction: TB
   edges:
   - flow: information
@@ -63,24 +65,31 @@ blocks:
 - level: 3
   text: Semantic invariance
   type: heading
-- text: Inputs that are differently worded but equal in meaning should generate nearly identical canonical Memory Vectors. This requirement includes paraphrases, different word order, active and passive forms, short and expanded formulations, and equivalent statements in different languages.
+- text: Inputs that are differently worded but equal in meaning should generate nearly identical canonical
+    Memory Vectors. This requirement includes paraphrases, different word order, active and passive forms,
+    short and expanded formulations, and equivalent statements in different languages.
   type: paragraph
 - text: "For Q_i, Q_j in the same semantic equivalence class E:\n    d(M(Q_i), M(Q_j)) < epsilon"
   type: formula
 - title: Multilingual equivalence
-  text: “The sky is blue.”, “Blue is the color of the sky.”, “Der Himmel ist blau.”, “Небо синее.”, and “Le ciel est bleu.” should produce nearby canonical Memory Vectors after sufficient training.
+  text: “The sky is blue.”, “Blue is the color of the sky.”, “Der Himmel ist blau.”, “Небо синее.”, and
+    “Le ciel est bleu.” should produce nearby canonical Memory Vectors after sufficient training.
   type: example
 - level: 3
   text: Semantic discrimination
   type: heading
-- text: Semantic invariance must be paired with semantic discrimination. Messages with different meanings must remain separated; otherwise the memory could satisfy invariance by collapsing all inputs to the same vector.
+- text: Semantic invariance must be paired with semantic discrimination. Messages with different meanings
+    must remain separated; otherwise the memory could satisfy invariance by collapsing all inputs to the
+    same vector.
   type: paragraph
 - text: "For Q_i and Q_k with different meanings:\n    d(M(Q_i), M(Q_k)) > delta"
   type: formula
 - level: 3
   text: Operational maturity criterion
   type: heading
-- text: Associative Memory is sufficiently mature for integration when intra-class distances remain below an accepted threshold, inter-class separation remains above an accepted threshold, multilingual consistency is stable across checkpoints, and nearest-neighbour retrieval preserves semantic classes.
+- text: Associative Memory is sufficiently mature for integration when intra-class distances remain below
+    an accepted threshold, inter-class separation remains above an accepted threshold, multilingual consistency
+    is stable across checkpoints, and nearest-neighbour retrieval preserves semantic classes.
   type: paragraph
 - items:
   - mean and maximum intra-class distance
@@ -91,6 +100,8 @@ blocks:
   ordered: false
   type: list
 - title: Not permanent completion
-  text: This criterion marks stabilization of the representation and readiness for Transformer integration. It does not imply that Associative Memory stops learning; Memory State may continue to accumulate knowledge and change over the lifetime of the system.
+  text: This criterion marks stabilization of the representation and readiness for Transformer integration.
+    It does not imply that Associative Memory stops learning; Memory State may continue to accumulate
+    knowledge and change over the lifetime of the system.
   type: note
 section_id: S_12_07

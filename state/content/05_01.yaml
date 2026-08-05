@@ -1,8 +1,9 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_05_01
 blocks:
-- text: Cognitive stream processing distinguishes Data Rate, Task Relevance, and Semantic Novelty. Data Rate describes physical intensity; Task Relevance describes relation to active goals and context; Semantic Novelty describes expected contribution relative to Memory State.
+- text: Cognitive stream processing distinguishes Data Rate, Task Relevance, and Semantic Novelty. Data
+    Rate describes physical intensity; Task Relevance describes relation to active goals and context;
+    Semantic Novelty describes expected contribution relative to Memory State.
   type: paragraph
 - text: No one of these quantities can be reliably inferred from the others.
   type: paragraph

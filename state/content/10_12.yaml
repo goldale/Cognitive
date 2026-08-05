@@ -1,12 +1,15 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_10_12
 blocks:
 - title: Input Buffer
-  text: The Stage-1 input path contains a modality-neutral Input Buffer between external or internal sources and STM. The buffer is not semantic memory, does not store objects or addresses, and performs no lookup. It temporarily holds a linearly ordered stream of input elements.
+  text: The Stage-1 input path contains a modality-neutral Input Buffer between external or internal sources
+    and STM. The buffer is not semantic memory, does not store objects or addresses, and performs no lookup.
+    It temporarily holds a linearly ordered stream of input elements.
   type: definition
 - title: Canonical Stage-1 input path
-  description: Multiple sources contribute events through a simple sequential multiplexer. Each completed event is written into the next Input Buffer element, which has one permanent physical projection to the corresponding STM node.
+  description: Multiple sources contribute events through a simple sequential multiplexer. Each completed
+    event is written into the next Input Buffer element, which has one permanent physical projection to
+    the corresponding STM node.
   direction: TB
   edges:
   - flow: information
@@ -31,7 +34,7 @@ blocks:
     label: Vision · Hearing · Touch · Language · Internal Sources
   - kind: control
     id: multiplexer
-    label: 'Sequential Multiplexer / queue protected by mutex'
+    label: Sequential Multiplexer / queue protected by mutex
   - kind: state
     id: buffer
     label: Linear / Circular Input Buffer
@@ -46,31 +49,52 @@ blocks:
   size: standard
   type: diagram
 - title: Sequential multiplexer
-  text: The multiplexer is a queue protected by a mutex. It does not interpret, prioritize, semantically route, or select destinations. It accepts the next available completed input event and writes it into the next Input Buffer element.
+  text: The multiplexer is a queue protected by a mutex. It does not interpret, prioritize, semantically
+    route, or select destinations. It accepts the next available completed input event and writes it into
+    the next Input Buffer element.
   type: principle
 - title: Linear filling and implicit time
-  text: Input Buffer elements are filled sequentially. Their insertion order defines the system-observed temporal order. Time is therefore implicit in buffer position and activation order rather than stored as a timestamp coordinate inside each event.
+  text: Input Buffer elements are filled sequentially. Their insertion order defines the system-observed
+    temporal order. Time is therefore implicit in buffer position and activation order rather than stored
+    as a timestamp coordinate inside each event.
   type: principle
-- text: Sequential insertion establishes temporal precedence. Causal dependence arises when earlier STM activation contributes to later STM activation. The documentation must not equate mere order with proven external-world causality.
+- text: Sequential insertion establishes temporal precedence. Causal dependence arises when earlier STM
+    activation contributes to later STM activation. The documentation must not equate mere order with
+    proven external-world causality.
   type: warning
 - title: Input Buffer element
-  text: Each Input Buffer element is a modality-neutral physical element with a fixed-dimensional activation vector. The current Stage-1 working dimensionality is eight coordinates. The same physical element may be populated at different times from vision, hearing, touch, language, another external source, or an internal source.
+  text: Each Input Buffer element is a modality-neutral physical element with a fixed-dimensional activation
+    vector. The current Stage-1 working dimensionality is eight coordinates. The same physical element
+    may be populated at different times from vision, hearing, touch, language, another external source,
+    or an internal source.
   type: definition
 - text: '[v1, v2, v3, v4, v5, v6, v7, transmission_context]'
   type: formula
 - title: Transmission Context
-  text: One coordinate of the fixed eight-dimensional vector is reserved for service-level transmission context. At Stage 1 its primary role is to preserve the source or mode of the current signal. It does not encode the semantic identity of the observed Item.
+  text: One coordinate of the fixed eight-dimensional vector is reserved for service-level transmission
+    context. At Stage 1 its primary role is to preserve the source or mode of the current signal. It does
+    not encode the semantic identity of the observed Item.
   type: definition
 - title: Fixed dimensional correspondence
-  text: The number of Input Buffer elements equals the number of STM nodes. The vector dimensionality of one Input Buffer element equals the runtime state dimensionality of one STM node. Each buffer element has exactly one permanent physical connection to one corresponding STM node.
+  text: The number of Input Buffer elements equals the number of STM nodes. The vector dimensionality
+    of one Input Buffer element equals the runtime state dimensionality of one STM node. Each buffer element
+    has exactly one permanent physical connection to one corresponding STM node.
   type: principle
-- text: '|Input Buffer elements| = |STM nodes|; D_buffer_element = D_STM_node; total runtime dimensionality = N × D.'
+- text: '|Input Buffer elements| = |STM nodes|; D_buffer_element = D_STM_node; total runtime dimensionality
+    = N × D.'
   type: formula
 - title: No semantic specialization
-  text: Buffer positions and STM nodes do not belong permanently to modalities or Items. A position number identifies only a physical place in the current sequential stream. The transmission-context coordinate carries source information for the current event.
+  text: Buffer positions and STM nodes do not belong permanently to modalities or Items. A position number
+    identifies only a physical place in the current sequential stream. The transmission-context coordinate
+    carries source information for the current event.
   type: principle
 - title: MN-0001 — Alternative parallel input processing
   object_id: MN-0001
-  text: A deferred alternative uses a pool of identical input-processing paths. A free path temporarily connects to a data source, processes one event, writes the result, and returns to the pool. This may improve throughput and preserve modality neutrality, but parallel completion can reorder observations. Because Stage 1 currently derives time and initial causal order from sequential Input Buffer insertion, this alternative is not canonical. Reconsider it only after observation order, processing order, and publication order are explicitly separated and causality is preserved.
+  text: A deferred alternative uses a pool of identical input-processing paths. A free path temporarily
+    connects to a data source, processes one event, writes the result, and returns to the pool. This may
+    improve throughput and preserve modality neutrality, but parallel completion can reorder observations.
+    Because Stage 1 currently derives time and initial causal order from sequential Input Buffer insertion,
+    this alternative is not canonical. Reconsider it only after observation order, processing order, and
+    publication order are explicitly separated and causality is preserved.
   type: note
 section_id: S_10_12

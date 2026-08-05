@@ -1,11 +1,12 @@
 kind: T_ContentBlock
-schema_version: 0.3.40
 id: S_12_03
 blocks:
-- text: No general function is assumed to map changed weights directly to an optimal new architecture. The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
+- text: No general function is assumed to map changed weights directly to an optimal new architecture.
+    The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
   type: paragraph
 - title: Functional and Structural Learning
-  description: Functional learning changes active weights; structural learning changes which connections exist and how topology is organized.
+  description: Functional learning changes active weights; structural learning changes which connections
+    exist and how topology is organized.
   direction: TB
   edges:
   - flow: information
@@ -68,8 +69,11 @@ blocks:
 
     Repeat'
   type: diagram
-- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged categories, different retention thresholds, or different executor assignments.'
+- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged
+    categories, different retention thresholds, or different executor assignments.'
   type: paragraph
-- text: Evaluation must include future utility, coherence, latency, complexity, retention of important knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys continuity is not automatically superior.
+- text: Evaluation must include future utility, coherence, latency, complexity, retention of important
+    knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys
+    continuity is not automatically superior.
   type: paragraph
 section_id: S_05_03
