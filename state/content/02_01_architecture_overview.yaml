@@ -46,10 +46,10 @@ blocks:
     label: Completed Logical Episode
   - kind: control
     id: master_update
-    label: Transformer UPDATE mode
+    label: Transformer-Constructed STM UPDATE Chains
   - kind: state
     id: master_messages
-    label: MSG1 / MSG2
+    label: MSG1 / MSG2(operation)
   - kind: control
     id: master_sleep
     label: Sleep / Offline Adaptation
@@ -88,15 +88,15 @@ blocks:
     to: master_episode
   - flow: learning
     from: master_episode
-    label: completed experience
+    label: associative-atom composition
     to: master_update
   - flow: learning
     from: master_update
-    label: memory-update encoding
+    label: STM activation emits UPDATE MSG2
     to: master_messages
   - flow: learning
     from: master_messages
-    label: state update
+    label: LTM1 propagation · match-gated LTM2 update
     to: master_ltm
   - flow: control
     from: master_sleep

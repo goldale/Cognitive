@@ -1,36 +1,13 @@
-# Architecture Freeze — Cognitive 0.3.15
+# Architecture Freeze — cognitive-0.3.50
 
-**Status:** FROZEN FOR DOCUMENTATION REFACTORING  
-**Date:** 2026-08-03  
-**Baseline:** Cognitive canonical architecture
+The canonical source is the Master Architecture YAML and canonical state files.
 
-## Fundamental change
+Release-blocking points:
 
-The Transformer is both the Semantic Reasoning Engine and the Semantic Teacher of Associative Memory. Associative Memory learns from Transformer-produced Semantic Representations rather than raw external observations. The complete self-learning cycle is represented by the first-class **Semantic Feedback Learning Pipeline**.
-
-## Frozen contracts
-
-```text
-READ(Memory State, Query) -> Memory Vector
-UPDATE(Memory State, Semantic Representation) -> Updated Memory State
-```
-
-UPDATE modifies only Memory State. UPDATE never returns a Memory Vector and never performs an implicit READ. A new Memory Vector can be produced only by a later explicit READ.
-
-## Canonical files
-
-- `state/canonical/principles.yaml`
-- `state/canonical/components.yaml`
-- `state/canonical/contracts.yaml`
-- `state/canonical/invariants.yaml`
-- `state/canonical/terminology.yaml`
-- `state/canonical/ownership.yaml`
-- `state/canonical/generation.yaml`
-
-## Generation boundary
-
-Canonical YAML is edited directly. HTML, Chapter 2 renderings, CHANGES.md, diagrams, and the A–Z Index are derived artifacts and must be regenerated.
-
-## Release gate
-
-Any later artifact that contradicts an invariant in `state/canonical/invariants.yaml` is release-blocking.
+- `MSG2(amplitude, sequence_number, operation)` carries local `READ` or `UPDATE`.
+- Only STM-node activation emits `MSG2`.
+- All MSG2 excitation propagates exclusively through the persistent `LTM1` graph.
+- UPDATE writes to `LTM2` only after confirmed associative match.
+- Transformer directly constructs UPDATE STM chains; Sequencer is not invoked.
+- Controlled LTM1 selection plus repeated MAX/SUM Memory Vector readout exports LTM1 associative atoms as the native language consumed by Transformer.
+- Native-language export is not defined as serialization of all LTM1.

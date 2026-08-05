@@ -118,14 +118,25 @@ architectures:
   - STM -> LTM1
 - kind: T_ArchitectureDecision
   id: A_014
-  title: LTM2 READ through the LTM1 graph
+  title: LTM2 READ and UPDATE through the LTM1 graph
   status: T_Accepted
-  summary: The latest STM Sequencer chain emits MSG2(amplitude, sequence_number). MSG2 propagates exclusively through
-    the persistent LTM1 associative graph; LTM2 has no independent propagation graph. MAX and SUM readouts are
-    compared by information entropy.
+  summary: STM nodes emit MSG2(amplitude, sequence_number, operation). READ and UPDATE use the same persistent LTM1
+    propagation graph; operation is interpreted locally. UPDATE reaches LTM2 only through confirmed associative
+    matches.
   relations:
-  - Sequencer -> STM Sequence
-  - STM Sequence -> MSG2
+  - STM Node -> MSG2
   - MSG2 -> LTM1 Associative Graph
   - LTM1 Associative Graph -> Memory Vector Readout
-  - Memory Vector Readout -> Memory Vector
+  - Confirmed Associative Match -> LTM2 Update
+- kind: T_ArchitectureDecision
+  id: A_015
+  title: Native LTM1 language export through Memory Vector
+  status: T_Accepted
+  summary: Controlled selection of LTM1 activity and repeated MAX or SUM readouts export associative atoms as the
+    native communication language consumed by Transformer. This procedure is distinct from serializing all LTM1
+    state.
+  relations:
+  - LTM1 Associative Atoms -> Selective Excitation
+  - Selective Excitation -> Memory Vector Stream
+  - Memory Vector Stream -> Transformer
+  - Transformer -> STM Update Chains

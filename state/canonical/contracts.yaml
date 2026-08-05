@@ -7,7 +7,7 @@ operations:
   inputs:
   - Current LTM State
   - Latest STM Sequencer Chain
-  - Operation Mode = READ
+  - MSG2 operation = READ
   name: READ
   outputs:
   - Memory Vector
@@ -15,7 +15,7 @@ operations:
   stages:
   - Reset Memory Vector output cells
   - Assign or preserve Sequencer position numbers
-  - Emit MSG2(amplitude, sequence_number) from every active Sequence node
+  - Emit MSG2(amplitude, sequence_number, READ) from every active Sequence node
   - Inject MSG2 through permanent STM-to-LTM projections
   - Propagate MSG2 exclusively through the persistent LTM1 associative graph
   - Reduce the distributed response with MAX or SUM readout
@@ -28,18 +28,26 @@ operations:
     and events. For stochastic READ, maximize mutual information rather than raw entropy.
 - id: OP_UPDATE
   effects:
-  - modifies Memory State
+  - modifies LTM2 only after confirmed associative matches
   forbidden_outputs:
   - Memory Vector
   implicit_operations_forbidden:
   - READ
   inputs:
-  - Memory State
-  - Semantic Representation
+  - Current LTM State
+  - Transformer-constructed STM chains
+  - MSG2 operation = UPDATE
   name: UPDATE
   outputs:
-  - Updated Memory State
+  - Updated LTM2 composition
   owner: Associative Memory
+  stages:
+  - Activate Transformer-constructed STM chains directly; Sequencer is not invoked
+  - Emit MSG2(amplitude, sequence_number, UPDATE) only through STM-node activation
+  - Propagate excitation exclusively through the persistent LTM1 associative graph
+  - Resolve each candidate locally by associative match using one or two existing LTM1 context links
+  - Admit only confirmed matches to the LTM2 composition update
+  - Preserve unresolved items without forcing an LTM1 atom creation
 pipeline:
   id: PROC_SFL
   name: Semantic Feedback Learning Pipeline
@@ -49,6 +57,6 @@ pipeline:
   - Memory Vector
   - Transformer semantic reasoning
   - Transformer semantic teaching
-  - Semantic Representation
+  - Transformer-constructed STM chains over exported LTM1 atoms
   - Associative Memory UPDATE
   - Updated Memory State

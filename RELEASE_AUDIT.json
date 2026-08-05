@@ -1,28 +1,49 @@
 {
-  "release": "0.3.48",
+  "release": "0.3.50",
   "date": "2026-08-05",
-  "base_archive": "cognitive-0.3.47.tgz",
-  "yaml_files": 170,
-  "generated_doc_files": 185,
-  "duplicate_mapping_keys": "rejected_by_loader",
-  "duplicate_yaml_ids": 0,
-  "duplicate_terminology_entries": 0,
-  "duplicate_html_ids": 0,
-  "unexpected_exact_duplicate_file_groups": [],
-  "expected_generated_asset_copies": [
+  "schema_validation": "passed",
+  "tests": "52 passed",
+  "documentation_generation": "passed",
+  "canonical_naming": "passed",
+  "operations": [
+    "READ",
+    "UPDATE"
+  ],
+  "exact_long_text_duplicates": 5,
+  "duplicate_examples": [
     [
-      "assets/associative-memory-read-update-path.png",
-      "docs/associative-memory-read-update-path.png"
+      "state/canonical/principles.yaml",
+      "state/principles.yaml",
+      "The Transformer performs semantic reasoning and acts as the Semantic Teacher of Associative Memory."
     ],
     [
-      "assets/cognitive.css",
-      "docs/cognitive.css"
+      "state/canonical/principles.yaml",
+      "state/principles.yaml",
+      "Associative Memory learns from Semantic Representations produced by the Transformer rather than from"
+    ],
+    [
+      "state/canonical/principles.yaml",
+      "state/principles.yaml",
+      "The Semantic Feedback Learning Pipeline is a first-class architectural object with explicit stages, "
+    ],
+    [
+      "state/canonical/principles.yaml",
+      "state/principles.yaml",
+      "READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but "
+    ],
+    [
+      "state/canonical/principles.yaml",
+      "state/principles.yaml",
+      "A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an "
     ]
   ],
-  "master_diagram_duplicate_node_ids": 0,
-  "master_diagram_broken_edges": [],
-  "schema_validation": "passed",
-  "tests": "passed",
-  "pdf_render_verification": "passed",
-  "duplicate_audit": "passed"
+  "consistency_checks": [
+    "No global STM READ/UPDATE mode in canonical contracts",
+    "STM-node activation is sole MSG2 emission mechanism",
+    "READ and UPDATE propagate exclusively through LTM1",
+    "UPDATE is gated by confirmed associative match",
+    "Sequencer excluded from Transformer-constructed UPDATE chains",
+    "Native LTM1 language export distinguished from full LTM1 serialization"
+  ],
+  "MSG2_contract": "MSG2(amplitude, sequence_number, operation)"
 }

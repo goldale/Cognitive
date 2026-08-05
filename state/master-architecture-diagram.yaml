@@ -2,7 +2,7 @@ kind: T_Collection
 diagram:
   id: MASTER_ARCHITECTURE_DIAGRAM
   title: Cognitive Master Architecture Diagram
-  version: 0.3.49
+  version: 0.3.50
   canonical: true
   visual_generation_policy:
     yaml_updated_each_release: true
@@ -20,7 +20,7 @@ diagram:
     label: Linear STM Sequence
     kind: state
   - id: MSG2
-    label: MSG2(amplitude, sequence_number)
+    label: MSG2(amplitude, sequence_number, operation)
     kind: message
   - id: LTM1_graph
     label: Persistent LTM1 Associative Graph
@@ -37,6 +37,15 @@ diagram:
   - id: transformer
     label: Transformer
     kind: subsystem
+  - id: native_language_export
+    label: LTM1 Native-Language Export via Memory Vector Stream
+    kind: process
+  - id: transformer_stm
+    label: Transformer-Constructed STM Chains
+    kind: state
+  - id: LTM2_update
+    label: LTM2 Matched-Composition Update
+    kind: process
   edges:
   - from: input_buffer
     to: sequencer
@@ -46,7 +55,7 @@ diagram:
     label: linear chain + position numbers
   - from: stm_sequence
     to: MSG2
-    label: every node emits
+    label: each active node emits READ operation
   - from: MSG2
     to: LTM1_graph
     label: permanent STM-to-LTM projection
@@ -62,10 +71,36 @@ diagram:
   - from: memory_vector
     to: transformer
     label: opaque conditioning interface
+  - from: LTM1_graph
+    to: native_language_export
+    label: selective excitation + repeated MAX/SUM readout
+  - from: native_language_export
+    to: memory_vector
+    label: Memory Vector stream exports LTM1 associative atoms
+  - from: transformer
+    to: transformer_stm
+    label: recombines exported atoms with minimal structural links
+  - from: transformer_stm
+    to: MSG2
+    label: STM activation emits READ or UPDATE operation per message
+  - from: LTM1_graph
+    to: LTM2_update
+    label: only confirmed associative matches participate
+  - from: LTM2_update
+    to: LTM2_state
+    label: stores matched contextual compositions
   invariants:
   - READ never creates temporary associative connections.
-  - Every MSG2 propagates exclusively through the persistent LTM1 associative graph.
+  - Every MSG2, whether READ or UPDATE, propagates exclusively through the persistent LTM1 associative graph.
   - LTM2 has no independent propagation graph or propagation logic.
   - Memory Vector coordinates have no individually prescribed semantics.
   - MAX and SUM are compared under identical conditions.
   - Deterministic readout selection maximizes non-degenerate Memory Vector entropy.
+  - MSG2 carries an explicit operation field whose initial values are READ and UPDATE.
+  - STM node activation is the only mechanism that emits MSG2.
+  - READ and UPDATE may coexist in one STM structure because operation is local to each MSG2.
+  - An UPDATE MSG2 requests associative matching; it does not itself authorize an LTM2 write.
+  - Only a confirmed associative match may participate in the LTM2 update.
+  - LTM1 and repeated Memory Vector readouts form the native-language export channel to the Transformer.
+  - The export procedure is not a serialization of all LTM1; it exposes selected associative atoms in a Transformer-consumable
+    stream.

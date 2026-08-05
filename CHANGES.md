@@ -1,5 +1,13 @@
 # Changes
 
+## cognitive-0.3.50 — 2026-08-05
+
+- Added local READ/UPDATE operation to MSG2.
+- Added native LTM1 language export through repeated Memory Vector readout.
+- Added match-gated LTM2 UPDATE and direct Transformer-to-STM UPDATE construction.
+- Removed contradictory global operation-mode wording and audited duplicates.
+
+
 ## cognitive-0.3.49 — 2026-08-05
 
 - Standardized the canonical names as `LTM1`, `LTM2`, `MSG1`, and `MSG2` everywhere.

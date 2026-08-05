@@ -2,98 +2,46 @@ kind: T_ContentBlock
 id: S_10_15
 section_id: S_10_15
 blocks:
-- type: definition
-  title: Canonical vertex model
-  text: A vertex is an identifier of a concept in the associative dictionary and a point of long-term statistical
-    observation of its use.
-- type: diagram
-  title: Vertex-owned persistent state
-  description: Each vertex owns the persistent state associated with one associative concept.
-  direction: TB
-  size: standard
-  nodes:
-  - id: vertex
-    label: Vertex
-    kind: subsystem
-  - id: identity
-    label: Concept Identity
-    kind: data
-  - id: edges
-    label: Bounded Edge List
-    kind: storage
-  - id: search
-    label: Local Edge Search
-    kind: control
-  - id: stats
-    label: Usage Statistics
-    kind: state
-  edges:
-  - from: vertex
-    to: identity
-    label: identifies
-    flow: information
-  - from: vertex
-    to: edges
-    label: owns
-    flow: information
-  - from: edges
-    to: search
-    label: searched by
-    flow: control
-  - from: vertex
-    to: stats
-    label: owns
-    flow: information
-  readability_priority: true
-  proportionality_priority: true
-- type: list
-  items:
-  - Each vertex owns a bounded Edge List, which constitutes the persistent associative memory of the concept.
-  - Each vertex provides a local search function for locating relationships within its Edge List.
-  - Each vertex owns long-term Usage Statistics accumulated from the concept’s participation in completed Logical
-    Episodes.
-- type: principle
-  title: Bounded Edge List
-  text: The Edge List grows while free capacity remains. During sleep, conservative offline maintenance consolidates,
-    merges, weakens, or removes edges and thereby restores free capacity for subsequent operation. Emergency replacement
-    at saturation may exist as an implementation safeguard, but it is not the primary memory-maintenance mechanism.
-- type: principle
-  title: Transient semantic-search paths
-  text: The complete multi-hop semantic-search path is never stored as a persistent memory structure. Local Edge
-    Search returns transient matching edges for the current retrieval wave. The persistent source of truth remains
-    the bounded Edge List owned by each vertex.
-- type: principle
-  title: Usage Statistics
-  text: Usage Statistics summarize the long-term use of the concept across completed Logical Episodes. They may
-    characterize activation frequency, temporal distribution, contextual use, coactivation patterns, contradictory
-    evidence, and persistent internal or cross-concept regularities. They do not preserve complete Logical Episodes
-    or transient multi-hop paths.
-- type: heading
-  level: 3
-  text: Associative Dictionary Evolution
-- type: principle
-  title: Concept Differentiation
-  text: A previously broad concept may differentiate into multiple independently meaningful concepts when long-accumulated
-    Usage Statistics reveal stable and repeatedly confirmed distinctions. For example, an initially broad concept
-    such as chair may differentiate into chair, armchair, and stool.
-- type: principle
-  title: Concept Generalization
-  text: Multiple existing concepts may support creation of a new higher-level concept when long-accumulated Usage
-    Statistics reveal a stable shared semantic structure. Differentiation and generalization are complementary processes
-    of associative-dictionary evolution.
 - type: warning
-  title: Conservative dictionary evolution
-  text: The associative dictionary is one of the most conservative structures of the cognitive architecture. Although
-    creating a vertex may be inexpensive in hardware, dictionary modifications are intentionally rare and depend
-    on statistics accumulated over many independent Logical Episodes and multiple sleep cycles. A single observation
-    or Logical Episode must not directly create, split, or generalize a concept.
+  title: Epistemic status
+  text: Working architectural hypothesis. It defines an implementable communication contract without claiming that
+    the final biological realization is already known.
+- type: definition
+  title: Native communication language
+  text: The native language between memory and Transformer is formed from associative atoms already present in LTM1.
+    Transformer does not invent an independent semantic vocabulary.
 - type: principle
-  title: New vertex formation
-  text: A new vertex is a new entry in the associative dictionary. It may represent a previously unknown concept,
-    a differentiated concept, or a new generalizing concept. It is never created merely as an additional storage
-    container. Any increase in memory capacity is a secondary consequence of semantic development.
+  title: Export mechanism
+  text: A deterministic external controller selectively excites or admits selected LTM1 nodes to repeated Memory
+    Vector readout. Each Memory Vector element aggregates its assigned LTM1 contributors by MAX or SUM. Repeated
+    measurements expose the required associative atoms as a stream consumable by Transformer.
 - type: principle
-  title: Sleep-time analysis
-  text: Sleep may analyze Usage Statistics, maintain bounded Edge Lists, and form or re-evaluate conservative candidates
-    for concept differentiation or generalization. Dictionary changes occur only after long-term statistical confirmation;
-    sleep does not make the associative dictionary rapidly plastic.
+  title: MAX path
+  text: With MAX, repeated selective readout can expose the strongest eligible contributor and then the next eligible
+    contributor. This creates a ranked native-language stream without requiring global LTM1 serialization.
+- type: principle
+  title: SUM path
+  text: With SUM, repeated independently controlled projections create a system of linear measurements. If the projection
+    system has sufficient rank, the selected contributors can be recovered by an external decoder. The decoder,
+    not Transformer, performs the inversion.
+- type: principle
+  title: Purpose of reconstruction
+  text: Recovering internal LTM1 node states is a means for constructing an efficient native communication language
+    between LTM1, Transformer, and LTM2. It is not itself the persistent object stored in LTM2 and is not a requirement to serialize the complete state of LTM1.
+- type: definition
+  title: Transformer composition
+  text: Transformer receives exported LTM1 atoms and combines them into contextual STM chains. Most semantic relations
+    are themselves LTM1 atoms; only a very small structural-link alphabet is expected.
+- type: definition
+  title: Contextual four-tuple
+  text: The working local composition is object, context, previous, next. Context is normally one or two existing
+    LTM1 links. Previous and next are represented by the STM chain topology rather than duplicated as semantic fields.
+- type: principle
+  title: Return path
+  text: Transformer places the completed construction directly into STM. STM-node activation emits MSG2(amplitude,
+    sequence_number, operation). For UPDATE, the operation is UPDATE; the Sequencer is unnecessary because chain
+    boundaries and order are already complete.
+- type: principle
+  title: Match-gated LTM2 write
+  text: UPDATE excitation propagates only through LTM1. A receiving node becomes a candidate, and only a confirmed
+    associative match may participate in the LTM2 composition write.

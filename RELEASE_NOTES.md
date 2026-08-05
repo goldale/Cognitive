@@ -1,24 +1,14 @@
-# Release Notes — cognitive-0.3.49
+# Release Notes — cognitive-0.3.50
 
-## Canonical naming migration
+## Native LTM1 language and local MSG2 operations
 
-The architecture now uses only the following canonical spellings:
-
-- `LTM1`
-- `LTM2`
-- `MSG1`
-- `MSG2`
-
-All legacy hyphenated and lowercase variants are no longer permitted in project text or generated documentation.
-
-## Definition-level alphabetical index
-
-- Every textual `definition` block receives a stable HTML anchor.
-- The alphabetical index includes direct links to definitions in chapter text.
-- Canonical architecture definitions remain separately linked to the Canonical Architecture Model.
-- Token Registry entries now link to the exact token definition row rather than to the beginning of the registry.
-
-## Canonical architecture source
-
-- The Master Architecture Diagram YAML is updated to version 0.3.49 and remains the canonical source.
-- No PNG, SVG, or PDF architecture diagram is generated in this release.
+- `MSG2` is now canonically `MSG2(amplitude, sequence_number, operation)`.
+- Initial operations are `READ` and `UPDATE`; operation is interpreted locally by the receiving `LTM1` node.
+- STM-node activation remains the only mechanism that emits `MSG2`.
+- READ and UPDATE may coexist within one STM structure.
+- Both operations excite and propagate exclusively through the persistent `LTM1` graph.
+- UPDATE is match-gated: an UPDATE message requests associative matching and may reach `LTM2` only after a confirmed match.
+- Transformer constructs UPDATE STM chains directly; Sequencer is not used because starts, ends, ordering, context, previous, and next are already determined.
+- A dedicated architecture section defines how controlled `LTM1` activity and repeated MAX/SUM Memory Vector readouts export the native associative-atom language to Transformer.
+- The export mechanism is explicitly distinguished from serialization of the complete `LTM1` state.
+- Canonical YAML, terminology, contracts, invariants, HTML documentation, and index are regenerated and consistency-audited.

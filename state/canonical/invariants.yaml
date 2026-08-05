@@ -43,11 +43,12 @@ invariants:
   statement: The Sequencer assigns a position number to every node of the linear STM Sequence.
   severity: release_blocking
 - id: INV_014
-  statement: Every active Sequence node initiates READ by emitting MSG2(amplitude, sequence_number) through its
-    permanent projection to the corresponding LTM input node.
+  statement: Every active STM node emits MSG2(amplitude, sequence_number, operation); STM-node activation is the
+    only MSG2 emission mechanism.
   severity: release_blocking
 - id: INV_015
-  statement: Every MSG2 propagates exclusively through the persistent associative graph stored in LTM1.
+  statement: Every MSG2, whether READ or UPDATE, propagates exclusively through the persistent associative graph
+    stored in LTM1.
   severity: release_blocking
 - id: INV_016
   statement: READ never creates temporary associative connections.
@@ -62,4 +63,31 @@ invariants:
 - id: INV_019
   statement: For deterministic READ, readout selection is based on non-degenerate Memory Vector entropy over representative
     LTM states and event queries; stochastic READ additionally requires noise-aware mutual-information analysis.
+  severity: release_blocking
+- id: INV_020
+  statement: The MSG2 operation field is interpreted locally by each receiving LTM1 node; no global STM READ or
+    UPDATE mode is required.
+  severity: release_blocking
+- id: INV_021
+  statement: READ and UPDATE messages may be emitted concurrently by different nodes of one STM structure.
+  severity: release_blocking
+- id: INV_022
+  statement: An UPDATE operation designates an associative-match request, not an immediate LTM2 write.
+  severity: release_blocking
+- id: INV_023
+  statement: Only a confirmed associative match may mark an LTM1 atom as participating in an LTM2 update.
+  severity: release_blocking
+- id: INV_024
+  statement: UPDATE excitation propagates through the same persistent LTM1 graph as READ excitation.
+  severity: release_blocking
+- id: INV_025
+  statement: During UPDATE, the Sequencer is not invoked because Transformer directly constructs STM chains with
+    fully defined starts, ends, order, and structural links.
+  severity: release_blocking
+- id: INV_026
+  statement: The native communication language exported to Transformer is generated from selected LTM1 associative
+    atoms by controlled excitation and repeated Memory Vector readout.
+  severity: release_blocking
+- id: INV_027
+  statement: Native-language export does not require serializing the complete LTM1 state.
   severity: release_blocking

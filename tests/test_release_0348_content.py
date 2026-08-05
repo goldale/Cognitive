@@ -6,7 +6,7 @@ def test_read_contract_0348():
     c=yaml.safe_load((ROOT/"state/canonical/contracts.yaml").read_text())
     read=next(x for x in c["operations"] if x["id"]=="OP_READ")
     joined=" ".join(read["stages"])
-    assert "MSG2(amplitude, sequence_number)" in joined
+    assert "MSG2(amplitude, sequence_number, READ)" in joined
     assert "persistent LTM1 associative graph" in joined
     assert set(read["candidate_readout_operators"])=={"MAX","SUM"}
     assert "entropy" in read["selection_metric"]

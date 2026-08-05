@@ -14,8 +14,8 @@ terms:
     long-term-memory state to the latest Sequencer chain. Individual coordinates have no predefined semantics.
   term: Memory Vector
 - definition: The non-mutating operation in which every node of the latest STM Sequencer chain emits MSG2(amplitude,
-    sequence_number), MSG2 propagates exclusively through the persistent LTM1 associative graph, and a readout
-    operator produces the Memory Vector.
+    sequence_number), MSG2 propagates exclusively through the persistent LTM1 associative graph, and a readout operator
+    produces the Memory Vector.
   term: READ
 - definition: The Associative Memory operation that incorporates a Semantic Representation into Memory State and
     returns no Memory Vector.
@@ -91,18 +91,33 @@ terms:
 - term: MSG1
   definition: The element-LTM1 message type operating exclusively in the MSG1 orthogonal state subspace.
 - term: MSG2
-  definition: The completed-episode LTM message type carrying per-element contextual data and Transformer-defined
-    causal topology in the MSG2 orthogonal state subspace.
+  definition: The STM-emitted LTM message MSG2(amplitude, sequence_number, operation). Its operation field initially
+    supports READ and UPDATE. Every MSG2 excites LTM1 and propagates only through the persistent LTM1 graph; UPDATE
+    participation in LTM2 is permitted only after a confirmed associative match.
 - term: Orthogonal Message-Specific State Subspace
   definition: The portion of LTM vertex and connection state activated and updated exclusively by one message type.
 - term: Associative Retrieval Wave
   definition: A repeated local match-and-transition process confined to one message-specific state subspace.
 - term: Sequence
-  definition: A directed linear STM activation chain produced by the Sequencer; every node is assigned a position
-    number that is carried by MSG2 during READ.
+  definition: A directed linear STM activation chain. External input chains are produced by the Sequencer; UPDATE
+    chains are constructed directly by Transformer with already defined starts, ends, order, and structural links.
 - term: Memory Vector Readout
   definition: The fixed dimensionality-reduction stage that maps the distributed MSG2 response to Memory Vector
     cells using an experimentally selected operator.
 - term: Readout Entropy
   definition: The entropy of Memory Vectors over a representative distribution of LTM states and Event Queries;
     for deterministic READ it is the primary information-density metric for comparing readout operators.
+- term: MSG2 Operation
+  definition: The per-message local instruction carried by MSG2. Initial values are READ and UPDATE; the operation
+    is interpreted by the receiving LTM1 node.
+- term: Native LTM1 Language
+  definition: The system-internal vocabulary of associative atoms exported from selected LTM1 activity to Transformer
+    through controlled excitation and a sequence of Memory Vector readouts.
+- term: Associative Match
+  definition: The local confirmation that an LTM1 candidate is compatible with the object and its context; only
+    confirmed matches may participate in an LTM2 update.
+- term: Context
+  definition: One or two existing LTM1 links used to constrain and disambiguate the associative match of an object.
+- term: Contextual Four-Tuple
+  definition: The working UPDATE unit consisting of object, context, previous, and next; previous and next are realized
+    by the STM chain structure.
