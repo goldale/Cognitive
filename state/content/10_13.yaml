@@ -2,31 +2,30 @@ kind: T_ContentBlock
 id: S_10_13
 blocks:
 - title: Physical order is not a Logical Episode
-  text: The Input Buffer produces one branch-free linear observation stream. This physical order preserves
-    the sequence in which Cognitive receives events, but it does not define where a semantically coherent
-    Logical Episode begins or ends.
+  text: The Input Buffer produces one branch-free linear observation stream. This physical order preserves the sequence
+    in which Cognitive receives events, but it does not define where a semantically coherent Logical Episode begins
+    or ends.
   type: principle
 - text: E₁ → E₂ → E₃ → E₄ → E₅ → …
   type: formula
 - title: Logical Episode boundaries
-  text: The beginning and end of a Logical Episode are inferred from the combined semantic context of
-    the buffered stream. The logical beginning need not coincide with the physical beginning of the Input
-    Buffer.
+  text: The beginning and end of a Logical Episode are inferred from the combined semantic context of the buffered
+    stream. The logical beginning need not coincide with the physical beginning of the Input Buffer.
   type: definition
 - title: Hierarchical boundary detection
-  text: A specialized Episode Boundary Transformer normally analyzes the buffered stream and returns candidate
-    start and end boundaries together with confidence. If it cannot determine the boundaries with sufficient
-    confidence, the same task is delegated to the main Transformer, which makes the final boundary decision.
+  text: A specialized Episode Boundary Transformer normally analyzes the buffered stream and returns candidate start
+    and end boundaries together with confidence. If it cannot determine the boundaries with sufficient confidence,
+    the same task is delegated to the main Transformer, which makes the final boundary decision.
   type: principle
 - title: Boundary detection and final processing are distinct
-  text: Repeated boundary analysis and final processing of a completed Sequence are separate Transformer
-    operations. After both boundaries are known, the main Transformer processes the complete Sequence
-    and produces one contextual data vector for every participating element.
+  text: Repeated boundary analysis and final processing of a completed Sequence are separate Transformer operations.
+    After both boundaries are known, the main Transformer processes the complete Sequence and produces one contextual
+    data vector for every participating element.
   type: principle
 - title: Logical Episode processing path
-  description: The selected Input Buffer segment is represented as a linear Sequence in STM. The main
-    Transformer converts that temporal representation into a possibly branched causal episode graph and
-    integrates it into the same physical LTM through MSG2.
+  description: The selected Input Buffer segment is represented as a linear Sequence in STM. The main Transformer
+    converts that temporal representation into a possibly branched causal episode graph and integrates it into the
+    same physical LTM through MSG2.
   direction: TB
   edges:
   - flow: information
@@ -68,24 +67,25 @@ blocks:
   size: standard
   type: diagram
 - title: Canonical consolidation unit
-  text: The canonical unit integrated into LTM through MSG2 is the completed Sequence selected by the
-    inferred Logical Episode boundaries, together with the main Transformer output that defines per-element
-    contextual data and causal graph topology.
+  text: The canonical unit integrated into LTM through MSG2 is the completed Sequence selected by the inferred Logical
+    Episode boundaries, together with the main Transformer output that defines per-element contextual data and causal
+    graph topology.
   type: principle
 - title: Sequence
-  text: A completed Sequence determines the set of vertices belonging to one Logical Episode and preserves
-    their original temporal order in STM. It does not determine the topology of the episode graph.
+  text: A completed Sequence determines the set of vertices belonging to one Logical Episode and preserves their
+    original temporal order in STM. It does not determine the topology of the episode graph.
   type: definition
 - title: Temporal-to-causal transformation
-  text: The main Transformer determines directed causal relations between the corresponding vertices.
-    The resulting episode graph may be branched, convergent, divergent, or disconnected and is not required
-    to preserve the linear topology of the Sequence.
+  text: The main Transformer determines directed causal relations between the corresponding vertices. The resulting
+    episode graph may be branched, convergent, divergent, or disconnected and is not required to preserve the linear
+    topology of the Sequence.
   type: principle
 - text: 'STM Sequence: A → B → D → E    ⇒    LTM episode graph: A → B, A → D, D → E'
   type: formula
 - title: Sequence lifetime
-  text: The Sequence remains active in STM until the completed Logical Episode has been successfully integrated
-    into LTM.
+  text: The Sequence remains active in STM until the completed Logical Episode has been successfully committed to
+    LTM-2. After a successful commit, the beginning of the circular input buffer advances to the next Sequence,
+    making the committed Sequence no longer part of STM.
   type: principle
 - title: Architectural boundary
   items:

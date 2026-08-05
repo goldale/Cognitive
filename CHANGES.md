@@ -1,5 +1,12 @@
 # Changes
 
+## cognitive-0.3.46 — 2026-08-05
+
+- Canonical vertex-owned associative memory model and conservative dictionary evolution.
+- Stage-1 Input Buffer and STM Sequence-lifetime corrections.
+- LTM and STM added to the alphabetical index.
+
+
 ## cognitive-0.3.45 — 2026-08-05
 
 - Defined logical episode start and end as semantic boundaries independent of physical Input Buffer boundaries.

@@ -1,0 +1,99 @@
+kind: T_ContentBlock
+id: S_10_15
+section_id: S_10_15
+blocks:
+- type: definition
+  title: Canonical vertex model
+  text: A vertex is an identifier of a concept in the associative dictionary and a point of long-term statistical
+    observation of its use.
+- type: diagram
+  title: Vertex-owned persistent state
+  description: Each vertex owns the persistent state associated with one associative concept.
+  direction: TB
+  size: standard
+  nodes:
+  - id: vertex
+    label: Vertex
+    kind: subsystem
+  - id: identity
+    label: Concept Identity
+    kind: data
+  - id: edges
+    label: Bounded Edge List
+    kind: storage
+  - id: search
+    label: Local Edge Search
+    kind: control
+  - id: stats
+    label: Usage Statistics
+    kind: state
+  edges:
+  - from: vertex
+    to: identity
+    label: identifies
+    flow: information
+  - from: vertex
+    to: edges
+    label: owns
+    flow: information
+  - from: edges
+    to: search
+    label: searched by
+    flow: control
+  - from: vertex
+    to: stats
+    label: owns
+    flow: information
+  readability_priority: true
+  proportionality_priority: true
+- type: list
+  items:
+  - Each vertex owns a bounded Edge List, which constitutes the persistent associative memory of the concept.
+  - Each vertex provides a local search function for locating relationships within its Edge List.
+  - Each vertex owns long-term Usage Statistics accumulated from the concept’s participation in completed Logical
+    Episodes.
+- type: principle
+  title: Bounded Edge List
+  text: The Edge List grows while free capacity remains. During sleep, conservative offline maintenance consolidates,
+    merges, weakens, or removes edges and thereby restores free capacity for subsequent operation. Emergency replacement
+    at saturation may exist as an implementation safeguard, but it is not the primary memory-maintenance mechanism.
+- type: principle
+  title: Transient semantic-search paths
+  text: The complete multi-hop semantic-search path is never stored as a persistent memory structure. Local Edge
+    Search returns transient matching edges for the current retrieval wave. The persistent source of truth remains
+    the bounded Edge List owned by each vertex.
+- type: principle
+  title: Usage Statistics
+  text: Usage Statistics summarize the long-term use of the concept across completed Logical Episodes. They may
+    characterize activation frequency, temporal distribution, contextual use, coactivation patterns, contradictory
+    evidence, and persistent internal or cross-concept regularities. They do not preserve complete Logical Episodes
+    or transient multi-hop paths.
+- type: heading
+  level: 3
+  text: Associative Dictionary Evolution
+- type: principle
+  title: Concept Differentiation
+  text: A previously broad concept may differentiate into multiple independently meaningful concepts when long-accumulated
+    Usage Statistics reveal stable and repeatedly confirmed distinctions. For example, an initially broad concept
+    such as chair may differentiate into chair, armchair, and stool.
+- type: principle
+  title: Concept Generalization
+  text: Multiple existing concepts may support creation of a new higher-level concept when long-accumulated Usage
+    Statistics reveal a stable shared semantic structure. Differentiation and generalization are complementary processes
+    of associative-dictionary evolution.
+- type: warning
+  title: Conservative dictionary evolution
+  text: The associative dictionary is one of the most conservative structures of the cognitive architecture. Although
+    creating a vertex may be inexpensive in hardware, dictionary modifications are intentionally rare and depend
+    on statistics accumulated over many independent Logical Episodes and multiple sleep cycles. A single observation
+    or Logical Episode must not directly create, split, or generalize a concept.
+- type: principle
+  title: New vertex formation
+  text: A new vertex is a new entry in the associative dictionary. It may represent a previously unknown concept,
+    a differentiated concept, or a new generalizing concept. It is never created merely as an additional storage
+    container. Any increase in memory capacity is a secondary consequence of semantic development.
+- type: principle
+  title: Sleep-time analysis
+  text: Sleep may analyze Usage Statistics, maintain bounded Edge Lists, and form or re-evaluate conservative candidates
+    for concept differentiation or generalization. Dictionary changes occur only after long-term statistical confirmation;
+    sleep does not make the associative dictionary rapidly plastic.

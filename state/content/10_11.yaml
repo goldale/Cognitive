@@ -2,41 +2,40 @@ kind: T_ContentBlock
 id: S_10_11
 blocks:
 - title: Epistemic status
-  text: Working Stage-1 architectural hypothesis. It fixes the present discussion state without claiming
-    that the eventual biological or hardware implementation is already known. Later evidence may revise
-    the hypothesis only through an explicit release-level architectural change.
+  text: Working Stage-1 architectural hypothesis. It fixes the present discussion state without claiming that the
+    eventual biological or hardware implementation is already known. Later evidence may revise the hypothesis only
+    through an explicit release-level architectural change.
   type: warning
 - title: Stage-1 memory scope
-  text: The first stage defines Short-Term Memory and the semantic operation of the single physical Long-Term
-    Memory. The same physical LTM node and connection array also supports episodic operation through a
-    different message type and an orthogonal state subspace.
+  text: The first stage defines Short-Term Memory and the semantic operation of the single physical Long-Term Memory.
+    The same physical LTM node and connection array also supports episodic operation through a different message
+    type and an orthogonal state subspace.
   type: principle
 - title: Semantic LTM
-  text: Semantic LTM contains stable Items of the world, basic properties, and a small bounded set of
-    fundamental relations. Examples include chair–sit and bed–lie. At Stage 1 it is treated as effectively
-    immutable, analogous to the initially cloned Transformer.
+  text: Semantic LTM contains stable Items of the world, basic properties, and a small bounded set of fundamental
+    relations. Examples include chair–sit and bed–lie. At Stage 1 it is treated as effectively immutable, analogous
+    to the initially cloned Transformer.
   type: definition
 - items:
   - An Item may later acquire a formally defined attribute set.
   - An Item may have more than one basic relation, with an initial working limit of no more than eight.
   - Semantic LTM does not initially store the personal event sequences generated during operation.
-  - Semantic LTM is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support
-    READ only.
+  - Semantic LTM is not a Vector Database, Knowledge Graph, or GraphRAG system; such mechanisms may support READ
+    only.
   type: list
 - title: Semantically neutral STM
-  text: STM contains no objects, labels, addresses, or intrinsic Item attributes. Its nodes are semantically
-    neutral. Meaning arises only through the physical interaction of STM activity with Semantic LTM.
+  text: STM contains no objects, labels, addresses, or intrinsic Item attributes. Its nodes are semantically neutral.
+    Meaning arises only through the physical interaction of STM activity with Semantic LTM.
   type: principle
 - title: Physical topology of STM
-  text: STM is a fixed, fully connected, non-directed physical network. The physical connectivity is not
-    created, deleted, or oriented for each sequence. The state of excitation changes rapidly; the underlying
-    complete connectivity does not.
+  text: STM is a fixed, fully connected, non-directed physical network. The physical connectivity is not created,
+    deleted, or oriented for each sequence. The state of excitation changes rapidly; the underlying complete connectivity
+    does not.
   type: definition
 - title: Sequence
-  text: 'A Sequence is a directed linear activation graph formed within the fully connected STM from the
-    Input Buffer segment identified as one Logical Episode. It is a direct reflection of that segment:
-    every buffered element is represented by one activated STM node, and directed activation links preserve
-    the original input order.'
+  text: 'A Sequence is a directed linear activation graph formed within the fully connected STM from the Input Buffer
+    segment identified as one Logical Episode. It is a direct reflection of that segment: every buffered element
+    is represented by one activated STM node, and directed activation links preserve the original input order.'
   type: definition
 - text: Identified Input Buffer segment → directed linear STM Sequence
   type: formula
@@ -45,47 +44,45 @@ blocks:
   - A Sequence is linear and preserves the observed temporal order of the selected Input Buffer segment.
   - Its direction represents input order, not causal structure.
   - Different Sequences may reuse and overlap the same semantically neutral STM nodes.
-  - The Sequence remains active until the completed Logical Episode has been integrated into LTM.
+  - The Sequence remains active in STM until the completed Logical Episode has been successfully committed to LTM-2.
+    After a successful commit, the beginning of the circular input buffer advances to the next Sequence, making
+    the committed Sequence no longer part of STM.
   type: list
 - title: STM–Semantic LTM projection
   text: Every STM node has one permanent physical projection to an input point of Semantic LTM. This projection
     is a physical connection, not an address, pointer, identifier lookup, or table-based binding.
   type: principle
-- text: STM node excitation → fixed physical projection → Semantic LTM input excitation → massively parallel
-    propagation and semantic stabilization
+- text: STM node excitation → fixed physical projection → Semantic LTM input excitation → massively parallel propagation
+    and semantic stabilization
   type: formula
 - title: Transient semantic association
-  text: During one excitation, each active STM node is associated with semantic content only through the
-    response that its fixed LTM projection participates in producing. The STM node itself does not become
-    a chair, person, action, or other Item and retains no permanent semantic attribute after the excitation
-    ends.
+  text: During one excitation, each active STM node is associated with semantic content only through the response
+    that its fixed LTM projection participates in producing. The STM node itself does not become a chair, person,
+    action, or other Item and retains no permanent semantic attribute after the excitation ends.
   type: paragraph
 - title: Parallel interpretation
-  text: A request normally excites a distributed set of STM nodes, not one node. Their fixed projections
-    excite many Semantic LTM inputs in parallel. Semantic interpretation arises from the joint LTM response
-    to the complete active STM graph, while each active STM node remains physically coupled to one LTM
-    input for that excitation.
+  text: A request normally excites a distributed set of STM nodes, not one node. Their fixed projections excite
+    many Semantic LTM inputs in parallel. Semantic interpretation arises from the joint LTM response to the complete
+    active STM graph, while each active STM node remains physically coupled to one LTM input for that excitation.
   type: principle
 - title: Transformer boundary
-  text: The Transformer must receive a semantically interpretable representation equivalent in content
-    to an expression such as “Vasya sat on a chair,” not an uninterpreted sequence of neutral node symbols.
-    The exact projection from the stabilized Semantic LTM response to the canonical Memory Vector or another
-    Transformer-consumable representation remains an implementation and research question.
+  text: The Transformer must receive a semantically interpretable representation equivalent in content to an expression
+    such as “Vasya sat on a chair,” not an uninterpreted sequence of neutral node symbols. The exact projection
+    from the stabilized Semantic LTM response to the canonical Memory Vector or another Transformer-consumable representation
+    remains an implementation and research question.
   type: warning
 - title: READ interpretation
-  text: At Stage 1, READ is not an address lookup. It is parallel excitation from the active STM graph
-    through fixed physical projections into Semantic LTM, followed by propagation, competition, and stabilization
-    into a semantic representation suitable for the Transformer. READ remains non-mutating.
+  text: At Stage 1, READ is not an address lookup. It is parallel excitation from the active STM graph through fixed
+    physical projections into Semantic LTM, followed by propagation, competition, and stabilization into a semantic
+    representation suitable for the Transformer. READ remains non-mutating.
   type: principle
 - title: Single physical LTM
-  text: The architecture contains one physical LTM node and connection array. Semantic element processing
-    and completed-episode processing use different message types and orthogonal message-specific state
-    subspaces within that same LTM.
+  text: The architecture contains one physical LTM node and connection array. Semantic element processing and completed-episode
+    processing use different message types and orthogonal message-specific state subspaces within that same LTM.
   type: principle
 - title: Open questions
   items:
-  - What node and connection variables implement the transient linear Sequence without changing physical
-    STM topology?
+  - What node and connection variables implement the transient linear Sequence without changing physical STM topology?
   - How does the Episode Boundary Transformer estimate boundary confidence?
   - What exact encodings define MSG1 and MSG2 while preserving orthogonality?
   - How are concurrent associative waves scheduled and measured in hardware?

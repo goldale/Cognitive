@@ -238,4 +238,12 @@ digraph TokenGraph {
   "T_EpisodeBoundaryTransformer" [shape=ellipse];
   "T_MessageSpecificStateSubspace" [shape=ellipse];
   "T_AssociativeRetrievalWave" [shape=ellipse];
+  "T_AssociativeDictionary" [shape=ellipse];
+  "T_BoundedEdgeList" [shape=ellipse];
+  "T_UsageStatistics" [shape=ellipse];
+  "T_ConceptDifferentiation" [shape=ellipse];
+  "T_ConceptGeneralization" [shape=ellipse];
+  "T_LocalEdgeSearch" [shape=ellipse];
+  "T_LTM" [shape=ellipse];
+  "T_STM" [shape=ellipse];
 }

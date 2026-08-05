@@ -1,5 +1,14 @@
 {
-  "new_normative_exact_duplicates": 0,
-  "forbidden_model_hits": 0,
-  "alphabetical_index_terms": 4
+  "release": "0.3.46",
+  "validation": "passed",
+  "documentation_files": 208,
+  "exact_duplicate_long_texts": 0,
+  "duplicate_token_labels": {},
+  "obsolete_multiplexer_sources": [],
+  "alphabetical_index_checks": {
+    "LTM": true,
+    "STM": true,
+    "Usage Statistics": true,
+    "Bounded Edge List": true
+  }
 }

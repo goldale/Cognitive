@@ -45,11 +45,6 @@ components:
   roles:
   - sequential_multimodal_event_stream
   - implicit_temporal_order
-- kind: process
-  id: C_INPUT_MULTIPLEXER
-  name: Sequential Input Multiplexer
-  roles:
-  - mutex_protected_event_serialization
 - kind: subsystem
   id: C_STM
   name: Short-Term Memory

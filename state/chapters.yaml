@@ -381,6 +381,11 @@ chapters:
     title: Directed Episode Graph Storage and Connection Trace Lists
     order: 14
     content_file: content/10_14.yaml
+  - kind: T_Section
+    id: S_10_15
+    title: Vertex-Owned Associative Memory and Conservative Dictionary Evolution
+    order: 15
+    content_file: content/10_15.yaml
   layout: directory
 - kind: T_Chapter
   id: C_11

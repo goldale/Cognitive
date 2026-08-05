@@ -26,8 +26,8 @@ architectures:
   id: A_003
   title: Communication pipeline
   status: T_Implemented
-  summary: Communication is decomposed into T_PartialSerialization, T_Deserialization, T_ModelIntegration,
-    clarification, and T_ModelConflictResolution.
+  summary: Communication is decomposed into T_PartialSerialization, T_Deserialization, T_ModelIntegration, clarification,
+    and T_ModelConflictResolution.
   relations:
   - T_WorldModel -> T_PartialSerialization
   - T_PartialSerialization -> T_Channel
@@ -37,8 +37,8 @@ architectures:
   id: A_004
   title: Integrated evaluation and functional Self
   status: T_Implemented
-  summary: A trainable Integrated Evaluation function compares heterogeneous channels relative to goals,
-    memory, and context and contributes to action selection.
+  summary: A trainable Integrated Evaluation function compares heterogeneous channels relative to goals, memory,
+    and context and contributes to action selection.
   relations:
   - T_Observation -> T_GlobalEvaluation
   - T_GlobalEvaluation -> T_ObjectiveFunction
@@ -47,8 +47,8 @@ architectures:
   id: A_005
   title: Hybrid computation meta-architecture
   status: T_Implemented
-  summary: T_MetaArchitect allocates task operations among T_Algorithm, T_NeuralNetwork, and hybrid pipelines
-    and learns from observed utility.
+  summary: T_MetaArchitect allocates task operations among T_Algorithm, T_NeuralNetwork, and hybrid pipelines and
+    learns from observed utility.
   relations:
   - T_Question -> T_MetaArchitect
   - T_MetaArchitect -> T_ArchitectureDecision
@@ -58,8 +58,8 @@ architectures:
   id: A_006
   title: Cognitive lineage population
   status: T_Implemented
-  summary: Maintain multiple diverse T_CognitiveLineage classes while cloning high-performing systems
-    within each lineage.
+  summary: Maintain multiple diverse T_CognitiveLineage classes while cloning high-performing systems within each
+    lineage.
   relations:
   - T_CognitiveLineage -> T_CognitiveSystem
   - T_Evaluation -> T_CognitiveLineage
@@ -68,53 +68,51 @@ architectures:
   id: A_007
   title: Transformer and Associative Memory interface
   status: T_Planned
-  summary: A Transformer consumes a canonical Memory Vector produced by an independently evolving Associative
-    Memory and returns update evidence through an UPDATE_ONLY cycle.
+  summary: A Transformer consumes a canonical Memory Vector produced by an independently evolving Associative Memory
+    and returns update evidence through an UPDATE_ONLY cycle.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_008
   title: Canonical latent memory representation
   status: T_Planned
-  summary: Memory output is normalized and later decorrelated and sparsified by Representation Optimization
-    without changing stored knowledge.
+  summary: Memory output is normalized and later decorrelated and sparsified by Representation Optimization without
+    changing stored knowledge.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_009
   title: Three-dimensional cognitive stream model
   status: T_Accepted
-  summary: Preprocessing strategy is selected from Data Rate, Task Relevance, and Semantic Novelty relative
-    to current Memory State.
+  summary: Preprocessing strategy is selected from Data Rate, Task Relevance, and Semantic Novelty relative to current
+    Memory State.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_010
   title: Transformer as Semantic Teacher
   status: T_Accepted
-  summary: The Transformer produces semantic representations that teach Associative Memory; it is not
-    only a reasoning engine.
+  summary: The Transformer produces semantic representations that teach Associative Memory; it is not only a reasoning
+    engine.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_011
   title: Semantic Feedback Learning Pipeline
   status: T_Accepted
-  summary: Self-learning is a first-class architectural process coordinating READ, Transformer semantic
-    interpretation, and UPDATE.
+  summary: Self-learning is a first-class architectural process coordinating READ, Transformer semantic interpretation,
+    and UPDATE.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_012
   title: READ and UPDATE asymmetry
   status: T_Accepted
-  summary: READ alone produces Memory Vector; UPDATE changes Memory State only and never invokes READ
-    implicitly.
+  summary: READ alone produces Memory Vector; UPDATE changes Memory State only and never invokes READ implicitly.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_013
   title: Sequential multimodal Input Buffer
   status: T_Accepted
-  summary: A mutex-protected sequential multiplexer writes fixed-dimensional modality-neutral events into
-    the next Input Buffer element; permanent 1:1 projections transfer the ordered activation field into
-    STM.
+  summary: The Linear / Circular Input Buffer is itself a mutex-protected queue. External and internal sources enqueue
+    completed fixed-dimensional modality-neutral events directly into the next buffer element; permanent 1:1 projections
+    transfer the ordered activation field into STM.
   relations:
-  - External Sources -> Sequential Input Multiplexer
-  - Sequential Input Multiplexer -> Input Buffer
+  - External Sources -> Input Buffer
   - Input Buffer -> STM
   - STM -> Semantic LTM

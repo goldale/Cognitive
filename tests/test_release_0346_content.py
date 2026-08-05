@@ -5,7 +5,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def text(path):
     return path.read_text(encoding="utf-8")
 
-def test_release_0345_architecture():
+def test_release_0346_architecture():
     s13 = text(ROOT / "state/content/10_13.yaml")
     s14 = text(ROOT / "state/content/10_14.yaml")
     s12 = text(ROOT / "state/content/10_12.yaml")
@@ -19,5 +19,5 @@ def test_release_0345_architecture():
     assert "cross-stream causal" in s12.lower()
 
 def test_release_version():
-    assert 'version = "0.3.45"' in text(ROOT / "pyproject.toml")
-    assert "cognitive-0.3.45" in text(ROOT / "CHANGES.md")
+    assert 'version = "0.3.46"' in text(ROOT / "pyproject.toml")
+    assert "cognitive-0.3.46" in text(ROOT / "CHANGES.md")
