@@ -4,6 +4,7 @@ import html
 import re
 import shutil
 import subprocess
+import textwrap
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -75,7 +76,7 @@ def _render_inline(text: str) -> str:
     return escaped
 
 
-def _render_block(block: dict[str, Any]) -> str:
+def _render_block(block: dict[str, Any], figure_number: str | None = None) -> str:
     block_type = block.get("type")
     if block_type == "paragraph":
         return f"<p>{_render_inline(str(block.get('text', '')))}</p>"
@@ -91,16 +92,17 @@ def _render_block(block: dict[str, Any]) -> str:
         return f'<pre class="formula">{html.escape(str(block.get("text", "")))}</pre>'
     if block_type == "diagram":
         if block.get("nodes"):
-            return _render_structured_diagram(block)
+            return _render_structured_diagram(block, figure_number)
         return f'<pre class="diagram diagram-fallback">{html.escape(str(block.get("text", "")))}</pre>'
     if block_type == "image":
         src = html.escape(str(block.get("src", "")), quote=True)
         alt = html.escape(str(block.get("alt", "")), quote=True)
         caption = _render_inline(str(block.get("caption", "")))
         title = _render_inline(str(block.get("title", "")))
-        heading = f'<div class="diagram-heading"><strong>{title}</strong></div>' if title else ""
+        display_title = f'{figure_number}. {title}' if figure_number and title else title
+        heading = f'<div class="diagram-heading"><strong>{display_title}</strong></div>' if display_title else ""
         figcaption = f'<figcaption>{caption}</figcaption>' if caption else ""
-        return (f'<figure class="architecture-diagram imported-architecture-diagram">{heading}'
+        return (f'<figure id="figure-{_anchor_slug(str(block.get("title", block.get("alt", "figure"))))}" class="architecture-diagram imported-architecture-diagram">{heading}'
                 f'<a href="{src}" target="_blank" rel="noopener"><img src="{src}" alt="{alt}"></a>'
                 f'{figcaption}</figure>')
     if block_type == "quote":
@@ -138,15 +140,38 @@ def _dot_quote(value: Any) -> str:
     return '"' + str(value).replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n') + '"'
 
 
-def _render_structured_diagram(block: dict[str, Any]) -> str:
+
+def _wrap_diagram_label(value: Any, width: int) -> str:
+    """Wrap every logical label line before Graphviz computes node geometry."""
+    logical_lines = str(value).splitlines() or [str(value)]
+    wrapped: list[str] = []
+    for line in logical_lines:
+        clean = " ".join(line.split())
+        if not clean:
+            if wrapped and wrapped[-1] != "":
+                wrapped.append("")
+            continue
+        wrapped.extend(textwrap.wrap(clean, width=max(12, width), break_long_words=False, break_on_hyphens=False) or [clean])
+    while wrapped and wrapped[-1] == "":
+        wrapped.pop()
+    return "\n".join(wrapped)
+
+
+def _svg_dimensions(svg: str) -> tuple[float, float]:
+    match = re.search(r'<svg[^>]*width="([0-9.]+)pt"[^>]*height="([0-9.]+)pt"', svg)
+    if not match:
+        return (0.0, 0.0)
+    return (float(match.group(1)), float(match.group(2)))
+
+def _render_structured_diagram(block: dict[str, Any], figure_number: str | None = None) -> str:
     title = str(block.get("title", "Architecture diagram"))
     description = str(block.get("description", title))
     direction = str(block.get("direction", "TB"))
     size = str(block.get("size", "standard"))
-    display_scale = float(block.get("display_scale", 1.0))
-    display_scale = min(1.0, max(0.25, display_scale))
+    # Diagrams are laid out at their final readable size. Post-layout scaling is forbidden.
+    display_scale = 1.0
     font_scale = float(block.get("font_scale", 1.0))
-    font_scale = min(3.0, max(0.5, font_scale))
+    font_scale = min(1.25, max(1.0, font_scale))
     if size not in {"compact", "standard", "medium", "large", "extra-large"}:
         size = "standard"
     if direction not in {"TB", "BT", "LR", "RL"}:
@@ -181,8 +206,9 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
         "context": "#53606b",
     }
 
-    node_fontsize = {"compact": 11.5, "standard": 12, "medium": 13, "large": 15, "extra-large": 17}[size]
-    edge_fontsize = {"compact": 9.5, "standard": 10, "medium": 10.5, "large": 12, "extra-large": 14}[size]
+    # 13 pt is not smaller than the 17 px document body text (12.75 pt).
+    node_fontsize = {"compact": 13, "standard": 13, "medium": 13, "large": 13, "extra-large": 13}[size]
+    edge_fontsize = {"compact": 13, "standard": 13, "medium": 13, "large": 13, "extra-large": 13}[size]
     node_fontsize *= font_scale
     edge_fontsize *= font_scale
     node_margin = {"compact": "0.12,0.07", "standard": "0.16,0.10", "medium": "0.19,0.12", "large": "0.24,0.16", "extra-large": "0.30,0.20"}[size]
@@ -191,6 +217,8 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
     nodesep = min(2.0, max(0.15, float(block.get("nodesep", default_nodesep))))
     ranksep = min(2.0, max(0.15, float(block.get("ranksep", default_ranksep))))
     graph_pad = min(0.5, max(0.05, float(block.get("graph_pad", 0.20))))
+    label_width = int(block.get("label_width", 26))
+    edge_label_width = int(block.get("edge_label_width", 22))
 
     lines = [
         "digraph G {",
@@ -204,7 +232,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
 
     def render_node(node: dict[str, Any]) -> str:
         node_id = str(node.get("id", ""))
-        label = str(node.get("label", node_id))
+        label = _wrap_diagram_label(node.get("label", node_id), label_width)
         kind = str(node.get("kind", "subsystem"))
         status = str(node.get("status", "current"))
         attrs = {
@@ -220,7 +248,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
 
     for index, group in enumerate(block.get("groups", [])):
         group_id = re.sub(r"[^a-zA-Z0-9_]", "_", str(group.get("id", f"group_{index}")))
-        group_label = str(group.get("label", group_id))
+        group_label = _wrap_diagram_label(group.get("label", group_id), max(18, label_width))
         lines.append(f"subgraph cluster_{group_id} {{")
         lines.append(f"label={_dot_quote(group_label)};")
         lines.append('color="#365b78"; penwidth="1.6"; style="rounded,filled"; fillcolor="#eef4f8"; margin="28";')
@@ -247,7 +275,7 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
         flow = str(edge.get("flow", "information"))
         attrs: dict[str, Any] = {"color": color_by_flow.get(flow, "#174a7e")}
         if edge.get("label"):
-            attrs["label"] = str(edge["label"])
+            attrs["label"] = _wrap_diagram_label(edge["label"], edge_label_width)
         if flow in {"feedback", "context"}:
             attrs["style"] = "dashed"
         rendered = ", ".join(f"{key}={_dot_quote(value)}" for key, value in attrs.items())
@@ -264,6 +292,20 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
             timeout=10,
         )
         svg = result.stdout
+        raw_width_pt, _raw_height_pt = _svg_dimensions(svg)
+        if raw_width_pt > 760 and not block.get("_auto_reflowed"):
+            # Recompose the same diagram instead of shrinking it. Long horizontal
+            # chains become vertical; explicit same-rank constraints are relaxed;
+            # labels are wrapped more tightly while preserving the 13 pt minimum.
+            reflowed = dict(block)
+            reflowed["_auto_reflowed"] = True
+            reflowed["direction"] = "TB"
+            reflowed["label_width"] = min(int(block.get("label_width", 26)), 18)
+            reflowed["edge_label_width"] = min(int(block.get("edge_label_width", 22)), 16)
+            reflowed["nodesep"] = min(float(block.get("nodesep", default_nodesep)), 0.28)
+            reflowed["ranksep"] = min(float(block.get("ranksep", default_ranksep)), 0.58)
+            reflowed["rank_groups"] = []
+            return _render_structured_diagram(reflowed, figure_number)
         svg = re.sub(r"<\?xml[^>]*>\s*", "", svg)
         svg = re.sub(r"<!DOCTYPE[^>]*>\s*", "", svg)
         # Graphviz restarts SVG element IDs for every diagram. Namespace them so
@@ -275,18 +317,24 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
             svg,
         )
         svg = svg.replace("<svg ", '<svg role="img" aria-label="' + html.escape(description, quote=True) + '" ' , 1)
+        svg_width_pt, _svg_height_pt = _svg_dimensions(svg)
+        # Portrait content width is about 570 pt. Landscape is an explicit exception
+        # for a single complex diagram, never a reason to reduce its font.
+        page_mode = "landscape" if svg_width_pt > 570 else "portrait"
+        display_title = f'{figure_number}. {title}' if figure_number else title
         return (
-            f'<figure class="architecture-diagram diagram-size-{size}" style="--diagram-scale:{display_scale:.3f}">'
-            f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
+            f'<figure id="figure-{_anchor_slug(title)}" class="architecture-diagram diagram-size-{size} diagram-page-{page_mode}" data-svg-width-pt="{svg_width_pt:.1f}">'
+            f'<div class="diagram-heading"><strong>{_render_inline(display_title)}</strong></div>'
             f'<div class="diagram-canvas">{svg}</div>'
             f'<figcaption>{_render_inline(description)}</figcaption>'
             '</figure>'
         )
     except (OSError, subprocess.SubprocessError):
         labels = " → ".join(str(node.get("label", node.get("id", ""))) for node in block.get("nodes", []))
+        display_title = f'{figure_number}. {title}' if figure_number else title
         return (
-            f'<figure class="architecture-diagram diagram-size-{size}" style="--diagram-scale:{display_scale:.3f}">'
-            f'<div class="diagram-heading"><strong>{_render_inline(title)}</strong></div>'
+            f'<figure id="figure-{_anchor_slug(title)}" class="architecture-diagram diagram-size-{size} diagram-page-portrait">'
+            f'<div class="diagram-heading"><strong>{_render_inline(display_title)}</strong></div>'
             f'<pre class="diagram diagram-fallback">{html.escape(labels)}</pre>'
             f'<figcaption>{_render_inline(description)}</figcaption>'
             '</figure>'
@@ -363,6 +411,7 @@ class DocumentationBuilder:
         created.extend(self._build_reference_pages(output))
         created.extend(self._build_canonical_reference(output))
         created.extend(self._build_alphabetical_index(output))
+        created.extend(self._build_list_of_figures(output))
         return created
 
     def _page_sequence(self) -> list[PageRef]:
@@ -402,6 +451,7 @@ class DocumentationBuilder:
             '<li><a href="tokens.html">Token Registry</a></li>'
             '<li><a href="research-state.html">Canonical YAML Model</a></li>'
             '<li><a href="style-guide.html">Documentation Style Guide</a></li>'
+            '<li><a href="list-of-figures.html">List of Figures</a></li>'
             '</ul>'
         )
         nav = _nav("index.html", "Documentation", None, "index.html", None, f"chapter{self.index_order:02d}/index.html")
@@ -436,10 +486,16 @@ class DocumentationBuilder:
     def _build_single_chapter(self, output: Path, chapter_index: int, chapter: dict[str, Any]) -> Path:
         sections = sorted(chapter["sections"], key=lambda value: value["order"])
         body_parts = []
+        figure_index = 0
         for section in sections:
             content = self.state.load_content(section["content_file"])
             body_parts.append(f'<section id="section-{section["order"]}"><h2>{chapter["order"]}.{section["order"]} {html.escape(section["title"])}</h2>')
-            body_parts.extend(_render_block(block) for block in content.get("blocks", []))
+            for block in content.get("blocks", []):
+                figure_number = None
+                if block.get("type") in {"diagram", "image"} and not (block.get("type") == "diagram" and not block.get("nodes")):
+                    figure_index += 1
+                    figure_number = f"Figure {chapter['order']}-{figure_index}"
+                body_parts.append(_render_block(block, figure_number))
             body_parts.append("</section>")
         previous, next_page = self._chapter_links(chapter_index, False)
         nav = _nav("index.html", "Documentation", previous, "index.html", next_page, f"chapter{self.index_order:02d}/index.html")
@@ -480,6 +536,14 @@ class DocumentationBuilder:
         created.append(index_path)
 
         chapter_refs = [ref for ref in pages if ref.chapter_index == chapter_index]
+        figure_offsets: dict[int, int] = {}
+        figure_index = 0
+        for section in sections:
+            figure_offsets[section["order"]] = figure_index
+            content = self.state.load_content(section["content_file"])
+            for block in content.get("blocks", []):
+                if block.get("type") in {"diagram", "image"} and not (block.get("type") == "diagram" and not block.get("nodes")):
+                    figure_index += 1
         for local_index, section in enumerate(sections):
             content = self.state.load_content(section["content_file"])
             previous = None
@@ -491,7 +555,15 @@ class DocumentationBuilder:
                 nxt = sections[local_index + 1]
                 next_page = (f'{chapter["order"]:02d}_{nxt["order"]:02d}.html', "Next")
             nav = _nav("index.html", "Up", previous, "../index.html", next_page, f"../chapter{self.index_order:02d}/index.html")
-            body = "".join(_render_block(block) for block in content.get("blocks", []))
+            rendered_blocks: list[str] = []
+            local_figure_index = figure_offsets[section["order"]]
+            for block in content.get("blocks", []):
+                figure_number = None
+                if block.get("type") in {"diagram", "image"} and not (block.get("type") == "diagram" and not block.get("nodes")):
+                    local_figure_index += 1
+                    figure_number = f"Figure {chapter['order']}-{local_figure_index}"
+                rendered_blocks.append(_render_block(block, figure_number))
+            body = "".join(rendered_blocks)
             page = _page(
                 f"Chapter {chapter['order']} · Section {chapter['order']}.{section['order']} · {section['title']}",
                 "../cognitive.css",
@@ -621,6 +693,47 @@ class DocumentationBuilder:
         return [chapter_path, compatibility_path]
 
 
+    def _build_list_of_figures(self, output: Path) -> list[Path]:
+        entries: list[str] = []
+        for chapter in self.chapters:
+            figure_index = 0
+            for section in sorted(chapter["sections"], key=lambda value: value["order"]):
+                content = self.state.load_content(section["content_file"])
+                for block in content.get("blocks", []):
+                    if block.get("type") not in {"diagram", "image"}:
+                        continue
+                    if block.get("type") == "diagram" and not block.get("nodes"):
+                        continue
+                    figure_index += 1
+                    title = str(block.get("title") or block.get("caption") or block.get("alt") or ("Architecture diagram" if block.get("type") == "diagram" else "Figure"))
+                    anchor = "figure-" + _anchor_slug(title)
+                    if chapter["layout"] == "single":
+                        href = f"chapter{chapter['order']:02d}.html#{anchor}"
+                    else:
+                        href = f"chapter{chapter['order']:02d}/{chapter['order']:02d}_{section['order']:02d}.html#{anchor}"
+                    number = f"Figure {chapter['order']}-{figure_index}"
+                    entries.append(
+                        f'<li><a href="{html.escape(href)}"><strong>{html.escape(number)}</strong> — {html.escape(title)}</a>'
+                        f'<span class="figure-location">Section {chapter["order"]}.{section["order"]}</span></li>'
+                    )
+        body = (
+            '<p>This generated list contains every diagram and imported figure in the architecture specification.</p>'
+            '<ol class="figure-list">' + ''.join(entries) + '</ol>'
+        )
+        nav = _nav("index.html", "Documentation", (f"chapter{self.index_order:02d}/index.html", "Alphabetical Index"), "index.html", None, f"chapter{self.index_order:02d}/index.html")
+        page = _page(
+            "List of Figures",
+            "cognitive.css",
+            nav,
+            '<h1>List of Figures</h1><p class="subtitle">Complete diagram index</p>',
+            body,
+            "Generated from all diagram and image blocks in the canonical YAML specification.",
+        )
+        path = output / "list-of-figures.html"
+        path.write_text(page, encoding="utf-8")
+        return [path]
+
+
     def _build_canonical_reference(self, output: Path) -> list[Path]:
         from . import yaml_profile
         canonical_dir = self.state.root / "canonical"
@@ -708,7 +821,11 @@ class DocumentationBuilder:
             "cognitive.css",
             nav,
             "<h1>Documentation Style Guide</h1>",
-            '<p>The documentation uses semantic HTML and a restrained ISO/RFC/W3C-inspired presentation.</p>' + style_body,
+            ('<p>The documentation uses semantic HTML and a restrained ISO/RFC/W3C-inspired presentation.</p>'
+            '<h2>Diagram Typography and Layout Rule</h2>'
+            '<p><strong>The font size used in diagrams shall never be smaller than the main body text of the document. Readability shall take precedence over compactness. If necessary, a diagram shall be enlarged or internally reorganized into multiple rows and/or columns while remaining a single diagram. Reorganization shall affect only the internal layout and shall not split the diagram into multiple independent figures. For exceptional complex cases, the complete page may be rendered in landscape orientation after internal reorganization has been attempted.</strong></p>'
+            '<h2>List of Figures Rule</h2>'
+            '<p>Every diagram shall display its figure number as part of its visible title. The same figure number and title shall appear unchanged in the generated global List of Figures and in references from the main text.</p>' + style_body),
             "Documentation Architecture Specification preview.",
         )
         style_path = output / "style-guide.html"

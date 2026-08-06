@@ -78,7 +78,7 @@ def test_diagram_readability_is_enforced() -> None:
     for path in sorted((ROOT / "state" / "content").glob("*.yaml")):
         content = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         for diagram in (block for block in content.get("blocks", []) if block.get("type") == "diagram"):
-            expected = "extra-large" if diagram.get("title") in {"Transformer-Centric Memory Architecture", "The Internal Language at the Center of Cognitive", "Asymmetric Transformer–Memory Interface", "One Possible READ/UPDATE Integration inside a Transformer"} else "standard"
+            expected = "extra-large" if diagram.get("title") in {"Transformer-Centric Memory Architecture", "The Internal Language at the Center of Cognitive", "Transformer–Memory Interface", "One Possible READ/UPDATE Integration inside a Transformer"} else "standard"
             assert diagram.get("size") == expected
             assert diagram.get("readability_priority") is True
             assert diagram.get("proportionality_priority") is True
@@ -86,9 +86,11 @@ def test_diagram_readability_is_enforced() -> None:
     css = (ROOT / "assets" / "cognitive.css").read_text(encoding="utf-8")
     assert ".diagram-size-standard" in css or ".architecture-diagram" in css
     assert "min-height: 12rem" not in css
-    assert "max-width: calc(100% * var(--diagram-scale, 1))" in css
+    assert "max-width: none" in css
+    assert "overflow-x: auto" in css
     source = (ROOT / "src" / "cogsys" / "docs.py").read_text(encoding="utf-8")
-    assert '"standard": 12' in source
+    assert '"standard": 13' in source
+    assert '"compact": 13' in source
     assert "diagram-size-{size}" in source
 
 

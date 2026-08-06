@@ -2,38 +2,37 @@ kind: T_Content
 section: S_02_01_ARCH
 blocks:
 - type: paragraph
-  text: Cognitive is organized around a Transformer-defined Internal Language. External information is interpreted
-    by Transformer before any memory operation, and all communication with Memory uses messages expressed in that
-    Internal Language.
+  text: Cognitive is organized around a Transformer-defined Internal Language. External information is interpreted by Transformer
+    before any memory operation, and all communication with Memory uses messages expressed in that Internal Language.
 - type: principle
   title: Internal Language as the system interface
-  text: Transformer determines and uses the Internal Language. Every cognitive subsystem communicates through that
-    language rather than through a subsystem-specific representation.
+  text: Transformer determines and uses the Internal Language. Every cognitive subsystem communicates through that language
+    rather than through a subsystem-specific representation.
 - type: definition
   title: Dialogue
-  text: A logically connected exchange of messages with the external world. Dialogue provides the continuity within
-    which Transformer requests memory retrieval and sends memory updates.
+  text: A logically connected exchange of messages with the external world. Dialogue provides the continuity within which
+    Transformer requests memory retrieval and sends memory updates.
 - type: definition
   title: Associative Memory
-  text: The memory subsystem that maintains experience-specific state and interacts with Transformer exclusively
-    through UPDATE input and READ output expressed in the Internal Language.
+  text: The memory subsystem that maintains experience-specific state and interacts with Transformer exclusively through UPDATE
+    input and READ output expressed in the Internal Language.
 - type: definition
   title: UPDATE
-  text: The operation by which Transformer sends a new Internal Language state to Associative Memory. UPDATE may
-    create or modify Memory State and the active Dialogue Context.
+  text: The operation by which Transformer sends a new Internal Language state to Associative Memory. UPDATE may create or
+    modify Memory State and the active Dialogue Context.
 - type: definition
   title: READ
-  text: The operation by which Associative Memory returns relevant serialized memory content to Transformer without
-    modifying persistent Memory State.
+  text: The operation by which Associative Memory returns relevant serialized memory content to Transformer without modifying
+    persistent Memory State.
 - type: definition
   title: Dialogue Context (D-Context)
-  text: The evolving state of one Dialogue maintained only inside Associative Memory. The first UPDATE creates the
-    D-Context, later UPDATE operations extend it, and READ uses it to select relevant memory content.
+  text: The evolving state of one Dialogue maintained only inside Associative Memory. The first UPDATE creates the D-Context,
+    later UPDATE operations extend it, and READ uses it to select relevant memory content.
 - type: diagram
   title: Transformer-Centric Memory Architecture
-  description: External Request enters Preprocessing. The semantic response is generated in the central Transformer
-    stage, which exchanges READ and UPDATE messages with Associative Memory through the Internal Language. Postprocessing
-    generates the final form of the External Response.
+  description: External Request enters the Transformer through its internal Preprocessing stage. The Transformer generates
+    the semantic response and exchanges READ and UPDATE messages with Memory through the Internal Language. Its internal Postprocessing
+    stage generates the final form of the External Response.
   direction: TB
   size: extra-large
   font_scale: 3.0
@@ -110,10 +109,11 @@ blocks:
     - memory
 - type: diagram
   title: One Possible READ/UPDATE Integration inside a Transformer
-  description: An implementation-oriented illustration. At the Transformer layer where UPDATE is issued, the main
-    hidden stream continues while Associative Memory processes UPDATE within its D-Context and returns READ content
-    into additional hidden nodes. Subsequent Transformer layers integrate the two streams. The exact fusion mechanism
-    remains implementation-dependent.
+  description: An implementation-oriented illustration. Earlier layers, the UPDATE extraction point, the continuing main hidden
+    stream, additional hidden nodes carrying the READ response, and subsequent implementation-dependent integration all remain
+    inside the Transformer. UPDATE is sent directly to D-Context processing inside Associative Memory; the selected READ response
+    returns to the Transformer as additional hidden nodes. The exact extraction, reinjection, and fusion mechanisms remain
+    implementation-dependent.
   direction: TB
   size: extra-large
   readability_priority: true
@@ -136,13 +136,12 @@ blocks:
 
       Representation'
     kind: state
-  - id: memory
-    label: Associative Memory
-    kind: storage
   - id: d_context
     label: 'D-Context
 
-      UPDATE Processing · READ Selection'
+      UPDATE Processing · READ Selection
+
+      inside Associative Memory'
     kind: state
   - id: read_nodes
     label: 'Additional Hidden Nodes
@@ -167,13 +166,9 @@ blocks:
     label: primary path continues
     flow: information
   - from: update_layer
-    to: memory
+    to: d_context
     label: UPDATE
     flow: interface
-  - from: memory
-    to: d_context
-    label: process inside memory
-    flow: context
   - from: d_context
     to: read_nodes
     label: READ
@@ -191,14 +186,18 @@ blocks:
     label: integrated representation
     flow: information
   groups:
-  - id: associative_memory
-    label: Associative Memory
+  - id: transformer
+    label: Transformer
     nodes:
-    - memory
-    - d_context
+    - prior_layers
+    - update_layer
+    - main_stream
+    - read_nodes
+    - integration
+    - integrated
   rank_groups:
   - - main_stream
-    - memory
+    - d_context
   - - main_stream
     - read_nodes
   ranksep: 0.55
@@ -224,10 +223,9 @@ blocks:
     - Associative Memory updates D-Context and changes Memory state.
 - type: principle
   title: Asymmetric Transformer entry points
-  text: External messages enter through early Transformer interpretation. Serialized memory content returns through
-    a deeper Memory Reinjection Point because it is already expressed in the Internal Language and does not require
-    another translation pass.
+  text: External messages enter through earlier Transformer processing. READ extraction, READ response reinjection, and UPDATE
+    extraction may occur at distinct layers. Their optimal placement is implementation-dependent and is the subject of RS-0011.
 - type: note
-  title: Depth hypothesis
-  text: The reinjection point is provisionally expected to lie approximately 20–30% of Transformer depth after the
-    extraction point. This value is an experimental starting range, not a universal constant.
+  title: RS-0011 layer-placement question
+  text: The architecture does not prescribe a numerical depth offset. RS-0011 will investigate at which Transformer layer
+    or layers READ extraction, READ response reinjection, and UPDATE extraction should occur.

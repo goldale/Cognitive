@@ -10,5 +10,5 @@ def test_all_architecture_diagrams_use_section_10_1_reference_size():
             if block.get('type') == 'diagram':
                 diagrams.append((path.name, block.get('title'), block.get('size')))
     assert diagrams
-    exceptions = {'Transformer-Centric Memory Architecture', 'The Internal Language at the Center of Cognitive', 'Asymmetric Transformer–Memory Interface', 'One Possible READ/UPDATE Integration inside a Transformer'}
+    exceptions = {'Transformer-Centric Memory Architecture', 'The Internal Language at the Center of Cognitive', 'Transformer–Memory Interface', 'One Possible READ/UPDATE Integration inside a Transformer'}
     assert all(size == ('extra-large' if title in exceptions else 'standard') for _, title, size in diagrams), diagrams

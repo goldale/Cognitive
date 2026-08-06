@@ -8,8 +8,8 @@ def diagrams(section):
 
 
 def test_asymmetric_transformer_memory_interface_has_two_entry_points():
-    d = next(x for x in diagrams("03_02") if x.get("title") == "Asymmetric Transformer–Memory Interface")
-    assert d["direction"] == "LR"
+    d = next(x for x in diagrams("03_02") if x.get("title") == "Transformer–Memory Interface")
+    assert d["direction"] == "TB"
     assert d["size"] == "extra-large"
     node_ids = {node["id"] for node in d["nodes"]}
     assert {"early", "read", "stm", "memory", "serialize", "readmsg", "deep", "update"} <= node_ids

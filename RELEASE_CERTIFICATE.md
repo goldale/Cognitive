@@ -1,6 +1,6 @@
-# Release Certificate — cognitive-0.4.06
+# Release Certificate — cognitive-0.4.14
 
-- Version: 0.4.06
+- Version: 0.4.14
 - Date: 2026-08-05
 - Baseline: cognitive-0.3.49.tgz
 - Schema validation: passed

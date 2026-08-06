@@ -1,4 +1,44 @@
+## Cognitive 0.4.14 — 2026-08-06
+
+- Reworked the diagram generator to lay out SVGs at their final readable font size without post-generation scaling.
+- Added automatic label wrapping and internal reflow of a single diagram when portrait width is exceeded.
+- Added automatic landscape-page classification for exceptional diagrams that remain too wide after reflow.
+- Relaxed same-rank constraints during automatic reflow rather than shrinking diagram typography.
+- Preserved the minimum 13 pt diagram font and verified all generated diagram widths.
+
+## Cognitive 0.4.14 — 2026-08-06
+
+- Added the figure number to the visible title of every generated diagram and imported figure.
+- Ensured visible figure titles and the generated List of Figures use the same numbering and title.
+- Strengthened the global List of Figures documentation rule.
+
 # Changes
+
+## Cognitive 0.4.14 — 2026-08-06
+
+- Applied a global layout correction to every generated architecture diagram.
+- Removed negative figure margins that allowed large diagrams to escape their document frames.
+- Kept full-size SVG text at or above the document body-text size while placing wide diagrams inside horizontally scrollable figure frames.
+- Reduced the excessive gap between each diagram title and its SVG content.
+- Standardized figure padding, caption spacing, and responsive behavior across all diagram size classes.
+
+## Cognitive 0.4.11 — 2026-08-06
+
+- Corrected Section 3.2 so differences between Internal Languages are not associated with semantic stability, compositionality, or other quality properties.
+- Defined RS-0011 as research into the optimal Transformer layer or layers for READ extraction, READ response reinjection, and UPDATE extraction.
+- Enlarged and internally recomposed the Asymmetric Transformer–Memory Interface as one multi-row diagram.
+- Added the global Diagram Typography and Layout Rule: diagram text shall not be smaller than document body text, and a diagram may be internally reorganized but not split.
+- Added a generated global List of Figures with links to every diagram.
+
+
+## cognitive-0.4.11 — 2026-08-06
+
+- Moved Preprocessing explicitly inside the large Transformer container in the Section 2.1 Transformer-Centric Memory Architecture diagram.
+- Re-composed the possible READ/UPDATE integration diagram so all Transformer processing layers and hidden-node integration remain inside one Transformer container.
+- Removed the redundant standalone Associative Memory node from that integration diagram.
+- Routed UPDATE directly to D-Context UPDATE Processing · READ Selection and returned READ as Additional Hidden Nodes.
+- Clarified that the Internal Language is jointly determined by Transformer topology, learned parameters, training data, and training objectives.
+- Recorded that identical architectures trained on the same dataset may develop different Internal Languages under different objectives, with beneficial or harmful effects on semantic and memory-interface properties.
 
 ## cognitive-0.4.06 — 2026-08-06
 

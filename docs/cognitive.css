@@ -271,84 +271,67 @@ th {
   a { color: inherit; }
 }
 
-/* Version 0.3.8: adaptive diagram sizing includes compact linear flows and staged normalization diagrams. */
+/* Global diagram layout: every figure remains inside the document frame.
+   Full-size SVGs are never reduced below the body-text size; wide diagrams
+   scroll inside their own frame instead of expanding beyond it. */
 .architecture-diagram {
-  margin: 1.6rem 0 2rem;
-  padding: 1rem 1rem 0.85rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.1rem 0 1.6rem;
+  padding: 0.65rem 0.75rem 0.75rem;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #fbfcfd;
   break-inside: avoid;
 }
 .diagram-heading {
-  margin: 0 0 0.7rem;
+  margin: 0 0 0.2rem;
+  padding: 0;
   color: var(--accent);
-  font: 1rem/1.35 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font: 1rem/1.25 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 .diagram-canvas {
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: visible;
-  text-align: center;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
+  scrollbar-width: thin;
 }
 .diagram-canvas svg {
   display: block;
-  width: calc(100% * var(--diagram-scale, 1));
-  max-width: calc(100% * var(--diagram-scale, 1));
+  width: auto;
+  max-width: none;
   height: auto;
-  margin: 0 auto;
+  margin: 0;
 }
-
-.diagram-size-compact {
+.diagram-size-compact,
+.diagram-size-standard,
+.diagram-size-medium,
+.diagram-size-large,
+.diagram-size-extra-large {
   margin-left: 0;
   margin-right: 0;
-  padding: 0.65rem 0.75rem 0.55rem;
 }
-.diagram-size-compact .diagram-canvas svg {
-  width: min(100%, 48rem);
-  max-height: 16rem;
-}
-
-.diagram-size-medium {
-  margin-left: max(-1.5vw, -1rem);
-  margin-right: max(-1.5vw, -1rem);
-  padding: 1rem 1rem 0.9rem;
-}
-.diagram-size-medium .diagram-canvas svg {
-  width: min(100%, 58rem);
-}
-
-.diagram-size-large {
-  margin-left: max(-4vw, -3rem);
-  margin-right: max(-4vw, -3rem);
-  padding: 1.25rem 1.25rem 1rem;
-}
-.diagram-size-large .diagram-canvas svg {
-  width: min(100%, 72rem);
-}
-.diagram-size-extra-large {
-  margin-left: max(-7vw, -5rem);
-  margin-right: max(-7vw, -5rem);
-}
-.diagram-size-extra-large .diagram-canvas svg {
-  width: min(100%, 84rem);
-}
-
 .architecture-diagram figcaption {
-  margin-top: 0.7rem;
+  margin-top: 0.45rem;
   color: var(--muted);
-  font: 0.88rem/1.5 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font: 0.88rem/1.45 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 .diagram-fallback { white-space: pre-wrap; }
 @media (max-width: 700px) {
-  .architecture-diagram { margin-left: -0.35rem; margin-right: -0.35rem; padding: 0.75rem 0.55rem; }
-  .diagram-size-compact .diagram-canvas svg { max-height: 14rem; }
-  .diagram-size-medium { margin-left: -0.45rem; margin-right: -0.45rem; padding: 0.8rem 0.5rem; }
-  .diagram-size-large { margin-left: -0.55rem; margin-right: -0.55rem; padding: 0.85rem 0.45rem; }
+  .architecture-diagram {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0.55rem 0.5rem 0.65rem;
+  }
 }
 @media print {
   .architecture-diagram { border-color: #999; background: white; }
-  .diagram-canvas svg { max-height: 21cm; }
+  .diagram-canvas { overflow: visible; }
+  .diagram-canvas svg { max-height: none; }
 }
 
 .document-author { margin: 2.5rem 0 1.5rem; font-size: 1.08rem; line-height: 1.7; }
@@ -379,4 +362,54 @@ th {
   max-width: 100%;
   height: auto;
   margin: 0 auto;
+}
+
+/* Cognitive 0.4.10: diagram readability and global figure navigation. */
+body { --document-body-font-size: 1rem; }
+/* SVG text size is fixed during Graphviz layout. Do not override it in CSS,
+   because doing so enlarges labels without enlarging their nodes. */
+.diagram-heading { font-size: var(--document-body-font-size); }
+.architecture-diagram figcaption { font-size: var(--document-body-font-size); }
+.figure-list { padding-left: 1.6rem; }
+.figure-list li {
+  margin: 0.65rem 0;
+  padding: 0.35rem 0;
+  border-bottom: 1px dotted var(--border);
+}
+.figure-location {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Cognitive 0.4.14: final-size diagram layout and landscape exception. */
+.architecture-diagram {
+  overflow: hidden;
+}
+.diagram-canvas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+}
+.diagram-canvas svg {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+/* SVGs are generated at final typography size. Width is constrained by layout,
+   not by post-layout transforms or CSS zoom. */
+.diagram-page-landscape {
+  --diagram-page-mode: landscape;
+}
+@media print {
+  .diagram-page-landscape {
+    page: diagram-landscape;
+    break-before: page;
+    break-after: page;
+  }
+  @page diagram-landscape {
+    size: A4 landscape;
+    margin: 14mm;
+  }
 }

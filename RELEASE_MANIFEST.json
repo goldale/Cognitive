@@ -1,6 +1,6 @@
 {
-  "release": "0.4.06",
-  "version": "0.4.06",
+  "release": "0.4.14",
+  "version": "0.4.14",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
   "master_architecture_diagram_yaml": "state/master-architecture-diagram.yaml",
