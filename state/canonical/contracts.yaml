@@ -1,62 +1,55 @@
 kind: T_Collection
 operations:
 - id: OP_READ
+  name: READ
+  owner: Associative Memory
+  inputs:
+  - Active Dialogue Context
+  - Current Transformer internal-language state
+  - MSG2 operation = READ
+  outputs:
+  - Serialized Memory Message
   effects: []
   forbidden_outputs:
-  - Updated Memory State
-  inputs:
-  - Current LTM State
-  - Latest STM Sequencer Chain
-  - MSG2 operation = READ
-  name: READ
-  outputs:
-  - Memory Vector
-  owner: Associative Memory
+  - Persistent LTM1 structural change
   stages:
-  - Reset Memory Vector output cells
-  - Assign or preserve Sequencer position numbers
-  - Emit MSG2(amplitude, sequence_number, READ) from every active Sequence node
-  - Inject MSG2 through permanent STM-to-LTM projections
-  - Propagate MSG2 exclusively through the persistent LTM1 associative graph
-  - Reduce the distributed response with MAX or SUM readout
-  - Return Memory Vector
-  - Clear transient MSG2 state
-  candidate_readout_operators:
-  - MAX
-  - SUM
-  selection_metric: For deterministic READ, maximize non-degenerate Memory Vector entropy over representative states
-    and events. For stochastic READ, maximize mutual information rather than raw entropy.
+  - Confirm that the Dialogue already has context
+  - Emit MSG2(amplitude, sequence_number, READ) from active STM states
+  - Propagate exclusively through persistent LTM1
+  - Select relevant LTM1 atoms and contexts
+  - Project to linked LTM2 episodes, compositions, and scenarios
+  - Serialize prior Dialogue content and long-term projection in the shared internal language
+  - Return a bounded message and clear transient activation
 - id: OP_UPDATE
-  effects:
-  - modifies LTM2 only after confirmed associative matches
-  forbidden_outputs:
-  - Memory Vector
-  implicit_operations_forbidden:
-  - READ
-  inputs:
-  - Current LTM State
-  - Transformer-constructed STM chains
-  - MSG2 operation = UPDATE
   name: UPDATE
-  outputs:
-  - Updated LTM2 composition
   owner: Associative Memory
+  inputs:
+  - Current Transformer internal-language state
+  - Active Dialogue Context or new Dialogue marker
+  - MSG2 operation = UPDATE
+  outputs:
+  - Created or extended Dialogue Context
+  - Updated LTM2 composition after confirmed matches
+  effects:
+  - modifies Dialogue Context and LTM2 after confirmed associative matches
+  forbidden_outputs:
+  - Waking structural modification of LTM1
   stages:
-  - Activate Transformer-constructed STM chains directly; Sequencer is not invoked
-  - Emit MSG2(amplitude, sequence_number, UPDATE) only through STM-node activation
-  - Propagate excitation exclusively through the persistent LTM1 associative graph
-  - Resolve each candidate locally by associative match using one or two existing LTM1 context links
-  - Admit only confirmed matches to the LTM2 composition update
-  - Preserve unresolved items without forcing an LTM1 atom creation
+  - Emit MSG2(amplitude, sequence_number, UPDATE) only through STM activation
+  - Propagate exclusively through persistent LTM1
+  - Resolve candidates locally using existing contexts
+  - Create initial Dialogue Context when this is the first exchange
+  - Extend Dialogue Context and LTM2 using confirmed matches
+  - Retain unresolved candidates for possible sleep-time learning
 pipeline:
   id: PROC_SFL
-  name: Semantic Feedback Learning Pipeline
+  name: Dialogue-Aware Shared-Language Memory Cycle
   stages:
   - External Input
-  - Associative Memory READ
-  - Memory Vector
-  - Transformer semantic reasoning
-  - Transformer semantic teaching
-  - Transformer-constructed STM chains over exported LTM1 atoms
+  - Transformer intermediate internal state
+  - 'First exchange: no READ; later exchange: Associative Memory READ'
+  - Serialized Memory Message
+  - Transformer processing
+  - New Transformer internal state
   - Associative Memory UPDATE
-  - Updated Memory State
+  - Created or extended Dialogue Context and LTM2

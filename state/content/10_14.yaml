@@ -3,8 +3,9 @@ id: S_10_14
 blocks:
 - type: principle
   title: Canonical scope
-  text: This section describes storage and retrieval of completed compositions. For the current MSG2 payload, native
-    LTM1 language export, local READ/UPDATE operation, and match-gated LTM2 write, Section 10.15 is canonical.
+  text: This section describes storage and retrieval of completed compositions. Section 10.1 is canonical for the
+    Dialogue-aware READ/UPDATE cycle and shared internal-language serialization; Section 10.15 is canonical for
+    local MSG2 interpretation and match-gated LTM2 write.
 - type: principle
   title: Single physical LTM
   text: LTM is one physical array of interacting memory vertices and connections. Semantic element processing and
@@ -30,9 +31,9 @@ blocks:
     subspaces remain unaffected.
 - type: principle
   title: Shared LTM1 propagation
-  text: READ and UPDATE MSG2 may propagate concurrently and coexist, but both excite and propagate exclusively through the same persistent
-    LTM1 associative graph. Operation-specific local effects remain distinguishable without creating an independent
-    propagation graph.
+  text: READ and UPDATE MSG2 may propagate concurrently and coexist, but both excite and propagate exclusively through
+    the same persistent LTM1 associative graph. Operation-specific local effects remain distinguishable without
+    creating an independent propagation graph.
 - type: formula
   text: one physical LTM = persistent LTM1 propagation substrate + operation-marked transient state + LTM2 matched
     compositions
@@ -67,9 +68,8 @@ blocks:
     conductor orientation and independent of the direction in which an activation currently propagates.
 - type: principle
   title: Transformer-defined graph topology
-  text: Transformer directly constructs completed STM chains from exported LTM1 associative atoms and a minimal
-    structural-link alphabet. The starts, ends, order, context, previous, and next are already defined, so the Sequencer
-    is not used during UPDATE.
+  text: Transformer constructs completed STM chains from internal-language representations. Starts, ends, order,
+    context, previous, and next are determined during processing, so the Sequencer is not invoked during UPDATE.
 - type: heading
   level: 3
   text: Connection-local Trace Lists

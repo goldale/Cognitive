@@ -66,17 +66,21 @@ architectures:
   - T_Communication -> T_CognitiveLineage
 - kind: T_ArchitectureDecision
   id: A_007
-  title: Transformer and Associative Memory interface
-  status: T_Planned
-  summary: A Transformer consumes a canonical Memory Vector produced by an independently evolving Associative Memory
-    and returns update evidence through an UPDATE_ONLY cycle.
-  relations: []
+  title: Transformer-specific shared internal-language memory interface
+  status: T_Accepted
+  summary: Associative Memory is initialized empty and learns exclusively from the selected internal representation
+    of its trained Transformer. Memory output is serialized in that same language.
+  relations:
+  - Transformer Intermediate Representation -> STM
+  - STM -> LTM1
+  - LTM1 and LTM2 -> Serialized Memory Message
+  - Serialized Memory Message -> Transformer
 - kind: T_ArchitectureDecision
   id: A_008
-  title: Canonical latent memory representation
-  status: T_Planned
-  summary: Memory output is normalized and later decorrelated and sparsified by Representation Optimization without
-    changing stored knowledge.
+  title: Stable internal-language interface representation
+  status: T_Accepted
+  summary: The memory interface uses a selected intermediate Transformer representation or a stable projection of
+    it. Layer choice and normalization are implementation-dependent and require empirical justification.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_009
@@ -87,56 +91,71 @@ architectures:
   relations: []
 - kind: T_ArchitectureDecision
   id: A_010
-  title: Transformer as Semantic Teacher
+  title: Transformer as internal-language source
   status: T_Accepted
-  summary: The Transformer produces semantic representations that teach Associative Memory; it is not only a reasoning
-    engine.
+  summary: The trained Transformer defines the shared internal language used by Transformer, STM, LTM1, and LTM2.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_011
-  title: Semantic Feedback Learning Pipeline
+  title: Dialogue-aware cognitive memory cycle
   status: T_Accepted
-  summary: Self-learning is a first-class architectural process coordinating READ, Transformer semantic interpretation,
-    and UPDATE.
+  summary: The first Dialogue exchange is processed without READ; its UPDATE creates Dialogue Context. Later cycles
+    use READ, Transformer processing, and UPDATE.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_012
-  title: READ and UPDATE asymmetry
+  title: READ and UPDATE in one shared language
   status: T_Accepted
-  summary: READ alone produces Memory Vector; UPDATE changes Memory State only and never invokes READ implicitly.
+  summary: READ and UPDATE are locally interpreted LTM1 operations operating in the same Transformer-defined internal
+    representation space. READ retrieves and serializes relevant memory; UPDATE extends memory and Dialogue context.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_013
-  title: Sequential multimodal Input Buffer
+  title: Transformer-mediated internal-language input path
   status: T_Accepted
-  summary: The Linear / Circular Input Buffer is itself a mutex-protected queue. External and internal sources enqueue
-    completed fixed-dimensional modality-neutral events directly into the next buffer element; permanent 1:1 projections
-    transfer the ordered activation field into STM.
+  summary: External and internal sources are interpreted by Transformer before semantic content enters STM. STM
+    receives ordered internal-language representations rather than raw external observations.
   relations:
-  - External Sources -> Input Buffer
-  - Input Buffer -> STM
+  - External Sources -> Transformer
+  - Transformer Intermediate Representation -> STM
   - STM -> LTM1
 - kind: T_ArchitectureDecision
   id: A_014
-  title: LTM2 READ and UPDATE through the LTM1 graph
+  title: Dialogue-aware READ and UPDATE through LTM1
   status: T_Accepted
-  summary: STM nodes emit MSG2(amplitude, sequence_number, operation). READ and UPDATE use the same persistent LTM1
-    propagation graph; operation is interpreted locally. UPDATE reaches LTM2 only through confirmed associative
-    matches.
+  summary: The first exchange of a Dialogue performs no READ. Its UPDATE creates Dialogue Context. Subsequent READ
+    and UPDATE messages use the same persistent LTM1 propagation graph and the same Transformer-defined internal
+    language.
   relations:
+  - Transformer Internal Language -> STM Node
   - STM Node -> MSG2
   - MSG2 -> LTM1 Associative Graph
-  - LTM1 Associative Graph -> Memory Vector Readout
+  - Relevant Dialogue Projection -> Serialized Memory Message
   - Confirmed Associative Match -> LTM2 Update
 - kind: T_ArchitectureDecision
   id: A_015
-  title: Native LTM1 language export through Memory Vector
+  title: Relevant memory serialization in shared internal language
   status: T_Accepted
-  summary: Controlled selection of LTM1 activity and repeated MAX or SUM readouts export associative atoms as the
-    native communication language consumed by Transformer. This procedure is distinct from serializing all LTM1
-    state.
+  summary: Memory does not create a native LTM1 language or generate an aggregated Memory Vector. It selects relevant
+    Dialogue Context and long-term-memory projections and serializes them in the internal language defined by the
+    trained Transformer.
   relations:
-  - LTM1 Associative Atoms -> Selective Excitation
-  - Selective Excitation -> Memory Vector Stream
-  - Memory Vector Stream -> Transformer
-  - Transformer -> STM Update Chains
+  - Dialogue Context -> Relevant Memory Selection
+  - LTM1 and LTM2 -> Dialogue Projection
+  - Relevant Memory Selection -> Serialized Memory Message
+  - Serialized Memory Message -> Transformer
+  text: The serialization procedure determines relevance, ordering, context, and termination. The semantic representation
+    space is inherited from the selected Transformer intermediate layer or its stable projection.
+- kind: T_ArchitectureDecision
+  id: A_016
+  title: Asymmetric internal-language extraction and memory reinjection
+  status: T_Accepted
+  summary: External input is translated into the shared internal language at an intermediate Transformer extraction
+    point. Serialized memory is already in that language and is reinjected deeper into integration and reasoning
+    layers, bypassing early external-form interpretation.
+  relations:
+  - External Input -> Early Transformer Interpretation
+  - Early Transformer Interpretation -> Internal-Language Extraction Point
+  - Serialized Memory Message -> Memory Reinjection Point
+  - Memory Reinjection Point -> Transformer Integration and Reasoning
+  text: A 20–30% later reinjection depth is a working experimental hypothesis, not a universal architectural constant.

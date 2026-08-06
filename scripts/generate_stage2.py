@@ -119,7 +119,7 @@ chapter2=['# Chapter 2 — Architecture Overview and Design Principles','',
  '> UPDATE never produces a Memory Vector. A new Memory Vector is generated only by a subsequent explicit READ.','']
 (docs_src/'CHAPTER_02.md').write_text('\n'.join(chapter2),encoding='utf-8')
 
-changes=['# CHANGES — cognitive 0.3.19','', 'This incremental release introduces a complete architectural refactoring around Semantic Feedback Learning.','', '## Architectural changes','']
+changes=['# CHANGES — cognitive 0.4.01','', 'This incremental release introduces a complete architectural refactoring around Semantic Feedback Learning.','', '## Architectural changes','']
 for p in principles: changes.append(f"- **{p['title']}** — {p['statement']}")
 changes += ['', '## Interface changes','', '- `READ(Memory State, Query) -> Memory Vector` is explicitly non-mutating.', '- `UPDATE(Memory State, Semantic Representation) -> Updated Memory State` modifies only Memory State.', '- UPDATE no longer has Question, Answer, hidden state, or Memory Vector as canonical outputs.', '', '## Generated documentation', '', '- Chapter 2 is regenerated from canonical YAML.', '- Section 10.1 is completely rewritten.', '- HTML navigation and the A–Z Index are regenerated.', '- Component and canonical-model references are regenerated.', '']
 (ROOT/'CHANGES.md').write_text('\n'.join(changes),encoding='utf-8')
@@ -130,8 +130,8 @@ for c in components:
 (docs_src/'COMPONENT_REFERENCE.md').write_text('\n'.join(comp),encoding='utf-8')
 
 # Update package/release version markers.
-pp=ROOT/'pyproject.toml'; txt=pp.read_text(); txt=txt.replace('version = "0.3.14"','version = "0.3.19"'); pp.write_text(txt)
-mk=ROOT/'Makefile'; txt=mk.read_text().replace('cognitive-systems-lab-0.3.14.tar.gz','cognitive-systems-lab-0.3.19.tar.gz'); mk.write_text(txt)
-br=ROOT/'scripts'/'build_release.sh'; txt=br.read_text().replace('cognitive-systems-lab-0.3.14.tar.gz','cognitive-systems-lab-0.3.19.tar.gz'); br.write_text(txt)
+pp=ROOT/'pyproject.toml'; txt=pp.read_text(); txt=txt.replace('version = "0.4.01"','version = "0.4.01"'); pp.write_text(txt)
+mk=ROOT/'Makefile'; txt=mk.read_text().replace('cognitive-systems-lab-0.4.01.tar.gz','cognitive-systems-lab-0.4.01.tar.gz'); mk.write_text(txt)
+br=ROOT/'scripts'/'build_release.sh'; txt=br.read_text().replace('cognitive-systems-lab-0.4.01.tar.gz','cognitive-systems-lab-0.4.01.tar.gz'); br.write_text(txt)
 
 print('Stage 2 canonical derivatives generated.')

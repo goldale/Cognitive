@@ -1,94 +1,88 @@
-kind: T_ContentBlock
-id: S_09_01
+kind: T_Content
+section: S_09_01
 blocks:
-- text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
-    and vulnerable to systematic distortion. The project generalizes this observation from human memory
-    to biological memory in organisms with developed nervous systems, while acknowledging that direct
-    measurement becomes increasingly difficult outside humans.
-  type: paragraph
-- title: Memory Architecture
-  description: Memory State combines persistent associative structure with dynamic short-term activation.
-    An explicit READ produces the canonical Memory Vector for the Transformer; Transformer output returns
-    to Memory State as feedback without generating another Memory Vector.
+- type: paragraph
+  text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
+    and vulnerable to systematic distortion. Cognitive therefore treats memory as an active model supporting present
+    processing rather than as a passive record store.
+- type: diagram
+  title: Memory Architecture in the Shared Internal Language
+  description: A continuing Dialogue activates LTM1 and linked LTM2 content. Memory selects relevant state and serializes
+    it in the same internal language used by Transformer.
   direction: TB
-  edges:
-  - flow: information
-    from: long
-    to: state
-  - flow: information
-    from: short
-    to: state
-  - flow: information
-    from: state
-    to: projection
-  - flow: information
-    from: projection
-    to: vector
-  - flow: interface
-    from: vector
-    label: stable public interface
-    to: transformer
-  - flow: feedback
-    from: transformer
-    label: output
-    to: answer
-  - flow: feedback
-    from: answer
-    label: changes memory state only; no Memory Vector
-    to: state
-  nodes:
-  - kind: data
-    id: answer
-    status: current
-    label: Transformer Output / Internal Observation
-  - kind: storage
-    id: long
-    status: current
-    label: Long-Term Associative Structure
-  - kind: subsystem
-    id: projection
-    status: current
-    label: Projection and Canonicalization
-  - kind: state
-    id: short
-    status: current
-    label: Short-Term Activation State
-  - kind: state
-    id: state
-    status: current
-    label: Memory State
-  - kind: subsystem
-    id: transformer
-    status: current
-    label: Transformer
-  - kind: interface
-    id: vector
-    status: current
-    label: Memory Vector
-  proportionality_priority: true
-  rank_groups:
-  - - long
-    - short
-  - - state
-  - - projection
-    - vector
-    - transformer
-  - - answer
-  readability_priority: true
   size: standard
-  type: diagram
-- title: Feedback invariant
-  text: Transformer output returns to Memory State as an internal observation. This feedback may change
-    short-term activation or other internal memory state, but it does not invoke Projection and does not
-    generate a new Memory Vector. A Memory Vector is produced only by a later explicit READ operation.
-  type: principle
-- title: Functional lossiness
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: dialogue
+    label: Active Dialogue Context
+    kind: state
+  - id: ltm1
+    label: 'LTM1
+
+      Associative Structure'
+    kind: storage
+  - id: ltm2
+    label: 'LTM2
+
+      Episodes and Scenarios'
+    kind: storage
+  - id: selection
+    label: Relevant Memory Selection
+    kind: subsystem
+  - id: serialization
+    label: Internal-Language Serialization
+    kind: interface
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+  - id: update
+    label: 'New Internal State
+
+      UPDATE'
+    kind: control
+  edges:
+  - from: dialogue
+    to: ltm1
+    label: READ quasi-query
+    flow: context
+  - from: ltm1
+    to: ltm2
+    label: matched projection
+    flow: information
+  - from: ltm1
+    to: selection
+    label: active atoms + contexts
+    flow: information
+  - from: ltm2
+    to: selection
+    label: episodes + scenarios
+    flow: information
+  - from: selection
+    to: serialization
+    label: ordered relevant content
+    flow: information
+  - from: serialization
+    to: transformer
+    label: shared internal language
+    flow: interface
+  - from: transformer
+    to: update
+    label: processing result
+    flow: learning
+  - from: update
+    to: dialogue
+    label: extend context
+    flow: feedback
+- type: principle
+  title: Shared-language invariant
+  text: Memory output is not translated into a separate representation. It is serialized in the same Transformer-derived
+    internal language used for READ and UPDATE.
+- type: hypothesis
+  title: Functional lossiness
   confidence: 0.78
-  text: Memory loss and reconstruction are partly selected because they improve integration and future
-    action, not only because biological storage is limited.
-  type: hypothesis
-- text: The relevant evolutionary objective is not historical fidelity. It is successful behavior under
-    resource constraints. A memory architecture that preserves fewer literal details but produces a more
-    usable model can outperform an exact archive.
-  type: paragraph
-section_id: S_04_01
+  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not
+    only because biological storage is limited.
+- type: paragraph
+  text: The relevant objective is not exhaustive historical fidelity. It is useful continuity, prediction, and action
+    under resource constraints.

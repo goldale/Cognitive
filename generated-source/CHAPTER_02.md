@@ -1,27 +1,17 @@
-# Chapter 2 — Architecture Overview and Design Principles
+# Chapter 2 — Transformer-Centric Architecture
 
-## 2.1 Canonical Architecture Overview
-
-The Transformer is both the **Semantic Reasoning Engine** and the **Semantic Teacher** of Associative Memory.
+The trained Transformer defines the shared internal language at a selected intermediate representation. Associative Memory begins empty and develops specifically for that Transformer.
 
 ```text
-External Input -> READ -> Memory Vector -> Transformer
-                                  |
-                                  v
-                      Semantic Representation
-                                  |
-                                  v
-                               UPDATE
-                                  |
-                                  v
-                            Memory State
+External Input -> Transformer Internal Language -> STM -> READ/UPDATE -> LTM1/LTM2
+                                             ^                         |
+                                             |--- serialized relevance-|
 ```
 
-## Canonical operation contracts
+## Dialogue-aware cycle
 
-| Operation | Inputs | Output | State effect |
-|---|---|---|---|
-| READ | Memory State, Query | Memory Vector | None |
-| UPDATE | Memory State, Semantic Representation | Updated Memory State | Modifies only Memory State |
+- First exchange: no READ; UPDATE creates Dialogue Context.
+- Continuing exchange: READ returns previous Dialogue content plus its projection onto long-term memory.
+- UPDATE stores the new internal state produced during Transformer processing.
 
-> UPDATE never produces a Memory Vector. A new Memory Vector is generated only by a subsequent explicit READ.
+Memory does not generate a separate Memory Vector language. It selects relevant information and serializes it in the shared internal language.

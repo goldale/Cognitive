@@ -19,5 +19,5 @@ def test_release_0347_architecture():
     assert "cross-stream causal" in s12.lower()
 
 def test_release_version():
-    assert 'version = "0.3.50"' in text(ROOT / "pyproject.toml")
+    assert 'version = "0.4.01"' in text(ROOT / "pyproject.toml")
     assert "cognitive-0.3.46" in text(ROOT / "CHANGES.md")

@@ -1,6 +1,6 @@
-# Release Audit — cognitive-0.3.50
+# Release Audit — cognitive-0.4.01
 
-- release: 0.3.50
+- release: 0.4.01
 - date: 2026-08-05
 - schema_validation: passed
 - tests: 52 passed

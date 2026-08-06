@@ -522,16 +522,45 @@ class DocumentationBuilder:
             terminology = yaml_profile.load(terminology_path)
             for item in terminology.get('terms', []):
                 entries.append((str(item.get('term', '')), '../canonical-model.html#term-' + _anchor_slug(str(item.get('term', ''))), 'Canonical architecture term'))
-        entries.sort(key=lambda item: item[0].casefold())
-        groups: dict[str, list[tuple[str, str, str]]] = {}
-        for entry in entries:
-            key = entry[0][0].upper() if entry[0] else "#"
+        # Consolidate duplicate labels into one semantic index entry with multiple targets.
+        # This prevents central terms such as Dialogue, Transformer, LTM1, and Memory Serialization
+        # from appearing several times merely because they are represented in chapters, definitions,
+        # Tokens, and canonical terminology.
+        consolidated: dict[str, dict[str, object]] = {}
+        for label, href, kind in entries:
+            normalized = label.strip().casefold()
+            if not normalized:
+                continue
+            item = consolidated.setdefault(normalized, {"label": label.strip(), "refs": []})
+            ref = (href, kind)
+            if ref not in item["refs"]:
+                item["refs"].append(ref)
+        ordered = sorted(consolidated.values(), key=lambda item: str(item["label"]).casefold())
+        groups: dict[str, list[dict[str, object]]] = {}
+        for entry in ordered:
+            label = str(entry["label"])
+            key = label[0].upper() if label else "#"
             groups.setdefault(key, []).append(entry)
         jump = " ".join(f'<a href="#index-{html.escape(letter)}">{html.escape(letter)}</a>' for letter in groups)
         sections = [f'<nav class="index-jump" aria-label="Alphabetical index letters">{jump}</nav>']
         for letter, values in groups.items():
-            items = "".join(f'<li><a href="{html.escape(href)}">{html.escape(label)}</a><span class="index-kind">{html.escape(kind)}</span></li>' for label, href, kind in values)
-            sections.append(f'<section class="alphabetical-group" id="index-{html.escape(letter)}"><h2>{html.escape(letter)}</h2><ul>{items}</ul></section>')
+            rendered_items = []
+            for entry in values:
+                label = str(entry["label"])
+                refs = list(entry["refs"])
+                first_href, first_kind = refs[0]
+                extra = "".join(
+                    f' · <a href="{html.escape(href)}">{html.escape(kind)}</a>'
+                    for href, kind in refs[1:]
+                )
+                rendered_items.append(
+                    f'<li><a href="{html.escape(first_href)}">{html.escape(label)}</a>'
+                    f'<span class="index-kind">{html.escape(first_kind)}{extra}</span></li>'
+                )
+            sections.append(
+                f'<section class="alphabetical-group" id="index-{html.escape(letter)}">'
+                f'<h2>{html.escape(letter)}</h2><ul>{"".join(rendered_items)}</ul></section>'
+            )
 
         directory = output / f"chapter{self.index_order:02d}"
         directory.mkdir()
@@ -553,14 +582,10 @@ class DocumentationBuilder:
         chapter_path = directory / "index.html"
         chapter_path.write_text(page, encoding="utf-8")
 
-        compatibility = _page(
-            "Alphabetical Index",
-            "cognitive.css",
-            _nav("index.html", "Documentation", None, "index.html", (f"chapter{self.index_order:02d}/index.html", f"Chapter {self.index_order}"), f"chapter{self.index_order:02d}/index.html"),
-            '<h1>Alphabetical Index</h1>',
-            f'<p>The Alphabetical Index is now <a href="chapter{self.index_order:02d}/index.html">Chapter {self.index_order} of the main documentation</a>.</p>',
-            "Compatibility entry point.",
-        )
+        # Keep the historical root entry point as a complete index, not an empty redirect page.
+        # Relative links are adjusted from chapterNN/ to the documentation root.
+        compatibility = page.replace('href="../', 'href="').replace('src="../', 'src="')
+        compatibility = compatibility.replace('class="alphabetical-index" href="index.html"', 'class="alphabetical-index" href="chapter%02d/index.html"' % self.index_order)
         compatibility_path = output / "alphabetical-index.html"
         compatibility_path.write_text(compatibility, encoding="utf-8")
         return [chapter_path, compatibility_path]

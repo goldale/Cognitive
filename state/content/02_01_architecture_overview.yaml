@@ -1,182 +1,115 @@
 kind: T_Content
+section: S_02_01_ARCH
 blocks:
-- text: Cognitive separates semantic reasoning, associative retrieval, persistent memory state, and self-learning
-    while connecting them through explicit typed interfaces.
-  type: paragraph
-- title: Primary architectural principle
-  text: The Transformer is both the Semantic Reasoning Engine and the Semantic Teacher of Associative Memory. Associative
-    Memory learns from Transformer-produced Semantic Representations rather than raw external observations.
-  type: principle
-- title: Cognitive Master Information Lifecycle
-  description: A system-level lifecycle view. External channels converge through the Input / STM path; the single
-    physical LTM supplies associative context; one Transformer performs cognitive processing and memory-update work;
-    offline structural adaptation modifies the same Associative Memory rather than forming a separate subsystem.
+- type: paragraph
+  text: Cognitive uses one shared internal language across Transformer, STM, LTM1, and LTM2. The language is defined
+    by a selected intermediate representation of the trained Transformer; memory begins empty and develops as a
+    Transformer-specific long-term model of experienced reality.
+- type: principle
+  title: Shared internal language
+  text: Raw external data never enters Associative Memory. External input is first interpreted by Transformer. Both
+    READ and UPDATE use the same internal-language representation.
+- type: definition
+  title: Dialogue
+  text: A logically connected exchange of messages with the external world. The first exchange is processed without
+    memory READ. Its first UPDATE creates Dialogue Context; later READ operations may then supply previous dialogue
+    content and its projection onto long-term memory.
+- type: diagram
+  title: Transformer-Centric Memory Architecture
+  description: External input is interpreted before memory access. Memory and Transformer communicate in one shared
+    internal language.
   direction: LR
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
   nodes:
-  - kind: external
-    id: master_language
-    label: Language / Messages
-  - kind: external
-    id: master_stream
-    label: Stream Input
-  - kind: state
-    id: master_buffer
-    label: Input Buffer
-  - kind: control
-    id: master_sequencer
-    label: Sequencer
-  - kind: state
-    id: master_stm
-    label: Semantically Neutral STM
-  - kind: storage
-    id: master_ltm
-    label: 'Single Physical LTM
-
-      LTM1 · LTM2'
-  - kind: subsystem
-    id: master_transformer
+  - id: ext
+    label: External World
+    kind: external
+  - id: tf
     label: 'Transformer
 
-      Reasoning · Temporal Organization · Planning · Integrated Evaluation'
-  - kind: external
-    id: master_output
-    label: External Action / Output
-  - kind: state
-    id: master_episode
-    label: Completed Logical Episode
-  - kind: control
-    id: master_update
-    label: Transformer-Constructed STM UPDATE Chains
-  - kind: state
-    id: master_messages
-    label: MSG1 / MSG2(operation)
-  - kind: control
-    id: master_sleep
-    label: Sleep / Offline Adaptation
+      Front · Internal Language · Reasoning'
+    kind: subsystem
+  - id: stm
+    label: 'STM
+
+      Dialogue Context · Ordering'
+    kind: state
+  - id: ltm1
+    label: 'LTM1
+
+      Stable Atoms · Contexts'
+    kind: storage
+  - id: ltm2
+    label: 'LTM2
+
+      Episodes · Compositions · Scenarios'
+    kind: storage
+  - id: out
+    label: External Response / Action
+    kind: external
   edges:
-  - flow: information
-    from: master_language
-    label: transfer
-    to: master_buffer
-  - flow: information
-    from: master_stream
-    label: transfer
-    to: master_buffer
-  - flow: control
-    from: master_buffer
-    label: ordering · normalization
-    to: master_sequencer
-  - flow: information
-    from: master_sequencer
-    label: active sequence
-    to: master_stm
-  - flow: context
-    from: master_stm
-    label: retrieval query
-    to: master_ltm
-  - flow: information
-    from: master_ltm
-    label: retrieved context · associative substitution
-    to: master_transformer
-  - flow: information
-    from: master_transformer
-    label: evaluation · selection · execution
-    to: master_output
-  - flow: context
-    from: master_output
-    label: observed consequence
-    to: master_episode
-  - flow: learning
-    from: master_episode
-    label: associative-atom composition
-    to: master_update
-  - flow: learning
-    from: master_update
-    label: STM activation emits UPDATE MSG2
-    to: master_messages
-  - flow: learning
-    from: master_messages
-    label: LTM1 propagation · match-gated LTM2 update
-    to: master_ltm
-  - flow: control
-    from: master_sleep
-    label: offline structural modification
-    to: master_ltm
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- title: Cognitive Architecture — Functional Overview
-  description: A compact system-level view. The detailed closed learning lifecycle and operation contracts are defined
-    canonically in Section 10.1.
-  direction: LR
-  edges:
-  - flow: information
-    from: overview_external
-    label: query
-    to: overview_memory
-  - flow: information
-    from: overview_memory
-    label: retrieved context
-    to: overview_transformer
-  - flow: learning
-    from: overview_transformer
-    label: semantic teaching
-    to: overview_learning
-  - flow: learning
-    from: overview_learning
-    label: controlled update
-    to: overview_state
-  - flow: context
-    from: overview_state
-    label: retrieval state
-    to: overview_memory
-  nodes:
-  - kind: external
-    id: overview_external
-    label: External Input
-  - kind: control
-    id: overview_learning
-    label: Semantic Feedback Learning Pipeline
-  - kind: subsystem
-    id: overview_memory
-    label: Associative Memory
-  - kind: state
-    id: overview_state
-    label: Memory State
-  - kind: subsystem
-    id: overview_transformer
-    label: Transformer
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- title: Canonical detailed specification
-  text: Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and
-    the rule that UPDATE never produces a Memory Vector. This overview intentionally does not repeat that complete
-    definition.
-  type: note
-- level: 3
-  text: Operation asymmetry
-  type: heading
-- headers:
-  - Operation
-  - Architectural purpose
-  - Canonical owner
+  - from: ext
+    to: tf
+    label: raw external input
+    flow: information
+  - from: tf
+    to: stm
+    label: internal-language READ / UPDATE
+    flow: information
+  - from: stm
+    to: ltm1
+    label: MSG2(operation)
+    flow: context
+  - from: ltm1
+    to: ltm2
+    label: confirmed associative match
+    flow: learning
+  - from: ltm2
+    to: stm
+    label: relevant memory serialization
+    flow: information
+  - from: stm
+    to: tf
+    label: Serialized Memory Message
+    flow: context
+  - from: tf
+    to: out
+    label: response / action
+    flow: information
+- type: heading
+  level: 3
+  text: Dialogue-aware READ and UPDATE
+- type: table
+  headers:
+  - Dialogue phase
+  - Memory participation
+  - Result
   rows:
-  - - READ
-    - Retrieve context without changing memory
-    - Section 10.1
-  - - UPDATE
-    - Incorporate semantic learning into Memory State
-    - Section 10.1
-  type: table
-- text: The release-blocking READ/UPDATE invariants are defined canonically in Section 10.1 and in state/canonical/invariants.yaml.
-  type: paragraph
-- level: 3
-  text: First-class self-learning process
-  type: heading
-- text: The Semantic Feedback Learning Pipeline is an independent architectural object with explicit stages, contracts,
-    invariants, and future extension points for consolidation, replay, forgetting, structural plasticity, and evaluation.
-  type: paragraph
-section: S_02_01_ARCH
+  - - First external exchange
+    - No READ
+    - Transformer processes the opening message; UPDATE creates Dialogue Context.
+  - - Continuing exchange
+    - READ before continued processing
+    - Memory returns previous Dialogue content plus its relevant projection onto LTM1 and LTM2.
+  - - After Transformer processing
+    - UPDATE
+    - Memory stores the new internal state and extends Dialogue Context.
+- type: principle
+  title: Relevant memory serialization
+  text: Memory does not generate a separate Memory Vector language. It selects relevant distributed state and serializes
+    it in the shared internal language.
+- type: paragraph
+  text: LTM1 remains a conservative associative graph and changes structurally only during Sleep. LTM2 accumulates
+    dialogue history, compositions, episodes, and scenarios. STM carries ordered internal-language messages and
+    maintains the active Dialogue.
+- type: principle
+  title: Asymmetric Transformer entry points
+  text: External messages enter through early Transformer interpretation. Memory-facing state is extracted only
+    after internal-language formation. Serialized memory returns through a deeper Memory Reinjection Point because
+    it is already expressed in the shared internal language and does not require another translation pass.
+- type: note
+  title: Depth hypothesis
+  text: The reinjection point is provisionally expected to lie approximately 20–30% of Transformer depth after the
+    extraction point. This value is an experimental starting range, not a universal constant.

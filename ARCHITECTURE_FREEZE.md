@@ -1,4 +1,4 @@
-# Architecture Freeze — cognitive-0.3.50
+# Architecture Freeze — cognitive-0.4.01
 
 The canonical source is the Master Architecture YAML and canonical state files.
 

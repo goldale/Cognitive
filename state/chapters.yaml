@@ -67,39 +67,39 @@ chapters:
   layout: directory
 - kind: T_Chapter
   id: C_03
-  title: Information and Communication
+  title: Shared Internal Language
   order: 3
-  summary: Defines communication as partial serialization, reconstruction, integration, clarification, and conflict
-    resolution.
+  summary: Defines the Transformer-derived internal language around which communication, memory access, Dialogue,
+    and learning are organized.
   sections:
   - kind: T_Section
     id: S_03_01
-    title: Communication as Partial Serialization
+    title: Internal Language as a System Foundation
     order: 1
     content_file: content/03_01.yaml
   - kind: T_Section
     id: S_03_02
-    title: Deserialization
+    title: Transformer Intermediate Representation
     order: 2
     content_file: content/03_02.yaml
   - kind: T_Section
     id: S_03_03
-    title: Model Integration
+    title: One Language Across Cognitive Subsystems
     order: 3
     content_file: content/03_03.yaml
   - kind: T_Section
     id: S_03_04
-    title: Clarification and Model Conflict
+    title: Memory Serialization in the Internal Language
     order: 4
     content_file: content/03_04.yaml
   - kind: T_Section
     id: S_03_05
-    title: Shared Background and Communication Compression
+    title: Dialogue Context and Long-Term Projection
     order: 5
     content_file: content/03_05.yaml
   - kind: T_Section
     id: S_03_06
-    title: Higher-Level Communication Phenomena
+    title: Implementation Requirements and Open Questions
     order: 6
     content_file: content/03_06.yaml
   layout: directory
@@ -209,7 +209,7 @@ chapters:
   sections:
   - kind: T_Section
     id: S_07_01
-    title: Integrated Evaluation
+    title: Integrated Evaluation Function
     order: 1
     content_file: content/07_01.yaml
   - kind: T_Section
@@ -308,8 +308,8 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the canonical memory interface, the Input Buffer–STM–LTM1 path, logical episode formation, and
-    the working model for associative storage and retrieval of directed episode graphs.
+  summary: Defines the shared internal-language memory interface, Dialogue-aware READ and UPDATE, STM transport,
+    LTM1 associative activation, LTM2 storage, and sleep-only LTM1 evolution.
   sections:
   - kind: T_Section
     id: S_10_01
@@ -318,7 +318,7 @@ chapters:
     content_file: content/10_01.yaml
   - kind: T_Section
     id: S_10_02
-    title: Memory Vector Interface
+    title: Shared Internal-Language Memory Interface
     order: 2
     content_file: content/10_02.yaml
   - kind: T_Section
@@ -389,46 +389,36 @@ chapters:
   layout: directory
 - kind: T_Chapter
   id: C_11
-  title: Canonical Memory Representation
+  title: Relevant Memory Selection and Serialization
   order: 11
-  summary: Defines the Memory Vector contract, semantic stability, localized basis maintenance, effective dimensionality,
-    and dense progressive semantic compaction.
+  summary: Defines how LTM1 and LTM2 select relevant Dialogue context and long-term projections, then serialize
+    them into a bounded sequence in the shared internal language.
   sections:
   - kind: T_Section
     id: S_11_01
-    title: Canonical Interface Contract
+    title: Selection and Serialization Contract
     order: 1
     content_file: content/11_01.yaml
   - kind: T_Section
     id: S_11_02
-    title: Direction and Activation Magnitude
+    title: Sources of Relevance
     order: 2
     content_file: content/11_02.yaml
   - kind: T_Section
     id: S_11_03
-    title: Semantic Stability Criterion
+    title: Serialization Order and Structure
     order: 3
     content_file: content/11_03.yaml
   - kind: T_Section
     id: S_11_04
-    title: Covariance and Orthogonalization
+    title: Sequence Budget and Completion
     order: 4
     content_file: content/11_04.yaml
   - kind: T_Section
     id: S_11_05
-    title: Self-Organizing Semantic Coordinate System
+    title: Validation and Failure Modes
     order: 5
     content_file: content/11_05.yaml
-  - kind: T_Section
-    id: S_11_06
-    title: Sequential Memory Vector Normalization
-    order: 6
-    content_file: content/11_06.yaml
-  - kind: T_Section
-    id: S_11_07
-    title: Dense Architecture with Progressive Semantic Compaction
-    order: 7
-    content_file: content/11_07.yaml
   layout: directory
 - kind: T_Chapter
   id: C_12
@@ -487,12 +477,12 @@ chapters:
     content_file: content/13_01.yaml
   - kind: T_Section
     id: S_13_02
-    title: Weights Before Structure
+    title: Functional Learning Before Structural Change
     order: 2
     content_file: content/13_02.yaml
   - kind: T_Section
     id: S_13_03
-    title: Deferred Mechanisms
+    title: Deferred Sleep and Evaluation Mechanisms
     order: 3
     content_file: content/13_03.yaml
   layout: directory

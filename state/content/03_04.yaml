@@ -1,27 +1,23 @@
-kind: T_ContentBlock
-id: S_03_04
+kind: T_Content
+section: S_03_04
 blocks:
-- text: When multiple integrations remain possible or required background is absent, a rational cognitive
-    system generates T_ClarificationRequest rather than silently selecting an arbitrary interpretation.
-  type: paragraph
-- text: Clarification questions are therefore not secondary social behavior. They are operations that
-    reduce uncertainty inside T_ModelIntegration.
-  type: paragraph
-- title: T_Conflict
-  text: A computational state in which received information cannot be integrated under the receiver's
-    current model and constraints without unresolved inconsistency.
-  type: definition
-- text: T_Conflict is distinct from the social dynamics of argument. The project intentionally excludes
-    dominance, persuasion, status, anger, and coalition behavior from this definition.
-  type: paragraph
-- text: T_ModelConflictResolution is an iterative search over additional evidence, revised definitions,
-    confidence changes, local reorganization, or explicit retention of incompatible alternatives.
-  type: paragraph
-- title: Emergent emotional dynamics
-  confidence: 0.62
-  text: The current architecture does not require emotions to be designed as an isolated module. A working
-    hypothesis is that emotion-like states may emerge from persistent agents interacting in groups, evaluating
-    one another, competing or cooperating, remembering consequences, and adapting their behavior over
-    time.
-  type: hypothesis
-section_id: S_02_04
+- type: paragraph
+  text: Memory does not generate an aggregated Memory Vector or invent a native response language. It selects
+    relevant distributed state and serializes that information into an ordered internal-language sequence.
+- type: definition
+  title: Memory Serialization
+  text: The ordered expression of selected relevant LTM1 and LTM2 information in the shared internal language.
+- type: list
+  title: Serialization must determine
+  items:
+  - Which atoms, contexts, episodes, compositions, or scenarios are relevant.
+  - How repeated or competing information is reduced.
+  - How context and relations are ordered.
+  - How uncertainty, salience, and boundaries are represented.
+  - When the serialized message is complete.
+- type: formula
+  text: Relevant distributed memory state -> ordered internal-language sequence
+- type: note
+  title: Memory Vector terminology
+  text: Memory Vector may remain as a low-level implementation term for one vector element of a serialized memory
+    message. It is not a separate language, a complete memory state, or an independently generated aggregate.

@@ -1,104 +1,116 @@
 kind: T_Content
-blocks:
-- text: Transformer and Associative Memory are separated by responsibility but coupled by a closed semantic learning loop. The Transformer does not merely consume memory for reasoning; it teaches Associative Memory by producing the semantic objects used for learning.
-  type: paragraph
-- title: Semantic Teacher
-  text: The Transformer role that converts externally grounded processing and retrieved context into a Semantic Representation suitable for Associative Memory UPDATE.
-  type: definition
-- title: Semantic Feedback Learning Pipeline
-  text: A first-class architectural process coordinating explicit READ, semantic reasoning, semantic teaching, UPDATE, and the resulting evolution of Memory State.
-  type: definition
-- title: Closed Semantic Learning Loop
-  description: External Input is interpreted with an explicitly retrieved Memory Vector. Transformer output becomes a Semantic Representation. UPDATE changes Memory State only; a later READ is required to obtain another Memory Vector.
-  direction: TB
-  edges:
-  - flow: information
-    from: C_EXT_INPUT
-    label: query
-    to: C_ASSOC_MEMORY
-  - flow: context
-    from: C_MEMORY_STATE
-    label: READ state
-    to: C_ASSOC_MEMORY
-  - flow: information
-    from: C_ASSOC_MEMORY
-    label: READ
-    to: C_MEMORY_VECTOR
-  - flow: information
-    from: C_MEMORY_VECTOR
-    label: conditioning
-    to: C_TRANSFORMER
-  - flow: learning
-    from: C_TRANSFORMER
-    label: semantic teaching
-    to: C_SEM_REP
-  - flow: learning
-    from: C_SEM_REP
-    label: learning input
-    to: C_SFL_PIPELINE
-  - flow: learning
-    from: C_SFL_PIPELINE
-    label: UPDATE
-    to: C_ASSOC_MEMORY
-  - flow: learning
-    from: C_ASSOC_MEMORY
-    label: updated state
-    to: C_MEMORY_STATE
-  nodes:
-  - kind: subsystem
-    id: C_ASSOC_MEMORY
-    label: Associative Memory
-  - kind: external
-    id: C_EXT_INPUT
-    label: External Input
-  - kind: state
-    id: C_MEMORY_STATE
-    label: Memory State
-  - kind: interface
-    id: C_MEMORY_VECTOR
-    label: Memory Vector
-  - kind: data
-    id: C_SEM_REP
-    label: Semantic Representation
-  - kind: control
-    id: C_SFL_PIPELINE
-    label: Semantic Feedback Learning Pipeline
-  - kind: subsystem
-    id: C_TRANSFORMER
-    label: Transformer
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- level: 3
-  text: READ contract
-  type: heading
-- text: READ(Memory State, Query) -> Memory Vector
-  type: formula
-- text: READ is a retrieval operation. It may expose context to the Transformer but never modifies Memory State.
-  type: paragraph
-- level: 3
-  text: UPDATE contract
-  type: heading
-- text: UPDATE(Memory State, Semantic Representation) -> Updated Memory State
-  type: formula
-- text: UPDATE is a learning operation. Its only architectural effect is modification of Memory State. It does not generate a new Memory Vector and performs no implicit retrieval. A Memory Vector is generated exclusively by a subsequent explicit READ operation.
-  type: paragraph
-- title: Why semantic feedback is necessary
-  text: Raw external observations are not stable learning targets. Transformer-produced Semantic Representations provide interpretation, normalization, context, and abstraction before information is incorporated into Associative Memory.
-  type: principle
-- level: 3
-  text: Lifecycle and extension boundary
-  type: heading
-- items:
-  - Explicit READ retrieves a Memory Vector from the current Memory State.
-  - Transformer performs semantic reasoning using external input and retrieved context.
-  - Transformer acts as Semantic Teacher and produces a Semantic Representation.
-  - The Semantic Feedback Learning Pipeline submits that representation to UPDATE.
-  - UPDATE modifies Memory State only.
-  - Any effect of learning on retrieval is observed only by a later explicit READ.
-  type: list
-- title: Deferred extensions
-  text: Sleep, replay, forgetting, importance estimation, structural plasticity, and global evaluation may extend the pipeline later, but they must preserve the READ/UPDATE asymmetry unless a future architecture decision explicitly replaces it.
-  type: note
 section: S_10_01
+blocks:
+- type: paragraph
+  text: READ and UPDATE are phases of one Dialogue-aware cognitive cycle. Transformer first converts external input
+    into the shared internal language. Memory never receives raw external data.
+- type: definition
+  title: Dialogue
+  text: A logically connected external exchange whose context is established by UPDATE and reused by later READ
+    operations.
+- type: heading
+  level: 3
+  text: First exchange of a Dialogue
+- type: list
+  items:
+  - Transformer processes the opening external message without memory READ.
+  - Transformer produces a response or intermediate result.
+  - UPDATE transfers the resulting internal state through STM.
+  - Memory creates the initial Dialogue Context and may store the first Dialogue episode in LTM2.
+- type: heading
+  level: 3
+  text: Continuing Dialogue cycle
+- type: list
+  items:
+  - Transformer converts the next external message into an internal-language representation.
+  - STM emits READ through MSG2 to LTM1.
+  - LTM1 activation and LTM2 retrieval select relevant previous Dialogue content and long-term projections.
+  - Memory serializes the selected information in the shared internal language.
+  - Transformer continues processing with the Serialized Memory Message.
+  - UPDATE stores the resulting new internal state and extends Dialogue Context.
+- type: diagram
+  title: Dialogue-Aware READ / UPDATE Cycle
+  description: The first exchange initializes context. Subsequent exchanges combine previous dialogue content with
+    its long-term-memory projection.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: new
+    label: 'New Dialogue
+
+      First External Message'
+    kind: external
+  - id: t1
+    label: 'Transformer Processing
+
+      No Memory READ'
+    kind: subsystem
+  - id: u1
+    label: 'UPDATE
+
+      Create Dialogue Context'
+    kind: control
+  - id: next
+    label: Next External Message
+    kind: external
+  - id: read
+    label: 'READ
+
+      Dialogue Context + LTM Projection'
+    kind: control
+  - id: ser
+    label: 'Serialized Memory Message
+
+      Shared Internal Language'
+    kind: state
+  - id: t2
+    label: Transformer Processing
+    kind: subsystem
+  - id: u2
+    label: 'UPDATE
+
+      Extend Dialogue Context'
+    kind: control
+  edges:
+  - from: new
+    to: t1
+    label: external input
+    flow: information
+  - from: t1
+    to: u1
+    label: new internal state
+    flow: learning
+  - from: u1
+    to: next
+    label: context now available
+    flow: control
+  - from: next
+    to: read
+    label: internal-language quasi-query
+    flow: context
+  - from: read
+    to: ser
+    label: select and serialize relevance
+    flow: information
+  - from: ser
+    to: t2
+    label: memory speaks internal language
+    flow: context
+  - from: t2
+    to: u2
+    label: new internal state
+    flow: learning
+  - from: u2
+    to: next
+    label: continue Dialogue
+    flow: control
+- type: principle
+  title: One language, two directions
+  text: Transformer-to-memory and memory-to-Transformer communication use the same internal language. READ differs
+    from UPDATE by operation and cognitive role, not by semantic representation space.
+- type: note
+  title: LTM1 structural stability
+  text: During waking operation READ and UPDATE may modify activation and LTM2 content, but structural changes to
+    conservative LTM1 occur only during Sleep or Offline Consolidation.

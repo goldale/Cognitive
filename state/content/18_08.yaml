@@ -46,7 +46,7 @@ blocks:
   text: Dense Topology and Basis Compaction
   type: heading
 - text: The implementation does not depend on sparse candidate routing as its primary model. Sequential
-    localized orthogonalization removes semantic redundancy, transfers correlated magnitude into retained
+    localized semantic consolidation removes redundancy and transfers useful information into retained
     coordinates, and progressively compacts useful information.
   type: paragraph
 - title: Dense hardware invariant

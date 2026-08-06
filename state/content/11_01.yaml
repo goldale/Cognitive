@@ -1,60 +1,76 @@
-kind: T_ContentBlock
-id: S_11_01
+kind: T_Content
+section: S_11_01
 blocks:
-- text: The raw state produced by Associative Memory should be projected and canonicalized before entering
-    the Transformer. The resulting Memory Vector is the complete public interface of the memory subsystem.
-  type: paragraph
-- title: Canonical Memory Interface
-  description: Canonicalization separates the evolving internal Memory State from the stable interface
-    consumed by the Transformer.
+- type: paragraph
+  text: Associative Memory does not generate a separate semantic representation. In response to READ, it selects
+    relevant information already represented in the shared internal language and serializes that information for
+    Transformer processing.
+- type: principle
+  title: Single-language contract
+  text: The semantic space used for READ input, UPDATE input, Dialogue Context, and memory output is the same Transformer-derived
+    internal language.
+- type: definition
+  title: Serialized Memory Message
+  text: A bounded ordered sequence in the shared internal language containing prior Dialogue content and its relevant
+    projection onto LTM1 and LTM2.
+- type: formula
+  text: Serialized Memory Message = Dialogue Context + Relevant Long-Term Projection
+- type: diagram
+  title: Relevant Memory Selection and Serialization
+  description: Dialogue context and long-term memory are selected, serialized in the shared internal language, and
+    reinjected into deeper Transformer layers.
   direction: LR
-  edges:
-  - flow: information
-    from: state
-    to: projection
-  - flow: information
-    from: projection
-    to: raw
-  - flow: information
-    from: raw
-    to: canonical
-  - flow: information
-    from: canonical
-    to: vector
-  - flow: interface
-    from: vector
-    label: stable contract
-    to: transformer
-  nodes:
-  - kind: subsystem
-    id: canonical
-    status: current
-    label: Runtime Canonicalization
-  - kind: subsystem
-    id: projection
-    status: current
-    label: Projection
-  - kind: data
-    id: raw
-    status: current
-    label: Raw Memory Vector
-  - kind: state
-    id: state
-    status: current
-    label: Memory State
-  - kind: subsystem
-    id: transformer
-    status: current
-    label: Transformer
-  - kind: interface
-    id: vector
-    status: current
-    label: Canonical Memory Vector
-  proportionality_priority: true
-  readability_priority: true
   size: standard
-  type: diagram
-- text: Canonicalization protects the Transformer from internal memory drift and allows both subsystems
-    to evolve independently.
-  type: paragraph
-section_id: S_17_01
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: dialogue
+    label: Dialogue Context
+    kind: state
+  - id: ltm1
+    label: LTM1 Atoms and Contexts
+    kind: storage
+  - id: ltm2
+    label: LTM2 Episodes and Scenarios
+    kind: storage
+  - id: select
+    label: Relevant Memory Selection
+    kind: process
+  - id: serialize
+    label: Internal-Language Serialization
+    kind: process
+  - id: reinject
+    label: Deeper Memory Reinjection Point
+    kind: interface
+  - id: reason
+    label: Transformer Integration and Reasoning
+    kind: subsystem
+  edges:
+  - from: dialogue
+    to: select
+    label: primary anchor
+    flow: context
+  - from: ltm1
+    to: select
+    label: atoms + contexts
+    flow: information
+  - from: ltm2
+    to: select
+    label: episodes + scenarios
+    flow: information
+  - from: select
+    to: serialize
+    label: bounded coherent content
+    flow: information
+  - from: serialize
+    to: reinject
+    label: shared internal language
+    flow: information
+  - from: reinject
+    to: reason
+    label: bypass early translation
+    flow: information
+- type: note
+  title: Low-level vector elements
+  text: A vector may remain as a low-level element of the shared internal-language sequence. It is not an aggregated
+    memory state, a separate language, or an independently generated semantic object.

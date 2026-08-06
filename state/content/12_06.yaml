@@ -1,117 +1,88 @@
-kind: T_ContentBlock
-id: S_12_06
+kind: T_Content
+section: S_12_06
 blocks:
-- text: The Transformer and Associative Memory should be trained in stages rather than optimized as a
-    single coupled system from the beginning. This reduces optimization complexity and gives each subsystem
-    a stable role before the Memory Vector interface is activated.
-  type: paragraph
-- title: Progressive Training Strategy
-  description: Training begins with a fixed null Memory Vector, then activates the real memory interface,
-    verifies that the Transformer uses it, and finally permits joint adaptation.
+- type: paragraph
+  text: Transformer is trained first and already defines the internal language. Associative Memory then develops
+    inside that language, beginning empty and learning a Transformer-specific model of experienced reality.
+- type: diagram
+  title: Progressive Transformer-Specific Memory Training
+  description: Training begins without memory participation, then forms Dialogue Context, learns LTM1 vocabulary
+    and contexts, and finally accumulates LTM2 episodes and scenarios.
   direction: TB
-  edges:
-  - flow: interface
-    from: stage1
-    label: fixed input
-    to: 'null'
-  - flow: learning
-    from: 'null'
-    to: stable
-  - flow: control
-    from: stable
-    label: activate memory
-    to: stage2
-  - flow: interface
-    from: stage2
-    to: real
-  - flow: evaluation
-    from: real
-    to: verify
-  - flow: learning
-    from: verify
-    label: when effective
-    to: joint
-  nodes:
-  - kind: subsystem
-    id: joint
-    status: future
-    label: 'Stage 3
-
-      Joint Adaptation'
-  - kind: interface
-    id: 'null'
-    status: current
-    label: Memory Vector = 0
-  - kind: interface
-    id: real
-    status: current
-    label: Real Memory Vector
-  - kind: state
-    id: stable
-    status: current
-    label: Transformer Baseline Stable
-  - kind: subsystem
-    id: stage1
-    status: current
-    label: 'Stage 1
-
-      Transformer Training'
-  - kind: subsystem
-    id: stage2
-    status: current
-    label: 'Stage 2
-
-      Enable Associative Memory'
-  - kind: control
-    id: verify
-    status: current
-    label: Verify Memory Use
-  proportionality_priority: true
-  readability_priority: true
   size: standard
-  type: diagram
-  display_scale: 0.5
-- level: 3
-  text: Stage 1 — Transformer Training with a Null Memory Vector
-  type: heading
-- text: During the first stage, the Transformer receives a fixed canonical null Memory Vector, normally
-    the all-zero vector. The Transformer learns language interpretation, reasoning, planning, and answer
-    generation without depending on an immature external memory subsystem.
-  type: paragraph
-- title: Null-interface invariant
-  text: The dimensionality and placement of the Memory Vector interface should already match the final
-    architecture even while its value is fixed at zero. This prevents a later interface-shape change from
-    becoming entangled with memory integration.
-  type: principle
-- level: 3
-  text: Stage 2 — Associative Memory Integration
-  type: heading
-- text: After the Transformer baseline has stabilized, Associative Memory is enabled and explicit READ
-    operations begin supplying non-zero canonical Memory Vectors. Training then teaches the Transformer
-    to condition its reasoning on this additional source of knowledge.
-  type: paragraph
-- title: Risk of ignoring the Memory Vector
-  text: Because the Transformer may already solve many tasks from its parameters and input context, ordinary
-    optimization may converge while the model largely ignores the Memory Vector.
-  type: warning
-- level: 3
-  text: Possible forced utilization
-  type: heading
-- text: It may therefore be necessary to force Memory Vector utilization during part of training. Candidate
-    mechanisms include examples that cannot be solved without memory, controlled removal of equivalent
-    context, auxiliary losses measuring memory dependence, progressive gating, or temporary constraints
-    on the parameter-only path.
-  type: paragraph
-- title: Open engineering question
-  text: The specification does not select a single forcing mechanism. The requirement is to measure whether
-    the Memory Vector causally influences the answer and to introduce a forcing mechanism if passive integration
-    is insufficient.
-  type: note
-- level: 3
-  text: Stage 3 — Joint Adaptation
-  type: heading
-- text: Joint adaptation should begin only after the Transformer can use the Memory Vector and Associative
-    Memory has reached sufficient representational maturity. The two subsystems remain independently replaceable
-    because the canonical Memory Vector is their stable public interface.
-  type: paragraph
-section_id: S_12_06
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: transformer
+    label: 'Trained Transformer
+
+      Internal Language Established'
+    kind: subsystem
+  - id: empty
+    label: Empty STM / LTM1 / LTM2
+    kind: state
+  - id: dialogue
+    label: 'First Dialogue UPDATE
+
+      Create Context'
+    kind: control
+  - id: vocabulary
+    label: 'LTM1 Learning
+
+      Atoms + Contexts'
+    kind: storage
+  - id: episodes
+    label: 'LTM2 Learning
+
+      Episodes + Scenarios'
+    kind: storage
+  - id: mature
+    label: Dialogue-Aware READ–UPDATE Cycles
+    kind: subsystem
+  edges:
+  - from: transformer
+    to: empty
+    label: shared internal language
+    flow: interface
+  - from: empty
+    to: dialogue
+    label: first experience
+    flow: learning
+  - from: dialogue
+    to: vocabulary
+    label: repeated internal states
+    flow: learning
+  - from: vocabulary
+    to: episodes
+    label: stable vocabulary and contexts
+    flow: learning
+  - from: episodes
+    to: mature
+    label: usable long-term model
+    flow: control
+- type: heading
+  level: 3
+  text: Stage 1 — Transformer baseline
+- type: paragraph
+  text: The Transformer learns interpretation, reasoning, planning, and generation before Associative Memory contains
+    experience. The selected intermediate interface is identified and validated as the shared internal language.
+- type: heading
+  level: 3
+  text: Stage 2 — Dialogue Context and LTM1 vocabulary
+- type: paragraph
+  text: The first exchange of each new Dialogue is processed without READ. Its first UPDATE creates Dialogue Context.
+    Repeated internal-language states then teach LTM1 stable atoms, contexts, and associative matches.
+- type: heading
+  level: 3
+  text: Stage 3 — LTM2 compositions and scenarios
+- type: paragraph
+  text: After LTM1 has enough stable vocabulary, LTM2 accumulates compositions, episodes, state transitions, and
+    scenarios. The stages overlap, but the dominant learning priority shifts from vocabulary to experienced structure.
+- type: warning
+  title: Risk of ignored memory
+  text: A capable Transformer may solve many tasks from parameters and current input alone. Training must therefore
+    measure whether serialized memory messages causally improve Dialogue continuity, recall, prediction, or decisions.
+- type: note
+  title: No separate memory-language training
+  text: The memory is not trained to invent or canonicalize a second language. It learns to organize, select, and
+    serialize information in the Transformer-defined internal language.

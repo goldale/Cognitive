@@ -9,7 +9,7 @@ blocks:
 - title: Associative Memory Implementation Gap Map
   description: Existing associative, vector, graph, and exact-storage technologies provide complementary
     capabilities. Cognitive adds dynamic Memory State, spreading activation, explicit READ and UPDATE
-    semantics, canonical Memory Vector projection, feedback-only state changes, and future structural
+    semantics, shared internal-language serialization, feedback-only state changes, and future structural
     optimization.
   direction: TB
   edges:
@@ -87,7 +87,7 @@ blocks:
   type: paragraph
 - text: They still require continual knowledge insertion, explicit separation of short-term activation
     from long-term structure, dynamic association creation and removal, controlled forgetting, scalable
-    external storage, and the Cognitive interface contract in which only READ produces a Memory Vector.
+    external storage, and the Cognitive interface contract in which only READ returns a serialized memory message.
   type: paragraph
 - level: 3
   text: Sparse Distributed Memory
@@ -116,7 +116,7 @@ blocks:
   text: The accepted implementation rule is that vector retrieval may propose candidate memory elements
     during READ, but it must not define causality, dependency, or final relevance by itself. Candidate
     evidence must be integrated with explicit relations, dynamic activation, exact stored content, and
-    the current Memory State before projection into a Memory Vector.
+    the current Memory State before serialization in the shared internal language.
 - level: 3
   text: Graph and Knowledge Storage
   type: heading
@@ -132,7 +132,7 @@ blocks:
   text: Graph storage is also not sufficient as Associative Memory by itself. Cognitive additionally requires
     learned connection strengths, distributed latent knowledge, short-term activation, spreading activation,
     online association formation, integration of several retrieved elements, and explicit READ projection
-    into the canonical Memory Vector.
+    into the serialized memory message.
 - level: 3
   text: Key–Value and Hash Storage
   type: heading
@@ -183,7 +183,7 @@ blocks:
     - Binds new episodes, generates associative indices, and performs pattern completion.
   - - Output / Projection
     - Dense integration and compression; direct input comparison path
-    - Projects reconstructed Dynamic Memory State into the fixed-dimensional Memory Vector.
+    - Projects reconstructed Dynamic Memory State into the bounded internal-language sequence.
 - type: paragraph
   text: Localized sparse activity in Pattern Separation is a property of that specialized topology only.
     It does not replace the project-wide dense semantic architecture or make the system sparse-first.
@@ -220,7 +220,7 @@ blocks:
 - text: 'The most realistic initial implementation is a hybrid pipeline: a learned query encoder activates
     neural and graph associations; vector search proposes candidates; graph traversal and spreading activation
     construct dynamic Memory State; key–value storage supplies exact content; and an explicit READ operation
-    projects the resulting state into the canonical Memory Vector.'
+    projects the resulting state into the serialized memory message.'
   type: paragraph
 - type: heading
   level: 3
@@ -230,11 +230,11 @@ blocks:
     It extends a conventional GraphRAG pipeline by placing vector retrieval, typed graph traversal, and
     pattern matching inside an explicit non-destructive READ operation. Their results do not go directly
     to the Transformer as retrieved text. They first participate in spreading activation, form a transient
-    Dynamic Memory State, and are then projected into the canonical Memory Vector.
+    Dynamic Memory State, and are then projected into the serialized memory message.
 - type: image
   src: ../associative-memory-read-update-path.png
   alt: Cognitive architecture diagram showing the Associative Memory READ path, spreading activation,
-    Dynamic Memory State, Memory Vector projection, Transformer, Integrated Evaluation, tool execution,
+    Dynamic Memory State, memory serialization, Transformer, Integrated Evaluation, tool execution,
     and the separate UPDATE path.
   title: Cognitive Architecture — Associative Memory READ Path
   caption: Hybrid vector and graph retrieval is only the first stage of READ. Spreading activation integrates
@@ -255,7 +255,7 @@ blocks:
   - Dynamic Memory State is the unified transient state created by READ; it may contain retrieved nodes,
     exact content, activated relations, confidence, provenance, temporal attributes, importance, and working-memory
     links.
-  - Memory Vector Projection is an explicit READ operation. It aggregates and maps Dynamic Memory State
+  - Memory Serialization is an explicit READ operation. It aggregates and maps Dynamic Memory State
     into the stable interface consumed by the Transformer.
   - Integrated Evaluation and Tool Selection occur after memory reconstruction because action selection
     must use the reconstructed context rather than raw retrieval results.
@@ -345,7 +345,7 @@ blocks:
   - kind: subsystem
     id: projection
     status: experimental
-    label: Memory Vector Projection
+    label: Memory Serialization
   - kind: subsystem
     id: reconstruction
     status: experimental
@@ -487,7 +487,7 @@ blocks:
   type: heading
 - text: 'The combined implementation must still provide: persistent and short-term Memory State; spreading
     activation; online knowledge accumulation; semantic equivalence across wording and language; canonical
-    Memory Vector normalization; explicit READ and UPDATE operations; Answer-to-Memory feedback that changes
+    memory serialization; explicit READ and UPDATE operations; Answer-to-Memory feedback that changes
     state without generating a vector; controlled forgetting; structural connection state; and later Sleep-like
     offline optimization.'
   type: paragraph

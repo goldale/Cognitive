@@ -1,21 +1,138 @@
-kind: T_ContentBlock
-id: S_03_02
+kind: T_Content
+section: S_03_02
 blocks:
-- title: T_Deserialization
-  text: Transformation of a received communication sequence into a structured temporary representation
-    that can participate in cognitive processing.
-  type: definition
-- text: Deserialization is not understanding. It may recover lexical, syntactic, spatial, graphical, prosodic,
-    or symbolic structure while leaving the resulting structure incompatible with the receiver's current
-    knowledge.
-  type: paragraph
-- text: Written text and speech differ as channels. Speech carries timing, prosody, and emotional coloration.
-    Text permits the receiver to control processing speed, revisit earlier material, and perform repeated
-    deserialization. Both channels feed the same later integration process.
-  type: paragraph
-- title: Correct parsing without integration
-  text: A listener may recognize every word and grammatical relation in a sentence while remaining unable
-    to connect the sentence to any coherent interpretation. Deserialization succeeded; model integration
-    did not.
-  type: example
-section_id: S_02_02
+- type: paragraph
+  text: The internal language is obtained from a selected intermediate Transformer representation or from a stable
+    projection of that representation. The architecture does not prescribe one universal layer number.
+- type: principle
+  title: Implementation-dependent layer selection
+  text: Transformer specialists must select and justify the layer, layer combination, or learned projection that
+    best preserves semantic stability, compositionality, context, and bidirectional usability by memory.
+- type: table
+  headers:
+  - Required property
+  - Reason
+  rows:
+  - - Semantic stability
+    - Equivalent meanings should produce sufficiently compatible memory interactions.
+  - - Context sensitivity
+    - The same element in different contexts must remain distinguishable.
+  - - Bidirectional usability
+    - Memory output must be consumable by later Transformer processing.
+  - - Dimensional stability
+    - Persistent memory must not depend on incidental runtime tensor layout.
+  - - Task relevance
+    - The representation must retain distinctions needed by the trained Transformer and its objectives.
+- type: warning
+  title: Not an arbitrary hidden state
+  text: A raw hidden state is not automatically a suitable architectural interface. The selected representation
+    requires empirical validation and may need a stable normalization or projection.
+- type: paragraph
+  text: The interface is Transformer-specific. Replacing Transformer may require migration, adaptation, or reconstruction
+    of memory because another model may define a different internal semantic space.
+- type: heading
+  level: 3
+  text: Asymmetric Extraction and Reinjection
+- type: principle
+  title: Asymmetric Transformer interface
+  text: The point that extracts a memory-facing internal-language state and the point that receives serialized memory
+    are distinct. External input must first be translated by early Transformer layers. Memory output is already
+    expressed in the shared internal language and is therefore reinjected deeper, into layers responsible for semantic
+    integration, reasoning, planning, and response formation.
+- type: formula
+  text: external input -> early interpretation -> internal-language extraction point -> READ
+- type: formula
+  text: serialized memory -> deeper reinjection point -> integration and reasoning
+- type: principle
+  title: No repeated translation
+  text: Serialized memory must not be routed through the same early layers that translate raw external form. Reprocessing
+    internal-language memory as external input is redundant and may distort the preserved semantic state.
+- type: note
+  title: Working depth hypothesis
+  text: A working hypothesis is that the Memory Reinjection Point should be approximately 20–30% of Transformer
+    depth later than the Internal-Language Extraction Point. The exact offset is implementation-dependent and must
+    be established experimentally for each Transformer family.
+- type: diagram
+  title: Asymmetric Transformer–Memory Interface
+  description: External input enters at the Transformer front and is translated by early layers before the Internal-Language
+    Extraction Point. READ is initiated from that point. Serialized memory already uses the shared internal language
+    and is reinjected deeper, directly into integration and reasoning layers.
+  direction: LR
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: external
+    label: External Input
+    kind: external
+  - id: early
+    label: Early Interpretation Layers
+    kind: process
+  - id: extract
+    label: Internal-Language Extraction Point
+    kind: interface
+  - id: read
+    label: READ via STM / MSG2
+    kind: control
+  - id: memory
+    label: LTM1 + LTM2
+    kind: storage
+  - id: serialize
+    label: Relevant Memory Serialization
+    kind: process
+  - id: reinject
+    label: Deeper Memory Reinjection Point
+    kind: interface
+  - id: reason
+    label: Integration, Reasoning, and Planning Layers
+    kind: subsystem
+  - id: output
+    label: Response / New Internal State
+    kind: state
+  edges:
+  - from: external
+    to: early
+    label: raw external form
+    flow: information
+  - from: early
+    to: extract
+    label: translate into internal language
+    flow: information
+  - from: extract
+    to: reason
+    label: current internal state
+    flow: context
+  - from: extract
+    to: read
+    label: quasi-query
+    flow: information
+  - from: read
+    to: memory
+    label: associative activation
+    flow: information
+  - from: memory
+    to: serialize
+    label: relevant Dialogue + LTM projection
+    flow: context
+  - from: serialize
+    to: reinject
+    label: shared internal-language sequence
+    flow: information
+  - from: reinject
+    to: reason
+    label: bypass early translation
+    flow: context
+  - from: reason
+    to: output
+    label: integrated processing
+    flow: information
+- type: table
+  headers:
+  - Interface point
+  - Function
+  rows:
+  - - Internal-Language Extraction Point
+    - Produces the shared internal representation used to initiate READ and to form UPDATE content.
+  - - Memory Reinjection Point
+    - Receives serialized memory after early external-form interpretation and integrates it into later Transformer
+      computation.

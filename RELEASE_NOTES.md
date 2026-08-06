@@ -1,14 +1,20 @@
-# Release Notes — cognitive-0.3.50
+# cognitive-0.4.01 Release Notes
 
-## Native LTM1 language and local MSG2 operations
+## Central architectural revision
 
-- `MSG2` is now canonically `MSG2(amplitude, sequence_number, operation)`.
-- Initial operations are `READ` and `UPDATE`; operation is interpreted locally by the receiving `LTM1` node.
-- STM-node activation remains the only mechanism that emits `MSG2`.
-- READ and UPDATE may coexist within one STM structure.
-- Both operations excite and propagate exclusively through the persistent `LTM1` graph.
-- UPDATE is match-gated: an UPDATE message requests associative matching and may reach `LTM2` only after a confirmed match.
-- Transformer constructs UPDATE STM chains directly; Sequencer is not used because starts, ends, ordering, context, previous, and next are already determined.
-- A dedicated architecture section defines how controlled `LTM1` activity and repeated MAX/SUM Memory Vector readouts export the native associative-atom language to Transformer.
-- The export mechanism is explicitly distinguished from serialization of the complete `LTM1` state.
-- Canonical YAML, terminology, contracts, invariants, HTML documentation, and index are regenerated and consistency-audited.
+This release rebuilds Cognitive around a shared internal language derived from a selected intermediate representation of the trained Transformer. Associative Memory begins empty, receives no raw external semantic input, and develops as a Transformer-specific long-term model of experienced reality.
+
+## Major changes
+
+- Added a dedicated chapter: **Shared Internal Language**.
+- Replaced the native-LTM1-language hypothesis with one Transformer-defined language across Transformer, STM, LTM1, and LTM2.
+- Reworked READ and UPDATE as Dialogue-aware phases of one cognitive cycle.
+- Added **Dialogue**, **Dialogue Context**, and **Dialogue Projection** as basic concepts.
+- Defined the first Dialogue exchange as memory-independent; the first UPDATE creates memory context.
+- Replaced Memory Vector generation with relevant-memory selection and internal-language serialization.
+- Updated YAML, diagrams, terminology, invariants, and architecture decisions.
+- Fully regenerated and audited the alphabetical index.
+- Audited duplicate terms, sections, object IDs, and links.
+
+- Added distinct Internal-Language Extraction Point and deeper Memory Reinjection Point; serialized memory bypasses early external-form interpretation.
+- Recorded the 20–30% later reinjection depth as an experimental hypothesis rather than a fixed architectural constant.

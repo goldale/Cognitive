@@ -14,11 +14,12 @@ def texts(name):
     return "\n".join(str(b.get("text", "")) for b in load(name).get("blocks", []))
 
 
-def test_restored_communication_examples():
-    assert "same book several times" in texts("03_03.yaml")
-    assert "many years later" in texts("03_03.yaml")
-    assert "emotion-like states may emerge" in texts("03_04.yaml")
-    assert "We will meet as usual" in texts("03_05.yaml")
+def test_shared_language_communication_contract():
+    assert "same internal language" in texts("03_03.yaml")
+    assert "never enter LTM1 or LTM2" in texts("03_03.yaml")
+    assert "reconstruction of a compatible cognitive state" in texts("03_03.yaml")
+    assert "Memory does not generate an aggregated Memory Vector" in texts("03_04.yaml")
+    assert "first exchange" in texts("03_05.yaml")
 
 
 def test_time_critical_and_chess_examples():
@@ -26,15 +27,15 @@ def test_time_critical_and_chess_examples():
     assert "chess move" in texts("08_01.yaml")
 
 
-def test_memory_architecture_feedback_invariant():
+def test_memory_architecture_shared_language_cycle():
     data = load("09_01.yaml")
     diagram = next(b for b in data["blocks"] if b.get("type") == "diagram")
     edges = {(e["from"], e["to"]): e for e in diagram["edges"]}
-    assert ("transformer", "answer") in edges
-    assert ("answer", "state") in edges
-    assert "no Memory Vector" in edges[("answer", "state")]["label"]
-    assert not any(e["from"] == "answer" and e["to"] in {"projection", "vector"} for e in diagram["edges"])
-    assert "produced only by a later explicit READ" in texts("09_01.yaml")
+    assert ("serialization", "transformer") in edges
+    assert edges[("serialization", "transformer")]["label"] == "shared internal language"
+    assert ("transformer", "update") in edges
+    assert ("update", "dialogue") in edges
+    assert "same Transformer-derived internal language" in texts("09_01.yaml")
 
 
 def test_no_exact_duplicate_long_content_blocks():

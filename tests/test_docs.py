@@ -41,58 +41,36 @@ def test_body_text_has_left_indent() -> None:
     assert "main {" in css
 
 
-def test_section_10_1_feedback_does_not_generate_memory_vector() -> None:
+def test_section_10_1_defines_dialogue_aware_read_update_cycle() -> None:
     import yaml
 
     content = yaml.safe_load((ROOT / "state" / "content" / "10_01.yaml").read_text(encoding="utf-8"))
-    diagram = next(block for block in content["blocks"] if block.get("type") == "diagram")
-    # The canonical diagram has one explicit learning path and no legacy
-    # shortcut feedback edge. UPDATE reaches Memory State only.
-    assert not any(edge.get("flow") == "feedback" for edge in diagram["edges"])
-    update_edges = [edge for edge in diagram["edges"] if edge.get("label") == "UPDATE"]
-    assert update_edges == [{"from": "C_SFL_PIPELINE", "to": "C_ASSOC_MEMORY", "label": "UPDATE", "flow": "learning"}]
-    assert any(edge["from"] == "C_ASSOC_MEMORY" and edge["to"] == "C_MEMORY_STATE" for edge in diagram["edges"])
-    assert not any(edge.get("label") == "UPDATE" and edge["to"] == "C_MEMORY_VECTOR" for edge in diagram["edges"])
-    prose = " ".join(block.get("text", "") for block in content["blocks"])
-    assert "does not generate a new Memory Vector" in prose
-    assert "exclusively by a subsequent explicit READ operation" in prose
+    rendered = " ".join(str(block) for block in content["blocks"])
+    for phrase in [
+        "first exchange",
+        "without memory READ",
+        "Dialogue Context",
+        "Serialized Memory Message",
+        "shared internal language",
+        "UPDATE",
+    ]:
+        assert phrase.lower() in rendered.lower()
+    assert "canonical null Memory Vector" not in rendered
 
-
-def test_progressive_training_and_memory_maturity_are_preserved() -> None:
+def test_progressive_training_and_memory_maturity_use_transformer_internal_language() -> None:
     import yaml
 
     staged = yaml.safe_load((ROOT / "state" / "content" / "12_06.yaml").read_text(encoding="utf-8"))
     maturity = yaml.safe_load((ROOT / "state" / "content" / "12_07.yaml").read_text(encoding="utf-8"))
     staged_text = " ".join(block.get("text", "") for block in staged["blocks"])
     maturity_text = " ".join(block.get("text", "") for block in maturity["blocks"])
-    assert "fixed canonical null Memory Vector" in staged_text
-    assert "force Memory Vector utilization" in staged_text
-    assert "differently worded but equal in meaning" in maturity_text
-    assert "different languages" in maturity_text
-    assert "Semantic invariance must be paired with semantic discrimination" in maturity_text
-
-    state = ResearchState.load(ROOT / "state")
-    terms = {entry["token"].removeprefix("T_") for entry in state.token_entries()}
-    required = {
-        "StagedTraining", "NullMemoryVector", "ForcedMemoryUtilization",
-        "AssociativeMemoryMaturity", "SemanticEquivalenceClass",
-        "SemanticInvariance", "SemanticDiscrimination", "MultilingualConsistency",
-        "IntraClassDistance", "InterClassDistance",
-    }
-    assert required <= terms
-
-    import tempfile
-    with tempfile.TemporaryDirectory() as tmp:
-        DocumentationBuilder(state, ROOT / "assets").build(Path(tmp))
-        index_html = (Path(tmp) / "chapter26" / "index.html").read_text(encoding="utf-8")
-        for label in [
-            "Memory Vector", "Staged Training", "Null Memory Vector",
-            "Forced Memory Utilization", "Associative Memory Maturity",
-            "Semantic Invariance", "Semantic Discrimination",
-            "Multilingual Consistency", "Intra Class Distance", "Inter Class Distance",
-        ]:
-            assert label in index_html
-
+    assert "Transformer is trained first" in staged_text
+    assert "internal language" in staged_text
+    assert "second language" in staged_text
+    assert "Different external formulations with the same meaning" in maturity_text
+    assert "Paraphrases + Languages" in " ".join(str(block) for block in maturity["blocks"])
+    assert "Semantic discrimination" in " ".join(str(block) for block in maturity["blocks"])
+    assert "fixed canonical null Memory Vector" not in staged_text
 
 def test_diagram_readability_is_enforced() -> None:
     import yaml
@@ -112,32 +90,19 @@ def test_diagram_readability_is_enforced() -> None:
     assert "diagram-size-{size}" in source
 
 
-def test_sequential_memory_vector_normalization_is_preserved() -> None:
+def test_obsolete_memory_vector_canonicalization_is_removed() -> None:
     import yaml
     chapter_data = yaml.safe_load((ROOT / "state" / "chapters.yaml").read_text(encoding="utf-8"))
     chapter11 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_11")
-    assert any(section.get("id") == "S_11_06" for section in chapter11["sections"])
-    content = yaml.safe_load((ROOT / "state" / "content" / "11_06.yaml").read_text(encoding="utf-8"))
-    rendered = " ".join(str(block) for block in content["blocks"])
+    assert not any(section.get("id") == "S_11_06" for section in chapter11["sections"])
+    combined = " ".join(path.read_text(encoding="utf-8") for path in (ROOT / "state").rglob("*.yaml"))
     for phrase in [
-        "Length Normalization",
-        "semantic stabilization",
-        "Covariance Analysis",
         "Orthogonal Coordinate Transformation",
         "Sparse Basis Rotation",
-        "Semantic preservation invariant",
+        "canonical null Memory Vector",
+        "Sequential Memory Vector Normalization",
     ]:
-        assert phrase.lower() in rendered.lower()
-    token_data = yaml.safe_load((ROOT / "state" / "tokens.yaml").read_text(encoding="utf-8"))
-    tokens = token_data["tokens"]
-    required = {
-        "T_SequentialMemoryVectorNormalization",
-        "T_LengthNormalizationStage",
-        "T_StatisticalOrthogonalizationStage",
-        "T_SparseRotationStage",
-    }
-    assert required.issubset({token.get("token") for token in tokens})
-
+        assert phrase.lower() not in combined.lower()
 
 def test_associative_memory_implementation_gap_analysis_is_preserved() -> None:
     import yaml

@@ -1,10 +1,27 @@
-kind: T_ContentBlock
-id: S_11_02
+kind: T_Content
+section: S_11_02
 blocks:
-- text: As an initial approximation, the raw vector is L2-normalized. Direction represents which knowledge
-    is activated, while the original magnitude is retained separately as activation strength.
-  type: paragraph
-- text: This separation avoids forcing two different quantities into one unstable signal and provides
-    the Transformer with a more predictable input distribution.
-  type: paragraph
-section_id: S_17_02
+- type: paragraph
+  text: Relevance is determined from the active Dialogue Context, the current internal-language quasi-query, LTM1
+    spreading activation, and linked LTM2 episodes, compositions, and scenarios.
+- type: table
+  headers:
+  - Source
+  - Contribution
+  rows:
+  - - Dialogue Context
+    - Prior exchanges, active entities, current objectives, unresolved questions, and established references.
+  - - Current Transformer state
+    - The present internal-language quasi-query and active processing context.
+  - - LTM1
+    - Associative atoms, contexts, permanent links, activation paths, and match strength.
+  - - LTM2
+    - Relevant episodes, compositions, scenarios, and state transitions.
+- type: principle
+  title: Dialogue-first relevance
+  text: For a continuing Dialogue, previous Dialogue content is the primary anchor. Long-term memory is projected
+    relative to that anchor rather than retrieved independently of it.
+- type: warning
+  title: First exchange exception
+  text: The first exchange of a new Dialogue has no memory READ. Its first UPDATE creates the initial Dialogue Context
+    required for meaningful later retrieval.

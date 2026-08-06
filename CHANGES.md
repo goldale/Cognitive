@@ -1,5 +1,17 @@
 # Changes
 
+## cognitive-0.4.01 — 2026-08-06
+
+- Rebased the architecture on a Transformer-defined shared internal language.
+- Removed raw external semantic input paths into Associative Memory.
+- Replaced aggregated Memory Vector generation with relevant memory selection and internal-language serialization.
+- Added Dialogue as a basic concept: first exchange without READ, first UPDATE creates Dialogue Context, later READ returns prior Dialogue content plus its long-term projection.
+- Added distinct Internal-Language Extraction Point and deeper Memory Reinjection Point.
+- Recorded a 20–30% later reinjection depth as an experimental hypothesis, not a fixed constant.
+- Removed Memory Vector orthogonalization, canonicalization, and sparse-basis normalization from the canonical architecture.
+- Reworked READ and UPDATE YAML contracts, diagrams, documentation, and complete A–Z index.
+- Audited duplicates, obsolete native-language statements, canonical term coverage, and generated links.
+
 ## cognitive-0.3.50 — 2026-08-05
 
 - Added local READ/UPDATE operation to MSG2.

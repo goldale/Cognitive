@@ -1,5 +1,7 @@
 # Architectural Evolution of Long-Lived Cognitive Systems
 
+> **cognitive-0.4.01:** Transformer, STM, LTM1, and LTM2 operate in one shared internal language derived from a selected intermediate Transformer representation.
+
 This repository is a working engineering implementation of a research program for long-lived cognitive systems. It does not claim to implement general intelligence or subjective consciousness. It implements the infrastructure and executable mechanisms that can be built now and tested before deeper integration is attempted.
 
 The project originated through a long research dialogue between a human systems engineer with a background in applied mathematics, physics, and software engineering and an OpenAI language model. The consolidated architecture is therefore a product of joint cognitive work rather than a transcript, a one-sided manuscript, or a conventional author-editor workflow.

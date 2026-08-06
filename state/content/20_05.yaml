@@ -69,6 +69,6 @@ blocks:
   type: diagram
 - title: Explicit retrieval remains mandatory
   text: When replay needs current memory context, it must perform an explicit READ. UPDATE never performs
-    implicit READ and never produces a Memory Vector.
+    implicit READ and never returns a serialized memory message.
   type: principle
 section_id: S_20_05

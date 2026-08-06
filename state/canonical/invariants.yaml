@@ -1,25 +1,26 @@
 kind: T_Collection
 invariants:
 - id: INV_001
-  statement: READ never modifies Memory State.
+  statement: READ does not structurally modify LTM1 or LTM2 during normal waking operation.
   severity: release_blocking
 - id: INV_002
-  statement: UPDATE modifies only Memory State.
+  statement: UPDATE may change dialogue state and LTM2 content but does not structurally modify LTM1 during waking
+    operation.
   severity: release_blocking
 - id: INV_003
-  statement: UPDATE never produces a Memory Vector.
+  statement: Memory output is a serialized internal-language sequence, not a separately generated memory language.
   severity: release_blocking
 - id: INV_004
-  statement: UPDATE never performs an implicit READ.
+  statement: The first exchange of a new Dialogue performs no memory READ.
   severity: release_blocking
 - id: INV_005
-  statement: A new Memory Vector is produced only by an explicit READ.
+  statement: The first UPDATE of a Dialogue creates the initial dialogue context available to later READ operations.
   severity: release_blocking
 - id: INV_006
-  statement: Raw external observations are not canonical UPDATE inputs.
+  statement: Raw external observations are never semantic inputs to STM, LTM1, or LTM2.
   severity: release_blocking
 - id: INV_007
-  statement: The canonical UPDATE input is a Semantic Representation produced by the Transformer.
+  statement: Both READ and UPDATE inputs are representations from the selected Transformer internal-language interface.
   severity: release_blocking
 - id: INV_008
   statement: Input Buffer elements are filled sequentially without semantic routing or destination lookup.
@@ -56,14 +57,6 @@ invariants:
 - id: INV_017
   statement: LTM2 has no independent propagation graph or propagation logic.
   severity: release_blocking
-- id: INV_018
-  statement: The initial Memory Vector readout implementation supports both MAX and SUM under identical dimensionality
-    and evaluation conditions.
-  severity: release_blocking
-- id: INV_019
-  statement: For deterministic READ, readout selection is based on non-degenerate Memory Vector entropy over representative
-    LTM states and event queries; stochastic READ additionally requires noise-aware mutual-information analysis.
-  severity: release_blocking
 - id: INV_020
   statement: The MSG2 operation field is interpreted locally by each receiving LTM1 node; no global STM READ or
     UPDATE mode is required.
@@ -85,9 +78,33 @@ invariants:
     fully defined starts, ends, order, and structural links.
   severity: release_blocking
 - id: INV_026
-  statement: The native communication language exported to Transformer is generated from selected LTM1 associative
-    atoms by controlled excitation and repeated Memory Vector readout.
+  statement: Transformer and memory communicate in one shared internal language defined by the selected intermediate
+    Transformer representation.
   severity: release_blocking
 - id: INV_027
-  statement: Native-language export does not require serializing the complete LTM1 state.
+  statement: READ serializes only relevant memory information; it does not serialize the complete LTM1 or LTM2 state.
   severity: release_blocking
+- id: INV_028
+  statement: For an active Dialogue, READ returns previous dialogue content together with its relevant projection
+    onto LTM1 and LTM2.
+  severity: release_blocking
+- id: INV_029
+  statement: UPDATE carries a new internal state produced during Transformer processing and extends the current
+    Dialogue context.
+  severity: release_blocking
+- id: INV_030
+  statement: Structural changes to conservative LTM1 are permitted only during Sleep or Offline Consolidation.
+  severity: release_blocking
+- id: INV_031
+  statement: STM transports and orders internal-language messages but does not define their semantics.
+  severity: release_blocking
+- kind: T_Invariant
+  id: INV_INTERNAL_INTERFACE_ASYMMETRY
+  statement: The Internal-Language Extraction Point and Memory Reinjection Point are distinct interfaces.
+- kind: T_Invariant
+  id: INV_MEMORY_BYPASSES_EARLY_TRANSLATION
+  statement: Serialized memory bypasses early Transformer layers whose function is translation of raw external form.
+- kind: T_Invariant
+  id: INV_REINJECTION_OFFSET_EXPERIMENTAL
+  statement: The extraction-to-reinjection depth offset is implementation-dependent; 20–30% later depth is a working
+    hypothesis, not a fixed invariant.

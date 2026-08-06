@@ -1,11 +1,23 @@
-kind: T_ContentBlock
-id: S_11_03
+kind: T_Content
+section: S_11_03
 blocks:
-- text: A mature Memory State should map semantically equivalent inputs to nearby Memory Vectors even
-    when wording or language differs. This is a test of invariance to surface serialization, not proof
-    of complete semantic understanding.
-  type: paragraph
-- text: Stability should be measured over equivalence classes, paraphrases, translations, and context-preserving
-    reformulations.
-  type: paragraph
-section_id: S_17_03
+- type: paragraph
+  text: The relevant memory state is distributed and parallel, while Transformer consumption is sequential. Serialization
+    therefore preserves semantic structure through ordering rather than through a newly invented vector space.
+- type: list
+  title: Recommended serialization order
+  items:
+  - Dialogue identity and active objective, when required by the interface.
+  - Prior Dialogue content needed to resolve current references.
+  - Most strongly matched LTM1 atoms and their active contexts.
+  - Linked LTM2 episodes, compositions, scenarios, and expected transitions.
+  - Competing alternatives, uncertainty, and provenance where they affect interpretation.
+  - An explicit completion boundary.
+- type: principle
+  title: Preserve relations
+  text: Serialization must preserve which elements are contexts, relations, alternatives, causes, consequences,
+    or temporal successors. A flat unordered bag of activations is insufficient.
+- type: note
+  title: Implementation freedom
+  text: The exact ordering policy may be learned, deterministic, or hybrid, but it must produce representations
+    consumable by the selected Transformer interface.

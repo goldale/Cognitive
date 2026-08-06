@@ -4,8 +4,9 @@ components:
   id: C_ASSOC_MEMORY
   name: Associative Memory
   roles:
-  - contextual_retriever
-  - semantic_learner
+  - dialogue_context_retriever
+  - long_term_projection
+  - internal_state_learner
 - kind: external
   id: C_EXT_INPUT
   name: External Input
@@ -18,15 +19,17 @@ components:
   - persistent_and_dynamic_memory_state
 - kind: interface
   id: C_MEMORY_VECTOR
-  name: Memory Vector
+  name: Serialized Memory Message
   roles:
-  - read_result
-  - transformer_conditioning
+  - internal_language_sequence
+  - relevant_memory_delivery
 - kind: data
   id: C_SEM_REP
-  name: Semantic Representation
+  name: Internal Language Representation
   roles:
-  - canonical_update_input
+  - read_input
+  - update_input
+  - shared_subsystem_language
 - kind: process
   id: C_SFL_PIPELINE
   name: Semantic Feedback Learning Pipeline
@@ -37,8 +40,9 @@ components:
   id: C_TRANSFORMER
   name: Transformer
   roles:
-  - semantic_reasoning_engine
-  - semantic_teacher
+  - external_interpreter
+  - internal_language_source
+  - reasoning_engine
 - kind: state
   id: C_INPUT_BUFFER
   name: Input Buffer
@@ -49,7 +53,9 @@ components:
   id: C_STM
   name: Short-Term Memory
   roles:
-  - semantically_neutral_activation_substrate
+  - internal_language_transport
+  - dialogue_context
+  - message_ordering
 - kind: storage
   id: C_LTM
   name: Long-Term Memory
@@ -63,10 +69,25 @@ components:
   roles:
   - linear_sequence_construction
   - sequence_position_numbering
-- kind: interface
-  id: C_MV_READOUT
-  name: Memory Vector Readout
+- kind: state
+  id: C_DIALOGUE
+  name: Dialogue
   roles:
-  - fixed_dimensional_readout
-  - max_sum_experimentation
-  - entropy_evaluation
+  - logically_connected_external_exchange
+  - context_scope
+- kind: interface
+  id: C_INTERNAL_LANGUAGE
+  name: Internal Language
+  roles:
+  - shared_transformer_memory_language
+  - intermediate_layer_representation
+- kind: T_Component
+  id: Internal_Language_Extraction_Point
+  name: Internal-Language Extraction Point
+  role: Transformer interface that exposes the selected intermediate representation used for memory-facing READ
+    and UPDATE content.
+- kind: T_Component
+  id: Memory_Reinjection_Point
+  name: Memory Reinjection Point
+  role: Deeper Transformer interface that receives serialized memory directly in the shared internal language for
+    integration and reasoning.

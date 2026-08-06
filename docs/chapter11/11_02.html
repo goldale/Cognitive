@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 11 · Section 11.2 · Direction and Activation Magnitude</title>
+<title>Chapter 11 · Section 11.2 · Sources of Relevance</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
 <nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="11_03.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 11</p><h1>Canonical Memory Representation</h1><p class="section-label">Section 11.2</p><h2>Direction and Activation Magnitude</h2></header>
-<main><p>As an initial approximation, the raw vector is L2-normalized. Direction represents which knowledge is activated, while the original magnitude is retained separately as activation strength.</p><p>This separation avoids forcing two different quantities into one unstable signal and provides the Transformer with a more predictable input distribution.</p></main>
+<header><p class="chapter-label">Chapter 11</p><h1>Relevant Memory Selection and Serialization</h1><p class="section-label">Section 11.2</p><h2>Sources of Relevance</h2></header>
+<main><p>Relevance is determined from the active Dialogue Context, the current internal-language quasi-query, LTM1 spreading activation, and linked LTM2 episodes, compositions, and scenarios.</p><table><thead><tr><th>Source</th><th>Contribution</th></tr></thead><tbody><tr><td>Dialogue Context</td><td>Prior exchanges, active entities, current objectives, unresolved questions, and established references.</td></tr><tr><td>Current Transformer state</td><td>The present internal-language quasi-query and active processing context.</td></tr><tr><td>LTM1</td><td>Associative atoms, contexts, permanent links, activation paths, and match strength.</td></tr><tr><td>LTM2</td><td>Relevant episodes, compositions, scenarios, and state transitions.</td></tr></tbody></table><aside class="principle"><h4>Dialogue-first relevance</h4><p>For a continuing Dialogue, previous Dialogue content is the primary anchor. Long-term memory is projected relative to that anchor rather than retrieved independently of it.</p></aside><aside class="warning"><h4>First exchange exception</h4><p>The first exchange of a new Dialogue has no memory READ. Its first UPDATE creates the initial Dialogue Context required for meaningful later retrieval.</p></aside></main>
 <footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="11_03.html">Next →</a></nav></footer>
 </div>
 </body>

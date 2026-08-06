@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 11 · Section 11.3 · Semantic Stability Criterion</title>
+<title>Chapter 11 · Section 11.3 · Serialization Order and Structure</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
 <nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="11_04.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 11</p><h1>Canonical Memory Representation</h1><p class="section-label">Section 11.3</p><h2>Semantic Stability Criterion</h2></header>
-<main><p>A mature Memory State should map semantically equivalent inputs to nearby Memory Vectors even when wording or language differs. This is a test of invariance to surface serialization, not proof of complete semantic understanding.</p><p>Stability should be measured over equivalence classes, paraphrases, translations, and context-preserving reformulations.</p></main>
+<header><p class="chapter-label">Chapter 11</p><h1>Relevant Memory Selection and Serialization</h1><p class="section-label">Section 11.3</p><h2>Serialization Order and Structure</h2></header>
+<main><p>The relevant memory state is distributed and parallel, while Transformer consumption is sequential. Serialization therefore preserves semantic structure through ordering rather than through a newly invented vector space.</p><ul><li>Dialogue identity and active objective, when required by the interface.</li><li>Prior Dialogue content needed to resolve current references.</li><li>Most strongly matched LTM1 atoms and their active contexts.</li><li>Linked LTM2 episodes, compositions, scenarios, and expected transitions.</li><li>Competing alternatives, uncertainty, and provenance where they affect interpretation.</li><li>An explicit completion boundary.</li></ul><aside class="principle"><h4>Preserve relations</h4><p>Serialization must preserve which elements are contexts, relations, alternatives, causes, consequences, or temporal successors. A flat unordered bag of activations is insufficient.</p></aside><aside class="note"><h4>Implementation freedom</h4><p>The exact ordering policy may be learned, deterministic, or hybrid, but it must produce representations consumable by the selected Transformer interface.</p></aside></main>
 <footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="11_04.html">Next →</a></nav></footer>
 </div>
 </body>

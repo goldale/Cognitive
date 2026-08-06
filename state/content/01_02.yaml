@@ -97,7 +97,7 @@ blocks:
   - kind: interface
     id: vector
     status: current
-    label: Canonical Memory Vector
+    label: Serialized Memory Message
   proportionality_priority: true
   readability_priority: true
   size: standard

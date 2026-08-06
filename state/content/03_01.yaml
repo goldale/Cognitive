@@ -1,85 +1,75 @@
-kind: T_ContentBlock
-id: S_03_01
+kind: T_Content
+section: S_03_01
 blocks:
-- text: Communication does not transfer a cognitive model. A sender selects a limited fragment of its
-    internal state and transforms that fragment into a sequence suitable for an external channel. This
-    operation is T_PartialSerialization.
-  type: paragraph
-- title: Communication and Semantic Reconstruction
-  description: Communication transfers a partial serialized signal; the receiver reconstructs meaning
-    using its own context and memory.
+- type: paragraph
+  text: The shared internal language is the central organizing concept of Cognitive. It is not invented by empty
+    memory and is not an independent protocol layered above Transformer cognition. It is inherited from a selected
+    intermediate representation of the trained Transformer.
+- type: principle
+  title: Foundational axiom
+  text: Transformer, STM, LTM1, and LTM2 communicate through one shared internal language. No subsystem defines
+    a second semantic language requiring translation.
+- type: paragraph
+  text: The trained Transformer therefore establishes the semantic coordinate system before Associative Memory
+    contains any experience. Memory begins empty and develops as a Transformer-specific model of the experienced
+    world.
+- type: diagram
+  title: The Internal Language at the Center of Cognitive
+  description: External signals become internal-language representations before memory access. Memory returns
+    relevant information in the same language.
   direction: LR
-  edges:
-  - flow: information
-    from: model_a
-    to: serialize
-  - flow: information
-    from: serialize
-    to: signal
-  - flow: information
-    from: signal
-    to: decode
-  - flow: information
-    from: decode
-    to: representation
-  - flow: context
-    from: context
-    label: conditions interpretation
-    to: representation
-  - flow: information
-    from: representation
-    to: integration
-  nodes:
-  - kind: state
-    id: context
-    status: current
-    label: Receiver Context and Memory
-  - kind: subsystem
-    id: decode
-    status: current
-    label: Decoding and Preprocessing
-  - kind: subsystem
-    id: integration
-    status: current
-    label: Model Integration
-  - kind: state
-    id: model_a
-    status: current
-    label: Internal Model A
-  - kind: state
-    id: representation
-    status: current
-    label: Reconstructed Semantic Representation
-  - kind: subsystem
-    id: serialize
-    status: current
-    label: Partial Serialization
-  - kind: data
-    id: signal
-    status: current
-    label: Serialized Signal
-  proportionality_priority: true
-  readability_priority: true
   size: standard
-  type: diagram
-- text: The receiver does not reconstruct the sender's model. It uses the received sequence to extend
-    or reorganize its own model until the message appears interpretable within the receiver's current
-    world model.
-  type: paragraph
-- text: 'Sender Model ↓
-
-    T_PartialSerialization ↓
-
-    Communication Channel ↓
-
-    T_Deserialization ↓
-
-    T_ModelIntegration ↓
-
-    Modified Receiver Model'
-  type: formula
-- text: The adjective partial is essential. A mature cognitive state is too integrated and too large to
-    serialize completely through ordinary communication. The message is meaningful only against a background
-    already present in the receiver.
-  type: paragraph
-section_id: S_02_01
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: world
+    label: External World
+    kind: external
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+  - id: language
+    label: Shared Internal Language
+    kind: interface
+  - id: stm
+    label: STM
+    kind: state
+  - id: ltm1
+    label: LTM1
+    kind: storage
+  - id: ltm2
+    label: LTM2
+    kind: storage
+  edges:
+  - from: world
+    to: transformer
+    label: raw input
+    flow: information
+  - from: transformer
+    to: language
+    label: intermediate representation
+    flow: information
+  - from: language
+    to: stm
+    label: ordered message
+    flow: context
+  - from: stm
+    to: ltm1
+    label: MSG2 READ / UPDATE
+    flow: information
+  - from: ltm1
+    to: ltm2
+    label: confirmed match
+    flow: learning
+  - from: ltm2
+    to: language
+    label: relevant serialization
+    flow: context
+  - from: language
+    to: transformer
+    label: memory message
+    flow: information
+- type: note
+  title: Architectural consequence
+  text: The former problem of generating a native LTM1 language disappears. The remaining problem is selection
+    and serialization of relevant distributed memory state.
