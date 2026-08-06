@@ -1,8 +1,27 @@
 kind: T_ContentBlock
 id: S_25_04
 blocks:
-- text: The Historical Perspectives registry is established in Cognitive. Canonical HP objects
-    will be added as future material is explicitly classified; no existing normative text is silently
-    reclassified.
+- title: DA-0006 — Automatic Generation
+  text: The generator creates navigation, HTML anchors, typed registries, A–Z entries, cross-references, and future PDF output from canonical data.
+  type: principle
+- items:
+  - Every typed object must have a unique identifier.
+  - Every internal reference must resolve.
+  - Generated HTML must expose a stable anchor for each typed object.
+  - Registries list canonical objects without duplicating their full text.
+  - Human readability has priority over excessive formalization.
+  - Release validation must detect duplicate identifiers and broken references.
+  type: list
+- text: Future releases may represent the canonical documentation as an explicit graph of objects and relations while preserving the current human-readable chapter structure.
   type: paragraph
+- title: DA-0007 — Git is the version authority
+  text: Canonical YAML and generated HTML are version-independent. Their content must not contain release, version, revision, build-number, or schema-version metadata used only to identify a project snapshot. Git commits and tags provide the authoritative history.
+  type: principle
+- items:
+  - A release archive name may identify a packaged snapshot.
+  - Changing only a release number must never require editing architectural YAML or regenerated HTML.
+  - Generators and bootstrap scripts must not insert version labels into canonical YAML or HTML.
+  - Tests must reject reintroduction of version metadata into canonical YAML and generated HTML.
+  - Package-manager metadata may retain its own technical package version when required by the packaging ecosystem; it is not architectural documentation.
+  type: list
 section_id: S_25_04

@@ -74,7 +74,7 @@ terms:
 - term: MSG1
   definition: The element-LTM1 message type operating exclusively in the MSG1 orthogonal state subspace.
 - term: MSG2
-  definition: The STM-emitted LTM message MSG2(amplitude, sequence_number, operation). Its operation field initially
+  definition: The STM-emitted LTM message MSG2(amplitude, activation_position, operation). Its operation field initially
     supports READ and UPDATE. Every MSG2 excites LTM1 and propagates only through the persistent LTM1 graph; UPDATE
     participation in LTM2 is permitted only after a confirmed associative match.
 - term: MSG2 Operation
@@ -108,11 +108,8 @@ terms:
 - definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
   term: Semantic Teacher
 - term: Sequence
-  definition: A directed linear STM activation chain. External input chains are produced by the Sequencer; UPDATE
-    chains are constructed directly by Transformer with already defined starts, ends, order, and structural links.
-- term: Sequencer
-  definition: The Input / STM component that orders and normalizes the combined buffered stream, proposes Logical
-    Episode boundaries, and delegates uncertain boundary cases to the main Transformer.
+  definition: A directed activation chain represented in STM. Its order is established by the producing input or
+    Transformer process; no separate sequencing component exists.
 - term: Serialized Memory Message
   definition: The sequence returned by memory to Transformer containing prior Dialogue content and its relevant
     projection onto LTM1 and LTM2.
@@ -150,3 +147,6 @@ terms:
 - term: Atom S-Context
   definition: 'Semantic Context: the stable local semantic environment associated with an Internal Language Atom
     and required for its interpretation.'
+- term: LTM1 Associative Vector Codebook
+  definition: Proposed LTM1 latent indexing structure that maps Internal Language vectors to associative candidates.
+    Its exact mechanics remain an open research question.

@@ -1,63 +1,11 @@
-kind: T_Content
-section: S_11_04
+kind: T_ContentBlock
+id: S_11_04
 blocks:
-- type: paragraph
-  text: Serialization operates under a finite sequence and processing budget. It must return the most useful coherent
-    memory message rather than attempt to export the complete activated graph.
-- type: list
-  title: Budget controls
-  items:
-  - Maximum serialized elements or vectors.
-  - Maximum retrieval and serialization time.
-  - Maximum number of LTM2 episodes or scenarios.
-  - Minimum activation or relevance threshold.
-  - Duplicate and near-duplicate suppression.
-  - Reserved capacity for uncertainty and completion markers.
-- type: diagram
-  title: Bounded Serialization and Completion
-  description: The serializer prioritizes coherent relevant content under finite sequence and processing budgets.
-  direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
-  nodes:
-  - id: candidates
-    label: Relevant Candidate Content
-    kind: state
-  - id: rank
-    label: Relevance and Coherence Ranking
-    kind: process
-  - id: budget
-    label: Sequence / Time / Episode Budget
-    kind: constraint
-  - id: emit
-    label: Emit Ordered Internal-Language Elements
-    kind: process
-  - id: complete
-    label: Serialization Completion
-    kind: control
-  edges:
-  - from: candidates
-    to: rank
-    label: candidate set
-    flow: information
-  - from: budget
-    to: rank
-    label: bounds
-    flow: control
-  - from: rank
-    to: emit
-    label: highest-value coherent subset
-    flow: information
-  - from: emit
-    to: complete
-    label: budget used or no useful addition
-    flow: control
-- type: principle
-  title: Coherence before volume
-  text: A smaller internally coherent message is preferable to a larger sequence that loses relation structure or
-    exceeds the Transformer processing budget.
-- type: definition
-  title: Serialization Completion
-  text: The condition indicating that the available budget has been used or that no additional memory element is
-    expected to materially improve the current Dialogue processing step.
+- text: Associative retrieval and classical storage solve different problems. Learned or graph-based association
+    identifies relevant keys and relationships; hash tables, key-value stores, and databases retain large
+    volumes of exact or structured state economically.
+  type: paragraph
+- text: The architecture should therefore combine neural association with conventional storage and finite-state
+    control where deterministic behavior is preferable.
+  type: paragraph
+section_id: S_17_04

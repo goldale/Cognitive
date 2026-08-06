@@ -1,10 +1,79 @@
 kind: T_ContentBlock
 id: S_13_03
 blocks:
-- text: Sleep-like structural reorganization and the final global evaluation mechanism are intentionally deferred
-    from the first implementation of the Transformer-memory interface.
+- text: No general function is assumed to map changed weights directly to an optimal new architecture.
+    The system must generate candidate organizations, evaluate them, retain useful changes, and repeat.
   type: paragraph
-- text: Deferral is an architectural boundary, not rejection. Initial versions should establish a working memory
-    contract before adding offline topology optimization, forgetting, global reweighting, and more general evaluation.
+- title: Functional and Structural Learning
+  description: Functional learning changes active weights; structural learning changes which connections
+    exist and how topology is organized.
+  direction: TB
+  edges:
+  - flow: information
+    from: experience
+    to: functional
+  - flow: learning
+    from: functional
+    label: online adaptation
+    to: weights
+  - flow: information
+    from: experience
+    to: signals
+  - flow: learning
+    from: signals
+    label: offline evidence
+    to: structural
+  - flow: optimization
+    from: structural
+    label: create / remove links
+    to: topology
+  nodes:
+  - kind: external
+    id: experience
+    status: current
+    label: Experience
+  - kind: subsystem
+    id: functional
+    status: current
+    label: Functional Learning
+  - kind: state
+    id: signals
+    status: current
+    label: Connection State Signals
+  - kind: future
+    id: structural
+    status: future
+    label: Structural Learning
+  - kind: storage
+    id: topology
+    status: future
+    label: Topology Changes
+  - kind: state
+    id: weights
+    status: current
+    label: Weight Updates
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- proportionality_priority: true
+  readability_priority: true
+  size: standard
+  text: 'Current Architecture ↓
+
+    Generate Candidate ↓
+
+    Replay and Evaluate ↓
+
+    Accept / Reject / Partially Apply ↓
+
+    Repeat'
+  type: diagram
+- text: 'Candidate generation can initially be simple: alternative clusters, new indexes, split or merged
+    categories, different retention thresholds, or different executor assignments.'
   type: paragraph
-section_id: S_13_03
+- text: Evaluation must include future utility, coherence, latency, complexity, retention of important
+    knowledge, and the cost of transition. A candidate that performs better on one benchmark but destroys
+    continuity is not automatically superior.
+  type: paragraph
+section_id: S_06_03

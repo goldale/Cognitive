@@ -1,69 +1,18 @@
 kind: T_ContentBlock
 id: S_13_01
 blocks:
-- text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization
-    changes cross-domain evaluation, fundamental categories, objective priorities, or the relationship
-    between memory and model.
+- text: Consolidation should normally execute outside the interactive response path. A dialogue system
+    must remain responsive; a consolidation system should be conservative, evidence-seeking, and willing
+    to leave information unresolved.
   type: paragraph
-- title: Offline Sleep and Structural Optimization
-  description: A future sleep process replays experience, estimates importance, and proposes safe structural
-    changes to memory.
-  direction: TB
-  edges:
-  - flow: information
-    from: state
-    to: replay
-  - flow: information
-    from: replay
-    to: importance
-  - flow: information
-    from: importance
-    to: proposal
-  - flow: information
-    from: proposal
-    to: validate
-  - flow: optimization
-    from: validate
-    label: accepted changes
-    to: updated
-  nodes:
-  - kind: future
-    id: importance
-    status: future
-    label: Importance and Usage Analysis
-  - kind: future
-    id: proposal
-    status: future
-    label: Topology Change Proposals
-  - kind: future
-    id: replay
-    status: future
-    label: Replay and Consolidation
-  - kind: state
-    id: state
-    status: current
-    label: Memory State
-  - kind: state
-    id: updated
-    status: future
-    label: Optimized Memory State
-  - kind: future
-    id: validate
-    status: future
-    label: Evaluation and Validation
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-  display_scale: 0.5
-- text: Local changes should be common. Global changes should require stronger evidence because their
-    errors propagate widely and can alter identity continuity.
+- text: The biological analogy is sleep, but the engineering requirement is simply asynchronous processing
+    with access to recent experience, current memory, objectives, and outcome feedback.
   type: paragraph
-- text: Only one major model should normally undergo cardinal restructuring at a time. Rate limits and
-    staged evaluation reduce cascading adaptation to noise. Emergency exceptions remain possible when
-    evidence indicates a global regime change.
+- text: An initial implementation can use scheduled jobs, replay buffers, clustering, confidence updates,
+    and candidate evaluation without changing the base neural model.
   type: paragraph
-- title: Conservative structural change
-  text: Adapt quickly through weights and slowly through architecture.
+- title: Different optimization criteria require different subsystems
+  text: The dialogue component optimizes responsiveness and usefulness. The consolidation component optimizes
+    long-term consistency, retention, and corrigibility.
   type: principle
-section_id: S_05_04
+section_id: S_06_01

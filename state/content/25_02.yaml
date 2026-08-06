@@ -1,7 +1,36 @@
 kind: T_ContentBlock
 id: S_25_02
 blocks:
-- text: The Architectural Notes registry is established in Cognitive. Canonical AN objects will
-    be added as future material is explicitly classified; no existing normative text is silently reclassified.
+- text: Typed knowledge objects make epistemic and normative status explicit.
   type: paragraph
+- headers:
+  - Identifier
+  - Type
+  - Purpose
+  rows:
+  - - RS
+    - Research Session
+    - Structured records of research questions, constraints, hypotheses, and unresolved outcomes
+  - - RN
+    - Research Note
+    - Hypotheses and open research directions
+  - - AN
+    - Architectural Note
+    - Rationale and interpretation of architectural decisions
+  - - IN
+    - Implementation Note
+    - Reference engineering approaches and non-normative technology choices
+  - - HP
+    - Historical Perspective
+    - Historical analogies and motivating examples without claims of historical proof
+  - - MN
+    - Margin Note
+    - Deferred alternatives and side observations preserved outside the canonical architecture
+  type: table
+- title: DA-0003 — Typed Knowledge Objects
+  text: Every contextual knowledge object has a declared type, stable identifier, title, status, canonical location, and linkable HTML anchor.
+  type: principle
+- title: Normative boundary
+  text: RS, RN, IN, HP, and MN objects do not change architectural contracts unless a separate canonical architectural revision explicitly adopts their conclusions.
+  type: warning
 section_id: S_25_02

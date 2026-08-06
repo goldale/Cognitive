@@ -1,19 +1,76 @@
 kind: T_ContentBlock
 id: S_07_04
 blocks:
-- text: 'A cognitive system receives incomparable inputs: sensory evidence, predicted reward, memory consistency,
-    uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires
-    a mechanism that makes these inputs jointly evaluable.'
+- text: Every multi-step scenario should include time estimates, deadlines, waiting periods, synchronization
+    constraints, and probability distributions over completion or transition times.
   type: paragraph
-- text: The project proposes a trainable T_GlobalEvaluation implemented initially as one or more neural
-    networks. It need not output a consciously accessible scalar, but it must support comparison among
-    candidate states and actions.
+- title: Temporal Scenario Organization
+  description: Planning scenarios carry temporal attributes, branch probabilities, and causal hypotheses
+    before evaluation.
+  direction: TB
+  edges:
+  - flow: information
+    from: state
+    to: organize
+  - flow: information
+    from: organize
+    label: time + probability
+    to: s1
+  - flow: information
+    from: organize
+    label: time + probability
+    to: s2
+  - flow: information
+    from: organize
+    label: time + probability
+    to: s3
+  - flow: information
+    from: s1
+    to: evaluate
+  - flow: information
+    from: s2
+    to: evaluate
+  - flow: information
+    from: s3
+    to: evaluate
+  - flow: evaluation
+    from: evaluate
+    label: highest evaluated option
+    to: selected
+  nodes:
+  - kind: subsystem
+    id: evaluate
+    status: current
+    label: Integrated Evaluation
+  - kind: subsystem
+    id: organize
+    status: current
+    label: Temporal Organization
+  - kind: data
+    id: s1
+    status: current
+    label: Scenario A
+  - kind: data
+    id: s2
+    status: current
+    label: Scenario B
+  - kind: data
+    id: s3
+    status: current
+    label: Scenario C
+  - kind: external
+    id: selected
+    status: current
+    label: Selected Next Action
+  - kind: state
+    id: state
+    status: current
+    label: Current State
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: Temporal planning enables the evaluator to compare immediate and delayed outcomes and prevents
+    a plan from being treated as an unordered list of semantically valid actions.
   type: paragraph
-- text: 'Initial training uses evaluated examples rather than a fully explicit utility formula. Disputes
-    about the initial example library remain local: individual examples can be reviewed without requiring
-    universal agreement on an abstract definition of value.'
-  type: paragraph
-- text: Lifelong training is mandatory. A fixed evaluator would freeze the assumptions of its initial
-    designers and prevent genuine cognitive development.
-  type: paragraph
-section_id: S_07_01
+section_id: S_16_04

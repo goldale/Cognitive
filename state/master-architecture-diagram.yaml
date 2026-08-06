@@ -2,7 +2,7 @@ kind: T_Collection
 diagram:
   id: MASTER_ARCHITECTURE_DIAGRAM
   title: Cognitive Master Architecture Diagram
-  version: 0.4.14
+  version: 0.5.05
   canonical: true
   visual_generation_policy:
     yaml_updated_each_release: true
@@ -26,7 +26,7 @@ diagram:
     label: STM + D-Context
     kind: state
   - id: MSG2
-    label: MSG2(amplitude, sequence_number, operation)
+    label: MSG2(amplitude, activation_position, operation)
     kind: message
   - id: LTM1
     label: LTM1 Conservative Associative Graph
@@ -44,7 +44,7 @@ diagram:
     label: Memory Reinjection Point (Deeper)
     kind: interface
   - id: transformer_back
-    label: Transformer Integration, Reasoning, and Response
+    label: 'Transformer Cognitive Core\n(Deep Layers)'
     kind: subsystem
   - id: update
     label: New Internal State / UPDATE

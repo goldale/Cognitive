@@ -1,25 +1,69 @@
 kind: T_ContentBlock
 id: S_14_01
 blocks:
-- text: Neural networks and classical programs both seek states that optimize a task-dependent functional,
-    but they operate under different knowledge conditions.
+- text: Local reorganization changes a bounded region of the knowledge graph or memory index. Global reorganization
+    changes cross-domain evaluation, fundamental categories, objective priorities, or the relationship
+    between memory and model.
   type: paragraph
-- headers:
-  - Class
-  - Functional
-  - Typical executor
-  rows:
-  - - I
-    - Well defined and tractable
-    - Algorithm, solver, finite-state machine
-  - - II
-    - Not explicit; examples are evaluated
-    - Neural network
-  - - III
-    - Partly defined and partly example-based, or fully defined but very complicated.
-    - Hybrid architecture
-  type: table
-- text: The third class includes many practical robotics, autonomous driving, diagnosis, planning, and
-    dialogue tasks. The central engineering problem is where to cut the computation.
+- title: Offline Sleep and Structural Optimization
+  description: A future sleep process replays experience, estimates importance, and proposes safe structural
+    changes to memory.
+  direction: TB
+  edges:
+  - flow: information
+    from: state
+    to: replay
+  - flow: information
+    from: replay
+    to: importance
+  - flow: information
+    from: importance
+    to: proposal
+  - flow: information
+    from: proposal
+    to: validate
+  - flow: optimization
+    from: validate
+    label: accepted changes
+    to: updated
+  nodes:
+  - kind: future
+    id: importance
+    status: future
+    label: Importance and Usage Analysis
+  - kind: future
+    id: proposal
+    status: future
+    label: Topology Change Proposals
+  - kind: future
+    id: replay
+    status: future
+    label: Replay and Consolidation
+  - kind: state
+    id: state
+    status: current
+    label: Memory State
+  - kind: state
+    id: updated
+    status: future
+    label: Optimized Memory State
+  - kind: future
+    id: validate
+    status: future
+    label: Evaluation and Validation
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+  display_scale: 0.5
+- text: Local changes should be common. Global changes should require stronger evidence because their
+    errors propagate widely and can alter identity continuity.
   type: paragraph
-section_id: S_09_01
+- text: Only one major model should normally undergo cardinal restructuring at a time. Rate limits and
+    staged evaluation reduce cascading adaptation to noise. Emergency exceptions remain possible when
+    evidence indicates a global regime change.
+  type: paragraph
+- title: Conservative structural change
+  text: Adapt quickly through weights and slowly through architecture.
+  type: principle
+section_id: S_06_04

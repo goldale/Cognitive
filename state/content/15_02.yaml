@@ -1,16 +1,16 @@
 kind: T_ContentBlock
 id: S_15_02
 blocks:
-- text: A significant book is not merely a container of propositions. It is a designed sequence of stimuli
-    capable of changing categories, evaluations, attention, and future questions.
-  type: paragraph
-- text: The reader may forget most explicit sentences while retaining a changed system of integrated evaluation.
-    The durable output is therefore a modified reader, not a copied text.
-  type: paragraph
-- title: Cognitive value of a book
-  text: The measurable change in future interpretation, evaluation, learning direction, and action induced
-    by iterative integration of the book.
+- title: T_MetaArchitect
+  text: A trainable system that designs a computational graph by allocating operations among neural, algorithmic,
+    and hybrid executors.
   type: definition
-- text: This definition permits evaluation without assuming perfect recall.
+- text: The output of the meta-architect is not the task answer. It is an architecture for producing the
+    answer.
   type: paragraph
-section_id: S_08_02
+- text: Inputs can include objective completeness, data availability, noise, state discreteness, safety
+    criticality, interpretability requirements, latency, energy cost, and distribution shift.
+  type: paragraph
+- text: Observed deployment utility supplies the lifelong training signal.
+  type: paragraph
+section_id: S_10_02

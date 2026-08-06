@@ -1,6 +1,6 @@
 # Architectural Evolution of Long-Lived Cognitive Systems
 
-> **cognitive-0.4.14:** Transformer, STM, LTM1, and LTM2 operate in one internal language derived from a selected intermediate Transformer representation.
+> **cognitive-0.5.05:** Transformer, STM, LTM1, and LTM2 operate in one internal language derived from a selected intermediate Transformer representation.
 
 This repository is a working engineering implementation of a research program for long-lived cognitive systems. It does not claim to implement general intelligence or subjective consciousness. It implements the infrastructure and executable mechanisms that can be built now and tested before deeper integration is attempted.
 

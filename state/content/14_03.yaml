@@ -1,75 +1,10 @@
 kind: T_ContentBlock
 id: S_14_03
 blocks:
-- text: The optimal unit of allocation is usually not the whole task but an operation or pipeline stage.
+- text: Sleep-like structural reorganization and the final global evaluation mechanism are intentionally deferred
+    from the first implementation of the Transformer-memory interface.
   type: paragraph
-- title: Hybrid Neural and Algorithmic Processing
-  description: Learned components provide semantic and probabilistic representations; classical algorithms
-    enforce explicit constraints and deterministic control.
-  direction: TB
-  edges:
-  - flow: information
-    from: sensor
-    to: neural
-  - flow: information
-    from: neural
-    to: state
-  - flow: information
-    from: state
-    to: algorithm
-  - flow: control
-    from: algorithm
-    label: explicit rules
-    to: plan
-  - flow: information
-    from: plan
-    to: controller
-  - flow: information
-    from: controller
-    to: action
-  nodes:
-  - kind: external
-    id: action
-    status: current
-    label: Action
-  - kind: subsystem
-    id: algorithm
-    status: current
-    label: Classical Algorithm / State Machine
-  - kind: subsystem
-    id: controller
-    status: current
-    label: Deterministic Controller
-  - kind: subsystem
-    id: neural
-    status: current
-    label: Neural Perception
-  - kind: data
-    id: plan
-    status: current
-    label: Constraint-Satisfying Plan
-  - kind: external
-    id: sensor
-    status: current
-    label: Input / Sensors
-  - kind: state
-    id: state
-    status: current
-    label: Probabilistic Semantic State
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- proportionality_priority: true
-  readability_priority: true
-  size: standard
-  text: Sensors -> Neural Perception -> Probabilistic State -> Algorithmic Constraint Solver -> Planned
-    Trajectory -> Learned Correction -> Deterministic Controller
-  type: diagram
-- text: A stage can remain neural where the functional is implicit and data-rich, while safety envelopes,
-    invariants, accounting, and discrete protocol behavior remain explicit.
+- text: Deferral is an architectural boundary, not rejection. Initial versions should establish a working memory
+    contract before adding offline topology optimization, forgetting, global reweighting, and more general evaluation.
   type: paragraph
-- text: This division provides interpretability and guarantees where they matter without forcing perception
-    or language into brittle hand-written rules.
-  type: paragraph
-section_id: S_09_03
+section_id: S_14_03

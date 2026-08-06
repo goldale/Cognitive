@@ -19,7 +19,7 @@ chapter01.html
 A large chapter is a directory:
 
 ```text
-chapter02/
+chapter03/
   index.html
   02_01.html
   02_02.html

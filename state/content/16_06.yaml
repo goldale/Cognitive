@@ -1,16 +1,17 @@
 kind: T_ContentBlock
 id: S_16_06
 blocks:
-- text: Lineage specialization can produce incompatible values, communication failures, and hidden shared
-    dependencies. Apparent diversity may be superficial when all lineages inherit one base model or evaluator.
+- text: A reading experiment should measure model change before and after a text, behavior on later unrelated
+    tasks, attention allocation, question generation, and the value of rereading after intervening experience.
   type: paragraph
-- text: Evaluation must therefore distinguish architectural diversity, training-data diversity, objective
-    diversity, and operational independence.
+- text: A dialogue experiment should compare one-way transfer, clarification-enabled transfer, and full
+    iterative model conflict resolution.
   type: paragraph
-- text: Cross-lineage review and adversarial testing should be institutionalized without forcing convergence.
+- text: The repository's communication prototype supplies the minimal serialization, deserialization,
+    missing-background, integration, and conflict objects required for such experiments.
   type: paragraph
-- title: Preserve meaningful variance
-  text: Do not measure diversity only by parameter distance; measure different failure modes, objectives,
-    abstractions, and responses to environmental change.
+- title: Measure transformation, not recall alone
+  text: Immediate factual recall is one output of linguistic integration, not the primary measure of cognitive
+    change.
   type: principle
-section_id: S_10_06
+section_id: S_09_06

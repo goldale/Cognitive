@@ -1,33 +1,71 @@
 kind: T_ContentBlock
 id: S_02_02
+section_id: S_02_02
 blocks:
-- title: T_ObjectiveFunction
-  text: A mechanism that evaluates candidate states relative to the objectives of a cognitive system.
-  type: definition
-- text: An objective function influences far more than final action selection. Over time it changes what
-    is attended to, what is stored, what is forgotten, which categories are created, which errors matter,
-    and which communication is considered useful.
-  type: paragraph
-- text: The objective function need not be explicit, scalar, stable, or fully consistent. In biological
-    systems it is likely implemented by several interacting evaluation mechanisms. An engineered system
-    can begin with an explicit approximation and allow the evaluation mechanism to learn.
-  type: paragraph
-- headers:
-  - System class
-  - High-value distinctions
-  - Low-value distinctions
-  rows:
-  - - Predator
-    - Prey, motion, concealment, energy
-    - Taxonomic detail unrelated to hunting
-  - - Herbivore
-    - Food, predators, escape routes
-    - Predator hunting strategy beyond avoidance
-  - - Scientist
-    - Prediction, explanation, reproducibility
-    - Immediate utility without explanatory value
-  - - Artist
-    - Form, contrast, meaning, emotional effect
-    - Mechanistic detail irrelevant to expression
-  type: table
-section_id: S_03_02
+- type: paragraph
+  text: The canonical physical architecture contains a Transformer Cognitive Core and Associative Memory. STM, LTM1,
+    exists.
+- type: diagram
+  title: Physical Components and Latent Coupling
+  description: Only physical components and state domains are shown. Functional labels are deliberately excluded.
+  direction: LR
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: transformer
+    label: Transformer Cognitive Core
+    kind: subsystem
+  - id: layern
+    label: 'Proposed Layer N Latent Interface
+
+      Dual-width READ / UPDATE organization
+
+      Research proposal'
+    kind: interface
+    status: research
+  - id: am
+    label: Associative Memory
+    kind: storage
+  - id: ltm1
+    label: 'LTM1
+
+      Associative semantic domain'
+    kind: storage
+  - id: ltm2
+    label: 'LTM2
+
+      Episodes and compositions'
+    kind: storage
+  - id: dc
+    label: 'D-Context
+
+      Inside Associative Memory'
+    kind: state
+  edges:
+  - from: transformer
+    to: layern
+    label: internal activations
+    flow: information
+  - from: layern
+    to: am
+    label: UPDATE
+    flow: interface
+  - from: am
+    to: layern
+    label: READ
+    flow: context
+  - from: am
+    to: ltm1
+    flow: information
+  - from: am
+    to: ltm2
+    flow: information
+  - from: am
+    to: dc
+    flow: context
+- type: note
+  title: Research Proposal — Layer N with dual-width organization
+  text: Draft 05 presents a selected intermediate Layer N with distinct UPDATE and READ capacity as the leading
+    implementation proposal. The exact layer depth, width expansion, channel partitioning, extraction point, reinjection
+    point, and fusion mechanism remain subjects for RS-0011 discussion.

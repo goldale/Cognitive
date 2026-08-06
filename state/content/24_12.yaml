@@ -1,0 +1,41 @@
+kind: T_ContentBlock
+id: S_24_12
+blocks:
+- title: RS-0010 — Logical Episode Boundary Detection
+  object_id: RS-0010
+  text: 'Research Session. Status: Open. Priority: Highest current architectural research priority after completion of the Stage-1 Input Buffer architecture.'
+  type: note
+- title: Research question
+  text: How should the Transformer identify logical episode boundaries within the continuous linear Input Buffer stream, so that complete semantic episodes can be transferred into LTM2 within the single physical LTM?
+  type: principle
+- title: Established constraints
+  items:
+  - Input Buffer supplies only a sequential physical observation order.
+  - Time is not explicitly stored inside events.
+  - Input Buffer and STM contain no semantic objects, addresses, graph structure, or episode markers.
+  - Logical boundaries must not retroactively introduce semantics into Input Buffer or STM.
+  - LTM2 must not receive arbitrary STM windows.
+  type: list
+- title: Required research outcomes
+  items:
+  - Specify what representation reaches the boundary detector from LTM1.
+  - Determine whether detection is causal, retrospective, or a hybrid of both.
+  - Define how an episode remains open while additional evidence arrives.
+  - Define evidence for logical start, continuation, interruption, resumption, and logical end.
+  - Handle nested, overlapping, interleaved, and uncertain episodes without rewriting physical order.
+  - Specify revision semantics for premature or false boundaries.
+  - Define the transfer contract that preserves a completed sequence until LTM2 accepts it.
+  - Develop training objectives and measurable validation criteria.
+  type: list
+- title: Working hypothesis
+  text: A Transformer maintains one or more continuously updated episode hypotheses over the semantic interpretation of the linear stream. It emits a completed Logical Episode only when semantic closure exceeds a defined confidence threshold and later evidence is unlikely to change the selected boundaries. This is a research hypothesis, not yet a canonical implementation.
+  type: warning
+- title: Open questions
+  items:
+  - Can a boundary be emitted online, or must every episode allow a retrospective correction interval?
+  - How are simultaneous real-world processes separated when their observations are interleaved in one stream?
+  - Should episode boundaries be represented as discrete events, probability distributions, or state transitions in a boundary controller?
+  - How much semantic context must remain available after Input Buffer positions are overwritten?
+  - What prevents trivial segmentation into one-event episodes or one unbounded episode?
+  type: list
+section_id: S_24_12

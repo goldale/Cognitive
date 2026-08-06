@@ -19,7 +19,7 @@ def test_message_two_local_operation_contract():
 
 
 def test_transformer_defined_language_and_conservative_ltm1():
-    s=load("state/content/10_15.yaml")
+    s=load("state/content/11_15.yaml")
     text=" ".join(str(x) for x in s["blocks"])
     assert "Transformer-defined vocabulary" in text
     assert "does not invent a separate native" in text
@@ -31,7 +31,7 @@ def test_transformer_defined_language_and_conservative_ltm1():
 
 
 def test_no_global_stm_operation_mode():
-    files=[ROOT/"state/canonical/contracts.yaml",ROOT/"state/content/10_11.yaml",ROOT/"state/content/02_01_architecture_overview.yaml"]
+    files=[ROOT/"state/canonical/contracts.yaml",ROOT/"state/content/11_11.yaml",ROOT/"state/content/03_01_architecture_overview.yaml"]
     text=" ".join(p.read_text() for p in files)
     assert "Set operation mode to READ" not in text
     assert "Transformer UPDATE mode" not in text

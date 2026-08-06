@@ -1,19 +1,27 @@
-kind: T_ContentBlock
-id: S_12_02
+kind: T_Content
+section: S_12_02
 blocks:
-- text: Consolidation is continuous at the level of local reweighting and episodic at the level of architecture.
-    Expensive search should begin only when measurable symptoms justify it.
-  type: paragraph
-- items:
-  - Persistent integration conflicts
-  - Large objective drift
-  - Retrieval cost growth
-  - High interference among related memories
-  - Repeated failure of current categories
-  - Accumulation of local exceptions and compensating patches
-  ordered: false
-  type: list
-- text: These symptoms resemble technical debt in software. The point of no return is reached earlier
-    than the point at which failure becomes visible because repair has a braking distance.
-  type: paragraph
-section_id: S_05_02
+- type: paragraph
+  text: Relevance is determined from the active D-Context, the current internal-language quasi-query, LTM1
+    spreading activation, and linked LTM2 episodes, compositions, and scenarios.
+- type: table
+  headers:
+  - Source
+  - Contribution
+  rows:
+  - - D-Context
+    - Prior exchanges, active entities, current objectives, unresolved questions, and established references.
+  - - Current Transformer state
+    - The present internal-language quasi-query and active processing context.
+  - - LTM1
+    - Associative atoms, contexts, permanent links, activation paths, and match strength.
+  - - LTM2
+    - Relevant episodes, compositions, scenarios, and state transitions.
+- type: principle
+  title: Dialogue-first relevance
+  text: For a continuing Dialogue, previous Dialogue content is the primary anchor. Long-term memory is projected
+    relative to that anchor rather than retrieved independently of it.
+- type: warning
+  title: First exchange exception
+  text: The first exchange of a new Dialogue has no memory READ. Its first UPDATE creates the initial D-Context
+    required for meaningful later retrieval.

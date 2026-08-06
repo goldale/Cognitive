@@ -1,15 +1,15 @@
 kind: T_ContentBlock
 id: S_22_05
 blocks:
-- text: The architecture must remain understandable to engineers as it becomes more capable. Formal precision
-    is useful only when it clarifies behavior, contracts, evidence, or risk.
+- text: Memory lifecycle experiments combine importance, consolidation, replay, forgetting, pruning, and
+    structural plasticity over long operating periods.
   type: paragraph
 - items:
-  - Canonical explanations appear once.
-  - Generated artifacts remain traceable to canonical sources.
-  - Diagrams expose data flow and state effects.
-  - Deferred mechanisms are visibly marked as future work.
-  - Open questions remain open until evidence resolves them.
-  - Release documentation distinguishes implemented behavior from architectural intention.
+  - Run agents for months or equivalent accelerated trajectories.
+  - Maintain exact external event logs for retrospective comparison.
+  - Track memory size, retrieval latency, semantic coverage, contradiction density, and task performance.
+  - Introduce controlled misinformation and measure quarantine, correction, and residual contamination.
+  - Compare reversible weakening with irreversible deletion.
+  - Test topology changes against stable non-structural baselines.
   type: list
 section_id: S_22_05

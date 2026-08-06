@@ -1,42 +1,24 @@
-kind: T_Content
-section: S_03_04
+kind: T_ContentBlock
+id: S_03_04
 blocks:
-- type: paragraph
-  text: Memory serialization occurs only in the context of a Dialogue. It is not a general export of STM, LTM1,
-    or LTM2 state and does not reproduce the complete state of memory.
-- type: definition
-  title: Memory Serialization
-  text: The expression, as an ordered message in the Internal Language, of the information subset selected for the
-    current Dialogue.
-- type: principle
-  title: Dialogue-centered serialization
-  text: D-Context defines the serialization subset. Memory performs the serialization.
-- type: paragraph
-  text: The current D-Context is stored in STM. After early Transformer layers interpret an external request,
-    Transformer formulates and sends a READ request. Memory performs information retrieval and serialization using
-    the current D-Context from STM.
-- type: paragraph
-  text: READ content returns as a serialized message in the Internal Language. It is reinjected into deeper Transformer
-    layers, where it is integrated with the interpreted external request for reasoning and response formation.
-- type: list
-  title: D-Context may constrain the subset by
-  items:
-  - the current subject and active goals of the Dialogue;
-  - entities, relations, and decisions already established in the Dialogue;
-  - unresolved references, questions, and hypotheses;
-  - relevant stable Internal Language Atoms and their Atom S-Contexts in LTM1;
-  - relevant compositions, episodes, scenarios, and Dialogue history in LTM2;
-  - temporal, causal, confidence, and relevance constraints required for continuation.
-- type: formula
-  text: D-Context from STM -> serialization subset -> information retrieval -> serialized Internal Language
-    message
-- type: note
-  title: Relation to communication between cognitive systems
-  text: 'Earlier work on communication established that a serialized signal acquires meaning only relative to a
-    compatible semantic system and shared context. Memory serialization applies the same principle internally: memory
-    and Transformer communicate through the Internal Language, while D-Context supplies the context that
-    determines what information must be expressed.'
-- type: principle
-  title: Operational distinction
-  text: Transformer formulates and sends READ and UPDATE messages. Memory retrieves and serializes information for
-    READ. STM stores and updates D-Context and applies UPDATE to change Memory state.
+- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value;
+    exploration may become less important than safety; a research agent may move from discovery to verification.
+  type: paragraph
+- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate,
+    the current organization may become inefficient. Architectural search is then required.
+  type: paragraph
+- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate
+    reorganizations must be generated, evaluated, partially applied, and compared over time.
+  type: paragraph
+- proportionality_priority: true
+  readability_priority: true
+  size: standard
+  text: 'Objective Drift ↓
+
+    Weight and Activation Changes ↓
+
+    Growing Organizational Mismatch ↓
+
+    Iterative Architectural Search'
+  type: diagram
+section_id: S_04_05

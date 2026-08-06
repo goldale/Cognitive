@@ -432,8 +432,10 @@ class DocumentationBuilder:
                 href = f"chapter{chapter['order']:02d}.html"
             else:
                 href = f"chapter{chapter['order']:02d}/index.html"
+            suppress_number = bool(chapter.get("render", {}).get("suppress_chapter_number", False))
+            chapter_label = html.escape(chapter["title"]) if suppress_number else f'Chapter {chapter["order"]}: {html.escape(chapter["title"])}'
             chapter_items.append(
-                f'<li><a href="{href}">Chapter {chapter["order"]}: {html.escape(chapter["title"])}</a>'
+                f'<li><a href="{href}">{chapter_label}</a>'
                 f'<p>{_render_inline(chapter.get("summary", ""))}</p></li>'
             )
         chapter_items.append(
@@ -489,7 +491,12 @@ class DocumentationBuilder:
         figure_index = 0
         for section in sections:
             content = self.state.load_content(section["content_file"])
-            body_parts.append(f'<section id="section-{section["order"]}"><h2>{chapter["order"]}.{section["order"]} {html.escape(section["title"])}</h2>')
+            suppress_section_heading = bool(
+                chapter.get("render", {}).get("suppress_section_heading", False)
+                or content.get("render", {}).get("suppress_section_heading", False)
+            )
+            section_heading = "" if suppress_section_heading else f'<h2>{chapter["order"]}.{section["order"]} {html.escape(section["title"])}</h2>'
+            body_parts.append(f'<section id="section-{section["order"]}">' + section_heading)
             for block in content.get("blocks", []):
                 figure_number = None
                 if block.get("type") in {"diagram", "image"} and not (block.get("type") == "diagram" and not block.get("nodes")):
@@ -499,13 +506,16 @@ class DocumentationBuilder:
             body_parts.append("</section>")
         previous, next_page = self._chapter_links(chapter_index, False)
         nav = _nav("index.html", "Documentation", previous, "index.html", next_page, f"chapter{self.index_order:02d}/index.html")
+        suppress_number = bool(chapter.get("render", {}).get("suppress_chapter_number", False))
+        page_title = html.escape(chapter["title"]) if suppress_number else f"Chapter {chapter['order']} · {chapter['title']}"
+        page_header = f'<h1>{html.escape(chapter["title"])}</h1>' if suppress_number else f'<h1>Chapter {chapter["order"]}</h1><h2>{html.escape(chapter["title"])}</h2>'
         page = _page(
-            f"Chapter {chapter['order']} · {chapter['title']}",
+            page_title,
             "cognitive.css",
             nav,
-            f'<h1>Chapter {chapter["order"]}</h1><h2>{html.escape(chapter["title"])}</h2>',
+            page_header,
             "".join(body_parts),
-            f"Chapter {chapter['order']} · {chapter['title']}",
+            page_title,
         )
         path = output / f"chapter{chapter['order']:02d}.html"
         path.write_text(page, encoding="utf-8")

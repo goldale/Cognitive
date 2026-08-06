@@ -1,17 +1,19 @@
 kind: T_ContentBlock
 id: S_08_04
 blocks:
-- text: A language model output is not passive observation. It changes the recipient's internal model,
-    future decisions, and eventually the external environment. The causal path is indirect but real.
+- text: 'A cognitive system receives incomparable inputs: sensory evidence, predicted reward, memory consistency,
+    uncertainty, social signals, energy use, safety constraints, and long-term objectives. Action requires
+    a mechanism that makes these inputs jointly evaluable.'
   type: paragraph
-- text: A long-lived cognitive system must therefore model the effects of its own communications. It should
-    be able to update the evaluation of a prior recommendation when later outcomes become available.
+- text: The project proposes a trainable T_GlobalEvaluation implemented initially as one or more neural
+    networks. It need not output a consciously accessible scalar, but it must support comparison among
+    candidate states and actions.
   type: paragraph
-- text: This requirement strengthens the need for continuity. Without a self-model, the system cannot
-    distinguish its own causal contribution from unrelated environmental change.
+- text: 'Initial training uses evaluated examples rather than a fully explicit utility formula. Disputes
+    about the initial example library remain local: individual examples can be reviewed without requiring
+    universal agreement on an abstract definition of value.'
   type: paragraph
-- title: Current limitation
-  text: Stateless sessions can produce useful outputs but cannot reliably learn from the long-horizon
-    consequences of their own advice.
-  type: observation
-section_id: S_07_05
+- text: Lifelong training is mandatory. A fixed evaluator would freeze the assumptions of its initial
+    designers and prevent genuine cognitive development.
+  type: paragraph
+section_id: S_08_01

@@ -1,17 +1,12 @@
 kind: T_ContentBlock
 id: S_24_03
 blocks:
-- title: DA-0004 — Stable Identifiers
-  text: Identifiers such as RN-0002 and MN-0001 remain stable across releases even if wording, location,
-    or generated presentation changes.
-  type: principle
-- title: DA-0005 — Traceability
-  text: Readers must be able to navigate from an architectural decision to its rationale, research motivation,
-    implementation guidance, diagrams, and reverse references.
-  type: principle
-- text: Architecture → Architectural Note → Research Motivation → Implementation Note
-  type: formula
-- text: The canonical source is progressively evolving toward an explicit knowledge graph. Sections, notes,
-    concepts, diagrams, and references are treated as addressable objects rather than anonymous page fragments.
-  type: paragraph
+- items:
+  - What should be replayed, how often, and under which context?
+  - How can replay preserve diversity rather than repeatedly strengthen dominant memories?
+  - When should replay weaken or reinterpret knowledge instead of reinforcing it?
+  - How can corrupted or adversarial memories be prevented from amplification?
+  - Does replay require explicit episodic storage, or can it operate over semantic structures alone?
+  - How should replay interact with current goals and Global Evaluation?
+  type: list
 section_id: S_24_03

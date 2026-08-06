@@ -1,0 +1,33 @@
+kind: T_Content
+section: S_11_15
+blocks:
+- type: warning
+  title: Epistemic status
+  text: Working architectural hypothesis defining conservative LTM1 evolution and Transformer-specific memory.
+- type: principle
+  title: Transformer-defined vocabulary
+  text: The internal language is defined by the trained Transformer. LTM1 does not invent a separate native
+    communication language.
+- type: principle
+  title: Conservative LTM1
+  text: During waking operation LTM1 is structurally immutable. It performs associative activation and local READ/UPDATE
+    interpretation using its existing atoms, contexts, and links.
+- type: principle
+  title: Sleep-only structural change
+  text: New atoms, retired atoms, splits, merges, and permanent link changes are permitted only during sleep after
+    analysis of accumulated LTM2 experience.
+- type: paragraph
+  text: 'Early development resembles child learning: LTM1 first acquires a stable vocabulary and contexts in the
+    Transformer internal language; LTM2 then increasingly accumulates compositions, episodes, and scenarios.'
+- type: principle
+  title: Memory serialization
+  text: Memory selects relevant prior Dialogue content and its projection onto LTM1 and LTM2, then serializes it
+    in the internal language for Transformer.
+- type: principle
+  title: Return path
+  text: Transformer places the new internal state into STM. STM-node activation emits MSG2 UPDATE; confirmed associative
+    matches extend D-Context and LTM2.
+- type: principle
+  title: No waking codebook drift
+  text: Because LTM1 changes only during sleep, Transformer and memory use a stable shared semantic interface throughout
+    each waking period.

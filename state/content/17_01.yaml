@@ -1,18 +1,13 @@
 kind: T_ContentBlock
 id: S_17_01
 blocks:
-- title: T_ResearchState
-  text: The canonical implementation-independent state of the research model from which human-readable
-    and machine-readable artifacts are generated.
-  type: definition
-- text: Research State stores the current consolidated model, not the full dialogue transcript. It includes
-    Tokens, principles, hypotheses, architecture decisions, open questions, roadmap items, chapter structure,
-    and the latest consolidation record.
+- text: Digital systems can clone a high-performing model at negligible marginal cost. Global cloning
+    maximizes immediate exploitation but reduces diversity and makes the population vulnerable to unforeseen
+    environmental changes or shared failure modes.
   type: paragraph
-- text: The state must support recovery after session loss, use by a different model, and long-term local
-    ownership.
+- text: Individual evolution without cloning preserves diversity but sacrifices commercial efficiency
+    and reproducibility.
   type: paragraph
-- text: Documentation is a partial serialization of Research State for a human audience. English and future
-    language versions are separate serializations, not an original plus literal translations.
+- text: The proposed compromise separates selection within lineages from selection across lineages.
   type: paragraph
 section_id: S_11_01

@@ -1,12 +1,15 @@
 kind: T_ContentBlock
 id: S_23_05
 blocks:
+- text: The architecture must remain understandable to engineers as it becomes more capable. Formal precision
+    is useful only when it clarifies behavior, contracts, evidence, or risk.
+  type: paragraph
 - items:
-  - What state and goals may Global Evaluation inspect?
-  - How conservative must its learning process be?
-  - How can objective drift be detected before behavior changes become irreversible?
-  - Should evaluation produce a scalar, ordered alternatives, constraints, or a structured judgment?
-  - How does final evaluation interact with planning, action feedback, and memory importance?
-  - Who or what is authorized to modify the evaluator?
+  - Canonical explanations appear once.
+  - Generated artifacts remain traceable to canonical sources.
+  - Diagrams expose data flow and state effects.
+  - Deferred mechanisms are visibly marked as future work.
+  - Open questions remain open until evidence resolves them.
+  - Release documentation distinguishes implemented behavior from architectural intention.
   type: list
 section_id: S_23_05

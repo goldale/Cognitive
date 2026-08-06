@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 19 · Section 19.8 · Scale, Dense Topology, and Tensor Processing</title>
+<link rel="stylesheet" href="../cognitive.css">
+</head>
+<body>
+<div class="container">
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="19_07.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="19_09.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 19</p><h1>Implementation Roadmap and Open Questions</h1><p class="section-label">Section 19.8</p><h2>Scale, Dense Topology, and Tensor Processing</h2></header>
+<main><h3>Scale Parameters</h3><p>Semantic query and response representations may reach 1024 x 1024 x 8 elements, or 8,388,608 elements per tensor. The value 8 denotes semantic channels and must not be interpreted as processing depth. Processing depth is intentionally small; the current working hypothesis is 4–8 layers, and every additional layer must demonstrate measurable improvement.</p><p>Biological subsystem scale provides a first estimate of the relative number of processing nodes required by each specialized topology. These estimates must be translated through connectivity topology and hardware behavior rather than copied as one artificial node per biological neuron.</p><table><thead><tr><th>Representation</th><th>Elements</th><th>INT4</th><th>INT8</th><th>INT16</th></tr></thead><tbody><tr><td>One 1024 x 1024 x 8 tensor</td><td>8,388,608</td><td>4 MiB</td><td>8 MiB</td><td>16 MiB</td></tr><tr><td>Input plus output</td><td>16,777,216</td><td>8 MiB</td><td>16 MiB</td><td>32 MiB</td></tr></tbody></table><h3>Processing Depth</h3><p>The architecture does not prescribe a fixed processing depth. The current working hypothesis is 4–8 layers. The exact depth must be determined experimentally, and every additional layer must demonstrate measurable improvement in associative stability, retrieval quality, or computational efficiency.</p><p>A physical implementation may use pipelining, temporal reuse, tiling, wavelength multiplexing, spatial multiplexing, polarization, or modal channels. These are implementation strategies for a dense logical architecture.</p><h3>Dense Topology and Basis Compaction</h3><p>The implementation does not depend on sparse candidate routing as its primary model. Sequential localized semantic consolidation removes redundancy and transfers useful information into retained coordinates, and progressively compacts useful information.</p><aside class="principle"><h4>Dense hardware invariant</h4><p>Temporary inactive coordinates may reduce activity and power, but all released coordinates remain addressable until validated dimensional reduction is performed in a later release.</p></aside></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="19_07.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="19_09.html">Next →</a></nav></footer>
+</div>
+</body>
+</html>

@@ -1,76 +1,11 @@
 kind: T_ContentBlock
 id: S_07_01
 blocks:
-- text: Representation alone does not determine behavior. Candidate actions, memories, goals, constraints,
-    predicted outcomes, uncertainty, and current context must be compared by an Integrated Evaluation
-    process.
+- text: Semantic representation answers what an entity or event is, but it does not by itself specify
+    when it occurs. Cognitive state therefore requires explicit temporal attributes such as start time,
+    end time, duration, order, recurrence, deadline, and uncertainty.
   type: paragraph
-- title: Integrated Evaluation Inputs and Output
-  description: Integrated Evaluation compares heterogeneous representations in one learned decision context.
-  direction: TB
-  edges:
-  - flow: information
-    from: semantic
-    to: evaluation
-  - flow: information
-    from: goals
-    to: evaluation
-  - flow: information
-    from: memory
-    to: evaluation
-  - flow: information
-    from: context
-    to: evaluation
-  - flow: information
-    from: temporal
-    to: evaluation
-  - flow: evaluation
-    from: evaluation
-    label: learned comparison
-    to: score
-  - flow: control
-    from: score
-    label: guides selection
-    to: behavior
-  nodes:
-  - kind: external
-    id: behavior
-    status: current
-    label: Behavioral Priority
-  - kind: state
-    id: context
-    status: current
-    label: Current Context
-  - kind: subsystem
-    id: evaluation
-    status: current
-    label: Integrated Evaluation
-  - kind: state
-    id: goals
-    status: current
-    label: Goals
-  - kind: state
-    id: memory
-    status: current
-    label: Memory
-  - kind: data
-    id: score
-    status: current
-    label: Comparative Evaluation
-  - kind: state
-    id: semantic
-    status: current
-    label: Semantic Representation
-  - kind: state
-    id: temporal
-    status: current
-    label: Temporal Attributes
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- text: Integrated Evaluation is expected to be learned and highly conservative. Its internal representation
-    may resemble a unified value space, but that phrase describes only one possible implementation and
-    is not the architectural name.
+- text: Actions, observations, memories, plans, and predicted states should carry temporal attributes
+    whenever timing affects interpretation or choice.
   type: paragraph
-section_id: S_14_01
+section_id: S_16_01

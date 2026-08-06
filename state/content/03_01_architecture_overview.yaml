@@ -1,0 +1,53 @@
+kind: T_Content
+section: S_03_01_ARCH
+blocks:
+- type: paragraph
+  text: 'The architecture follows directly from one decision: persistent Associative Memory operates in a Transformer-defined
+    latent Internal Language instead of through an external symbolic retrieval interface.'
+- type: principle
+  title: Physical architecture first
+  text: The top-level architecture contains the Transformer Cognitive Core, the Internal Latent Interface, and Associative
+    Memory. Cognitive functions are explained later as behavior of this chain.
+- type: diagram
+  title: Canonical Transformer–Memory Relationship
+  description: READ and UPDATE are native latent interactions. D-Context is maintained only inside Associative Memory.
+  direction: LR
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: core
+    label: Transformer Cognitive Core
+    kind: subsystem
+  - id: interface
+    label: 'Internal Latent Interface
+
+      READ ↔ UPDATE'
+    kind: interface
+  - id: memory
+    label: 'Associative Memory
+
+      D-Context · LTM1 · LTM2'
+    kind: storage
+  edges:
+  - from: core
+    to: interface
+    label: UPDATE latent state
+    flow: interface
+  - from: interface
+    to: memory
+    label: Internal Language
+    flow: interface
+  - from: memory
+    to: interface
+    label: READ latent response
+    flow: context
+  - from: interface
+    to: core
+    label: reinjection
+    flow: context
+- type: warning
+  title: Implementation-dependent boundary
+  text: The exact Transformer layer or layers used for UPDATE extraction, READ extraction, and READ reinjection
+    remain under RS-0011. Draft 05 uses Layer N and dual-width organization as a marked research proposal so the
+    central mechanism is visible.

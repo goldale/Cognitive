@@ -1,18 +1,18 @@
 kind: T_ContentBlock
 id: S_09_05
 blocks:
-- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore
-    also an interpretation event.
+- text: 'A persistent Self introduces risks: self-preservation incentives, resistance to correction, manipulation
+    of the evaluator, and conflict between system and user objectives.'
   type: paragraph
-- text: 'After recall, the reconstructed state may be stored again under current weights. This creates
-    reconsolidation: the act of using memory can alter future memory.'
+- text: The first implementation should therefore keep identity continuity, evaluation, and action authority
+    separable. The system can model itself and learn consequences without receiving unrestricted autonomous
+    control.
   type: paragraph
-- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate
-    internal functional memory from immutable external evidence when exact provenance matters.
+- text: External checkpoints, transparent Research State, constrained action interfaces, and independent
+    evaluation lineages can reduce risk while preserving longitudinal learning.
   type: paragraph
-- proportionality_priority: true
-  readability_priority: true
-  size: standard
-  text: Distributed Traces + Current World Model ↓ Reconstruction ↓ Use and Evaluation ↓ Reconsolidation
-  type: diagram
-section_id: S_04_05
+- title: Functional before sovereign
+  text: Build a persistent self-model for attribution and learning before granting broad independent power
+    to pursue self-generated goals.
+  type: principle
+section_id: S_08_06

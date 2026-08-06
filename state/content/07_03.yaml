@@ -1,86 +1,11 @@
 kind: T_ContentBlock
 id: S_07_03
 blocks:
-- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are
-    evaluated; an action is selected; the environment and internal state change; the observed result is
-    represented and evaluated again.'
+- text: Temporal order is necessary but not sufficient for causality. The system may form causal hypotheses
+    when one event precedes another and a model predicts a dependency, but the relation remains uncertain
+    until supported by further evidence.
   type: paragraph
-- title: Evaluation Feedback Loop
-  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive
-    control loop.
-  direction: TB
-  edges:
-  - flow: information
-    from: representation
-    to: evaluation
-  - flow: evaluation
-    from: evaluation
-    label: selection
-    to: behavior
-  - flow: control
-    from: behavior
-    label: action
-    to: world
-  - flow: information
-    from: world
-    to: consequence
-  - flow: learning
-    from: consequence
-    label: learning signal
-    to: memory
-  - flow: feedback
-    from: memory
-    label: updated context
-    to: representation
-  nodes:
-  - kind: external
-    id: behavior
-    status: current
-    label: 'Selected
-
-      Behavior'
-  - kind: data
-    id: consequence
-    status: current
-    label: 'Observed
-
-      Consequences'
-  - kind: subsystem
-    id: evaluation
-    status: current
-    label: 'Integrated
-
-      Evaluation'
-  - kind: subsystem
-    id: memory
-    status: current
-    label: 'Memory / Context
-
-      Update'
-  - kind: state
-    id: representation
-    status: current
-    label: 'Current
-
-      Representation'
-  - kind: external
-    id: world
-    status: current
-    label: 'Environment /
-
-      Other Systems'
-  proportionality_priority: true
-  rank_groups:
-  - - representation
-    - evaluation
-    - behavior
-  - - memory
-    - consequence
-    - world
-  readability_priority: true
-  size: standard
-  type: diagram
-- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is
-    semantically expressible as a fixed hand-written utility function.
+- text: The architecture should preserve the difference between observed sequence, predicted mechanism,
+    and confirmed causal model.
   type: paragraph
-section_id: S_14_05
+section_id: S_16_03

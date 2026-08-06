@@ -1,8 +1,18 @@
 kind: T_ContentBlock
 id: S_10_05
 blocks:
-- text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update
-    contract. Offline topology optimization, controlled forgetting, and broader global evaluation are
-    deferred to the learning and Sleep architecture described in Chapter 13.
+- text: A memory is reconstructed from distributed traces and the current world model. Recall is therefore
+    also an interpretation event.
   type: paragraph
-section_id: S_16_05
+- text: 'After recall, the reconstructed state may be stored again under current weights. This creates
+    reconsolidation: the act of using memory can alter future memory.'
+  type: paragraph
+- text: The mechanism increases adaptability but reduces reproducibility. The architecture should separate
+    internal functional memory from immutable external evidence when exact provenance matters.
+  type: paragraph
+- proportionality_priority: true
+  readability_priority: true
+  size: standard
+  text: Distributed Traces + Current World Model ↓ Reconstruction ↓ Use and Evaluation ↓ Reconsolidation
+  type: diagram
+section_id: S_05_05

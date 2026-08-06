@@ -1,13 +1,27 @@
 kind: T_ContentBlock
 id: S_21_04
 blocks:
-- text: Replay experiments must separate the benefits of reactivation from simple repeated exposure.
+- title: Offline Consolidation
+  text: A future process that reorganizes Memory State outside the immediate online response path, using
+    accumulated semantic knowledge and importance evidence.
+  type: definition
+- title: Sleep
+  text: The operating mode in which offline consolidation, topology analysis, compression, pruning, and
+    structural learning may occur with reduced interference from online activity.
+  type: definition
+- text: Sleep is not defined as passive inactivity. It is a controlled architectural mode for expensive
+    memory maintenance that should not be mixed invisibly with ordinary READ or UPDATE operations.
   type: paragraph
 - items:
-  - Compare importance-prioritized, recency-based, uniform, diversity-preserving, and counterexample replay.
-  - Measure catastrophic forgetting, overfitting to recent experience, semantic drift, and recovery speed.
-  - Test replay under changed goals to determine whether old knowledge is reinterpreted or merely reinforced.
-  - Measure whether replay increases false confidence or amplifies corrupted memories.
-  - Verify that all learning effects occur through explicit Semantic Representations and UPDATE.
+  - Group semantically related knowledge.
+  - Resolve redundancy and selected contradictions.
+  - Compress repeated semantic structures.
+  - Promote stable knowledge and weaken low-value structures.
+  - Collect evidence for structural changes without requiring them during every online interaction.
+  - Preserve rollback and provenance so destructive consolidation can be detected and reversed.
   type: list
+- title: Semantic boundary
+  text: Offline mechanisms may inspect Memory State and Transformer-produced Semantic Representations,
+    but any ordinary learning update must continue to obey the canonical Semantic Feedback Learning contract.
+  type: principle
 section_id: S_21_04

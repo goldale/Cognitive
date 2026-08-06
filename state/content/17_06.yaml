@@ -1,18 +1,16 @@
 kind: T_ContentBlock
 id: S_17_06
 blocks:
-- text: The initial compiler and schema are written in ordinary Python, JSON Schema, and YAML. As the
-    language matures, its own schema, consolidation rules, and generator descriptions can be represented
-    inside Research State.
+- text: Lineage specialization can produce incompatible values, communication failures, and hidden shared
+    dependencies. Apparent diversity may be superficial when all lineages inherit one base model or evaluator.
   type: paragraph
-- text: This is analogous to rewriting a compiler in the language it compiles. Self-hosting is a maturity
-    target, not a requirement for the first operational version.
+- text: Evaluation must therefore distinguish architectural diversity, training-data diversity, objective
+    diversity, and operational independence.
   type: paragraph
-- text: 'The research environment then becomes an experiment in the architecture it describes: working
-    discussion, consolidation, long-term state, partial serialization, review, and further integration.'
+- text: Cross-lineage review and adversarial testing should be institutionalized without forcing convergence.
   type: paragraph
-- title: Use the project to build the project
-  text: A mechanism should first prove useful as research infrastructure before becoming a candidate component
-    of the cognitive architecture itself.
+- title: Preserve meaningful variance
+  text: Do not measure diversity only by parameter distance; measure different failure modes, objectives,
+    abstractions, and responses to environmental change.
   type: principle
 section_id: S_11_06

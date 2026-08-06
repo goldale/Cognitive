@@ -1,0 +1,87 @@
+kind: T_ContentBlock
+id: S_19_07
+blocks:
+- type: heading
+  level: 3
+  text: Physically Heterogeneous Associative Memory
+- type: paragraph
+  text: The Associative Memory subsystem is physically heterogeneous. Its stages differ in node population,
+    topology of connectivity, activation dynamics, and READ/UPDATE requirements. Each specialized topology
+    may therefore require its own hardware substrate.
+- type: table
+  headers:
+  - Topology
+  - Hardware requirement
+  - Candidate substrates
+  rows:
+  - - Input / Addressing
+    - Feed-forward normalization, routing, and address formation
+    - Digital SIMD/NPU, tensor accelerator, or photonic matrix processor
+  - - Pattern Separation
+    - Representation expansion, competition, locally sparse activation, minimal recurrence
+    - Event-driven competitive hardware, local crossbar arrays, or specialized digital/analog arrays
+  - - Associative Binding / Index
+    - Dense recurrence, persistent state, spreading activation, rapid local UPDATE
+    - Spintronic, memristive, phase-change, or other persistent in-memory substrate
+  - - Output / Projection
+    - Dense integration and compression into serialized memory message
+    - Photonic matrix processor or tensor accelerator
+- type: principle
+  title: Hardware specialization follows topology
+  text: The physical implementation of each stage shall be selected according to its number of processing
+    nodes, topology of connectivity, activation dynamics, and state-update requirements. Specific technologies
+    remain an open research question.
+- type: diagram
+  title: Heterogeneous Associative Memory Hardware Pipeline
+  description: Specialized connection topologies may be implemented on different hardware substrates while
+    preserving the canonical READ/UPDATE boundary.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: input
+    kind: subsystem
+    status: experimental
+    label: Input / Addressing Hardware
+  - id: separate
+    kind: subsystem
+    status: experimental
+    label: Pattern Separation Hardware
+  - id: bind
+    kind: storage
+    status: experimental
+    label: Persistent Recurrent Associative Hardware
+  - id: project
+    kind: subsystem
+    status: experimental
+    label: Projection Hardware
+  - id: vector
+    kind: data
+    status: current
+    label: serialized memory message
+  - id: update
+    kind: control
+    status: experimental
+    label: Validated UPDATE Controller
+  edges:
+  - from: input
+    to: separate
+    flow: information
+  - from: separate
+    to: bind
+    flow: information
+  - from: bind
+    to: project
+    flow: information
+  - from: project
+    to: vector
+    flow: interface
+  - from: update
+    to: bind
+    flow: learning
+    label: persistent changes only
+- type: paragraph
+  text: Photonic and material subsystems may be tiled and distributed. Distribution is a physical scaling
+    strategy and does not imply a sparse semantic architecture.
+section_id: S_19_07

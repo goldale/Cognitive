@@ -1,0 +1,77 @@
+kind: T_Content
+section: S_13_07
+blocks:
+- type: paragraph
+  text: Associative Memory is mature when it can preserve and use semantic continuity across repeated Dialogue-aware
+    READ–UPDATE cycles, not when its output vectors satisfy a geometric canonicalization criterion.
+- type: diagram
+  title: Functional Memory Maturity Test
+  description: Equivalent meanings should produce compatible associative matches and coherent serialized messages,
+    while different meanings remain functionally distinguishable.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: equiv
+    label: 'Equivalent Internal-Language States
+
+      Paraphrases + Languages'
+    kind: data
+  - id: memory
+    label: LTM1 / LTM2
+    kind: storage
+  - id: message
+    label: Serialized Memory Message
+    kind: interface
+  - id: transformer
+    label: Transformer Interpretation
+    kind: subsystem
+  - id: criteria
+    label: Continuity + Retrieval + Distinction
+    kind: control
+  edges:
+  - from: equiv
+    to: memory
+    label: READ / UPDATE
+    flow: information
+  - from: memory
+    to: message
+    label: select and serialize
+    flow: interface
+  - from: message
+    to: transformer
+    label: internal language
+    flow: information
+  - from: transformer
+    to: criteria
+    label: functional evaluation
+    flow: evaluation
+- type: heading
+  level: 3
+  text: Semantic compatibility
+- type: paragraph
+  text: Different external formulations with the same meaning should create compatible internal-language interactions
+    with memory and recover coherent prior Dialogue content and long-term projections.
+- type: heading
+  level: 3
+  text: Semantic discrimination
+- type: paragraph
+  text: Different meanings must activate distinguishable atoms, contexts, episodes, or scenarios. Compatibility
+    must not collapse semantically different states.
+- type: heading
+  level: 3
+  text: Operational maturity criteria
+- type: list
+  items:
+  - Dialogue reference resolution across multiple exchanges.
+  - Correct retrieval of prior Dialogue content.
+  - Relevant projection onto LTM1 and LTM2.
+  - Stable interpretation of serialized memory messages by Transformer.
+  - Functional distinction between competing meanings and contexts.
+  - Consistency of UPDATE followed by later READ.
+  - Measured improvement over the same Transformer without memory participation.
+- type: note
+  title: Continuing development
+  text: Maturity indicates that memory can participate reliably. LTM2 may continue learning rapidly, while LTM1
+    remains conservative and changes structurally only during sleep.

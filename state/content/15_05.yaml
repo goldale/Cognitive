@@ -1,18 +1,18 @@
 kind: T_ContentBlock
 id: S_15_05
 blocks:
-- text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations,
-    tasks, failures, explanations, and feedback intended to move another system through a productive learning
-    trajectory.
+- text: A practical meta-architect can be trained today as a contextual bandit or supervised ranker. Each
+    candidate architecture receives measured accuracy, latency, energy, maintenance cost, interpretability,
+    and failure severity.
   type: paragraph
-- text: Books, curricula, and apprenticeships are therefore programs for inducing self-generated internal
-    changes.
+- text: The repository implements a lightweight online learner with engineering priors for algorithmic,
+    neural, and hybrid modes. The priors are replaced gradually by outcome data.
   type: paragraph
-- text: 'Future cognitive systems may exchange not memories but training trajectories: ordered experiences
-    selected because they produced useful restructuring in the source system.'
+- text: The learner should record failures of decomposition separately from failures of the selected executor.
+    Otherwise it cannot distinguish a poor cut from a poor component.
   type: paragraph
-- title: Culture as external memory
-  text: Culture stores serializations and learning trajectories that can reshape many independent cognitive
-    systems without merging them.
-  type: observation
-section_id: S_08_05
+- title: Architecture is itself an optimization target
+  text: Do not optimize only the answer. Optimize the computational organization that repeatedly produces
+    answers.
+  type: principle
+section_id: S_10_05

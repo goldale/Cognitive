@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 18 · Section 18.4 · Open Questions</title>
+<title>Chapter 18 · Section 18.4 · Git and Consolidation</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="18_05.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 18</p><h1>Implementation Roadmap and Open Questions</h1><p class="section-label">Section 18.4</p><h2>Open Questions</h2></header>
-<main><p>The current Research State contains formal open-question entities. The most consequential unresolved areas are listed below.</p><ul><li>Minimal Atomic Token basis</li><li>Integrated memory-model representation</li><li>Architectural-search trigger and candidate generation</li><li>Stable lifelong training of global evaluation</li><li>Optimal neural-algorithmic split features</li><li>Identity continuity across hardware migration</li><li>Population resilience and lineage count</li><li>Boundary between emergent and explicitly required higher-level behavior</li></ul><p>The open questions define the research program. They are not defects to hide and should not be replaced by confident prose before experiments exist.</p></main>
-<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="18_05.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="18_05.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 18</p><h1>Specification Model and Tooling</h1><p class="section-label">Section 18.4</p><h2>Git and Consolidation</h2></header>
+<main><p>Git is the sole history mechanism. Research State stores current state, not a cumulative internal history.</p><p>Each version contains a latest <span class="token">T_ConsolidationRecord</span> describing only the semantic transition that produced that version. Earlier records remain available in earlier Git commits.</p><p>When a commit contains no semantic change, the consolidation record may remain unchanged. File diffs then record formatting or generated-artifact changes without inventing a false knowledge transition.</p><p>Three-way file merge is structural. True semantic consolidation can produce a result belonging to neither branch. The tool therefore emits conflict reports for review rather than pretending every textual merge is a cognitive merge.</p></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_03.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="18_05.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

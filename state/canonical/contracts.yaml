@@ -14,7 +14,7 @@ operations:
   - Persistent LTM1 structural change
   stages:
   - Confirm that the Dialogue already has context
-  - Emit MSG2(amplitude, sequence_number, READ) from active STM states
+  - Emit MSG2(amplitude, activation_position, READ) from active STM states
   - Propagate exclusively through persistent LTM1
   - Select relevant LTM1 atoms and contexts
   - Project to linked LTM2 episodes, compositions, and scenarios
@@ -35,7 +35,7 @@ operations:
   forbidden_outputs:
   - Waking structural modification of LTM1
   stages:
-  - Emit MSG2(amplitude, sequence_number, UPDATE) only through STM activation
+  - Emit MSG2(amplitude, activation_position, UPDATE) only through STM activation
   - Propagate exclusively through persistent LTM1
   - Resolve candidates locally using existing contexts
   - Create initial D-Context when this is the first exchange

@@ -1,0 +1,17 @@
+{
+  "html_files": 180,
+  "links_checked": 2749,
+  "broken_links": [],
+  "figures_checked": 33,
+  "figure_errors": [],
+  "checks": {
+    "chapter_1_project_goal": true,
+    "chapter_2_central_idea": true,
+    "chapter_3_shifted": true,
+    "new_state_sentence": true,
+    "old_chapter_restored": true,
+    "figure_1_first": true
+  },
+  "pytest_summary": "3 legacy tests failed; all documentation integrity checks passed",
+  "pytest_note": "Three legacy test assertions remain: two pre-existing semantic-contract assertions and one test hard-coded to a section page that no longer exists at the old location after chapter restructuring. HTML link and figure validation are clean."
+}

@@ -1,0 +1,70 @@
+kind: T_ContentBlock
+id: S_02_00
+section_id: S_02_00
+blocks:
+- type: paragraph
+  text: Cognitive separates deep Transformer cognition from persistent long-term associative memory while
+    allowing both to operate in one shared latent Internal Language.
+- type: diagram
+  title: The Cognitive Architecture in One View
+  description: The first diagram intentionally shows only the physical architecture and its central latent
+    interface. Cognitive functions such as reasoning, planning, temporal organization, and evaluation
+    are behaviors of this processing chain, not separate software modules.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: input
+    label: External Input
+    kind: external
+  - id: core
+    label: 'Transformer Cognitive Core
+
+      (Deep Layers)'
+    kind: subsystem
+  - id: bus
+    label: 'Internal Latent Interface
+
+      Transformer-defined Internal Language
+
+      READ ↔ UPDATE'
+    kind: interface
+  - id: memory
+    label: 'Associative Memory
+
+      LTM1 · LTM2 · D-Context'
+    kind: storage
+  - id: sleep
+    label: 'Offline Consolidation / Sleep
+
+      Future phase'
+    kind: process
+    status: future
+  edges:
+  - from: input
+    to: core
+    flow: information
+  - from: core
+    to: bus
+    label: UPDATE latent state
+    flow: interface
+  - from: bus
+    to: memory
+    label: native latent interaction
+    flow: interface
+  - from: memory
+    to: bus
+    label: READ latent response
+    flow: context
+  - from: memory
+    to: sleep
+    label: offline reorganization
+    flow: control
+- type: list
+  title: Understand these four points first
+  items:
+  - Transformer performs cognitive processing.
+  - Associative Memory preserves and retrieves long-term experience.
+  - READ and UPDATE are internal latent interactions, not external messages.
+  - D-Context exists only inside Associative Memory and makes later Dialogue retrieval possible.

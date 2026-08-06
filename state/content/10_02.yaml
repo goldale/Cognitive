@@ -1,12 +1,32 @@
 kind: T_ContentBlock
 id: S_10_02
 blocks:
-- text: Associative Memory exposes its retrieved state through a serialized memory message. The Transformer is trained
-    to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as
-    its only memory interface.
+- text: The first implementable architecture separates T_WorkingMemory from T_LongTermMemory. Working
+    memory retains high-detail recent structures required for current computation. Long-term memory retains
+    consolidated structures chosen for future utility.
   type: paragraph
-- text: The vector may encode activation across a graph, spreading activation results, confidence, context,
-    and other state. The public contract must remain stable even when the internal memory implementation
-    changes.
+- text: Migration is controlled by T_Consolidation. Repetition, novelty, objective relevance, confidence,
+    causal effect, and unresolved conflict can all influence selection.
   type: paragraph
-section_id: S_16_02
+- text: The separation is functional, not necessarily physical. Future integrated representations may
+    implement both states inside one network while preserving different update rates and retention policies.
+  type: paragraph
+- headers:
+  - Property
+  - Working memory
+  - Long-term memory
+  rows:
+  - - Update rate
+    - Fast
+    - Slow
+  - - Detail
+    - High
+    - Compressed
+  - - Stability
+    - Low
+    - High
+  - - Primary function
+    - Current computation
+    - Future model utility
+  type: table
+section_id: S_05_02

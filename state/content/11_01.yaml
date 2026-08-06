@@ -2,75 +2,115 @@ kind: T_Content
 section: S_11_01
 blocks:
 - type: paragraph
-  text: Associative Memory does not generate a separate semantic representation. In response to READ, it selects
-    relevant information already represented in the internal language and serializes that information for
-    Transformer processing.
-- type: principle
-  title: Single-language contract
-  text: The semantic space used for READ input, UPDATE input, D-Context, and memory output is the same Transformer-derived
-    internal language.
+  text: READ and UPDATE are phases of one Dialogue-aware cognitive cycle. Transformer first converts external input
+    into the internal language. Memory never receives raw external data.
 - type: definition
-  title: Serialized Memory Message
-  text: A bounded ordered sequence in the internal language containing prior Dialogue content and its relevant
-    projection onto LTM1 and LTM2.
-- type: formula
-  text: Serialized Memory Message = D-Context + Relevant Long-Term Projection
+  title: Dialogue
+  text: A logically connected external exchange whose context is established by UPDATE and reused by later READ
+    operations.
+- type: heading
+  level: 3
+  text: First exchange of a Dialogue
+- type: list
+  items:
+  - Transformer processes the opening external message without memory READ.
+  - Transformer produces a response or intermediate result.
+  - UPDATE transfers the resulting internal state through STM.
+  - Memory creates the initial D-Context and may store the first Dialogue episode in LTM2.
+- type: heading
+  level: 3
+  text: Continuing Dialogue cycle
+- type: list
+  items:
+  - Transformer converts the next external message into an internal-language representation.
+  - STM emits READ through MSG2 to LTM1.
+  - LTM1 activation and LTM2 retrieval select relevant previous Dialogue content and long-term projections.
+  - Memory serializes the selected information in the internal language.
+  - Transformer continues processing with the Serialized Memory Message.
+  - UPDATE stores the resulting new internal state and extends D-Context.
 - type: diagram
-  title: Relevant Memory Selection and Serialization
-  description: Dialogue context and long-term memory are selected, serialized in the internal language, and
-    reinjected into deeper Transformer layers.
-  direction: LR
+  title: Dialogue-Aware READ / UPDATE Cycle
+  description: The first exchange initializes context. Subsequent exchanges combine previous dialogue content with
+    its long-term-memory projection.
+  direction: TB
   size: standard
   readability_priority: true
   proportionality_priority: true
   nodes:
-  - id: dialogue
-    label: D-Context
-    kind: state
-  - id: ltm1
-    label: LTM1 Atoms and Contexts
-    kind: storage
-  - id: ltm2
-    label: LTM2 Episodes and Scenarios
-    kind: storage
-  - id: select
-    label: Relevant Memory Selection
-    kind: process
-  - id: serialize
-    label: Internal-Language Serialization
-    kind: process
-  - id: reinject
-    label: Deeper Memory Reinjection Point
-    kind: interface
-  - id: reason
-    label: Transformer Integration and Reasoning
+  - id: new
+    label: 'New Dialogue
+
+      First External Message'
+    kind: external
+  - id: t1
+    label: 'Transformer Processing
+
+      No Memory READ'
     kind: subsystem
+  - id: u1
+    label: 'UPDATE
+
+      Create D-Context'
+    kind: control
+  - id: next
+    label: Next External Message
+    kind: external
+  - id: read
+    label: 'READ
+
+      D-Context + LTM Projection'
+    kind: control
+  - id: ser
+    label: 'Serialized Memory Message
+
+      Internal Language'
+    kind: state
+  - id: t2
+    label: Transformer Processing
+    kind: subsystem
+  - id: u2
+    label: 'UPDATE
+
+      Extend D-Context'
+    kind: control
   edges:
-  - from: dialogue
-    to: select
-    label: primary anchor
+  - from: new
+    to: t1
+    label: external input
+    flow: information
+  - from: t1
+    to: u1
+    label: new internal state
+    flow: learning
+  - from: u1
+    to: next
+    label: context now available
+    flow: control
+  - from: next
+    to: read
+    label: internal-language quasi-query
     flow: context
-  - from: ltm1
-    to: select
-    label: atoms + contexts
+  - from: read
+    to: ser
+    label: select and serialize relevance
     flow: information
-  - from: ltm2
-    to: select
-    label: episodes + scenarios
-    flow: information
-  - from: select
-    to: serialize
-    label: bounded coherent content
-    flow: information
-  - from: serialize
-    to: reinject
-    label: internal language
-    flow: information
-  - from: reinject
-    to: reason
-    label: bypass early translation
-    flow: information
+  - from: ser
+    to: t2
+    label: memory speaks internal language
+    flow: context
+  - from: t2
+    to: u2
+    label: new internal state
+    flow: learning
+  - from: u2
+    to: next
+    label: continue Dialogue
+    flow: control
+- type: principle
+  title: One language, two directions
+  text: Transformer-to-memory and memory-to-Transformer communication use the same internal language. READ differs
+    from UPDATE by operation and cognitive role, not by semantic representation space.
 - type: note
-  title: Low-level vector elements
-  text: A vector may remain as a low-level element of the internal-language sequence. It is not an aggregated
-    memory state, a separate language, or an independently generated semantic object.
+  title: LTM1 structural stability
+  text: During waking operation READ and UPDATE may modify activation and LTM2 content, but structural changes to
+    conservative LTM1 occur only during Sleep or Offline Consolidation.

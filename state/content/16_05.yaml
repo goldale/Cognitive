@@ -1,16 +1,18 @@
 kind: T_ContentBlock
 id: S_16_05
 blocks:
-- text: A provider can operate several maintained lineage families and deploy many cloned instances of
-    the best current version within each family.
+- text: An expert cannot transfer neural state directly. Education instead designs a sequence of observations,
+    tasks, failures, explanations, and feedback intended to move another system through a productive learning
+    trajectory.
   type: paragraph
-- text: Customers select a lineage by objective class and risk profile rather than receiving one universal
-    model. Updates can be tested within a lineage before promotion.
+- text: Books, curricula, and apprenticeships are therefore programs for inducing self-generated internal
+    changes.
   type: paragraph
-- text: Failure in one lineage does not automatically corrupt all deployed cognition. Diversity becomes
-    an operational resilience mechanism, not an academic luxury.
+- text: 'Future cognitive systems may exchange not memories but training trajectories: ordered experiences
+    selected because they produced useful restructuring in the source system.'
   type: paragraph
-- text: The repository includes a lineage manager that clones champions within lineages and measures distance
-    among lineage signatures.
-  type: paragraph
-section_id: S_10_05
+- title: Culture as external memory
+  text: Culture stores serializations and learning trajectories that can reshape many independent cognitive
+    systems without merging them.
+  type: observation
+section_id: S_09_05

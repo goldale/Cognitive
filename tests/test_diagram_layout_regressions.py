@@ -8,7 +8,7 @@ def diagrams(section):
 
 
 def test_asymmetric_transformer_memory_interface_has_two_entry_points():
-    d = next(x for x in diagrams("03_02") if x.get("title") == "Transformer–Memory Interface")
+    d = next(x for x in diagrams("04_02") if x.get("title") == "Transformer–Memory Interface")
     assert d["direction"] == "TB"
     assert d["size"] == "extra-large"
     node_ids = {node["id"] for node in d["nodes"]}
@@ -19,7 +19,7 @@ def test_asymmetric_transformer_memory_interface_has_two_entry_points():
 
 
 def test_section_11_04_models_bounded_serialization():
-    d = diagrams("11_04")[0]
+    d = diagrams("12_04")[0]
     assert d["direction"] == "TB"
     assert d["size"] == "standard"
     labels = {node["label"] for node in d["nodes"]}
@@ -28,7 +28,7 @@ def test_section_11_04_models_bounded_serialization():
 
 
 def test_section_07_03_feedback_loop_uses_balanced_two_row_layout():
-    d = diagrams("07_03")[0]
+    d = diagrams("08_03")[0]
     assert d["direction"] == "TB"
     assert d["size"] == "standard"
     assert d["rank_groups"] == [["representation", "evaluation", "behavior"], ["memory", "consequence", "world"]]

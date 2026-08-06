@@ -1,0 +1,88 @@
+kind: T_Content
+section: S_13_06
+blocks:
+- type: paragraph
+  text: Transformer is trained first and already defines the internal language. Associative Memory then develops
+    inside that language, beginning empty and learning a Transformer-specific model of experienced reality.
+- type: diagram
+  title: Progressive Transformer-Specific Memory Training
+  description: Training begins without memory participation, then forms D-Context, learns LTM1 vocabulary
+    and contexts, and finally accumulates LTM2 episodes and scenarios.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: transformer
+    label: 'Trained Transformer
+
+      Internal Language Established'
+    kind: subsystem
+  - id: empty
+    label: Empty STM / LTM1 / LTM2
+    kind: state
+  - id: dialogue
+    label: 'First Dialogue UPDATE
+
+      Create Context'
+    kind: control
+  - id: vocabulary
+    label: 'LTM1 Learning
+
+      Atoms + Contexts'
+    kind: storage
+  - id: episodes
+    label: 'LTM2 Learning
+
+      Episodes + Scenarios'
+    kind: storage
+  - id: mature
+    label: Dialogue-Aware READ–UPDATE Cycles
+    kind: subsystem
+  edges:
+  - from: transformer
+    to: empty
+    label: internal language
+    flow: interface
+  - from: empty
+    to: dialogue
+    label: first experience
+    flow: learning
+  - from: dialogue
+    to: vocabulary
+    label: repeated internal states
+    flow: learning
+  - from: vocabulary
+    to: episodes
+    label: stable vocabulary and contexts
+    flow: learning
+  - from: episodes
+    to: mature
+    label: usable long-term model
+    flow: control
+- type: heading
+  level: 3
+  text: Stage 1 — Transformer baseline
+- type: paragraph
+  text: The Transformer learns interpretation, reasoning, planning, and generation before Associative Memory contains
+    experience. The selected intermediate interface is identified and validated as the internal language.
+- type: heading
+  level: 3
+  text: Stage 2 — D-Context and LTM1 vocabulary
+- type: paragraph
+  text: The first exchange of each new Dialogue is processed without READ. Its first UPDATE creates D-Context.
+    Repeated internal-language states then teach LTM1 stable atoms, contexts, and associative matches.
+- type: heading
+  level: 3
+  text: Stage 3 — LTM2 compositions and scenarios
+- type: paragraph
+  text: After LTM1 has enough stable vocabulary, LTM2 accumulates compositions, episodes, state transitions, and
+    scenarios. The stages overlap, but the dominant learning priority shifts from vocabulary to experienced structure.
+- type: warning
+  title: Risk of ignored memory
+  text: A capable Transformer may solve many tasks from parameters and current input alone. Training must therefore
+    measure whether serialized memory messages causally improve Dialogue continuity, recall, prediction, or decisions.
+- type: note
+  title: No separate memory-language training
+  text: The memory is not trained to invent or canonicalize a second language. It learns to organize, select, and
+    serialize information in the Transformer-defined internal language.

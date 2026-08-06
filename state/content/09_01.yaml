@@ -1,88 +1,88 @@
-kind: T_Content
-section: S_09_01
+kind: T_ContentBlock
+id: S_09_01
 blocks:
-- type: paragraph
-  text: Biological memory does not behave as a precise archive. Recall is selective, reconstructive, context-dependent,
-    and vulnerable to systematic distortion. Cognitive therefore treats memory as an active model supporting present
-    processing rather than as a passive record store.
-- type: diagram
-  title: Memory Architecture in the Internal Language
-  description: A continuing Dialogue activates LTM1 and linked LTM2 content. Memory selects relevant state and serializes
-    it in the same internal language used by Transformer.
+- text: Planning does not directly answer what to do. It constructs a bounded set of possible actions
+    and multi-step scenarios. Each scenario includes predicted states, branch probabilities, temporal
+    attributes, resource requirements, and uncertainty.
+  type: paragraph
+- title: Planning a move in a chess game
+  text: When planning a chess move, the system does not seek one move in isolation. It generates a bounded
+    tree of candidate moves, likely replies, subsequent continuations, branch probabilities or confidence
+    estimates, and time costs. Integrated Evaluation compares the resulting scenarios and selects the
+    best available move before the available thinking time expires.
+  type: example
+- title: Bounded Planning and Action Selection
+  description: Planning generates multiple temporally attributed alternatives; Integrated Evaluation selects
+    among them under a processing budget.
   direction: TB
-  size: standard
-  readability_priority: true
-  proportionality_priority: true
-  nodes:
-  - id: dialogue
-    label: Active D-Context
-    kind: state
-  - id: ltm1
-    label: 'LTM1
-
-      Associative Structure'
-    kind: storage
-  - id: ltm2
-    label: 'LTM2
-
-      Episodes and Scenarios'
-    kind: storage
-  - id: selection
-    label: Relevant Memory Selection
-    kind: subsystem
-  - id: serialization
-    label: Internal-Language Serialization
-    kind: interface
-  - id: transformer
-    label: Transformer
-    kind: subsystem
-  - id: update
-    label: 'New Internal State
-
-      UPDATE'
-    kind: control
   edges:
-  - from: dialogue
-    to: ltm1
-    label: READ quasi-query
-    flow: context
-  - from: ltm1
-    to: ltm2
-    label: matched projection
-    flow: information
-  - from: ltm1
-    to: selection
-    label: active atoms + contexts
-    flow: information
-  - from: ltm2
-    to: selection
-    label: episodes + scenarios
-    flow: information
-  - from: selection
-    to: serialization
-    label: ordered relevant content
-    flow: information
-  - from: serialization
-    to: transformer
-    label: internal language
-    flow: interface
-  - from: transformer
-    to: update
-    label: processing result
-    flow: learning
-  - from: update
-    to: dialogue
-    label: extend context
-    flow: feedback
-- type: principle
-  title: Shared-language invariant
-  text: Memory output is not translated into a separate representation. It is serialized in the same Transformer-derived
-    internal language used for READ and UPDATE.
-- type: hypothesis
-  title: Functional lossiness
-  confidence: 0.78
-  text: Memory loss and reconstruction are partly selected because they improve integration and future action, not
-    only because biological storage is limited.
-- type: paragraph
-  text: The relevant objective is not exhaustive historical fidelity. It is useful continuity, prediction, and action
-    under resource constraints.
+  - flow: information
+    from: state
+    to: generator
+  - flow: control
+    from: budget
+    label: limits search
+    to: generator
+  - flow: information
+    from: generator
+    to: a
+  - flow: information
+    from: generator
+    to: b
+  - flow: information
+    from: generator
+    to: c
+  - flow: information
+    from: a
+    to: evaluation
+  - flow: information
+    from: b
+    to: evaluation
+  - flow: information
+    from: c
+    to: evaluation
+  - flow: evaluation
+    from: evaluation
+    label: best available option
+    to: action
+  nodes:
+  - kind: data
+    id: a
+    status: current
+    label: Alternative A
+  - kind: external
+    id: action
+    status: current
+    label: Selected Action
+  - kind: data
+    id: b
+    status: current
+    label: Alternative B
+  - kind: control
+    id: budget
+    status: current
+    label: Planning Budget
+  - kind: data
+    id: c
+    status: current
+    label: Alternative C
+  - kind: subsystem
+    id: evaluation
+    status: current
+    label: Integrated Evaluation
+  - kind: subsystem
+    id: generator
+    status: current
+    label: Scenario Generator
+  - kind: state
+    id: state
+    status: current
+    label: Current State
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: The alternatives are passed to Integrated Evaluation, which selects the currently preferable option.
+    The behavioral result then re-enters the cognitive system as new input and is evaluated again.
+  type: paragraph
+section_id: S_15_03

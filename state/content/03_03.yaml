@@ -1,49 +1,19 @@
-kind: T_Content
-section: S_03_03
+kind: T_ContentBlock
+id: S_03_03
 blocks:
-- type: definition
-  title: Short-Term Memory (STM)
-  text: The short-term transport substrate inside Associative Memory that carries internal-language messages and
-    supports the active D-Context.
-- type: definition
-  title: READ
-  text: The non-mutating operation through which Associative Memory returns relevant serialized memory content to
-    Transformer.
-- type: definition
-  title: UPDATE
-  text: The operation through which Transformer sends a new Internal Language state to Associative Memory and may
-    modify Memory State.
-- type: definition
-  title: Dialogue Context (D-Context)
-  text: The evolving state of one Dialogue maintained only inside Associative Memory. READ uses it for selection;
-    UPDATE creates or extends it.
-- type: paragraph
-  text: Transformer formulates and sends READ requests and UPDATE messages through STM. Memory returns READ content
-    as serialized messages in the Internal Language. READ and UPDATE therefore use the same internal language.
-- type: table
-  headers:
-  - Subsystem
-  - Role in the shared language
-  rows:
-  - - Transformer
-    - Generates Internal Language states; formulates and sends READ requests and UPDATE messages.
-  - - STM
-    - Stores the current D-Context, carries READ and UPDATE exchange, updates D-Context, and changes Memory state.
-  - - LTM1
-    - Contains the current set of stable Internal Language Atoms together with their Atom S-Contexts (Semantic Contexts).
-  - - LTM2
-    - Stores compositions, episodes, scenarios, and Dialogue history in the Internal Language.
-- type: principle
-  title: No raw external input to memory
-  text: Raw text, pixels, audio, video, packets, or other external observations never enter LTM1 or LTM2 as semantic
-    input. Transformer interprets them first.
-- type: principle
-  title: READ and UPDATE share one semantic space
-  text: READ and UPDATE differ by operation and cognitive role, not by representation language.
-- type: formula
-  text: Language(READ input) = Language(UPDATE input) = Language(memory serialization)
-- type: note
-  title: RN-0002 — Translation as Cognitive State Reconstruction
-  object_id: RN-0002
-  text: Translation is treated as reconstruction of a compatible cognitive state rather than substitution of surface
-    symbols. The internal language provides the system-level representation in which this compatibility can be tested.
+- text: A useful unit of design is not a unique world model but a bounded class of models associated with a bounded
+    class of systems. Members of a class share the same Transformer while each instance develops its own Associative
+    Memory through its own history of experience.
+  type: paragraph
+- text: This class-based view permits controlled cloning and commercial deployment without forcing every deployed
+    system into one global cognitive state.
+  type: paragraph
+- text: Models from different classes can remain mutually intelligible through explicit communication while preserving
+    different internal organizations. Compatibility does not require identity.
+  type: paragraph
+- title: Class-limited optimality
+  confidence: 0.92
+  text: A model can be near-optimal within a restricted class of objectives while being systematically poor for
+    another class.
+  type: hypothesis
+section_id: S_04_03

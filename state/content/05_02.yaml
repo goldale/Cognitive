@@ -1,10 +1,71 @@
 kind: T_ContentBlock
 id: S_05_02
 blocks:
-- text: High-bandwidth streams such as video contain large amounts of valid information that may not relate
-    to the current dialogue or task. This information is not garbage and should not be mislabeled as noise.
+- text: 'The engineering pipeline separates physical decoding from semantic reconstruction: channel decoding
+    produces symbols or perceptual features; contextual interpretation relates them to active memory;
+    model integration proposes changes to the recipient world model; clarification is requested when ambiguity
+    or conflict remains.'
   type: paragraph
-- text: Task-conditioned preprocessing suppresses or postpones irrelevant detail while preserving the
-    ability to recover it when goals change or uncertainty increases.
+- title: Semantic Reconstruction Pipeline
+  description: A decoded signal becomes meaningful only through preprocessing, contextual interpretation,
+    and integration with the current world model.
+  direction: TB
+  edges:
+  - flow: information
+    from: signal
+    to: decode
+  - flow: information
+    from: decode
+    to: preprocess
+  - flow: information
+    from: preprocess
+    to: features
+  - flow: information
+    from: features
+    to: semantic
+  - flow: context
+    from: context
+    label: interpretive state
+    to: semantic
+  - flow: control
+    from: semantic
+    label: when uncertain
+    to: verify
+  nodes:
+  - kind: state
+    id: context
+    status: current
+    label: Context and Memory
+  - kind: subsystem
+    id: decode
+    status: current
+    label: Channel Decoding
+  - kind: data
+    id: features
+    status: current
+    label: Structured Features
+  - kind: subsystem
+    id: preprocess
+    status: current
+    label: Instrumental Preprocessing
+  - kind: state
+    id: semantic
+    status: current
+    label: Semantic Representation
+  - kind: data
+    id: signal
+    status: current
+    label: Serialized Signal
+  - kind: subsystem
+    id: verify
+    status: current
+    label: Clarification / Verification
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: the earlier analysis does not claim to solve the general problem of deriving meaning from arbitrary
+    serialized signals. It identifies architectural constraints and candidate stages that a future implementation
+    must test.
   type: paragraph
-section_id: S_18_02
+section_id: S_14_02

@@ -1,30 +1,8 @@
-kind: T_Content
-section: S_11_05
+kind: T_ContentBlock
+id: S_11_05
 blocks:
-- type: paragraph
-  text: 'The serialization interface is validated functionally: the Transformer must interpret returned memory content
-    correctly and use it to improve Dialogue continuity, recall, prediction, or decision quality.'
-- type: table
-  headers:
-  - Failure mode
-  - Required check
-  rows:
-  - - Semantic mismatch
-    - Returned internal-language states are interpreted differently from equivalent Transformer-generated states.
-  - - Context loss
-    - References to earlier Dialogue content cannot be resolved after serialization.
-  - - Relation flattening
-    - Atoms are returned but their contexts, temporal order, or causal status are lost.
-  - - Retrieval flooding
-    - Too many weakly relevant elements obscure the central memory contribution.
-  - - Stale projection
-    - Old episodes are returned despite changed Dialogue context or objective.
-  - - Feedback instability
-    - UPDATE followed by READ produces incompatible representations of the same new state.
-- type: principle
-  title: Round-trip validation
-  text: A new internal state sent by UPDATE and later returned through READ should remain semantically usable by
-    the Transformer without translation into a second language.
-- type: paragraph
-  text: Evaluation should compare task performance, Dialogue continuity, reference resolution, and consistency across
-    repeated READ–UPDATE cycles. Coordinate orthogonality or sparsity is not a canonical success criterion.
+- text: The first Transformer–memory implementation is intentionally limited to a stable READ/feedback/update
+    contract. Offline topology optimization, controlled forgetting, and broader global evaluation are
+    deferred to the learning and Sleep architecture described in Chapter 14.
+  type: paragraph
+section_id: S_17_05

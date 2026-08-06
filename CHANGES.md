@@ -1,4 +1,12 @@
-## Cognitive 0.4.14 — 2026-08-06
+## Cognitive 0.5.05 — 2026-08-06
+
+- Renamed the opening chapter to **Project Goal**.
+- Replaced all prior Chapter 1 sections with one continuous YAML-generated narrative.
+- Removed the visible `Chapter 1` prefix and the `1.1` subsection heading from the opening page and chapter list.
+- Added the conceptual first figure: Transformer THINKS; Associative Memory REMEMBERS; Shared Internal Language.
+- Updated the documentation generator to honor chapter-level rendering directives.
+
+## Cognitive 0.5.05 — 2026-08-06
 
 - Reworked the diagram generator to lay out SVGs at their final readable font size without post-generation scaling.
 - Added automatic label wrapping and internal reflow of a single diagram when portrait width is exceeded.
@@ -6,7 +14,7 @@
 - Relaxed same-rank constraints during automatic reflow rather than shrinking diagram typography.
 - Preserved the minimum 13 pt diagram font and verified all generated diagram widths.
 
-## Cognitive 0.4.14 — 2026-08-06
+## Cognitive 0.5.05 — 2026-08-06
 
 - Added the figure number to the visible title of every generated diagram and imported figure.
 - Ensured visible figure titles and the generated List of Figures use the same numbering and title.
@@ -14,7 +22,7 @@
 
 # Changes
 
-## Cognitive 0.4.14 — 2026-08-06
+## Cognitive 0.5.05 — 2026-08-06
 
 - Applied a global layout correction to every generated architecture diagram.
 - Removed negative figure margins that allowed large diagrams to escape their document frames.
@@ -71,7 +79,6 @@
 ## cognitive-0.3.48 — 2026-08-05
 
 - Completed the LTM2 READ contract and Serialized Memory Message generation algorithm.
-- Added Sequencer position numbers to `MSG2(amplitude, sequence_number)`.
 - Made propagation exclusively dependent on the persistent LTM1 associative graph.
 - Added MAX/SUM readout experimentation and entropy-based selection.
 - Added canonical Master Architecture Diagram YAML and an explicitly requested A3 PDF.
@@ -79,7 +86,6 @@
 
 ## cognitive-0.3.47 — 2026-08-05
 
-- Renamed Episode Boundary Transformer to Sequencer and located it in the Input / STM subsystem.
 - Added the master information-lifecycle diagram and explicit runtime/offline interaction path.
 - Kept one physical LTM with LTM1 and LTM2 logical domains.
 - Synchronized generated documentation and index data from YAML.
@@ -145,7 +151,7 @@
 ## cognitive-0.3.33 — 2026-08-04
 
 - Corrected every generated **A–Z Index** navigation target.
-- Removed the obsolete hard-coded `chapter24/index.html` default from the navigation generator.
+- Removed the obsolete hard-coded `chapter25/index.html` default from the navigation generator.
 - Made `index_href` an explicit generator input derived from the current alphabetical-index chapter order.
 - Added semantic documentation validation requiring every `a.alphabetical-index` link to resolve to the canonical A–Z Index page.
 - Added a regression test preventing recurrence when chapter ordering changes.

@@ -1,19 +1,17 @@
 kind: T_ContentBlock
 id: S_02_03
+section_id: S_02_03
 blocks:
-- text: A useful unit of design is not a unique world model but a bounded class of models associated with a bounded
-    class of systems. Members of a class share the same Transformer while each instance develops its own Associative
-    Memory through its own history of experience.
-  type: paragraph
-- text: This class-based view permits controlled cloning and commercial deployment without forcing every deployed
-    system into one global cognitive state.
-  type: paragraph
-- text: Models from different classes can remain mutually intelligible through explicit communication while preserving
-    different internal organizations. Compatibility does not require identity.
-  type: paragraph
-- title: Class-limited optimality
-  confidence: 0.92
-  text: A model can be near-optimal within a restricted class of objectives while being systematically poor for
-    another class.
-  type: hypothesis
-section_id: S_03_03
+- type: paragraph
+  text: Reasoning, Planning, Temporal Organization, Semantic Representation, and Integrated Evaluation describe
+    cognitive functions or observable processing responsibilities. They do not imply independent code modules, services,
+    parsers, or symbolic engines.
+- type: principle
+  title: Physical-versus-functional rule
+  text: A function may appear as a chapter and may be experimentally isolated, but it must not be rendered as a
+    separate physical component unless the canonical architecture explicitly assigns it an independent implementation
+    boundary.
+- type: warning
+  title: No standalone sequencing component
+  text: The architecture contains no standalone sequencing module. Nothing replaces it because no separate sequencing
+    component is required.

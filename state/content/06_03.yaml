@@ -1,11 +1,11 @@
 kind: T_ContentBlock
 id: S_06_03
 blocks:
-- text: Temporal order is necessary but not sufficient for causality. The system may form causal hypotheses
-    when one event precedes another and a model predicts a dependency, but the relation remains uncertain
-    until supported by further evidence.
+- text: The same document can substantially change a novice world model and add almost nothing to an expert
+    world model. Semantic Novelty is therefore a property of the pair consisting of input and current
+    Memory State.
   type: paragraph
-- text: The architecture should preserve the difference between observed sequence, predicted mechanism,
-    and confirmed causal model.
+- text: Repeated information can remain relevant while becoming non-novel. Conversely, unfamiliar information
+    can be novel while remaining irrelevant to the active objective.
   type: paragraph
-section_id: S_15_03
+section_id: S_19_03

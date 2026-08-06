@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 18 · Section 18.3 · Deeper Integration</title>
+<title>Chapter 18 · Section 18.3 · Restricted YAML Profile</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="18_04.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 18</p><h1>Implementation Roadmap and Open Questions</h1><p class="section-label">Section 18.3</p><h2>Deeper Integration</h2></header>
-<main><p>Only after modular experiments produce stable evidence should the project attempt a shared latent state integrating memory, model, and evaluation.</p><p>The integrated system must be evaluated on continuous learning, objective drift, communication, identity continuity, correction, and external auditability.</p><p>Failure should be informative. If integrated memory is unstable, the modular Research State and exact logs allow reconstruction of what changed and why.</p></main>
-<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="18_04.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="18_04.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 18</p><h1>Specification Model and Tooling</h1><p class="section-label">Section 18.3</p><h2>Restricted YAML Profile</h2></header>
+<main><p>YAML is used as a readable serialization of the formal state. Its flexibility is restricted by schema and profile rules.</p><ul><li>Mappings with string keys</li><li>Sequences</li><li>Strings, booleans, finite numbers, and null</li><li>No anchors or aliases</li><li>No merge keys or custom tags</li><li>No duplicate keys</li><li>No implicit date or time values</li></ul><p>Canonical formatting produces stable field order and entity order while preserving semantically ordered block sequences.</p><p>The format remains parseable by standard YAML tools and is validated against JSON Schema plus project-specific semantic rules.</p></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="18_02.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="18_04.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

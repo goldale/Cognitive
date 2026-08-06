@@ -1,15 +1,17 @@
 kind: T_ContentBlock
 id: S_18_05
 blocks:
-- text: The project does not have a fixed final architecture. A release is successful when it improves
-    the current working system, preserves state recovery, documents semantic change, and makes the next
-    experiment easier to perform.
+- text: HTML is never the canonical source. The generator reads chapter structure and semantic content
+    blocks from Research State.
   type: paragraph
-- text: A mature long-lived cognitive system would preserve continuity while changing almost every internal
-    component over time. The research program should exhibit the same property.
+- text: Each page contains a single-line navigation bar with Up, Previous, Contents, A–Z Index, and Next
+    links at both the top and bottom. Large chapters use a directory index and section files; small chapters
+    can remain a single file.
   type: paragraph
-- title: Evolutionary completion
-  text: Do not optimize for a final immutable design. Optimize for an architecture that can keep improving
-    without losing accumulated knowledge or the ability to explain its own development.
-  type: principle
-section_id: S_12_06
+- text: Semantic CSS classes identify Tokens, definitions, hypotheses, observations, examples, notes,
+    warnings, formulas, and principles. Presentation can change without editing content.
+  type: paragraph
+- text: The current stylesheet follows a restrained ISO, RFC, and W3C-inspired layout with a fixed reading
+    width and a small left indent for body text.
+  type: paragraph
+section_id: S_12_05

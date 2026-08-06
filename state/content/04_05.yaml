@@ -1,11 +1,91 @@
-kind: T_ContentBlock
-id: S_04_05
+kind: T_Content
+section: S_04_05
 blocks:
-- text: A Perceptual Integration Buffer should retain a bounded, temporally organized intermediate representation
-    from which the system can construct events, query omitted detail, and integrate multiple channels.
-  type: paragraph
-- text: The buffer is not long-term memory. It is a staging area between high-rate preprocessing and semantic
-    integration, allowing the system to trade precision, latency, and computational cost according to
-    the task.
-  type: paragraph
-section_id: S_13_05
+- type: definition
+  title: Dialogue
+  text: A logically connected exchange of messages with the external world, unified by an active context, participants,
+    objectives, and temporal continuity.
+- type: paragraph
+  text: The first exchange of a new Dialogue is processed without memory READ because no D-Context yet
+    exists. The first UPDATE creates the initial context. Later READ operations can then return both prior Dialogue
+    content and its projection onto long-term memory.
+- type: formula
+  text: Serialized Memory Message = prior Dialogue content + relevant projection onto LTM1 and LTM2
+- type: diagram
+  title: D-Context Formation and Recall
+  description: Memory joins after the first UPDATE and contributes meaningful internal-language messages in later
+    exchanges.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: first
+    label: First External Exchange
+    kind: external
+  - id: process1
+    label: 'Transformer Processing
+
+      No READ'
+    kind: subsystem
+  - id: update1
+    label: 'First UPDATE
+
+      Create D-Context'
+    kind: control
+  - id: later
+    label: Later External Exchange
+    kind: external
+  - id: read
+    label: 'READ
+
+      Context + LTM Projection'
+    kind: control
+  - id: message
+    label: Serialized Memory Message
+    kind: state
+  - id: process2
+    label: Transformer Processing
+    kind: subsystem
+  - id: update2
+    label: 'UPDATE
+
+      Extend D-Context'
+    kind: control
+  edges:
+  - from: first
+    to: process1
+    label: input
+    flow: information
+  - from: process1
+    to: update1
+    label: new internal state
+    flow: learning
+  - from: update1
+    to: later
+    label: context available
+    flow: control
+  - from: later
+    to: read
+    label: internal-language quasi-query
+    flow: context
+  - from: read
+    to: message
+    label: select and serialize
+    flow: information
+  - from: message
+    to: process2
+    label: memory contribution
+    flow: context
+  - from: process2
+    to: update2
+    label: new internal state
+    flow: learning
+  - from: update2
+    to: later
+    label: continue Dialogue
+    flow: control
+- type: principle
+  title: Meaningful memory contribution
+  text: A continuing Dialogue allows memory to provide coherent messages containing earlier Dialogue content and
+    associations, episodes, and scenarios relevant to that content.

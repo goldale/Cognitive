@@ -44,7 +44,7 @@ def test_body_text_has_left_indent() -> None:
 def test_section_10_1_defines_dialogue_aware_read_update_cycle() -> None:
     import yaml
 
-    content = yaml.safe_load((ROOT / "state" / "content" / "10_01.yaml").read_text(encoding="utf-8"))
+    content = yaml.safe_load((ROOT / "state" / "content" / "11_01.yaml").read_text(encoding="utf-8"))
     rendered = " ".join(str(block) for block in content["blocks"])
     for phrase in [
         "first exchange",
@@ -60,8 +60,8 @@ def test_section_10_1_defines_dialogue_aware_read_update_cycle() -> None:
 def test_progressive_training_and_memory_maturity_use_transformer_internal_language() -> None:
     import yaml
 
-    staged = yaml.safe_load((ROOT / "state" / "content" / "12_06.yaml").read_text(encoding="utf-8"))
-    maturity = yaml.safe_load((ROOT / "state" / "content" / "12_07.yaml").read_text(encoding="utf-8"))
+    staged = yaml.safe_load((ROOT / "state" / "content" / "13_06.yaml").read_text(encoding="utf-8"))
+    maturity = yaml.safe_load((ROOT / "state" / "content" / "13_07.yaml").read_text(encoding="utf-8"))
     staged_text = " ".join(block.get("text", "") for block in staged["blocks"])
     maturity_text = " ".join(block.get("text", "") for block in maturity["blocks"])
     assert "Transformer is trained first" in staged_text
@@ -97,8 +97,8 @@ def test_diagram_readability_is_enforced() -> None:
 def test_obsolete_vector_interface_canonicalization_is_removed() -> None:
     import yaml
     chapter_data = yaml.safe_load((ROOT / "state" / "chapters.yaml").read_text(encoding="utf-8"))
-    chapter11 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_11")
-    assert not any(section.get("id") == "S_11_06" for section in chapter11["sections"])
+    chapter13 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_12")
+    assert not any(section.get("id") == "S_12_06" for section in chapter13["sections"])
     combined = " ".join(path.read_text(encoding="utf-8") for path in (ROOT / "state").rglob("*.yaml"))
     for phrase in [
         "Orthogonal Coordinate Transformation",
@@ -111,9 +111,9 @@ def test_obsolete_vector_interface_canonicalization_is_removed() -> None:
 def test_associative_memory_implementation_gap_analysis_is_preserved() -> None:
     import yaml
     chapter_data = yaml.safe_load((ROOT / "state" / "chapters.yaml").read_text(encoding="utf-8"))
-    chapter10 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_10")
-    assert any(section.get("id") == "S_10_06" for section in chapter10["sections"])
-    content = yaml.safe_load((ROOT / "state" / "content" / "10_06.yaml").read_text(encoding="utf-8"))
+    chapter12 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_11")
+    assert any(section.get("id") == "S_11_06" for section in chapter12["sections"])
+    content = yaml.safe_load((ROOT / "state" / "content" / "11_06.yaml").read_text(encoding="utf-8"))
     rendered = " ".join(str(block) for block in content["blocks"])
     for phrase in [
         "Hopfield", "Dense Associative Memory", "Sparse Distributed Memory",
@@ -152,7 +152,7 @@ def test_all_alphabetical_index_links_target_canonical_index(tmp_path):
 
     state = ResearchState.load(Path("state"))
     DocumentationBuilder(state, Path("assets")).build(tmp_path)
-    expected = (tmp_path / "chapter26" / "index.html").resolve()
+    expected = (tmp_path / "chapter27" / "index.html").resolve()
     html_files = sorted(tmp_path.rglob("*.html"))
     assert html_files
     for html_file in html_files:
@@ -187,9 +187,9 @@ def test_canonical_yaml_contains_no_version_metadata() -> None:
 
 def test_logical_episode_and_git_version_policy_are_documented():
     root = Path(__file__).resolve().parents[1]
-    canonical = (root / "state/content/10_13.yaml").read_text(encoding="utf-8")
-    research = (root / "state/content/23_12.yaml").read_text(encoding="utf-8")
-    policy = (root / "state/content/24_04.yaml").read_text(encoding="utf-8")
+    canonical = (root / "state/content/11_13.yaml").read_text(encoding="utf-8")
+    research = (root / "state/content/24_12.yaml").read_text(encoding="utf-8")
+    policy = (root / "state/content/25_04.yaml").read_text(encoding="utf-8")
     assert "Canonical consolidation unit" in canonical
     assert "RS-0010" in research
     assert "Git is the version authority" in policy

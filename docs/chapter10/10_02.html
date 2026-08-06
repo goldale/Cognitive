@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapter 10 · Section 10.2 · Internal-Language Memory Interface</title>
+<title>Chapter 10 · Section 10.2 · Working Memory and Long-Term Memory</title>
 <link rel="stylesheet" href="../cognitive.css">
 </head>
 <body>
 <div class="container">
-<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="10_03.html">Next →</a></nav>
-<header><p class="chapter-label">Chapter 10</p><h1>Associative Memory</h1><p class="section-label">Section 10.2</p><h2>Internal-Language Memory Interface</h2></header>
-<main><p>Associative Memory exposes its retrieved state through a serialized memory message. The Transformer is trained to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as its only memory interface.</p><p>The vector may encode activation across a graph, spreading activation results, confidence, context, and other state. The public contract must remain stable even when the internal memory implementation changes.</p></main>
-<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter26/index.html">A–Z Index</a><a rel="next" href="10_03.html">Next →</a></nav></footer>
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="10_03.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 10</p><h1>Memory Architecture</h1><p class="section-label">Section 10.2</p><h2>Working Memory and Long-Term Memory</h2></header>
+<main><p>The first implementable architecture separates <span class="token">T_WorkingMemory</span> from <span class="token">T_LongTermMemory</span>. Working memory retains high-detail recent structures required for current computation. Long-term memory retains consolidated structures chosen for future utility.</p><p>Migration is controlled by <span class="token">T_Consolidation</span>. Repetition, novelty, objective relevance, confidence, causal effect, and unresolved conflict can all influence selection.</p><p>The separation is functional, not necessarily physical. Future integrated representations may implement both states inside one network while preserving different update rates and retention policies.</p><table><thead><tr><th>Property</th><th>Working memory</th><th>Long-term memory</th></tr></thead><tbody><tr><td>Update rate</td><td>Fast</td><td>Slow</td></tr><tr><td>Detail</td><td>High</td><td>Compressed</td></tr><tr><td>Stability</td><td>Low</td><td>High</td></tr><tr><td>Primary function</td><td>Current computation</td><td>Future model utility</td></tr></tbody></table></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="10_01.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="10_03.html">Next →</a></nav></footer>
 </div>
 </body>
 </html>

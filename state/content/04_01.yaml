@@ -1,12 +1,135 @@
-kind: T_ContentBlock
-id: S_04_01
+kind: T_Content
+section: S_04_01
 blocks:
-- text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains
-    constraints that a receiving cognitive system interprets using its existing Memory State, context,
-    objectives, language competence, and learned world model.
-  type: paragraph
-- text: The same message can produce different internal meanings in different systems because information
-    implicit in the recipient is not present in the transmitted sequence. Semantic reconstruction is therefore
-    an interaction between signal and receiver, not a property of the signal alone.
-  type: paragraph
-section_id: S_13_01
+- type: paragraph
+  text: The internal language is the central organizing concept of Cognitive. It is not invented by empty memory
+    and is not an independent protocol layered above Transformer cognition. It is inherited from a selected intermediate
+    representation of the trained Transformer.
+- type: principle
+  title: Foundational axiom
+  text: Transformer, STM, LTM1, and LTM2 communicate through one internal language. No subsystem defines a second
+    semantic language requiring translation.
+- type: paragraph
+  text: The trained Transformer therefore establishes the semantic coordinate system before Associative Memory contains
+    any experience. Memory begins empty and develops as a Transformer-specific model of the experienced world.
+- type: definition
+  title: Short-Term Memory (STM)
+  text: The short-term transport substrate inside Associative Memory that orders internal-language messages and
+    supports the active D-Context.
+- type: definition
+  title: Long-Term Memory 1 (LTM1)
+  text: The associative layer containing Internal Language Atoms and their Atom Semantic Contexts.
+- type: definition
+  title: Atom Semantic Context (Atom S-Context)
+  text: The semantic context associated with an Internal Language Atom and used to constrain associative interpretation
+    and retrieval.
+- type: definition
+  title: Long-Term Memory 2 (LTM2)
+  text: The long-term layer that stores compositions, episodes, scenarios, and Dialogue history expressed in the
+    Internal Language.
+- type: definition
+  title: Dialogue Context (D-Context)
+  text: The evolving state of one Dialogue maintained only inside Associative Memory and used by READ to select
+    relevant memory content.
+- type: definition
+  title: READ and UPDATE
+  text: READ returns serialized memory content to Transformer; UPDATE sends a new Transformer-produced state into
+    Associative Memory. Both use the Internal Language.
+- type: diagram
+  title: The Internal Language at the Center of Cognitive
+  description: The trained Transformer is the source of the Internal Language used by STM, LTM1, and LTM2. External
+    requests are interpreted by Transformer before memory access; memory returns serialized messages in the Internal
+    Language.
+  direction: TB
+  size: extra-large
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: external
+    label: External Request
+    kind: external
+  - id: early
+    label: 'Early Transformer
+
+      Layers'
+    kind: process
+  - id: transformer
+    label: Transformer
+    kind: subsystem
+  - id: language
+    label: Internal Language
+    kind: interface
+  - id: stm
+    label: 'STM
+
+      D-Context'
+    kind: state
+  - id: ltm1
+    label: 'LTM1
+
+      Atoms + Atom
+
+      S-Contexts'
+    kind: storage
+  - id: ltm2
+    label: 'LTM2
+
+      Compositions +
+
+      Episodes'
+    kind: storage
+  - id: output
+    label: 'Response /
+
+      Action'
+    kind: external
+  edges:
+  - from: external
+    to: early
+    label: external form
+    flow: information
+  - from: early
+    to: transformer
+    label: interpreted request
+    flow: information
+  - from: transformer
+    to: language
+    label: internal-language states
+    flow: information
+  - from: language
+    to: stm
+    label: READ / UPDATE
+    flow: context
+  - from: stm
+    to: ltm1
+    label: memory access
+    flow: information
+  - from: ltm1
+    to: ltm2
+    label: associations / compositions
+    flow: learning
+  - from: ltm2
+    to: stm
+    label: retrieved information
+    flow: context
+  - from: stm
+    to: language
+    label: serialized READ content
+    flow: information
+  - from: language
+    to: transformer
+    label: reinjection
+    flow: context
+  - from: transformer
+    to: output
+    label: response generation
+    flow: information
+  font_scale: 2.0
+  display_scale: 1.0
+  rank_groups:
+  - - stm
+    - ltm1
+    - ltm2
+  ranksep: 0.52
+  nodesep: 0.48
+  graph_pad: 0.12

@@ -1,17 +1,18 @@
 kind: T_ContentBlock
 id: S_17_04
 blocks:
-- text: Git is the sole history mechanism. Research State stores current state, not a cumulative internal
-    history.
+- text: Direct internal-state Merge between mature lineages is expected to be destructive or undefined.
+    Exchange should use dialogue, externalized Research State, experiments, books, and training trajectories.
   type: paragraph
-- text: Each version contains a latest T_ConsolidationRecord describing only the semantic transition that
-    produced that version. Earlier records remain available in earlier Git commits.
+- text: This protects identity and diversity while permitting useful discoveries to propagate.
   type: paragraph
-- text: When a commit contains no semantic change, the consolidation record may remain unchanged. File
-    diffs then record formatting or generated-artifact changes without inventing a false knowledge transition.
+- text: A receiving lineage integrates exported knowledge according to its own objectives. It need not
+    reproduce the source representation or conclusions exactly.
   type: paragraph
-- text: Three-way file merge is structural. True semantic consolidation can produce a result belonging
-    to neither branch. The tool therefore emits conflict reports for review rather than pretending every
-    textual merge is a cognitive merge.
-  type: paragraph
+- proportionality_priority: true
+  readability_priority: true
+  size: standard
+  text: Internal Model A -> Partial Serialization -> Research State / Dialogue -> Model Integration ->
+    Internal Model B
+  type: diagram
 section_id: S_11_04

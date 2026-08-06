@@ -54,8 +54,7 @@ components:
   name: Short-Term Memory
   roles:
   - internal_language_transport
-  - dialogue_context
-  - message_ordering
+  - active_internal_language_state
 - kind: storage
   id: C_LTM
   name: Long-Term Memory
@@ -63,12 +62,6 @@ components:
   - single_physical_associative_memory
   - ltm_1_semantic_domain
   - ltm_2_episodic_domain
-- kind: subsystem
-  id: C_SEQUENCER
-  name: Sequencer
-  roles:
-  - linear_sequence_construction
-  - sequence_position_numbering
 - kind: state
   id: C_DIALOGUE
   name: Dialogue
@@ -84,10 +77,16 @@ components:
 - kind: T_Component
   id: Internal_Language_Extraction_Point
   name: Internal-Language Extraction Point
-  role: Transformer interface that exposes the selected intermediate representation
-    used for memory-facing READ and UPDATE content.
+  role: Transformer interface that exposes the selected intermediate representation used for memory-facing READ
+    and UPDATE content.
 - kind: T_Component
   id: Memory_Reinjection_Point
   name: Memory Reinjection Point
-  role: Deeper Transformer interface that receives serialized memory directly in the
-    internal language for integration and reasoning.
+  role: Deeper Transformer interface that receives serialized memory directly in the internal language for integration
+    and reasoning.
+- kind: T_Component
+  id: C_LTM1_ASSOC_VECTOR_CODEBOOK
+  name: LTM1 Associative Vector Codebook
+  role: Proposed LTM1 latent indexing and associative candidate-selection structure; exact mechanics remain open
+    for discussion.
+  status: research_proposal

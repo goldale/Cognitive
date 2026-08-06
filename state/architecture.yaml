@@ -157,5 +157,5 @@ architectures:
   - External Input -> Early Transformer Interpretation
   - Early Transformer Interpretation -> Internal-Language Extraction Point
   - Serialized Memory Message -> Memory Reinjection Point
-  - Memory Reinjection Point -> Transformer Integration and Reasoning
+  - Memory Reinjection Point -> Transformer Cognitive Core (Deep Layers)
   text: A 20–30% later reinjection depth is a working experimental hypothesis, not a universal architectural constant.

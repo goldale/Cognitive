@@ -1,17 +1,17 @@
 kind: T_ContentBlock
 id: S_07_05
 blocks:
-- text: 'Pairwise preferences provide a practical signal: under a specified context, state A is preferred
-    to state B. Ranking losses avoid requiring an absolute universal numerical scale.'
+- text: An internal clock provides a shared reference for incoming signals, system actions, and state
+    transitions. Exact physical time is not always necessary, but consistent ordering and elapsed-time
+    estimates are essential.
   type: paragraph
-- text: Training data should include outcomes over different time horizons, reversals after new evidence,
-    conflicts among channels, and cases in which immediate utility damages long-term capability.
+- text: Planning budgets are themselves temporal constraints. When the budget expires, the system should
+    execute the best available option, continue planning in parallel when safe, or choose a protective
+    fallback.
   type: paragraph
-- text: The evaluator itself requires slow consolidation. Rapidly adapting value weights can destabilize
-    identity and permit transient noise or manipulation to reshape the entire system.
+- text: 'The requirement to stop planning is not merely an efficiency preference. In time-critical environments,
+    failure to act can cause irreversible damage: if nothing is done, the physical or computational carrier
+    of the cognitive system may cease to exist. A bounded system must therefore prefer an imperfect protective
+    action over indefinite analysis when survival is at risk.'
   type: paragraph
-- title: Evaluator capture
-  text: A system whose global evaluator can be modified by a single interaction is structurally vulnerable
-    even when its inference model is strong.
-  type: warning
-section_id: S_07_02
+section_id: S_16_05

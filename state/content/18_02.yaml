@@ -1,17 +1,17 @@
 kind: T_ContentBlock
 id: S_18_02
 blocks:
-- text: The highest-priority experiment is a persistent agent operating for months with exact external
-    logs and lossy internal memory. The experiment should measure retention, adaptation, interference,
-    objective drift, and recovery from false consolidation.
+- text: Every formal Token uses the case-sensitive form T_PascalCaseIdentifier.
   type: paragraph
-- text: A second experiment trains the meta-architect on multiple task families and compares learned decomposition
-    with fixed all-neural, all-algorithmic, and human-designed hybrid baselines.
+- text: Only Atomic Tokens may have natural-language definitions. Every non-atomic Token is defined through
+    previously declared Atomic Tokens and formal composition operators.
   type: paragraph
-- text: A third experiment measures cognitive transformation from books and dialogue using future task
-    behavior and question generation rather than recall alone.
+- text: Atomic Tokens act as axioms. A mature language should reduce their number while preserving or
+    increasing expressive power.
   type: paragraph
-- text: A fourth experiment maintains several lineages under simulated environmental regime changes and
-    compares global champion cloning with lineage-preserving deployment.
+- text: Token semantic identity is immutable. A definition may be refined or expressed more formally,
+    but semantic replacement requires a new Token. Deprecated Tokens remain available for compatibility.
   type: paragraph
-section_id: S_12_03
+- text: Language Maturity ∝ Expressive Power / Atomic Token Count
+  type: formula
+section_id: S_12_02

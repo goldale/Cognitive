@@ -1,14 +1,28 @@
 kind: T_ContentBlock
 id: S_22_02
 blocks:
-- text: Memory should evolve from a passive store into a managed lifecycle with explicit acquisition,
-    retrieval, importance, consolidation, replay, weakening, pruning, and structural adaptation.
+- text: Importance Estimation should be studied before consolidation and replay policies are fixed.
   type: paragraph
-- items:
-  - Persistent but not immutable.
-  - Lossy but auditable.
-  - Adaptive but bounded by contracts.
-  - Capable of forgetting without losing provenance of the forgetting decision.
-  - Capable of structural change without confusing topology optimization with ordinary semantic learning.
-  type: list
+- headers:
+  - Experiment
+  - Primary measurement
+  - Failure signal
+  rows:
+  - - Retention prediction
+    - Correlation between estimated importance and future task utility
+    - High-value knowledge is forgotten while low-value noise is preserved
+  - - Context shift
+    - Ability to revise importance after goals change
+    - Scores remain frozen despite changed utility
+  - - Novelty versus frequency
+    - Separation of rare critical knowledge from frequent trivial knowledge
+    - Frequency dominates all other signals
+  - - Interference prediction
+    - Ability to identify knowledge likely to cause destructive overlap
+    - Unexpected degradation after UPDATE or consolidation
+  type: table
+- title: Acceptance direction
+  text: No single scalar is assumed to be sufficient. The representation of importance remains an open
+    design choice until experiments justify it.
+  type: note
 section_id: S_22_02

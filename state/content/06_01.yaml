@@ -1,11 +1,10 @@
 kind: T_ContentBlock
 id: S_06_01
 blocks:
-- text: Semantic representation answers what an entity or event is, but it does not by itself specify
-    when it occurs. Cognitive state therefore requires explicit temporal attributes such as start time,
-    end time, duration, order, recurrence, deadline, and uncertainty.
+- text: Cognitive stream processing distinguishes Data Rate, Task Relevance, and Semantic Novelty. Data
+    Rate describes physical intensity; Task Relevance describes relation to active goals and context;
+    Semantic Novelty describes expected contribution relative to Memory State.
   type: paragraph
-- text: Actions, observations, memories, plans, and predicted states should carry temporal attributes
-    whenever timing affects interpretation or choice.
+- text: No one of these quantities can be reliably inferred from the others.
   type: paragraph
-section_id: S_15_01
+section_id: S_19_01

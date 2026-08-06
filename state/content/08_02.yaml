@@ -1,12 +1,11 @@
 kind: T_ContentBlock
 id: S_08_02
 blocks:
-- text: The objective of planning is to construct the most useful set of plausible developments, not an
-    exhaustive set of all possible futures. Search is bounded by time, memory, computation, maximum scenario
-    count, and required response latency.
+- text: The evaluator should provide a common decision interface for heterogeneous considerations such
+    as safety, curiosity, effort, delayed benefit, social consequences, consistency with memory, and goal
+    progress.
   type: paragraph
-- text: When delay is dangerous, the architecture must prefer a sufficiently evaluated action over indefinite
-    analysis. In practical terms, an imperfect action may be safer than remaining motionless while the
-    environment continues to change.
+- text: The output need not be a single human-readable scalar. It must nevertheless support stable comparison
+    among alternatives and provide enough structure to select, reject, defer, or request further analysis.
   type: paragraph
-section_id: S_14_04
+section_id: S_15_02

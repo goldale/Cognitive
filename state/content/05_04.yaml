@@ -1,64 +1,11 @@
 kind: T_ContentBlock
 id: S_05_04
 blocks:
-- text: 'The processing sequence is: physical and perceptual preprocessing, semantic representation, Task
-    Relevance evaluation, Semantic Novelty evaluation, and a Memory Update decision.'
+- text: High-bandwidth sensory channels require instrumental preprocessing before general semantic reasoning.
+    Candidate mechanisms include change detection, tracking, event detection, key-frame selection, feature
+    extraction, semantic segmentation, and task-conditioned filtering.
   type: paragraph
-- title: Hierarchical Cognitive Filtering
-  description: Information is progressively filtered by meaning, current relevance, and novelty before
-    memory is changed.
-  direction: TB
-  edges:
-  - flow: information
-    from: stream
-    to: extract
-  - flow: information
-    from: extract
-    to: relevance
-  - flow: information
-    from: relevance
-    to: novelty
-  - flow: information
-    from: novelty
-    to: decision
-  - flow: learning
-    from: decision
-    label: accepted update
-    to: memory
-  - flow: feedback
-    from: memory
-    label: current knowledge
-    to: novelty
-  nodes:
-  - kind: subsystem
-    id: decision
-    status: current
-    label: Memory Update Decision
-  - kind: subsystem
-    id: extract
-    status: current
-    label: Semantic Extraction
-  - kind: state
-    id: memory
-    status: current
-    label: Memory State
-  - kind: subsystem
-    id: novelty
-    status: current
-    label: Semantic Novelty Evaluation
-  - kind: subsystem
-    id: relevance
-    status: current
-    label: Task Relevance Evaluation
-  - kind: external
-    id: stream
-    status: current
-    label: Input Stream
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- text: 'Each stage answers a different question: what is present, what matters now, what is new, and
-    whether persistent state should change.'
+- text: Preprocessing must preserve information that may affect active goals while avoiding the impossible
+    requirement that the reasoning core interpret every pixel, sample, or point at full rate.
   type: paragraph
-section_id: S_18_04
+section_id: S_14_04

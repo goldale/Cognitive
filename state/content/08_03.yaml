@@ -1,57 +1,86 @@
 kind: T_ContentBlock
 id: S_08_03
 blocks:
-- type: paragraph
-  text: The best next step is not necessarily the change with the largest immediate benchmark gain. Planning
-    produces a bounded set of alternatives; admissibility constraints remove unsafe or impossible actions;
-    normalized estimates support comparison; and Integrated Evaluation selects the best available option.
-- type: heading
-  level: 3
-  text: Admissibility Before Ranking
-- type: paragraph
-  text: Catastrophic, policy-prohibited, or insufficiently reversible actions must be rejected before
-    utility ranking. High expected utility must not compensate for a violation of a hard safety, authorization,
-    resource, or rollback constraint.
-- type: formula
-  text: A_valid = { a | Constraints(a) = true }
-- type: heading
-  level: 3
-  text: Normalized Multi-Criteria Estimate
-- type: paragraph
-  text: The earlier multiplicative priority ratio is no longer canonical because division by very small
-    Cost can over-prioritize trivial micro-tasks, while a single scalar Risk term cannot distinguish catastrophic
-    exclusion from ordinary residual risk. Admissible alternatives should instead be compared using normalized,
-    context-dependent estimates.
-- type: formula
-  text: Score(a) = w_U U_hat(a) + w_F F_hat_discounted(a) - w_C C_hat(a) - w_R R_hat_residual(a) - w_I
-    I_hat(a) - w_D D_hat(a)
-- type: paragraph
-  text: A minimum practical-utility threshold and effective cost, including context switching and delay
-    imposed on other work, prevent nominally cheap but unimportant actions from dominating the queue.
-- type: heading
-  level: 3
-  text: Time and Bounded Future Options
-- type: paragraph
-  text: FutureOptionValue must be temporally attributed and evaluated only within the Planning Budget.
-    Planning remains bounded by time, memory, computation, scenario count, and maximum depth; it must
-    not recursively enumerate all possible futures.
-- type: paragraph
-  text: Time discounting is required in principle, but this release does not prescribe one universal discount
-    function. Different objective classes may require different temporal profiles.
-- type: heading
-  level: 3
-  text: Role of Integrated Evaluation
-- type: paragraph
-  text: The score is an estimate supplied to Integrated Evaluation, not an autonomous decision rule. Integrated
-    Evaluation may consider system state, goals, uncertainty, reversibility, constraints, and qualitative
-    evidence that cannot be represented safely by one arithmetic expression.
-- type: heading
-  level: 3
-  text: Open Questions Requiring Experimental Resolution
-- type: observation
-  title: Discussion status
-  text: 'The following details remain open: the normalization method for heterogeneous estimates; the
-    weights or learned aggregation mechanism; the temporal discount function; the minimum utility threshold;
-    the decomposition of residual risk; and the context-dependent maximum planning horizon. The architecture
-    fixes the staged decision process but not these implementation parameters.'
-section_id: S_12_01
+- text: 'Integrated Evaluation participates in a closed loop: representations and candidate plans are
+    evaluated; an action is selected; the environment and internal state change; the observed result is
+    represented and evaluated again.'
+  type: paragraph
+- title: Evaluation Feedback Loop
+  description: The consequences of behavior return as new input and are evaluated again, closing the cognitive
+    control loop.
+  direction: TB
+  edges:
+  - flow: information
+    from: representation
+    to: evaluation
+  - flow: evaluation
+    from: evaluation
+    label: selection
+    to: behavior
+  - flow: control
+    from: behavior
+    label: action
+    to: world
+  - flow: information
+    from: world
+    to: consequence
+  - flow: learning
+    from: consequence
+    label: learning signal
+    to: memory
+  - flow: feedback
+    from: memory
+    label: updated context
+    to: representation
+  nodes:
+  - kind: external
+    id: behavior
+    status: current
+    label: 'Selected
+
+      Behavior'
+  - kind: data
+    id: consequence
+    status: current
+    label: 'Observed
+
+      Consequences'
+  - kind: subsystem
+    id: evaluation
+    status: current
+    label: 'Integrated
+
+      Evaluation'
+  - kind: subsystem
+    id: memory
+    status: current
+    label: 'Memory / Context
+
+      Update'
+  - kind: state
+    id: representation
+    status: current
+    label: 'Current
+
+      Representation'
+  - kind: external
+    id: world
+    status: current
+    label: 'Environment /
+
+      Other Systems'
+  proportionality_priority: true
+  rank_groups:
+  - - representation
+    - evaluation
+    - behavior
+  - - memory
+    - consequence
+    - world
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: This loop allows evaluation to learn from consequences without pretending that the evaluator is
+    semantically expressible as a fixed hand-written utility function.
+  type: paragraph
+section_id: S_15_05

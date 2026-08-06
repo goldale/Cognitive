@@ -1,20 +1,17 @@
 kind: T_ContentBlock
 id: S_09_04
 blocks:
-- text: Consolidation may discard exact wording, incidental sensory detail, source order, and redundant
-    episodes while retaining category boundaries, causal expectations, evaluation changes, and action
-    tendencies.
+- text: A language model output is not passive observation. It changes the recipient's internal model,
+    future decisions, and eventually the external environment. The causal path is indirect but real.
   type: paragraph
-- text: Information can disappear from explicit recall while remaining present functionally. A book may
-    no longer be remembered proposition by proposition, yet continue to alter judgments and attention.
+- text: A long-lived cognitive system must therefore model the effects of its own communications. It should
+    be able to update the evaluation of a prior recommendation when later outcomes become available.
   type: paragraph
-- text: The engineering target is therefore not maximum retained bits. It is maximum future utility of
-    the retained internal state.
+- text: This requirement strengthens the need for continuity. Without a self-model, the system cannot
+    distinguish its own causal contribution from unrelated environmental change.
   type: paragraph
-- text: MemoryUtility = FuturePrediction + Evaluation + Action + LearningDirection - StorageAndInterferenceCost
-  type: formula
-- title: Auditability requirement
-  text: An engineered cognitive system may require an external exact event log for legal, scientific,
-    or safety auditing even when its internal cognitive memory remains lossy.
-  type: warning
-section_id: S_04_04
+- title: Current limitation
+  text: Stateless sessions can produce useful outputs but cannot reliably learn from the long-horizon
+    consequences of their own advice.
+  type: observation
+section_id: S_08_05

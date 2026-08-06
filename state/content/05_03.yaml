@@ -1,11 +1,11 @@
 kind: T_ContentBlock
 id: S_05_03
 blocks:
-- text: The same document can substantially change a novice world model and add almost nothing to an expert
-    world model. Semantic Novelty is therefore a property of the pair consisting of input and current
-    Memory State.
+- text: Video is a serialized observation stream with extreme Data Rate, substantial temporal redundancy,
+    and large quantities of valid information unrelated to the active dialogue or task.
   type: paragraph
-- text: Repeated information can remain relevant while becoming non-novel. Conversely, unfamiliar information
-    can be novel while remaining irrelevant to the active objective.
+- text: This unrelated information is not noise. Buildings, illumination, background motion, faces, clothing,
+    and spatial layout may all be correct descriptions of the world while being irrelevant to the current
+    cognitive objective.
   type: paragraph
-section_id: S_18_03
+section_id: S_14_03

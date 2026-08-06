@@ -1,23 +1,62 @@
-kind: T_Content
-section: S_11_03
+kind: T_ContentBlock
+id: S_11_03
 blocks:
-- type: paragraph
-  text: The relevant memory state is distributed and parallel, while Transformer consumption is sequential. Serialization
-    therefore preserves semantic structure through ordering rather than through a newly invented vector space.
-- type: list
-  title: Recommended serialization order
-  items:
-  - Dialogue identity and active objective, when required by the interface.
-  - Prior Dialogue content needed to resolve current references.
-  - Most strongly matched LTM1 atoms and their active contexts.
-  - Linked LTM2 episodes, compositions, scenarios, and expected transitions.
-  - Competing alternatives, uncertainty, and provenance where they affect interpretation.
-  - An explicit completion boundary.
-- type: principle
-  title: Preserve relations
-  text: Serialization must preserve which elements are contexts, relations, alternatives, causes, consequences,
-    or temporal successors. A flat unordered bag of activations is insufficient.
-- type: note
-  title: Implementation freedom
-  text: The exact ordering policy may be learned, deterministic, or hybrid, but it must produce representations
-    consumable by the selected Transformer interface.
+- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Serialized Memory Message used by the Transformer to generate a response.
+  type: paragraph
+- title: Memory UPDATE Path
+  description: The completed interaction and Transformer state are used to update memory without generating
+    a second user-visible answer.
+  direction: TB
+  edges:
+  - flow: information
+    from: question
+    to: update
+  - flow: information
+    from: answer
+    to: update
+  - flow: information
+    from: hidden
+    label: non-zero mode signal
+    to: update
+  - flow: learning
+    from: update
+    label: learning request
+    to: memory
+  - flow: learning
+    from: memory
+    label: content update
+    to: state
+  nodes:
+  - kind: data
+    id: answer
+    status: current
+    label: Generated Answer
+  - kind: state
+    id: hidden
+    status: current
+    label: Transformer Hidden State
+  - kind: subsystem
+    id: memory
+    status: current
+    label: Associative Memory
+  - kind: data
+    id: question
+    status: current
+    label: Last Question
+  - kind: state
+    id: state
+    status: current
+    label: Updated Memory State
+  - kind: subsystem
+    id: update
+    status: current
+    label: UPDATE_ONLY
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- text: In an UPDATE_ONLY cycle, the last question, answer, and relevant Transformer hidden state are
+    supplied to memory so that experience can be integrated without rerunning a full user-facing inference
+    cycle.
+  type: paragraph
+section_id: S_17_03

@@ -383,7 +383,7 @@ body { --document-body-font-size: 1rem; }
   font-size: 0.9rem;
 }
 
-/* Cognitive 0.4.14: final-size diagram layout and landscape exception. */
+/* Cognitive 0.5.05: final-size diagram layout and landscape exception. */
 .architecture-diagram {
   overflow: hidden;
 }

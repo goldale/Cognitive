@@ -1,24 +1,28 @@
 kind: T_ContentBlock
 id: S_02_04
+section_id: S_02_04
 blocks:
-- text: A long-lived system can change its objectives. Work may lose value; caregiving may gain value;
-    exploration may become less important than safety; a research agent may move from discovery to verification.
-  type: paragraph
-- text: Objective drift first changes the weights assigned to existing knowledge. If these changes accumulate,
-    the current organization may become inefficient. Architectural search is then required.
-  type: paragraph
-- text: The optimal new architecture cannot be derived mechanically from weight changes alone. Candidate
-    reorganizations must be generated, evaluated, partially applied, and compared over time.
-  type: paragraph
-- proportionality_priority: true
-  readability_priority: true
-  size: standard
-  text: 'Objective Drift ↓
-
-    Weight and Activation Changes ↓
-
-    Growing Organizational Mismatch ↓
-
-    Iterative Architectural Search'
-  type: diagram
-section_id: S_03_05
+- type: definition
+  title: Canonical Architecture
+  text: A frozen architectural decision that subsequent documentation and diagrams must preserve.
+- type: definition
+  title: Research Proposal
+  text: A concrete leading design presented to make the architecture understandable and testable, but explicitly
+    marked for further discussion before final freeze.
+- type: definition
+  title: Open Question
+  text: A mechanism whose role or implementation is not yet sufficiently determined.
+- type: note
+  title: Research Proposal — LTM1 Associative Vector Codebook
+  text: Draft 05 adopts LTM1 Associative Vector Codebook as the preferred name for the proposed latent indexing
+    structure associated with LTM1. It may use learned code vectors, latent quantization, approximate associative
+    matching, or another mechanism.
+- type: warning
+  title: Open Question — Codebook mechanics
+  text: The exact operation of the LTM1 Associative Vector Codebook as a separate indexing structure remains to
+    be discussed. Its relation to LTM1 vertices, edge lists, logical domains LTM1/LTM2, candidate generation, quantization,
+    collision handling, learning, and retrieval has not yet been canonically fixed.
+- type: note
+  title: Research Proposal — dual-width latent layer
+  text: A double-width intermediate representation with one UPDATE-oriented channel and one READ-oriented channel
+    is the leading explanatory and implementation proposal. Its exact realization remains open for RS-0011.

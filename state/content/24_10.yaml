@@ -1,0 +1,49 @@
+kind: T_ContentBlock
+id: S_24_10
+blocks:
+- title: Prototype purpose
+  text: The proposed mechanism can be prototyped on conventional CPU, GPU, RAM, and SSD hardware. It does
+    not require neuromorphic hardware and does not claim to reproduce the biological implementation.
+  type: paragraph
+- title: Three implementation structures
+  items:
+  - Vector similarity search, such as FAISS, Qdrant, or HNSW, provides associative entry into any sufficiently
+    matching Event State S_mid.
+  - A bidirectional persistent transition store, held in RAM and a store such as RocksDB or LMDB, supports
+    navigation toward earlier and later states.
+  - A streaming context evaluator estimates context change and candidate episode boundaries.
+  type: list
+- text: Associative Cue ↓ Vector Similarity Search ↓ Event State S_mid ↓ Backward Traversal ↓ Inferred
+    Episode Start ↓ Forward Replay ↓ Reconstructed Episode
+  type: formula
+- title: Arbitrary entry point
+  text: Associative READ need not retrieve an episode identifier or its beginning. It may retrieve any
+    characteristic state within the trajectory. The system then traverses backward transitions until a
+    context boundary is inferred and performs a separate forward replay from the inferred start.
+  type: principle
+- title: Boundary detection
+  text: A minimal detector may use ΔC = 1 − CosineSimilarity(C_left, C_right), preferably over context
+    windows rather than only adjacent states. Later versions may incorporate temporal gaps, goal changes,
+    participant or role changes, and explicit completion signals.
+  type: paragraph
+- title: Candidate validation
+  text: Backward reconstruction should be treated as a hypothesis. Forward replay from the inferred start
+    should pass through, or closely reconstruct, the originally retrieved S_mid. Failure to do so lowers
+    confidence in the selected trajectory.
+  type: principle
+- title: Architectural boundaries
+  items:
+  - Vector search is an implementation component of READ, not Associative Memory itself.
+  - The transition structure is an implementation mechanism for chronological navigation, not a Knowledge
+    Graph or GraphRAG definition of memory.
+  - Context evaluation detects candidate boundaries but does not define the semantic content of the episode.
+  type: list
+- title: Prototype questions
+  items:
+  - How should backward and forward transition strengths be learned?
+  - How should competing predecessors and successors be resolved without mixing episodes?
+  - Which context representation provides robust boundary detection?
+  - How should uncertainty and multiple plausible reconstructions be retained?
+  - Can forward replay reliably validate a backward-reconstructed start?
+  type: list
+section_id: S_24_10

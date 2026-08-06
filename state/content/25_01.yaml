@@ -1,12 +1,41 @@
 kind: T_ContentBlock
 id: S_25_01
 blocks:
-- text: This registry points to canonical Research Sessions and Research Notes. Full text remains at the contextual source location.
+- text: Documentation Architecture governs how knowledge about the Cognitive architecture is represented,
+    related, generated, and validated. It is part of the project Single Source of Truth.
   type: paragraph
-- items:
-  - '[RN-0001 — The Babel Hypothesis](../chapter03/03_06.html#RN-0001)'
-  - '[RN-0002 — Translation as Cognitive State Reconstruction](../chapter03/03_03.html#RN-0002)'
-  - '[RN-0003 — Episodic Retrieval and Chronological Reinstatement](../chapter23/23_08.html#RN-0003)'
-  - '[RS-0010 — Logical Episode Boundary Detection](../chapter23/23_12.html#RS-0010)'
-  type: list
+- title: Three-Level Self-Describing Project
+  description: Documentation Architecture describes the documentation that describes the Cognitive architecture.
+  direction: TB
+  edges:
+  - flow: control
+    from: da
+    label: governs representation
+    to: docs
+  - flow: information
+    from: docs
+    label: describes
+    to: arch
+  nodes:
+  - kind: subsystem
+    id: arch
+    label: Cognitive Architecture
+  - kind: control
+    id: da
+    label: Documentation Architecture
+  - kind: data
+    id: docs
+    label: Cognitive Architecture Documentation
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- title: DA-0001 — Single Source of Truth
+  text: Canonical knowledge exists once. HTML, PDF, indexes, registries, release notes, and references
+    are generated from canonical sources.
+  type: principle
+- title: DA-0002 — Separation of Normative and Contextual Content
+  text: Architectural invariants and contracts remain distinct from hypotheses, explanatory notes, implementation
+    guidance, and historical analogies.
+  type: principle
 section_id: S_25_01

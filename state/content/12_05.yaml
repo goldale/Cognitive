@@ -1,18 +1,30 @@
-kind: T_ContentBlock
-id: S_12_05
+kind: T_Content
+section: S_12_05
 blocks:
-- text: A practical prototype can implement consolidation around an unchanged language model. Recent events
-    enter working memory; a scheduled process extracts entities, adjusts confidence and utility, builds
-    clusters, identifies conflicts, and writes a compact long-term state.
-  type: paragraph
-- text: The prototype in this repository implements working memory, long-term memory, functional forgetting,
-    and iterative selection among flat, clustered, and hybrid organizations.
-  type: paragraph
-- text: The prototype is not evidence that these three organizations are sufficient. Its purpose is to
-    make the architectural loop executable and measurable.
-  type: paragraph
-- title: Operational evidence first
-  text: Use the modular prototype to collect failure cases before attempting a deeply integrated memory-model
-    representation.
-  type: principle
-section_id: S_05_06
+- type: paragraph
+  text: 'The serialization interface is validated functionally: the Transformer must interpret returned memory content
+    correctly and use it to improve Dialogue continuity, recall, prediction, or decision quality.'
+- type: table
+  headers:
+  - Failure mode
+  - Required check
+  rows:
+  - - Semantic mismatch
+    - Returned internal-language states are interpreted differently from equivalent Transformer-generated states.
+  - - Context loss
+    - References to earlier Dialogue content cannot be resolved after serialization.
+  - - Relation flattening
+    - Atoms are returned but their contexts, temporal order, or causal status are lost.
+  - - Retrieval flooding
+    - Too many weakly relevant elements obscure the central memory contribution.
+  - - Stale projection
+    - Old episodes are returned despite changed Dialogue context or objective.
+  - - Feedback instability
+    - UPDATE followed by READ produces incompatible representations of the same new state.
+- type: principle
+  title: Round-trip validation
+  text: A new internal state sent by UPDATE and later returned through READ should remain semantically usable by
+    the Transformer without translation into a second language.
+- type: paragraph
+  text: Evaluation should compare task performance, Dialogue continuity, reference resolution, and consistency across
+    repeated READ–UPDATE cycles. Coordinate orthogonality or sparsity is not a canonical success criterion.

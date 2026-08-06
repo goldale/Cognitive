@@ -1,10 +1,12 @@
 kind: T_ContentBlock
 id: S_05_01
 blocks:
-- text: Cognitive stream processing distinguishes Data Rate, Task Relevance, and Semantic Novelty. Data
-    Rate describes physical intensity; Task Relevance describes relation to active goals and context;
-    Semantic Novelty describes expected contribution relative to Memory State.
+- text: Meaning is not recovered from a serialized signal by reversing serialization. A signal contains
+    constraints that a receiving cognitive system interprets using its existing Memory State, context,
+    objectives, language competence, and learned world model.
   type: paragraph
-- text: No one of these quantities can be reliably inferred from the others.
+- text: The same message can produce different internal meanings in different systems because information
+    implicit in the recipient is not present in the transmitted sequence. Semantic reconstruction is therefore
+    an interaction between signal and receiver, not a property of the signal alone.
   type: paragraph
-section_id: S_18_01
+section_id: S_14_01

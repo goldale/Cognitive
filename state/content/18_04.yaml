@@ -1,21 +1,17 @@
 kind: T_ContentBlock
 id: S_18_04
 blocks:
-- text: The current Research State contains formal open-question entities. The most consequential unresolved
-    areas are listed below.
+- text: Git is the sole history mechanism. Research State stores current state, not a cumulative internal
+    history.
   type: paragraph
-- items:
-  - Minimal Atomic Token basis
-  - Integrated memory-model representation
-  - Architectural-search trigger and candidate generation
-  - Stable lifelong training of global evaluation
-  - Optimal neural-algorithmic split features
-  - Identity continuity across hardware migration
-  - Population resilience and lineage count
-  - Boundary between emergent and explicitly required higher-level behavior
-  ordered: false
-  type: list
-- text: The open questions define the research program. They are not defects to hide and should not be
-    replaced by confident prose before experiments exist.
+- text: Each version contains a latest T_ConsolidationRecord describing only the semantic transition that
+    produced that version. Earlier records remain available in earlier Git commits.
   type: paragraph
-section_id: S_12_05
+- text: When a commit contains no semantic change, the consolidation record may remain unchanged. File
+    diffs then record formatting or generated-artifact changes without inventing a false knowledge transition.
+  type: paragraph
+- text: Three-way file merge is structural. True semantic consolidation can produce a result belonging
+    to neither branch. The tool therefore emits conflict reports for review rather than pretending every
+    textual merge is a cognitive merge.
+  type: paragraph
+section_id: S_12_04

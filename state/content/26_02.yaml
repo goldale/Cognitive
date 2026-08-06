@@ -1,0 +1,7 @@
+kind: T_ContentBlock
+id: S_26_02
+blocks:
+- text: The Architectural Notes registry is established in Cognitive. Canonical AN objects will
+    be added as future material is explicitly classified; no existing normative text is silently reclassified.
+  type: paragraph
+section_id: S_26_02

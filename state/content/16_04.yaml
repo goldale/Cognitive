@@ -1,18 +1,18 @@
 kind: T_ContentBlock
 id: S_16_04
 blocks:
-- text: Direct internal-state Merge between mature lineages is expected to be destructive or undefined.
-    Exchange should use dialogue, externalized Research State, experiments, books, and training trajectories.
+- text: A mature distributed cognitive state cannot generally be copied into another independently evolved
+    state. The same experience derives meaning from system-wide relations absent in the receiver.
   type: paragraph
-- text: This protects identity and diversity while permitting useful discoveries to propagate.
+- text: Dialogue is therefore not an inferior substitute for Merge. It may be the maximum viable transfer
+    operation for integrated cognitive systems.
   type: paragraph
-- text: A receiving lineage integrates exported knowledge according to its own objectives. It need not
-    reproduce the source representation or conclusions exactly.
+- text: The sender serializes selected structures; the receiver integrates them; clarification reveals
+    missing background; conflict reveals incompatible organization; both systems update through the process.
   type: paragraph
-- proportionality_priority: true
-  readability_priority: true
-  size: standard
-  text: Internal Model A -> Partial Serialization -> Research State / Dialogue -> Model Integration ->
-    Internal Model B
-  type: diagram
-section_id: S_10_04
+- title: Dialogue maximum
+  confidence: 0.86
+  text: For mature non-identical integrated models, no general operation transfers experience more completely
+    than iterative dialogue without replacing the recipient's identity.
+  type: hypothesis
+section_id: S_09_04

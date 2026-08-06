@@ -1,72 +1,18 @@
 kind: T_ContentBlock
 id: S_18_01
 blocks:
-- title: Implementation Sequence
-  description: The roadmap introduces the smallest useful architecture first and defers topology optimization
-    and global maintenance until evidence justifies them.
-  direction: TB
-  edges:
-  - flow: information
-    from: spec
-    to: memory
-  - flow: information
-    from: memory
-    to: interface
-  - flow: information
-    from: interface
-    to: integration
-  - flow: information
-    from: integration
-    to: evaluation
-  - flow: control
-    from: evaluation
-    label: only after evidence
-    to: later
-  nodes:
-  - kind: subsystem
-    id: evaluation
-    status: current
-    label: Operational Evaluation
-  - kind: subsystem
-    id: integration
-    status: current
-    label: Transformer Integration
-  - kind: subsystem
-    id: interface
-    status: current
-    label: Canonical Memory Interface
-  - kind: future
-    id: later
-    status: future
-    label: Sleep and Structural Optimization
-  - kind: subsystem
-    id: memory
-    status: current
-    label: Associative Memory Prototype
-  - kind: data
-    id: spec
-    status: current
-    label: Validated Specification
-  proportionality_priority: true
-  readability_priority: true
-  size: standard
-  type: diagram
-- items:
-  - Restricted YAML Research State
-  - Atomic and derived Token validation
-  - Canonical formatting
-  - Semantic change proposals
-  - Structural three-way merge with conflict report
-  - Generated semantic HTML
-  - Working and long-term memory prototype
-  - Lossy consolidation and architecture selection
-  - Communication and clarification pipeline
-  - Trainable multichannel evaluator
-  - Hybrid meta-architect
-  - Cognitive lineage manager
-  ordered: false
-  type: list
-- text: These components are deliberately modular. Their purpose is to create an operational baseline
-    and instrumentation for later integration.
+- title: T_ResearchState
+  text: The canonical implementation-independent state of the research model from which human-readable
+    and machine-readable artifacts are generated.
+  type: definition
+- text: Research State stores the current consolidated model, not the full dialogue transcript. It includes
+    Tokens, principles, hypotheses, architecture decisions, open questions, roadmap items, chapter structure,
+    and the latest consolidation record.
   type: paragraph
-section_id: S_12_02
+- text: The state must support recovery after session loss, use by a different model, and long-term local
+    ownership.
+  type: paragraph
+- text: Documentation is a partial serialization of Research State for a human audience. English and future
+    language versions are separate serializations, not an original plus literal translations.
+  type: paragraph
+section_id: S_12_01

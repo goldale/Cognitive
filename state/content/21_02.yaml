@@ -1,28 +1,79 @@
 kind: T_ContentBlock
 id: S_21_02
 blocks:
-- text: Importance Estimation should be studied before consolidation and replay policies are fixed.
+- text: The next development cycle begins with the ability to estimate the importance of semantic knowledge.
+    Consolidation requires a selection signal; replay requires a policy for deciding what should be reactivated
+    and why.
   type: paragraph
-- headers:
-  - Experiment
-  - Primary measurement
-  - Failure signal
-  rows:
-  - - Retention prediction
-    - Correlation between estimated importance and future task utility
-    - High-value knowledge is forgotten while low-value noise is preserved
-  - - Context shift
-    - Ability to revise importance after goals change
-    - Scores remain frozen despite changed utility
-  - - Novelty versus frequency
-    - Separation of rare critical knowledge from frequent trivial knowledge
-    - Frequency dominates all other signals
-  - - Interference prediction
-    - Ability to identify knowledge likely to cause destructive overlap
-    - Unexpected degradation after UPDATE or consolidation
-  type: table
-- title: Acceptance direction
-  text: No single scalar is assumed to be sufficient. The representation of importance remains an open
-    design choice until experiments justify it.
-  type: note
+- title: Canonical Development Sequence
+  description: The canonical Semantic Feedback Learning Pipeline is the stable foundation. Importance
+    Estimation, Offline Consolidation and Sleep, and Replay are introduced as explicit dependent subsystems;
+    later memory-lifecycle and evaluation mechanisms build on them.
+  direction: TB
+  edges:
+  - flow: learning
+    from: current
+    label: stable foundation
+    to: importance
+  - flow: learning
+    from: importance
+    label: selection signal
+    to: sleep
+  - flow: learning
+    from: sleep
+    label: consolidated material
+    to: replay
+  - flow: optimization
+    from: replay
+    label: evidence of utility and interference
+    to: pruning
+  - flow: optimization
+    from: pruning
+    label: managed memory lifecycle
+    to: evaluation
+  - flow: evaluation
+    from: evaluation
+    label: controlled exchange
+    to: agents
+  nodes:
+  - kind: subsystem
+    id: agents
+    status: future
+    label: Multi-Agent Semantic Learning
+  - kind: control
+    id: current
+    label: Canonical Semantic Feedback Learning Pipeline
+  - kind: subsystem
+    id: evaluation
+    status: future
+    label: Global Evaluation
+  - kind: subsystem
+    id: importance
+    status: future
+    label: Importance Estimation
+  - kind: subsystem
+    id: pruning
+    status: future
+    label: Forgetting, Pruning, and Structural Plasticity
+  - kind: subsystem
+    id: replay
+    status: future
+    label: Replay
+  - kind: subsystem
+    id: sleep
+    status: future
+    label: Offline Consolidation and Sleep
+  proportionality_priority: true
+  readability_priority: true
+  size: standard
+  type: diagram
+- items:
+  - 1. Importance Estimation
+  - 2. Offline Consolidation and Sleep
+  - 3. Replay
+  - 4. Forgetting and Memory Pruning
+  - 5. Structural Plasticity
+  - 6. Global Evaluation
+  - 7. Multi-Agent Semantic Learning
+  type: list
 section_id: S_21_02

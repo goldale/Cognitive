@@ -1,11 +1,10 @@
 kind: T_ContentBlock
 id: S_07_02
 blocks:
-- text: The evaluator should provide a common decision interface for heterogeneous considerations such
-    as safety, curiosity, effort, delayed benefit, social consequences, consistency with memory, and goal
-    progress.
+- text: Temporally related observations should be organized into episodes. Episodes preserve local order,
+    duration, concurrency, interruption, and the distinction between an event and a persistent state.
   type: paragraph
-- text: The output need not be a single human-readable scalar. It must nevertheless support stable comparison
-    among alternatives and provide enough structure to select, reject, defer, or request further analysis.
+- text: Temporal organization is separate from semantic meaning and evaluation, although all three interact
+    during interpretation and planning.
   type: paragraph
-section_id: S_14_02
+section_id: S_16_02

@@ -1,4 +1,25 @@
-# Cognitive 0.4.14
+# Cognitive 0.5.05 — Second Edition Editorial Rewrite (Incremental Build)
+
+This archive contains the completed Second Edition rewrite of the opening chapter, **Project Goal**. The chapter is generated from YAML as a continuous narrative without a numbered subsection heading. Its first figure is the conceptual Cognitive Architecture diagram: Transformer THINKS, Associative Memory REMEMBERS, connected through a Shared Internal Language.
+
+All remaining chapters are inherited from the 0.5.01 baseline and will be reorganized in subsequent editorial steps.
+
+# Cognitive 0.5.05 — Idea-First Documentation
+
+## Primary objective
+
+A technically competent new reader should understand the central architectural innovation within the first ten pages.
+
+## Major changes
+
+- Reorganized the opening documentation around the latent Transformer–Associative Memory interface.
+- Removed the obsolete standalone sequencing component without replacement.
+- Recast Reasoning, Planning, Temporal Organization, Semantic Representation, and Integrated Evaluation as cognitive functions rather than independent physical modules.
+- Adopted **LTM1 Associative Vector Codebook** as the preferred Draft 05 name, with exact mechanics explicitly marked for discussion.
+- Presented a dual-width Layer N READ/UPDATE interface as a research proposal under RS-0011, not as a frozen implementation.
+- Clarified that READ and UPDATE are native latent interactions, not textual, JSON, RPC, or network messages.
+
+# Cognitive 0.5.05
 
 ## Diagram generator
 

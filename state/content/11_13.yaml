@@ -1,0 +1,14 @@
+kind: T_ContentBlock
+id: S_11_13
+blocks:
+- type: paragraph
+  text: Logical Episode boundaries may be supplied by the source, implied by the activation stream, or inferred
+    by Transformer processing from combined context.
+- type: principle
+  title: No boundary-detection module
+  text: Boundary inference is an operation of the Transformer Cognitive Core over the active state. The architecture
+    does not define a separate sequencing or boundary-detection component.
+- type: paragraph
+  text: Completed Logical Episodes are integrated into Associative Memory through the latent UPDATE interaction.
+    Their internal order and causal hypotheses are represented by the resulting LTM structures and edge lists.
+section_id: S_11_13

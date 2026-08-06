@@ -1,15 +1,23 @@
 kind: T_ContentBlock
 id: S_21_01
 blocks:
-- text: The Research Agenda converts architectural direction into experiments that can falsify assumptions.
-    A future subsystem is not accepted merely because it is biologically plausible or intuitively attractive.
+- text: Part V documents the intended evolution of Cognitive beyond release 0.3.15. It is an architectural
+    roadmap rather than a promise that every mechanism is already implemented.
   type: paragraph
+- title: Preserve canonical invariants
+  text: Future mechanisms must preserve the explicit READ/UPDATE asymmetry and the rule that Associative
+    Memory learns exclusively from Transformer-produced Semantic Representations through the Semantic
+    Feedback Learning Pipeline.
+  type: principle
 - items:
-  - State a hypothesis and competing alternatives.
-  - Define observable measurements before implementation.
-  - Use persistent agents and longitudinal experiments where memory effects require time.
-  - Record external ground-truth logs separately from lossy internal memory.
-  - Measure failure, recovery, and unintended interactions as well as average performance.
-  - Promote a mechanism from research to architecture only after its contract and evidence are reviewable.
+  - Extend the architecture through explicit subsystems rather than hidden side effects.
+  - Separate reasoning, evaluation, learning, and structural maintenance responsibilities.
+  - Introduce mechanisms only when their contracts, state effects, and failure modes can be stated clearly.
+  - Keep canonical information in one source and generate derivative documentation from it.
+  - Maintain human readability so engineers can reason about the system without unnecessary formalism.
   type: list
+- title: Roadmap status
+  text: The order in this part expresses architectural priority and dependency. It does not imply that
+    every mechanism forms one rigid runtime pipeline.
+  type: note
 section_id: S_21_01

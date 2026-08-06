@@ -1,7 +1,17 @@
 kind: T_ContentBlock
 id: S_25_03
 blocks:
-- text: The Implementation Notes registry is established in Cognitive. Canonical IN objects will
-    be added as future material is explicitly classified; no existing normative text is silently reclassified.
+- title: DA-0004 — Stable Identifiers
+  text: Identifiers such as RN-0002 and MN-0001 remain stable across releases even if wording, location,
+    or generated presentation changes.
+  type: principle
+- title: DA-0005 — Traceability
+  text: Readers must be able to navigate from an architectural decision to its rationale, research motivation,
+    implementation guidance, diagrams, and reverse references.
+  type: principle
+- text: Architecture → Architectural Note → Research Motivation → Implementation Note
+  type: formula
+- text: The canonical source is progressively evolving toward an explicit knowledge graph. Sections, notes,
+    concepts, diagrams, and references are treated as addressable objects rather than anonymous page fragments.
   type: paragraph
 section_id: S_25_03

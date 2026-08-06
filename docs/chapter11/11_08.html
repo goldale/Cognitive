@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 11 · Section 11.8 · Modern Hopfield Retrieval</title>
+<link rel="stylesheet" href="../cognitive.css">
+</head>
+<body>
+<div class="container">
+<nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_07.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="11_09.html">Next →</a></nav>
+<header><p class="chapter-label">Chapter 11</p><h1>Associative Memory</h1><p class="section-label">Section 11.8</p><h2>Modern Hopfield Retrieval</h2></header>
+<main><aside class="definition" id="definition-modern-hopfield-retrieval"><h4>Modern Hopfield Retrieval</h4><p>An energy-based local attractor mechanism used inside READ after scalable candidate selection. It restores or composes latent context but does not independently modify Memory State.</p></aside><p>For stored latent patterns M and query q, a continuous Modern Hopfield update has the attention-equivalent form q_next = M^T softmax(βMq). In the more general key/value form, z_target = V^T softmax(βKq). β is an inverse-temperature parameter and need not equal standard Transformer scaling.</p><pre class="code"><code data-language="text">Semantic Query
+  ↓
+HNSW / IVF / future candidate index
+  ↓ Top-L candidates
+Modern Hopfield attractor update
+  ↓
+z_target + retrieval metadata</code></pre><p>Dense comparison against every persistent code is O(Nd). Sublinear large-scale behavior is supplied by the approximate index; the local Hopfield or attention update over L candidates is approximately O(Ld).</p><ul><li>High concentration: dominant-attractor recall.</li><li>Moderate concentration: associative composition or interpolation.</li><li>High entropy: ambiguous or weak retrieval.</li><li>Every result carries supporting memory identifiers, entropy, similarity margin, conflict estimate, and composition degree.</li></ul><p>Theoretical storage capacity may grow exponentially with latent dimensionality under separation and distribution assumptions. A 4096-dimensional space therefore offers substantial theoretical capacity, but it does not guarantee a fixed number of reliable semantic states. Effective capacity must be established empirically.</p><aside class="principle"><h4>Epistemic labeling</h4><p>A composed, interpolated, or metastable latent result must be marked as such. Attention-weighted reconstruction is a hypothesis-producing mechanism, not an automatic source of truth.</p></aside></main>
+<footer><nav class="page-navigation" aria-label="Page navigation"><a class="up" href="index.html">↑ Up</a><a rel="prev" href="11_07.html">← Previous</a><a class="contents" href="../index.html">☰ Contents</a><a class="alphabetical-index" href="../chapter27/index.html">A–Z Index</a><a rel="next" href="11_09.html">Next →</a></nav></footer>
+</div>
+</body>
+</html>

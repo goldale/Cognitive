@@ -1,18 +1,63 @@
-kind: T_ContentBlock
-id: S_12_04
+kind: T_Content
+section: S_12_04
 blocks:
-- text: The proposed integrated biological-style memory does not naturally preserve complete internal
-    versions. A cognitive system becomes a new state rather than retaining every historical self.
-  type: paragraph
-- text: Engineering systems nevertheless require checkpoints, evaluation snapshots, and external logs.
-    These mechanisms should protect deployment without forcing the internal cognitive representation to
-    behave like Git.
-  type: paragraph
-- text: Research State uses Git because it is a formal external project model. A mature cognitive memory
-    may use different persistence mechanisms. The two architectures should not be conflated.
-  type: paragraph
-- title: Identity ambiguity
-  text: Restoring an old checkpoint may preserve function while breaking the system's own model of continuous
-    identity. Functional recovery and identity continuity are separate requirements.
-  type: warning
-section_id: S_05_05
+- type: paragraph
+  text: Serialization operates under a finite sequence and processing budget. It must return the most useful coherent
+    memory message rather than attempt to export the complete activated graph.
+- type: list
+  title: Budget controls
+  items:
+  - Maximum serialized elements or vectors.
+  - Maximum retrieval and serialization time.
+  - Maximum number of LTM2 episodes or scenarios.
+  - Minimum activation or relevance threshold.
+  - Duplicate and near-duplicate suppression.
+  - Reserved capacity for uncertainty and completion markers.
+- type: diagram
+  title: Bounded Serialization and Completion
+  description: The serializer prioritizes coherent relevant content under finite sequence and processing budgets.
+  direction: TB
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: candidates
+    label: Relevant Candidate Content
+    kind: state
+  - id: rank
+    label: Relevance and Coherence Ranking
+    kind: process
+  - id: budget
+    label: Sequence / Time / Episode Budget
+    kind: constraint
+  - id: emit
+    label: Emit Ordered Internal-Language Elements
+    kind: process
+  - id: complete
+    label: Serialization Completion
+    kind: control
+  edges:
+  - from: candidates
+    to: rank
+    label: candidate set
+    flow: information
+  - from: budget
+    to: rank
+    label: bounds
+    flow: control
+  - from: rank
+    to: emit
+    label: highest-value coherent subset
+    flow: information
+  - from: emit
+    to: complete
+    label: budget used or no useful addition
+    flow: control
+- type: principle
+  title: Coherence before volume
+  text: A smaller internally coherent message is preferable to a larger sequence that loses relation structure or
+    exceeds the Transformer processing budget.
+- type: definition
+  title: Serialization Completion
+  text: The condition indicating that the available budget has been used or that no additional memory element is
+    expected to materially improve the current Dialogue processing step.

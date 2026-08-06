@@ -1,18 +1,76 @@
-kind: T_ContentBlock
-id: S_12_01
+kind: T_Content
+section: S_12_01
 blocks:
-- text: Consolidation should normally execute outside the interactive response path. A dialogue system
-    must remain responsive; a consolidation system should be conservative, evidence-seeking, and willing
-    to leave information unresolved.
-  type: paragraph
-- text: The biological analogy is sleep, but the engineering requirement is simply asynchronous processing
-    with access to recent experience, current memory, objectives, and outcome feedback.
-  type: paragraph
-- text: An initial implementation can use scheduled jobs, replay buffers, clustering, confidence updates,
-    and candidate evaluation without changing the base neural model.
-  type: paragraph
-- title: Different optimization criteria require different subsystems
-  text: The dialogue component optimizes responsiveness and usefulness. The consolidation component optimizes
-    long-term consistency, retention, and corrigibility.
-  type: principle
-section_id: S_05_01
+- type: paragraph
+  text: Associative Memory does not generate a separate semantic representation. In response to READ, it selects
+    relevant information already represented in the internal language and serializes that information for
+    Transformer processing.
+- type: principle
+  title: Single-language contract
+  text: The semantic space used for READ input, UPDATE input, D-Context, and memory output is the same Transformer-derived
+    internal language.
+- type: definition
+  title: Serialized Memory Message
+  text: A bounded ordered sequence in the internal language containing prior Dialogue content and its relevant
+    projection onto LTM1 and LTM2.
+- type: formula
+  text: Serialized Memory Message = D-Context + Relevant Long-Term Projection
+- type: diagram
+  title: Relevant Memory Selection and Serialization
+  description: Dialogue context and long-term memory are selected, serialized in the internal language, and
+    reinjected into deeper Transformer layers.
+  direction: LR
+  size: standard
+  readability_priority: true
+  proportionality_priority: true
+  nodes:
+  - id: dialogue
+    label: D-Context
+    kind: state
+  - id: ltm1
+    label: LTM1 Atoms and Contexts
+    kind: storage
+  - id: ltm2
+    label: LTM2 Episodes and Scenarios
+    kind: storage
+  - id: select
+    label: Relevant Memory Selection
+    kind: process
+  - id: serialize
+    label: Internal-Language Serialization
+    kind: process
+  - id: reinject
+    label: Deeper Memory Reinjection Point
+    kind: interface
+  - id: reason
+    label: 'Transformer Cognitive Core\n(Deep Layers)'
+    kind: subsystem
+  edges:
+  - from: dialogue
+    to: select
+    label: primary anchor
+    flow: context
+  - from: ltm1
+    to: select
+    label: atoms + contexts
+    flow: information
+  - from: ltm2
+    to: select
+    label: episodes + scenarios
+    flow: information
+  - from: select
+    to: serialize
+    label: bounded coherent content
+    flow: information
+  - from: serialize
+    to: reinject
+    label: internal language
+    flow: information
+  - from: reinject
+    to: reason
+    label: bypass early translation
+    flow: information
+- type: note
+  title: Low-level vector elements
+  text: A vector may remain as a low-level element of the internal-language sequence. It is not an aggregated
+    memory state, a separate language, or an independently generated semantic object.

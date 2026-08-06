@@ -1,12 +1,14 @@
 kind: T_ContentBlock
 id: S_23_04
 blocks:
+- text: Multiple Cognitive systems may eventually form populations that exchange experience while preserving
+    distinct Memory States and cognitive lineages.
+  type: paragraph
 - items:
-  - When is weakening sufficient and when is deletion justified?
-  - How can the system measure the harm caused by stale associations?
-  - What evidence should authorize creation or removal of structural links?
-  - How can topology changes remain explainable and reversible?
-  - How should capacity pressure affect pruning without erasing rare critical knowledge?
-  - What is the correct boundary between functional and structural learning?
+  - Share Semantic Representations rather than opaque memory copies by default.
+  - Preserve diversity to reduce correlated failure.
+  - Require semantic synchronization and verification of understanding.
+  - Treat imported knowledge as evidence, not unquestionable truth.
+  - Support local acceptance, rejection, quarantine, reinterpretation, and rollback.
   type: list
 section_id: S_23_04

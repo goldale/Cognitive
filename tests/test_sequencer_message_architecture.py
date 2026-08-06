@@ -5,19 +5,15 @@ ROOT = Path(__file__).resolve().parents[1]
 def text(path):
     return path.read_text(encoding="utf-8")
 
-def test_sequencer_and_message_architecture():
-    s13 = text(ROOT / "state/content/10_13.yaml")
-    s14 = text(ROOT / "state/content/10_14.yaml")
-    s12 = text(ROOT / "state/content/10_12.yaml")
-    assert "Sequencer" in s13
-    assert "A completed Sequence determines" in s13
-    assert "Single physical LTM" in s14
-    assert "MSG1 — Element-semantic message" in s14
-    assert "MSG2 — STM-emitted operation message" in s14
-    assert "orthogonal message-specific state subspaces" in s14.lower()
-    assert "may propagate concurrently" in s14
-    assert "cross-stream causal" in s12.lower()
+def test_draft05_latent_architecture():
+    corpus = "\n".join(p.read_text(encoding="utf-8") for p in (ROOT / "state").rglob("*.yaml"))
+    forbidden = "Information " + "Sequencer"
+    assert forbidden not in corpus
+    assert "LTM1 Associative Vector Codebook" in corpus
+    assert "Internal Latent Interface" in corpus
+    assert "dual-width" in corpus
+    assert "D-Context" in corpus
 
 def test_release_version():
-    assert 'version = "0.4.14"' in text(ROOT / "pyproject.toml")
-    assert "cognitive-0.3.46" in text(ROOT / "CHANGES.md")
+    assert 'version = "0.5.1"' in text(ROOT / "pyproject.toml")
+    assert '"release": "Cognitive_0.5.05"' in text(ROOT / "RELEASE_MANIFEST.json")

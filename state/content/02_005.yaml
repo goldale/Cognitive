@@ -1,0 +1,15 @@
+kind: T_ContentBlock
+id: S_02_005
+section_id: S_02_005
+blocks:
+- type: paragraph
+  text: Conventional retrieval pipelines commonly translate model state into text or symbolic queries, search an
+    external store, and translate the result back into model context. That interface discards information already
+    present in the model hidden state and makes memory appear as an external application.
+- type: paragraph
+  text: Cognitive instead treats a selected intermediate Transformer representation as the basis of an endogenous
+    Internal Language. Associative Memory learns in that space from the beginning.
+- type: warning
+  title: Not RAG with different terminology
+  text: The architecture is not defined by a text retriever attached to an LLM. Its distinguishing mechanism is
+    the native latent coupling between Transformer processing and persistent associative memory.

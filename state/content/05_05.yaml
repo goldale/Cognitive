@@ -1,10 +1,11 @@
 kind: T_ContentBlock
 id: S_05_05
 blocks:
-- text: Classical systems primarily maximize data throughput. AI-native systems should maximize useful
-    knowledge made available to reasoning per unit of computational cost and time.
+- text: A Perceptual Integration Buffer should retain a bounded, temporally organized intermediate representation
+    from which the system can construct events, query omitted detail, and integrate multiple channels.
   type: paragraph
-- text: The optimal preprocessing architecture is determined not by stream type or bandwidth alone, but
-    by expected effect on goals, decisions, and Memory State.
+- text: The buffer is not long-term memory. It is a staging area between high-rate preprocessing and semantic
+    integration, allowing the system to trade precision, latency, and computational cost according to
+    the task.
   type: paragraph
-section_id: S_18_05
+section_id: S_14_05

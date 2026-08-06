@@ -1,16 +1,17 @@
 kind: T_ContentBlock
 id: S_14_02
 blocks:
-- title: T_MetaArchitect
-  text: A trainable system that designs a computational graph by allocating operations among neural, algorithmic,
-    and hybrid executors.
-  type: definition
-- text: The output of the meta-architect is not the task answer. It is an architecture for producing the
-    answer.
+- text: New experience should normally modify the relative importance, usefulness, confidence, and activation probability
+    of existing knowledge before changing architecture.
   type: paragraph
-- text: Inputs can include objective completeness, data availability, noise, state discreteness, safety
-    criticality, interpretability requirements, latency, energy cost, and distribution shift.
+- text: This is a weaker and more implementable claim than asserting that every important experience reorganizes
+    the model. Weight changes are cheap, reversible in effect, and measurable.
   type: paragraph
-- text: Observed deployment utility supplies the lifelong training signal.
+- text: Structural change becomes justified when cumulative reweighting makes the present organization increasingly
+    incoherent or inefficient. No fixed deterministic threshold is assumed.
   type: paragraph
-section_id: S_09_02
+- title: Locality of ordinary learning
+  text: Most daily learning can be represented as local updates. Rare reorganization events should be treated as
+    expensive search episodes.
+  type: observation
+section_id: S_14_02

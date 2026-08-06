@@ -1,14 +1,25 @@
 kind: T_ContentBlock
 id: S_15_01
 blocks:
-- text: Written text, speech, lectures, and dialogue all provide linguistic information. Their channel
-    properties differ, but each can trigger T_Deserialization and T_ModelIntegration.
+- text: Neural networks and classical programs both seek states that optimize a task-dependent functional,
+    but they operate under different knowledge conditions.
   type: paragraph
-- text: Speech adds timing, emphasis, and emotional coloration. Written text permits arbitrary pacing,
-    exact revisitation, annotation, and repeated integration attempts.
+- headers:
+  - Class
+  - Functional
+  - Typical executor
+  rows:
+  - - I
+    - Well defined and tractable
+    - Algorithm, solver, finite-state machine
+  - - II
+    - Not explicit; examples are evaluated
+    - Neural network
+  - - III
+    - Partly defined and partly example-based, or fully defined but very complicated.
+    - Hybrid architecture
+  type: table
+- text: The third class includes many practical robotics, autonomous driving, diagnosis, planning, and
+    dialogue tasks. The central engineering problem is where to cut the computation.
   type: paragraph
-- text: A lecture combines prepared serialization with real-time adaptation to questions. Dialogue adds
-    an iterative feedback loop in which the sender can change later serialization based on observed integration
-    failure.
-  type: paragraph
-section_id: S_08_01
+section_id: S_10_01
