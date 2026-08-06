@@ -24,7 +24,7 @@ blocks:
     - Dense recurrence, persistent state, spreading activation, rapid local UPDATE
     - Spintronic, memristive, phase-change, or other persistent in-memory substrate
   - - Output / Projection
-    - Dense integration and compression into Memory Vector
+    - Dense integration and compression into serialized memory message
     - Photonic matrix processor or tensor accelerator
 - type: principle
   title: Hardware specialization follows topology
@@ -59,7 +59,7 @@ blocks:
   - id: vector
     kind: data
     status: current
-    label: Memory Vector
+    label: serialized memory message
   - id: update
     kind: control
     status: experimental

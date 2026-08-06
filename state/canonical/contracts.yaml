@@ -4,7 +4,7 @@ operations:
   name: READ
   owner: Associative Memory
   inputs:
-  - Active Dialogue Context
+  - Active D-Context
   - Current Transformer internal-language state
   - MSG2 operation = READ
   outputs:
@@ -18,28 +18,28 @@ operations:
   - Propagate exclusively through persistent LTM1
   - Select relevant LTM1 atoms and contexts
   - Project to linked LTM2 episodes, compositions, and scenarios
-  - Serialize prior Dialogue content and long-term projection in the shared internal language
+  - Serialize prior Dialogue content and long-term projection in the internal language
   - Return a bounded message and clear transient activation
 - id: OP_UPDATE
   name: UPDATE
   owner: Associative Memory
   inputs:
   - Current Transformer internal-language state
-  - Active Dialogue Context or new Dialogue marker
+  - Active D-Context or new Dialogue marker
   - MSG2 operation = UPDATE
   outputs:
-  - Created or extended Dialogue Context
+  - Created or extended D-Context
   - Updated LTM2 composition after confirmed matches
   effects:
-  - modifies Dialogue Context and LTM2 after confirmed associative matches
+  - modifies D-Context and LTM2 after confirmed associative matches
   forbidden_outputs:
   - Waking structural modification of LTM1
   stages:
   - Emit MSG2(amplitude, sequence_number, UPDATE) only through STM activation
   - Propagate exclusively through persistent LTM1
   - Resolve candidates locally using existing contexts
-  - Create initial Dialogue Context when this is the first exchange
-  - Extend Dialogue Context and LTM2 using confirmed matches
+  - Create initial D-Context when this is the first exchange
+  - Extend D-Context and LTM2 using confirmed matches
   - Retain unresolved candidates for possible sleep-time learning
 pipeline:
   id: PROC_SFL
@@ -52,4 +52,4 @@ pipeline:
   - Transformer processing
   - New Transformer internal state
   - Associative Memory UPDATE
-  - Created or extended Dialogue Context and LTM2
+  - Created or extended D-Context and LTM2

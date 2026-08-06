@@ -287,8 +287,8 @@ th {
 }
 .diagram-canvas {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: visible;
   text-align: center;
 }
 .diagram-canvas svg {
@@ -296,7 +296,6 @@ th {
   width: calc(100% * var(--diagram-scale, 1));
   max-width: calc(100% * var(--diagram-scale, 1));
   height: auto;
-  min-height: 12rem;
   margin: 0 auto;
 }
 
@@ -307,7 +306,6 @@ th {
 }
 .diagram-size-compact .diagram-canvas svg {
   width: min(100%, 48rem);
-  min-height: 7rem;
   max-height: 16rem;
 }
 
@@ -318,7 +316,6 @@ th {
 }
 .diagram-size-medium .diagram-canvas svg {
   width: min(100%, 58rem);
-  min-height: 14rem;
 }
 
 .diagram-size-large {
@@ -328,7 +325,6 @@ th {
 }
 .diagram-size-large .diagram-canvas svg {
   width: min(100%, 72rem);
-  min-height: 28rem;
 }
 .diagram-size-extra-large {
   margin-left: max(-7vw, -5rem);
@@ -336,7 +332,6 @@ th {
 }
 .diagram-size-extra-large .diagram-canvas svg {
   width: min(100%, 84rem);
-  min-height: 34rem;
 }
 
 .architecture-diagram figcaption {
@@ -347,12 +342,9 @@ th {
 .diagram-fallback { white-space: pre-wrap; }
 @media (max-width: 700px) {
   .architecture-diagram { margin-left: -0.35rem; margin-right: -0.35rem; padding: 0.75rem 0.55rem; }
-  .diagram-canvas svg { min-height: 14rem; }
-  .diagram-size-compact .diagram-canvas svg { min-height: 7rem; max-height: 14rem; }
+  .diagram-size-compact .diagram-canvas svg { max-height: 14rem; }
   .diagram-size-medium { margin-left: -0.45rem; margin-right: -0.45rem; padding: 0.8rem 0.5rem; }
-  .diagram-size-medium .diagram-canvas svg { min-height: 13rem; }
   .diagram-size-large { margin-left: -0.55rem; margin-right: -0.55rem; padding: 0.85rem 0.45rem; }
-  .diagram-size-large .diagram-canvas svg { min-height: 24rem; }
 }
 @media print {
   .architecture-diagram { border-color: #999; background: white; }
@@ -378,4 +370,13 @@ th {
 @media print {
   .imported-architecture-diagram { break-inside: avoid; page-break-inside: avoid; }
   .imported-architecture-diagram img { max-height: 175mm; object-fit: contain; }
+}
+
+/* Canonical standalone architecture diagrams */
+.architecture-diagram-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }

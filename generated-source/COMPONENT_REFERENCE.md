@@ -24,9 +24,9 @@
 - Kind: `state`
 - Roles: `persistent_and_dynamic_memory_state`
 
-## Memory Vector
+## Serialized Memory Message
 
-- ID: `C_MEMORY_VECTOR`
+- ID: `C_SERIALIZED_MEMORY_MESSAGE`
 - Kind: `interface`
 - Roles: `read_result`, `transformer_conditioning`
 

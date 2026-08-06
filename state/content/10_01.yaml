@@ -3,7 +3,7 @@ section: S_10_01
 blocks:
 - type: paragraph
   text: READ and UPDATE are phases of one Dialogue-aware cognitive cycle. Transformer first converts external input
-    into the shared internal language. Memory never receives raw external data.
+    into the internal language. Memory never receives raw external data.
 - type: definition
   title: Dialogue
   text: A logically connected external exchange whose context is established by UPDATE and reused by later READ
@@ -16,7 +16,7 @@ blocks:
   - Transformer processes the opening external message without memory READ.
   - Transformer produces a response or intermediate result.
   - UPDATE transfers the resulting internal state through STM.
-  - Memory creates the initial Dialogue Context and may store the first Dialogue episode in LTM2.
+  - Memory creates the initial D-Context and may store the first Dialogue episode in LTM2.
 - type: heading
   level: 3
   text: Continuing Dialogue cycle
@@ -25,9 +25,9 @@ blocks:
   - Transformer converts the next external message into an internal-language representation.
   - STM emits READ through MSG2 to LTM1.
   - LTM1 activation and LTM2 retrieval select relevant previous Dialogue content and long-term projections.
-  - Memory serializes the selected information in the shared internal language.
+  - Memory serializes the selected information in the internal language.
   - Transformer continues processing with the Serialized Memory Message.
-  - UPDATE stores the resulting new internal state and extends Dialogue Context.
+  - UPDATE stores the resulting new internal state and extends D-Context.
 - type: diagram
   title: Dialogue-Aware READ / UPDATE Cycle
   description: The first exchange initializes context. Subsequent exchanges combine previous dialogue content with
@@ -50,7 +50,7 @@ blocks:
   - id: u1
     label: 'UPDATE
 
-      Create Dialogue Context'
+      Create D-Context'
     kind: control
   - id: next
     label: Next External Message
@@ -58,12 +58,12 @@ blocks:
   - id: read
     label: 'READ
 
-      Dialogue Context + LTM Projection'
+      D-Context + LTM Projection'
     kind: control
   - id: ser
     label: 'Serialized Memory Message
 
-      Shared Internal Language'
+      Internal Language'
     kind: state
   - id: t2
     label: Transformer Processing
@@ -71,7 +71,7 @@ blocks:
   - id: u2
     label: 'UPDATE
 
-      Extend Dialogue Context'
+      Extend D-Context'
     kind: control
   edges:
   - from: new

@@ -78,7 +78,7 @@ invariants:
     fully defined starts, ends, order, and structural links.
   severity: release_blocking
 - id: INV_026
-  statement: Transformer and memory communicate in one shared internal language defined by the selected intermediate
+  statement: Transformer and memory communicate in one internal language defined by the selected intermediate
     Transformer representation.
   severity: release_blocking
 - id: INV_027

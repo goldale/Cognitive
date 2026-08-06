@@ -23,7 +23,7 @@ def test_transformer_defined_language_and_conservative_ltm1():
     text=" ".join(str(x) for x in s["blocks"])
     assert "Transformer-defined vocabulary" in text
     assert "does not invent a separate native" in text
-    assert "serializes it in the shared internal language" in text
+    assert "serializes it in the internal language" in text
     assert "Sleep-only structural change" in text
     d=load("state/master-architecture-diagram.yaml")["diagram"]
     msg=next(n for n in d["nodes"] if n["id"]=="MSG2")

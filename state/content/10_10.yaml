@@ -36,6 +36,6 @@ blocks:
 - title: Preserved v0.3.16 invariants
   text: Associative Memory learns exclusively from Transformer-produced Semantic Representations through
     the Semantic Feedback Learning Pipeline. READ remains read-only; UPDATE performs no implicit READ
-    and produces no Memory Vector.
+    and produces no serialized memory message.
   type: principle
 section_id: S_10_10

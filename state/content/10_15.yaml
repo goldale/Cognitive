@@ -6,7 +6,7 @@ blocks:
   text: Working architectural hypothesis defining conservative LTM1 evolution and Transformer-specific memory.
 - type: principle
   title: Transformer-defined vocabulary
-  text: The shared internal language is defined by the trained Transformer. LTM1 does not invent a separate native
+  text: The internal language is defined by the trained Transformer. LTM1 does not invent a separate native
     communication language.
 - type: principle
   title: Conservative LTM1
@@ -22,11 +22,11 @@ blocks:
 - type: principle
   title: Memory serialization
   text: Memory selects relevant prior Dialogue content and its projection onto LTM1 and LTM2, then serializes it
-    in the shared internal language for Transformer.
+    in the internal language for Transformer.
 - type: principle
   title: Return path
   text: Transformer places the new internal state into STM. STM-node activation emits MSG2 UPDATE; confirmed associative
-    matches extend Dialogue Context and LTM2.
+    matches extend D-Context and LTM2.
 - type: principle
   title: No waking dictionary drift
   text: Because LTM1 changes only during sleep, Transformer and memory use a stable shared semantic interface throughout

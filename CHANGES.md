@@ -1,21 +1,21 @@
 # Changes
 
-## cognitive-0.4.01 — 2026-08-06
+## cognitive-0.4.06 — 2026-08-06
 
-- Rebased the architecture on a Transformer-defined shared internal language.
+- Rebased the architecture on a Transformer-defined internal language.
 - Removed raw external semantic input paths into Associative Memory.
-- Replaced aggregated Memory Vector generation with relevant memory selection and internal-language serialization.
+- Replaced aggregated Serialized Memory Message generation with relevant memory selection and internal-language serialization.
 - Added Dialogue as a basic concept: first exchange without READ, first UPDATE creates Dialogue Context, later READ returns prior Dialogue content plus its long-term projection.
 - Added distinct Internal-Language Extraction Point and deeper Memory Reinjection Point.
 - Recorded a 20–30% later reinjection depth as an experimental hypothesis, not a fixed constant.
-- Removed Memory Vector orthogonalization, canonicalization, and sparse-basis normalization from the canonical architecture.
+- Removed Serialized Memory Message orthogonalization, canonicalization, and sparse-basis normalization from the canonical architecture.
 - Reworked READ and UPDATE YAML contracts, diagrams, documentation, and complete A–Z index.
 - Audited duplicates, obsolete native-language statements, canonical term coverage, and generated links.
 
 ## cognitive-0.3.50 — 2026-08-05
 
 - Added local READ/UPDATE operation to MSG2.
-- Added native LTM1 language export through repeated Memory Vector readout.
+- Added native LTM1 language export through repeated Serialized Memory Message readout.
 - Added match-gated LTM2 UPDATE and direct Transformer-to-STM UPDATE construction.
 - Removed contradictory global operation-mode wording and audited duplicates.
 
@@ -30,7 +30,7 @@
 
 ## cognitive-0.3.48 — 2026-08-05
 
-- Completed the LTM2 READ contract and Memory Vector generation algorithm.
+- Completed the LTM2 READ contract and Serialized Memory Message generation algorithm.
 - Added Sequencer position numbers to `MSG2(amplitude, sequence_number)`.
 - Made propagation exclusively dependent on the persistent LTM1 associative graph.
 - Added MAX/SUM readout experimentation and entropy-based selection.
@@ -117,7 +117,7 @@
 
 - Added a canonical explanatory diagram for the hybrid Associative Memory implementation.
 - Clarified that GraphRAG components operate inside READ and do not directly define Memory State.
-- Documented spreading activation, Dynamic Memory State, explicit Memory Vector projection, Integrated Evaluation placement, and the separate UPDATE-only modification path.
+- Documented spreading activation, Dynamic Memory State, explicit Serialized Memory Message projection, Integrated Evaluation placement, and the separate UPDATE-only modification path.
 - Added the diagram source as a release asset and included it in modular HTML and PDF documentation.
 
 - Clarified that vector search and embeddings are candidate-retrieval accelerators, not a complete Associative Memory.

@@ -1,0 +1,21 @@
+kind: T_ContentBlock
+id: S_01_005
+section_id: S_01_005
+blocks:
+- type: paragraph
+  text: Earlier architecture variants treated Transformer and Associative Memory as partially independent semantic
+    systems. Memory was expected to form a separate representational space and return an aggregated serialized memory message.
+    This created an internal translation problem inside one cognitive system.
+- type: paragraph
+  text: The current architecture removes that duplication. The trained Transformer provides the Internal Language;
+    STM, LTM1, and LTM2 operate only in that language; and memory returns a serialized Internal Language message
+    rather than a separately generated semantic representation.
+- type: paragraph
+  text: Dialogue and D-Context complete this redesign. D-Context is created by the first UPDATE of
+    a Dialogue, is stored in STM, and determines the subset used for memory information retrieval and serialization
+    during later READ operations.
+- type: principle
+  title: Resulting direction
+  text: Documentation proceeds from architectural principles to component behavior. Components and protocols are
+    introduced as consequences of the common Internal Language, Dialogue continuity, and the asymmetric Transformer–Memory
+    interface.

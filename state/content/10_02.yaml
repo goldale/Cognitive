@@ -1,7 +1,7 @@
 kind: T_ContentBlock
 id: S_10_02
 blocks:
-- text: Associative Memory exposes its retrieved state through a Memory Vector. The Transformer is trained
+- text: Associative Memory exposes its retrieved state through a serialized memory message. The Transformer is trained
     to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as
     its only memory interface.
   type: paragraph

@@ -2,29 +2,39 @@ kind: T_Collection
 chapters:
 - kind: T_Chapter
   id: C_01
-  title: Purpose, Scope, and Architectural Method
+  title: Architectural Manifesto, Purpose, and Method
   order: 1
   summary: Defines the purpose, boundaries, principles, and epistemic status of the specification.
   sections:
   - kind: T_Section
+    id: S_01_00
+    title: Architectural Manifesto
+    order: 1
+    content_file: content/01_00.yaml
+  - kind: T_Section
+    id: S_01_005
+    title: Architectural Motivation and Evolution
+    order: 2
+    content_file: content/01_005.yaml
+  - kind: T_Section
     id: S_01_01
     title: Purpose
-    order: 1
+    order: 3
     content_file: content/01_01.yaml
   - kind: T_Section
     id: S_01_02
     title: Architecture Before Component Complexity
-    order: 2
+    order: 4
     content_file: content/01_02.yaml
   - kind: T_Section
     id: S_01_03
     title: Scope
-    order: 3
+    order: 5
     content_file: content/01_03.yaml
   - kind: T_Section
     id: S_01_04
     title: Epistemic Status
-    order: 4
+    order: 6
     content_file: content/01_04.yaml
   layout: single
 - kind: T_Chapter
@@ -67,7 +77,7 @@ chapters:
   layout: directory
 - kind: T_Chapter
   id: C_03
-  title: Shared Internal Language
+  title: Internal Language
   order: 3
   summary: Defines the Transformer-derived internal language around which communication, memory access, Dialogue,
     and learning are organized.
@@ -94,7 +104,7 @@ chapters:
     content_file: content/03_04.yaml
   - kind: T_Section
     id: S_03_05
-    title: Dialogue Context and Long-Term Projection
+    title: D-Context and Long-Term Projection
     order: 5
     content_file: content/03_05.yaml
   - kind: T_Section
@@ -308,7 +318,7 @@ chapters:
   id: C_10
   title: Associative Memory
   order: 10
-  summary: Defines the shared internal-language memory interface, Dialogue-aware READ and UPDATE, STM transport,
+  summary: Defines the internal-language memory interface, Dialogue-aware READ and UPDATE, STM transport,
     LTM1 associative activation, LTM2 storage, and sleep-only LTM1 evolution.
   sections:
   - kind: T_Section
@@ -318,7 +328,7 @@ chapters:
     content_file: content/10_01.yaml
   - kind: T_Section
     id: S_10_02
-    title: Shared Internal-Language Memory Interface
+    title: Internal-Language Memory Interface
     order: 2
     content_file: content/10_02.yaml
   - kind: T_Section
@@ -392,7 +402,7 @@ chapters:
   title: Relevant Memory Selection and Serialization
   order: 11
   summary: Defines how LTM1 and LTM2 select relevant Dialogue context and long-term projections, then serialize
-    them into a bounded sequence in the shared internal language.
+    them into a bounded sequence in the internal language.
   sections:
   - kind: T_Section
     id: S_11_01

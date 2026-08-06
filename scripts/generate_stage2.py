@@ -17,7 +17,7 @@ terms=load('terminology.yaml')['terms']
 # Canonical component roles must also be first-class indexable terminology.
 _role_terms = {
     'Semantic Learner': 'The Associative Memory role that incorporates Transformer-produced Semantic Representations into Memory State through UPDATE.',
-    'Contextual Retriever': 'The Associative Memory role that produces a Memory Vector through explicit READ without modifying Memory State.',
+    'Contextual Retriever': 'The Associative Memory role that produces a Serialized Memory Message through explicit READ without modifying Memory State.',
 }
 _existing_terms = {item['term'] for item in terms}
 for _term, _definition in _role_terms.items():
@@ -46,8 +46,8 @@ for c in components:
 edges=[
  {'from':'C_EXT_INPUT','to':'C_ASSOC_MEMORY','label':'query','flow':'information'},
  {'from':'C_MEMORY_STATE','to':'C_ASSOC_MEMORY','label':'READ state','flow':'context'},
- {'from':'C_ASSOC_MEMORY','to':'C_MEMORY_VECTOR','label':'READ','flow':'information'},
- {'from':'C_MEMORY_VECTOR','to':'C_TRANSFORMER','label':'conditioning','flow':'information'},
+ {'from':'C_ASSOC_MEMORY','to':'C_SERIALIZED_MEMORY_MESSAGE','label':'READ','flow':'information'},
+ {'from':'C_SERIALIZED_MEMORY_MESSAGE','to':'C_TRANSFORMER','label':'conditioning','flow':'information'},
  {'from':'C_TRANSFORMER','to':'C_SEM_REP','label':'semantic teaching','flow':'learning'},
  {'from':'C_SEM_REP','to':'C_SFL_PIPELINE','label':'learning input','flow':'learning'},
  {'from':'C_SFL_PIPELINE','to':'C_ASSOC_MEMORY','label':'UPDATE','flow':'learning'},
@@ -69,7 +69,7 @@ blocks=[
    {'from':'overview_learning','to':'overview_state','label':'controlled update','flow':'learning'},
    {'from':'overview_state','to':'overview_memory','label':'retrieval state','flow':'context'},
  ],'readability_priority':True,'proportionality_priority':True},
- {'type':'note','title':'Canonical detailed specification','text':'Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and the rule that UPDATE never produces a Memory Vector. This overview intentionally does not repeat that complete definition.'},
+ {'type':'note','title':'Canonical detailed specification','text':'Section 10.1 owns the complete Semantic Feedback Learning lifecycle, the READ and UPDATE contracts, and the rule that UPDATE never produces a Serialized Memory Message. This overview intentionally does not repeat that complete definition.'},
  {'type':'heading','level':3,'text':'Operation asymmetry'},
  {'type':'table','headers':['Operation','Architectural purpose','Canonical owner'], 'rows':[
    ['READ','Retrieve context without changing memory','Section 10.1'],
@@ -92,16 +92,16 @@ sec_blocks=[
  {'type':'paragraph','text':'Transformer and Associative Memory are separated by responsibility but coupled by a closed semantic learning loop. The Transformer does not merely consume memory for reasoning; it teaches Associative Memory by producing the semantic objects used for learning.'},
  {'type':'definition','title':'Semantic Teacher','text':'The Transformer role that converts externally grounded processing and retrieved context into a Semantic Representation suitable for Associative Memory UPDATE.'},
  {'type':'definition','title':'Semantic Feedback Learning Pipeline','text':'A first-class architectural process coordinating explicit READ, semantic reasoning, semantic teaching, UPDATE, and the resulting evolution of Memory State.'},
- {'type':'diagram','title':'Closed Semantic Learning Loop','description':'External Input is interpreted with an explicitly retrieved Memory Vector. Transformer output becomes a Semantic Representation. UPDATE changes Memory State only; a later READ is required to obtain another Memory Vector.','direction':'TB','size':'standard','nodes':nodes,'edges':edges,'readability_priority':True,'proportionality_priority':True},
+ {'type':'diagram','title':'Closed Semantic Learning Loop','description':'External Input is interpreted with an explicitly retrieved Serialized Memory Message. Transformer output becomes a Semantic Representation. UPDATE changes Memory State only; a later READ is required to obtain another Serialized Memory Message.','direction':'TB','size':'standard','nodes':nodes,'edges':edges,'readability_priority':True,'proportionality_priority':True},
  {'type':'heading','level':3,'text':'READ contract'},
- {'type':'formula','text':'READ(Memory State, Query) -> Memory Vector'},
+ {'type':'formula','text':'READ(Memory State, Query) -> Serialized Memory Message'},
  {'type':'paragraph','text':'READ is a retrieval operation. It may expose context to the Transformer but never modifies Memory State.'},
  {'type':'heading','level':3,'text':'UPDATE contract'},
  {'type':'formula','text':'UPDATE(Memory State, Semantic Representation) -> Updated Memory State'},
- {'type':'paragraph','text':'UPDATE is a learning operation. Its only architectural effect is modification of Memory State. It does not generate a new Memory Vector and performs no implicit retrieval. A Memory Vector is generated exclusively by a subsequent explicit READ operation.'},
+ {'type':'paragraph','text':'UPDATE is a learning operation. Its only architectural effect is modification of Memory State. It does not generate a new Serialized Memory Message and performs no implicit retrieval. A Serialized Memory Message is generated exclusively by a subsequent explicit READ operation.'},
  {'type':'principle','title':'Why semantic feedback is necessary','text':'Raw external observations are not stable learning targets. Transformer-produced Semantic Representations provide interpretation, normalization, context, and abstraction before information is incorporated into Associative Memory.'},
  {'type':'heading','level':3,'text':'Lifecycle and extension boundary'},
- {'type':'list','items':['Explicit READ retrieves a Memory Vector from the current Memory State.','Transformer performs semantic reasoning using external input and retrieved context.','Transformer acts as Semantic Teacher and produces a Semantic Representation.','The Semantic Feedback Learning Pipeline submits that representation to UPDATE.','UPDATE modifies Memory State only.','Any effect of learning on retrieval is observed only by a later explicit READ.']},
+ {'type':'list','items':['Explicit READ retrieves a Serialized Memory Message from the current Memory State.','Transformer performs semantic reasoning using external input and retrieved context.','Transformer acts as Semantic Teacher and produces a Semantic Representation.','The Semantic Feedback Learning Pipeline submits that representation to UPDATE.','UPDATE modifies Memory State only.','Any effect of learning on retrieval is observed only by a later explicit READ.']},
  {'type':'note','title':'Deferred extensions','text':'Sleep, replay, forgetting, importance estimation, structural plasticity, and global evaluation may extend the pipeline later, but they must preserve the READ/UPDATE asymmetry unless a future architecture decision explicitly replaces it.'},
 ]
 dump(STATE/'content'/'10_01.yaml',{'kind':'T_Content','section':'S_10_01','blocks':sec_blocks})
@@ -112,16 +112,16 @@ docs_src.mkdir(exist_ok=True)
 chapter2=['# Chapter 2 — Architecture Overview and Design Principles','',
  '## 2.1 Canonical Architecture Overview','',
  'The Transformer is both the **Semantic Reasoning Engine** and the **Semantic Teacher** of Associative Memory.','',
- '```text','External Input -> READ -> Memory Vector -> Transformer','                                  |','                                  v','                      Semantic Representation','                                  |','                                  v','                               UPDATE','                                  |','                                  v','                            Memory State','```','',
+ '```text','External Input -> READ -> Serialized Memory Message -> Transformer','                                  |','                                  v','                      Semantic Representation','                                  |','                                  v','                               UPDATE','                                  |','                                  v','                            Memory State','```','',
  '## Canonical operation contracts','',
  '| Operation | Inputs | Output | State effect |','|---|---|---|---|',
- '| READ | Memory State, Query | Memory Vector | None |','| UPDATE | Memory State, Semantic Representation | Updated Memory State | Modifies only Memory State |','',
- '> UPDATE never produces a Memory Vector. A new Memory Vector is generated only by a subsequent explicit READ.','']
+ '| READ | Memory State, Query | Serialized Memory Message | None |','| UPDATE | Memory State, Semantic Representation | Updated Memory State | Modifies only Memory State |','',
+ '> UPDATE never produces a Serialized Memory Message. A new Serialized Memory Message is generated only by a subsequent explicit READ.','']
 (docs_src/'CHAPTER_02.md').write_text('\n'.join(chapter2),encoding='utf-8')
 
-changes=['# CHANGES — cognitive 0.4.01','', 'This incremental release introduces a complete architectural refactoring around Semantic Feedback Learning.','', '## Architectural changes','']
+changes=['# CHANGES — cognitive 0.4.06','', 'This incremental release introduces a complete architectural refactoring around Semantic Feedback Learning.','', '## Architectural changes','']
 for p in principles: changes.append(f"- **{p['title']}** — {p['statement']}")
-changes += ['', '## Interface changes','', '- `READ(Memory State, Query) -> Memory Vector` is explicitly non-mutating.', '- `UPDATE(Memory State, Semantic Representation) -> Updated Memory State` modifies only Memory State.', '- UPDATE no longer has Question, Answer, hidden state, or Memory Vector as canonical outputs.', '', '## Generated documentation', '', '- Chapter 2 is regenerated from canonical YAML.', '- Section 10.1 is completely rewritten.', '- HTML navigation and the A–Z Index are regenerated.', '- Component and canonical-model references are regenerated.', '']
+changes += ['', '## Interface changes','', '- `READ(Memory State, Query) -> Serialized Memory Message` is explicitly non-mutating.', '- `UPDATE(Memory State, Semantic Representation) -> Updated Memory State` modifies only Memory State.', '- UPDATE no longer has Question, Answer, hidden state, or Serialized Memory Message as canonical outputs.', '', '## Generated documentation', '', '- Chapter 2 is regenerated from canonical YAML.', '- Section 10.1 is completely rewritten.', '- HTML navigation and the A–Z Index are regenerated.', '- Component and canonical-model references are regenerated.', '']
 (ROOT/'CHANGES.md').write_text('\n'.join(changes),encoding='utf-8')
 
 comp=['# Component Reference','']
@@ -130,8 +130,8 @@ for c in components:
 (docs_src/'COMPONENT_REFERENCE.md').write_text('\n'.join(comp),encoding='utf-8')
 
 # Update package/release version markers.
-pp=ROOT/'pyproject.toml'; txt=pp.read_text(); txt=txt.replace('version = "0.4.01"','version = "0.4.01"'); pp.write_text(txt)
-mk=ROOT/'Makefile'; txt=mk.read_text().replace('cognitive-systems-lab-0.4.01.tar.gz','cognitive-systems-lab-0.4.01.tar.gz'); mk.write_text(txt)
-br=ROOT/'scripts'/'build_release.sh'; txt=br.read_text().replace('cognitive-systems-lab-0.4.01.tar.gz','cognitive-systems-lab-0.4.01.tar.gz'); br.write_text(txt)
+pp=ROOT/'pyproject.toml'; txt=pp.read_text(); txt=txt.replace('version = "0.4.06"','version = "0.4.06"'); pp.write_text(txt)
+mk=ROOT/'Makefile'; txt=mk.read_text().replace('cognitive-systems-lab-0.4.06.tar.gz','cognitive-systems-lab-0.4.06.tar.gz'); mk.write_text(txt)
+br=ROOT/'scripts'/'build_release.sh'; txt=br.read_text().replace('cognitive-systems-lab-0.4.06.tar.gz','cognitive-systems-lab-0.4.06.tar.gz'); br.write_text(txt)
 
 print('Stage 2 canonical derivatives generated.')

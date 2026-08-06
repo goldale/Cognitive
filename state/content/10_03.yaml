@@ -1,8 +1,7 @@
 kind: T_ContentBlock
 id: S_10_03
 blocks:
-- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Memory
-    Vector used by the Transformer to generate a response.
+- text: In a normal read cycle, an external utterance activates Associative Memory, which produces a Serialized Memory Message used by the Transformer to generate a response.
   type: paragraph
 - title: Memory UPDATE Path
   description: The completed interaction and Transformer state are used to update memory without generating

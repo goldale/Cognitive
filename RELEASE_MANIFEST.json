@@ -1,11 +1,12 @@
 {
-  "release": "0.3.48",
-  "version": "0.3.48",
+  "release": "0.4.06",
+  "version": "0.4.06",
   "release_notes": "RELEASE_NOTES.md",
   "canonical_source": "state/*.yaml",
   "master_architecture_diagram_yaml": "state/master-architecture-diagram.yaml",
   "generated_documentation": "docs/",
   "explicit_visual_artifact": "docs/master-architecture-diagram.pdf",
-  "date": "2026-08-05",
-  "baseline_archive": "cognitive-0.3.47.tgz"
+  "date": "2026-08-06",
+  "baseline_archive": "cognitive-0.4.02.tgz",
+  "section_2_1_diagram": "docs/assets/diagrams/transformer-centric-memory-architecture.svg"
 }

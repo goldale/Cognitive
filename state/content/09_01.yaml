@@ -6,7 +6,7 @@ blocks:
     and vulnerable to systematic distortion. Cognitive therefore treats memory as an active model supporting present
     processing rather than as a passive record store.
 - type: diagram
-  title: Memory Architecture in the Shared Internal Language
+  title: Memory Architecture in the Internal Language
   description: A continuing Dialogue activates LTM1 and linked LTM2 content. Memory selects relevant state and serializes
     it in the same internal language used by Transformer.
   direction: TB
@@ -15,7 +15,7 @@ blocks:
   proportionality_priority: true
   nodes:
   - id: dialogue
-    label: Active Dialogue Context
+    label: Active D-Context
     kind: state
   - id: ltm1
     label: 'LTM1
@@ -64,7 +64,7 @@ blocks:
     flow: information
   - from: serialization
     to: transformer
-    label: shared internal language
+    label: internal language
     flow: interface
   - from: transformer
     to: update

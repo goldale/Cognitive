@@ -145,6 +145,8 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
     size = str(block.get("size", "standard"))
     display_scale = float(block.get("display_scale", 1.0))
     display_scale = min(1.0, max(0.25, display_scale))
+    font_scale = float(block.get("font_scale", 1.0))
+    font_scale = min(3.0, max(0.5, font_scale))
     if size not in {"compact", "standard", "medium", "large", "extra-large"}:
         size = "standard"
     if direction not in {"TB", "BT", "LR", "RL"}:
@@ -181,18 +183,26 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
 
     node_fontsize = {"compact": 11.5, "standard": 12, "medium": 13, "large": 15, "extra-large": 17}[size]
     edge_fontsize = {"compact": 9.5, "standard": 10, "medium": 10.5, "large": 12, "extra-large": 14}[size]
+    node_fontsize *= font_scale
+    edge_fontsize *= font_scale
     node_margin = {"compact": "0.12,0.07", "standard": "0.16,0.10", "medium": "0.19,0.12", "large": "0.24,0.16", "extra-large": "0.30,0.20"}[size]
-    nodesep = {"compact": "0.32", "standard": "0.48", "medium": "0.56", "large": "0.72", "extra-large": "0.90"}[size]
-    ranksep = {"compact": "0.42", "standard": "0.72", "medium": "0.82", "large": "1.05", "extra-large": "1.25"}[size]
+    default_nodesep = {"compact": 0.32, "standard": 0.48, "medium": 0.56, "large": 0.72, "extra-large": 0.90}[size]
+    default_ranksep = {"compact": 0.42, "standard": 0.72, "medium": 0.82, "large": 1.05, "extra-large": 1.25}[size]
+    nodesep = min(2.0, max(0.15, float(block.get("nodesep", default_nodesep))))
+    ranksep = min(2.0, max(0.15, float(block.get("ranksep", default_ranksep))))
+    graph_pad = min(0.5, max(0.05, float(block.get("graph_pad", 0.20))))
 
     lines = [
         "digraph G {",
         f"rankdir={direction};",
-        f'graph [bgcolor="transparent", pad="0.34", nodesep="{nodesep}", ranksep="{ranksep}", splines="ortho", outputorder="edgesfirst"];',
+        f'graph [bgcolor="transparent", pad="{graph_pad:.2f}", nodesep="{nodesep:.2f}", ranksep="{ranksep:.2f}", splines="ortho", outputorder="edgesfirst"];',
         f'node [fontname="Arial", fontsize="{node_fontsize}", color="#365b78", fontcolor="#202124", penwidth="1.3", style="rounded,filled", margin="{node_margin}"];',
         f'edge [fontname="Arial", fontsize="{edge_fontsize}", color="#174a7e", fontcolor="#4f5962", penwidth="1.45", arrowsize="0.82"];',
     ]
-    for node in block.get("nodes", []):
+    nodes_by_id = {str(node.get("id", "")): node for node in block.get("nodes", [])}
+    grouped_node_ids: set[str] = set()
+
+    def render_node(node: dict[str, Any]) -> str:
         node_id = str(node.get("id", ""))
         label = str(node.get("label", node_id))
         kind = str(node.get("kind", "subsystem"))
@@ -206,7 +216,27 @@ def _render_structured_diagram(block: dict[str, Any]) -> str:
             attrs["style"] = "rounded,dashed,filled"
             attrs["color"] = "#7c7f83"
         rendered = ", ".join(f"{key}={_dot_quote(value)}" for key, value in attrs.items())
-        lines.append(f"{_dot_quote(node_id)} [{rendered}];")
+        return f"{_dot_quote(node_id)} [{rendered}];"
+
+    for index, group in enumerate(block.get("groups", [])):
+        group_id = re.sub(r"[^a-zA-Z0-9_]", "_", str(group.get("id", f"group_{index}")))
+        group_label = str(group.get("label", group_id))
+        lines.append(f"subgraph cluster_{group_id} {{")
+        lines.append(f"label={_dot_quote(group_label)};")
+        lines.append('color="#365b78"; penwidth="1.6"; style="rounded,filled"; fillcolor="#eef4f8"; margin="28";')
+        lines.append(f'fontname="Arial"; fontsize="{node_fontsize}"; fontcolor="#202124";')
+        for node_id in group.get("nodes", []):
+            node_key = str(node_id)
+            node = nodes_by_id.get(node_key)
+            if node is not None:
+                lines.append(render_node(node))
+                grouped_node_ids.add(node_key)
+        lines.append("}")
+
+    for node in block.get("nodes", []):
+        node_id = str(node.get("id", ""))
+        if node_id not in grouped_node_ids:
+            lines.append(render_node(node))
     for group in block.get("rank_groups", []):
         members = "; ".join(_dot_quote(node_id) for node_id in group)
         if members:

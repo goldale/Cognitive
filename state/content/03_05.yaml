@@ -6,13 +6,13 @@ blocks:
   text: A logically connected exchange of messages with the external world, unified by an active context, participants,
     objectives, and temporal continuity.
 - type: paragraph
-  text: The first exchange of a new Dialogue is processed without memory READ because no Dialogue Context yet
+  text: The first exchange of a new Dialogue is processed without memory READ because no D-Context yet
     exists. The first UPDATE creates the initial context. Later READ operations can then return both prior Dialogue
     content and its projection onto long-term memory.
 - type: formula
   text: Serialized Memory Message = prior Dialogue content + relevant projection onto LTM1 and LTM2
 - type: diagram
-  title: Dialogue Context Formation and Recall
+  title: D-Context Formation and Recall
   description: Memory joins after the first UPDATE and contributes meaningful internal-language messages in later
     exchanges.
   direction: TB
@@ -31,7 +31,7 @@ blocks:
   - id: update1
     label: 'First UPDATE
 
-      Create Dialogue Context'
+      Create D-Context'
     kind: control
   - id: later
     label: Later External Exchange
@@ -50,7 +50,7 @@ blocks:
   - id: update2
     label: 'UPDATE
 
-      Extend Dialogue Context'
+      Extend D-Context'
     kind: control
   edges:
   - from: first

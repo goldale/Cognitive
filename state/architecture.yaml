@@ -66,7 +66,7 @@ architectures:
   - T_Communication -> T_CognitiveLineage
 - kind: T_ArchitectureDecision
   id: A_007
-  title: Transformer-specific shared internal-language memory interface
+  title: Transformer-specific internal-language memory interface
   status: T_Accepted
   summary: Associative Memory is initialized empty and learns exclusively from the selected internal representation
     of its trained Transformer. Memory output is serialized in that same language.
@@ -93,13 +93,13 @@ architectures:
   id: A_010
   title: Transformer as internal-language source
   status: T_Accepted
-  summary: The trained Transformer defines the shared internal language used by Transformer, STM, LTM1, and LTM2.
+  summary: The trained Transformer defines the internal language used by Transformer, STM, LTM1, and LTM2.
   relations: []
 - kind: T_ArchitectureDecision
   id: A_011
   title: Dialogue-aware cognitive memory cycle
   status: T_Accepted
-  summary: The first Dialogue exchange is processed without READ; its UPDATE creates Dialogue Context. Later cycles
+  summary: The first Dialogue exchange is processed without READ; its UPDATE creates D-Context. Later cycles
     use READ, Transformer processing, and UPDATE.
   relations: []
 - kind: T_ArchitectureDecision
@@ -123,7 +123,7 @@ architectures:
   id: A_014
   title: Dialogue-aware READ and UPDATE through LTM1
   status: T_Accepted
-  summary: The first exchange of a Dialogue performs no READ. Its UPDATE creates Dialogue Context. Subsequent READ
+  summary: The first exchange of a Dialogue performs no READ. Its UPDATE creates D-Context. Subsequent READ
     and UPDATE messages use the same persistent LTM1 propagation graph and the same Transformer-defined internal
     language.
   relations:
@@ -134,13 +134,13 @@ architectures:
   - Confirmed Associative Match -> LTM2 Update
 - kind: T_ArchitectureDecision
   id: A_015
-  title: Relevant memory serialization in shared internal language
+  title: Memory retrieval and serialization in internal language
   status: T_Accepted
-  summary: Memory does not create a native LTM1 language or generate an aggregated Memory Vector. It selects relevant
-    Dialogue Context and long-term-memory projections and serializes them in the internal language defined by the
+  summary: Memory does not create a native LTM1 language or generate an aggregated serialized memory message. It selects relevant
+    D-Context and long-term-memory projections and serializes them in the internal language defined by the
     trained Transformer.
   relations:
-  - Dialogue Context -> Relevant Memory Selection
+  - D-Context -> Relevant Memory Selection
   - LTM1 and LTM2 -> Dialogue Projection
   - Relevant Memory Selection -> Serialized Memory Message
   - Serialized Memory Message -> Transformer
@@ -150,7 +150,7 @@ architectures:
   id: A_016
   title: Asymmetric internal-language extraction and memory reinjection
   status: T_Accepted
-  summary: External input is translated into the shared internal language at an intermediate Transformer extraction
+  summary: External input is translated into the internal language at an intermediate Transformer extraction
     point. Serialized memory is already in that language and is reinjected deeper into integration and reasoning
     layers, bypassing early external-form interpretation.
   relations:

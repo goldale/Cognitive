@@ -10,7 +10,7 @@ def test_read_contract_0401():
     assert "MSG2(amplitude, sequence_number, READ)" in joined
     assert "persistent LTM1" in joined
     assert "Dialogue" in joined
-    assert "shared internal language" in joined
+    assert "internal language" in joined
     assert read["outputs"] == ["Serialized Memory Message"]
     assert "candidate_readout_operators" not in read
     assert "selection_metric" not in read

@@ -49,13 +49,13 @@ def test_section_10_1_defines_dialogue_aware_read_update_cycle() -> None:
     for phrase in [
         "first exchange",
         "without memory READ",
-        "Dialogue Context",
+        "D-Context",
         "Serialized Memory Message",
-        "shared internal language",
+        "internal language",
         "UPDATE",
     ]:
         assert phrase.lower() in rendered.lower()
-    assert "canonical null Memory Vector" not in rendered
+    assert "canonical null Serialized Memory Message" not in rendered
 
 def test_progressive_training_and_memory_maturity_use_transformer_internal_language() -> None:
     import yaml
@@ -70,7 +70,7 @@ def test_progressive_training_and_memory_maturity_use_transformer_internal_langu
     assert "Different external formulations with the same meaning" in maturity_text
     assert "Paraphrases + Languages" in " ".join(str(block) for block in maturity["blocks"])
     assert "Semantic discrimination" in " ".join(str(block) for block in maturity["blocks"])
-    assert "fixed canonical null Memory Vector" not in staged_text
+    assert "fixed canonical null Serialized Memory Message" not in staged_text
 
 def test_diagram_readability_is_enforced() -> None:
     import yaml
@@ -78,19 +78,21 @@ def test_diagram_readability_is_enforced() -> None:
     for path in sorted((ROOT / "state" / "content").glob("*.yaml")):
         content = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         for diagram in (block for block in content.get("blocks", []) if block.get("type") == "diagram"):
-            assert diagram.get("size") == "standard"
+            expected = "extra-large" if diagram.get("title") in {"Transformer-Centric Memory Architecture", "The Internal Language at the Center of Cognitive", "Asymmetric Transformer–Memory Interface", "One Possible READ/UPDATE Integration inside a Transformer"} else "standard"
+            assert diagram.get("size") == expected
             assert diagram.get("readability_priority") is True
             assert diagram.get("proportionality_priority") is True
 
     css = (ROOT / "assets" / "cognitive.css").read_text(encoding="utf-8")
     assert ".diagram-size-standard" in css or ".architecture-diagram" in css
-    assert "min-height: 12rem" in css
+    assert "min-height: 12rem" not in css
+    assert "max-width: calc(100% * var(--diagram-scale, 1))" in css
     source = (ROOT / "src" / "cogsys" / "docs.py").read_text(encoding="utf-8")
     assert '"standard": 12' in source
     assert "diagram-size-{size}" in source
 
 
-def test_obsolete_memory_vector_canonicalization_is_removed() -> None:
+def test_obsolete_vector_interface_canonicalization_is_removed() -> None:
     import yaml
     chapter_data = yaml.safe_load((ROOT / "state" / "chapters.yaml").read_text(encoding="utf-8"))
     chapter11 = next(ch for ch in chapter_data["chapters"] if ch.get("id") == "C_11")
@@ -99,8 +101,8 @@ def test_obsolete_memory_vector_canonicalization_is_removed() -> None:
     for phrase in [
         "Orthogonal Coordinate Transformation",
         "Sparse Basis Rotation",
-        "canonical null Memory Vector",
-        "Sequential Memory Vector Normalization",
+        "canonical null Serialized Memory Message",
+        "Sequential Serialized Memory Message Normalization",
     ]:
         assert phrase.lower() not in combined.lower()
 
@@ -114,7 +116,7 @@ def test_associative_memory_implementation_gap_analysis_is_preserved() -> None:
     for phrase in [
         "Hopfield", "Dense Associative Memory", "Sparse Distributed Memory",
         "Vector Search", "Graph", "Key–Value", "Recommended Initial Hybrid",
-        "READ-only Memory Vector generation",
+        "READ-only Serialized Memory Message generation",
     ]:
         assert phrase.lower() in rendered.lower()
 

@@ -10,12 +10,12 @@ def diagrams(section):
 def test_asymmetric_transformer_memory_interface_has_two_entry_points():
     d = next(x for x in diagrams("03_02") if x.get("title") == "Asymmetric Transformer–Memory Interface")
     assert d["direction"] == "LR"
-    assert d["size"] == "standard"
+    assert d["size"] == "extra-large"
     node_ids = {node["id"] for node in d["nodes"]}
-    assert {"extract", "reinject", "early", "reason", "memory", "serialize"} <= node_ids
-    assert any(e["from"] == "extract" and e["to"] == "read" for e in d["edges"])
-    assert any(e["from"] == "reinject" and e["to"] == "reason" for e in d["edges"])
-    assert any(e.get("label") == "bypass early translation" for e in d["edges"])
+    assert {"early", "read", "stm", "memory", "serialize", "readmsg", "deep", "update"} <= node_ids
+    assert any(e["from"] == "read" and e["to"] == "memory" for e in d["edges"])
+    assert any(e["from"] == "readmsg" and e["to"] == "deep" for e in d["edges"])
+    assert any(e.get("label") == "D-Context defines subset" for e in d["edges"])
 
 
 def test_section_11_04_models_bounded_serialization():

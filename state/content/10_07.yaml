@@ -12,12 +12,12 @@ blocks:
   type: paragraph
 - text: "Query\n  ↓\nApproximate Associative Index\n  ↓ Top-K latent states\nLatent Aggregator\n  ↓ z_target\
     \ ∈ R^4096\nTensor Reconstruction Engine\n  ↓\nMemory Tensor V ∈ R^(1024×1024×8)\n  ↓ projection\n\
-    Memory Vector\n  ↓\nTransformer"
+    serialized memory message\n  ↓\nTransformer"
   type: code
 - items:
   - READ never modifies Memory State.
   - The reconstructed Memory Tensor is transient.
-  - The canonical external output of READ remains the Memory Vector.
+  - The canonical external output of READ remains the serialized memory message.
   - Generated or interpolated tensor states are hypotheses, not automatically persistent knowledge.
   type: list
 - title: Tensor Reconstruction Engine

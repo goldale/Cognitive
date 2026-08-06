@@ -21,7 +21,7 @@ blocks:
   - READ uses non-destructive sensing paths and never applies programming pulses.
   - UPDATE uses dedicated programming paths and never performs retrieval.
   - UPDATE modifies persistent state but never returns a serialized memory message.
-  - A new Memory Vector is produced only by an explicit later READ.
+  - A new serialized memory message is produced only by an explicit later READ.
   type: list
 - level: 3
   text: Offline Consolidation

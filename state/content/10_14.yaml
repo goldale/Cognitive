@@ -4,7 +4,7 @@ blocks:
 - type: principle
   title: Canonical scope
   text: This section describes storage and retrieval of completed compositions. Section 10.1 is canonical for the
-    Dialogue-aware READ/UPDATE cycle and shared internal-language serialization; Section 10.15 is canonical for
+    Dialogue-aware READ/UPDATE cycle and internal-language serialization; Section 10.15 is canonical for
     local MSG2 interpretation and match-gated LTM2 write.
 - type: principle
   title: Single physical LTM

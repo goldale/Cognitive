@@ -1,5 +1,6 @@
 kind: T_Collection
-optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive power.
+optimization_goal: Reduce the Atomic Token set while preserving or increasing expressive
+  power.
 tokens:
 - token: T_Token
   atomic: true
@@ -87,7 +88,8 @@ tokens:
   status: T_Active
 - token: T_Conflict
   atomic: true
-  definition: An incompatibility that prevents simultaneous integration under current constraints.
+  definition: An incompatibility that prevents simultaneous integration under current
+    constraints.
   status: T_Active
 - token: T_Collection
   atomic: true
@@ -111,7 +113,8 @@ tokens:
   status: T_Active
 - token: T_Identity
   atomic: true
-  definition: A persistent criterion by which states are attributed to one continuing system.
+  definition: A persistent criterion by which states are attributed to one continuing
+    system.
   status: T_Active
 - token: T_Agent
   atomic: true
@@ -460,18 +463,21 @@ tokens:
   status: T_Active
 - token: T_StagedTraining
   atomic: true
-  definition: A progressive strategy that begins with a trained Transformer and empty memory, then learns Dialogue
-    Context, LTM1 vocabulary and contexts, and LTM2 episodes and scenarios.
+  definition: A progressive strategy that begins with a trained Transformer and empty
+    memory, then learns D-Context, LTM1 vocabulary and contexts, and LTM2 episodes
+    and scenarios.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_ForcedMemoryUtilization
   atomic: true
-  definition: A training intervention used when Transformer does not causally depend on serialized memory messages.
+  definition: A training intervention used when Transformer does not causally depend
+    on serialized memory messages.
   status: T_Active
   index_target: ../chapter12/12_06.html
 - token: T_AssociativeMemoryMaturity
   atomic: true
-  definition: The functional stability required for reliable Dialogue-aware READ–UPDATE participation.
+  definition: The functional stability required for reliable Dialogue-aware READ–UPDATE
+    participation.
   status: T_Active
   index_target: ../chapter12/12_07.html
 - token: T_SemanticEquivalenceClass
@@ -481,157 +487,166 @@ tokens:
   index_target: ../chapter12/12_07.html
 - token: T_SemanticInvariance
   atomic: true
-  definition: The property that semantically equivalent internal-language states produce compatible memory interactions
-    and coherent serialized messages.
+  definition: The property that semantically equivalent internal-language states produce
+    compatible memory interactions and coherent serialized messages.
   status: T_Active
   index_target: ../chapter12/12_07.html
 - token: T_SemanticDiscrimination
   atomic: true
-  definition: The property that different meanings remain functionally distinguishable through LTM1 contexts and
-    LTM2 projections.
+  definition: The property that different meanings remain functionally distinguishable
+    through LTM1 contexts and LTM2 projections.
   status: T_Active
   index_target: ../chapter12/12_07.html
-- token: T_MemoryVector
+- token: T_SerializedMemoryMessage
   atomic: true
-  definition: A low-level vector element of a serialized message in the shared internal language; not an aggregated
-    memory state or a separate memory language.
+  definition: A message produced by Memory after information retrieval and serialization,
+    expressed in the Internal Language for Transformer integration.
   status: T_Active
-  index_target: ../chapter11/11_01.html
-  label: Memory Vector
+  index_target: ../chapter10/10_01.html
+  label: Serialized Memory Message
 - token: T_AssociativeMemoryImplementationCandidates
   atomic: true
-  definition: Existing technical families that can supply parts of the Cognitive memory architecture.
+  definition: Existing technical families that can supply parts of the Cognitive memory
+    architecture.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Associative Memory Implementation Candidates
 - token: T_ImplementationGapAnalysis
   atomic: true
-  definition: A comparison between existing memory technologies and the additional mechanisms required by Cognitive.
+  definition: A comparison between existing memory technologies and the additional
+    mechanisms required by Cognitive.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Implementation Gap Analysis
 - token: T_DenseAssociativeMemory
   atomic: true
-  definition: A high-capacity attractor-based associative memory candidate for pattern completion and content-addressable
-    retrieval.
+  definition: A high-capacity attractor-based associative memory candidate for pattern
+    completion and content-addressable retrieval.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Dense Associative Memory
 - token: T_SparseDistributedMemory
   atomic: true
-  definition: A distributed content-addressable storage model that supports partial-cue retrieval and graceful degradation.
+  definition: A distributed content-addressable storage model that supports partial-cue
+    retrieval and graceful degradation.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Sparse Distributed Memory
 - token: T_VectorCandidateRetrieval
   atomic: true
-  definition: Approximate nearest-neighbour retrieval used to propose memory elements for subsequent associative
-    activation.
+  definition: Approximate nearest-neighbour retrieval used to propose memory elements
+    for subsequent associative activation.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Vector Candidate Retrieval
 - token: T_HybridAssociativeMemory
   atomic: true
-  definition: An implementation combining neural association, vector retrieval, graph structure, and exact key–value
-    storage.
+  definition: An implementation combining neural association, vector retrieval, graph
+    structure, and exact key–value storage.
   status: T_Active
   index_target: ../chapter10/10_06.html
   label: Hybrid Associative Memory
 - token: T_ContextSelector
   atomic: true
-  definition: A compact discriminative representation used by READ to determine whether a transition is applicable
-    under the current semantic and traversal context.
+  definition: A compact discriminative representation used by READ to determine whether
+    a transition is applicable under the current semantic and traversal context.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Context Selector
 - token: T_ContextConditionedRouting
   atomic: true
-  definition: READ-stage selection of transitions using query context, accumulated path context, temporal compatibility,
-    and transition evidence.
+  definition: READ-stage selection of transitions using query context, accumulated
+    path context, temporal compatibility, and transition evidence.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Context-Conditioned Routing
 - token: T_TraversalState
   atomic: true
-  definition: The dynamic READ state containing accumulated semantic context, temporal constraints, selected transitions,
-    uncertainty, and path score during trajectory reconstruction.
+  definition: The dynamic READ state containing accumulated semantic context, temporal
+    constraints, selected transitions, uncertainty, and path score during trajectory
+    reconstruction.
   status: T_Active
   index_target: ../chapter23/23_11.html
   label: Traversal State
 - token: T_LTM1
   atomic: true
-  definition: The semantic logical domain of the single physical Long-Term Memory, accessed through MSG1 and an
-    orthogonal message-specific state subspace.
+  definition: The semantic logical domain of the single physical Long-Term Memory,
+    accessed through MSG1 and an orthogonal message-specific state subspace.
   status: T_Active
   label: LTM1
   index_target: ../chapter10/10_11.html
 - token: T_LTM2
   atomic: true
-  definition: The episodic logical domain of the single physical Long-Term Memory, used to store completed Logical
-    Episodes through MSG2 and an orthogonal message-specific state subspace.
+  definition: The episodic logical domain of the single physical Long-Term Memory,
+    used to store completed Logical Episodes through MSG2 and an orthogonal message-specific
+    state subspace.
   status: T_Active
   label: LTM2
   index_target: ../chapter10/10_11.html
 - token: T_ShortTermMemory
   atomic: true
-  definition: 'Short-Term Memory: the semantically neutral transient activation network used to represent active
-    Sequences.'
+  definition: 'Short-Term Memory: the semantically neutral transient activation network
+    used to represent active Sequences.'
   status: T_Active
   label: STM
   index_target: ../chapter10/10_11.html
 - token: T_DirectedActivationGraph
   atomic: true
-  definition: A transient causal graph embedded in STM whose direction belongs to excitation propagation rather
-    than physical topology.
+  definition: A transient causal graph embedded in STM whose direction belongs to
+    excitation propagation rather than physical topology.
   status: T_Active
 - token: T_PhysicalProjection
   atomic: true
-  definition: A permanent non-addressed physical connection from one STM node to one input point of LTM1.
+  definition: A permanent non-addressed physical connection from one STM node to one
+    input point of LTM1.
   status: T_Active
 - token: T_TraceList
   atomic: true
-  definition: A list of independently matchable local trace structures stored on one physical LTM connection and
-    used for associative transition selection.
+  definition: A list of independently matchable local trace structures stored on one
+    physical LTM connection and used for associative transition selection.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Trace List
 - token: T_MinimalSemanticSearchTrace
   atomic: true
-  definition: The connection-local associative discriminator that decides whether the current activation may cross
-    the connection on which it is stored.
+  definition: The connection-local associative discriminator that decides whether
+    the current activation may cross the connection on which it is stored.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Minimal Semantic Search Trace
 - token: T_ProgressiveVirtualContraction
   atomic: true
-  definition: A semantic-search process that keeps the origin fixed while advancing a temporary virtual endpoint
-    without intermediate switch reconfiguration.
+  definition: A semantic-search process that keeps the origin fixed while advancing
+    a temporary virtual endpoint without intermediate switch reconfiguration.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Progressive Virtual Contraction
 - token: T_EpisodeGraphVertex
   atomic: true
-  definition: The unique graph location storing the complete Transformer-produced vector of one element in one completed
-    Logical Episode.
+  definition: The unique graph location storing the complete Transformer-produced
+    vector of one element in one completed Logical Episode.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Episode Graph Vertex
 - token: T_Sequencer
   atomic: true
-  definition: The Input / STM component that orders and normalizes the combined buffered stream, detects candidate
-    Logical Episode boundaries, and delegates uncertain cases to the main Transformer.
+  definition: The Input / STM component that orders and normalizes the combined buffered
+    stream, detects candidate Logical Episode boundaries, and delegates uncertain
+    cases to the main Transformer.
   status: T_Active
   index_target: ../chapter10/10_12.html
   label: Sequencer
 - token: T_MessageSpecificStateSubspace
   atomic: true
-  definition: An orthogonal LTM state subspace activated and updated exclusively by one message type.
+  definition: An orthogonal LTM state subspace activated and updated exclusively by
+    one message type.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Orthogonal Message-Specific State Subspace
 - token: T_AssociativeRetrievalWave
   atomic: true
-  definition: A local match-and-transition process confined to one orthogonal message-specific LTM state subspace.
+  definition: A local match-and-transition process confined to one orthogonal message-specific
+    LTM state subspace.
   status: T_Active
   index_target: ../chapter10/10_14.html
   label: Associative Retrieval Wave
@@ -643,77 +658,76 @@ tokens:
   label: Associative Dictionary
 - token: T_BoundedEdgeList
   atomic: true
-  definition: The persistent associative memory owned by one vertex, with finite capacity and local search.
+  definition: The persistent associative memory owned by one vertex, with finite capacity
+    and local search.
   status: T_Active
   index_target: ../chapter10/10_15.html
   label: Bounded Edge List
 - token: T_UsageStatistics
   atomic: true
-  definition: Long-term statistics owned by a vertex and accumulated from use of its concept in completed Logical
-    Episodes.
+  definition: Long-term statistics owned by a vertex and accumulated from use of its
+    concept in completed Logical Episodes.
   status: T_Active
   index_target: ../chapter10/10_15.html
   label: Usage Statistics
 - token: T_ConceptDifferentiation
   atomic: true
-  definition: Conservative splitting of a broad concept into independently meaningful concepts.
+  definition: Conservative splitting of a broad concept into independently meaningful
+    concepts.
   status: T_Active
   index_target: ../chapter10/10_15.html
   label: Concept Differentiation
 - token: T_ConceptGeneralization
   atomic: true
-  definition: Conservative creation of a higher-level concept from stable shared structure across existing concepts.
+  definition: Conservative creation of a higher-level concept from stable shared structure
+    across existing concepts.
   status: T_Active
   index_target: ../chapter10/10_15.html
   label: Concept Generalization
 - token: T_LocalEdgeSearch
   atomic: true
-  definition: The vertex-local function that searches the bounded Edge List and returns transient matching edges.
+  definition: The vertex-local function that searches the bounded Edge List and returns
+    transient matching edges.
   status: T_Active
   index_target: ../chapter10/10_15.html
   label: Local Edge Search
 - token: T_LTM
   atomic: true
-  definition: 'Long-Term Memory: the persistent associative memory system used by the canonical architecture.'
+  definition: 'Long-Term Memory: the persistent associative memory system used by
+    the canonical architecture.'
   status: T_Active
   index_target: ../chapter10/10_11.html
 - token: T_STM
   atomic: true
-  definition: 'Short-Term Memory: the semantically neutral transient activation network used to represent active
-    Sequences.'
+  definition: 'Short-Term Memory: the semantically neutral transient activation network
+    used to represent active Sequences.'
   status: T_Active
   index_target: ../chapter10/10_11.html
 - token: T_Dialogue
   label: Dialogue
-  definition: A logically connected exchange with the external world. The first exchange has no memory READ; the
-    first UPDATE establishes dialogue context.
+  definition: A logically connected exchange with the external world. The first exchange
+    has no memory READ; the first UPDATE establishes dialogue context.
   atomic: true
   status: T_Active
   index_target: ../chapter02/02_01.html
 - token: T_InternalLanguage
   label: Internal Language
-  definition: The shared language of Transformer, STM, LTM1, and LTM2, defined by a selected intermediate Transformer
-    representation.
+  definition: The shared language of Transformer, STM, LTM1, and LTM2, defined by
+    a selected intermediate Transformer representation.
   atomic: true
   status: T_Active
   index_target: ../chapter02/02_01.html
 - token: T_DialogueContext
-  label: Dialogue Context
-  definition: The accumulated internal-language state of one Dialogue, created and extended by UPDATE and supplied
-    to later READ operations.
+  label: D-Context
+  definition: The accumulated internal-language state of one Dialogue, created and
+    extended by UPDATE and supplied to later READ operations.
   atomic: true
   status: T_Active
   index_target: ../chapter10/10_01.html
 - token: T_MemorySerialization
   label: Memory Serialization
-  definition: Selection and ordered serialization of relevant dialogue and long-term memory information in the shared
-    internal language.
-  atomic: true
-  status: T_Active
-  index_target: ../chapter10/10_01.html
-- token: T_SerializedMemoryMessage
-  label: Serialized Memory Message
-  definition: The internal-language sequence returned to Transformer by READ.
+  definition: Selection and ordered serialization of relevant dialogue and long-term
+    memory information in the internal language.
   atomic: true
   status: T_Active
   index_target: ../chapter10/10_01.html

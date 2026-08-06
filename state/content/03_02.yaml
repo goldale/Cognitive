@@ -2,8 +2,8 @@ kind: T_Content
 section: S_03_02
 blocks:
 - type: paragraph
-  text: The internal language is obtained from a selected intermediate Transformer representation or from a stable
-    projection of that representation. The architecture does not prescribe one universal layer number.
+  text: The internal language is obtained from a selected intermediate Transformer layer. The architecture does
+    not prescribe one universal layer number.
 - type: principle
   title: Implementation-dependent layer selection
   text: Transformer specialists must select and justify the layer, layer combination, or learned projection that
@@ -37,7 +37,7 @@ blocks:
   title: Asymmetric Transformer interface
   text: The point that extracts a memory-facing internal-language state and the point that receives serialized memory
     are distinct. External input must first be translated by early Transformer layers. Memory output is already
-    expressed in the shared internal language and is therefore reinjected deeper, into layers responsible for semantic
+    expressed in the internal language and is therefore reinjected deeper, into layers responsible for semantic
     integration, reasoning, planning, and response formation.
 - type: formula
   text: external input -> early interpretation -> internal-language extraction point -> READ
@@ -54,78 +54,105 @@ blocks:
     be established experimentally for each Transformer family.
 - type: diagram
   title: Asymmetric Transformer–Memory Interface
-  description: External input enters at the Transformer front and is translated by early layers before the Internal-Language
-    Extraction Point. READ is initiated from that point. Serialized memory already uses the shared internal language
-    and is reinjected deeper, directly into integration and reasoning layers.
+  description: Early Transformer layers interpret the external request. Transformer formulates and sends READ. Memory
+    retrieves and serializes information using the current D-Context from STM. READ content returns as a
+    serialized message in the Internal Language and is reinjected into deeper Transformer layers. Transformer then
+    formulates and sends UPDATE in the Internal Language.
   direction: LR
-  size: standard
+  size: extra-large
   readability_priority: true
   proportionality_priority: true
   nodes:
   - id: external
-    label: External Input
+    label: External Request
     kind: external
   - id: early
-    label: Early Interpretation Layers
+    label: 'Early Transformer Layers
+
+      interpret external request'
     kind: process
-  - id: extract
-    label: Internal-Language Extraction Point
-    kind: interface
   - id: read
-    label: READ via STM / MSG2
+    label: 'Transformer formulates
+
+      and sends READ request'
     kind: control
+  - id: stm
+    label: 'STM
+
+      current D-Context'
+    kind: state
   - id: memory
-    label: LTM1 + LTM2
+    label: 'Memory
+
+      LTM1 + LTM2'
     kind: storage
   - id: serialize
-    label: Relevant Memory Serialization
+    label: 'Information Retrieval
+
+      and Serialization'
     kind: process
-  - id: reinject
-    label: Deeper Memory Reinjection Point
+  - id: readmsg
+    label: 'READ Content
+
+      serialized Internal Language message'
     kind: interface
-  - id: reason
-    label: Integration, Reasoning, and Planning Layers
+  - id: deep
+    label: 'Deep Transformer Layers
+
+      integration and reasoning'
     kind: subsystem
-  - id: output
-    label: Response / New Internal State
-    kind: state
+  - id: update
+    label: 'Transformer formulates
+
+      and sends UPDATE message
+
+      in the Internal Language'
+    kind: control
   edges:
   - from: external
     to: early
-    label: raw external form
+    label: external request
     flow: information
   - from: early
-    to: extract
-    label: translate into internal language
-    flow: information
-  - from: extract
-    to: reason
-    label: current internal state
-    flow: context
-  - from: extract
     to: read
-    label: quasi-query
+    label: intermediate representation
     flow: information
   - from: read
     to: memory
-    label: associative activation
-    flow: information
+    label: READ request
+    flow: control
+  - from: stm
+    to: serialize
+    label: D-Context defines subset
+    flow: context
   - from: memory
     to: serialize
-    label: relevant Dialogue + LTM projection
-    flow: context
+    label: candidate information
+    flow: information
   - from: serialize
-    to: reinject
-    label: shared internal-language sequence
+    to: readmsg
+    label: serialize selected subset
     flow: information
-  - from: reinject
-    to: reason
-    label: bypass early translation
+  - from: readmsg
+    to: deep
+    label: deeper reinjection
     flow: context
-  - from: reason
-    to: output
-    label: integrated processing
+  - from: early
+    to: deep
+    label: current request state
     flow: information
+  - from: deep
+    to: update
+    label: resulting internal state
+    flow: information
+  - from: update
+    to: stm
+    label: update D-Context
+    flow: learning
+  - from: update
+    to: memory
+    label: change Memory state
+    flow: learning
 - type: table
   headers:
   - Interface point

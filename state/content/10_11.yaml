@@ -12,14 +12,14 @@ blocks:
 - type: definition
   title: LTM1
   text: The conservative semantic-associative domain containing stable atoms, contexts, and persistent links in
-    the shared internal language.
+    the internal language.
 - type: definition
   title: LTM2
   text: The episodic and compositional domain storing Dialogue history, completed episodes, scenarios, and state
     transitions.
 - type: principle
   title: Semantically neutral STM
-  text: STM orders and transports internal-language states and maintains active Dialogue Context. It does not define
+  text: STM orders and transports internal-language states and maintains active D-Context. It does not define
     a second semantic vocabulary.
 - type: definition
   title: Sequence
@@ -28,19 +28,19 @@ blocks:
 - type: principle
   title: Transformer boundary
   text: Raw external input is interpreted by Transformer before memory access. Memory receives and returns only
-    shared internal-language representations.
+    internal-language representations.
 - type: principle
   title: Dialogue-aware READ
   text: The first exchange of a new Dialogue has no READ. In later exchanges, STM emits MSG2 READ from the current
     internal-language quasi-query; LTM1 activation and linked LTM2 content are selected and serialized into a bounded
     memory message.
 - type: formula
-  text: Dialogue Context + Current Internal State -> MSG2 READ -> LTM1 Activation -> LTM2 Projection -> Serialized
+  text: D-Context + Current Internal State -> MSG2 READ -> LTM1 Activation -> LTM2 Projection -> Serialized
     Memory Message
 - type: principle
   title: Transformer internal-language UPDATE
   text: During processing, Transformer produces a new internal state. STM emits MSG2 UPDATE; receiving LTM1 nodes
-    interpret UPDATE locally, and confirmed matches may extend Dialogue Context and LTM2.
+    interpret UPDATE locally, and confirmed matches may extend D-Context and LTM2.
 - type: definition
   title: MSG2 payload
   text: MSG2(amplitude, sequence_number, operation). operation is interpreted locally by the receiving LTM1 node

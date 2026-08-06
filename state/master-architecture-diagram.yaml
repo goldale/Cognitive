@@ -2,7 +2,7 @@ kind: T_Collection
 diagram:
   id: MASTER_ARCHITECTURE_DIAGRAM
   title: Cognitive Master Architecture Diagram
-  version: 0.4.01
+  version: 0.4.06
   canonical: true
   visual_generation_policy:
     yaml_updated_each_release: true
@@ -20,10 +20,10 @@ diagram:
     label: Internal-Language Extraction Point
     kind: interface
   - id: internal_language
-    label: Shared Internal Language
+    label: Internal Language
     kind: interface
   - id: stm
-    label: STM + Dialogue Context
+    label: STM + D-Context
     kind: state
   - id: MSG2
     label: MSG2(amplitude, sequence_number, operation)
@@ -91,11 +91,11 @@ diagram:
     label: new internal state
   - from: update
     to: stm
-    label: create or extend Dialogue Context
+    label: create or extend D-Context
   invariants:
   - Raw external data never enters LTM1 or LTM2 as semantic input.
   - The first exchange of a new Dialogue is processed without READ.
-  - The first UPDATE creates Dialogue Context.
+  - The first UPDATE creates D-Context.
   - Later READ returns prior Dialogue content plus its relevant projection onto LTM1 and LTM2.
   - READ and UPDATE use one Transformer-derived internal language.
   - Every MSG2 propagates exclusively through persistent LTM1.

@@ -101,8 +101,8 @@ principles:
   status: T_Accepted
 - kind: T_Principle
   id: P_019
-  title: Shared internal-language memory interface
-  statement: Require READ input, UPDATE input, Dialogue Context, and serialized memory output to use one Transformer-derived
+  title: Internal-Language memory interface
+  statement: Require READ input, UPDATE input, D-Context, and serialized memory output to use one Transformer-derived
     internal language.
   status: T_Accepted
 - kind: T_Principle
@@ -137,6 +137,6 @@ principles:
 - kind: T_Principle
   id: P_025
   title: Explicit retrieval after learning
-  statement: A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an
+  statement: A serialized memory message is generated only by a subsequent explicit READ operation; UPDATE never triggers an
     implicit READ.
   status: T_Accepted

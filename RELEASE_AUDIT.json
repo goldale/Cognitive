@@ -1,5 +1,5 @@
 {
-  "release": "0.4.01",
+  "release": "0.4.06",
   "date": "2026-08-05",
   "schema_validation": "passed",
   "tests": "52 passed",
@@ -29,12 +29,12 @@
     [
       "state/canonical/principles.yaml",
       "state/principles.yaml",
-      "READ may produce a Memory Vector without modifying Memory State; UPDATE may modify Memory State but "
+      "READ may produce a Serialized Memory Message without modifying Memory State; UPDATE may modify Memory State but "
     ],
     [
       "state/canonical/principles.yaml",
       "state/principles.yaml",
-      "A Memory Vector is generated only by a subsequent explicit READ operation; UPDATE never triggers an "
+      "A Serialized Memory Message is generated only by a subsequent explicit READ operation; UPDATE never triggers an "
     ]
   ],
   "consistency_checks": [

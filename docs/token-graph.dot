@@ -206,7 +206,7 @@ digraph TokenGraph {
   "T_SemanticEquivalenceClass" [shape=ellipse];
   "T_SemanticInvariance" [shape=ellipse];
   "T_SemanticDiscrimination" [shape=ellipse];
-  "T_MemoryVector" [shape=ellipse];
+  "T_SerializedMemoryMessage" [shape=ellipse];
   "T_AssociativeMemoryImplementationCandidates" [shape=ellipse];
   "T_ImplementationGapAnalysis" [shape=ellipse];
   "T_DenseAssociativeMemory" [shape=ellipse];
@@ -240,5 +240,4 @@ digraph TokenGraph {
   "T_InternalLanguage" [shape=ellipse];
   "T_DialogueContext" [shape=ellipse];
   "T_MemorySerialization" [shape=ellipse];
-  "T_SerializedMemoryMessage" [shape=ellipse];
 }

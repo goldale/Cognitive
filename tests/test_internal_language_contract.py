@@ -18,7 +18,7 @@ def test_shared_language_communication_contract():
     assert "same internal language" in texts("03_03.yaml")
     assert "never enter LTM1 or LTM2" in texts("03_03.yaml")
     assert "reconstruction of a compatible cognitive state" in texts("03_03.yaml")
-    assert "Memory does not generate an aggregated Memory Vector" in texts("03_04.yaml")
+    assert "D-Context defines the serialization subset" in texts("03_04.yaml")
     assert "first exchange" in texts("03_05.yaml")
 
 
@@ -32,7 +32,7 @@ def test_memory_architecture_shared_language_cycle():
     diagram = next(b for b in data["blocks"] if b.get("type") == "diagram")
     edges = {(e["from"], e["to"]): e for e in diagram["edges"]}
     assert ("serialization", "transformer") in edges
-    assert edges[("serialization", "transformer")]["label"] == "shared internal language"
+    assert edges[("serialization", "transformer")]["label"] == "internal language"
     assert ("transformer", "update") in edges
     assert ("update", "dialogue") in edges
     assert "same Transformer-derived internal language" in texts("09_01.yaml")

@@ -3,7 +3,7 @@ principles:
 - kind: T_Principle
   id: P_021
   title: Transformer-defined internal language
-  statement: The shared internal language of the cognitive system is the representation exposed by a selected intermediate
+  statement: The internal language of the cognitive system is the representation exposed by a selected intermediate
     Transformer layer or a stable projection of that layer.
   status: T_Accepted
 - kind: T_Principle
@@ -26,9 +26,9 @@ principles:
   status: T_Accepted
 - kind: T_Principle
   id: P_025
-  title: Relevant memory serialization
-  statement: Memory does not invent a separate Memory Vector language. READ selects relevant dialogue and long-term
-    memory state and serializes that information in the shared internal language for Transformer processing.
+  title: Memory retrieval and serialization
+  statement: Memory does not invent a separate serialized memory message language. READ selects relevant dialogue and long-term
+    memory state and serializes that information in the internal language for Transformer processing.
   status: T_Accepted
 - kind: T_Principle
   id: P_035

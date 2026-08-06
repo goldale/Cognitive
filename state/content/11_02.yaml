@@ -2,14 +2,14 @@ kind: T_Content
 section: S_11_02
 blocks:
 - type: paragraph
-  text: Relevance is determined from the active Dialogue Context, the current internal-language quasi-query, LTM1
+  text: Relevance is determined from the active D-Context, the current internal-language quasi-query, LTM1
     spreading activation, and linked LTM2 episodes, compositions, and scenarios.
 - type: table
   headers:
   - Source
   - Contribution
   rows:
-  - - Dialogue Context
+  - - D-Context
     - Prior exchanges, active entities, current objectives, unresolved questions, and established references.
   - - Current Transformer state
     - The present internal-language quasi-query and active processing context.
@@ -23,5 +23,5 @@ blocks:
     relative to that anchor rather than retrieved independently of it.
 - type: warning
   title: First exchange exception
-  text: The first exchange of a new Dialogue has no memory READ. Its first UPDATE creates the initial Dialogue Context
+  text: The first exchange of a new Dialogue has no memory READ. Its first UPDATE creates the initial D-Context
     required for meaningful later retrieval.

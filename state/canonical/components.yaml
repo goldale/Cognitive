@@ -18,11 +18,11 @@ components:
   roles:
   - persistent_and_dynamic_memory_state
 - kind: interface
-  id: C_MEMORY_VECTOR
+  id: C_SERIALIZED_MEMORY_MESSAGE
   name: Serialized Memory Message
   roles:
-  - internal_language_sequence
-  - relevant_memory_delivery
+  - read_result
+  - transformer_integration
 - kind: data
   id: C_SEM_REP
   name: Internal Language Representation
@@ -84,10 +84,10 @@ components:
 - kind: T_Component
   id: Internal_Language_Extraction_Point
   name: Internal-Language Extraction Point
-  role: Transformer interface that exposes the selected intermediate representation used for memory-facing READ
-    and UPDATE content.
+  role: Transformer interface that exposes the selected intermediate representation
+    used for memory-facing READ and UPDATE content.
 - kind: T_Component
   id: Memory_Reinjection_Point
   name: Memory Reinjection Point
-  role: Deeper Transformer interface that receives serialized memory directly in the shared internal language for
-    integration and reasoning.
+  role: Deeper Transformer interface that receives serialized memory directly in the
+    internal language for integration and reasoning.

@@ -3,21 +3,21 @@ section: S_11_01
 blocks:
 - type: paragraph
   text: Associative Memory does not generate a separate semantic representation. In response to READ, it selects
-    relevant information already represented in the shared internal language and serializes that information for
+    relevant information already represented in the internal language and serializes that information for
     Transformer processing.
 - type: principle
   title: Single-language contract
-  text: The semantic space used for READ input, UPDATE input, Dialogue Context, and memory output is the same Transformer-derived
+  text: The semantic space used for READ input, UPDATE input, D-Context, and memory output is the same Transformer-derived
     internal language.
 - type: definition
   title: Serialized Memory Message
-  text: A bounded ordered sequence in the shared internal language containing prior Dialogue content and its relevant
+  text: A bounded ordered sequence in the internal language containing prior Dialogue content and its relevant
     projection onto LTM1 and LTM2.
 - type: formula
-  text: Serialized Memory Message = Dialogue Context + Relevant Long-Term Projection
+  text: Serialized Memory Message = D-Context + Relevant Long-Term Projection
 - type: diagram
   title: Relevant Memory Selection and Serialization
-  description: Dialogue context and long-term memory are selected, serialized in the shared internal language, and
+  description: Dialogue context and long-term memory are selected, serialized in the internal language, and
     reinjected into deeper Transformer layers.
   direction: LR
   size: standard
@@ -25,7 +25,7 @@ blocks:
   proportionality_priority: true
   nodes:
   - id: dialogue
-    label: Dialogue Context
+    label: D-Context
     kind: state
   - id: ltm1
     label: LTM1 Atoms and Contexts
@@ -64,7 +64,7 @@ blocks:
     flow: information
   - from: serialize
     to: reinject
-    label: shared internal language
+    label: internal language
     flow: information
   - from: reinject
     to: reason
@@ -72,5 +72,5 @@ blocks:
     flow: information
 - type: note
   title: Low-level vector elements
-  text: A vector may remain as a low-level element of the shared internal-language sequence. It is not an aggregated
+  text: A vector may remain as a low-level element of the internal-language sequence. It is not an aggregated
     memory state, a separate language, or an independently generated semantic object.

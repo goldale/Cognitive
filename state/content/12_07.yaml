@@ -41,7 +41,7 @@ blocks:
     flow: interface
   - from: message
     to: transformer
-    label: shared internal language
+    label: internal language
     flow: information
   - from: transformer
     to: criteria
