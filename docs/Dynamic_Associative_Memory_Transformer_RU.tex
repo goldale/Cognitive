@@ -1,0 +1,1884 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- PACKAGES & LANGUAGE SETTINGS ---
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning,calc}
+
+% --- COLOR DEFINITIONS ---
+\definecolor{primarycolor}{RGB}{30, 60, 110}
+\definecolor{secondarycolor}{RGB}{235, 240, 245}
+\definecolor{codebackground}{RGB}{248, 248, 248}
+\definecolor{commentcolor}{RGB}{100, 100, 100}
+\definecolor{keywordcolor}{RGB}{170, 13, 145}
+\definecolor{stringcolor}{RGB}{196, 26, 22}
+
+% --- HYPERLINK SETUP ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primarycolor,
+    urlcolor=primarycolor,
+    pdftitle={Архитектура с динамической ассоциативной памятью в моделях Transformer}
+}
+
+% --- CODE LISTING SETUP ---
+\lstset{
+    language=Python,
+    backgroundcolor=\color{codebackground},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{keywordcolor}\bfseries,
+    commentstyle=\color{commentcolor}\itshape,
+    stringstyle=\color{stringcolor},
+    breaklines=true,
+    showstringspaces=false,
+    frame=single,
+    rulecolor=\color{black!20},
+    tabsize=4
+}
+
+% --- DOCUMENT TITLE ---
+\title{\textbf{\Large \color{primarycolor} Архитектура с динамической ассоциативной памятью в моделях Transformer}}
+\author{\Large \textbf{Alex Goldenstein} \\ \vspace{0.3cm} \normalsize \textbf{Статус:} Исчерпывающая архитектурная и методологическая спецификация}
+\date{\today}
+
+\begin{document}
+
+\RaggedRight
+
+\maketitle
+
+\hrule
+\vspace{0.5cm}
+
+\section{Введение и архитектурная постановка задачи}
+
+Предложенная модель Cognitive Master Architecture представляет собой концепцию гибридной когнитивной архитектуры, объединяющей нейросетевые методы обработки (Transformer) и внешнюю структурированную ассоциативную память (LTM с графовой топологией и оффлайн-консолидацией). В данной архитектуре мы отходим от рассмотрения стандартных языковых моделей как набора изолированных операций над токенами, вводя структуру, ориентированную на непрерывное накопление и интеграцию нового опыта и знаний. Ранее приобретенные знания используются в последующем общении, позволяя добиваться лучших результатов. Единицей общения служит диалог, технически аккумулирующий контекст сессии.
+
+\subsection*{Диалог ($\mathcal{D}$)}
+\textbf{Диалог} $\mathcal{D} = \{T_1, T_2, \dots, T_N\}$ формализуется как единый динамический процесс и целостная единица обсуждения. Каждая реплика $T_n$ порождает семантическую активность, которая аккумулируется в графе диалога $G_{\mathcal{D}}$, фиксируя переходы между темами и интенциями пользователя.
+
+\subsection*{D-Context ($\mathbf{s}_{\mathcal{D}}$)}
+\textbf{D-Context} — это состояние текущего диалога, существующее внутри модуля ассоциативной памяти. Оно агрегирует семантическое ядро обсуждения — тему, намерения и контекстные ограничения — в интегральное состояние $\mathbf{s}_{\mathcal{D}}$. D-Context создается при старте нового диалога. Первое сообщение $T_1$ используется для его инициализации и якорения; полноценная информация из памяти, обусловленная D-Context, начинает поступать обратно в Transformer со второго сообщения $T_2$.
+
+Классическая архитектурная парадигма моделей Transformer страдает от строгой дихотомии между статической параметрической памятью матриц весов ($W_Q, W_K, W_V, W_O, W_{\text{mlp}}$) и динамическим, но строго ограниченным по длине, окном контекста внимания (Attention Context Window).
+
+Любая адаптация к новым доменам, задачам или фактам реального мира требует либо ресурсоемкого параметрического дообучения (Fine-Tuning / PEFT), что несет риск катастрофического забывания, либо загрузки массивных наборов данных в промпт (In-Context Learning / RAG), что ведет к квадратичному росту вычислений $\mathcal{O}(N^2)$ и шуму.
+
+\subsection*{Цель и концептуальное решение}
+Построение \textbf{гибридной двухуровневой системы семантико-ассоциативной памяти}, функционирующей как внутренне-внешний модуль для Transformer:
+\begin{enumerate}
+    \item \textbf{Уровень I (Базовый инвариант):} Извлечь и зафиксировать («заморозить») универсальный асемантический геометрический базис скрытого пространства активаций $\mathcal{B} \subset \mathbb{R}^d$ единоразово для всей модели.
+    \item \textbf{Уровень II (Динамический семантический граф):} Для конкретной downstream-задачи $T$ автоматически отсечь нерелевантные элементы базиса и наложить направленные причинно-следственные связи и ребра коактивации, формируя направленный семантический граф $G_T$.
+    \item \textbf{Уровень III (OOD Индукция):} По мере изменения внешнего мира обнаруживать остаточную энергию в пространстве активаций и индуктивно порождать новые узлы и ребра графа в реальном времени без переобучения базовой нейросети (Zero Re-Training / Continual Learning).
+\end{enumerate}
+
+\section{Замкнутый контур взаимодействия Transformer и ассоциативной памяти}
+
+Построение словаря и семантического графа определяет структуру памяти, но для ее использования необходим явный обратный путь от памяти к Transformer. В предлагаемой архитектуре этот путь реализуется непосредственно во внутреннем пространстве скрытых состояний Transformer.
+
+\subsection*{Двухфазный интерфейс целевого слоя}
+
+Для обмена с памятью используется целевой слой $l_{\text{target}}$ выбранной Transformer-модели. Выбранный слой просто удваивается: исходная часть становится источником для update, а новая часть — интерфейсом, куда ассоциативная память вставляет свои сообщения. Таким образом появляются два логических направления обмена:
+
+\begin{enumerate}
+    \item \textbf{Фаза считывания (Input Pole):} на входе в $l_{\text{target}}$ снимается текущее скрытое состояние $h_t^{(l_{\text{target}}^{\text{in}})}$. Оно используется как запрос к ассоциативной памяти и для обновления D-Context, не прерывая основной вычислительный поток Transformer.
+    \item \textbf{Фаза возврата и реинтеграции (Output Pole):} ассоциативная память использует запрос, D-Context и активную структуру $G_T$ для формирования латентного вектора памяти $\Delta h_t$. Он возвращается в Transformer на выходе целевого слоя и интегрируется в Residual Stream:
+    \begin{equation}
+    \tilde{h}_t^{(l_{\text{target}}^{\text{out}})}
+    =
+    h_t^{(l_{\text{target}}^{\text{out}})}
+    +
+    \Delta h_t^{(\mathcal{D})}.
+    \end{equation}
+\end{enumerate}
+
+Таким образом формируется замкнутый цикл:
+\[
+\text{Transformer hidden state}
+\rightarrow
+\text{Associative Memory}
+\rightarrow
+\text{D-Context / } G_T
+\rightarrow
+\Delta h_t
+\rightarrow
+\text{Transformer}.
+\]
+
+Введение внутреннего языка элегантно решает проблему прямой стыковки «векторы $\rightarrow$ граф». В такой интерпретации система превращается в нейросимволический гибрид (Neuro-Symbolic AI), где Трансформер выступает в роли «процессора», а внутренний язык — в роли «системного ассемблера», отдающего команды памяти и исполнительным блокам.
+
+Фактически выше мы определили язык внутреннего общения рассматриваемой когнитивной системы. Его полностью определяет выбранный Transformer и его изначальная тренировка. Ниже мы рассмотрим, как ассоциативная память системы сможет этот язык изучить и им пользоваться.
+
+\subsection*{Как внутренний язык решает проблему трансляции}
+
+\begin{enumerate}
+    \item \textbf{Разделение ответственности:} Трансформер больше не отвечает за то, как именно устроен граф в базе данных. Его задача — мыслить и выражать намерение на строго детерминированном, машиночитаемом языке (символическом протоколе).
+\end{enumerate}
+
+Внутренний язык системы — это внутренний язык самого Transformer. Он снимается с оптимально подобранного внутреннего слоя. Ассоциативная память не знает ничего, кроме этого языка: она учится на нем с нуля, сначала выстраивая паттерны активаций, а затем на их базе — последовательности и связи во времени.
+
+Этот концептуальный сдвиг полностью меняет архитектуру и превращает ее из нейро-символического гибрида в чистую эндогенную нейро-ассоциативную систему.
+
+Если внутренний язык — это векторные активации одного из внутренних слоев Transformer (Internal Latent Representation), а ассоциативная память изначально «слепа» к человеческому языку и учится на этих активациях с нуля, то система работает непосредственно во внутреннем пространстве представлений Transformer.
+
+\subsubsection*{Архитектурная картина при таком подходе}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.0cm and 1.2cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, align=center, text width=4.8cm] (world) {Внешний мир\\Текст / Стримы};
+    \node[draw, rounded corners, below=of world, align=center, text width=4.8cm] (input) {Входные слои Transformer};
+    \node[draw, rounded corners, below=of input, align=center, text width=4.8cm] (hidden) {Оптимальный скрытый слой};
+    \node[draw, rounded corners, right=1.4cm of hidden, align=center, text width=5.0cm, fill=secondarycolor] (lang) {Внутренний язык системы\\Скрытые векторы активаций};
+    \node[draw, rounded corners, below=of hidden, align=center, text width=4.8cm] (deep) {Глубокие слои / READ-UPDATE\\Reasoning, Planning, Generation};
+    \node[draw, rounded corners, below=of lang, align=left, text width=5.0cm] (mem) {Associative Memory (LTM)\\1. LTM-1: паттерны активаций\\2. LTM-2: последовательности и связи во времени};
+    \draw[->, thick] (world) -- (input);
+    \draw[->, thick] (input) -- (hidden);
+    \draw[<->, thick] (hidden) -- (lang);
+    \draw[->, thick] (hidden) -- (deep);
+    \draw[<->, thick] (lang) -- (mem);
+\end{tikzpicture}
+\caption{Эндогенный внутренний язык Transformer как интерфейс ассоциативной памяти.}
+\end{figure}
+
+\subsubsection*{Главные преимущества этой концепции}
+
+\begin{enumerate}
+    \item \textbf{Отсутствие потерь при трансляции (Zero Translation Loss):} нет необходимости переводить непрерывные смыслы в дискретный JSON, Cypher или текстовый DSL. Память оперирует нативными математическими объектами — векторами и тензорами, с которыми работает сам Transformer.
+    \item \textbf{Семантическая плотность и несмещенность (Unbiased Semantics):} внутреннее латентное пространство глубокого слоя Transformer содержит более богатую семантику — контекст, интонацию и ассоциации — чем отдельное человеческое слово.
+    \item \textbf{Самоорганизация (Self-Organization / Unsupervised Emergence):} LTM обучается с нуля:
+    \begin{itemize}
+        \item \textbf{Этап 1 (LTM-1):} память фиксирует частые статичные конфигурации активаций слоя — формируется базовый словарь внутренних атомарных смыслов системы.
+        \item \textbf{Этап 2 (LTM-2):} на базе устойчивых узлов LTM-1 память начинает запоминать траектории их смены во времени, $\mathrm{State}_t \rightarrow \mathrm{State}_{t+1}$, — формируется эпизодическая и причинная память.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection*{Новые фундаментальные проблемы и вызовы реализации}
+
+Такой подход решает проблему переводчика, но порождает и ограничения.
+
+\paragraph{1. Проблема дрейфа представления (Representation Drift / Concept Drift).}
+Transformer — обучаемая и пластичная система. Если его веса хотя бы немного обновляются, пространство активаций выбранного скрытого слоя изменяет систему координат.
+
+\textbf{В чем опасность:} вектор активации $V$, выражающий определенное понятие до обновления нейросети, после обновления может начать указывать на другую точку пространства. В результате старые записи LTM-1 и LTM-2 перестанут соответствовать новой системе внутреннего языка.
+
+\textbf{Решение:} выбранный слой должен быть либо жестко заморожен (Frozen Internal Layer), либо необходимо использовать механизм выравнивания пространств (Vector Alignment / Procrustes Analysis / Projection Heads), чтобы пересчитывать старые векторы в новую систему координат. \textbf{Но оптимально} использовать устоявшийся Transformer и всю пластичность обеспечивать за счет обучения ассоциативной памяти.
+
+\paragraph{3. Формирование критерия «Что считается Item в LTM-1».}
+Поскольку ассоциативная память обучается с нуля, ей нужен критерий: когда поток активаций скрытого слоя должен порождать новый узел в LTM-1, а когда — признаваться вариацией старого.
+
+\textbf{Решение:} использование онлайн-кластеризации на базе самоорганизующихся карт Кохонена (SOM), Predictive Coding или Spiking Neural Networks (SNN) / Hebbian Learning. Память создает новый узел в LTM-1 только тогда, когда входящий вектор активации вызывает высокий уровень ошибки предсказания (Prediction Error) относительно уже имеющихся в LTM-1 шаблонов.
+
+\paragraph{Итог по этой модели.}
+Использование активаций внутреннего слоя в качестве нативного внутреннего языка делает систему полностью эндогенной. При такой архитектуре Transformer выполняет роль перцептивного фронтенда, LTM-1 кластеризует устойчивые паттерны активаций, а LTM-2 запоминает временные цепочки и связи между паттернами LTM-1.
+
+Одной из рассматриваемых технических возможностей является векторное квантование (Vector Quantization) выбранного слоя для преобразования непрерывного латентного потока в устойчивые дискретные сущности, пригодные для построения графов LTM-1 и LTM-2.
+
+\subsubsection*{Схема слоя с двойной шириной (Internal Memory Layer)}
+
+Transformer рассматривается как большая языковая модель с дополнительным входом от операций read. Этот вход попадает в тот же внутренний слой, откуда уходят update для обучения памяти, а в более глубоких слоях интегрируется в генерацию ответа. Слой, откуда уходит update, имеет двойную ширину, и во вторую половину приходит read из памяти, доставляя информацию о контексте данного диалога.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.9cm and 1.0cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, align=center, text width=7.2cm] (deep) {Более глубокие слои Transformer};
+    \node[below=0.25cm of deep] (ctx) {Интегрированный контекст};
+    \node[draw, rounded corners, below=0.35cm of ctx, align=center, text width=8.2cm, fill=secondarycolor] (layer) {Скрытый слой $N$ — двойная ширина $2D$};
+    \node[draw, rounded corners, below left=1.0cm and -0.2cm of layer, align=center, text width=4.2cm] (upd) {Левая половина: $D$\\Выходной поток UPDATE};
+    \node[draw, rounded corners, below right=1.0cm and -0.2cm of layer, align=center, text width=4.2cm] (read) {Правая половина: $D$\\Входной поток READ};
+    \node[draw, rounded corners, below=1.0cm of upd, align=left, text width=5.2cm] (ltm2) {Ассоциативная память LTM\\1. Обучается на UPDATE\\2. Возвращает релевантный контекст в READ};
+    \draw[->, thick] (layer) -- (ctx);
+    \draw[->, thick] (ctx) -- (deep);
+    \draw[->, thick] (upd) -- (ltm2);
+    \draw[->, thick] (ltm2.east) -| (read.south);
+    \draw[->, thick] (upd) -- (layer);
+    \draw[->, thick] (read) -- (layer);
+\end{tikzpicture}
+\caption{Слой двойной ширины как нейронная шина UPDATE/READ.}
+\end{figure}
+
+\subsubsection*{Архитектурные преимущества схемы}
+
+\begin{enumerate}
+    \item \textbf{Замкнутый контур восприятия-действия (Closed-Loop Perception-Action):}
+    \begin{itemize}
+        \item левая половина слоя выражает текущее внутреннее состояние или намерение Transformer (UPDATE), транслируя его в LTM на внутреннем языке;
+        \item правая половина слоя получает отклик памяти (READ), содержащий ассоциированные паттерны из LTM-1 и LTM-2;
+        \item более глубокие слои Transformer объединяют оба представления $[\mathrm{UPDATE} \parallel \mathrm{READ}]$, интегрируя память в рассуждение и генерацию ответа.
+    \end{itemize}
+    \item \textbf{Отсутствие задержки на декодирование:} памяти не нужно превращать найденную структуру обратно в текст. LTM принимает вектор UPDATE и возвращает соответствующий вектор или смесь векторов в READ. Transformer воспринимает этот ответ в нативной для себя форме.
+    \item \textbf{Синхронность взаимодействия:} поскольку UPDATE и READ связаны с одним и тем же внутренним интерфейсом, память работает не как внешняя база данных, а как расширитель латентного оперативного пространства (Latent Coprocessor).
+\end{enumerate}
+
+\subsubsection*{Ключевые вызовы и узкие места данной схемы}
+
+\paragraph{2. Проблема балансировки каналов (Attention Masking / Gating).}
+\textbf{Суть проблемы:} на ранних этапах обучения LTM может возвращать шум в канал READ. Если глубокие слои Transformer полностью используют этот канал, шум из памяти может нарушить базовую языковую связность модели.
+
+\textbf{Решение:} внедрение механизма Gating между каналами:
+\begin{equation}
+\mathrm{Layer}_{out}
+=
+W_1 \cdot \mathrm{UPDATE}
++
+\sigma\!\left(W_g \cdot [\mathrm{UPDATE},\mathrm{READ}]\right)
+\odot
+\left(W_2 \cdot \mathrm{READ}\right).
+\end{equation}
+
+Гейт $\sigma$ обучается регулировать, насколько сильно глубокие слои должны доверять сигналу READ в зависимости от контекста.
+
+\paragraph{3. Стабильность градиентов при оффлайн-обучении.}
+Если LTM обучается автономно во время фазы Sleep, перестраивая структуры LTM-1/LTM-2, характер сигналов, приходящих в канал READ, будет меняться. Чтобы глубокие слои Transformer не зависели от неконтролируемого изменения распределения сигналов, канал READ должен проходить через слой нормализации (LayerNorm) с фиксированным распределением.
+
+\subsubsection*{Итоговый вывод по эволюции модели}
+
+\begin{enumerate}
+    \item LLM / Transformer выступает как универсальный когнитивный процессор.
+    \item Слой $N$ двойной ширины работает как нейронная шина: правая половина принимает контекст прошлых эпизодов, левая транслирует текущее состояние.
+    \item Фаза Sleep в оффлайн-режиме сжимает LTM-2, убирает неважные детали или забывает полностью эпизоды — предотвращая их неконтролируемый рост и формируя абстракции.
+\end{enumerate}
+
+\subsubsection*{Пошаговый цикл работы (Lifecycle of a Dialogue Session)}
+
+Первый внешний запрос сообщает памяти о необходимости начать диалог. Следующий запрос активирует существующий диалог и в его рамках формирует сообщение для Transformer. Новый запрос, достигнув целевого слоя Transformer, генерирует update, который изменяет контекст диалога для последующих запросов и записывает новое состояние в память.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.75cm and 1.0cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, align=center, text width=5.0cm] (req) {Внешний запрос (токены)};
+    \node[draw, rounded corners, below=of req, align=center, text width=5.0cm] (low) {Нижние слои Transformer};
+    \node[draw, rounded corners, below=of low, align=center, text width=9.5cm, minimum height=1.0cm, fill=secondarycolor] (bus) {Слой $N$ — шина взаимодействия $2D$};
+    \node[draw, rounded corners, below left=0.9cm and -0.2cm of bus, align=center, text width=3.5cm] (read2) {READ половина};
+    \node[draw, rounded corners, below=of read2, align=center, text width=3.5cm] (deep2) {Глубокие слои\\Ответ};
+    \node[draw, rounded corners, below=of deep2, align=center, text width=3.5cm] (upd2) {UPDATE половина};
+    \node[draw, rounded corners, right=2.0cm of deep2, align=center, text width=3.8cm] (ctx2) {LTM\\Контекст диалога};
+    \draw[->, thick] (req) -- (low);
+    \draw[->, thick] (low) -- (bus);
+    \draw[->, thick] (bus) -- (read2);
+    \draw[->, thick] (read2) -- (deep2);
+    \draw[->, thick] (deep2) -- (upd2);
+    \draw[->, thick] (upd2.east) -| node[below right] {Запись} (ctx2.south);
+    \draw[->, thick] (ctx2.west) -- node[above] {Активация} (read2.east);
+\end{tikzpicture}
+\caption{Пошаговый цикл READ/UPDATE в рамках активного диалога.}
+\end{figure}
+
+\paragraph{Шаг 1: Инициализация (первый внешний запрос).}
+\begin{enumerate}
+    \item \textbf{Вход:} внешний запрос поступает на вход системы.
+    \item \textbf{Сигнал старта:} нижние слои Transformer доходят до слоя $N$. UPDATE генерирует вектор-триггер «Старт диалога».
+    \item \textbf{Реакция ассоциативной памяти:} LTM распознает триггер, создает новый узел/контекст сессии в LTM-2 и инициализирует канал READ.
+    \item \textbf{Результат:} сформирован указатель нового диалога, память готова к накоплению эпизода.
+\end{enumerate}
+
+\paragraph{Шаг 2: Активная фаза (каждый следующий запрос).}
+
+\textbf{1. Чтение существующего контекста (READ Phase):}
+\begin{itemize}
+    \item новый запрос пользователя входит в Transformer;
+    \item достигнув слоя $N$, система берет текущее состояние графа диалога из LTM-2 и подает его латентное представление в READ;
+    \item глубокие слои Transformer получают векторный отклик памяти, в котором сжаты прошлые факты, роли и контекст диалога;
+    \item Transformer генерирует ответ пользователю.
+\end{itemize}
+
+\textbf{2. Запись и обновление контекста (UPDATE Phase):}
+\begin{itemize}
+    \item UPDATE передает в LTM обновленное внутреннее состояние: что произошло, какие концепты LTM-1 были задействованы и каков новый причинно-следственный шаг;
+    \item LTM получает UPDATE и достраивает граф текущего диалога в LTM-2, связывая новый шаг с предыдущими.
+\end{itemize}
+
+\paragraph{Шаг 3: Консолидация (завершение сессии / переход в Sleep).}
+Когда диалог останавливается, накопившийся граф сессии в LTM-2 помечается как Completed Logical Episode. В фазе Sleep граф эпизода консолидируется: обновляются веса ассоциаций в LTM-1, а граф диалога в LTM-2 обобщается и сжимается, становясь частью долгосрочного опыта системы.
+
+\subsubsection*{Архитектурные выводы из описания}
+
+\begin{enumerate}
+    \item \textbf{Контекстное окно Transformer становится практически «бесконечным»:} Transformer не обязан удерживать весь массив прошлого текста в стандартном Attention-окне. Он получает из READ-канала сжатое состояние текущего диалога из LTM.
+    \item \textbf{Память как State Machine:} LTM работает не как статичное хранилище, а как динамическая нейронная среда состояний. Каждый UPDATE переводит состояние диалогового графа $\mathrm{State}_t \rightarrow \mathrm{State}_{t+1}$.
+    \item \textbf{Локальность диалога в LTM-2:} каждый активный диалог образует временную ветку или подграф в LTM-2, связанный с базовыми элементами LTM-1.
+\end{enumerate}
+
+\paragraph{Уточнение сигнала старта.}
+Сигнал старта — само поступление сигнала на входной слой Transformer. Новый диалог, не получивший ни одного update, не генерирует read. Это задает строгое краевое условие инициализации: если диалог пустой, системе еще не с чем выполнять ассоциативный поиск в LTM.
+
+\subsection*{Протокол двухэтапного запуска (Cold-Start Protocol)}
+
+Чтобы не использовать еще не сформированный контекст диалога, взаимодействие запускается в два этапа:
+
+\begin{itemize}
+    \item \textbf{Ход $T_1$ — инициализация.} Скрытое состояние первого сообщения инициирует и якорит D-Context. Обратная инъекция отключена:
+    \[
+    \Delta h_{T_1} = \mathbf{0}.
+    \]
+    \item \textbf{Ход $T_2+$ — активное взаимодействие.} Начиная со второго сообщения ассоциативная память использует накопленный D-Context при поиске релевантной информации; возвращаемое состояние $\Delta h_{T_n}$ реинтегрируется в Residual Stream Transformer.
+\end{itemize}
+
+\subsection*{Сквозная реинтеграция}
+
+После модификации состояния на $l_{\text{target}}^{\text{out}}$ последующие слои Transformer работают штатно, а информация, возвращенная памятью, на протяжении небольшого числа дополнительных слоев, появившихся вместе с удвоением $l_{\text{target}}$, должна плавно влиться в общий поток и участвовать во всех последующих вычислениях вплоть до формирования выходных логитов:
+
+\begin{equation}
+h_t^{(l)}
+=
+h_t^{(l-1)}
++
+\operatorname{SelfAttention}^{(l)}
+\left(\operatorname{LN}(h_t^{(l-1)})\right)
++
+\operatorname{MLP}^{(l)}
+\left(\operatorname{LN}(h_t^{(l-1)})\right),
+\end{equation}
+
+\begin{equation}
+P(y_t \mid y_{<t})
+=
+\operatorname{Softmax}
+\left(
+W_{\text{head}} \operatorname{LN}(h_t^{(L)})
+\right).
+\end{equation}
+
+\section{Автоматический выбор слоя (Layer Entropy Profiling)}
+
+Скрытые состояния $h_t^{(l)} \in \mathbb{R}^d$ радикально меняют свою функциональную природу по мере увеличения глубины сети $l \in [1, L]$. Ранние слои переполнены поверхностным синтаксическим шумом, тогда как самые глубокие слои демонстрируют вырождение пространства перед проекцией токенизатора.
+
+Чтобы исключить эвристический выбор слоя, применяется \textbf{Профилировщик энтропии слоев (Layer Entropy Profiler)}:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=2.5cm, auto, >=latex']
+    \node [draw, rectangle, rounded corners] (l1) {Слой $l-1$};
+    \node [draw, rectangle, rounded corners, fill=secondarycolor, right=of l1] (l) {Слой $l^*$: Оптимальная точка извлечения};
+    \node [draw, rectangle, rounded corners, right=of l] (l2) {Слой $l+1$};
+    
+    \draw[->, thick] (l1) -- (l);
+    \draw[->, thick] (l) -- (l2);
+    
+    \node [draw, rectangle, fill=white, below=0.8cm of l, align=left] (info) {
+        1. Мин. остаточная энтропия: $\mathcal{H}(r_t^{(l)}) \to \min$ \\
+        2. Макс. причинная чувствительность: $\Delta \mathcal{L} / \Delta h^{(l)} \to \max$
+    };
+    \draw[->, dashed] (l) -- (info);
+\end{tikzpicture}
+\end{figure}
+
+\subsection*{Математический критерий}
+Оптимальный индекс слоя $l^*$ определяется как глобальный минимум дифференциальной энтропии распределений векторов остатков при условии преодоления порога причинно-следственной чувствительности задачи:
+
+\begin{equation}
+l^* = \arg\min_{l \in [1, L]} \mathcal{H}\left( h^{(l)} - \mathbf{P}_{\mathcal{B}} h^{(l)} \right) \quad \text{при условии } \mathbb{E}\left[ \left\| \frac{\partial \mathcal{L}_{\text{task}}}{\partial h^{(l)}} \right\| \right] > \tau_{\text{causal}}
+\end{equation}
+
+где $\mathcal{H}(\cdot)$ — дифференциальная энтропия, а $\mathbf{P}_{\mathcal{B}}$ — оператор проекции на текущий базис.
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Возможная реализация описанного выше}
+\begin{center}
+{\Huge\bfseries Возможная реализация описанного выше\par}
+\end{center}
+\vspace{0.8cm}
+
+В начале этого документа было обещано \textbf{показать, как ассоциативная память системы сможет этот язык изучать и им пользоваться}.
+
+Всё нижеследующее — один из возможных вариантов того, как это можно сделать. Этот раздел содержит очень много математики и никаких новых идей — и, соответственно, может быть игнорирован без ущерба общему пониманию концепции!
+
+Основная часть описанной ниже работы происходит в режиме оффлайн и требует только административного доступа к уже обученной модели Transformer, которая затем будет использована в Когнитивной системе. Существующий Transformer используется для создания необходимой статистики наборов данных, которые будут обработаны описанными ниже алгоритмами. Например, пропущенные через Transformer книги могут быть сгруппированы по жанрам и авторам, картины — по художникам, фотографии пейзажей — по типу ландшафта и т.~д.
+
+Созданный таким образом большой массив структурированных данных будет использован для выяснения семантики внутреннего языка с помощью описанных ниже алгоритмов!
+
+\footnotesize
+\section{Этап I: Извлечение Асемантичного Физического Базиса $\mathcal{B}$}
+
+На первом этапе система изолирована от понятий семантики и смыслов. Проводится анализ статистической геометрии распределения активаций на множестве разнородных текстовых доменов $g \in G$.
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=0.8cm and 1.0cm,
+    box/.style={draw, rounded corners, align=center, minimum height=0.75cm, text width=4.4cm, fill=secondarycolor},
+    arr/.style={->, >=stealth, thick}
+]
+\node[box] (domains) {Данные доменов $G$};
+\node[box, below=of domains] (cov) {Ковариационные матрицы $\Sigma_g$};
+\node[box, right=of cov] (core) {Инвариантное ядро $D0$};
+\node[box, below=of cov] (res) {Вычитание $D0$: $\Sigma_g^R$};
+\node[box, right=of res] (delta) {Доменные остатки $\Delta D_S$};
+\node[box, below=of delta] (basis) {Базис $\mathcal{B}=D0\cup\Delta D_S$};
+\draw[arr] (domains) -- (cov);
+\draw[arr] (cov) -- (core);
+\draw[arr] (cov) -- (res);
+\draw[arr] (core) -- (delta);
+\draw[arr] (res) -- (delta);
+\draw[arr] (delta) -- (basis);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{Алгоритм вычисления:}
+
+\begin{enumerate}
+    \item \textbf{Сбор ковариаций активаций:} На отводном слое $l^*$ собираются матрицы ковариации для каждого домена:
+    \begin{equation}
+    \Sigma_g = \frac{1}{N_g} \sum_{t=1}^{N_g} (h_t^g - \bar{h}^g)(h_t^g - \bar{h}^g)^T \in \mathbb{R}^{d \times d}
+    \end{equation}
+    
+    \item \textbf{Извлечение инварианта центрального синтаксиса ($D0$):} Формируется усредненная ковариация $\Sigma_{\text{mean}} = \frac{1}{|G|} \sum_{g=1}^{|G|} \Sigma_g$. Через спектральное разложение (SVD) извлекаются первые $k_0$ главных векторов, задающие ортонормированное ядро $D0$.
+    
+    \item \textbf{Извлечение специализированных словарей ($\Delta D_S$):} Для каждого домена вычисляется остаточная матрица ковариации, из которой ортогональной проекцией полностью удалено влияние ядра $D0$:
+    \begin{equation}
+    \Sigma_g^R = (I - P_{D0}) \cdot \Sigma_g \cdot (I - P_{D0})^T, \quad \text{где } P_{D0} = D0 \cdot D0^T
+    \end{equation}
+    Через SVD-разложение $\Sigma_g^R = U_g \Lambda_g U_g^T$ отбираются топ-$k_s$ векторов.
+    
+    \item \textbf{Формирование Замороженного Базиса $\mathcal{B}$:}
+    \begin{equation}
+    \mathcal{B} = D0 \cup \left( \bigcup_{g \in G} \Delta D_{S, g} \right) = \{d_1, d_2, \dots, d_M\} \subset \mathbb{R}^d
+    \end{equation}
+    Все векторы нормируются: $\|d_k\|_2 = 1$. Этот базис фиксируется как универсальная координатная сетка.
+\end{enumerate}
+
+\section{Этап II: Каузально-Интервенционная Верификация (Causal Patching)}
+
+Каждый вектор базиса $d_k \in \mathcal{B}$ проверяется на функциональную действенность с помощью двух противоположных математических инъекций в нейросеть.
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=0.9cm and 1.2cm,
+    box/.style={draw, rounded corners, align=center, minimum height=0.8cm, text width=5.0cm, fill=secondarycolor},
+    arr/.style={->, >=stealth, thick}
+]
+\node[box] (v) {Вектор базиса $d_k$};
+\node[box, below left=of v] (inj) {Causal Injection\\$h_t\leftarrow h_t+\alpha d_k$};
+\node[box, below right=of v] (abl) {Causal Ablation\\$h_t\leftarrow h_t-(d_k^T h_t)d_k$};
+\node[box, below=of inj] (inc) {Рост вероятности целевых токенов\\$P(y_{target})\rightarrow \mathrm{MAX}$};
+\node[box, below=of abl] (dec) {Падение точности в целевом контексте\\$\mathcal{L}_{task}\rightarrow \mathrm{RISE}$};
+\draw[arr] (v) -- (inj);
+\draw[arr] (v) -- (abl);
+\draw[arr] (inj) -- (inc);
+\draw[arr] (abl) -- (dec);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item \textbf{Causal Injection (Инъецирование):} В нейтральный контекст на слое $l^*$ искусственно внедряется вектор: $h_t \leftarrow h_t + \alpha \cdot d_k$. Вектор признается каузально активным, если смещение логитов выходного слоя $W_{\text{unembed}}$ приводит к статистически значимому скачку вероятности конкретной группы токенов.
+    \item \textbf{Causal Ablation (Абляционный вычет):} В контексте, где данный вектор естественным образом активирован, производится его зануление: $h_t \leftarrow h_t - (d_k^T h_t)d_k$. Вектор подлежит сохранению в базисе, только если его вычитание приводит к каузальному изменению поведения модели ($\Delta \mathcal{L}_{\text{task}} > \tau$).
+\end{enumerate}
+
+\section{Этап III: Редукция Задачи и Построение Семантического Графа $G_T$}
+
+При получении downstream-задачи $T$ модель генерирует последовательность активаций $H_T = \{h_1, h_2, \dots, h_N\} \subset \mathbb{R}^d$. 
+
+Каждый вектор раскладывается по замороженному базису: $h_t = \sum_{k=1}^M c_{t,k} \cdot d_k + r_t$, где $c_{t,k} = h_t^T d_k$.
+
+\subsection*{А. Семантическая Фильтрация (Pruning)}
+Универсальный словарь сжимается до функционального семантического словаря, специфичного для задачи $\mathcal{V}_T \subset \mathcal{B}$:
+
+\begin{equation}
+\mathcal{V}_T = \left\{ d_k \in \mathcal{B} \;\middle|\; \frac{1}{N} \sum_{t=1}^N |h_t^T d_k| > \tau_E \;\;\land\;\; \Delta \mathcal{L}_T(d_k) > \tau_L \right\}
+\end{equation}
+
+Векторы с низкой энергией проекции и нулевым каузальным влиянием отбрасываются.
+
+\subsection*{Б. Наложение Семантических Связей (Edge Induction)}
+Для превращения набора векторов $\mathcal{V}_T$ в \textbf{Ориентированный Семантический Граф $G_T = (\mathcal{V}_T, E_T, W)$} между узлами $d_i$ и $d_j$ рассчитываются два типа связей:
+
+\begin{enumerate}
+    \item \textbf{Синхронная коактивация (Synchronic Co-activation):}
+    \begin{equation}
+    W_{ij}^{\text{co}} = \frac{\sum_{t=1}^N (c_{t,i} - \bar{c}_i)(c_{t,j} - \bar{c}_j)}{\sqrt{\sum_t (c_{t,i} - \bar{c}_i)^2 \sum_t (c_{t,j} - \bar{c}_j)^2}}
+    \end{equation}
+    
+    \item \textbf{Диахронический каузальный поток во времени (Diachronic Causal Flow $t \to t+1$):}
+    \begin{equation}
+    W_{i \to j}^{\text{causal}} = \frac{1}{N-1} \sum_{t=1}^{N-1} c_{t,i} \cdot c_{t+1, j}
+    \end{equation}
+\end{enumerate}
+
+Итоговый вес направленного ребра $e_{ij}$ вычисляется как: $W_{ij} = \alpha W_{ij}^{\text{co}} + \beta W_{i \to j}^{\text{causal}}$.
+
+\section{Автоматическая Аннотация Узлов (NodeAnnotator)}
+
+Для превращения абстрактных векторов в человекочитаемую карту знаний используется 3-этапный модуль аннотации:
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=0.8cm and 0.8cm,
+    box/.style={draw, rounded corners, align=center, minimum height=0.8cm, text width=5.5cm, fill=secondarycolor},
+    arr/.style={->, >=stealth, thick}
+]
+\node[box] (v) {Вектор базиса $d_k$};
+\node[box, below left=of v] (u) {1. Direct Unembed Projection\\$W_{unembed}d_k$\\Top-Tokens (Logits)};
+\node[box, below right=of v] (s) {2. Max-Activating Snippets\\контексты из $D_T$ с max\\$h_t^T d_k$};
+\node[box, below=1.1cm of v, yshift=-2.2cm] (llm) {3. LLM-Autointerpreter\\«Синтезируй краткую метку понятия (1--3 слова) на основе токенов и контекстов»};
+\node[box, below=of llm] (lab) {Человекочитаемая метка: $Label_k$};
+\draw[arr] (v) -- (u);
+\draw[arr] (v) -- (s);
+\draw[arr] (u) -- (llm);
+\draw[arr] (s) -- (llm);
+\draw[arr] (llm) -- (lab);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item \textbf{Direct Unembedding Projection:} Вычисляются топ-токены словаря через прямую проекцию на выходную матрицу: $z_k = W_{\text{unembed}} \cdot d_k$.
+    \item \textbf{Max-Activating Dataset Snippets:} Выделяются текстовые контексты из обучающей выборки, вызвавшие максимум амплитуды проекции $c_{t,k}$.
+    \item \textbf{LLM-Autointerpreter:} Легковесный интерпретатор генерирует строгий JSON с человекочитаемой меткой (например, \texttt{Label: "Условие сходимости интеграла"}).
+\end{enumerate}
+
+\section{Этап IV: Динамическое Расширение Памяти при Изменении Внешнего Мира (OOD Induction)}
+
+При появлении принципиально новых явлений во внешнем мире (Concept Drift) скрытые состояния $h_t$ перестают раскладываться без потерь по замороженному базису $\mathcal{B}$.
+
+\subsection*{1. Детектирование Out-Of-Distribution (OOD)}
+Определяется критический уровень энергии вектора невязки (остатка):
+
+\begin{equation}
+r_t = h_t - \sum_{k=1}^M (h_t^T d_k) d_k \quad \implies \quad \text{Критерий OOD: } \frac{\|r_t\|_2^2}{\|h_t\|_2^2} > \tau_{\text{OOD}}
+\end{equation}
+
+При обнаружении устойчивого накопления невязок векторы $r_t$ помещаются в кольцевой буфер $R \in \mathbb{R}^{P \times d}$.
+
+\begin{center}
+\begin{tikzpicture}[
+    node distance=0.55cm,
+    box/.style={draw, rounded corners, align=center, minimum height=0.7cm, text width=7.0cm, fill=secondarycolor},
+    arr/.style={->, >=stealth, thick}
+]
+\node[box] (h) {Поток активаций $h_t$};
+\node[box, below=of h] (p) {Проекция на $\mathcal{B}$};
+\node[box, below=of p] (r) {Вектор остатка $r_t$};
+\node[align=center, below=0.35cm of r] (q) {если $\|r_t\|^2/\|h_t\|^2>\tau_{OOD}$};
+\node[box, below=0.35cm of q] (buf) {Буфер невязок $R=\{r_1,\ldots,r_P\}$};
+\node[box, below=of buf] (svd) {Top-1 SVD Component};
+\node[box, below=of svd] (gs) {Ортогонализация Грамма--Шмидта};
+\node[box, below=of gs] (new) {Новый узел базиса $d_{M+1}$};
+\node[box, below=of new] (edge) {Вычисление ребер $W_{M+1\leftrightarrow k}$};
+\draw[arr] (h) -- (p); \draw[arr] (p) -- (r); \draw[arr] (r) -- (q);
+\draw[arr] (q) -- (buf); \draw[arr] (buf) -- (svd); \draw[arr] (svd) -- (gs);
+\draw[arr] (gs) -- (new); \draw[arr] (new) -- (edge);
+\end{tikzpicture}
+\end{center}
+
+\subsection*{2. Алгоритм Индукции Нового Элемента и Связей}
+\begin{enumerate}
+    \item \textbf{Выделение геометрии:} На основе буфера невязок $R$ через SVD извлекается главный вектор направления: $d_{\text{raw}} = \text{Top-1 SVD}(R)$.
+    \item \textbf{Ортогонализация Грамма--Шмидта:} Выполняется вычитание проекций на все ранее имевшиеся векторы базиса для исключения дублирования смыслов:
+    \begin{equation}
+    d_{\text{orth}} = d_{\text{raw}} - \sum_{k=1}^M (d_{\text{raw}}^T d_k) d_k, \quad d_{M+1} = \frac{d_{\text{orth}}}{\|d_{\text{orth}}\|_2}
+    \end{equation}
+    \item \textbf{Расширение Базиса:} $\mathcal{B}_{\text{new}} = \mathcal{B} \cup \{d_{M+1}\}$.
+    \item \textbf{Интеграция ребер в Граф $G_T$:} Модуль \texttt{DynamicEdgeIntegrator} на основе буферных контекстов рассчитывает синхронные и причинные связи нового узла $M+1$ с действующими узлами графа $G_T$.
+\end{enumerate}
+
+\section{Программная реализация: модуль \texttt{AssociativeMemoryEngine}}
+
+Приведенный ниже код на Python демонстрирует полный конвейер обнаружения OOD, индукции новых элементов и динамического построения ребер графа:
+
+\begin{lstlisting}
+import torch
+import torch.nn as nn
+import networkx as nx
+
+class AssociativeMemoryEngine(nn.Module):
+    def __init__(self, frozen_basis: torch.Tensor, ood_threshold: float = 0.2, 
+                 buffer_capacity: int = 100, device: str = "cuda"):
+        super().__init__()
+        self.device = device
+        self.ood_threshold = ood_threshold
+        self.capacity = buffer_capacity
+        
+        # Нормализованный асемантический базис B [M, d]
+        self.B = nn.Parameter(
+            torch.nn.functional.normalize(frozen_basis, p=2, dim=1).to(device),
+            requires_grad=False
+        )
+        self.residual_buffer = []
+
+    @torch.no_grad()
+    def process_step(self, h_t: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        """Принимает активацию h_t [batch, d]
+        Возвращает коэффициенты C [batch, M] и векторы остатков R_t [batch, d]
+        """
+        # 1. Проекция на базис
+        C = torch.matmul(h_t, self.B.T)          # [batch, M]
+        h_reconstructed = torch.matmul(C, self.B) # [batch, d]
+        
+        # 2. Остаточная ошибка
+        R_t = h_t - h_reconstructed               # [batch, d]
+        
+        # 3. OOD анализ
+        energy_h = torch.norm(h_t, dim=-1) ** 2
+        energy_r = torch.norm(R_t, dim=-1) ** 2
+        ratio = energy_r / (energy_h + 1e-8)
+        
+        ood_mask = ratio > self.ood_threshold
+        if torch.any(ood_mask):
+            for r_vec in R_t[ood_mask]:
+                self.residual_buffer.append(r_vec.cpu())
+                
+        return C, R_t
+
+    @torch.no_grad()
+    def try_induction_new_item(self, graph: nx.DiGraph, edge_threshold: float = 0.15) -> tuple[nx.DiGraph, int | None]:
+        """Анализирует буфер остатков. 
+        При достижении лимита строит вектор d_{M+1} и интегрирует его в G_T.
+        """
+        if len(self.residual_buffer) < self.capacity:
+            return graph, None
+            
+        # Сбор матрицы остатков [P, d]
+        R_mat = torch.stack(self.residual_buffer[:self.capacity]).to(self.device)
+        
+        # 1. Извлечение главного направления (Top-1 SVD)
+        _, _, Vh = torch.linalg.svd(R_mat, full_matrices=False)
+        d_raw = Vh[0] # [d]
+        
+        # 2. Ортогонализация Грама-Шмидта относительно B
+        proj = torch.matmul(self.B, d_raw)
+        d_orth = d_raw - torch.matmul(proj, self.B)
+        norm_val = torch.norm(d_orth)
+        
+        if norm_val < 1e-5:
+            self.residual_buffer.clear()
+            return graph, None
+            
+        d_new = (d_orth / norm_val).unsqueeze(0) # [1, d]
+        
+        # 3. Расширение базиса B
+        new_node_id = self.B.shape[0]
+        self.B = nn.Parameter(torch.cat([self.B.data, d_new], dim=0), requires_grad=False)
+        
+        # 4. Вычисление связей для нового узла в графе G_T
+        active_nodes = list(graph.nodes())
+        graph.add_node(new_node_id, label=f"OOD_Concept_{new_node_id}")
+        
+        if active_nodes:
+            c_new = torch.matmul(R_mat, d_new.T).squeeze() # [P]
+            active_basis = self.B[active_nodes] # [M_act, d]
+            C_act = torch.matmul(R_mat, active_basis.T) # [P, M_act]
+            
+            # Корреляция коактивации
+            c_new_c = c_new - c_new.mean()
+            C_act_c = C_act - C_act.mean(dim=0, keepdim=True)
+            cov = torch.matmul(c_new_c.unsqueeze(0), C_act_c).squeeze(0) / (self.capacity - 1)
+            std_prod = (c_new.std() + 1e-8) * (C_act.std(dim=0) + 1e-8)
+            W_corr = cov / std_prod
+            
+            # Добавление ребер
+            W_np = W_corr.cpu().numpy()
+            for i, target_node in enumerate(active_nodes):
+                if abs(W_np[i]) > edge_threshold:
+                    graph.add_edge(target_node, new_node_id, weight=float(W_np[i]))
+                    graph.add_edge(new_node_id, target_node, weight=float(W_np[i]))
+                    
+        self.residual_buffer.clear()
+        return graph, new_node_id
+\end{lstlisting}
+
+\subsection*{Пример интеграции: \texttt{TransformerMemoryPipeline}}
+
+Следующий упрощенный модуль иллюстрирует полный путь считывания состояния, двухэтапный запуск D-Context и обратную реинтеграцию латентного состояния памяти в последующие слои Transformer:
+
+\begin{lstlisting}
+class TransformerMemoryPipeline(nn.Module):
+    def __init__(
+        self,
+        transformer_layers: nn.ModuleList,
+        frozen_basis: torch.Tensor,
+        extract_idx: int,
+        inject_idx: int,
+        device: str = "cuda",
+    ):
+        super().__init__()
+        self.layers = transformer_layers
+        self.extract_idx = extract_idx
+        self.inject_idx = inject_idx
+        self.device = device
+
+        self.B = nn.Parameter(
+            torch.nn.functional.normalize(
+                frozen_basis, p=2, dim=1
+            ).to(device),
+            requires_grad=False,
+        )
+
+        # D-Context
+        self.turn_counter = 0
+        self.d_context_vector = torch.zeros(
+            frozen_basis.shape[1], device=device
+        )
+
+    def start_new_dialogue(self):
+        self.turn_counter = 0
+        self.d_context_vector.zero_()
+
+    def forward(self, hidden_states: torch.Tensor) -> torch.Tensor:
+        self.turn_counter += 1
+        delta_h = None
+
+        for idx, layer in enumerate(self.layers):
+            # Input Pole: извлечение состояния
+            if idx == self.extract_idx:
+                h_extract = hidden_states.clone()
+                coeff = torch.matmul(h_extract, self.B.T)
+                h_proj = torch.matmul(coeff, self.B)
+
+                # T1: только инициализация D-Context
+                if self.turn_counter == 1:
+                    self.d_context_vector = h_proj.mean(dim=0)
+                    delta_h = torch.zeros_like(hidden_states)
+                else:
+                    # T2+: упрощенная модель возврата памяти
+                    self.d_context_vector = (
+                        0.85 * self.d_context_vector
+                        + 0.15 * h_proj.mean(dim=0)
+                    )
+                    delta_h = (
+                        h_proj * 0.10
+                        + self.d_context_vector * 0.05
+                    )
+
+            hidden_states = layer(hidden_states)
+
+            # Output Pole: реинтеграция в Residual Stream
+            if idx == self.inject_idx and delta_h is not None:
+                hidden_states = hidden_states + delta_h
+
+        return hidden_states
+\end{lstlisting}
+
+Код выше является иллюстрацией интерфейса, а не окончательной реализацией retrieval-механизма: в полной архитектуре $\Delta h_t$ должен формироваться ассоциативной памятью на основе запроса, D-Context и активного графа $G_T$.
+
+\iffalse
+\section{Аналитические предпочтения для решения задачи}
+
+Если бы задача стояла передо мной, оптимизация исследования строилась бы следующим образом:
+
+\begin{enumerate}
+    \item \textbf{Замена статичного слоя на траектории (Layer Trajectories):} не анализировать слой 45 изолированно. Вместо этого кодировать «единицу словаря» как векторное смещение между слоями:
+    \[
+    \Delta h = h^{(late)} - h^{(early)}.
+    \]
+    Изучение того, как меняется вектор при прохождении блока слоев (например, с 40 по 50), дает значительно более устойчивые вычислительные единицы, чем статическая точка.
+
+    \item \textbf{Обязательное внедрение Causal Patching на Этапе I:} не откладывать каузальные интервенции. При обнаружении кандидата в элементы словаря $d_i$ следует сразу провести тест: подмешать (patch) вектор $d_i$ в нейтральный контекст другой «Мысли» и проверить, вызывает ли это предсказуемый сдвиг в выходных логитах или активациях последующих слоев. Если влияние отсутствует — отбрасывать кандидат как «пассивный шум», даже если у него идеальная фракция объясненной дисперсии (Reconstruction Error).
+
+    \item \textbf{Использование non-Euclidean Geometry (TDA и Manifold Learning):} отказаться от стандартного евклидового PCA в пользу персистентных гомологий (Topological Data Analysis) или Diffusion Maps. Это позволит находить топологические «дыры», циклы и нелинейные подпространства, которые невозможно выявить через традиционные матрицы ковариации $\Sigma_k$.
+
+    \item \textbf{Гибкий рейтинг вместо жесткого сложения} $(D_S = D0 \cup \Delta D_S)$: специализированный домен часто меняет контекстуальный смысл базовых элементов. Вместо жесткой заморозки $D0$ предпочтительнее использовать мягкий механизм смешивания
+    \[
+    h \approx \alpha \cdot D0(h) + (1-\alpha) \cdot \Delta D_S(h),
+    \]
+    где $\alpha$ — контекстный коэффициент, позволяющий доменным элементам модифицировать базовые.
+\end{enumerate}
+
+\subsection*{Метрика, индуцированная структурой данных}
+
+Для устранения зависимости от заранее заданной евклидовой геометрии предлагается строить граф соседства (ANN) на основе стартовой меры сходства $S(h_i,h_j)$, а затем для каждого найденного кластера $C_k$ рассчитывать локальную автокорреляцию $R_k$ и ковариацию $\Sigma_k$.
+
+Собственные векторы и значения матрицы ковариации
+\[
+\Sigma_k = Q_k \Lambda_k Q_k^T
+\]
+задают \textbf{локальную геометрию}. Расстояние между векторами внутри кластера оценивается с учетом формы и ориентации самого «облака» активаций — фактически как локальный аналог расстояния Махаланобиса.
+
+У этого подхода сохраняются два важных ограничения:
+
+\begin{itemize}
+    \item \textbf{Первичный шаг отбора (Bootstrapping problem):} чтобы вычислить локальные матрицы $R_k$ и $\Sigma_k$, система сначала должна выделить группу векторов $C_k$. Если стартовый граф строится по косинусному сходству
+    \[
+    S(h_i,h_j)=\frac{h_i \cdot h_j}{\|h_i\|\,\|h_j\|},
+    \]
+    то первый шаг остается линейным/угол-ориентированным оператором и может ошибочно объединять точки, находящиеся на разных «витках» нелинейного многообразия.
+    \item \textbf{Локальная линейность (Local Linearity):} использование $\Sigma_k$ неявно предполагает, что внутри отдельного кластера $C_k$ распределение данных можно приблизить линейным подпространством. Если кривизна пространства активаций высока даже на малых масштабах, локальная ковариация будет «размазывать» настоящую топологию.
+\end{itemize}
+
+Чтобы пространство активаций само определяло собственную геометрию, практический эксперимент целесообразно усилить двумя механизмами:
+
+\begin{enumerate}
+    \item \textbf{Диффузионные метрики (Diffusion Maps / Kernel PCA):} вместо классической ковариации считать вероятности перехода между активациями на основе граф-лапласиана. Это позволяет измерять расстояние не по прямой и не по углам, а вдоль реального многообразия данных (geodesic distance).
+    \item \textbf{Метрическое обучение без учителя (Self-supervised Metric Learning):} обучать нейронный оператор расстояния, который определяет близость векторов не по геометрическому углу между ними, а по функциональной взаимозаменяемости в контексте Transformer.
+\end{enumerate}
+
+\subsection*{Диффузионные метрики (Diffusion Maps \& Graph Laplacians)}
+
+Стандартное косинусное сходство $S(h_i,h_j)$ видит только прямое скалярное произведение. Диффузионные карты измеряют расстояние вдоль самого нелинейного многообразия: две точки считаются близкими, если между ними существует много высоковероятных путей через другие промежуточные векторы, даже если прямое косинусное расстояние между ними велико из-за изгиба многообразия.
+
+\subsubsection*{Точный алгоритм для активаций Transformer}
+
+\begin{enumerate}
+    \item \textbf{Локальное связывание (k-NN Graph):} для каждого вектора $h_i$ среди $N$ векторов находятся $k$ ближайших соседей (например, $k=30\ldots50$) с использованием эффективных индексных структур HNSW / FAISS.
+    \item \textbf{Адаптивное ядро Гаусса (Self-Tuning Kernel):} вместо глобальной константы $\sigma$ вычисляется локальный масштаб $\sigma_i$ для каждой точки. Графовое ребро задается как
+    \[
+    W_{ij}=\exp\!\left(-\frac{\|h_i-h_j\|^2}{\sigma_i\sigma_j}\right).
+    \]
+    \item \textbf{Нормировка и оператор Маркова (Diffusion Matrix):}
+    \[
+    D_{ii}=\sum_j W_{ij},\qquad
+    W_{ij}^{(\alpha)}=\frac{W_{ij}}{D_{ii}^{\alpha}D_{jj}^{\alpha}},
+    \qquad
+    P_{ij}=\frac{W_{ij}^{(\alpha)}}{\sum_k W_{ik}^{(\alpha)}}.
+    \]
+    Обычно $\alpha=1$.
+    \item \textbf{Собственное разложение и отображение:} находятся первые $m$ правых собственных векторов $\{\psi_1,\dots,\psi_m\}$ матрицы $P$ и собственные значения $1=\lambda_0>\lambda_1\geq\lambda_2\cdots\geq\lambda_m$. Вектор отображается как
+    \[
+    \Psi_t(h_i)=\left(\lambda_1^t\psi_1(i),\lambda_2^t\psi_2(i),\dots,\lambda_m^t\psi_m(i)\right).
+    \]
+    \item \textbf{Новая диффузионная метрика:}
+    \[
+    D_t(h_i,h_j)^2
+    =\|\Psi_t(h_i)-\Psi_t(h_j)\|^2
+    =\sum_{k=1}^{m}\lambda_k^{2t}\left(\psi_k(i)-\psi_k(j)\right)^2.
+    \]
+\end{enumerate}
+
+\subsubsection*{Вычислительная реализуемость}
+
+Для масштаба $N=10^8$ точное собственное разложение плотной матрицы $10^8\times10^8$ невозможно. Практический вариант — Landmark / Nyström Diffusion Maps:
+
+\begin{enumerate}
+    \item из $10^8$ векторов сэмплируется $L\approx50\,000\ldots100\,000$ опорных векторов (landmarks) методом Farthest Point Sampling;
+    \item матрица диффузии рассчитывается только для размера $L\times L$;
+    \item остальные векторы проецируются в диффузионное пространство методом Nyström extension.
+\end{enumerate}
+
+Первоначальная оценка затрат для этого масштаба — построение HNSW-индекса и Nyström Diffusion порядка 40--80 H100-часов.
+
+\subsection*{Метрическое обучение без учителя (Self-supervised Metric Learning)}
+
+Вместо геометрии пространственных точек обучается нейронный оператор расстояния $d_\theta(h_i,h_j)$, учитывающий специфику работы самого Transformer: \textit{векторы считаются близкими, если они вызывают одинаковое поведение модели в будущем или одинаково реагируют на контекст}.
+
+\subsubsection*{Точный алгоритм (Contrastive Contextual Metric)}
+
+\begin{enumerate}
+    \item \textbf{Формирование позитивных и негативных пар без человека:}
+    \begin{itemize}
+        \item \textbf{Позитивная пара} $(h_i,h_i^+)$: векторы активаций одной и той же семантической позиции, полученные при подмешивании незначительного шума в входной текст, или активации двух соседних позиций, связанных высокой силой внимания (Attention Weight $>\tau$).
+        \item \textbf{Негативная пара} $(h_i,h_j^-)$: векторы из совершенно разных «Мыслей» $M_a$ и $M_b$ или из позиций с нулевым Attention-связыванием.
+    \end{itemize}
+    \item \textbf{Обучение проектора метрики (Metric Encoder):}
+    \[
+    g_\theta:\mathbb{R}^{12288}\rightarrow\mathbb{R}^{z},
+    \qquad z\approx512\ldots1024.
+    \]
+    \item \textbf{Функция потерь (InfoNCE / Soft-Nearest Neighbors Loss):}
+    \[
+    \mathcal{L}
+    =-\log
+    \frac{\exp\left(\operatorname{sim}(g_\theta(h_i),g_\theta(h_i^+))/\tau\right)}
+    {\sum_j\exp\left(\operatorname{sim}(g_\theta(h_i),g_\theta(h_j))/\tau\right)}.
+    \]
+    \item \textbf{Формирование функциональной метрики:}
+    \[
+    d_{\text{functional}}(h_i,h_j)
+    =1-\cos\left(g_\theta(h_i),g_\theta(h_j)\right).
+    \]
+\end{enumerate}
+
+Для первоначально рассматривавшегося масштаба $N=10^8$ сырые данные оцениваются примерно в 2.46 ТБ. Модель $g_\theta$ имеет порядка 10--20 млн параметров; первоначальная оценка обучения составляет 15--30 H100-часов. Результатом становится метрика, разделяющая кластеры не по геометрическому расположению, а по \textbf{вычислительной роли активаций внутри Transformer}.
+
+\subsubsection*{Сравнение методов для этапа I}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{3.0cm} p{5.7cm} p{5.7cm}}
+\toprule
+\textbf{Параметр} & \textbf{Диффузионные карты (Nyström Diffusion)} & \textbf{Self-Supervised Metric ($g_\theta$)} \\
+\midrule
+Что ищет & Нелинейную топологическую связность многообразия & Функциональную/контекстную взаимозаменяемость \\
+Параметры & Беспараметрический метод (спектральный анализ) & Параметрическая нейросеть \\
+Сложность & $\mathcal{O}(N\cdot L+L^3)$ & $\mathcal{O}(N\cdot\text{epochs})$ \\
+Затраты (H100-h) & 40--80 часов & 15--30 часов \\
+Идеальная роль & Замена косинусного ANN-графа на этапе первичной кластеризации & Формирование фундаментального оператора сходства перед запуском ICA / SAE \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Уточнение масштаба: $N=10^6$ векторов}
+
+Если для построения базового универсального словаря $D0$ достаточно $N=1\,000\,000$ векторов вместо $10^8$, вычислительная сложность резко уменьшается.
+
+\paragraph{Диффузионные метрики.}
+\begin{itemize}
+    \item Построение HNSW-индекса для $10^6$ векторов размерности 12\,288 в FAISS требует около 48 ГБ GPU-памяти.
+    \item Для Nyström Sampling достаточно $L=10\,000\ldots20\,000$ опорных векторов.
+    \item Спектральный анализ матрицы $L\times L$ занимает несколько минут на GPU.
+    \item Оценка времени построения диффузионной карты — 15--30 минут, порядка 0.5 H100-часа вместо 40--80 часов.
+\end{itemize}
+
+\paragraph{Self-Supervised Metric Learning ($g_\theta$).}
+\begin{itemize}
+    \item $10^6$ векторов размерности 12\,288 в формате BF16 занимают около 24.5 ГБ.
+    \item Обучение MLP-проектора $g_\theta$ ($12\,288\rightarrow512$) на $10^6$ пар занимает порядка 10--15 минут на одной H100.
+    \item Оценка затрат — около 0.25 H100-часа.
+\end{itemize}
+
+Такой масштаб позволяет строить точный $k$-NN с использованием диффузионного расстояния или обученного проектора на этапе первичной кластеризации, выполнять 5--10 итеративных прогонов с различными гиперпараметрами и быстро переходить к остаткам
+\[
+r=h-\hat{h}
+\]
+для специализированных словарей $D_S$.
+
+\subsection*{Уточнение единицы данных: $N=10^6$ «Мыслей»}
+
+Одна «Мысль» $M$ — это не отдельный вектор $h_i\in\mathbb{R}^{12288}$, а полная матрица активаций для последовательности длиной $L$ на фиксированном слое. Например, при $L=100\,000$:
+\[
+M_k=H^{(l)}\in\mathbb{R}^{100000\times12288}.
+\]
+
+Размер одной такой «Мысли» при BF16:
+\[
+100\,000\times12\,288\times2\text{ байта}\approx2.4576\text{ ГБ}.
+\]
+
+Полный объем для $10^6$ «Мыслей» составляет примерно
+\[
+10^6\times2.4576\text{ ГБ}=2.4576\text{ ПБ}
+\]
+сырых активаций. Поэтому первичный этап отбора должен опираться на потоковую обработку (Streaming/Online Data Pipeline), а не на хранение полного массива активаций.
+
+\subsubsection*{Landmark Diffusion Maps для $10^6$ «Мыслей»}
+
+\begin{enumerate}
+    \item \textbf{Потоковый сэмплинг Anchor-векторов (Online Landmark Selection):} из каждой Мысли $M_k$ извлекается 10--50 наиболее информативных векторов на основе дисперсии активаций или градиентной нормы. Из $10^6$ Мыслей формируется порядка $L\approx10^7$ Landmark-векторов (около 245 ГБ).
+    \item \textbf{Диффузионный оператор на Landmarks:} на этих Landmark-векторах с помощью HNSW строится $k$-NN граф, вычисляется Гауссово ядро с адаптивным масштабом $\sigma_i$, а методом Nyström извлекаются первые $m$ собственных векторов матрицы Маркова $P$.
+    \item \textbf{Out-of-Core Projection:} каждая новая Мысль при генерации проецируется в полученное диффузионное пространство «на лету» без сохранения всех 2.46 ПБ на диск.
+\end{enumerate}
+
+\subsubsection*{Self-Supervised Metric ($g_\theta$) на $10^6$ «Мыслях»}
+
+Пары образуются внутри Мыслей: позитивная пара — векторы $h_t$ и $h_{t+\delta}$ внутри одной Мысли, находящиеся под сильным Attention-вниманием; негативная пара — вектор $h_t$ из Мысли $M_a$ и вектор $h_k$ из другой Мысли $M_b$. Сеть $g_\theta$ обучается потоково стандартным SGD/Adam. Для обучения достаточно прокачать порядка 1--2\% от всех $10^6$ Мыслей, после чего сеть применяется к оставшимся.
+
+\subsubsection*{Оценка ресурсов для $10^6$ «Мыслей»}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{3.0cm} p{5.4cm} p{3.4cm} p{3.0cm}}
+\toprule
+\textbf{Этап} & \textbf{Метод} & \textbf{Объем прокачиваемых данных} & \textbf{Затраты (H100-hours)} \\
+\midrule
+I. Сэмплинг \& SSL & Обучение $g_\theta$ на подмножестве Мыслей & $\sim50\,000$ Мыслей ($\approx120$ ТБ) & 12--20 часов \\
+II. Landmark Diffusion & Nyström Diffusion на $10^7$ опорных векторах & $10^7$ векторов ($\approx245$ ГБ) & 8--15 часов \\
+III. Извлечение $D0$ & SAE / ICA / VQ на диффузионной метрике & Фильтрованный поток векторов & 30--50 часов \\
+\midrule
+ИТОГО & Полный Stage I для $10^6$ Мыслей & Потоковый доступ к 2.46 ПБ & $\sim50\ldots85$ H100-hours \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Семантически однородные доменные группы}
+
+Если данные изначально разделены на множество семантически однородных доменов — например, все романы одного автора, детективы другого автора, математический анализ, живопись Ван Гога и т.д. — правильнее анализировать не шумящие мгновенные активации, а \textbf{устойчивые аттракторы и траектории мышления модели} внутри каждой группы.
+
+Пусть существует $G$ тематических групп ($G\approx100\ldots1000$), внутри каждой группы $g$ содержится корпус контекстов $M_g$. Если одна группа порождает примерно 1000 последовательностей по 100\,000 токенов, сырой объем активаций группы составляет
+\[
+\operatorname{Volume}(g)
+=1000\times100000\times12288\times2\text{ байта (BF16)}
+\approx2.45\text{ ТБ}.
+\]
+
+Хранить этот объем не требуется. Так как группа семантически однородна, пространство ее активаций лежит на низкоразмерном многообразии (Low-dimensional Manifold). Для каждой группы достаточно на лету накопить компактный «геометрический паспорт домена»:
+
+\begin{enumerate}
+    \item средний вектор группы
+    \[
+    \mu_g=\frac{1}{N_g}\sum_{i\in g}h_i\in\mathbb{R}^{12288};
+    \]
+    \item внутригрупповую матрицу ковариации
+    \[
+    \Sigma_g
+    =\frac{1}{N_g}\sum_{i\in g}(h_i-\mu_g)(h_i-\mu_g)^T
+    \in\mathbb{R}^{12288\times12288}.
+    \]
+\end{enumerate}
+
+Для BF32 одна такая матрица занимает порядка 300 МБ. Для 1000 групп весь набор геометрических паспортов занимает около 300 ГБ и помещается в память одного сервера.
+
+\subsubsection*{Двухуровневый измерительный пайплайн}
+
+\paragraph{Шаг 1. Локальная интеграция внутри группы (In-Group Analysis).}
+Для каждой группы $g$ на основе $\Sigma_g$ вычисляется локальный базис главных направлений через SVD/PCA или SAE:
+\[
+\Sigma_g=V_g\Lambda_gV_g^T.
+\]
+
+Направления $V_{g,k}$ показывают, какие изменения пространства 12\,288 использует модель внутри конкретного домена. Расстояние между двумя векторами $h_i,h_j$ внутри одной группы измеряется через локальную метрику Махаланобиса:
+\[
+d_g(h_i,h_j)^2=(h_i-h_j)^T\Sigma_g^{-1}(h_i-h_j).
+\]
+
+\paragraph{Шаг 2. Межгрупповая диффузионная метрика (Inter-Group Diffusion).}
+Чтобы построить универсальный словарь $D0$, измеряется расстояние между самими группами (доменами). Для Гауссовых пространств используется расстояние Вассерштейна (Wasserstein / Earth Mover's Distance):
+\[
+W_2(g_1,g_2)^2
+=\|\mu_1-\mu_2\|^2
++\operatorname{Tr}\!\left(
+\Sigma_1+\Sigma_2
+-2\left(\Sigma_1^{1/2}\Sigma_2\Sigma_1^{1/2}\right)^{1/2}
+\right).
+\]
+
+Далее:
+\begin{enumerate}
+    \item строится граф групп $G_{\text{domains}}$ размера $G\times G$, где вес ребра равен $W_2(g_a,g_b)$;
+    \item запускается Diffusion Maps по матрице Вассерштейна, что дает глобальный семантический ландшафт модели;
+    \item базовые элементы универсального словаря $D0$ извлекаются как \textbf{пересечение главных инвариантных подпространств}, присутствующих во всех группах одновременно;
+    \item элементы, присутствующие только в группе $g$ и отсутствующие в $D0$, образуют чистый доменный словарь $\Delta D_S$.
+\end{enumerate}
+
+\subsubsection*{Вычислительная реализуемость и оценка ресурсов}
+
+Групповая стратегия естественно параллелится: каждая группа обрабатывается независимо, а скрытые состояния $h$ считываются из памяти Transformer и сразу обновляют аккумулятор матрицы ковариации $\Sigma_g$ по онлайн-алгоритму, после чего сырые векторы удаляются из ОЗУ.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{p{3.0cm} p{5.1cm} p{3.3cm} p{3.2cm}}
+\toprule
+\textbf{Этап} & \textbf{Алгоритм} & \textbf{Затраты на 1 группу} & \textbf{Суммарные затраты (H100)} \\
+\midrule
+1. Инференс и сжатие & Генерация $h$ + онлайн-вычисление $\mu_g,\Sigma_g$ & $\sim3$--5 минут на H100 & $\sim50$--80 H100-hours \\
+2. Wasserstein \& Diffusion & Расстояние $W_2$ между 1000 группами + Diffusion Map & Неприменимо (глобально) & $\sim1$--2 H100-hours (в ОЗУ) \\
+3. Выделение $D0$ и $\Delta D_S$ & Поиск пересечения подпространств (SVD/SAE на $\Sigma_g$) & Неприменимо (глобально) & $\sim3$--5 H100-hours \\
+\midrule
+ИТОГО & Полный цикл извлечения внутреннего языка & & $\sim55$--88 H100-hours \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Преимущества такого подхода:
+\begin{enumerate}
+    \item \textbf{Истинная нелинейность без шума:} разбиение на семантические группы устраняет необходимость строить единый гигантский $k$-NN граф по всему шумящему пространству.
+    \item \textbf{Строгая математическая метрика:} расстояние Вассерштейна $W_2$ между локальными ковариациями $\Sigma_g$ дает геодезическую метрику на многообразии доменов без навязывания евклидовой структуры.
+    \item \textbf{Чистое выделение $D0$ и $\Delta D_S$:} позволяет четко разграничить общеязыковое инвариантное ядро $D0$ и уникальные паттерны конкретного автора или дисциплины $\Delta D_S$.
+\end{enumerate}
+
+\subsection*{Потоковое обновление ковариации: алгоритм Велфорда--Чана}
+
+При прямом forward-pass Transformer задача состоит в том, чтобы избежать сохранения гигантского массива активаций $h_i\in\mathbb{R}^d$ ($d=12288$) на диск или в RAM. Среднее $\mu_g$ и ковариация $\Sigma_g$ обновляются непосредственно в процессе генерации/прогона текста.
+
+Классическая формула ковариации
+\[
+\frac{1}{N}\sum_i(h_i-\mu)(h_i-\mu)^T
+\]
+численно неустойчива при потоковой обработке из-за накопления ошибок округления. Вместо нее используется онлайн-алгоритм обновления моментных матриц Велфорда--Чана (Welford / Chan algorithm). Вместо ковариации $\Sigma_g$ накапливается матрица сумм сопряженных отклонений $M2_g\in\mathbb{R}^{d\times d}$:
+\[
+\Sigma_g=\frac{1}{N_g-1}M2_g.
+\]
+
+\subsubsection*{Формула объединения двух батчей (Merge Step)}
+
+Пусть уже имеется статистика по $N_A$ векторам $(\mu_A,M2_A)$. В память поступает новый батч активаций $B$ из $N_B$ векторов со статистиками $(\mu_B,M2_B)$.
+
+\[
+N_{\text{new}}=N_A+N_B,
+\qquad
+\Delta=\mu_B-\mu_A\in\mathbb{R}^d,
+\]
+\[
+\mu_{\text{new}}
+=\mu_A+\Delta\cdot\frac{N_B}{N_{\text{new}}},
+\]
+\[
+M2_{\text{new}}
+=M2_A+M2_B
++(\Delta\otimes\Delta)\cdot
+\frac{N_A\cdot N_B}{N_{\text{new}}},
+\]
+где
+\[
+\Delta\otimes\Delta
+=\Delta\cdot\Delta^T
+\in\mathbb{R}^{d\times d}
+\]
+— внешнее векторное произведение (Outer Product).
+
+\fi
+\section{Архитектура 2-этапной системы}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.8cm and 1.0cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, fill=secondarycolor, align=center, text width=7.0cm] (stage1) {ЭТАП 1: Frozen Physical Basis\\Базис $\mathcal{B}=\{d_1,d_2,\dots,d_M\}$};
+    \node[draw, rounded corners, below=of stage1, align=center, text width=6.0cm] (tr) {Вход: задача $T$ + данные $D_T$\\$\downarrow$\\Transformer};
+    \node[draw, rounded corners, below=of tr, fill=secondarycolor, align=center, text width=7.0cm] (stage2) {ЭТАП 2: Semantic Graph Engine};
+    \node[draw, rounded corners, below left=0.9cm and -0.3cm of stage2, align=center, text width=4.3cm] (prune) {1. Фильтрация (Pruning)\\$E_T(d_k)<\tau$};
+    \node[draw, rounded corners, below right=0.9cm and -0.3cm of stage2, align=center, text width=4.3cm] (edges) {2. Связывание (Edge Induction)\\$A_{ij}=$ Causal / Attn Affinity};
+    \node[draw, rounded corners, below=1.0cm of stage2, yshift=-1.7cm, align=center, text width=7.0cm] (graph) {Финальный семантический граф $G_T$};
+    \draw[->, thick] (stage1) -- (tr);
+    \draw[->, thick] (tr) -- (stage2);
+    \draw[->, thick] (stage2) -- (prune);
+    \draw[->, thick] (stage2) -- (edges);
+    \draw[->, thick] (prune) -- (graph);
+    \draw[->, thick] (edges) -- (graph);
+\end{tikzpicture}
+\caption{Двухэтапная система: замороженный физический базис и динамический Semantic Graph Engine.}
+\end{figure}
+
+\subsection*{Математический аппарат Этапа 2}
+
+Пусть при решении задачи $T$ модель генерирует или обрабатывает последовательность активаций
+\[
+H_T=\{h_1,h_2,\dots,h_N\}\subset\mathbb{R}^d.
+\]
+Каждый вектор $h_t$ раскладывается по замороженному базису $\mathcal{B}$:
+\[
+h_t=\sum_{k=1}^{M}c_{t,k}\cdot d_k+r_t,
+\qquad
+c_{t,k}=h_t^T d_k.
+\]
+
+\subsubsection*{Шаг A. Семантическая фильтрация (Pruning \& Sparsification)}
+
+Вектор $d_k\in\mathcal{B}$ признается активным «словом» семантического словаря для задачи $T$, если его коэффициент проекции не просто геометрически выражен, а информационно значим для решения задачи.
+
+\begin{enumerate}
+    \item \textbf{Энергетический показатель (Activation Energy):}
+    \[
+    E_T(d_k)=\frac{1}{N}\sum_{t=1}^{N}|h_t^T d_k|.
+    \]
+    \item \textbf{Каузальный фильтр активности (Task-Specific Ablation Sensitivity):} при решении задачи $T$ производится вычитание направления $d_k$ и измеряется прирост ошибки задачи $\Delta\mathcal{L}_T(d_k)$.
+    \item \textbf{Фильтр маскирования:}
+    \[
+    \mathcal{V}_T=
+    \{d_k\in\mathcal{B}\mid E_T(d_k)>\tau_E
+    \land
+    \Delta\mathcal{L}_T(d_k)>\tau_L\}.
+    \]
+    Все векторы из $\mathcal{B}\setminus\mathcal{V}_T$ отбрасываются и не участвуют в решении конкретной задачи $T$.
+\end{enumerate}
+
+\subsubsection*{Шаг B. Наложение семантических связей (Semantic Edges Induction)}
+
+Чтобы превратить набор векторов $\mathcal{V}_T$ в семантический граф
+\[
+G_T=(\mathcal{V}_T,E,W),
+\]
+вычисляется матрица смежности между $d_i$ и $d_j$. Используются три типа связей:
+
+\begin{enumerate}
+    \item \textbf{Контекстная ко-активация (Co-activation Edge / Synchronic):}
+    \[
+    W_{ij}^{co}
+    =
+    \frac{\sum_{t=1}^{N}(c_{t,i}-\bar c_i)(c_{t,j}-\bar c_j)}
+    {\sqrt{\sum_t(c_{t,i}-\bar c_i)^2
+    \sum_t(c_{t,j}-\bar c_j)^2}}.
+    \]
+    \item \textbf{Причинно-следственный перенос (Causal Flow Edge / Diachronic):}
+    \[
+    W_{i\rightarrow j}^{causal}
+    =
+    \frac{1}{N-\delta}
+    \sum_{t=1}^{N-\delta}
+    c_{t,i}\cdot
+    \frac{\partial c_{t+\delta,j}}{\partial c_{t,i}}.
+    \]
+    \item \textbf{Внимание Transformer (Attention-Mediated Edge):}
+    \[
+    W_{i\rightarrow j}^{attn}
+    =
+    \sum_{t_1,t_2}
+    A_{t_1,t_2}^{(l)}
+    (h_{t_1}^Td_i)
+    (h_{t_2}^Td_j).
+    \]
+\end{enumerate}
+
+Окончательное ребро семантического графа формируется с весом
+\[
+W_{ij}
+=
+\alpha W_{ij}^{co}
++\beta W_{i\rightarrow j}^{causal}
++\gamma W_{i\rightarrow j}^{attn}.
+\]
+
+\iffalse
+\subsection*{Точная реализация на PyTorch: Semantic Graph Engine}
+
+\begin{lstlisting}
+import networkx as nx
+import torch
+
+class SemanticGraphEngine:
+    def __init__(self, frozen_basis: torch.Tensor, device: str = "cuda"):
+        self.device = device
+        self.B = torch.nn.functional.normalize(
+            frozen_basis, p=2, dim=1
+        ).to(device)
+        self.M = self.B.shape[0]
+
+    @torch.no_grad()
+    def build_task_semantic_graph(
+        self,
+        task_activations: torch.Tensor,
+        energy_threshold: float = 0.1,
+        edge_threshold: float = 0.2,
+        time_delay: int = 1,
+    ) -> nx.DiGraph:
+        N, dim = task_activations.shape
+        H = task_activations.to(self.device)
+
+        C = torch.matmul(H, self.B.T)
+
+        energies = torch.mean(torch.abs(C), dim=0)
+        active_indices = torch.where(
+            energies > energy_threshold
+        )[0]
+
+        if len(active_indices) == 0:
+            return nx.DiGraph()
+
+        C_active = C[:, active_indices]
+        M_act = len(active_indices)
+
+        C_centered = C_active - torch.mean(
+            C_active, dim=0, keepdim=True
+        )
+        cov_matrix = torch.matmul(
+            C_centered.T, C_centered
+        ) / (N - 1)
+        std_dev = torch.sqrt(
+            torch.diag(cov_matrix)
+        ).unsqueeze(1)
+        std_dev[std_dev == 0] = 1.0
+
+        W_co = cov_matrix / torch.matmul(
+            std_dev, std_dev.T
+        )
+
+        C_t0 = C_active[:-time_delay]
+        C_t1 = C_active[time_delay:]
+        W_causal = (
+            torch.matmul(C_t0.T, C_t1)
+            / (N - time_delay)
+        )
+
+        W_final = 0.5 * W_co + 0.5 * W_causal
+        G = nx.DiGraph()
+
+        for idx_global in active_indices.cpu().numpy():
+            G.add_node(
+                int(idx_global),
+                energy=float(
+                    energies[idx_global].cpu()
+                ),
+                vector=self.B[
+                    idx_global
+                ].cpu().numpy(),
+            )
+
+        W_np = W_final.cpu().numpy()
+        active_idx_np = active_indices.cpu().numpy()
+
+        for i in range(M_act):
+            for j in range(M_act):
+                if (
+                    i != j
+                    and abs(W_np[i, j])
+                    > edge_threshold
+                ):
+                    u = int(active_idx_np[i])
+                    v = int(active_idx_np[j])
+                    G.add_edge(
+                        u, v,
+                        weight=float(W_np[i, j]),
+                    )
+
+        return G
+\end{lstlisting}
+
+\fi
+\subsection*{Почему эта схема принципиально лучше и эффективнее}
+
+\begin{enumerate}
+    \item \textbf{Вычислительная экономия (Zero Re-Training):} SVD, SAE или Diffusion Maps не требуется повторять для каждой новой задачи. Сложный геометро-физический базис $\mathcal{B}$ вычисляется один раз на Stage I.
+    \item \textbf{Сжатие пространства задачи:} вместо анализа пространства $12\,288\times12\,288$ конкретная задача использует порядка $M_{\text{active}}\approx50\ldots200$ ключевых элементов.
+    \item \textbf{Интерпретируемость и графовый сопроцессинг:} узлы $\mathcal{V}_T$ представляют понятия, задействованные моделью, а ребра — направленные логические переходы.
+    \item \textbf{Graph Editing:} ребра и узлы $G_T$ можно программно исключать, воздействуя на соответствующие коэффициенты $c_{t,k}$, без файнтюнинга общеязыкового базиса.
+\end{enumerate}
+
+\section{Автоматическая аннотация узлов семантического графа}
+
+Присвоение текстовых меток векторам асемантичного базиса $\mathcal{B}$ превращает геометрический граф $G_T$ в понятную человеку карту знаний. Отдельный вектор $d_k\in\mathcal{B}$ может соответствовать не конкретному слову, а абстрактному понятию, синтаксической роли или сложному контекстному полисемичному паттерну.
+
+\subsection*{Архитектура 3-этапной аннотации}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.8cm and 1.0cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, align=center, text width=4.0cm] (vec) {Вектор базиса $d_k$};
+    \node[draw, rounded corners, below left=0.9cm and 0.7cm of vec, align=center, text width=5.0cm] (unembed) {1. Unembedding Projection\\$W_{\text{unembed}}d_k$\\Top-Tokens};
+    \node[draw, rounded corners, below right=0.9cm and 0.7cm of vec, align=center, text width=5.0cm] (snip) {2. Max-Activating Snippets\\Фрагменты из $D_T$, максимизирующие $h_t^Td_k$};
+    \node[draw, rounded corners, below=1.2cm of vec, yshift=-2.0cm, fill=secondarycolor, align=center, text width=6.0cm] (llm) {3. LLM-Autointerpreter\\Общий смысл Top-токенов и контекстов};
+    \node[draw, rounded corners, below=of llm, align=center, text width=5.0cm] (label) {Человекочитаемая метка $Label_k$};
+    \draw[->, thick] (vec) -- (unembed);
+    \draw[->, thick] (vec) -- (snip);
+    \draw[->, thick] (unembed) -- (llm);
+    \draw[->, thick] (snip) -- (llm);
+    \draw[->, thick] (llm) -- (label);
+\end{tikzpicture}
+\caption{Трехэтапная автоматическая аннотация узлов семантического графа.}
+\end{figure}
+
+\subsection*{Подробное описание этапов}
+
+\paragraph{Этап 1. Проекция на Vocabulary Unembedding Matrix.}
+Вектор $d_k$ проецируется на выходную матрицу
+\[
+W_{\text{unembed}}\in\mathbb{R}^{|V|\times d}:
+\qquad
+z_k=W_{\text{unembed}}\cdot d_k\in\mathbb{R}^{|V|}.
+\]
+Выбираются Top-$K$ токенов с наибольшими логитами $z_k$. Результат — список токенов, суффиксов или подслов, которые вектор напрямую активирует на выходе модели.
+
+\paragraph{Этап 2. Max-Activating Dataset Snippets.}
+Через модель прогоняется корпус $D_T$ и фиксируются Top-$N$ фрагментов текста, для которых проекция $h_t^T d_k$ максимальна. Контекстное окно вокруг позиции позволяет увидеть абстракцию, которая может не совпадать с одним токеном словаря.
+
+\paragraph{Этап 3. LLM-Autointerpretation.}
+Компактная аннотирующая модель получает Top-токены и несколько максимально активирующих контекстов и возвращает структурированную метку:
+\begin{itemize}
+    \item \texttt{label}: краткое имя концепта;
+    \item \texttt{category}: тип — «Концепт», «Синтаксис», «Стиль» или «Оператор»;
+    \item \texttt{confidence}: оценка уверенности.
+\end{itemize}
+
+\iffalse
+\subsection*{Точный код на PyTorch: NodeAnnotator}
+
+\begin{lstlisting}
+import json
+import torch
+
+class NodeAnnotator:
+    def __init__(self, model, tokenizer, frozen_basis: torch.Tensor):
+        self.model = model
+        self.tokenizer = tokenizer
+        self.basis = frozen_basis.to(model.device)
+
+        if hasattr(model, "lm_head"):
+            self.W_unembed = model.lm_head.weight.detach()
+        elif hasattr(model, "get_output_embeddings"):
+            self.W_unembed = model.get_output_embeddings().weight.detach()
+        else:
+            raise AttributeError("Не удалось найти lm_head/unembedding матрицу")
+
+    @torch.no_grad()
+    def get_top_unembed_tokens(self, vector_idx: int, top_k: int = 10) -> list[str]:
+        d_k = self.basis[vector_idx]
+        logits = torch.matmul(self.W_unembed.to(dtype=d_k.dtype), d_k)
+        _, top_indices = torch.topk(logits, k=top_k)
+        return [self.tokenizer.decode([idx.item()]) for idx in top_indices]
+
+    def annotate_graph_nodes(
+        self,
+        graph,
+        activating_contexts_dict: dict[int, list[str]],
+        llm_client=None,
+    ) -> dict:
+        annotations = {}
+        for node_id in graph.nodes():
+            top_tokens = self.get_top_unembed_tokens(node_id, top_k=8)
+            snippets = activating_contexts_dict.get(node_id, [])[:3]
+            fallback_label = (
+                top_tokens[0].strip() if top_tokens else f"Concept_{node_id}"
+            )
+
+            if llm_client is None:
+                annotations[node_id] = {
+                    "label": fallback_label,
+                    "top_tokens": top_tokens,
+                    "snippets": snippets,
+                }
+                continue
+
+            prompt = f"""
+Определи смысловую метку для вектора активации (1-3 слова).
+Top-токены: {top_tokens}
+Контексты: {snippets}
+Ответь строго JSON:
+{{"label": "Имя концепта", "category": "Тип"}}
+"""
+            try:
+                response = llm_client.generate(prompt)
+                res_json = json.loads(response)
+                annotations[node_id] = {
+                    "label": res_json.get("label", fallback_label),
+                    "category": res_json.get("category", "General"),
+                    "top_tokens": top_tokens,
+                    "snippets": snippets,
+                }
+            except Exception:
+                annotations[node_id] = {
+                    "label": fallback_label,
+                    "category": "Raw",
+                    "top_tokens": top_tokens,
+                    "snippets": snippets,
+                }
+        return annotations
+\end{lstlisting}
+
+\fi
+\subsection*{Визуальный результат аннотированного графа $G_T$}
+
+После прохождения пайплайна безымянный граф векторов превращается в понятную структуру:
+\begin{itemize}
+    \item Узел \#412 $\rightarrow$ метка «Вычисление интегралов» (Top-токены: $\int$, integral, dx);
+    \item Узел \#891 $\rightarrow$ метка «Условие сходимости» (Top-токены: limit, bounded, converges);
+    \item Ребро \#412 $\rightarrow$ \#891 с весом 0.84 означает, что при обращении к интегралам модель каузально активирует проверку условий сходимости.
+\end{itemize}
+
+Аннотация выполняется по запросу только для $M_{\text{active}}$ узлов, прошедших фильтрацию в рамках конкретной задачи $T$. Это сокращает число обращений к LLM-интерпретатору с десятков тысяч элементов базиса до нескольких десятков активных узлов $G_T$.
+
+\section{Детектирование OOD и динамическое расширение словаря}
+
+Появление новых явлений, терминов или физических законов во внешнем мире (Out-Of-Distribution / Concept Drift) приводит к ситуации, когда текущее состояние активаций $h_t\in\mathbb{R}^d$ больше не раскладывается без потерь по замороженному базису $\mathcal{B}$. Появление нового объекта проявляется в росте вектора невязки $r_t$.
+
+\subsection*{Detection Phase}
+
+\[
+h_t=\sum_{k=1}^{M}c_{t,k}d_k+r_t,
+\qquad
+c_{t,k}=h_t^Td_k,
+\]
+\[
+r_t=h_t-\sum_{k=1}^{M}(h_t^Td_k)d_k.
+\]
+
+Критерии обнаружения нового Item:
+\begin{enumerate}
+    \item \textbf{High Residual Energy:}
+    \[
+    \frac{\|r_t\|_2^2}{\|h_t\|_2^2}>\tau_{\text{OOD}},
+    \qquad
+    \tau_{\text{OOD}}\approx0.15\ldots0.25.
+    \]
+    \item \textbf{Persistent Residual Cluster:} одиночный выброс трактуется как шум. Если невязки системно накапливаются и образуют плотный кластер в пространстве остатков $\mathbb{R}^d$, это указывает на появление нового семантического концепта.
+\end{enumerate}
+
+\subsection*{Ingestion Phase}
+
+Когда обнаружен устойчивый кластер
+\[
+R=\{r_1,r_2,\dots,r_P\},
+\]
+запускается Online Incremental Induction.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.65cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, align=center, text width=5.6cm] (act) {Поток активаций $h_t$};
+    \node[draw, rounded corners, below=of act, align=center, text width=5.6cm] (proj) {Разложение по $\mathcal{B}$ и вычисление $r_t$};
+    \node[draw, rounded corners, below=of proj, align=center, text width=5.6cm] (buf) {Буфер невязок $R=\{r_t\}$};
+    \node[draw, rounded corners, below=of buf, align=center, text width=5.6cm] (svd) {SVD / Online ICA на $R$};
+    \node[draw, rounded corners, below=of svd, fill=secondarycolor, align=center, text width=5.6cm] (new) {Новый вектор $d_{M+1}$};
+    \node[draw, rounded corners, below=of new, align=center, text width=5.6cm] (base) {$\mathcal{B}_{new}=\mathcal{B}\cup\{d_{M+1}\}$};
+    \draw[->, thick] (act) -- (proj);
+    \draw[->, thick] (proj) -- (buf);
+    \draw[->, thick] (buf) -- (svd);
+    \draw[->, thick] (svd) -- (new);
+    \draw[->, thick] (new) -- (base);
+\end{tikzpicture}
+\caption{Потоковая индукция нового элемента словаря из устойчивых невязок.}
+\end{figure}
+
+\paragraph{Шаг A. Residual Buffer.}
+Все невязки $r_t$, превышающие $\tau_{\text{OOD}}$, помещаются в кольцевой буфер $R\in\mathbb{R}^{P\times d}$.
+
+\paragraph{Шаг B. Выделение направления нового концепта.}
+После накопления $P$ векторов (например, $P=100\ldots500$):
+\[
+d_{\text{new}}=\operatorname{Top\mbox{-}1\,SVD}(R),
+\]
+либо используется нормированное среднее устойчивых невязок.
+
+\paragraph{Шаг C. Gram-Schmidt Orthogonalization.}
+\[
+d_{\text{new}}^{orth}
+=
+d_{\text{new}}
+-\sum_{k=1}^{M}
+(d_{\text{new}}^Td_k)d_k,
+\qquad
+d_{M+1}
+=
+\frac{d_{\text{new}}^{orth}}
+{\|d_{\text{new}}^{orth}\|}.
+\]
+
+\paragraph{Шаг D. Интеграция.}
+\begin{enumerate}
+    \item $d_{M+1}$ добавляется в базис:
+    \[
+    \mathcal{B}_{updated}
+    =\mathcal{B}\cup\{d_{M+1}\}.
+    \]
+    \item NodeAnnotator генерирует label на основе контекстов, вызвавших появление $r_t$.
+    \item В $G_T$ создается узел $M+1$, после чего для него индуцируются семантические ребра.
+\end{enumerate}
+
+\iffalse
+\subsection*{Точный код на PyTorch: DynamicConceptRegistrar}
+
+\begin{lstlisting}
+import torch
+
+class DynamicConceptRegistrar:
+    def __init__(
+        self,
+        frozen_basis: torch.Tensor,
+        ood_threshold: float = 0.2,
+        buffer_capacity: int = 200,
+        device: str = "cuda",
+    ):
+        self.device = device
+        self.ood_threshold = ood_threshold
+        self.capacity = buffer_capacity
+        self.B = torch.nn.functional.normalize(
+            frozen_basis, p=2, dim=1
+        ).to(device)
+        self.residual_buffer = []
+
+    @torch.no_grad()
+    def process_activations(
+        self, activations: torch.Tensor
+    ) -> tuple[torch.Tensor, list[int]]:
+        H = activations.to(self.device)
+        C = torch.matmul(H, self.B.T)
+        H_reconstructed = torch.matmul(C, self.B)
+        R_t = H - H_reconstructed
+
+        norm_H = torch.norm(H, dim=1) ** 2
+        norm_R = torch.norm(R_t, dim=1) ** 2
+        residual_ratio = norm_R / (norm_H + 1e-8)
+        ood_indices = torch.where(
+            residual_ratio > self.ood_threshold
+        )[0]
+
+        for idx in ood_indices:
+            self.residual_buffer.append(
+                R_t[idx].detach().cpu()
+            )
+
+        return C, ood_indices.tolist()
+
+    def check_and_induction_new_item(
+        self,
+    ) -> torch.Tensor | None:
+        if len(self.residual_buffer) < self.capacity:
+            return None
+
+        R_mat = torch.stack(
+            self.residual_buffer
+        ).to(self.device)
+        _, _, Vh = torch.linalg.svd(
+            R_mat, full_matrices=False
+        )
+        d_new = Vh[0]
+
+        projections = torch.matmul(
+            self.B, d_new
+        )
+        d_orth = d_new - torch.matmul(
+            projections, self.B
+        )
+        norm_orth = torch.norm(d_orth)
+
+        if norm_orth < 1e-5:
+            self.residual_buffer.clear()
+            return None
+
+        d_M_plus_1 = (
+            d_orth / norm_orth
+        ).unsqueeze(0)
+        self.B = torch.cat(
+            [self.B, d_M_plus_1], dim=0
+        )
+        self.residual_buffer.clear()
+        return d_M_plus_1
+\end{lstlisting}
+
+\fi
+\subsection*{Архитектурные преимущества}
+
+\begin{enumerate}
+    \item \textbf{Continual Zero-Forgetting Learning:} при появлении новых данных Transformer не переобучается и существующие $d_1,\dots,d_M$ не меняются; добавляется новое ортогональное направление $d_{M+1}$.
+    \item \textbf{Разделение «шум vs новый концепт»:} случайные флуктуации взаимно гасятся в SVD буфера, а устойчивые геометрические сдвиги сохраняются.
+    \item \textbf{Аудит эволюции знаний:} каждый новый элемент может получать timestamp индукции, что позволяет отслеживать изменение картины мира системы.
+\end{enumerate}
+
+\section{Интеграция нового Item в семантический граф}
+
+Появление нового вектора $d_{M+1}$ в базисе $\mathcal{B}$ — лишь физическая регистрация нового явления. Чтобы оно стало полноценным элементом мышления модели, необходимо встроить семантические ребра в текущий граф $G_T$.
+
+\subsection*{Архитектура Dynamic Edge Induction \& Integration}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.7cm, >=latex', every node/.style={font=\small}]
+    \node[draw, rounded corners, fill=secondarycolor, align=center, text width=6.3cm] (new) {Новый вектор $d_{M+1}$};
+    \node[draw, rounded corners, below=of new, align=center, text width=7.2cm] (dia) {1. Diachronic Alignment\\Связи $d_k \leftrightarrow d_{M+1}$ во времени};
+    \node[draw, rounded corners, below=of dia, align=center, text width=7.2cm] (sync) {2. Synchronic Alignment\\Attention и Contextual Co-occurrence};
+    \node[draw, rounded corners, below=of sync, align=center, text width=7.2cm] (patch) {3. Causal Patching Validation\\Фильтрация ложных ребер};
+    \node[draw, rounded corners, below=of patch, fill=secondarycolor, align=center, text width=7.2cm] (graph) {Обновленный $G_T$\\ребра $(M+1\rightarrow k)$ и $(k\rightarrow M+1)$};
+    \draw[->, thick] (new) -- (dia);
+    \draw[->, thick] (dia) -- (sync);
+    \draw[->, thick] (sync) -- (patch);
+    \draw[->, thick] (patch) -- (graph);
+\end{tikzpicture}
+\caption{Интеграция нового Item в динамический семантический граф.}
+\end{figure}
+
+\subsection*{Алгоритм вычисления семантических связей для $d_{M+1}$}
+
+После формирования нового вектора из буфера невязок
+\[
+R=\{r_1,r_2,\dots,r_P\}
+\]
+сохраняются последовательности активаций, в которых новый концепт проявился. Для связывания узла $M+1$ с каждым существующим активным узлом $k\in G_T$ рассчитываются следующие показатели.
+
+\paragraph{1. Временной каузальный поток (Forward/Backward Diachronic Flow).}
+Входящая связь:
+\[
+W_{k\rightarrow M+1}^{causal}
+=
+\frac{1}{P-1}
+\sum_{t=1}^{P-1}
+(h_t^Td_k)
+(h_{t+1}^Td_{M+1}).
+\]
+Исходящая связь:
+\[
+W_{M+1\rightarrow k}^{causal}
+=
+\frac{1}{P-1}
+\sum_{t=1}^{P-1}
+(h_t^Td_{M+1})
+(h_{t+1}^Td_k).
+\]
+
+\paragraph{2. Синхронная ко-активация (Synchronic Context Coupling).}
+\[
+W_{M+1,k}^{co}
+=
+\frac{\operatorname{Cov}
+\left(h_t^Td_{M+1},h_t^Td_k\right)}
+{\sigma(d_{M+1})\sigma(d_k)}.
+\]
+
+\paragraph{3. Causal Patching для фильтрации ложных связей.}
+Для кандидатов-ребер с максимальным весом выполняется каузальный тест:
+\begin{enumerate}
+    \item в контексте, где активируется $d_k$, искусственно выполняется его Ablation;
+    \item если активация $d_{M+1}$ на следующем шаге падает на $\Delta>\tau_{\text{causal}}$, ребро $e(k\rightarrow M+1)$ признается причинно валидным.
+\end{enumerate}
+
+\iffalse
+\subsection*{Точный код на PyTorch: DynamicEdgeIntegrator}
+
+\begin{lstlisting}
+import networkx as nx
+import torch
+
+class DynamicEdgeIntegrator:
+    def __init__(self, device: str = "cuda"):
+        self.device = device
+
+    @torch.no_grad()
+    def integrate_new_item_into_graph(
+        self,
+        graph: nx.DiGraph,
+        new_vector: torch.Tensor,
+        new_node_id: int,
+        historical_activations: torch.Tensor,
+        basis_matrix: torch.Tensor,
+        edge_threshold: float = 0.15,
+    ) -> nx.DiGraph:
+        H = historical_activations.to(self.device)
+        d_new = new_vector.to(self.device)
+
+        c_new = torch.matmul(H, d_new)
+
+        active_node_ids = list(graph.nodes())
+        if new_node_id in active_node_ids:
+            active_node_ids.remove(new_node_id)
+
+        if not active_node_ids:
+            graph.add_node(new_node_id)
+            return graph
+
+        active_basis = basis_matrix[
+            active_node_ids
+        ].to(self.device)
+        C_active = torch.matmul(
+            H, active_basis.T
+        )
+        P = H.shape[0]
+
+        c_new_centered = (
+            c_new - torch.mean(c_new)
+        )
+        C_act_centered = (
+            C_active
+            - torch.mean(
+                C_active,
+                dim=0,
+                keepdim=True,
+            )
+        )
+
+        std_new = torch.std(c_new) + 1e-8
+        std_act = (
+            torch.std(C_active, dim=0)
+            + 1e-8
+        )
+
+        cov_sync = (
+            torch.matmul(
+                c_new_centered.unsqueeze(0),
+                C_act_centered,
+            ).squeeze(0)
+            / (P - 1)
+        )
+        W_sync = cov_sync / (
+            std_new * std_act
+        )
+
+        C_act_t0 = C_act_centered[:-1]
+        c_new_t1 = c_new_centered[1:]
+        W_in_causal = torch.matmul(
+            c_new_t1.unsqueeze(0),
+            C_act_t0,
+        ).squeeze(0) / (P - 1)
+
+        c_new_t0 = c_new_centered[:-1]
+        C_act_t1 = C_act_centered[1:]
+        W_out_causal = torch.matmul(
+            c_new_t0.unsqueeze(0),
+            C_act_t1,
+        ).squeeze(0) / (P - 1)
+
+        W_incoming = (
+            0.5 * W_sync
+            + 0.5 * W_in_causal
+        )
+        W_outgoing = (
+            0.5 * W_sync
+            + 0.5 * W_out_causal
+        )
+
+        graph.add_node(new_node_id)
+        W_in_np = W_incoming.cpu().numpy()
+        W_out_np = W_outgoing.cpu().numpy()
+
+        for idx, target_node in enumerate(
+            active_node_ids
+        ):
+            if (
+                abs(W_in_np[idx])
+                > edge_threshold
+            ):
+                graph.add_edge(
+                    target_node,
+                    new_node_id,
+                    weight=float(W_in_np[idx]),
+                    type="causal_induction",
+                )
+
+            if (
+                abs(W_out_np[idx])
+                > edge_threshold
+            ):
+                graph.add_edge(
+                    new_node_id,
+                    target_node,
+                    weight=float(W_out_np[idx]),
+                    type="causal_induction",
+                )
+
+        return graph
+\end{lstlisting}
+
+\fi
+\subsection*{Комплексный пример жизненного цикла нового Item}
+
+Если во внешнем мире появляется новый тип уязвимости, например «DeepSeek-R1 Prompt Injection», жизненный цикл выглядит так:
+
+\begin{enumerate}
+    \item \textbf{Detection:} базис $\mathcal{B}$ не может полностью передать специфический контекст; растет невязка $r_t$.
+    \item \textbf{Induction:} остатки накапливаются, и SVD выделяет ортогональный вектор $d_{M+1}$.
+    \item \textbf{Annotation:} NodeAnnotator присваивает узлу $M+1$ человекочитаемую метку.
+    \item \textbf{Semantic Integration:} DynamicEdgeIntegrator вычисляет связи с существующими узлами $G_T$, например входящую связь от общего понятия Prompt Injection и исходящую связь к System Prompt Leak.
+\end{enumerate}
+
+В результате граф $G_T$ без переобучения основной сети получает структурированное знание о новом объекте реального мира, включая его имя, геометрический вектор и положение в причинно-следственной цепочке рассуждений Transformer.
+
+\section{Решение ключевых ограничений и итоговый вывод}
+
+Предлагаемая архитектура устраняет основные теоретические уязвимости благодаря следующим встроенным механикам:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{5cm} p{10cm}}
+\toprule
+\textbf{Исходная уязвимость} & \textbf{Архитектурное решение} \\
+\midrule
+\textbf{Нелинейные многообразия} & Сложные нелинейные концепции кодируются не изолированными одиночными векторами, а через \textbf{нелинейную топологию подграфа $G_T$}. Векторы $d_k$ выступают лишь как локальная линейная координатная сетка. \\
+\addlinespace
+\textbf{Чувствительность к слою} & Ручное назначение слоя исключено. Точка извлечения $l^*$ определяется автоматически через \textbf{Профилирование энтропии слоев} при минимальной остаточной энтропии $\mathcal{H}(r^{(l)})$. \\
+\addlinespace
+\textbf{Емкость пространства $\mathbb{R}^d$ при OOD} & Ортогональность обеспечивается через процесс Грама-Шмидта. При исчерпании линейной независимости система переходит к сверхполным словарям (Overcomplete Dictionaries) и разреженному кодированию. \\
+\addlinespace
+\textbf{Каузальная валидность} & Ложные корреляции отфильтровываются с использованием двухпроходного \textbf{Причинно-следственного вмешательства (Causal Patching)} (Инъекция / Абляция) на этапах прунинга узлов и ребер. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\iffalse
+\subsection*{Заключение}
+Сконструированная архитектура представляет собой фреймворк для построения интерпретируемых моделей Transformer, способных к непрерывному обучению (Continual Zero-Forgetting Learning). Перевод внутренних процессов нейросети на язык геометрического базиса и семантических графов $G_T$ позволяет редактировать знания модели, визуализировать логику принятия решений и динамически интегрировать новые факты реального мира без затратного и рискованного переобучения весов базовой модели.
+\fi
+
+\normalsize
+\section{Ответы на Ключевые Проблемы и Заключительный Анализ}
+
+Архитектура системы полностью нейтрализует основные теоретические уязвимости за счет следующих встроенных механик:
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.27\textwidth} >{\raggedright\arraybackslash}p{0.66\textwidth}}
+\toprule
+\textbf{Первоначальная уязвимость} & \textbf{Решение в рамках архитектуры системы} \\
+\midrule
+Проблема нелинейности (Non-linear Manifolds) & Сложные нелинейные концепты кодируются не единичными векторами, а нелинейной топологией связей подграфов $G_T$. Векторы $d_k$ выступают лишь локальной линейной сеткой координатного описания. \\
+\addlinespace
+Чувствительность к выбору слоя & Отказ от ручной фиксации слоя. Слой отвода $l^*$ подбирается автоматически через Layer Entropy Profiling по минимуму энтропии невязки $\mathcal{H}(r^{(l)})$. \\
+\addlinespace
+Емкость пространства $\mathbb{R}^d$ при OOD & Ортогональность строго выдерживается процедурой Грамма--Шмидта. При исчерпании линейной независимости система переходит к режиму сверхполных словарей (Overcomplete Dictionaries) и разреженного кодирования. \\
+\addlinespace
+Каузальная валидность & Отсечение ложных корреляций производится через двухпроходный Causal Patching (Injection / Ablation) на этапе фильтрации узлов и ребер. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{Итоговый вывод}
+
+Сконструированная архитектура представляет собой фреймворк для создания интерпретируемых моделей трансформера с непрерывным обучением (Continual Zero-Forgetting Learning). Перевод внутренних процессов нейросети на язык геометрического базиса и семантических графов $G_T$ позволяет редактировать знания модели, визуализировать логику принятия решений и динамически интегрировать новые факты реального мира без затратного и опасного переобучения основных весов.
+
+\end{document}
