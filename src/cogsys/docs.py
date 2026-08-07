@@ -118,7 +118,7 @@ def _render_block(block: dict[str, Any], figure_number: str | None = None) -> st
             object_id = "definition-" + _anchor_slug(str(title))
         id_attr = f' id="{html.escape(object_id, quote=True)}"' if object_id else ""
         return (
-            f'<aside class="{block_type}"{id_attr}><h4>{_render_inline(str(title))}</h4>'
+            f'<aside class="{block_type}{" architectural-decision" if str(title).startswith("ARCHITECTURAL DECISION REQUIRED") else ""}"{id_attr}><h4>{_render_inline(str(title))}</h4>'
             f"<p>{body}</p>{extra}</aside>"
         )
     if block_type == "code":

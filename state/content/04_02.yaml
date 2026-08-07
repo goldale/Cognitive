@@ -2,20 +2,19 @@ kind: T_Content
 section: S_04_02
 blocks:
 - type: paragraph
-  text: The Internal Language is observed through a selected intermediate Transformer layer, but it is
-    not created by that layer alone. Its structure is determined jointly by the Transformer topology,
-    learned connection parameters, training data, and training objectives. Consequently, two instances
-    of the same network architecture trained on the same dataset may develop different Internal Languages,
-    including when they are optimized for different objectives. These differences simply exist as a consequence
-    of topology and learning; this architecture does not classify them as inherently beneficial or detrimental
-    and does not infer semantic stability, compositionality, context sensitivity, or memory interoperability
+  text: The Internal Language is observed through a selected intermediate Transformer layer, but it is not created by that
+    layer alone. Its structure is determined jointly by the Transformer topology, learned connection parameters, training
+    data, and training objectives. Consequently, two instances of the same network architecture trained on the same dataset
+    may develop different Internal Languages, including when they are optimized for different objectives. These differences
+    simply exist as a consequence of topology and learning; this architecture does not classify them as inherently beneficial
+    or detrimental and does not infer semantic stability, compositionality, context sensitivity, or memory interoperability
     from their existence.
 - type: principle
   title: Implementation-dependent layer selection
-  text: Transformer specialists must select and justify the layer, layer combination, or learned projection
-    that best exposes the Internal Language produced by the concrete topology and training regime. The
-    optimal Transformer layer or layers for READ extraction, READ response reinjection, and UPDATE extraction
-    remain implementation-dependent and are subjects of RS-0011.
+  text: Transformer specialists must select and justify the layer, layer combination, or learned projection that best exposes
+    the Internal Language produced by the concrete topology and training regime. The optimal Transformer layer or layers for
+    READ extraction, READ response reinjection, and UPDATE extraction remain implementation-dependent and are subjects of
+    RS-0011.
 - type: table
   headers:
   - Interface question
@@ -34,38 +33,35 @@ blocks:
   text: No universal Transformer layer is prescribed as the memory interface. Layer placement is implementation-dependent
     and must be established experimentally for each Transformer topology and training regime.
 - type: paragraph
-  text: The interface is Transformer-specific. Replacing Transformer may require migration, adaptation,
-    or reconstruction of memory because another model may define a different internal semantic space.
+  text: The interface is Transformer-specific. Replacing Transformer may require migration, adaptation, or reconstruction
+    of memory because another model may define a different internal semantic space.
 - type: heading
   level: 3
   text: Asymmetric Extraction and Reinjection
 - type: principle
   title: Asymmetric Transformer interface
-  text: The point that extracts a memory-facing Internal Language state and the point that receives the
-    READ response may be distinct. External input is first transformed by earlier Transformer layers.
-    The READ response is already expressed in the Internal Language and may therefore be reinjected deeper
-    into the Transformer. The optimal layers for READ extraction, READ response reinjection, and UPDATE
-    extraction are implementation-dependent and will be investigated in RS-0011.
+  text: The point that extracts a memory-facing Internal Language state and the point that receives the READ response may
+    be distinct. External input is first transformed by earlier Transformer layers. The READ response is already expressed
+    in the Internal Language and may therefore be reinjected deeper into the Transformer. The optimal layers for READ extraction,
+    READ response reinjection, and UPDATE extraction are implementation-dependent and will be investigated in RS-0011.
 - type: formula
   text: external input -> early interpretation -> internal-language extraction point -> READ
 - type: formula
   text: serialized memory -> deeper reinjection point -> integration and reasoning
 - type: principle
   title: No repeated translation
-  text: A READ response expressed in the Internal Language need not be routed through the same early layers
-    that process raw external form. Its reinjection layer is implementation-dependent and remains an RS-0011
-    research question.
+  text: A READ response expressed in the Internal Language need not be routed through the same early layers that process raw
+    external form. Its reinjection layer is implementation-dependent and remains an RS-0011 research question.
 - type: note
   title: Layer-placement research status
-  text: No numerical layer offset is fixed by the architecture. RS-0011 will investigate at which Transformer
-    layer or layers READ extraction, READ response reinjection, and UPDATE extraction should occur.
+  text: No numerical layer offset is fixed by the architecture. RS-0011 will investigate at which Transformer layer or layers
+    READ extraction, READ response reinjection, and UPDATE extraction should occur.
 - type: diagram
   title: Transformer–Memory Interface
-  description: A single enlarged diagram with an internally reorganized multi-row layout. Earlier Transformer
-    layers process the external request; Transformer formulates READ; D-Context inside Associative Memory
-    governs retrieval and serialization; the READ response is reinjected into a deeper Transformer layer;
-    Transformer later formulates UPDATE. Exact layer placement remains implementation-dependent and is
-    investigated in RS-0011.
+  description: A single enlarged diagram with an internally reorganized multi-row layout. Earlier Transformer layers process
+    the external request; Transformer formulates READ; D-Context inside Associative Memory governs retrieval and serialization;
+    the READ response is reinjected into a deeper Transformer layer; Transformer later formulates UPDATE. Exact layer placement
+    remains implementation-dependent and is investigated in RS-0011.
   direction: TB
   size: extra-large
   readability_priority: true
@@ -105,9 +101,9 @@ blocks:
       serialized Internal Language message'
     kind: interface
   - id: deep
-    label: 'Transformer Cognitive Core
+    label: 'Deep Transformer Layers
 
-      (Deep Layers)'
+      integration and reasoning'
     kind: subsystem
   - id: update
     label: 'Transformer formulates
@@ -183,5 +179,4 @@ blocks:
   - - Internal-Language Extraction Point
     - Produces the shared internal representation used to initiate READ and to form UPDATE content.
   - - Memory Reinjection Point
-    - Receives serialized memory after early external-form interpretation and integrates it into later
-      Transformer computation.
+    - Receives serialized memory after early external-form interpretation and integrates it into later Transformer computation.

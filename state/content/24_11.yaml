@@ -108,7 +108,7 @@ blocks:
 - title: Working hypothesis
   text: When one semantic state participates in many overlapping trajectories, the appropriate trajectory
     can be reconstructed through path-consistent, context-conditioned edge selection. Compact edge payloads
-    reference pooled Context Selectors, while accumulated traversal context and ΔC boundary detection
+    reference pooled Context Selectors, while accumulated traversal context and ΔC context-transition evaluation
     prevent uncontrolled mixing of episodes.
   type: note
 section_id: S_24_11

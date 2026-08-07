@@ -1,6 +1,6 @@
-# Release Certificate — cognitive-0.5.05
+# Release Certificate — cognitive-0.5.09
 
-- Version: 0.5.05
+- Version: 0.5.09
 - Date: 2026-08-06
 - Canonical YAML validation: passed
 - HTML generation: passed (180 files)

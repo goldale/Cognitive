@@ -396,7 +396,7 @@ chapters:
     content_file: content/11_11.yaml
   - kind: T_Section
     id: S_11_12
-    title: Sequential Multimodal Input Buffer
+    title: External Multimodal Input Flow
     order: 12
     content_file: content/11_12.yaml
   - kind: T_Section
@@ -898,7 +898,7 @@ chapters:
     content_file: content/24_11.yaml
   - kind: T_Section
     id: S_24_12
-    title: RS-0010 — Logical Episode Boundary Detection
+    title: RS-0010 — Logical Episode Segmentation
     order: 12
     content_file: content/24_12.yaml
   - kind: T_Section

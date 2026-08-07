@@ -43,12 +43,6 @@ components:
   - external_interpreter
   - internal_language_source
   - reasoning_engine
-- kind: state
-  id: C_INPUT_BUFFER
-  name: Input Buffer
-  roles:
-  - sequential_multimodal_event_stream
-  - implicit_temporal_order
 - kind: subsystem
   id: C_STM
   name: Short-Term Memory

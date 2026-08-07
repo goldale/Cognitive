@@ -1,5 +1,5 @@
 {
-  "release": "Cognitive_0.5.05",
+  "release": "Cognitive_0.5.09",
   "edition": "Second Edition — Editorial Rewrite",
   "build_date": "2026-08-06",
   "file_count": 408,
@@ -1151,8 +1151,8 @@
     },
     {
       "path": "state/canonical/components.yaml",
-      "size": 2349,
-      "sha256": "55e2857149f85e88e49057a9c5abaea8a840386a980f07b4259b3977b4e4694c"
+      "size": 2217,
+      "sha256": "5aaa9b073352460659fdd266584b188d38d53b84d75ecb1ea99a7cef6aafe574"
     },
     {
       "path": "state/canonical/contracts.yaml",
@@ -1166,8 +1166,8 @@
     },
     {
       "path": "state/canonical/invariants.yaml",
-      "size": 4887,
-      "sha256": "0c928c049155bbde9cacd5fa34d4b07e5ee88d5610d94f58a6b2117e07638eb8"
+      "size": 4208,
+      "sha256": "d789d3c7387612ebe4ab37035fc35b5a30bf7cdaf90d630dd59b04a5ab60a410"
     },
     {
       "path": "state/canonical/ownership.yaml",
@@ -1181,13 +1181,13 @@
     },
     {
       "path": "state/canonical/terminology.yaml",
-      "size": 9335,
-      "sha256": "81e7d7eb7f2a23457a4da62f4fa95295a268482507a13074999d10313debfe9d"
+      "size": 8947,
+      "sha256": "dac7a906e6199a22b8ae7a4e41c024e1f756287487b2a75a2255ec642cd632ff"
     },
     {
       "path": "state/chapters.yaml",
-      "size": 25441,
-      "sha256": "68bd79cdec13b3cd20830189c00d4af5d7d71d8acf1d68bd72085d59f5a88a1a"
+      "size": 26471,
+      "sha256": "9d994589a87ca56d990af5e786cedce4dcf22f81397dc4a24559e9d71be1cdd8"
     },
     {
       "path": "state/consolidation.yaml",
@@ -2043,6 +2043,36 @@
       "path": "tests/test_yaml_profile.py",
       "size": 703,
       "sha256": "36df497d8963f76e52046e1815ad5952a77a86f903ebcb28656e01adbb11c4bc"
+    },
+    {
+      "path": "docs/Dynamic_Associative_Memory_Transformer_RU.tex",
+      "size": 128720,
+      "sha256": "69f323ac2823f340d54a3d8108bbc70bb003f2bcec723bc9a96da3d7f528e824"
+    },
+    {
+      "path": "docs/Dynamic_Associative_Memory_Transformer_EN.tex",
+      "size": 54700,
+      "sha256": "63397681ac8e12ce7ec6ba17977ffc012914388fb9b512e840de8bee3d4d0516"
+    },
+    {
+      "path": "state/content/11_12.yaml",
+      "size": 1332,
+      "sha256": "2654faf929fcc5f0b25f0da7538390c00bd3a61d942822211a40fdaa980cabdd"
+    },
+    {
+      "path": "state/content/11_13.yaml",
+      "size": 798,
+      "sha256": "c1e46bfc490513a9dea7bc03792242614f3f0351ae3f0855ef2e85d5f2c731d7"
+    },
+    {
+      "path": "state/content/24_10.yaml",
+      "size": 2700,
+      "sha256": "71b10089bf628c2d1d49ce87d98cd95919039995c3fe5011d14f7f2328301160"
+    },
+    {
+      "path": "state/content/24_12.yaml",
+      "size": 2499,
+      "sha256": "64d535082b5b3a1bb951b1e9289e7b8f85e114d640edfed5cbabd746ea2dfd92"
     }
   ]
 }

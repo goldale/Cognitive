@@ -37,12 +37,6 @@ terms:
 - definition: The future memory-lifecycle subsystem that estimates the context-sensitive significance of semantic
     knowledge and memory structures.
   term: Importance Estimation
-- definition: A modality-neutral linear or circular field of fixed-dimensional input elements written sequentially
-    before activation enters STM.
-  term: Input Buffer
-- definition: One fixed-dimensional modality-neutral physical element of the Input Buffer, permanently connected
-    to one corresponding STM node.
-  term: Input Buffer Element
 - term: Internal Language
   definition: The Transformer-derived language used for communication among cognitive subsystems.
 - term: Long-Term Memory
@@ -109,7 +103,7 @@ terms:
   term: Semantic Teacher
 - term: Sequence
   definition: A directed activation chain represented in STM. Its order is established by the producing input or
-    Transformer process; no separate sequencing component exists.
+    Transformer process.
 - term: Serialized Memory Message
   definition: The sequence returned by memory to Transformer containing prior Dialogue content and its relevant
     projection onto LTM1 and LTM2.

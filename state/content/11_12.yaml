@@ -1,16 +1,17 @@
 kind: T_ContentBlock
 id: S_11_12
 blocks:
-- type: definition
-  title: Input Buffer
-  text: A modality-neutral temporary stream of input activations before they enter active Transformer/STM processing.
-    It is not semantic memory and performs no associative lookup.
-- type: principle
-  title: No separate sequencing component
-  text: Input order is preserved by the producing stream and the receiving activation path. The architecture introduces
+- type: paragraph
+  text: External multimodal observations enter the active processing path as Transformer-compatible activations.
+    This section intentionally does not define an additional persistent architectural component between the external
+    source and the active internal state.
+- type: warning
+  title: ARCHITECTURAL DECISION REQUIRED
+  text: Define how incoming observations are retained and ordered before or during integration into the active internal
+    state, including the lifetime of unconsumed observations and the behavior when multiple external streams progress
+    concurrently.
 - type: diagram
-  description: External streams enter the Input Buffer and continue directly into the active processing state. No
-    intermediate sequencing module exists.
+  description: External streams enter the active internal state and are processed by the Transformer Cognitive Core.
   direction: LR
   size: standard
   readability_priority: true
@@ -22,9 +23,6 @@ blocks:
   - id: stream
     label: Other Stream Input
     kind: external
-  - id: buffer
-    label: Input Buffer
-    kind: state
   - id: stm
     label: Active STM / Internal State
     kind: state
@@ -33,20 +31,12 @@ blocks:
     kind: subsystem
   edges:
   - from: language
-    to: buffer
+    to: stm
     flow: information
   - from: stream
-    to: buffer
-    flow: information
-  - from: buffer
     to: stm
-    label: ordered activation flow
     flow: information
   - from: stm
     to: core
     flow: information
-- type: warning
-  title: Boundary inference is cognitive processing
-  text: When an episode or segment boundary must be inferred rather than supplied by the source, that inference
-    belongs to Transformer cognitive processing. It does not justify a separate architectural component.
 section_id: S_11_12

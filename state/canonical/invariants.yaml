@@ -22,23 +22,9 @@ invariants:
 - id: INV_007
   statement: Both READ and UPDATE inputs are representations from the selected Transformer internal-language interface.
   severity: release_blocking
-- id: INV_008
-  statement: Input Buffer elements are filled sequentially without semantic routing or destination lookup.
-  severity: release_blocking
-- id: INV_009
-  statement: Every Input Buffer element has exactly one permanent physical projection to one corresponding STM node.
-  severity: release_blocking
-- id: INV_010
-  statement: Input Buffer element count equals STM node count, and their per-element runtime vector dimensionality
-    is equal.
-  severity: release_blocking
 - id: INV_011
   statement: One coordinate of the fixed-dimensional input activation vector is reserved for transmission context
     and does not encode Item identity.
-  severity: release_blocking
-- id: INV_012
-  statement: Stage-1 temporal order is derived from sequential Input Buffer insertion; parallel completion order
-    must not redefine observation order.
   severity: release_blocking
 - id: INV_014
   statement: Every active STM node emits MSG2(amplitude, activation_position, operation); STM-node activation is

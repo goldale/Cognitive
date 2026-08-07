@@ -11,7 +11,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{ragged2e}
-\usepackage{float}
 \usepackage{listings}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,positioning,calc}
@@ -134,7 +133,7 @@
 
 \subsubsection*{Архитектурная картина при таком подходе}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=1.0cm and 1.2cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, align=center, text width=4.8cm] (world) {Внешний мир\\Текст / Стримы};
@@ -189,7 +188,7 @@ Transformer — обучаемая и пластичная система. Ес�
 
 Transformer рассматривается как большая языковая модель с дополнительным входом от операций read. Этот вход попадает в тот же внутренний слой, откуда уходят update для обучения памяти, а в более глубоких слоях интегрируется в генерацию ответа. Слой, откуда уходит update, имеет двойную ширину, и во вторую половину приходит read из памяти, доставляя информацию о контексте данного диалога.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.9cm and 1.0cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, align=center, text width=7.2cm] (deep) {Более глубокие слои Transformer};
@@ -254,7 +253,7 @@ W_1 \cdot \mathrm{UPDATE}
 
 Первый внешний запрос сообщает памяти о необходимости начать диалог. Следующий запрос активирует существующий диалог и в его рамках формирует сообщение для Transformer. Новый запрос, достигнув целевого слоя Transformer, генерирует update, который изменяет контекст диалога для последующих запросов и записывает новое состояние в память.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.75cm and 1.0cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, align=center, text width=5.0cm] (req) {Внешний запрос (токены)};
@@ -356,7 +355,7 @@ W_{\text{head}} \operatorname{LN}(h_t^{(L)})
 
 Чтобы исключить эвристический выбор слоя, применяется \textbf{Профилировщик энтропии слоев (Layer Entropy Profiler)}:
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=2.5cm, auto, >=latex']
     \node [draw, rectangle, rounded corners] (l1) {Слой $l-1$};
@@ -394,10 +393,6 @@ l^* = \arg\min_{l \in [1, L]} \mathcal{H}\left( h^{(l)} - \mathbf{P}_{\mathcal{B
 В начале этого документа было обещано \textbf{показать, как ассоциативная память системы сможет этот язык изучать и им пользоваться}.
 
 Всё нижеследующее — один из возможных вариантов того, как это можно сделать. Этот раздел содержит очень много математики и никаких новых идей — и, соответственно, может быть игнорирован без ущерба общему пониманию концепции!
-
-Основная часть описанной ниже работы происходит в режиме оффлайн и требует только административного доступа к уже обученной модели Transformer, которая затем будет использована в Когнитивной системе. Существующий Transformer используется для создания необходимой статистики наборов данных, которые будут обработаны описанными ниже алгоритмами. Например, пропущенные через Transformer книги могут быть сгруппированы по жанрам и авторам, картины — по художникам, фотографии пейзажей — по типу ландшафта и т.~д.
-
-Созданный таким образом большой массив структурированных данных будет использован для выяснения семантики внутреннего языка с помощью описанных ниже алгоритмов!
 
 \footnotesize
 \section{Этап I: Извлечение Асемантичного Физического Базиса $\mathcal{B}$}
@@ -890,7 +885,7 @@ class TransformerMemoryPipeline(nn.Module):
 
 \subsubsection*{Сравнение методов для этапа I}
 
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \small
 \begin{tabular}{p{3.0cm} p{5.7cm} p{5.7cm}}
@@ -963,7 +958,7 @@ M_k=H^{(l)}\in\mathbb{R}^{100000\times12288}.
 
 \subsubsection*{Оценка ресурсов для $10^6$ «Мыслей»}
 
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \small
 \begin{tabular}{p{3.0cm} p{5.4cm} p{3.4cm} p{3.0cm}}
@@ -1043,7 +1038,7 @@ W_2(g_1,g_2)^2
 
 Групповая стратегия естественно параллелится: каждая группа обрабатывается независимо, а скрытые состояния $h$ считываются из памяти Transformer и сразу обновляют аккумулятор матрицы ковариации $\Sigma_g$ по онлайн-алгоритму, после чего сырые векторы удаляются из ОЗУ.
 
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \small
 \begin{tabular}{p{3.0cm} p{5.1cm} p{3.3cm} p{3.2cm}}
@@ -1109,7 +1104,7 @@ M2_{\text{new}}
 \fi
 \section{Архитектура 2-этапной системы}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.8cm and 1.0cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, fill=secondarycolor, align=center, text width=7.0cm] (stage1) {ЭТАП 1: Frozen Physical Basis\\Базис $\mathcal{B}=\{d_1,d_2,\dots,d_M\}$};
@@ -1318,7 +1313,7 @@ class SemanticGraphEngine:
 
 \subsection*{Архитектура 3-этапной аннотации}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.8cm and 1.0cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, align=center, text width=4.0cm] (vec) {Вектор базиса $d_k$};
@@ -1478,7 +1473,7 @@ R=\{r_1,r_2,\dots,r_P\},
 \]
 запускается Online Incremental Induction.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.65cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, align=center, text width=5.6cm] (act) {Поток активаций $h_t$};
@@ -1627,7 +1622,7 @@ class DynamicConceptRegistrar:
 
 \subsection*{Архитектура Dynamic Edge Induction \& Integration}
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.7cm, >=latex', every node/.style={font=\small}]
     \node[draw, rounded corners, fill=secondarycolor, align=center, text width=6.3cm] (new) {Новый вектор $d_{M+1}$};
@@ -1831,7 +1826,7 @@ class DynamicEdgeIntegrator:
 
 Предлагаемая архитектура устраняет основные теоретические уязвимости благодаря следующим встроенным механикам:
 
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \begin{tabular}{p{5cm} p{10cm}}
 \toprule
@@ -1858,7 +1853,7 @@ class DynamicEdgeIntegrator:
 
 Архитектура системы полностью нейтрализует основные теоретические уязвимости за счет следующих встроенных механик:
 
-\begin{table}[H]
+\begin{table}[ht]
 \centering
 \small
 \renewcommand{\arraystretch}{1.25}

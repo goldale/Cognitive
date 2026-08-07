@@ -12,8 +12,6 @@ ownership:
   concept: Semantic Feedback Learning
 - canonical_location: Progressive Training chapter
   concept: Progressive Training
-- canonical_location: Section 10.12
-  concept: Input Buffer and sequential input path
 - canonical_location: Appendix H
   concept: Margin Notes
 - canonical_location: Section 10.14

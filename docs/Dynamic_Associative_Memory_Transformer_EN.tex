@@ -9,7 +9,6 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{ragged2e}
-\usepackage{float}
 \usepackage{listings}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,positioning,calc}
@@ -98,7 +97,7 @@ This conceptual shift changes the architecture completely, turning it from a neu
 If the internal language consists of vector activations of one internal Transformer layer (Internal Latent Representation), while associative memory is initially ``blind'' to human language and learns from those activations from scratch, the system operates directly in the Transformer's internal representation space.
 
 \subsubsection*{Architectural View}
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=1.0cm and 1.2cm, >=latex', every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=4.8cm](world){External world\\Text / Streams};
@@ -147,7 +146,7 @@ One technical option under consideration is Vector Quantization of the selected 
 \subsubsection*{Double-Width Layer Scheme (Internal Memory Layer)}
 The Transformer is treated as a large language model with an additional input from read operations. This input enters the same internal layer from which update signals leave to train memory, and is integrated into answer generation by deeper layers. The layer producing update has double width; its second half receives read from memory, carrying information about the context of the current dialogue.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.9cm and 1.0cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=7.2cm](deep){Deeper Transformer layers};
@@ -197,7 +196,7 @@ If LTM learns autonomously during a Sleep phase and restructures LTM-1/LTM-2, th
 \subsubsection*{Dialogue Session Lifecycle}
 The first external request tells memory that a dialogue must begin. The next request activates the existing dialogue and, within it, forms a message for the Transformer. When a new request reaches the target Transformer layer, it generates an update that changes the dialogue context for subsequent requests and records the new state in memory.
 
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.75cm and 1.0cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=5.0cm](req){External request (tokens)};
@@ -269,7 +268,7 @@ P(y_t\mid y_{<t})=\operatorname{Softmax}\!\left(W_{\text{head}}\operatorname{LN}
 Hidden states $h_t^{(l)}\in\mathbb{R}^d$ change their functional nature radically with network depth $l\in[1,L]$. Early layers are saturated with surface syntactic noise, while the deepest layers exhibit representation degeneration before tokenizer projection.
 
 To avoid heuristic layer selection, a \textbf{Layer Entropy Profiler} is used:
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=2.5cm,auto,>=latex']
 \node[draw,rectangle,rounded corners](l1){Layer $l-1$};
@@ -300,10 +299,6 @@ where $\mathcal H(\cdot)$ is differential entropy and $\mathbf P_{\mathcal B}$ i
 At the beginning of this document, we promised to \textbf{show how the system's associative memory can learn this language and use it}.
 
 Everything below is one possible way of doing so. This section contains a great deal of mathematics and no new conceptual ideas; it can therefore be skipped without compromising the general understanding of the concept.
-
-Most of the work described below is performed offline and requires only administrative access to an already trained Transformer model that will subsequently be used in the Cognitive system. The existing Transformer is used to generate the required statistics from datasets that will then be processed by the algorithms described below. For example, books passed through the Transformer can be grouped by genre and author, paintings by artist, and landscape photographs by landscape type, and so on.
-
-The resulting large body of structured data will be used by the algorithms described below to determine the semantics of the internal language.
 
 \footnotesize
 \section{Stage I: Extracting the Asemantic Physical Basis $\mathcal{B}$}
@@ -507,7 +502,7 @@ The code above illustrates the interface rather than the final retrieval impleme
 
 \section{Two-Stage System Architecture}
 The architecture separates the construction of a stable physical basis from the task-dependent construction of semantic structure.
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.9cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=7.0cm](tr){Frozen Transformer};
@@ -559,7 +554,7 @@ The final semantic edge has weight
 Assigning text labels to vectors of the asemantic basis $\mathcal B$ transforms geometric graph $G_T$ into a human-readable knowledge map. An individual $d_k\in\mathcal B$ may correspond not to a single word but to an abstract concept, syntactic role, or complex contextual polysemantic pattern.
 
 \subsection*{Three-Stage Annotation Architecture}
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.8cm and 1.0cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=4.0cm](vec){Basis vector $d_k$};
@@ -612,7 +607,7 @@ New-Item detection criteria:
 
 \subsection*{Ingestion Phase}
 When a stable cluster $R=\{r_1,r_2,\dots,r_P\}$ is detected, Online Incremental Induction begins.
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.65cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,align=center,text width=5.6cm](act){Activation stream $h_t$};
@@ -651,7 +646,7 @@ When a stable cluster $R=\{r_1,r_2,\dots,r_P\}$ is detected, Online Incremental 
 A new vector $d_{M+1}$ in basis $\mathcal B$ is only the physical registration of a novel phenomenon. To make it a full element of model reasoning, semantic edges must be integrated into current graph $G_T$.
 
 \subsection*{Dynamic Edge Induction \& Integration Architecture}
-\begin{figure}[H]
+\begin{figure}[h!]
 \centering
 \begin{tikzpicture}[node distance=0.7cm,>=latex',every node/.style={font=\small}]
 \node[draw,rounded corners,fill=secondarycolor,align=center,text width=6.3cm](new){New vector $d_{M+1}$};
@@ -695,7 +690,7 @@ Thus $G_T$ acquires structured knowledge about a new real-world object---its nam
 
 \section{Resolution of Key Limitations and Overall Result}
 The proposed architecture addresses the main theoretical vulnerabilities through the following built-in mechanisms:
-\begin{table}[H]
+\begin{table}[h!]
 \centering
 \begin{tabular}{p{5cm} p{10cm}}
 \toprule
@@ -715,7 +710,7 @@ The proposed architecture addresses the main theoretical vulnerabilities through
 \normalsize
 \section{Answers to Key Problems and Concluding Analysis}
 The architecture neutralizes the principal theoretical vulnerabilities through the following built-in mechanisms:
-\begin{table}[H]
+\begin{table}[ht]
 \centering
 \small
 \renewcommand{\arraystretch}{1.25}

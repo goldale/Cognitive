@@ -43,7 +43,7 @@ blocks:
     label: Deeper Memory Reinjection Point
     kind: interface
   - id: reason
-    label: 'Transformer Cognitive Core\n(Deep Layers)'
+    label: Transformer Integration and Reasoning
     kind: subsystem
   edges:
   - from: dialogue
