@@ -1,7 +1,7 @@
 kind: T_ContentBlock
 id: S_19_01
 blocks:
-- title: Implementation Sequence
+- title: Implementation Order
   description: The roadmap introduces the smallest useful architecture first and defers topology optimization
     and global maintenance until evidence justifies them.
   direction: TB

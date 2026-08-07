@@ -54,3 +54,11 @@ HTML expresses document structure. CSS expresses presentation. Semantic classes 
 - `.diagram`
 
 The stylesheet uses a restrained ISO/RFC/W3C-inspired layout. Headings form a left axis; body text has a small additional left indent and limited line width.
+
+## 6. Complete-document output
+
+The complete-document typesetting target is LaTeX. When a single full-document artifact is required, the documentation generator should emit `.tex` from canonical Research State rather than treating PDF as a primary generated format.
+
+PDF is an optional derived artifact and may be produced explicitly by compiling the generated LaTeX when requested. The English and Russian `Dynamic_Associative_Memory_Transformer_*.tex` research files are stored at the project root, outside the disposable generated `docs/` tree. They are preserved as source material for external articles and as retained research information; they are not the generated primary Cognitive documentation.
+
+Generated full-document LaTeX is retained in Git. Its text representation keeps documentation changes diffable, mergeable, and reviewable in version history. Derived PDF output is not retained as the standard versioned documentation artifact.

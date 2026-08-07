@@ -28,7 +28,7 @@ blocks:
     label: Relevance and Coherence Ranking
     kind: process
   - id: budget
-    label: Sequence / Time / Episode Budget
+    label: Message / Time / Episode Budget
     kind: constraint
   - id: emit
     label: Emit Ordered Internal-Language Elements

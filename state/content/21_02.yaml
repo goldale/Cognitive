@@ -5,7 +5,7 @@ blocks:
     Consolidation requires a selection signal; replay requires a policy for deciding what should be reactivated
     and why.
   type: paragraph
-- title: Canonical Development Sequence
+- title: Canonical Development Order
   description: The canonical Semantic Feedback Learning Pipeline is the stable foundation. Importance
     Estimation, Offline Consolidation and Sleep, and Replay are introduced as explicit dependent subsystems;
     later memory-lifecycle and evaluation mechanisms build on them.

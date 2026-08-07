@@ -1,9 +1,9 @@
-# Release Audit — cognitive-0.5.09
+# Release Audit — cognitive-0.5.11
 
-- release: 0.5.09
-- date: 2026-08-05
+- release: 0.5.11
+- date: 2026-08-07
 - schema_validation: passed
-- tests: 52 passed
+- tests: 52 passed, 0 failed
 - documentation_generation: passed
 - canonical_naming: passed
 - MSG2_contract: MSG2(amplitude, activation_position, operation)

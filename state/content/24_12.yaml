@@ -1,39 +1,37 @@
 kind: T_ContentBlock
 id: S_24_12
 blocks:
-- title: RS-0010 — Logical Episode Segmentation
+- title: RS-0010 — D-Context Lifecycle
   object_id: RS-0010
   text: 'Research Session. Status: Open. Priority: High.'
   type: note
 - title: Research question
-  text: How should the Transformer identify Logical Episode start, continuation, interruption, resumption, and end
-    within a continuous observation stream so that complete semantic episodes can be transferred into LTM2 within
-    the single physical LTM?
+  text: How should D-Context start, continuation, interruption, resumption, replacement, and end be determined within
+    continuous observation streams while D-Context remains solely inside STM within Associative Memory?
   type: principle
 - title: Established constraints
   items:
   - Time is not explicitly stored inside events.
-  - STM contains no explicit episode markers unless such information is produced by the cognitive process.
+  - D-Context owns episode membership and boundary semantics inside STM.
   - LTM2 must not receive arbitrary STM windows.
   type: list
 - type: warning
   title: ARCHITECTURAL DECISION REQUIRED
-  text: Define the representation and mechanism used to determine Logical Episode transitions, including whether
-    the decision is causal, retrospective, or hybrid, and how uncertain or revised episode hypotheses are represented.
+  text: Define the representation and mechanism used to determine D-Context lifecycle transitions, including whether
+    the decision is causal, retrospective, or hybrid, and how uncertain or revised context hypotheses are represented.
 - title: Required research outcomes
   items:
-  - Define how an episode remains open while additional evidence arrives.
-  - Define evidence for logical start, continuation, interruption, resumption, and logical end.
-  - Handle nested, overlapping, interleaved, and uncertain episodes.
+  - Define how D-Context keeps an episode open while additional evidence arrives.
+  - Define how D-Context represents evidence for start, continuation, interruption, resumption, and end.
+  - Define how D-Context handles nested, overlapping, interleaved, and uncertain episodes.
   - Specify revision semantics for premature or false segmentation decisions.
-  - Define the transfer contract that preserves a completed sequence until LTM2 accepts it.
+  - Define how ordered observations are retained until D-Context completes an episode representation and LTM2 accepts it.
   - Develop training objectives and measurable validation criteria.
   type: list
 - title: Working hypothesis
-  text: A Transformer maintains one or more continuously updated episode hypotheses over the semantic interpretation
-    of the observation stream. It emits a completed Logical Episode only when semantic closure exceeds a defined
-    confidence threshold and later evidence is unlikely to change the selected interval. This is a research hypothesis,
-    not yet a canonical implementation.
+  text: The system may maintain one or more continuously updated context hypotheses over the semantic interpretation
+    of observation streams and use them to revise D-Context when sufficient evidence is available. This is a research
+    hypothesis, not yet a canonical implementation.
   type: warning
 - title: Open questions
   items:

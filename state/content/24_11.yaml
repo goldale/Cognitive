@@ -37,13 +37,12 @@ blocks:
     transitions, uncertainty, and current path score.
   type: principle
 - text: S_mid → score candidate edges → select compatible transition → update traversal context → repeat
-    → detect context boundary ΔC
+    → report context-change evidence to D-Context
   type: formula
-- title: Context boundary handling
-  text: A large context discontinuity may indicate that the traversal has reached an episode boundary
-    or entered an incompatible branch. READ may stop, backtrack, retain multiple hypotheses, or begin
-    a separate context segment. Boundary decisions should preferably use context windows and path-level
-    evidence rather than a single adjacent-state comparison.
+- title: D-Context boundary handling
+  text: A large context discontinuity may provide evidence to D-Context that an episode boundary has been reached
+    or an incompatible branch entered. Episode and boundary decisions belong to D-Context; a READ implementation
+    must not create an independent boundary authority.
   type: paragraph
 - title: Canonical compact edge payload
   text: A practical baseline edge stores only the destination, a reference to a Context Selector, a quantized

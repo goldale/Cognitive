@@ -19,9 +19,9 @@ ownership:
 - canonical_location: Section 10.14
   concept: Connection Trace Lists
 - canonical_location: Section 10.13
-  concept: Logical Episode boundaries
+  concept: D-Context lifecycle
 - canonical_location: Section 10.13
-  concept: Sequence and temporal-to-causal transformation
+  concept: D-Context episode and boundary functions
 - canonical_location: Section 10.14
   concept: LTM message types and orthogonal state subspaces
 - canonical_location: Section 10.14

@@ -23,8 +23,8 @@ terms:
   definition: The associations, episodes, scenarios, and other long-term structures made relevant by the current
     D-Context.
 - term: Episode Graph Vertex
-  definition: The unique storage location for the complete Transformer-produced vector of one element in one completed
-    Logical Episode.
+  definition: The unique storage location for the complete Transformer-produced vector of one element in one stored
+    episode graph.
 - term: First Dialogue Exchange
   definition: The opening external exchange of a Dialogue, processed by Transformer without memory READ and followed
     by the UPDATE that initializes D-Context.
@@ -101,11 +101,8 @@ terms:
   term: Semantic Representation
 - definition: The Transformer role that produces semantic representations suitable for Associative Memory learning.
   term: Semantic Teacher
-- term: Sequence
-  definition: A directed activation chain represented in STM. Its order is established by the producing input or
-    Transformer process.
 - term: Serialized Memory Message
-  definition: The sequence returned by memory to Transformer containing prior Dialogue content and its relevant
+  definition: The ordered message returned by memory to Transformer containing prior Dialogue content and its relevant
     projection onto LTM1 and LTM2.
 - definition: A future operating mode for offline consolidation, pruning, structural analysis, and other expensive
     memory maintenance.

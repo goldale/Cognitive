@@ -341,7 +341,7 @@ chapters:
   sections:
   - kind: T_Section
     id: S_11_01
-    title: Semantic Feedback Learning and Subsystem Separation
+    title: First exchange of a Dialogue
     order: 1
     content_file: content/11_01.yaml
   - kind: T_Section
@@ -350,69 +350,59 @@ chapters:
     order: 2
     content_file: content/11_02.yaml
   - kind: T_Section
-    id: S_11_03
-    title: Read and Update Cycles
-    order: 3
-    content_file: content/11_03.yaml
-  - kind: T_Section
-    id: S_11_04
-    title: Hybrid Storage
-    order: 4
-    content_file: content/11_04.yaml
-  - kind: T_Section
     id: S_11_05
     title: Deferred Mechanisms
-    order: 5
+    order: 3
     content_file: content/11_05.yaml
   - kind: T_Section
     id: S_11_06
     title: Associative Memory Implementation Candidates and Gaps
-    order: 6
+    order: 4
     content_file: content/11_06.yaml
   - kind: T_Section
     id: S_11_07
     title: Dynamic Memory Tensor Reconstruction
-    order: 7
+    order: 5
     content_file: content/11_07.yaml
   - kind: T_Section
     id: S_11_08
     title: Modern Hopfield Retrieval
-    order: 8
+    order: 6
     content_file: content/11_08.yaml
   - kind: T_Section
     id: S_11_09
     title: Latent Compression Engine
-    order: 9
+    order: 7
     content_file: content/11_09.yaml
   - kind: T_Section
     id: S_11_10
     title: Reference Implementation and Validation
-    order: 10
+    order: 8
     content_file: content/11_10.yaml
   - kind: T_Section
     id: S_11_11
     title: STM / Active Internal State and Single Physical LTM
-    order: 11
+    order: 9
     content_file: content/11_11.yaml
   - kind: T_Section
     id: S_11_12
     title: External Multimodal Input Flow
-    order: 12
+    order: 10
     content_file: content/11_12.yaml
   - kind: T_Section
     id: S_11_13
-    title: Logical Episode Consolidation Boundary
-    order: 13
+    title: D-Context Lifecycle
+    order: 11
     content_file: content/11_13.yaml
   - kind: T_Section
     id: S_11_14
     title: Directed Episode Graph Storage and Connection Trace Lists
-    order: 14
+    order: 12
     content_file: content/11_14.yaml
   - kind: T_Section
     id: S_11_15
     title: Vertex-Owned Associative Memory and Conservative Codebook Evolution
-    order: 15
+    order: 13
     content_file: content/11_15.yaml
   layout: directory
 - kind: T_Chapter
@@ -439,7 +429,7 @@ chapters:
     content_file: content/12_03.yaml
   - kind: T_Section
     id: S_12_04
-    title: Sequence Budget and Completion
+    title: Message Budget and Completion
     order: 4
     content_file: content/12_04.yaml
   - kind: T_Section
@@ -730,7 +720,7 @@ chapters:
     content_file: content/21_01.yaml
   - kind: T_Section
     id: S_21_02
-    title: Development Sequence and Dependencies
+    title: Development Order and Dependencies
     order: 2
     content_file: content/21_02.yaml
   - kind: T_Section
@@ -898,7 +888,7 @@ chapters:
     content_file: content/24_11.yaml
   - kind: T_Section
     id: S_24_12
-    title: RS-0010 — Logical Episode Segmentation
+    title: RS-0010 — D-Context Lifecycle
     order: 12
     content_file: content/24_12.yaml
   - kind: T_Section

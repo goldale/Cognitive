@@ -2,7 +2,7 @@ kind: T_Collection
 diagram:
   id: MASTER_ARCHITECTURE_DIAGRAM
   title: Cognitive Master Architecture Diagram
-  version: 0.5.09
+  version: 0.5.11
   canonical: true
   visual_generation_policy:
     yaml_updated_each_release: true

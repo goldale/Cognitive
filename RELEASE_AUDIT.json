@@ -1,5 +1,5 @@
 {
-  "release": "Cognitive_0.5.09",
+  "release": "Cognitive_0.5.11",
   "status": "incremental-editorial-build",
   "chapter_1": {
     "title": "Project Goal",
@@ -12,8 +12,8 @@
   "validation": "passed",
   "docs_build": "passed",
   "tests": {
-    "passed": 50,
-    "failed": 2,
-    "note": "Two inherited 0.5.01 tests fail on unrelated pre-existing contract wording."
+    "passed": 52,
+    "failed": 0,
+    "note": "Full regression suite passed."
   }
 }

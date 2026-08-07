@@ -7,7 +7,7 @@ def test_read_contract_0401():
     c=yaml.safe_load((ROOT/"state/canonical/contracts.yaml").read_text())
     read=next(x for x in c["operations"] if x["id"]=="OP_READ")
     joined=" ".join(read["stages"])
-    assert "MSG2(amplitude, sequence_number, READ)" in joined
+    assert "MSG2(amplitude, activation_position, READ)" in joined
     assert "persistent LTM1" in joined
     assert "Dialogue" in joined
     assert "internal language" in joined

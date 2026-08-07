@@ -17,7 +17,7 @@ blocks:
 - type: definition
   title: MSG1 — Element-semantic message
   text: MSG1 carries the element-level activation used for semantic interpretation and associative processing before
-    a completed Logical Episode is available. It activates only the MSG1 state subspace of each participating LTM
+    a completed episode representation is available. It activates only the MSG1 state subspace of each participating LTM
     vertex and connection.
 - type: definition
   title: MSG2 — STM-emitted operation message
@@ -47,14 +47,18 @@ blocks:
   text: Episode representation
 - type: heading
   level: 3
-  text: Sequence to episode graph transformation
+  text: D-Context episode representation to episode graph transformation
 - type: principle
-  title: Sequence determines episode vertices
-  text: A completed linear STM Sequence determines which vertices participate in one Logical Episode. The Sequence
-    preserves temporal input order but does not define causal topology.
+  title: D-Context owns episode membership
+  text: D-Context determines which observations belong to an episode and where its boundaries lie. The mechanism that
+    preserves required ordering until this decision is available remains undefined.
+- type: warning
+  title: ARCHITECTURAL DECISION REQUIRED
+  text: Define how ordered observations needed for a D-Context episode are retained and made available for episode-graph
+    construction without inventing a new physical component for this unresolved responsibility.
 - type: principle
   title: Per-element Transformer output
-  text: After a Logical Episode is completed, the Transformer produces one context-dependent data vector for every
+  text: After an episode representation is completed, the Transformer produces one context-dependent data vector for every
     participating element. It does not replace those vectors with one vector for the complete episode.
 - type: formula
   text: v(i,g) = Transformer(element i in complete episode context g)

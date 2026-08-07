@@ -19,12 +19,12 @@ blocks:
     transitions.
 - type: principle
   title: Semantically neutral STM
-  text: STM orders and transports internal-language states and maintains active D-Context. It does not define
-    a second semantic vocabulary.
-- type: definition
-  title: Sequence
-  text: An ordered activation chain in STM preserving the internal-language order of the current processing step
-    or completed episode.
+  text: STM maintains active D-Context and current internal-language state. It does not define a second semantic
+    vocabulary or a separate mechanism for ordering external observations.
+- type: warning
+  title: ARCHITECTURAL DECISION REQUIRED
+  text: Define how ordering and retention of incoming observations are represented when required by D-Context episode
+    formation. The removed ordering architecture must not be reintroduced as a renamed physical component.
 - type: principle
   title: Transformer boundary
   text: Raw external input is interpreted by Transformer before memory access. Memory receives and returns only

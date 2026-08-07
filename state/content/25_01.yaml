@@ -31,7 +31,7 @@ blocks:
   size: standard
   type: diagram
 - title: DA-0001 — Single Source of Truth
-  text: Canonical knowledge exists once. HTML, PDF, indexes, registries, release notes, and references
+  text: Canonical knowledge exists once. HTML, LaTeX, indexes, registries, release notes, and references
     are generated from canonical sources.
   type: principle
 - title: DA-0002 — Separation of Normative and Contextual Content

@@ -11,10 +11,10 @@ blocks:
     Event State S_mid.
   - A bidirectional persistent transition store, held in RAM and a store such as RocksDB or LMDB, supports navigation
     toward earlier and later states.
-  - A streaming context evaluator estimates context change and candidate episode boundaries.
+  - A prototype may estimate context change as evidence supplied to D-Context episode and boundary functions.
   type: list
-- text: Associative Cue ↓ Vector Similarity Search ↓ Event State S_mid ↓ Backward Traversal ↓ Inferred Episode Start
-    ↓ Forward Replay ↓ Reconstructed Episode
+- text: Associative Cue ↓ Vector Similarity Search ↓ Event State S_mid ↓ Backward Traversal ↓ D-Context Episode Start
+    Hypothesis ↓ Forward Replay ↓ Reconstructed Episode
   type: formula
 - title: Arbitrary entry point
   text: Associative READ need not retrieve an episode identifier or its beginning. It may retrieve any characteristic
@@ -23,8 +23,8 @@ blocks:
   type: principle
 - type: warning
   title: ARCHITECTURAL DECISION REQUIRED
-  text: Define how a prototype recognizes candidate transitions between Logical Episodes from context change without
-    introducing a new canonical architectural component.
+  text: Define how a prototype recognizes changes relevant to D-Context lifecycle without introducing a new canonical
+    architectural component.
 - title: Candidate validation
   text: Backward reconstruction should be treated as a hypothesis. Forward replay from the inferred start should
     pass through, or closely reconstruct, the originally retrieved S_mid. Failure to do so lowers confidence in
@@ -35,7 +35,7 @@ blocks:
   - Vector search is an implementation component of READ, not Associative Memory itself.
   - The transition structure is an implementation mechanism for chronological navigation, not a Knowledge Graph
     or GraphRAG definition of memory.
-  - Context evaluation detects candidate boundaries but does not define the semantic content of the episode.
+  - Candidate context-change evidence does not replace D-Context ownership of episode and boundary semantics.
   type: list
 - title: Prototype questions
   items:

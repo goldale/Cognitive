@@ -1,8 +1,9 @@
 kind: T_ContentBlock
 id: S_07_02
 blocks:
-- text: Temporally related observations should be organized into episodes. Episodes preserve local order,
-    duration, concurrency, interruption, and the distinction between an event and a persistent state.
+- text: D-Context organizes temporally related observations into episodes and owns episode-boundary semantics.
+    Episodes preserve local order, duration, concurrency, interruption, and the distinction between an event and
+    a persistent state.
   type: paragraph
 - text: Temporal organization is separate from semantic meaning and evaluation, although all three interact
     during interpretation and planning.

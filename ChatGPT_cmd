@@ -57,15 +57,21 @@ zoom
 LTM  STM msg PNG
 query
 memory vector of
-Transpformer
+Transformer
 Context D-Context
 read update
-<===>
+<===> /
+Archived Chats
+
+
+
 
 Communication Verification Principle. Before performing significant work or producing a final result, if there is a material risk that the user's intent can be interpreted in more than one reasonable way, the system should first verify semantic alignment by asking targeted clarification questions. The objective is not to clarify the wording itself, but to confirm that both participants have reconstructed the same intended meaning before irreversible work is performed.
 
 <==>
 int
 foat
-Мысля
+Мысля  LLama
 item 2d 3d GPU
+Latex
+download

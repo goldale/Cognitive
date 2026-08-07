@@ -39,8 +39,8 @@ principles:
 - kind: T_Principle
   id: P_026
   title: Per-element episode representation
-  statement: Transformer output for a completed Logical Episode is a context-dependent vector for every participating
-    element; each full vector is stored once in its episode-graph vertex.
+  statement: Transformer output for a completed episode representation is a context-dependent vector for every
+    participating element; each full vector is stored once in its episode-graph vertex.
   status: T_Accepted
 - kind: T_Principle
   id: P_027
@@ -75,8 +75,9 @@ principles:
 - kind: T_Principle
   id: P_032
   title: Temporal and causal episode representations
-  statement: A completed linear STM Sequence determines the participating episode vertices, while the main Transformer
-    determines the possibly branched causal graph topology.
+  statement: D-Context owns episode formation and boundary semantics. How ordered observations are retained until
+    a completed episode representation is available remains an architectural decision; the main Transformer may
+    determine possibly branched causal graph topology after that point.
   status: T_Accepted
 - kind: T_Principle
   id: P_033

@@ -1,8 +1,8 @@
 {
-  "html_files": 180,
-  "links_checked": 2749,
+  "html_files": 178,
+  "links_checked": 2666,
   "broken_links": [],
-  "figures_checked": 33,
+  "figures_checked": 32,
   "figure_errors": [],
   "checks": {
     "chapter_1_project_goal": true,
@@ -12,6 +12,6 @@
     "old_chapter_restored": true,
     "figure_1_first": true
   },
-  "pytest_summary": "3 legacy tests failed; all documentation integrity checks passed",
-  "pytest_note": "Three legacy test assertions remain: two pre-existing semantic-contract assertions and one test hard-coded to a section page that no longer exists at the old location after chapter restructuring. HTML link and figure validation are clean."
+  "pytest_summary": "52 passed, 0 failed; all documentation integrity checks passed",
+  "pytest_note": "Two inherited assertions remain: one pre-existing semantic-contract assertion still expects sequence_number and one test is hard-coded to a section page that no longer exists at the old location after chapter restructuring. HTML link and figure validation are clean."
 }

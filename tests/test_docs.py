@@ -185,12 +185,14 @@ def test_canonical_yaml_contains_no_version_metadata() -> None:
             assert forbidden.isdisjoint(document), path
 
 
-def test_logical_episode_and_git_version_policy_are_documented():
+def test_d_context_lifecycle_and_git_version_policy_are_documented():
     root = Path(__file__).resolve().parents[1]
     canonical = (root / "state/content/11_13.yaml").read_text(encoding="utf-8")
     research = (root / "state/content/24_12.yaml").read_text(encoding="utf-8")
     policy = (root / "state/content/25_04.yaml").read_text(encoding="utf-8")
-    assert "Canonical consolidation unit" in canonical
+    assert "D-Context" in canonical
+    assert "Logical Episode" not in canonical
+    assert "Logical Episode" not in research
     assert "RS-0010" in research
     assert "Git is the version authority" in policy
 

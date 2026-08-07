@@ -1,9 +1,16 @@
 kind: T_ContentBlock
 id: S_11_02
 blocks:
-- text: Associative Memory exposes its retrieved state through a serialized memory message. The Transformer is trained
-    to consume this vector as prefix-like conditioning rather than receiving retrieved text passages as
-    its only memory interface.
+- text: The selected doubled Transformer layer is connected to Associative Memory through two directional transfer
+    windows. The Transformer-to-memory window copies activation values from the original half of the selected layer
+    into the corresponding memory registers. The memory-to-Transformer window copies retrieved-state values from
+    memory into the added, second half of the same selected layer. A window may be implemented in hardware or
+    software; the architectural requirement is the direct transfer of these native internal values, not a particular
+    copying mechanism.
+  type: paragraph
+- text: The Transformer is trained to consume the vector placed in the added half of the selected layer and integrates
+    it into its subsequent computation and the overall flow that generates the result. No conversion to text, tokens,
+    symbolic commands, JSON, or an external embedding space occurs at this interface.
   type: paragraph
 - text: The vector may encode activation across a graph, spreading activation results, confidence, context,
     and other state. The public contract must remain stable even when the internal memory implementation

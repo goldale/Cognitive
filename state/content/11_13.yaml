@@ -2,14 +2,14 @@ kind: T_ContentBlock
 id: S_11_13
 blocks:
 - type: paragraph
-  text: Logical Episode boundaries may be supplied by the source, implied by the activation stream, or inferred
-    from combined context.
+  text: D-Context is created by the first UPDATE, maintained in STM, updated by subsequent UPDATE operations, and
+    reused by corresponding READ operations.
 - type: warning
   title: ARCHITECTURAL DECISION REQUIRED
-  text: Define which mechanism determines Logical Episode start, continuation, interruption, resumption, and end
-    when these are not supplied explicitly by the source. The current canonical architecture does not assign this
-    responsibility to a dedicated physical component.
+  text: Define how D-Context start, continuation, interruption, resumption, replacement, and end are determined,
+    including uncertain or revised context hypotheses and concurrent or interleaved external streams. The current
+    canonical architecture does not assign this responsibility to a dedicated physical component.
 - type: paragraph
-  text: Completed Logical Episodes are integrated into Associative Memory through the latent UPDATE interaction.
-    Their internal order and causal hypotheses are represented by the resulting LTM structures and edge lists.
+  text: UPDATE integrates new internal state into Associative Memory while extending or revising the active D-Context.
+    Any resulting long-term structures remain an LTM storage concern and do not define D-Context lifecycle semantics.
 section_id: S_11_13

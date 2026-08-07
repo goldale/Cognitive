@@ -16,4 +16,4 @@ def test_draft05_latent_architecture():
 
 def test_release_version():
     assert 'version = "0.5.1"' in text(ROOT / "pyproject.toml")
-    assert '"release": "Cognitive_0.5.09"' in text(ROOT / "RELEASE_MANIFEST.json")
+    assert '"release": "Cognitive_0.5.11"' in text(ROOT / "RELEASE_MANIFEST.json")

@@ -25,9 +25,9 @@ def test_index_links_to_text_definitions_and_token_rows(tmp_path: Path):
     state = ResearchState.load(ROOT / "state")
     DocumentationBuilder(state, ROOT / "assets").build(tmp_path)
     index = (tmp_path / "chapter27" / "index.html").read_text(encoding="utf-8")
-    chapter = (tmp_path / "chapter12" / "12_11.html").read_text(encoding="utf-8")
+    chapter = (tmp_path / "chapter11" / "11_09.html").read_text(encoding="utf-8")
     tokens = (tmp_path / "tokens.html").read_text(encoding="utf-8")
-    assert '../chapter12/11_11.html#definition-LTM2' in index
+    assert '../chapter11/11_09.html#definition-LTM2' in index
     assert '<aside class="definition" id="definition-LTM2"><h4>LTM2</h4>' in chapter
     assert '../tokens.html#token-long-term-memory' in index
     assert 'id="token-long-term-memory"' in tokens

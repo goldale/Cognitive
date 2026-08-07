@@ -2,21 +2,18 @@ kind: T_Content
 section: S_11_01
 blocks:
 - type: paragraph
-  text: READ and UPDATE are phases of one Dialogue-aware cognitive cycle. Transformer first converts external input
-    into the internal language. Memory never receives raw external data.
-- type: definition
-  title: Dialogue
-  text: A logically connected external exchange whose context is established by UPDATE and reused by later READ
-    operations.
-- type: heading
-  level: 3
-  text: First exchange of a Dialogue
+  text: A Dialogue is a logically connected external exchange whose D-Context is created by the first UPDATE. The
+    Transformer first converts the external input into a message in its internal language. Memory never receives raw
+    external data.
 - type: list
   items:
-  - Transformer processes the opening external message without memory READ.
-  - Transformer produces a response or intermediate result.
-  - UPDATE transfers the resulting internal state through STM.
-  - Memory creates the initial D-Context and may store the first Dialogue episode in LTM2.
+  - Transformer processes the first external message without memory READ.
+  - UPDATE transfers the resulting internal state into STM.
+  - The first UPDATE creates D-Context in STM within Associative Memory. Subsequent UPDATE operations update this
+    D-Context, and corresponding READ operations reuse it.
+  - D-Context provides the context in which Associative Memory creates its messages for the Transformer, allowing the
+    Transformer to follow the topic of the conversation with the external interlocutor without having to reread the
+    entire conversation from the beginning with every new exchange.
 - type: heading
   level: 3
   text: Continuing Dialogue cycle
@@ -109,8 +106,16 @@ blocks:
 - type: principle
   title: One language, two directions
   text: Transformer-to-memory and memory-to-Transformer communication use the same internal language. READ differs
-    from UPDATE by operation and cognitive role, not by semantic representation space.
+    from UPDATE by operation and cognitive role, not by semantic representation space. For the Transformer, this
+    language is native and requires no additional translation or adaptation steps. Associative Memory, however,
+    requires a complex initialization mechanism in which it learns a vocabulary of internal terms and their semantics.
+    The detailed initialization algorithm is currently preserved in the research source files
+    Dynamic_Associative_Memory_Transformer_EN.tex and Dynamic_Associative_Memory_Transformer_RU.tex, which retain
+    research information and provide source material for articles published elsewhere. The relevant description
+    will later be incorporated into the primary Cognitive documentation.
 - type: note
-  title: LTM1 structural stability
-  text: During waking operation READ and UPDATE may modify activation and LTM2 content, but structural changes to
-    conservative LTM1 occur only during Sleep or Offline Consolidation.
+  title: LTM1 / Vocabulary Structural Stability
+  text: Once the LTM1 vocabulary has been initialized, its learned internal terms, semantic mappings, atoms, contexts,
+    and persistent associative structure remain structurally stable during waking operation. READ and UPDATE may
+    modify activation and LTM2 content, but structural changes to conservative LTM1 occur only during Sleep or Offline
+    Consolidation.
